@@ -1,0 +1,304 @@
+.cardacad {
+  position: relative;
+  width: 80px; /* Adjusted width */
+  height: 80px; /* Adjusted height */
+  background-color: #e9b0b0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.cardacad1 {
+  background-color: #e9b0b0;
+}
+.maincont1 {
+  height: fit-content;
+
+}
+.bottonconatiner {
+  position: relative;
+  top: 45%;
+  /* background-image: url("../assets/images/maindiv.png"); */
+
+  width: 100%;
+}
+.cardacad::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 105%; /* Ensure the background covers the entire cardacad */
+  height: 105%; /* Ensure the background covers the entire cardacad */
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e9b0b0 0%, #e9b0b0 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cardacad::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #f7cece 0%, #f7cece 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+  transition: filter 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.heading {
+  font-size: 10px;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+.heading1 {
+  font-size: 9px;
+  text-transform: capitalize;
+  font-weight: 900;
+  color: #d62a39;
+}
+
+.cardacad p:not(.heading) {
+  font-size: 14px;
+}
+
+.cardacad p:last-child {
+  color: #d62a39;
+  font-weight: 600;
+  text-align: center;
+}
+.cardacad1 p:last-child {
+  color: #d62a39;
+}
+
+.cardacad:hover::after {
+  filter: blur(30px);
+}
+
+.cardacad:hover::before {
+  transform: rotate(180deg); /* Keep the scale uniform */
+}
+
+.containeripi {
+  width: 90%; /* Adjusted width to fit four cardacads per row */
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping of cardacads to the next line */
+  justify-content: center; /* Center content horizontally */
+  gap: 21px; /* Gap between cardacads */
+  margin: 0 auto; /* Center the container itself */
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+/* Media query for tablet and phone view */
+@media (max-width: 768px) {
+  .bottonconatiner {
+    position: absolute;
+    top: 5%;
+    width: 95%;
+  }
+  .containeripi {
+    width: 50%; /* Adjusted width to fit four cardacads per row */
+    gap: 10px;
+  }
+  .cardacad {
+    position: relative;
+    width: 60px; /* Adjusted width */
+    height: 60px; /* Adjusted height */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    gap: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .heading {
+    font-size: 9px;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+}
+/* Media query for tablet and phone view */
+@media (max-width: 550px) {
+  .bottonconatiner {
+    position: absolute;
+    top: 5%;
+  }
+  .containeripi {
+    width: 90%; /* Adjusted width to fit four cardacads per row */
+  }
+  .cardacad {
+    position: relative;
+    width: 60px; /* Adjusted width */
+    height: 60px; /* Adjusted height */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    gap: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .heading {
+    font-size: 9px;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+}
+@media (min-width: 320px) and (max-width: 420px) {
+  .bottonconatiner {
+    position: absolute;
+    top: 4%;
+  }
+  .containeripi {
+    width: 85%; /* Adjusted width to fit four cardacads per row */
+  }
+  .cardacad {
+    position: relative;
+    width: 60px; /* Adjusted width */
+    height: 60px; /* Adjusted height */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    gap: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .heading {
+    font-size: 9px;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+}
+@media (min-width: 420px) and (max-width: 480px) {
+  .bottonconatiner {
+    position: absolute;
+    top: 3%;
+  }
+  .containeripi {
+    width: 80%; /* Adjusted width to fit four cardacads per row */
+  }
+  .cardacad {
+    position: relative;
+    width: 60px; /* Adjusted width */
+    height: 60px; /* Adjusted height */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    gap: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .heading {
+    font-size: 9px;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+}
+.detailcontainer {
+  position:relative;
+  margin-top: 70px;
+  
+}
+@media (max-width: 768px) {
+.detailcontainer {
+  margin-top: 120px;
+}
+}
+/* -----------------SII-------------- */
+.admission-info {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 80px;
+}
+.section-title-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.section-title-heading1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.section-title1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.requirements-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.requirement {
+  width: 45%;
+}
+
+.requirement ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.course-fees {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.course-fees th,
+.course-fees td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.course-fees th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.fee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+@media (max-width: 768px) {
+  .requirements-container {
+    flex-direction: column;
+  }
+
+  .requirement {
+    width: 100%;
+  }
+}
+
+.admission-info1 {
+  margin-top: 80px;
+}

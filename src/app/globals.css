@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #e3fdff #fff3f3;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 1px;
+  width: 1px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #fff3f3;
+  border: 1px solid #e3fdff;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #fff3f3;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #e3fdff;
+  border: 10px solid #e3fdff;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #9cf3ff;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #e3fdff;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background-image: url("../app/assets/images/maindiv.png");
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+body {
+  color: rgb(var(--foreground-rgb));
+  background-image: url("../app/assets/images/maindiv.png");
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

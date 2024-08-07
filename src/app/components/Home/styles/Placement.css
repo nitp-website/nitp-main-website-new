@@ -1,0 +1,23 @@
+.Placementdiv {
+  position: relative;
+  top: 38%;
+  background-color: rgba(231, 246, 255, 0.616);
+
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.text-3xl font-bold nums {
+  color: #000000;
+  font-size: 10px;
+}
+@media (max-width: 768px) {
+  .Placementdiv {
+    position: relative;
+    top: 29%;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .nums {
+    font-size: small;
+  }
+}

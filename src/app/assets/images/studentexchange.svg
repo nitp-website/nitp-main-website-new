@@ -1,0 +1,22 @@
+<?xml version="1.0" ?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="16" height="16" viewBox="0 0 64 64" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><defs><style>
+      .cls-1 {
+        fill: #f5dd90;
+      }
+
+      .cls-2 {
+        fill: #f76c5e;
+      }
+
+      .cls-3 {
+        fill: #ffbc0a;
+      }
+
+      .cls-4 {
+        fill: #6096ba;
+      }
+
+      .cls-5 {
+        fill: #274c77;
+      }
+    </style></defs><path class="cls-5" d="M15,41l-2,6-2-6V19c0-1.1,.9-2,2-2h0c1.1,0,2,.9,2,2v22Z"/><rect class="cls-3" height="6" width="2" x="31" y="3"/><rect class="cls-3" height="6" transform="translate(2.51 20.4) rotate(-45)" width="2" x="24.88" y="4.17"/><rect class="cls-3" height="2" transform="translate(6.09 29.06) rotate(-45)" width="6" x="35.12" y="6.17"/><path class="cls-4" d="M38,47c0,3.31-2.69,6-6,6s-6-2.69-6-6"/><path class="cls-5" d="M29,52.19v5.81c0,1.66,1.34,3,3,3h0c1.66,0,3-1.34,3-3v-5.81c-.88,.52-1.9,.81-3,.81s-2.12-.29-3-.81Z"/><path class="cls-3" d="M26,43v-1.62c-3.58-2.07-6-5.94-6-10.38,0-3.58,1.57-6.8,4.06-9l3.94,9c-.55,0-1,.45-1,1v2c0,.55,.45,1,1,1h8c.55,0,1-.45,1-1v-2c0-.55-.45-1-1-1l3.94-9c2.49,2.2,4.06,5.42,4.06,9,0,4.44-2.42,8.31-6,10.38v1.62h-12Z"/><path class="cls-5" d="M36,31l6.69-15.29c-1.16,1.32-5.51,2.29-10.69,2.29s-9.53-.97-10.69-2.29h0s0,0,0,0l6.69,15.29"/><ellipse class="cls-1" cx="32" cy="15" rx="11" ry="3"/><rect class="cls-5" height="4" rx="1" ry="1" width="14" x="25" y="43"/><rect class="cls-4" height="4" rx="1" ry="1" width="10" x="27" y="31"/><path class="cls-2" d="M15,21h-4v-2c0-1.1,.9-2,2-2,.55,0,1.05,.22,1.41,.59,.37,.36,.59,.86,.59,1.41v2Z"/><polygon class="cls-2" points="15 41 11 41 13 47 15 41"/><path class="cls-5" d="M53,41l-2,6-2-6V19c0-1.1,.9-2,2-2h0c1.1,0,2,.9,2,2v22Z"/><path class="cls-2" d="M53,21h-4v-2c0-1.1,.9-2,2-2,.55,0,1.05,.22,1.41,.59,.37,.36,.59,.86,.59,1.41v2Z"/><polygon class="cls-2" points="53 41 49 41 51 47 53 41"/><path class="cls-4" d="M44,61h-7v-2h6v-5c0-.55,.45-1,1-1h6v-4h2v5c0,.55-.45,1-1,1h-6v5c0,.55-.45,1-1,1Z"/><path class="cls-4" d="M27,61h-7c-.55,0-1-.45-1-1v-5h-6c-.55,0-1-.45-1-1v-5h2v4h6c.55,0,1,.45,1,1v5h6v2Z"/></svg>
