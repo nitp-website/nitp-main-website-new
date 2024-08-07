@@ -1,0 +1,19 @@
+.fsdiv {
+  /* position: relative;
+  top: 38%; */
+
+}
+
+@media (max-width: 768px) {
+  .fsdiv {
+    /* position: relative;
+    top: 101%; */
+    align-items: center;
+  }
+}
+.ndivf {
+  align-items: center;
+}
+.wfdiv {
+  align-items: center;
+}

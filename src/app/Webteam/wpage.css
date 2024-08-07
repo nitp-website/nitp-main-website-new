@@ -1,0 +1,78 @@
+.h1w {
+  text-align: center;
+}
+
+.h2w {
+  text-align: center;
+}
+.webteam-page {
+  .probutton {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    .btnactive {
+      background-color: white;
+      color: red;
+    }
+    button {
+      background-color: rgb(137, 38, 38);
+      border: none;
+      margin-right: 5px;
+      display: grid;
+      place-items: center;
+      color: white;
+      height: 30px !important;
+      width: max-content !important;
+      white-space: nowrap;
+      font-family: "Source Sans Pro";
+      border: 1px solid rgb(101, 0, 0);
+      font-size: 1rem;
+      padding: 5px;
+      &:focus {
+        background-color: white;
+        color: rgb(137, 38, 38);
+      }
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.yearButtons {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.buttonGroup button,
+.yearButtons button {
+  background-color: #03bfcb;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.buttonGroup button.btnActive,
+.yearButtons button.btnActive {
+  background-color: #02899c;
+}
+
+.cardContainerw {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

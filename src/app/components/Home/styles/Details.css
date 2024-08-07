@@ -1,0 +1,152 @@
+.container1 {
+  position: relative;
+  top: 40%;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-top: 20px;
+  padding-top: 5px;
+  overflow-y: auto;
+  height: 70vh; /* Adjust this as needed */
+  /* background-color: rgb(182, 255, 229); */
+  background-color: rgba(234, 243, 255, 0.623);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+.section {
+  background: #f9f9f95d;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto;
+  height: 80%;
+  border: 3px solid #ddd;
+
+  width: 30%;
+}
+.section1 {
+  background: #f9f9f95d;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto;
+  height: 80%;
+  border: 3px solid #ddd;
+
+  width: 25%;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  background: #f9f9f9;
+  z-index: 1;
+  padding: 0px 0; /* Adjust padding if needed */
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.section-header a {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notice,
+.eventcard {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.notice h3,
+.eventcard h3 {
+  margin: 0 0 10px;
+}
+
+.notice.important {
+  border-left: 4px solid red;
+}
+
+.notice p,
+.eventcard p {
+  margin: 5px 0;
+}
+
+.notice ul,
+.eventcard ul {
+  padding: 0;
+  list-style: none;
+}
+
+.notice ul li,
+.eventcard ul li {
+  margin: 5px 0;
+}
+
+.notice a,
+.eventcard a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .section-header a {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .container1 {
+    top: 30%;
+    flex-direction: column; /* Display buttons in a column on smaller screens */
+    align-items: center; /* Center align on smaller screens */
+    height: auto; /* Auto height */
+  }
+  .section {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    overflow-y: auto;
+    height: 400px;
+
+    width: 90%;
+  }
+  .section1 {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    overflow-y: auto;
+    height: 270px;
+
+    width: 90%;
+  }
+}
+
+.download-icon {
+  width: 16px; /* Adjust the size as needed */
+  height: 16px;
+  background-image: url(https://i.postimg.cc/1tWzRB6z/downloadicon.png);
+  margin-top: 2px;
+  margin-right: 8px;
+  /* Add some spacing */
+}

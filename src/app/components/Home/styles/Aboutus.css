@@ -1,0 +1,34 @@
+.aboutdiv {
+  position: relative;
+  top: 38%;
+  /* background-color: rgb(255, 159, 159); */
+}
+
+.aboutdiv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://i.postimg.cc/h4mxzgKS/nit-patna-004.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.8; /* Adjust the opacity as needed */
+  z-index: -1; /* Ensure the pseudo-element is behind the content */
+}
+@media (max-width: 768px) {
+  .aboutdiv {
+    position: relative;
+    top: 29%;
+    padding: 3px;
+    /* background-color: rgb(255, 159, 159); */
+  }
+  .intdiv {
+    padding: 10px;
+  }
+  .mainimg {
+    width: 70%;
+    height: 70%;
+  }
+}

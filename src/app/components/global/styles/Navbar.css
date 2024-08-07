@@ -1,0 +1,273 @@
+.navbar-container {
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 50;
+  width: 100%;
+  position: relative;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: rgba(255, 255, 255, 0.733);
+  backdrop-blur: lg;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px #8119195b;
+}
+
+.desktopnav {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-top .left-content {
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 40px;
+}
+
+.header-top img {
+  height: 70px;
+}
+
+.header-top .right-content {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 40px;
+}
+
+.header-top .right-content .font-bold {
+  font-size: 1.25rem;
+}
+
+.header-top .right-content .text-sm {
+  font-size: 0.875rem;
+}
+
+.header-top .institute-info {
+  text-align: right;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-blur: lg;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content .nav-items {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-content .nav-items a {
+  color: #000102;
+  padding: 8px 16px;
+  transition: color 0.2s;
+  text-align: center;
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .stickdiv .header-top img {
+    height: 40px;
+    width: 40px;
+  }
+  .stickdiv .right-content .font-bold,
+  .stickdiv .right-content .text-sm,
+  .stickdiv .institute-info {
+    font-size: 0.675rem;
+    align-items: center;
+    text-align: center;
+    padding-top: 0px;
+  }
+  .stickdiv .header-top {
+    padding: 2px 16px;
+  }
+}
+.navbar-content .nav-items a {
+  color: #111827;
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+/* Desktop Dropdown Styles */
+.navbar-content .nav-items .group:hover > .dropdown {
+  display: flex;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown .dropdown {
+  top: 0;
+  left: 100%;
+}
+
+/* Mobile Dropdown Styles */
+@media (max-width: 768px) {
+  .header-top {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .desktopnav {
+    height: fill;
+  }
+  .header-top img {
+    height: 30px;
+  }
+
+  .header-top .right-content {
+    order: 1;
+  }
+
+  .header-top .left-content {
+    order: 0;
+  }
+
+  .header-top .institute-info {
+    display: none;
+  }
+
+  .max-w-7xl {
+    max-width: fit-content !important;
+    margin: auto;
+  }
+
+  .navbar-content {
+    border-radius: 0rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-top {
+    border-radius: 0rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-top {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .header-top .right-content .text-sm {
+    font-size: 0.575rem;
+  }
+
+  .mobiletest {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 80rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+  }
+
+  .mobile-nav-content {
+    height: 100%;
+    width: 85%;
+    background-color: white;
+    padding: 1rem;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .mobile-nav-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 101;
+  }
+
+  .header-top .right-content .textmob {
+    font-size: 0.575rem;
+    line-height: 0.75rem;
+  }
+
+  .header-top .right-content .font-bold {
+    font-size: 0.575rem;
+    font-weight: 700;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-top img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .header-top .left-content {
+    flex: 0 0 auto;
+    margin-right: 0px;
+  }
+
+  .header-top .right-content {
+    flex: 1 1 auto;
+  }
+
+  .header-top .institute-info {
+    display: none;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown .dropdown {
+    position: relative;
+    left: 0;
+  }
+}
+
+.relative1 .absolute1 {
+  display: none;
+}
+
+.relative1:hover .absolute1,
+.group1:hover .absolute1 {
+  display: flex;
+}

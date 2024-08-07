@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="16" height="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 512 512" xml:space="preserve">
+<path style="fill:#415E72;" d="M0,355.2v-324c0.104-5.704,4.696-10.296,10.4-10.4h491.2c5.704,0.104,10.296,4.696,10.4,10.4v324H0z"
+	/>
+<g>
+	<path style="fill:#CFDCE5;" d="M512,355.2v41.6c-0.104,5.704-4.696,10.296-10.4,10.4H10.4c-5.704-0.104-10.296-4.696-10.4-10.4
+		v-41.6H512z"/>
+	<rect x="146.4" y="480.8" style="fill:#CFDCE5;" width="219.2" height="10.4"/>
+</g>
+<polygon style="fill:#AEC4CE;" points="328.8,480.8 183.2,480.8 193.6,407.2 318.4,407.2 "/>
+<rect x="20.8" y="41.6" style="fill:#FFFFFF;" width="470.4" height="292.8"/>
+<polygon style="fill:#94A7AF;" points="318.4,407.2 193.6,407.2 187.792,448.28 320.272,420.424 "/>
+<rect x="94.52" y="164.072" style="fill:#25B6D2;" width="18.688" height="51.104"/>
+<g>
+	<rect x="63.376" y="184.96" style="fill:#AEC4CE;" width="18.688" height="30.208"/>
+	<rect x="125.656" y="135.672" style="fill:#AEC4CE;" width="18.688" height="79.504"/>
+</g>
+<rect x="156.8" y="84.568" style="fill:#25B6D2;" width="18.688" height="130.608"/>
+<rect x="187.936" y="110.92" style="fill:#AEC4CE;" width="18.688" height="104.24"/>
+<rect x="219.08" y="152.88" style="fill:#25B6D2;" width="18.688" height="62.464"/>
+<g>
+	<rect x="63.384" y="257.68" style="fill:#AAC1CE;" width="174.384" height="8"/>
+	<rect x="63.384" y="287.856" style="fill:#AAC1CE;" width="134.76" height="8"/>
+	<rect x="274.24" y="257.68" style="fill:#AAC1CE;" width="174.384" height="8"/>
+	<rect x="274.24" y="287.856" style="fill:#AAC1CE;" width="134.76" height="8"/>
+</g>
+<path style="fill:#E04F5F;" d="M355.52,86.464c-38.328,0-69.4,31.072-69.4,69.4s31.072,69.4,69.4,69.4
+	c38.312,0,69.376-31.04,69.4-69.352h-69.4V86.464z"/>
+<path style="fill:#25B6D2;" d="M416.44,94.992l-49.096,49.096h69.4V144C436.752,125.616,429.448,107.984,416.44,94.992z"/>
+<path style="fill:#CFDCE5;" d="M367.336,74.648v69.456l49.096-49.096C403.432,81.952,385.76,74.616,367.336,74.648z"/>
+</svg>

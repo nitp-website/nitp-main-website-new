@@ -1,0 +1,34 @@
+.moving-bar-container {
+  width: 100%;
+  overflow: hidden;
+  width: 100%;
+  height: 30px; 
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.731
+  ); 
+}
+
+.moving-bar {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+.notice-item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

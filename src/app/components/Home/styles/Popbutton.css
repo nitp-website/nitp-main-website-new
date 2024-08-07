@@ -1,0 +1,241 @@
+.card {
+  position: relative;
+  width: 110px; /* Adjusted width */
+  height: 110px; /* Adjusted height */
+  background-color: #e9b0b0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.card1 {
+  background-color: #ba210e;
+}
+
+.maindiv {
+  position: relative;
+
+  /* background-image: url("../assets/images/maindiv.png"); */
+  z-index: 0;
+  width: 100%;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 105%; /* Ensure the background covers the entire card */
+  height: 105%; /* Ensure the background covers the entire card */
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #ba210e 0%, #ba210e 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #f7cece 0%, #f7cece 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+  transition: filter 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.headingp {
+  font-size: 10x;
+  text-transform: capitalize;
+  font-weight: 900;
+}
+.headingp1 {
+  font-size: 10px;
+  text-transform: capitalize;
+  font-weight: 900;
+  color: #a01d0c;
+}
+.headingp12 {
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: 900;
+  color: #a01d0c;
+}
+
+.card p:last-child {
+  color: #ba210e;
+  font-weight: 600;
+  text-align: center;
+}
+.card1 p:last-child {
+  color: #ffe5e5;
+}
+
+.card:hover::after {
+  filter: blur(30px);
+}
+
+.card:hover::before {
+  transform: rotate(180deg); /* Keep the scale uniform */
+}
+
+.container {
+  position: relative;
+  width: 40%; /* Adjusted width to fit four cards per row */
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping of cards to the next line */
+  justify-content: center; /* Center content horizontally */
+  gap: 21px; /* Gap between cards */
+  margin: 0 auto; /* Center the container itself */
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.containersideleft {
+  position: relative;
+  width: 20%; /* Adjusted width to fit four cards per row */
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping of cards to the next line */
+  justify-content: center; /* Center content horizontally */
+  gap: 2px; /* Gap between cards */
+  margin: 0 auto; /* Center the container itself */
+  margin-top: 100px;
+  margin-bottom: 50px;
+  background-image: url(https://i.postimg.cc/9fZqWBRy/Screenshot-2024-06-30-232708.png);
+  background-size: cover;
+  background-position: center; /* Center the image */
+  height: 160px; /* Reset height */
+}
+.containersideright {
+  position: relative;
+  width: 25%; /* Adjusted width to fit four cards per row */
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping of cards to the next line */
+  justify-content: center; /* Center content horizontally */
+  gap: 2px; /* Gap between cards */
+  margin: 0 auto; /* Center the container itself */
+  margin-top: 60px;
+  margin-bottom: 50px;
+  background-image: url(https://i.postimg.cc/zBjz8PBw/NIRF-NIT-Patna-Updated-Poster.png);
+  background-size: cover;
+  background-position: center; /* Center the image */
+  height: 225px; /* Reset height */
+  border-radius: 10px;
+}
+/* Media query for tablet and phone view */
+@media (max-width: 950px) {
+  .container {
+    width: 50%; /* Adjusted width to fit four cards per row */
+    gap: 10px;
+  }
+  .containersideleft,
+  .containersideright {
+    display: none;
+  }
+  .card {
+    position: relative;
+    width: 70px; /* Adjusted width */
+    height: 70px; /* Adjusted height */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    gap: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .headingp {
+    font-size: 5px;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+}
+/* Media query for tablet and phone view */
+@media (max-width: 550px) {
+  .container {
+    width: 90%; /* Adjusted width to fit four cards per row */
+  }
+  .card {
+    position: relative;
+    width: 50px; /* Adjusted width */
+    height: 50px; /* Adjusted height */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    gap: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .headingp {
+    font-size: 5px;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+}
+@media (min-width: 320px) and (max-width: 420px) {
+  .container {
+    width: 80%; /* Adjusted width to fit four cards per row */
+  }
+  .card {
+    position: relative;
+    width: 60px; /* Adjusted width */
+    height: 60px; /* Adjusted height */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    gap: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .headingp {
+    font-size: 8px;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+  .headingp12 {
+    font-size: 8px;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+  .mobileicondiv {
+    font-size: 1.5rem;
+  }
+  .headingp1t {
+    font-size: 7px;
+  }
+}
+@media (min-width: 420px) and (max-width: 480px) {
+  .container {
+    width: 80%; /* Adjusted width to fit four cards per row */
+  }
+  .card {
+    position: relative;
+    width: 70px; /* Adjusted width */
+    height: 70px; /* Adjusted height */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    gap: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .headingp {
+    font-size: 5px;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+}
