@@ -7,7 +7,7 @@ import Aboutus from "./components/Home/Aboutus";
 import Placement from "./components/Home/Placement";
 import Movingbar from "./components/Home/Movingbar";
 import Research from "./components/Home/Research";
-import Vid from "./components/Home/Vid"
+
 
 export const metadata = {
   title: "NIT PATNA | National Institute of Technology Patna",

@@ -204,7 +204,7 @@ const Senate = [
   type: "Ex-Officio Chairman",
  },
  {
-  name: "Prof. Nityanand Singh Maurya ",
+  name: "Prof. NITyanand Singh Maurya ",
   designation:"Professor, Civil Engineering Dept.",
   type: "Member",
  },
@@ -225,7 +225,7 @@ const Senate = [
   { name: "Prof. Baboo Rai", designation: "Professor, Civil Engineering Dept.", type: "Member" },
   { name: "Prof. Anshuman Singh", designation: "Professor, Civil Engineering Dept.", type: "Member" },
   { name: "Prof. Pijush Samui", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. Sunita Kumari", designation: "Professor, Civil Engineering Dept.", type: "Member" },
+  { name: "Prof. SuNITa Kumari", designation: "Professor, Civil Engineering Dept.", type: "Member" },
   { name: "Prof. Amit Kumar", designation: "Professor, Mechanical Engineering Dept.", type: "Member" },
   { name: "Prof. Manoj Kumar", designation: "Professor, Architecture Dept.", type: "Member" },
   { name: "Prof. Fulena Rajak", designation: "Professor, Architecture Dept.", type: "Member" },
@@ -247,7 +247,7 @@ const Senate = [
   { name: "Prof. Asit Narayan", designation: "Registrar, NIT Patna", type: "Ex-Officio Member Secretary" }
 ]
 
-const ServiceUnit = [
+const ServiceUNIT = [
  {
   designation: "Personal",
   type: "Registrar",
@@ -378,7 +378,7 @@ const Admin = [
     { data: "idc", content: IDC },
     { data: "director", content: director },
     { data: "senate", content: Senate },
-    { data: "serviceunit", content: ServiceUnit },
+    { data: "serviceuNIT", content: ServiceUNIT },
    
   ];
   
