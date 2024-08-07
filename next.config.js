@@ -1,3 +1,20 @@
-const withVideos = require('next-videos')
+const withVideos = require('next-videos');
 
-module.exports = withVideos()
+module.exports = withVideos({
+  images: {
+    remotePatterns: [
+        {
+            protocol: 'https',
+            hostname: 'lh3.googleusercontent.com',
+        },
+        {
+            protocol: 'https',
+            hostname: 'web.nitp.ac.in',
+        },
+        {
+            protocol: 'https',
+            hostname: 'drive.google.com',
+        },
+      ],
+  },
+});
