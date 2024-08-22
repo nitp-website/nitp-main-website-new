@@ -1,4 +1,4 @@
-import BackDepartment from '../../../../components/BackDepartment';
+import BackDepartment from "../../../components/department/BackDepartment"
 import FacultyList from '../../../../components/facultycomponents/FacultyList';
 import React from 'react'
 

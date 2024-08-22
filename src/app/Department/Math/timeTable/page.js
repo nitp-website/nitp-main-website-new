@@ -1,5 +1,6 @@
-import BackDepartment from "../../../../components/BackDepartment"
 
+
+import BackDepartment from "../../../components/department/BackDepartment"
 
 function Page(){
     return (

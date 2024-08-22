@@ -1,5 +1,5 @@
 'use client'
-import BackDepartment from "../../../../components/BackDepartment";
+import BackDepartment from "../../../components/department/BackDepartment";
 import Image from "next/image"
 import { useState, useEffect } from "react";
 

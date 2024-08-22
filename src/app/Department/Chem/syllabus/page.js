@@ -1,6 +1,6 @@
 "use client"
 
-import BackDepartment from "@/components/BackDepartment";
+import BackDepartment from "../../../components/department/BackDepartment"
 import { useState } from "react";
 
 function ActComp({ title, content }) {
