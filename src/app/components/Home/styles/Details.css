@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 .container1 {
   position: relative;
   top: 40%;
@@ -72,32 +73,35 @@
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 15px;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .notice h3,
 .eventcard h3 {
-  margin: 0 0 10px;
+  margin: 0 0 1px;
 }
 
 .notice.important {
   border-left: 4px solid red;
+  background-color: rgb(255, 245, 245);
 }
 
 .notice p,
 .eventcard p {
-  margin: 5px 0;
+  margin: 0px 0;
 }
 
 .notice ul,
 .eventcard ul {
-  padding: 0;
+  padding: 2px;
   list-style: none;
 }
 
 .notice ul li,
 .eventcard ul li {
-  margin: 5px 0;
+  margin: 2px 0;
 }
 
 .notice a,

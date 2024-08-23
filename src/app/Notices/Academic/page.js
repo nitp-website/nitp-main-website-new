@@ -1,14 +1,22 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import "../../components/Home/styles/Details.css";
-import Downloadicon from "../../../../public/downloadicon.png"; 
 
+//FormatDate component
+const FormatDate = ({ time }) => {
+  const formattedDate = new Intl.DateTimeFormat('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  }).format(new Date(time));
+
+  return <>{formattedDate}</>;
+};
 const Noticecard = ({ detail, time, attachments, imp, link }) => (
   <div className={`notice ${imp ? "important" : ""}`}>
     <h3 className="text-black md:text-xs text-sm">{detail}</h3>
-    <p className="text-neutral-500 text-xs">{new Date(time).toLocaleDateString()}</p>
+    <p>{link && <a href={link} className="text-xs">View Notice</a>}  <span className="text-neutral-400 text-xs"><FormatDate time={time} /> </span></p>
     {attachments && attachments.length > 0 && (
       <ul className=" text-xs text-red-800">
         {attachments.map((attachment, index) => (
@@ -27,7 +35,7 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
         ))}
       </ul>
     )}
-    {link && <a href={link} className="text-xs">View Details</a>}
+   
   </div>
 );
 const Page = () => {
@@ -40,8 +48,12 @@ const Page = () => {
       try {
         const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice/academics`;
         const response = await axios.get(academicsUrl);
-        setAcademics(response.data.filter((notice) => notice.isVisible === 1));
+        const sortedNotices = response.data
+        // setAcademics(response.data.
+          .filter((notice) => notice.isVisible === 1)
+          .sort((a, b) => b.important - a.important);
         setIsLoading(false);
+        setAcademics(sortedNotices);
       } catch (e) {
         console.error("Error fetching Academics notices:", e);
         setIsLoading(false);
