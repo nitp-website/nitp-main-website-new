@@ -1,4 +1,4 @@
-import BackDepartment from "../../../../components/BackDepartment";
+import BackDepartment from "../../../components/department/BackDepartment";
 function Compo({ sno, project, file, title, amount, investigator, status, sdate, edate, duration }) {
     return (
         <>

@@ -1,4 +1,4 @@
-import BackDepartment from "../../../../components/BackDepartment"
+import BackDepartment from "../../../components/department/BackDepartment"
 
 function Compo({ Research, Topic, sno }) {
     return (

@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import BackDepartment from "../../../../components/BackDepartment";
+import BackDepartment from "../../../components/department/BackDepartment";
 import { useEffect, useState } from "react";
 
 export default function Labs(){

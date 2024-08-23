@@ -1,4 +1,4 @@
-import BackDepartment from "../../../../components/BackDepartment"
+import BackDepartment from "../../../components/department/BackDepartment"
 import Image from "next/image"
 
 const ActComp = ({ title, date, venue, speaker, img, head, sno }) => {

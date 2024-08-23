@@ -1,7 +1,7 @@
 'use client'
-import BackDepartment from '../../../components/BackDepartment'
-import { DepartmentNavigationButton } from '../../../components/DepartmentNavigationButton'
-import DepartmentNotify from '../../../components/DepartmentNotify'
+import BackDepartment from '../../components/department/BackDepartment'
+import { DepartmentNavigationButton } from '../../components/department/DepartmentNavigationButton'
+import DepartmentNotify from '../../components/department/DepartmentNotify'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
@@ -57,7 +57,7 @@ export default function Humanities() {
       <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-2">
       Humanities & Social Sciences
       </div>
-      <BackDepartment navigate={"/"} />
+      <BackDepartment navigate={"/Department"} />
       {/* Section 1 */}
       <div className="grid grid-cols-6 max-md:grid-cols-1">
         {/* Department Picture */}
