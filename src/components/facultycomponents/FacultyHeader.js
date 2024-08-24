@@ -23,7 +23,7 @@ const FacultyHeader = ({ name, image, research, designation, email, linkedin, or
             <div className='flex font-semibold text-white'><span className='flex  md:w-[200px]'><CgProfile className='mt-1 mx-2' /> Name </span><span >: {name}</span></div>
             <div className='flex font-semibold text-white'><span className='flex  md:w-[200px]'><CgProfile className='mt-1 mx-2'/>Designation </span><span>: {designation}</span></div>
             <div className='flex font-semibold text-white'><span className='flex  md:w-[200px]'><MdOutlineMail className='mt-1 mx-2'/>Email </span><span ><Link href={`mailto:${email ? email : ""}`} >: {email}</Link></span></div>
-            {designation?<div className='flex flex-col font-semibold text-white'><span className='flex w-fit'><SiGooglescholar className='mt-1 mx-2 '/> Research Interest :</span><span className='ml-8'> {research}</span></div>:<></>}
+            {research?<div className='flex flex-col font-semibold text-white'><span className='flex w-fit'><SiGooglescholar className='mt-1 mx-2 '/> Research Interest :</span><span className='ml-8'> {research}</span></div>:<></>}
           </div>
 
           {/* links of vidwan scopus linkedin google_scholar orcid and personal website of professor */}

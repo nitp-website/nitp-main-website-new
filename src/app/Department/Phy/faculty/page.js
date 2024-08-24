@@ -6,7 +6,7 @@ import React from 'react'
 const Home=() =>{
   return (
    <>
-    <div className="flex flex-col p-10 max-sm:p-4">
+    <div className="flex flex-col px-3 py-10  max-sm:p-4">
       <div className="flex flex-col  mb-4">
         <div>
             <p className="text-red-900 text-xl lg:text-2xl font-bold">
@@ -22,7 +22,7 @@ const Home=() =>{
           <BackDepartment navigate={'/Department/Phy'}/>
         </div>
       </div>  
-      <FacultyList url={"/AllDepartment/Phy/faculty"} branch={"phy"}/>
+      <FacultyList url={"/Department/Phy/faculty"} branch={"phy"}/>
     </div>
    </>
   )

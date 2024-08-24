@@ -3,12 +3,11 @@ import React, { useEffect, useState } from 'react'
 import Title from './Title';
 import { useParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
-import BackDepartment from '../BackDepartment';
 const FacultyHeader = dynamic(() => import("./FacultyHeader"), {
-  loading: () => <div className='w-full h-full p-3 m-3 bg-red-200'>loading</div>
+  loading: () => <div className='w-full h-full p-3 text-black m-3 bg-red-200'>loading</div>
 })
 const Sidebar = dynamic(() => import("./Sidebar"), {
-  loading: () => <div className='w-full h-full p-3 m-3 bg-red-200'>loading</div>
+  loading: () => <div className='w-full h-full p-3 text-black m-3 bg-red-200'>loading</div>
 })
 const FacultyInfo = () => {
   const [state, setstate] = useState(1)
@@ -94,19 +93,19 @@ const FacultyInfo = () => {
         <Sidebar setstate={setstate} resume={resume} subjects={subjects} article={article} past_admin={past_admin_responsibility} work={work_experience} curr_admin={curr_admin_responsibility} phd_students={phd_students} memebership={membership} education={education} pg_ug_projects={pg_ug_projects} books={books} conference={conference} professional={Professional_Service} publications={publications}/>
         <div className='md:mx-3 md:mt-3  w-full overflow-scroll  '>
           {state === 1 && (
-            <div className='w-full p-3'>
+            <div className='w-full p-3 text-black'>
               <Title title={'Resume'} />
-              <div className='w-full p-3 border rounded-md  flex justify-center items-center overflow-scroll h-[60vh] shadow-lg hover:shadow-2xl'>
-                <button onClick={() => { resume ? downloadFileURL(resume) : alert("file not exist") }} className='w-[200px] p-3 bg-[#941B0C] text-white'> Download CV</button>
+              <div className='w-full p-3 text-black border rounded-md  flex justify-center items-center overflow-scroll h-[60vh] shadow-lg hover:shadow-2xl'>
+                <button onClick={() => { resume ? downloadFileURL(resume) : alert("file not exist") }} className='w-[200px] p-3 text-black bg-[#941B0C] '> Download CV</button>
               </div>
             </div>
           )}
           {state === 2 ? (
-            <div className='w-full p-3 '>
+            <div className='w-full p-3 text-black '>
               <Title title={'Education'} />
               {
                 education ?
-                  <div className='  overflow-scroll h-[70vh] p-3 border rounded-md shadow-lg hover:shadow-2xl'>
+                  <div className='  overflow-scroll h-[70vh] p-3 text-black border rounded-md shadow-lg hover:shadow-2xl'>
                     <table className='w-full'>
                       <tbody>
                         <tr className='border  border-black ' >
@@ -135,11 +134,11 @@ const FacultyInfo = () => {
             </div>
           ) : <></>}
           {state === 3 ? (
-            <div className='w-full p-3 font-poppins'>
+            <div className='w-full p-3 text-black font-poppins'>
               <Title title={'Teaching Experience'} />
               {
                 work_experience ?
-                  <div className='  overflow-scroll h-[70vh] p-3 border rounded-md shadow-lg hover:shadow-2xl'>
+                  <div className='  overflow-scroll h-[70vh] p-3 text-black border rounded-md shadow-lg hover:shadow-2xl'>
                     <table className='w-full'>
                       <tbody>
                         <tr className='border  border-black ' >
@@ -171,10 +170,10 @@ const FacultyInfo = () => {
           ) : <></>}
 
           {state === 4 ? (
-            <div className='w-full p-3 font-poppins'>
+            <div className='w-full p-3 text-black font-poppins'>
               <Title title={'Professional Services'} />
               {
-                Professional_Service ? <div className='  overflow-scroll h-[70vh] p-3 border rounded-md shadow-lg hover:shadow-2xl'>
+                Professional_Service ? <div className='  overflow-scroll h-[70vh] p-3 text-black border rounded-md shadow-lg hover:shadow-2xl'>
                   <table className='w-full'>
                     <tbody>
                       <tr className='border  border-black ' >
@@ -183,7 +182,7 @@ const FacultyInfo = () => {
                       {
                         Professional_Service.map((item) => {
                           return <tr className='border  border-black py-3' key={item.id}>
-                            <td className=' p-3   capitalize w-[100px] -mr-40'>{item.services ? item.services : "-"}</td>
+                            <td className=' p-3 text-black   capitalize w-[100px] -mr-40'>{item.services ? item.services : "-"}</td>
 
                           </tr>
                         }
@@ -201,12 +200,12 @@ const FacultyInfo = () => {
           ) : <></>}
 
           {state === 5 ? (
-            <div className='w-full p-3 font-poppins'>
+            <div className='w-full p-3 text-black font-poppins'>
               <Title title={'Administrative Responsibilities'} />
               {
                 curr_admin_responsibility || past_admin_responsibility ?
                   <>
-                    <div className='  overflow-scroll h-[70vh] p-3 border rounded-md shadow-lg hover:shadow-2xl'>
+                    <div className='  overflow-scroll h-[70vh] p-3 text-black border rounded-md shadow-lg hover:shadow-2xl'>
                       <table className='w-full'>
                         <tbody>
                           <tr className='border  border-black ' >
@@ -252,11 +251,11 @@ const FacultyInfo = () => {
             : <></>}
 
           {state === 6 && (
-            <div className='w-full p-3 '>
+            <div className='w-full p-3 text-black '>
               <Title title={'Journals'} />
-              <div className='  overflow-scroll h-[70vh] p-3 w-full  border rounded-md shadow-lg hover:shadow-2xl'>
+              <div className='  overflow-scroll h-[70vh] p-3 text-black w-full  border rounded-md shadow-lg hover:shadow-2xl'>
                 {
-                  publications ? publications[0]?.pub_pdf?.length === 0 ? <></> : <div className='w-full flex justify-center items-center h-12'><button onClick={() => { publications[0].pub_pdf ? downloadFileURL(publications[0].pub_pdf) : alert("file not exist") }} className='w-[200px] p-3 bg-[#941B0C] text-white mt-3'> Journals</button></div> : <>No data found</>
+                  publications ? publications[0]?.pub_pdf?.length === 0 ? <></> : <div className='w-full flex justify-center items-center h-12'><button onClick={() => { publications[0].pub_pdf ? downloadFileURL(publications[0].pub_pdf) : alert("file not exist") }} className='w-[200px] p-3 text-black bg-[#941B0C]  mt-3'> Journals</button></div> : <>No data found</>
                 }
                 <ul className='list-decimal gap-3 flex flex-col mt-6'>
                       {
@@ -274,7 +273,7 @@ const FacultyInfo = () => {
           )}
           {
             state === 7 ?
-              <div className='w-[100%] p-3 '>
+              <div className='w-[100%] p-3 text-black '>
                 <Title title={"Conferences"} />
 
                 <div className='w-[100%]  p-4 border shadow-lg hover:shadow-2xl overflow-scroll h-[70vh]'>
@@ -303,11 +302,11 @@ const FacultyInfo = () => {
 
           {
             state === 8 ?
-              <div className='w-[100%] p-3 '>
+              <div className='w-[100%] p-3 text-black '>
                 <Title title={"Phd Candidates"} />
                 {
                   phd_students ?
-                    <div className='  overflow-scroll h-[70vh] p-3 border rounded-md shadow-lg hover:shadow-2xl'>
+                    <div className='  overflow-scroll h-[70vh] p-3 text-black border rounded-md shadow-lg hover:shadow-2xl'>
                       <table className='w-full'>
                         <tbody>
                           <tr className='border  border-black ' >
@@ -341,11 +340,11 @@ const FacultyInfo = () => {
 
           {
             state === 9 ?
-              <div className='w-[100%] p-3 ' >
+              <div className='w-[100%] p-3 text-black ' >
                 <Title title={"PG/UG Projects"} />
                 {
                   pg_ug_projects ?
-                    <div className='  overflow-scroll h-[70vh] p-3 border rounded-md shadow-lg hover:shadow-2xl'>
+                    <div className='  overflow-scroll h-[70vh] p-3 text-black border rounded-md shadow-lg hover:shadow-2xl'>
                       <table className='w-full'>
                         <tbody>
                           <tr className='border  border-black ' >
@@ -382,18 +381,18 @@ const FacultyInfo = () => {
 
           {
             state === 10 ?
-              <div className='w-[100%] p-3 font-poppins'>
+              <div className='w-[100%] p-3 text-black font-poppins'>
                 <Title title={"Subjects Teaching"} />
                 {
                   subjects ?
                     <>
-                      <div className='  overflow-scroll h-[70vh] p-3 border rounded-md shadow-lg hover:shadow-2xl'>
+                      <div className='  overflow-scroll h-[70vh] p-3 text-black border rounded-md shadow-lg hover:shadow-2xl'>
                         <table className='w-full'>
                           <tbody>
                             <tr className='border  border-black ' >
-                              <td className='border-r p-3  border-black capitalize w-[50px] font-bold'>Subject Code</td>
-                              <td className='border-r p-3  border-black capitalize w-[350px] font-bold'>Subject Name</td>
-                              <td className='border-r p-3 border-black capitalize w-[100px] font-bold'>Start</td>
+                              <td className='border-r p-3 text-black  border-black capitalize w-[50px] font-bold'>Subject Code</td>
+                              <td className='border-r p-3 text-black  border-black capitalize w-[350px] font-bold'>Subject Name</td>
+                              <td className='border-r p-3 text-black border-black capitalize w-[100px] font-bold'>Start</td>
                               <td className='p-3 capitalize w-[100px] font-bold'>End</td>
                             </tr>
                             {
@@ -422,7 +421,7 @@ const FacultyInfo = () => {
 
           {
             state === 11 ?
-              <div className='w-[100%] p-3 font-poppins'>
+              <div className='w-[100%] p-3 text-black font-poppins'>
                 <Title title={"Books"} />
                 {
                   <div className='w-[100%] h-[60vh] overflow-scroll p-4 border shadow-lg hover:shadow-2xl'>
@@ -447,11 +446,11 @@ const FacultyInfo = () => {
           }
 
           {state === 12 ? (
-            <div className='w-full p-3 font-poppins '>
+            <div className='w-full p-3 text-black font-poppins '>
               <Title title={'memberships'} />
               {membership ?
                 <>
-                  <div className='  overflow-scroll h-[70vh] p-3 border rounded-md  shadow-lg hover:shadow-2xl'>
+                  <div className='  overflow-scroll h-[70vh] p-3 text-black border rounded-md  shadow-lg hover:shadow-2xl'>
                     <table className='w-full'>
                       <tbody>
                         <tr className='border  border-black ' >
@@ -488,7 +487,7 @@ const FacultyInfo = () => {
 
           {
             state === 13 ?
-              <div className='w-[100%] p-3 font-poppins'>
+              <div className='w-[100%] p-3 text-black font-poppins'>
                 <Title title={"Articles"} />
                 {
                   <div className='w-[100%] overflow-scroll h-[60vh] p-4 border shadow-lg hover:shadow-2xl'>
