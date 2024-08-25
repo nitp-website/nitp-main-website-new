@@ -96,7 +96,7 @@
 }
 .containersideleft {
   position: relative;
-  width: 20%; /* Adjusted width to fit four cards per row */
+  width: 25%; /* Adjusted width to fit four cards per row */
   display: flex;
   flex-wrap: wrap; /* Enable wrapping of cards to the next line */
   justify-content: center; /* Center content horizontally */
@@ -104,10 +104,11 @@
   margin: 0 auto; /* Center the container itself */
   margin-top: 100px;
   margin-bottom: 50px;
-  background-image: url(https://i.postimg.cc/9fZqWBRy/Screenshot-2024-06-30-232708.png);
+  background-image: url(https://i.postimg.cc/5yWXymcX/IMG-3908.jpg);
   background-size: cover;
-  background-position: center; /* Center the image */
-  height: 160px; /* Reset height */
+  background-position: bottom; /* Center the image */
+  height: 225px; /* Reset height */
+  border-radius: 10px;
 }
 .containersideright {
   position: relative;

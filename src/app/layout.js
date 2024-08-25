@@ -6,7 +6,7 @@ import Navbar from "./components/global/Navbar";
 import Footer from "./components/global/Footer";
 import Imagefooter from "./components/global/Imagefooter";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "./Loading";
 
 
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
