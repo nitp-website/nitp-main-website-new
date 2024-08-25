@@ -378,8 +378,8 @@ const Admin = [
     { data: "idc", content: IDC },
     { data: "director", content: director },
     { data: "senate", content: Senate },
-    { data: "serviceuNIT", content: ServiceUNIT },
+    { data: "serviceunit", content: ServiceUNIT },
    
   ];
   
-  export default Admin;
+export default Admin;

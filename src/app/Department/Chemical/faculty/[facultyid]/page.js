@@ -1,6 +1,6 @@
 "use client"
 import BackDepartment from "../../../../components/department/BackDepartment"
-import FacultyInfo from '../../../../components/facultycomponents/FacultyInfo'
+import FacultyInfo from '../../../../../components/facultycomponents/FacultyInfo'
 import React from 'react'
 const page = () => {
   
