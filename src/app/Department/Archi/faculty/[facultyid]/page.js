@@ -1,12 +1,12 @@
 "use client"
 import BackDepartment from '../../../../components/department/BackDepartment'
-import FacultyInfo from '../../../../components/department/facultycomponents/FacultyInfo'
+import FacultyInfo from '../../../../../components/facultycomponents/FacultyInfo'
 
 import React from 'react'
 const page = () => {
   
   return(
-    <div className="flex flex-col p-10 max-sm:p-4">
+    <div className="flex flex-col px-3 py-10  max-sm:p-4">
       <div className="flex flex-col  mb-4">
         <div>
             <p className="text-red-900 text-xl lg:text-2xl font-bold">
@@ -19,7 +19,7 @@ const page = () => {
             </p>
         </div>
         <div>
-          <BackDepartment navigate={'/AllDepartment/Archi/faculty'}/>
+          <BackDepartment navigate={'/Department/Archi/faculty'}/>
         </div>
       </div>  
       <FacultyInfo/>

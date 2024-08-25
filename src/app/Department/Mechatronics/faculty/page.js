@@ -1,12 +1,12 @@
 import BackDepartment from "../../../components/department/BackDepartment"
-import FacultyList from '@/components/facultycomponents/FacultyList';
+import FacultyList from '../../../../components/facultycomponents/FacultyList';
 import React from 'react'
 
 // import pdf from '@/components/pdf.pdf
 const Home=() =>{
   return (
    <>
-    <div className="flex flex-col p-10 max-sm:p-4">
+    <div className="flex flex-col px-3 py-10  max-sm:p-4">
       <div className="flex flex-col  mb-4">
         <div>
             <p className="text-red-900 text-xl lg:text-2xl font-bold">
@@ -19,10 +19,10 @@ const Home=() =>{
             </p>
         </div>
         <div>
-          <BackDepartment navigate={'/AllDepartment/Mechatronics'}/>
+          <BackDepartment navigate={'/Department/Mechatronics'}/>
         </div>
       </div>  
-      <FacultyList url={"/AllDepartment/Mechatronics/faculty"} branch={"mae"}/>
+      <FacultyList url={"/Department/Mechatronics/faculty"} branch={"mae"}/>
     </div>
    </>
   )
