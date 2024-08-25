@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react'
 import Title from './Title';
 import { useParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
-import Loading from '../../loading';
+// import Loading from '../../loading';
 const FacultyHeader=dynamic(()=>import("./FacultyHeader"),{
-  loading:()=><div className='w-full h-full p-3 m-3 bg-red-200'><Loading/></div>
+  loading:()=><div className='w-full h-full p-3 m-3 bg-red-200'><div>loading</div></div>
 })
 const Sidebar=dynamic(()=>import("./Sidebar"),{
-  loading:()=><div className='w-full h-full p-3 m-3 bg-red-200'><Loading/></div>
+  loading:()=><div className='w-full h-full p-3 m-3 bg-red-200'><div>loading</div></div>
 })
 const FacultyInfo = () => {
   const [state, setstate] = useState(1)
