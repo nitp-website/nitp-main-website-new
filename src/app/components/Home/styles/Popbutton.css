@@ -2,14 +2,14 @@
   position: relative;
   width: 110px; /* Adjusted width */
   height: 110px; /* Adjusted height */
-  background-color: #e9b0b0;
+  background-color: #f0caca;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 12px;
   gap: 12px;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
 }
 .card1 {
@@ -30,13 +30,18 @@
   margin: auto;
   width: 105%; /* Ensure the background covers the entire card */
   height: 105%; /* Ensure the background covers the entire card */
-  border-radius: 12px;
+  border-radius: 10px;
   background: linear-gradient(-45deg, #ba210e 0%, #ba210e 100%);
   z-index: -10;
   pointer-events: none;
   transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
+.headingp1f {
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: 900;
+  color: #a01d0c;
+}
 .card::after {
   content: "";
   z-index: -1;
@@ -55,12 +60,6 @@
 }
 .headingp1 {
   font-size: 10px;
-  text-transform: capitalize;
-  font-weight: 900;
-  color: #a01d0c;
-}
-.headingp1f {
-  font-size: 12px;
   text-transform: capitalize;
   font-weight: 900;
   color: #a01d0c;
@@ -153,7 +152,7 @@
     justify-content: center;
     padding: 6px;
     gap: 6px;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
   }
   .headingp {
@@ -178,7 +177,7 @@
     justify-content: center;
     padding: 3px;
     gap: 3px;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
   }
   .headingp {
@@ -237,7 +236,7 @@
     justify-content: center;
     padding: 6px;
     gap: 5px;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
   }
   .headingp {
