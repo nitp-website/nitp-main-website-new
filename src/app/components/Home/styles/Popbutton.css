@@ -9,7 +9,7 @@
   justify-content: center;
   padding: 12px;
   gap: 12px;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
 }
 .card1 {
@@ -30,7 +30,7 @@
   margin: auto;
   width: 105%; /* Ensure the background covers the entire card */
   height: 105%; /* Ensure the background covers the entire card */
-  border-radius: 10px;
+  border-radius: 12px;
   background: linear-gradient(-45deg, #ba210e 0%, #ba210e 100%);
   z-index: -10;
   pointer-events: none;
@@ -55,6 +55,12 @@
 }
 .headingp1 {
   font-size: 10px;
+  text-transform: capitalize;
+  font-weight: 900;
+  color: #a01d0c;
+}
+.headingp1f {
+  font-size: 12px;
   text-transform: capitalize;
   font-weight: 900;
   color: #a01d0c;
@@ -147,7 +153,7 @@
     justify-content: center;
     padding: 6px;
     gap: 6px;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
   }
   .headingp {
@@ -172,7 +178,7 @@
     justify-content: center;
     padding: 3px;
     gap: 3px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
   }
   .headingp {
@@ -231,7 +237,7 @@
     justify-content: center;
     padding: 6px;
     gap: 5px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
   }
   .headingp {
