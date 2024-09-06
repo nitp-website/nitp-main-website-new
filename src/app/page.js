@@ -21,7 +21,6 @@ export default function Home() {
     <Popbuttons/>
     <Details/>
     <Aboutus/>
-    <Placement/>
     <Research/>
     <Gallery/>
     
