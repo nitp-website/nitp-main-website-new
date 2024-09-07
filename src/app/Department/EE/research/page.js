@@ -52,7 +52,7 @@ function Compo({ sno, name, research, publications, phd, patent, project, detail
 
 export default function research() {
     return (
-        <div className=" flex flex-col p-5 ">
+        <div className=" flex flex-col p-5  text-black">
             <div className="flex flex-col md:ml-10 mb-3">
                 <div>
                     <p className="text-red-900 text-xl lg:text-2xl  font-bold">

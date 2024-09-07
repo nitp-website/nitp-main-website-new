@@ -19,7 +19,7 @@ function Comp({content}){
 
 function Page(){
     return (
-        <div className="flex flex-col p-5">  
+        <div className="flex flex-col p-5 text-black">  
             <div className="flex flex-col md:ml-10">
                 <div className="flex flex-col  mb-6">
                     <div>
