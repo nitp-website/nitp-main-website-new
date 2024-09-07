@@ -37,7 +37,7 @@ function Page(){
         "https://web.nitp.ac.in/dept/arch/labs/DSC_0663.jpg",
     ]
     return (
-        <div className=" flex flex-col p-5">  
+        <div className=" flex flex-col p-5 text-black">  
             <div className="flex flex-col md:ml-10">
             <div className="flex flex-col md:ml-10">
                 <div>

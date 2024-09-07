@@ -20,7 +20,7 @@ function SyllabusComp({ dept, sem, code, title, L, T, P, cred, url }) {
 }
 function ActComp({ content }) {
     return (
-        <div className="flex flex-col mt-8 lg:ml-10 text-sm lg:text-base">
+        <div className="flex flex-col mt-8 lg:ml-10 text-sm lg:text-base text-black">
             <ul>
                 {content.map((points, i) => {
                     return (
@@ -41,7 +41,7 @@ function Page() {
     const [dual, setdual] = useState(false);
     const [phd, setphd] = useState(false);
     return (
-        <div className=" flex flex-col p-5">
+        <div className=" flex flex-col p-5 text-black">
             <div className="flex flex-col md:ml-10">
                 <div>
                     <p className="text-red-900 text-xl lg:text-2xl font-bold">
