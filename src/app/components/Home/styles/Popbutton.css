@@ -2,7 +2,7 @@
   position: relative;
   width: 110px; /* Adjusted width */
   height: 110px; /* Adjusted height */
-  background-color: #e9b0b0;
+  background-color: #f0caca;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +36,12 @@
   pointer-events: none;
   transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
+.headingp1f {
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: 900;
+  color: #a01d0c;
+}
 .card::after {
   content: "";
   z-index: -1;
@@ -96,18 +101,19 @@
 }
 .containersideleft {
   position: relative;
-  width: 20%; /* Adjusted width to fit four cards per row */
+  width: 25%; /* Adjusted width to fit four cards per row */
   display: flex;
   flex-wrap: wrap; /* Enable wrapping of cards to the next line */
   justify-content: center; /* Center content horizontally */
   gap: 2px; /* Gap between cards */
   margin: 0 auto; /* Center the container itself */
-  margin-top: 100px;
+  margin-top: 60px;
   margin-bottom: 50px;
-  background-image: url(https://i.postimg.cc/9fZqWBRy/Screenshot-2024-06-30-232708.png);
+  background-image: url(https://i.postimg.cc/5yWXymcX/IMG-3908.jpg);
   background-size: cover;
   background-position: center; /* Center the image */
-  height: 160px; /* Reset height */
+  height: 225px; /* Reset height */
+  border-radius: 10px;
 }
 .containersideright {
   position: relative;
@@ -121,7 +127,7 @@
   margin-bottom: 50px;
   background-image: url(https://i.postimg.cc/zBjz8PBw/NIRF-NIT-Patna-Updated-Poster.png);
   background-size: cover;
-  background-position: center; /* Center the image */
+  background-position: bottom; /* Center the image */
   height: 225px; /* Reset height */
   border-radius: 10px;
 }

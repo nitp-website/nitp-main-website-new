@@ -39,7 +39,7 @@
 .name {
   position: relative;
   top: 1em;
-  text-transform: lowercase;
+ 
   font-size: 0.875rem;
 }
 
@@ -91,7 +91,6 @@
   .name {
     position: relative;
     top: 2px;
-    text-transform: lowercase;
   }
   .infotop {
     text-align: center;
