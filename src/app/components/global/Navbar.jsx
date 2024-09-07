@@ -207,14 +207,14 @@ const navItems = [
       },
       {
         label: "Course Structure",
-        link: "#",
+        link: "/Course",
         iconImage:Structure,
         children: [
-          { label: "UG", link: "", iconImage:Structure},
-          { label: "PG(M. tech / MURP)", link: "", iconImage:Structure},
-          { label: "M.tech/MURP-PHD(DD)", link: "", iconImage:Structure},
-          { label: "Integrated M.Sc", link: "", iconImage:Structure},
-          { label: "MCA", link: "", iconImage:Structure}
+          { label: "UG", link: "/Course/Ug", iconImage:Structure},
+          { label: "PG(M. tech / MURP)", link: "/Course/Pg", iconImage:Structure},
+          { label: "M.tech/MURP-PHD(DD)", link: "/Course/MTech", iconImage:Structure},
+          { label: "Integrated M.Sc", link: "/Course/MSc", iconImage:Structure},
+          { label: "MCA", link: "/Course/MCA", iconImage:Structure}
         ]
       },
       {
