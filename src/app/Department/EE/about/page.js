@@ -3,7 +3,7 @@ import BackDepartment from "../../../components/department/BackDepartment"
 
 function page(){
     return (
-        <div className="bg-orange-50 flex flex-col p-10 max-sm:p-2">  
+        <div className="bg-orange-50 flex flex-col p-10 max-sm:p-2 text-black">  
             <div className="flex flex-col  mb-16">
                 <div>
                     <p className="text-red-900 text-3xl max-sm:text-2xl font-bold">

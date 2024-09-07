@@ -26,7 +26,7 @@ function ActComp({ title, content }) {
 function SyllabusComp({ sem, code, title, L, T, P, cred, url, semH }) {
     return (
         <>
-            <div className={semH ? `font-semibold col-span-1 border border-black flex flex-col justify-start pl-2 py-2 text-sm` :
+            <div className={semH ? `font-semibold col-span-1 border border-black flex flex-col justify-start pl-2 py-2 text-sm text-black` :
                 `col-span-1 border border-black flex flex-col justify-center pl-4 py-2`}>{sem}</div>
             <div className="col-span-2 border border-black flex flex-col justify-center pl-4 py-2">{code}</div>
             <a href={url} className="col-span-4 border border-black flex flex-col justify-center pl-4 py-2 cursor-pointer">{title}</a>
@@ -56,7 +56,7 @@ function Page() {
     const [msc, setMsc] = useState(true);
     const [phd, setPhd] = useState(false);
     return (
-        <div className=" flex flex-col p-5">
+        <div className=" flex flex-col p-5 text-black">
             <div className="flex flex-col  mb-6">
                 <div>
                     <p className="text-red-900 text-xl lg:text-2xl  font-bold">

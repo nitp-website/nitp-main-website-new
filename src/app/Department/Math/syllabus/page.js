@@ -9,7 +9,7 @@ export default function Page() {
   const [dual, setdual] = useState(false)
   const [phd, setphd] = useState(false)
   return (
-    <div className=" flex flex-col p-10 max-sm:p-2">
+    <div className=" flex flex-col p-10 max-sm:p-2 text-black">
       <div className="flex flex-col ">
         <div>
           <p className="text-red-900 text-xl lg:text-2xl font-bold">
