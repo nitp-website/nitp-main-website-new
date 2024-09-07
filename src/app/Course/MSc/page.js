@@ -11,7 +11,7 @@ export default function Page() {
                 <div className="min-w-[800px] flex space-x-1 text-sm lg:text-base">
                     <button onClick={() => {
                         router.push("/Course")
-                    }} className={`border border-black rounded text-white bg-red-900 px-2`}>ALL Courses</button>
+                    }} className={`border border-black rounded text-red-900 px-2`}>ALL Courses</button>
                     
                     <button onClick={() => {
                         router.push("/Course/Ug")
@@ -27,14 +27,14 @@ export default function Page() {
                     
                     <button onClick={() => {
                         router.push("/Course/MSc")
-                    }} className={`border border-black rounded text-red-900 px-2`}>Integrated M.sc</button>
+                    }} className={`border border-black rounded text-white px-2 bg-red-900`}>Integrated M.sc</button>
                     
                     <button onClick={() => {
                         router.push("/Course/MCA")
                     }} className={`border border-black rounded text-red-900 px-2`}>MCA program</button>
                 </div>
             </div>
-            <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
+            <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md text-neutral-700">
                 {/* LINKS */}
                 <div className="mb-10">
                     <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
