@@ -11,7 +11,7 @@ export default function Page() {
                 <div className="min-w-[800px] flex space-x-1 text-sm lg:text-base">
                     <button onClick={() => {
                         router.push("/Course")
-                    }} className={`border border-black rounded text-white bg-red-900 px-2`}>ALL Courses</button>
+                    }} className={`border border-black rounded text-red-900 px-2`}>ALL Courses</button>
                     
                     <button onClick={() => {
                         router.push("/Course/Ug")
@@ -23,7 +23,7 @@ export default function Page() {
                     
                     <button onClick={() => {
                         router.push("/Course/MTech")
-                    }} className={`border border-black rounded text-red-900 px-2`}>M.tech/MURP-PHD (DD)</button>
+                    }} className={`border border-black rounded text-white px-2 bg-red-900`}>M.tech/MURP-PHD (DD)</button>
                     
                     <button onClick={() => {
                         router.push("/Course/MSc")
@@ -37,7 +37,7 @@ export default function Page() {
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 {/* LINKS */}
                 <div className="mb-10">
-                    <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
+                    <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm text-neutral-700">
                         <li className="hover:text-blue-800"><a href="">Study Materials</a></li>
                         <li className="hover:text-blue-800"><a href="">Sample Question Papers</a></li>
                         <li className="hover:text-blue-800"><a href="">Lab Manuals</a></li>

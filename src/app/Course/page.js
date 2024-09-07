@@ -37,7 +37,7 @@ export default function Page() {
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 {/* LINKS */}
                 <div className="mb-10">
-                    <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
+                    <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm text-neutral-700">
                         <li className="hover:text-blue-800"><a href="">Study Materials</a></li>
                         <li className="hover:text-blue-800"><a href="">Sample Question Papers</a></li>
                         <li className="hover:text-blue-800"><a href="">Lab Manuals</a></li>
