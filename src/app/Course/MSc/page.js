@@ -11,7 +11,7 @@ export default function Page() {
                 <div className="min-w-[800px] flex space-x-1 text-sm lg:text-base">
                     <button onClick={() => {
                         router.push("/Course")
-                    }} className={`border border-black rounded text-white bg-red-900 px-2`}>ALL Courses</button>
+                    }} className={`border border-black rounded text-red-900 px-2`}>ALL Courses</button>
                     
                     <button onClick={() => {
                         router.push("/Course/Ug")
@@ -27,7 +27,7 @@ export default function Page() {
                     
                     <button onClick={() => {
                         router.push("/Course/MSc")
-                    }} className={`border border-black rounded text-red-900 px-2`}>Integrated M.sc</button>
+                    }} className={`border border-black rounded text-white bg-red-900 px-2`}>Integrated M.sc</button>
                     
                     <button onClick={() => {
                         router.push("/Course/MCA")
@@ -37,14 +37,13 @@ export default function Page() {
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 {/* LINKS */}
                 <div className="mb-10">
-                    <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
-                        <li className="hover:text-blue-800"><a href="">Study Materials</a></li>
-                        <li className="hover:text-blue-800"><a href="">Sample Question Papers</a></li>
-                        <li className="hover:text-blue-800"><a href="">Lab Manuals</a></li>
-                        <li className="hover:text-blue-800"><a href="">Placement</a></li>
-                        <li className="hover:text-blue-800"><a href="">E-Learning Resources</a></li>
+                    <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm text-black">
+                        <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/Int.%20M.Sc.%20(Physics).pdf" target="_blank" >Course Structure: Five year Integrated M. Sc. in Physics</a></li>
+                        <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/Int.%20M.Sc.%20(Mathematics).pdf" target="_blank" >Course Structure: Five year Integrated M. Sc. in Mathematics</a></li>
+                        <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/Int.%20M.Sc.%20(Chemistry).pdf" target="_blank" >Course Structure: Five year Integrated M. Sc. in Chemistry</a></li>
                     </ul>
                 </div>
+
             </div>
         </div>
     )
