@@ -7,6 +7,8 @@ import Aboutus from "./components/Home/Aboutus";
 import Placement from "./components/Home/Placement";
 import Movingbar from "./components/Home/Movingbar";
 import Research from "./components/Home/Research";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
 export const metadata = {
