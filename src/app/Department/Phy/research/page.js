@@ -23,7 +23,7 @@ function ActComp({title,content}){
 
 function Page(){
     return (
-        <div className=" flex flex-col p-5">  
+        <div className=" flex flex-col p-5 text-black">  
             <div className="flex flex-col md:ml-10 mb-3">
                 <div>
                     <p className="text-red-900 text-4xl font-bold">

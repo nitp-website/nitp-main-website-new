@@ -3,7 +3,7 @@ import BackDepartment from "../../../components/department/BackDepartment"
 function Compo({ project, pi, sponsor, amount, year, sno }) {
     return (
         <>
-            <div className="col-span-1 border border-black pl-4 py-2 flex flex-col justify-center">
+            <div className="col-span-1 border border-black pl-4 py-2 flex flex-col justify-center text-black">
                 {sno}
             </div>
 

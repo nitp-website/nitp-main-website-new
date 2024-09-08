@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 export default function Page() {  
   const router = useRouter();
  return (
-  <div className="flex justify-center py-10 px-0">
+  <div className="flex justify-center py-10 px-0 text-black">
     <div className="flex flex-col w-full">
         {/* heading */}
         <div className="font-bold text-3xl text-red-900 flex justify-center">DEPARTMENTS</div>
