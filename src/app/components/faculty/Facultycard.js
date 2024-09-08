@@ -52,11 +52,10 @@ function FacultyCard({
               } transition-all duration-300`}
             >
               <Image
-                className="rounded-md"
+                className="rounded-md object-cover"
                 src={image != null ? image : "/faculty.jpeg"}
                 alt={name}
-                layout="fill"
-                objectFit="cover"
+                
               />
             </div>
           </div>
