@@ -6,7 +6,19 @@ import Webcard from "../components/Webteam/Webcard"
 import "./wpage.css"
 
 const years = [20241]
+const data = [
+   {
 
+  
+     name: "Dr. B Balaji Naik",
+     email: "balaji.cs@nitp.ac.in",
+     extn: "balaji.cs@nitp.ac.in",
+     id: "balaji.cs@nitp.ac.in",
+     interests: ["Cloud Computing", "Nature Inspired Algorithms", "Edge Computing"," Workflow Scheduling Algorithm", "Optimization", "Quantum Computing"],
+     image: "https://drive.google.com/thumbnail?authuser=0&sz=w320&id=1Abn5VMv4oWnpUYyNtO_j-mrh5YBNzD-C",
+     desg: "Assistant Professor",
+     url: "https://www.nitp.ac.in/profile/?id=balaji.cs@nitp.ac.in & https://www.nitp.ac.in/profile/?id=balaji.cs@nitp.ac.in & mailto:balaji.cs@nitp.ac.in"
+   },]
 const Webteam = () => {
  const [webteam, setWebteam] = useState([])
  const [filteredteam, setFilteredteam] = useState([])
@@ -51,10 +63,10 @@ const Webteam = () => {
         <div className="">
          <div className="">
           <h2 data-aos="zoom-in-right" className="text-center text-red-900 text-2xl font-bold pt-5" style={{ width: `100%`, marginTop: `0` }}>
-           Student Volunteers
+           Students
           </h2>
 
-          <h3
+          {/* <h3
              style={{
               padding: `0.25rem 0`,
               borderBottom: `2px red dotted`,
@@ -63,7 +75,7 @@ const Webteam = () => {
              }}
             >
              Previous Student Volunteers
-            </h3>
+            </h3> */}
          </div>
          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 items-center justify-evenly grid-flow-dense mx-auto pt-5 mb-16">
          {filteredteam &&
@@ -89,34 +101,31 @@ const Webteam = () => {
 
        <>
         <div className="row rowmarl3">
-         <h2 data-aos="zoom-in-right">Faculties/Officers Involved</h2>
+         <h2 data-aos="zoom-in-right" className="text-center text-red-900 text-2xl font-bold pt-5" style={{ width: `100%`, marginTop: `0` }}>Faculties/Officers</h2>
         </div>
         <div className="col-6">
          <div className="row layoutrow">
           <div className="row rowmarl3">
-           <h2 data-aos="zoom-in-right">PI Website</h2>
+           <h2 data-aos="zoom-in-right" className="text-center text-green-900 text-2xl font-bold pt-5" style={{ width: `100%`, marginTop: `0` }}>PI Website</h2>
           </div>
           <div className="row grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 items-center justify-center grid-flow-dense mx-auto pt-5 mb-16">
-           {filteredteam &&
-            filteredteam
-             .filter(member => member.role === "pi")
-             .map(member => (
-              <Webcard
-               key={member.email}  // Adding key prop
-               name={member.name}
-               email={member.email}
-               extn={member.ext_no}
-               id={member.email}
-               interests={member.interests}
-               image={member.image}
-               desg={member.desg}
-               url={member.url}
-              />
-             ))}
+          {data.map(member => (
+      <Webcard
+        key={member.id} // Use email as the unique key
+        name={member.name}
+        email={member.email}
+        extn={member.extn}
+        id={member.id}
+        interests={member.interests}
+        image={member.image}
+        desg={member.desg}
+        url={member.url}
+      />
+    ))}
           </div>
          </div>
         </div>
-        {view === "maintainers" && (
+        {/* {view === "maintainers" && (
          <div className="row layoutrow">
           <div className="row rowmarl3">
            <h2 data-aos="zoom-in-right">PI IT Services</h2>
@@ -140,9 +149,9 @@ const Webteam = () => {
              ))}
           </div>
          </div>
-        )}
+        )} */}
 
-        {view === "maintainers" && (
+        {/* {view === "maintainers" && (
          <div className="row layoutrow">
           <div className="row rowmarl3">
            <h2 data-aos="zoom-in-right">Scientific Officer</h2>
@@ -166,7 +175,7 @@ const Webteam = () => {
              ))}
           </div>
          </div>
-        )}
+        )} */}
        </>
      </div>
   </>
