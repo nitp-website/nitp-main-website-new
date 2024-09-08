@@ -31,7 +31,7 @@ const FacultyInfo = () => {
   const [conference,setconference]=useState([])
   const res = useParams()
   console.log(res.facultyid)
-  const uri = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty/${res.facultyid}`
+  const uri = `https://admin.nitp.ac.in/api/faculty/${res.facultyid}`
   useEffect(() => {
     fetch(uri).then(res => res.json()).then((data) => {
       setname(data.profile.name)

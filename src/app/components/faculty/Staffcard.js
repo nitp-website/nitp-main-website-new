@@ -13,23 +13,22 @@ function Staffcard({
   designation,
   image,
   email,
-  phone,
 }) {
   return (
     <>
         <div
-          className="bg-orange-50 static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-4 m-5 transition-all duration-500 h-[17rem] md:h-[9rem]"
+          className="backdrop-blur-sm static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-4 m-5 transition-all duration-500 h-[17rem] md:h-[9rem] text-black"
         >
           <div className="flex justify-center items-center md:w-1/4">
             <div
               className="relative h-[100px] w-[100px] transition-all duration-300"
             >
               <Image
-                className="rounded-md"
-                src={image != null ? image : "/faculty.jpeg"}
+                className="rounded-md object-cover"
+                src={image !== null ? image : "/faculty.jpeg"}
                 alt={name}
-                layout="fill"
-                objectFit="cover"
+                height={300}
+                width={300}
               />
             </div>
           </div>
@@ -46,12 +45,6 @@ function Staffcard({
               <FontAwesomeIcon icon={faEnvelope} className="w-5 mr-1" />{" "}
               <a href={`mailto:${email}`}>{email}</a>
             </span>
-            <span
-              className={`flex mt-1 transition-opacity duration-300`}
-            >
-              <FontAwesomeIcon icon={faPhone} className="w-5 mr-1" /> {phone}
-            </span>
-           
           </div>
         </div>
     </>
