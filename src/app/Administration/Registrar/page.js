@@ -13,7 +13,7 @@ const RegistrarPage = () => {
 
   return (
     <div className="md:p-4 ">
-      <h1 className="text-2xl text-center pt-5 pb-7 md:pb-0 md:pt-10 text-red-900 font-bold	">Deans</h1>
+      <h1 className="text-2xl text-center pt-5 pb-7 md:pb-0 md:pt-10 text-red-900 font-bold	">Registrar</h1>
       <div className="admincarddiv items-center justify-center ">
         {RegistrarData.map((item, idx) => (
           <div key={idx}>

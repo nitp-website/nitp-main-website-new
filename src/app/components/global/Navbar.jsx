@@ -88,210 +88,381 @@ const navItems = [
     label: <Image src={Home} alt="Home" width={20} height={20} />,
     link: "/",
   },
-  
+
   {
     label: "Institute",
     link: "#",
-    mlabel:"Institute",
+    mlabel: "Institute",
     children: [
-      
-      { 
-        label: "About", 
-        link: "/Institute/?tab=about", 
+      {
+        label: "About",
+        link: "#",
         iconImage: About,
-       
+        children: [
+          {
+            label: "About Institute",
+            link: "/Institute/?tab=mission",
+            iconImage: Mission,
+          },
+          {
+            label: " Vision Mission",
+            link: "/Institute/?tab=mission",
+            iconImage: Value,
+          },
+          {
+            label: "Infrastructure",
+            link: "/Institute/?tab=campus",
+            iconImage: Campus,
+          },
+        ],
       },
-      { 
-        label: "Mission and Vision", 
-        link: "/Institute/?tab=mission", 
-        iconImage: Mission,
+
+      {
+        label: "NIT Status & Acts",
+        link: "#",
+        iconImage: Structure,
       },
-      { 
-        label: "Values", 
-        link: "/Institute/?tab=values", 
-        iconImage: Value,
-       
-      },
-      { 
-        label: "Director", 
-        link: "/Institute/Director", 
-        iconImage: Director,
-      },
-      { 
-        label: "Campus", 
-        link: "/Institute/?tab=campus", 
-        iconImage: Campus,
-      },
-      { 
-        label: "Magazine", 
-        link: "/Institute/Magazine", 
+      {
+        label: "Reports",
+        link: "#",
         iconImage: Resource,
-        
+        children: [
+          {
+            label: "Annual Reports",
+            link: "/Others/Report",
+            iconImage: Calendar,
+          },
+          {
+            label: "Data of NIRF Data",
+            link: "/Others/NIRF",
+            iconImage: Document,
+          },
+          {
+            label: "Data of ARIIA",
+            link: "#",
+            iconImage: Notice,
+          },
+        ],
+      },
+      {
+        label: "NITP News Letter",
+        link: "#",
+        iconImage: Digital,
+        children: [
+          {
+            label: "News Letters",
+            link: "#",
+            iconImage: Mail,
+          },
+          {
+            label: "Magazine",
+            link: "/Institute/Magazine",
+            iconImage: Resource,
+          },
+        ],
       },
     ],
   },
   {
     label: "Administration",
     link: "#",
-    mlabel:"Administration",
+    mlabel: "Administration",
     children: [
       {
         label: "Visitor",
-        link: '/Administration/Visitor',
-        iconImage:President,
+        link: "/Administration/Visitor",
+        iconImage: President,
       },
       {
-        label: "Council of NITs",
+        label: " NITs Councils",
         link: "/Administration/CONIT",
-        iconImage:Person,
+        iconImage: Person,
       },
       {
         label: "Board of Governors",
         link: "/Administration/BOG",
-        iconImage:Person,
+        iconImage: Person,
       },
       {
         label: "Senate",
         link: "/Administration/Senate",
-        iconImage:Person,
+        iconImage: Person,
       },
 
       {
         label: "Director",
         link: "/Institute/Director",
-        iconImage:Director,
+        iconImage: Director,
       },
       {
         label: "Registrar",
         link: "/Administration/Registrar",
-        iconImage:Sperson,
+        iconImage: Sperson,
       },
       {
         label: "Deans",
         link: "/Administration/Deans",
-        iconImage:Person,
-      },
-
-      {
-        label: "Building Work Committee ",
-        link: "/Administration/BWC",
-        iconImage:Person,
+        iconImage: Person,
       },
       {
-        label: "Institute Disciplinary Committee",
+        label: "HoD",
+        link: "#",
+        iconImage: Person,
+      },
+      {
+        label: "Chief Vigilance Officers",
+        link: "#",
+        iconImage: Person,
+      },
+      {
+        label: "Institute Functionaries",
         link: "/Administration/IDC",
-        iconImage:Person,
+        iconImage: Person,
       },
       {
-        label: "Finance committee",
-        link: "/Administration/FinanceCommittee",
-        iconImage:Person,
+        label: "Committees",
+        link: "#",
+        iconImage: Person,
+        children: [
+          {
+            label: "Finance committee",
+            link: "/Administration/FinanceCommittee",
+            iconImage: Person,
+          },
+          {
+            label: "Building Work Committee ",
+            link: "/Administration/BWC",
+            iconImage: Person,
+          },
+          {
+            label: "Grievance Redressal Committees",
+            link: "#",
+            iconImage: Sperson,
+          },
+        ],
       },
       {
-        label: "Service Unit Heads Organisation Chart",
-        link: "/Administration/SUH",
-        iconImage:Person,
+        label: "Minutes of Meeting ",
+        link: "#",
+        iconImage: Person,
+        children: [
+          {
+            label: "Minutes of BoG Meeting",
+            link: "#",
+            iconImage: Director,
+          },
+          {
+            label: "Minutes of FC Meeting",
+            link: "#",
+            iconImage: Programs,
+          },
+          {
+            label: "Minutes of Senate Meeting",
+            link: "#",
+            iconImage: Rules,
+          },
+        ],
+      },
+      {
+        label: "Others",
+        link: "#",
+        iconImage: Digital,
+        children: [
+          {
+            label: "Organization Chart",
+            link: "#",
+            iconImage: Notice,
+          },
+          {
+            label: "Institute Disciplinary Committee",
+            link: "/Administration/IDC",
+            iconImage: Person,
+          },
+
+          {
+            label: "Service Unit Heads Organisation Chart",
+            link: "/Administration/SUH",
+            iconImage: Person,
+          },
+        ],
       },
     ],
   },
   {
     label: "Academics",
     link: "#",
-    mlabel:"Academics",
+    mlabel: "Academics",
     children: [
-      {
-        label: "Programmes",
-        link: "#",
-        iconImage:Programs,
-        
-      },
-      {
-        label: "Course Structure",
-        link: "/Course",
-        iconImage:Structure,
-        children: [
-          { label: "UG", link: "/Course/Ug", iconImage:Structure},
-          { label: "PG(M. tech / MURP)", link: "/Course/Pg", iconImage:Structure},
-          { label: "M.tech/MURP-PHD(DD)", link: "/Course/MTech", iconImage:Structure},
-          { label: "Integrated M.Sc", link: "/Course/MSc", iconImage:Structure},
-          { label: "MCA", link: "/Course/MCA", iconImage:Structure}
-        ]
-      },
-      {
-        label: "Admission",
-        link: "/Academic/Admission?tab=JoSAA",
-        iconImage:Admission,
-        children: [
-          { label: "Study in India (SII)", link: "/Academic/Admission?tab=SII" , iconImage:Admission},
-          { label: "CMCT/JoSSA/CSAB/Others", link: "/Academic/Admission?tab=JoSAA" , iconImage:Admission},
-          { label: "Relaxation Criteria", link: "/Academic/Admission?tab=Relaxation" , iconImage:Admission},
-        ]
-      },
       {
         label: "Departments",
         link: "/Department",
-        mlabel:"Departments",
-        iconImage:Department,
+        mlabel: "Departments",
+        iconImage: Department,
         children: [
-          { label: "Architecture & Planning", link: "/Department/Archi",iconImage:archi},
-          { label: "Chemistry", link: "/Department/Chem",iconImage:chem },
-          { label: "Civil Engineering", link: "/Department/CE",iconImage:civil },
-          { label: "Computer Science and Engineering", link: "/Department/CSE",iconImage:cse },
-          { label: "Electrical Engineering", link: "/Department/EE", iconImage:ee },
-          { label: "Electronics and Communication Engineering", link: "/Department/ECE", iconImage:ece },
-          { label: "Humanities & Social Sciences", link: "/Department/Humanities",iconImage:hss },
-          { label: "Mathematics", link: "/Department/Math",iconImage:math },
-          { label: "Mechanical Engineering", link: "/Department/ME" ,iconImage:mech},
-          { label: "Physics", link: "/Department/Phy",iconImage:physics },
-          { label:"Mechatronics & Automation Engineering",link:"/Department/Mechatronics",iconImage:mech},
-          { label: "Chemical Engineering and Technology", link: "/Department/Chemical",iconImage:chem },
-          { label: "Materials Science & Engineering", link: "/Department/Material",iconImage:mech },
+          {
+            label: "Architecture & Planning",
+            link: "/Department/Archi",
+            iconImage: archi,
+          },
+          { label: "Chemistry", link: "/Department/Chem", iconImage: chem },
+          {
+            label: "Civil Engineering",
+            link: "/Department/CE",
+            iconImage: civil,
+          },
+          {
+            label: "Computer Science and Engineering",
+            link: "/Department/CSE",
+            iconImage: cse,
+          },
+          {
+            label: "Electrical Engineering",
+            link: "/Department/EE",
+            iconImage: ee,
+          },
+          {
+            label: "Electronics and Communication Engineering",
+            link: "/Department/ECE",
+            iconImage: ece,
+          },
+          {
+            label: "Humanities & Social Sciences",
+            link: "/Department/Humanities",
+            iconImage: hss,
+          },
+          { label: "Mathematics", link: "/Department/Math", iconImage: math },
+          {
+            label: "Mechanical Engineering",
+            link: "/Department/ME",
+            iconImage: mech,
+          },
+          { label: "Physics", link: "/Department/Phy", iconImage: physics },
+          {
+            label: "Mechatronics & Automation Engineering",
+            link: "/Department/Mechatronics",
+            iconImage: mech,
+          },
+          {
+            label: "Chemical Engineering and Technology",
+            link: "/Department/Chemical",
+            iconImage: chem,
+          },
+          {
+            label: "Materials Science & Engineering",
+            link: "/Department/Material",
+            iconImage: mech,
+          },
         ],
       },
-      
       {
-        label: "Academic Notices",
-        link: "/Notices/Academic",
-        iconImage:Notice,
+        label: "Centers",
+        link: "#",
+        iconImage: Structure,
+        children: [
+          {
+            label: "Computer Center",
+            link: "/Facilities/ComputerCenter",
+            iconImage: ComputerCentre,
+          },
+          {
+            label: "Incubation Center",
+            link: "https://web.nitp.ac.in/incubation_center/index.html",
+            iconImage: Ecell,
+          },
+        ],
+      },
+      {
+        label: "Programmes",
+        link: "#",
+        iconImage: Programs,
+      },
+      {
+        label: "Academic Calendar",
+        link: "https://drive.google.com/file/d/1tVgQSygS8GRTZIglbVWVClasegdd6BCi/view",
+        iconImage: Calendar,
+      },
+      {
+        label: "Rules and Regulation",
+        link: "/Academic/Curriculam",
+        iconImage: Rules,
       },
       {
         label: "Fee Structure",
         link: "/Academic/Fee",
-        iconImage:Fee,
+        iconImage: Fee,
       },
       {
-        label: "Regulation & Curricula",
-        link: "/Academic/Curriculam",
-        iconImage:Rules,
+        label: "Admission",
+        link: "/Academic/Admission?tab=JoSAA",
+        iconImage: Admission,
+        children: [
+          {
+            label: "Study in India (SII)",
+            link: "/Academic/Admission?tab=SII",
+            iconImage: Admission,
+          },
+          {
+            label: "CMCT/JoSSA/CSAB/Others",
+            link: "/Academic/Admission?tab=JoSAA",
+            iconImage: Admission,
+          },
+          {
+            label: "Relaxation Criteria",
+            link: "/Academic/Admission?tab=Relaxation",
+            iconImage: Admission,
+          },
+        ],
       },
-      
-      
-      {
-        label: "Academic Calendar",
-        link: "https://drive.google.com/file/d/1tVgQSygS8GRTZIglbVWVClasegdd6BCi/view",
-        iconImage:Calendar,
-    },
-      
+
       {
         label: "Format of Official Documents",
         link: "/Academic/Format",
-        iconImage:Document,
+        iconImage: Document,
       },
-    
+      {
+        label: "Course Structure",
+        link: "/Course",
+        iconImage: Structure,
+        children: [
+          { label: "UG", link: "/Course/Ug", iconImage: Structure },
+          {
+            label: "PG(M. tech / MURP)",
+            link: "/Course/Pg",
+            iconImage: Structure,
+          },
+          {
+            label: "M.tech/MURP-PHD(DD)",
+            link: "/Course/MTech",
+            iconImage: Structure,
+          },
+          {
+            label: "Integrated M.Sc",
+            link: "/Course/MSc",
+            iconImage: Structure,
+          },
+          { label: "MCA", link: "/Course/MCA", iconImage: Structure },
+        ],
+      },
+
+      {
+        label: "Academic Notices",
+        link: "/Notices/Academic",
+        iconImage: Notice,
+      },
+
       {
         label: "Centre of Excellence",
         link: "#",
         children: [
-          { label: "TSSC", link: "/Academic/ISRO",iconImage:Excellence},
-          { label: "ISRO RACS", link: "/Academic/TSSC",iconImage:Excellence},
-        ]
-        ,
-        iconImage:Excellence,
+          { label: "TSSC", link: "/Academic/ISRO", iconImage: Excellence },
+          { label: "ISRO RACS", link: "/Academic/TSSC", iconImage: Excellence },
+        ],
+        iconImage: Excellence,
       },
       {
         label: "Digital Intiatives",
         link: "/Academic/DI",
-        iconImage:Digital,
+        iconImage: Digital,
       },
       // {
       //   label: "ICT Academy",
@@ -300,20 +471,18 @@ const navItems = [
       {
         label: "Patents",
         link: "/Academic/Patent",
-        iconImage:Bis,
+        iconImage: Bis,
       },
       {
         label: "Publications",
         link: "/Academic/Publication",
-        iconImage:Bis,
+        iconImage: Bis,
       },
       {
         label: "BIS Dashboard",
         link: "/Academic/BIS",
-        iconImage:Bis,
+        iconImage: Bis,
       },
-      
-      
     ],
   },
   {
@@ -321,137 +490,147 @@ const navItems = [
     link: "/Academic/Faculty&Staff",
     children: [
       {
-        label: "Web Mail",
-        link: "http://mail.google.com/a/nitp.ac.in",
-        iconImage:Mail,
+        label: " Faculty Directory",
+        link: "/Academic/Faculty&Staff/AllFaculty",
+        iconImage: Director,
+      },
+      {
+        label: " Officers Directory",
+        link: "/Academic/Faculty&Staff/AllOfficers",
+        iconImage: Director,
+      },
+      {
+        label: " Staff Directory",
+        link: "/Academic/Faculty&Staff/Others",
+        iconImage: Director,
+      },
+
+      {
+        label: "Rules and Regulation",
+        link: "/Academic/Curriculam",
+        iconImage: Rules,
+      },
+      {
+        label: "Admin Portal",
+        link: "https://admin.nitp.ac.in/",
+        iconImage: Admin,
       },
       {
         label: "Academic Portal",
         link: "http://exam.nitp.ac.in:9001/",
-        iconImage:Portal,
+        iconImage: Portal,
       },
       {
-        label: "Recruitments",
-        link: "/Notices/JobsNITP",
-        iconImage:Jobs,
-      },
-      {
-        label: "Employee I-Card",
-        link: "https://docs.google.com/forms/d/e/1FAIpQLSedy0aZLXXj709zQjAejWvLQOs4_6ESIciPe0IV199kMr_D1g/viewform?usp=sf_link",
-        iconImage:Idcard,
+        label: "Purchase and Store Section",
+        link: "#",
+        iconImage: Notice,
       },
       {
         label: "Staff Claim Form",
         link: "/Academic/Faculty&Staff/forms",
-        iconImage:Forms,
+        iconImage: Forms,
       },
       {
-        label: "Admin Login",
-        link: "https://admin.nitp.ac.in/",
-        iconImage:Admin,
-      },
-      {
-        label: "International Affairs",
-        link: "/Intitute/International",
-        iconImage:International,
-      },
-      {
-        label: "All Faculty Profile",
+        label: "Holidays/Restricted Holidays ",
         link: "#",
-        iconImage:Faculty,
-      },
-      {
-        label: "Officers",
-        link: "#",
-        iconImage:Officers,
-      },
-      {
-        label: "Other Employee",
-        link: "#",
-        iconImage:Staffs,
+        iconImage: International,
       },
     ],
   },
- 
+
   {
-    label: "Student",
+    label: "Students",
     link: "/Student",
     children: [
       {
-        label: "Admissions",
-        link: "/Academic/Admission",
-        iconImage:Admission,
+        label: "Dean Student Welfare",
+        link: "/Facilities/Hostel",
+        iconImage: Person,
       },
+
       {
-        label: "Student I-Card",
-        link: "https://docs.google.com/forms/d/e/1FAIpQLSc5_x34TMtQdMaW2Ad9Nvsmz1N8YXdAGJHtAM5kn3a850Ekyw/viewform",
-        iconImage:Idcard,
+        label: "Hostel & Mess",
+        link: "/Facilities/Hostel",
+        iconImage: Hostel,
       },
+
       {
-        label: "Fee Payment",
-        link: "https://paydirect.eduqfix.com/app/mnYv9Q6+C+3lIMqghRCwdaqVZusPrJtq2RGJrJFnKnmtz3KBqtsEFPVrZFvoPubG/3466",
-        iconImage:Fee,
-      },
-      {
-        label: "Clubs/Socities",
-        link: "/Student/Clubs",
-        iconImage:Clubs,
-      },
-      {
-        label: "1st Year Student",
-        link: "/Student/StudentFirstYear",
-        iconImage:FirstYear,
-      },
-      {
-        label: "Student Activity Center",
-        link: "/Student/SAC",
-        iconImage:Sac,
-      },
-      {
-        label: "Fellowship Opportunities",
-        link: "/Student/FellowshipOpportunites",
-        iconImage:Excellence,
+        label: "Sports",
+        link: "#",
+        iconImage: Sports,
       },
       {
         label: "Scholarship",
         link: "/Student/Scholarship",
-        iconImage:Schlorship,
+        iconImage: Schlorship,
       },
-      
+      {
+        label: "Clubs/Socities",
+        link: "/Student/Clubs",
+        iconImage: Clubs,
+      },
+      {
+        label: "Anti Ragging",
+        link: "#",
+        iconImage: Notice,
+      },
+      {
+        label: "Fee Payment",
+        link: "https://paydirect.eduqfix.com/app/mnYv9Q6+C+3lIMqghRCwdaqVZusPrJtq2RGJrJFnKnmtz3KBqtsEFPVrZFvoPubG/3466",
+        iconImage: Fee,
+      },
+
+      {
+        label: "Transportation",
+        link: "#",
+        iconImage: security,
+      },
+      {
+        label: "Women Cell",
+        link: "/Facilities/WomanCell",
+        iconImage: women,
+      },
+      {
+        label: "SC/ST Cell",
+        link: "/Facilities/SCST",
+        iconImage: scst,
+      },
+      {
+        label: "Student Activity Center",
+        link: "/Student/SAC",
+        iconImage: Sac,
+      },
+
       {
         label: " Tech Fest",
         link: "/Student/TechFest",
-        iconImage:Fest,
+        iconImage: Fest,
       },
-      {
-        label: "Sports",
-        link: "#",
-        iconImage:Sports,
-      },
+
       {
         label: "Student Exchange",
         link: "/Student/StudentExchange",
-        iconImage:Studentexchange,
+        iconImage: Studentexchange,
       },
       {
         label: "NSS@NITP",
         link: "/Student/NSS",
-        iconImage:NssNew,
+        iconImage: NssNew,
       },
       {
         label: "E-Cell",
         link: "/Student/E-Cell",
-        iconImage:Ecell,
+        iconImage: Ecell,
       },
       {
         label: "Unnat Bharat",
         link: "/Student/UnnatBharat",
-        iconImage:Bharat,
+        iconImage: Bharat,
       },
       {
         label: "Chanakya Portal",
         link: "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",
-        iconImage:Chankaya,
+        iconImage: Chankaya,
       },
     ],
   },
@@ -460,80 +639,55 @@ const navItems = [
     link: "/Facilities",
     children: [
       {
-        label: "Computer Center",
-        link: "/Facilities/ComputerCenter",
-        iconImage:ComputerCentre,
-      },
-      {
-        label: "IT Service Unit",
-        link: "/Facilities/ItServices",
-        iconImage:itservice,
-      },
-      {
-        label: "TEQUIP",
-        link: "/Facilities/TEQUIP",
-        iconImage:Tequip,
-      },
-      {
-        label: "Library",
-        link: "/Facilities/Library",
-        iconImage:Library,
-      },
-      {
-        label: "Medical Facilities",
+        label: "Health Center",
         link: "/Facilities/MedicalFacilities",
-        iconImage:Hospital,
+        iconImage: Hospital,
       },
       {
         label: "Sports Facilities",
         link: "/Facilities/SportsFacilities",
-        iconImage:Sports,
+        iconImage: Sports,
       },
       {
-        label: "Incubation Center",
-        link: "https://web.nitp.ac.in/incubation_center/index.html",
-        iconImage:Ecell,
+        label: "ATM Facilities",
+        link: "/Facilities/SportsFacilities",
+        iconImage: itservice,
       },
       {
-        label: "Hostel & Mess",
-        link: "/Facilities/Hostel",
-        iconImage:Hostel,
-      },
-      {
-        label: "Laboratories",
-        link: "/Facilities/Laboratories",
-        iconImage:Labs,
+        label: "Library",
+        link: "/Facilities/Library",
+        iconImage: Library,
       },
       {
         label: "Bank",
         link: "/Facilities/Bank",
-        iconImage:Bank,
+        iconImage: Bank,
       },
       {
         label: "Security",
         link: "/Facilities/Security",
 
-        iconImage:security,
-      },
-      {
-        label: "Women Cell",
-        link: "/Facilities/WomanCell",
-        iconImage:women,
-      },
-      {
-        label: "SC/ST Cell",
-        link: "/Facilities/SCST",
-        iconImage:scst,
+        iconImage: security,
       },
       {
         label: "EMU",
         link: "/Facilities/Emu",
-        iconImage:EMU,
+        iconImage: EMU,
       },
       {
         label: "ESU",
         link: "/Facilities/Esu",
-        iconImage:ESU,
+        iconImage: ESU,
+      },
+      {
+        label: "IT Service Unit",
+        link: "/Facilities/ItServices",
+        iconImage: itservice,
+      },
+      {
+        label: "Laboratories",
+        link: "/Facilities/Laboratories",
+        iconImage: Labs,
       },
     ],
   },
@@ -635,7 +789,7 @@ function DropdownItem({ item, parentLabel }) {
       onMouseLeave={() => setIsSOpen(false)}
     >
       
-      <Link href={item.link ?? "#"} className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-neutral-700 hover:text-red-600">
+      <Link href={item.link ?? "#"} className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-neutral-800 hover:text-red-900 hover:bg-red-100">
         {item.iconImage && <Image src={item.iconImage} alt="item-icon" />}
         <span className="whitespace-nowrap pl-3">{item.label}</span>
         {item.children && <IoIosArrowDropright className={`ml-auto transition-all ${isSOpen ? "rotate-180" : ""}`} />}
@@ -646,7 +800,7 @@ function DropdownItem({ item, parentLabel }) {
         <div className={`absolute left-full top-0  w-auto flex-col gap-1 rounded-lg bg-white  shadow-md transition-all ${isSOpen ? "flex" : "hidden"}`}>
           <div className="border-solid border-2 border-red-800 m-4 p-2 rounded-lg	">
           {item.children.map((subChild, subIndex) => (
-            <Link key={subIndex} href={subChild.link ?? "#"} className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-neutral-700 hover:text-red-600">
+            <Link key={subIndex} href={subChild.link ?? "#"} className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-neutral-800 hover:text-red-900 hover:bg-red-100">
               {subChild.iconImage && <Image src={subChild.iconImage} alt="item-icon" />}
               <span className="whitespace-nowrap pl-3">{subChild.label}</span>
             </Link>

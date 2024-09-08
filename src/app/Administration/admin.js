@@ -31,8 +31,13 @@ const Deans = [
 const BOG = [
  {
   name: "Shri Ashok Kumar Modi",
-  designation: "Chairperson BOG, Ex-Officio Member, NIT Patna",
+  designation: "Chairperson",
   type: "chairperson",
+ },
+ {
+  name: "Prof. Pradip Kumar Jain",
+  designation: "Ex-Officio Member, NIT Patna",
+  type: "Director NIT Patna",
  },
  {
   name: "Dr. Asit Narayan",
@@ -204,7 +209,7 @@ const Senate = [
   type: "Ex-Officio Chairman",
  },
  {
-  name: "Prof. NITyanand Singh Maurya ",
+  name: "Prof. Nityanand Singh Maurya ",
   designation:"Professor, Civil Engineering Dept.",
   type: "Member",
  },
@@ -225,7 +230,7 @@ const Senate = [
   { name: "Prof. Baboo Rai", designation: "Professor, Civil Engineering Dept.", type: "Member" },
   { name: "Prof. Anshuman Singh", designation: "Professor, Civil Engineering Dept.", type: "Member" },
   { name: "Prof. Pijush Samui", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. SuNITa Kumari", designation: "Professor, Civil Engineering Dept.", type: "Member" },
+  { name: "Prof. Sunita Kumari", designation: "Professor, Civil Engineering Dept.", type: "Member" },
   { name: "Prof. Amit Kumar", designation: "Professor, Mechanical Engineering Dept.", type: "Member" },
   { name: "Prof. Manoj Kumar", designation: "Professor, Architecture Dept.", type: "Member" },
   { name: "Prof. Fulena Rajak", designation: "Professor, Architecture Dept.", type: "Member" },
