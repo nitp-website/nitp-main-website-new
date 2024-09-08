@@ -25,7 +25,7 @@ function Staffcard({
             >
               <Image
                 className="rounded-md object-cover"
-                src={image != null ? image : "/faculty.jpeg"}
+                src={image !== null ? image : "/faculty.jpeg"}
                 alt={name}
                 height={300}
                 width={300}
