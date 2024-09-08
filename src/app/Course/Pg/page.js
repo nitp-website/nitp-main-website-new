@@ -11,7 +11,9 @@ export default function Page() {
                 <div className="min-w-[800px] flex space-x-1 text-sm lg:text-base">
                     <button onClick={() => {
                         router.push("/Course")
+
                     }} className={`border border-black rounded text-red-900  px-2`}>ALL Courses</button>
+
 
                     <button onClick={() => {
                         router.push("/Course/Ug")
@@ -20,8 +22,7 @@ export default function Page() {
                     <button onClick={() => {
                         router.push("/Course/Pg")
                     }} className={`border border-black rounded text-white bg-red-900 px-2`}>PG (M.tech/MURP) Course</button>
-                    
-                    
+
                     
                     <button onClick={() => {
                         router.push("/Course/MTech")
@@ -39,6 +40,7 @@ export default function Page() {
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 {/* LINKS */}
                 <div className="mb-10">
+
                     <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm text-black">
                         <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/MTech_Civil_%20ENV%20Syllabus%20wef%202020-05.10.2020.pdf" target="_blank" >M. Tech (Civil Engg.) in Environmental Engineering</a></li>
                         <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/MTech_Civil_%20GET%20Syllabus%20wef%202020-05.10.2020.pdf" target="_blank" >M.TECH. IN CIVIL ENGINEERING</a></li>
@@ -57,6 +59,7 @@ export default function Page() {
                         <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/MEPG%20(Thermal).pdf" target="_blank" >MEPG (Thermal)</a></li>
                         <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/MEUG%20(Design).pdf" target="_blank" >Master of Mechanical Engineering (MEPG) Design</a></li>
                         <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/MURP.pdf" target="_blank" >Master of Urban & Regional Planning</a></li>
+
                     </ul>
                 </div>
             </div>

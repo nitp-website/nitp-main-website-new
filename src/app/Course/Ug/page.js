@@ -38,6 +38,7 @@ export default function Page() {
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 {/* LINKS */}
                 <div className="mb-10">
+
                     <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm text-black">
                         <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/ARUG.pdf" target="_blank" >Bachelor Of Architecture (ARUG)</a></li>
                         <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/CEUG.pdf" target="_blank" >Bachelor Of Civil Engineering (CEUG)</a></li>
@@ -49,6 +50,7 @@ export default function Page() {
                         <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/MEUG.pdf" target="_blank" >Bachelor of Mechanical Engineering (MEUG)</a></li>
                         <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/MEUG_2018_19.pdf" target="_blank">MEUG 2018-19</a></li>
                         <li className="hover:text-blue-800"><a href="https://web.nitp.ac.in/downloads/course_structure/ITUG.pdf" target="_blank">Bachelor of Information Technology (ITUG)</a></li>
+
                     </ul>
                 </div>
             </div>

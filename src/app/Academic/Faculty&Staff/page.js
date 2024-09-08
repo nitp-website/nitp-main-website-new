@@ -43,17 +43,17 @@ const StaffResources = [
     },
     {
       "title": "All Faculty Profile",
-      link: "#",
+      link: "/Academic/Faculty&Staff/AllFaculty",
       "image":"https://i.postimg.cc/5tVzjB2M/faculty64.png",
     },
     {
       "title": "Officers",
-      link: "#",
+      link: "/Academic/Faculty&Staff/AllOfficers",
       "image":"https://i.postimg.cc/YCggpnk3/officers64.png",
     },
     {
       "title": "Other Employee",
-      link: "#",
+      link: "/Academic/Faculty&Staff/Others",
       "image":"https://i.postimg.cc/7Yj0r8vh/other64.png",
     },
     
