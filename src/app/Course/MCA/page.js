@@ -31,20 +31,22 @@ export default function Page() {
                     
                     <button onClick={() => {
                         router.push("/Course/MCA")
-                    }} className={`border border-black rounded px-2 bg-red-900 text-white`}>MCA program</button>
+
+                    }} className={`border border-black rounded text-white bg-red-900 px-2`}>MCA program</button>
+
                 </div>
             </div>
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 {/* LINKS */}
                 <div className="mb-10">
-                    <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm text-neutral-700">
-                        <li className="hover:text-blue-800"><a href="">Study Materials</a></li>
-                        <li className="hover:text-blue-800"><a href="">Sample Question Papers</a></li>
-                        <li className="hover:text-blue-800"><a href="">Lab Manuals</a></li>
-                        <li className="hover:text-blue-800"><a href="">Placement</a></li>
-                        <li className="hover:text-blue-800"><a href="">E-Learning Resources</a></li>
+
+                    <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm text-black">
+                        <li className="hover:text-blue-800"><a href=""  >MCA with specialization in Data Science & Informatics, Duration :3 Years</a></li>
+                        <li className="hover:text-blue-800"><a href="" >MCA with specialization in AI & IoT, Duration: 3 Years</a></li>
+
                     </ul>
                 </div>
+
             </div>
         </div>
     )
