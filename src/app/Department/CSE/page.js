@@ -109,9 +109,9 @@ export default function CSE() {
     },[it])
 
     return (
-      <div className="p-10 max-sm:px-0 border border-red-700 text-black">
+      <div className="p-10 max-sm:px-0 bg-transparent text-black">
         {/* heading */}
-        <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-3">
+        <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-3 text-center">
           COMPUTER SCIENCE AND ENGINEERING
         </div>
         <div>
@@ -123,7 +123,7 @@ export default function CSE() {
           <div className="flex flex-col py-10 col-span-3 mr-4 max-sm:mr-0">
             <Image
               src={`${feature}`}
-              className="h-[420px] rounded-lg max-sm:rounded-none shadow-lg shadow-slate-600"
+              className="h-[420px] rounded-lg max-sm:rounded-none shadow-lg "
               alt="Logo"
               width={700}
               height={1000}
@@ -136,8 +136,8 @@ export default function CSE() {
           </div>
          
           {/* Notice  */}
-          <div className=" py-10  col-span-3 max-lg:col-span-3 flex flex-col max-md:mb-10">
-            <div className="bg-white rounded-lg shadow-lg shadow-slate-600 px-4 h-[420px] overflow-y-auto">
+          <div className=" py-10  col-span-3 max-lg:col-span-3 flex flex-col max-md:mb-10 ">
+            <div className="bg-white rounded-lg shadow-lg  px-4 h-[420px] overflow-y-auto border border-red-200">
               <div className="flex justify-between mb-4 text-lg font-semibold text-slate-500">
                 <div>Announcement</div>
                 <button className="hover:text-blue-500">View All</button>
@@ -176,11 +176,11 @@ export default function CSE() {
               Warehousing, Distributed and Parallel Computing, Mobile and
               Wireless Computing, Real-time Systems, Cryptography, Genetic
               Algorithm and Artificial Intelligence. Apart from these, students
-              are also offered a wide variety of electives.
+              are also offered a wide variety of electives. 
               <button
               onClick={() => router.push('/Department/CSE/about')}
               className="text-blue-600"
-            > more...
+            >  Read More
             </button>
             </div>
 
