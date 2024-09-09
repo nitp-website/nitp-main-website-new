@@ -38,9 +38,9 @@ function FacultyCard({
           className={`backdrop-blur-sm	 static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-4 m-5 transition-all duration-500 ${
             isHovered
               ? remainingInterests
-                ? "h-[52rem] md:h-[17rem]"
-                : "h-[48rem] md:h-[17rem]"
-              : "h-[27rem] md:h-[10rem]"
+                ? "h-[45rem] md:h-[17rem]"
+                : "h-[40rem] md:h-[17rem]"
+              : "h-[20rem] md:h-[10rem]"
           }`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -60,7 +60,7 @@ function FacultyCard({
               />
             </div>
           </div>
-          <div className="mt-3 md:ml-8 ml-4 md:w-3/4 md:mt-0 ">
+          <div className="mt-12 md:ml-8 ml-4 md:w-3/4 md:mt-0 ">
             <h5 className="m-0 text-red-800 font-bold">{name}</h5>
             <span className="flex font-bold mt-1">
               <FontAwesomeIcon icon={faIdCard} className="w-5 mr-1" />{" "}
