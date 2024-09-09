@@ -2,7 +2,7 @@ import React from 'react'
 import AllFaculty from "../../../components/faculty/AllFaculty"
 const page = () => {
   return (
-    <div>
+    <div className='p-3'>
       <AllFaculty/>
     </div>
   )

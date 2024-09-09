@@ -51,7 +51,9 @@ function FacultyCard({
               } transition-all duration-300`}
             >
               <Image
-                className="rounded-md object-cover"
+                className={`rounded-md object-cover ${
+                isHovered ? "h-[180px] w-[150px]" : "h-[100px] w-[100px]"
+              }`}
                 src={image != null ? image : "/faculty.jpeg"}
                 alt={name}
                 height={300}

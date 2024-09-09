@@ -4,7 +4,7 @@ import FacultyInfo from "../../components/faculty/FacultyInfo";
 const page = () => {
   
   return(
-    <div>
+    <div className='p-3'>
       <FacultyInfo/>
     </div>
   )
