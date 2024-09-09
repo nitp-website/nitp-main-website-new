@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 .container1 {
   position: relative;
   top: 40%;
@@ -26,6 +26,7 @@
   border: 3px solid #ddd;
 
   width: 30%;
+  padding-top: 0px;
 }
 .section1 {
   background: #f9f9f95d;
@@ -36,6 +37,7 @@
   border: 3px solid #ddd;
 
   width: 25%;
+  padding-top: 0px;
 }
 
 .section-header {
@@ -48,7 +50,8 @@
   top: 0;
   background: #f9f9f9;
   z-index: 1;
-  padding: 0px 0; /* Adjust padding if needed */
+  padding: 3px;
+  padding-top:10px;
 }
 
 .section-header h2 {
