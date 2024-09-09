@@ -15,7 +15,7 @@ const Sidebar = ({setstate,resume,books,article,conference,memebership,education
     <div>
         {/* phone view bg-[rgb(255,249,239)]*/}
         <div className='block md:hidden'>
-           <div >{!active?<RxHamburgerMenu className='m-2 text-xl border' onClick={onClick}/>:<RxCross2 className='m-2 text-xl border' onClick={onClick}/>}</div>
+           <div >{!active?<RxHamburgerMenu className='m-2 text-xl border text-black' onClick={onClick}/>:<RxCross2 className='m-2 text-xl border text-black' onClick={onClick}/>}</div>
            <div className={`absolute ${active?"visible":"hidden"} bg-[#941B0C]  rounded-xl mx-3 p-3 text-sm text-[rgb(255,249,239)] z-2`}>
             <ul className='flex flex-col gap-2 border-2 p-2 hover:border-[#941B0C]'>
                 {resume?<li className='flex cursor-pointer ' onClick={()=>{setstate(1);setactive(!active);}}><Image src={"/resume.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Resume</span></li>:<></>}

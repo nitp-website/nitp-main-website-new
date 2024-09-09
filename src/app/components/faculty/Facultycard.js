@@ -48,11 +48,13 @@ function FacultyCard({
           <div className="flex justify-center items-center md:w-1/4">
             <div
               className={`relative ${
-                isHovered ? "h-[180px] w-[150px]" : "h-[100px] w-[100px]"
+                isHovered ? "h-[150px] w-[150px]" : "h-[100px] w-[100px]"
               } transition-all duration-300`}
             >
               <Image
-                className="rounded-md object-cover"
+                className={`rounded-md object-cover ${
+                  isHovered ? "h-[150px] w-[150px]" : "h-[100px] w-[100px]"
+                }`}
                 src={image != null ? image : "/faculty.jpeg"}
                 alt={name}
                 height={300}
