@@ -21,9 +21,9 @@ function page() {
                 {/* LINKS */}
                 <div className="mb-10">
                     <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
-                        <li className="hover:text-blue-800"><a href="https://drive.google.com/file/d/1-wloDSEABGjEYgzoEOAYat7FPkiSffW_/view">Click here for the time table of UG 3rd, 5th and 7th semesters (All Branches), July-December 2022.</a></li>
-                        <li className="hover:text-blue-800"><a href="https://drive.google.com/file/d/1rTH9iuLex7glBjKZqinMKlhHunp4fljL/view?usp=sharing">Click here for the time table of MTech & PhD (All Branches), July-December 2022.</a></li>
-                        <li className="hover:text-blue-800"><a href="https://drive.google.com/file/d/1ebFsyL3l2ZXxaLDtYup74gPsJq6P6rM4/view?usp=sharing">Click here for the time table of all the subjects offered by HSS to 1st year students (All Branches), January-June 2022.</a></li>
+                        <li className="hover:text-blue-800"><a href="https://drive.google.com/file/d/1c6f2tp-MMqf9SzPudHyerB7NfdDB4ffo/view">
+                        Click here for the Master_Time-Table_ HSS_July-December 2024.</a></li>
+                        
                     </ul>
                 </div>
             </div>
