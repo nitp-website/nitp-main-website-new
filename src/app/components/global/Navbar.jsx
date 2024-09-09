@@ -101,7 +101,7 @@ const navItems = [
         children: [
           {
             label: "About Institute",
-            link: "/Institute/?tab=mission",
+            link: "/Institute/?tab=about",
             iconImage: Mission,
           },
           {
