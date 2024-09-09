@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,7 +35,7 @@ function FacultyCard({
     <>
       <a href={profileLink} target="_parent">
         <div
-          className={`backdrop-blur-md static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-4 m-5 transition-all duration-500 ${
+          className={` static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-4 m-5 transition-all duration-500 ${
             isHovered
               ? remainingInterests
                 ? "h-[40rem] md:h-[19rem]"
@@ -51,12 +52,11 @@ function FacultyCard({
               } transition-all duration-300`}
             >
               <Image
-                className="rounded-md object-cover"
+                className="rounded-md"
                 src={image != null ? image : "/faculty.jpeg"}
                 alt={name}
-                height={300}
-                width={300}
-                loading="lazy"
+                layout="fill"
+                objectFit="cover"
               />
             </div>
           </div>

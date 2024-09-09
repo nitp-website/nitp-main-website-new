@@ -35,12 +35,12 @@ function FacultyCard({
     <>
       <a href={profileLink} target="_parent">
         <div
-          className={`backdrop-blur-sm	 static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-4 m-5 transition-all duration-500 ${
+          className={` static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-4 m-5 transition-all duration-500 ${
             isHovered
               ? remainingInterests
-                ? "h-[52rem] md:h-[17rem]"
-                : "h-[48rem] md:h-[17rem]"
-              : "h-[27rem] md:h-[10rem]"
+                ? "h-[40rem] md:h-[19rem]"
+                : "h-[36rem] md:h-[20rem]"
+              : "h-[17rem] md:h-[10rem]"
           }`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -52,11 +52,11 @@ function FacultyCard({
               } transition-all duration-300`}
             >
               <Image
-                className="rounded-md object-cover"
+                className="rounded-md"
                 src={image != null ? image : "/faculty.jpeg"}
                 alt={name}
-                height={300}
-                width={300}
+                layout="fill"
+                objectFit="cover"
               />
             </div>
           </div>
