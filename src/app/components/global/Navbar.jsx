@@ -119,7 +119,7 @@ const navItems = [
 
       {
         label: "NIT Status & Acts",
-        link: "#",
+        link: "/Others/NITAct",
         iconImage: Structure,
       },
       {

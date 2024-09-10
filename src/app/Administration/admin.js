@@ -2,37 +2,39 @@ import React from "react"
 
 
 const Deans = [
- {
-  name: "Prof. Pijush Samui",
-  designation: "Dean, Planning & Development",
-  type: "Dean",
- },
- {
-  name: "Prof. Vivekanand Singh",
-  designation: "Dean, Research & Consultancy",
-  type: "Dean",
- },
- {
-  name: "Prof. Samrat Mukherjee",
-  designation: "Dean, Student Welfare",
-  type: "Dean",
- },
- {
-  name: "Prof.(Dr.) Sanjeev Sinha",
-  designation: "Dean, Academic",
-  type: "Dean",
- },
- {
-  name: "Prof. Amar Nath Sinha",
-  designation: "Dean, Faculty Welfare",
-  type: "Dean",
- },
-]
+  {
+   name: "Prof. Pijush Samui",
+   designation: "Dean, Planning & Development",
+   type: "dean.pd@nitp.ac.in",
+  },
+  {
+   name: "Prof. Ramesh Kumar",
+   designation: "Dean, Research & Consultancy",
+   type: "dean.rc@nitp.ac.in",
+  },
+  {
+   name: "Prof. Samrat Mukherjee",
+   designation: "Dean, Student Welfare",
+   type: "dean.sw@nitp.ac.in",
+  },
+  {
+   name: "Prof. Vivekanand Singh ",
+   designation: "Dean, Academic",
+   type: "dean.ac@nitp.ac.in",
+  },
+  {
+   name: "Prof. Manoj Kumar",
+   designation: "Dean, Faculty Welfare",
+   type: "dean.fw@nitp.ac.in",
+  },
+ ]
+ 
+ 
 const BOG = [
  {
   name: "Shri Ashok Kumar Modi",
   designation: "Chairperson",
-  type: "chairperson",
+  type: "Chairperson",
  },
  {
   name: "Prof. Pradip Kumar Jain",

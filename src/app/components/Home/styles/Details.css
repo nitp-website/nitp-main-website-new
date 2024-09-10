@@ -51,7 +51,7 @@
   background: #f9f9f9;
   z-index: 1;
   padding: 3px;
-  padding-top:10px;
+  padding-top: 10px;
 }
 
 .section-header h2 {
@@ -137,6 +137,8 @@
     height: 400px;
 
     width: 90%;
+
+    padding-top: 0px;
   }
   .section1 {
     background: #f9f9f9;
@@ -146,6 +148,7 @@
     height: 270px;
 
     width: 90%;
+    padding-top: 0px;
   }
 }
 
