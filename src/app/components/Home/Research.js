@@ -166,8 +166,8 @@ export default function Research() {
   return (
     <ScrollTrigger onEnter={()=>setCounterOn(true)} onExit={()=>setCounterOn(false)} className="Researchdiv">
     <div className="w-full px-4 py-8 md:px-6 md:py-12 ">
-      <div className="flex text-center items-center justify-center mb-8">
-        <div className="w-full h-0.5 mr-4 bg-[#a51818]" />
+      <div className="flex text-center items-center justify-center mb-8 py-6">
+        <div className="w-full h-0.5 mr-4 bg-[#a51818] " />
         <svg className="text-primary mr-5" fill="#a51818" height="130px" width="130px"  viewBox="0 0 496 496" stroke="#a51818">
         {/* Paste your SVG code here */}
         <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -232,10 +232,10 @@ export default function Research() {
 
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 container1p">
         <div className=" border border-primary shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg sectionp">
-          <div className="flex items-center mb-4 p-7 section-headerp">
+          <div className="flex items-center mb-4 p-7 section-headerp ">
             
-            <div className="w-8 h-0.5 bg-primary mr-4" />
-            <h3 className="text-lg font-medium text-primary">Recent Publication</h3>
+            <div className="w-8 h-0.5 bg-primary mr-4 py-6" />
+            <h3 className="text-lg font-medium text-primary text-red-800">Recent Publication</h3>
             <div className="w-8 h-0.5 bg-primary ml-4" />
             
           </div>
@@ -367,8 +367,8 @@ export default function Research() {
         <div className="border border-primary shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg sectionp">
         <div className="flex items-center mb-4 p-7 section-headerp">
             
-            <div className="w-auto h-0.5 bg-primary mr-4" />
-            <h3 className="text-lg font-medium text-primary">Recent Projects</h3>
+            <div className="w-auto h-0.5 bg-primary mr-4 py-6" />
+            <h3 className="text-lg font-medium text-primary text-red-800">Recent Projects</h3>
             <div className="w-auto h-0.5 bg-primary ml-4" />
             
           </div>
