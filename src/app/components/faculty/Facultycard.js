@@ -22,7 +22,7 @@ function FacultyCard({
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const qualification = "Ph.D.(CSE),M.Tech.(CSE),B.E.(CSE)";
+  // const qualification = "Ph.D.(CSE),M.Tech.(CSE),B.E.(CSE)";
   if (researchInterests == null) researchInterests = "";
 
   const interestsArray = researchInterests.split(", ");
@@ -68,10 +68,10 @@ function FacultyCard({
               <FontAwesomeIcon icon={faIdCard} className="w-5 mr-1" />{" "}
               {designation}
             </span>
-            <span className="flex mt-1">
+            {/* <span className="flex mt-1">
               <FontAwesomeIcon icon={faGraduationCap} className="w-5 mr-1" />
               Ph.D.(CSE),M.Tech.(CSE),B.E.(CSE)
-            </span>
+            </span> */}
             <span className={`flex mt-1 md:underline hover:text-blue-800 ${isHovered ?"hidden":""} `}>
               <FontAwesomeIcon icon={faEye} className="w-5 mr-1" />
               <a

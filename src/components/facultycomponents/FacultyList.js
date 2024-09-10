@@ -51,7 +51,7 @@ const FacultyList = ({url,branch}) => {
               name={faculty.name}
               image={faculty.image} 
               designation={faculty.designation}
-              qualification={faculty.qualification}
+              // qualification={faculty.qualification}
               researchInterests={faculty.research_interest}
               email={faculty.email}
               phone={faculty.ext_no}
