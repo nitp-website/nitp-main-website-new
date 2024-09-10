@@ -36,6 +36,7 @@
     "next": "14.2.4",
     "next-nprogress-bar": "^2.3.12",
     "next-videos": "^1.4.1",
+    "nitp-new-website": "file:",
     "postcss": "8.4.38",
     "react": "^18",
     "react-countup": "^6.5.3",
