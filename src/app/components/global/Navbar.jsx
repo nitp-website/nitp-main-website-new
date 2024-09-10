@@ -145,21 +145,11 @@ const navItems = [
         ],
       },
       {
-        label: "NITP News Letter",
-        link: "#",
-        iconImage: Digital,
-        children: [
-          {
-            label: "News Letters",
-            link: "#",
-            iconImage: Mail,
-          },
-          {
-            label: "Magazine",
-            link: "/Institute/Magazine",
-            iconImage: Resource,
-          },
-        ],
+        
+          label: "Magazine",
+          link: "/Institute/Magazine",
+          iconImage: Digital,
+        
       },
     ],
   },
@@ -248,17 +238,17 @@ const navItems = [
         children: [
           {
             label: "Minutes of BoG Meeting",
-            link: "#",
+            link: "/Others/BOG",
             iconImage: Director,
           },
           {
             label: "Minutes of FC Meeting",
-            link: "#",
+            link: "/Others/BOG",
             iconImage: Programs,
           },
           {
             label: "Minutes of Senate Meeting",
-            link: "#",
+            link: "/Others/BOG",
             iconImage: Rules,
           },
         ],
@@ -268,11 +258,11 @@ const navItems = [
         link: "#",
         iconImage: Digital,
         children: [
-          {
-            label: "Organization Chart",
-            link: "#",
-            iconImage: Notice,
-          },
+          // {
+          //   label: "Organization Chart",
+          //   link: "#",
+          //   iconImage: Notice,
+          // },
           {
             label: "Institute Disciplinary Committee",
             link: "/Administration/IDC",
@@ -373,7 +363,7 @@ const navItems = [
       },
       {
         label: "Programmes",
-        link: "#",
+        link: "/Course",
         iconImage: Programs,
       },
       {
@@ -520,11 +510,11 @@ const navItems = [
         link: "http://exam.nitp.ac.in:9001/",
         iconImage: Portal,
       },
-      {
-        label: "Purchase and Store Section",
-        link: "#",
-        iconImage: Notice,
-      },
+      // {
+      //   label: "Purchase and Store Section",
+      //   link: "#",
+      //   iconImage: Notice,
+      // },
       {
         label: "Staff Claim Form",
         link: "/Academic/Faculty&Staff/forms",
@@ -556,7 +546,7 @@ const navItems = [
 
       {
         label: "Sports",
-        link: "#",
+        link: "/Facilities/SportsFacilities",
         iconImage: Sports,
       },
       {
@@ -580,11 +570,11 @@ const navItems = [
         iconImage: Fee,
       },
 
-      {
-        label: "Transportation",
-        link: "#",
-        iconImage: security,
-      },
+      // {
+      //   label: "Transportation",
+      //   link: "#",
+      //   iconImage: security,
+      // },
       {
         label: "Women Cell",
         link: "/Facilities/WomanCell",
@@ -648,11 +638,11 @@ const navItems = [
         link: "/Facilities/SportsFacilities",
         iconImage: Sports,
       },
-      {
-        label: "ATM Facilities",
-        link: "/Facilities/SportsFacilities",
-        iconImage: itservice,
-      },
+      // {
+      //   label: "ATM Facilities",
+      //   link: "/Facilities/SportsFacilities",
+      //   iconImage: itservice,
+      // },
       {
         label: "Library",
         link: "/Facilities/Library",
@@ -717,7 +707,59 @@ export default function Navbar() {
 
 
   return (
+    <>
+       <div className="bg-black h-6">
+  <div className="flex justify-between items-center px-4 py-1 text-white text-xs md:text-sm">
+    <div className="flex space-x-2 text-xs md:text-sm">
+      <a
+        href="/Notices/JobsNITP"
+        className="hover:underline text-xs md:text-sm"
+      >
+        Jobs@NITP
+      </a>
+      <span className="text-xs md:text-sm">|</span>
+      <a
+        href="https://paydirect.eduqfix.com/app/mnYv9Q6+C+3lIMqghRCwdaqVZusPrJtq2RGJrJFnKnmtz3KBqtsEFPVrZFvoPubG/3466"
+        className="hover:underline text-xs md:text-sm"
+      >
+        Fee Payment
+      </a>
+    </div>
+    <div className="flex space-x-2">
+      <a
+        href="https://www.facebook.com/story.php?story_fbid=704954328428607&id=100067421393593&mibextid=K8Wfd2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/facebook.png" alt="facebook" className="w-4 h-4 md:w-5 md:h-5" />
+      </a>
+      <a
+        href="https://twitter.com/nitpatna1/status/1749690769500430475?s=48"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/twitter.svg" alt="twitter" className="w-4 h-4 md:w-5 md:h-5" />
+      </a>
+      <a
+        href="https://www.linkedin.com/school/national-institute-of-technology-patna/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/linkedin.svg" alt="linkedin" className="w-4 h-4 md:w-5 md:h-5" />
+      </a>
+      <a
+        href="https://goo.gl/maps/srZ6whpfDGqg85sp6"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/location.png" alt="location" className="w-4 h-4 md:w-5 md:h-5" />
+      </a>
+    </div>
+  </div>
+</div>
+
     <div className={`mobiletest navbar-container  ${isSticky ? "sticky-nav md:py-0 stickdiv" : ""}`}>
+   
       <div className="header-top mx-auto flex w-full max-w-9xl justify-between px-4 py-2 bg-white/40 backdrop-blur-lg shadow-lg">
         <div className="right-content">
           <div className="font-bold textmob text-black">राष्ट्रीय प्रौद्योगिकी संस्थान पटना</div>
@@ -746,7 +788,7 @@ export default function Navbar() {
       </div>
 
       {isSideMenuOpen && <MobileNav closeSideMenu={() => setSideMenuOpen(false)} />}
-    </div>
+    </div></>
   );
 }
 
