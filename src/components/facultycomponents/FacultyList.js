@@ -98,7 +98,7 @@ const FacultyList = ({url,branch}) => {
               researchInterests={faculty.researchInterests} 
               email={faculty.email}
               phone={faculty.ext_no}
-              profileLink={`/${faculty.email}`} 
+              profileLink={`${url}/${faculty.email}`} 
             />
           ))}
         </div>
