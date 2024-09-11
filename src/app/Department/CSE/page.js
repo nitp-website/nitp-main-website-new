@@ -1,95 +1,96 @@
 "use client"
+import axios from "axios";
 import BackDepartment from "../../components/department/BackDepartment";
 import { DepartmentNavigationButton } from "../../components/department/DepartmentNavigationButton"
-import DepartmentNotify from "../../components/department/DepartmentNotify";
+import DepartmentNotify1 from "../../components/department/DepartmentNotify1";
 import Image from "next/image"
 import {useRouter} from 'next/navigation';
 import { useEffect, useState } from "react";
 
-const Notices = [
+// const Notices = [
   
-  {
-    id:1,
-    notice:"B.Tech(CSE) 1st semester Group Division",
-    link:"https://web.nitp.ac.in/uploads20/NOTICEforB.TechDivison.pdf"
-  },
-  {
-    id:2,
-    notice:"M.Tech CSE 3rd and PhD 2nd End Sem Exam July_Dec2020.",
-    link:"https://web.nitp.ac.in/uploads20/M.Tech%20and%20PhD%20Notice_Dissertation.pdf"
-  },
-  {
-    id:3,
-    notice:"M Tech CSE and PhD CSE 1st semester End Sem Viva Voice schedule.",
-    link:"https://web.nitp.ac.in/uploads20/m.tech_phd%20notice.jpeg"
-  },
-  {
-    id:4,
-    notice:"Notice : Open PhD Viva-Voice Examination of Kriti Kumari(Roll NO. 155CS07) Dept. of CSE .",
-    link:"https://web.nitp.ac.in/uploads20/WhatsApp%20Image%202021-03-17%20at%2014.58.36.jpeg"
-  },
-  {
-    id:5,
-    notice:"End Sem Viva Voice Jan-June 2021 For 4th and 8th Semester (CSE Department)",
-    link:"https://web.nitp.ac.in/uploads20/Notice%20of%20End%20sem%20Viva-19.04.2021.pdf"
-  },
-  {
-    id:6,
-    notice:"Revised M.Tech 4th Semester End Sem Viva Voce schedule (CSE Department)",
-    link:"https://web.nitp.ac.in/uploads20/M.Tech%204th%2011May%202021_Revised-09.05.2021.pdf"
-  },
-  {
-    id:7,
-    notice:"Schedule of End Sem Viva Voice for M Tech 2nd and B Tech 6th(CSE Department)",
-    link:"https://web.nitp.ac.in/uploads20/NOTICE_Mtech2nd%20&%20btech%206th-13.05.2021.pdf"
-  },
-  {
-    id:8,
-    notice:"Schedule of PhD Seminar & Technical report writing presentation(CSE Department).",
-    link:"https://web.nitp.ac.in/uploads20/PhD_NOTICE-23.05.2021.pdf"
-  },
-  {
-    id:11,
-    notice:"CSE Dept. End Sem Viva-Voce Exam (Even semester) 2023",
-    link:"https://drive.google.com/file/d/1z-C5GgZ7VHwW_nWS9uTq_vWXiJ4H7hYh/view"
-  },
-  {
-    id:12,
-    notice:"EndSem Viva Schedule July2023",
-    link:"https://drive.google.com/file/d/1phtAAvzX98wR-sE1RtIAgsz16uS4cDDf/view"
-  },
-  {
-    id:13,
-    notice:"Summer Special End Sem Viva-Voce July 2023",
-    link:"https://drive.google.com/file/d/1pGa3yDMuDDqFNTO-_WBB48_4-Vh68YHT/view"
-  },
-  {
-    id:14,
-    notice:"PG(M.Tech/MURP) syllabus course",
-    link:"https://drive.google.com/file/d/1SM0SXL_8ZBi6V9L4VHPeRDptfZYHbj9M/view"
-  },
-  {
-    id:15,
-    notice:"Summer Special End Sem Viva-Voce August 2023",
-    link:"https://drive.google.com/file/d/1RlfVf3eTXbGYGZwIKd5ImpKaPUlm1oKE/view"
-  },
-  {
-    id:16,
-    notice:"CSE Dept: Summer Special End Semester Viva-Voce August 2023",
-    link:"https://drive.google.com/file/d/1h5C-NkYONeHe2Fo3eae_KpA_0t32hQl6/view"
-  },
-  {
-    id:17,
-    notice:"End Sem Viva-Voce Exam July-Dec, 2023",
-    link:"https://drive.google.com/file/d/1703br8LKXmOLombfm2ggjTDkA2Mpbovq/view"
-  },
-  {
-    id:18,
-    notice:"CSE End Sem Viva-Voce Exam Schedule, Jan-Jun 2024",
-    link:"https://drive.google.com/file/d/1V-MHhLibIMhJlvVVzidfZL1HzTWgIjhI/view"
-  },
+//   {
+//     id:1,
+//     notice:"B.Tech(CSE) 1st semester Group Division",
+//     link:"https://web.nitp.ac.in/uploads20/NOTICEforB.TechDivison.pdf"
+//   },
+//   {
+//     id:2,
+//     notice:"M.Tech CSE 3rd and PhD 2nd End Sem Exam July_Dec2020.",
+//     link:"https://web.nitp.ac.in/uploads20/M.Tech%20and%20PhD%20Notice_Dissertation.pdf"
+//   },
+//   {
+//     id:3,
+//     notice:"M Tech CSE and PhD CSE 1st semester End Sem Viva Voice schedule.",
+//     link:"https://web.nitp.ac.in/uploads20/m.tech_phd%20notice.jpeg"
+//   },
+//   {
+//     id:4,
+//     notice:"Notice : Open PhD Viva-Voice Examination of Kriti Kumari(Roll NO. 155CS07) Dept. of CSE .",
+//     link:"https://web.nitp.ac.in/uploads20/WhatsApp%20Image%202021-03-17%20at%2014.58.36.jpeg"
+//   },
+//   {
+//     id:5,
+//     notice:"End Sem Viva Voice Jan-June 2021 For 4th and 8th Semester (CSE Department)",
+//     link:"https://web.nitp.ac.in/uploads20/Notice%20of%20End%20sem%20Viva-19.04.2021.pdf"
+//   },
+//   {
+//     id:6,
+//     notice:"Revised M.Tech 4th Semester End Sem Viva Voce schedule (CSE Department)",
+//     link:"https://web.nitp.ac.in/uploads20/M.Tech%204th%2011May%202021_Revised-09.05.2021.pdf"
+//   },
+//   {
+//     id:7,
+//     notice:"Schedule of End Sem Viva Voice for M Tech 2nd and B Tech 6th(CSE Department)",
+//     link:"https://web.nitp.ac.in/uploads20/NOTICE_Mtech2nd%20&%20btech%206th-13.05.2021.pdf"
+//   },
+//   {
+//     id:8,
+//     notice:"Schedule of PhD Seminar & Technical report writing presentation(CSE Department).",
+//     link:"https://web.nitp.ac.in/uploads20/PhD_NOTICE-23.05.2021.pdf"
+//   },
+//   {
+//     id:11,
+//     notice:"CSE Dept. End Sem Viva-Voce Exam (Even semester) 2023",
+//     link:"https://drive.google.com/file/d/1z-C5GgZ7VHwW_nWS9uTq_vWXiJ4H7hYh/view"
+//   },
+//   {
+//     id:12,
+//     notice:"EndSem Viva Schedule July2023",
+//     link:"https://drive.google.com/file/d/1phtAAvzX98wR-sE1RtIAgsz16uS4cDDf/view"
+//   },
+//   {
+//     id:13,
+//     notice:"Summer Special End Sem Viva-Voce July 2023",
+//     link:"https://drive.google.com/file/d/1pGa3yDMuDDqFNTO-_WBB48_4-Vh68YHT/view"
+//   },
+//   {
+//     id:14,
+//     notice:"PG(M.Tech/MURP) syllabus course",
+//     link:"https://drive.google.com/file/d/1SM0SXL_8ZBi6V9L4VHPeRDptfZYHbj9M/view"
+//   },
+//   {
+//     id:15,
+//     notice:"Summer Special End Sem Viva-Voce August 2023",
+//     link:"https://drive.google.com/file/d/1RlfVf3eTXbGYGZwIKd5ImpKaPUlm1oKE/view"
+//   },
+//   {
+//     id:16,
+//     notice:"CSE Dept: Summer Special End Semester Viva-Voce August 2023",
+//     link:"https://drive.google.com/file/d/1h5C-NkYONeHe2Fo3eae_KpA_0t32hQl6/view"
+//   },
+//   {
+//     id:17,
+//     notice:"End Sem Viva-Voce Exam July-Dec, 2023",
+//     link:"https://drive.google.com/file/d/1703br8LKXmOLombfm2ggjTDkA2Mpbovq/view"
+//   },
+//   {
+//     id:18,
+//     notice:"CSE End Sem Viva-Voce Exam Schedule, Jan-Jun 2024",
+//     link:"https://drive.google.com/file/d/1V-MHhLibIMhJlvVVzidfZL1HzTWgIjhI/view"
+//   },
   
-]
+// ]
 
 
 const picture = ["/ee-feature1.png","/ee-feature2.png","/ee-feature3.png"]
@@ -97,6 +98,15 @@ export default function CSE() {
     const router=useRouter();
     const [feature , setFeature] = useState("/ee-feature1.png")
     const [it, setIt]= useState(0);
+    const [Notices, setNotices] = useState([]);
+    useEffect(()=>{
+      const getData = async()=>{
+        const response =await axios.get("https://admin.nitp.ac.in/api/notice/cse");
+        console.log(response.data);
+        setNotices(response.data);
+      }
+      getData();
+    },[])
     useEffect(()=>{
       const interval = setInterval(()=>{
         setFeature(picture[it]);
@@ -142,15 +152,19 @@ export default function CSE() {
                 <div>Announcement</div>
                 <button className="hover:text-blue-500">View All</button>
               </div>
-              <div className="overflow-hidden flex flex-col-reverse">
+              <div className="overflow-hidden flex flex-col">
                 {Notices.map((notice, id) => {
-                  return (
-                    <DepartmentNotify
-                      key={id}
-                      title={notice.notice}
-                      link={notice.link? notice.link : ""}
-                   />
-                 )
+                  if(notice.isVisible === 1){
+                    return (
+                      <DepartmentNotify1
+                        key={id}
+                        title={notice.title}
+                        attachments = {notice.attachments}
+                        important = {notice.important}
+                        link={notice.notice_link? notice.notice_link : ""}
+                    />
+                  )
+                  }
                 })}
               </div>
             </div>
