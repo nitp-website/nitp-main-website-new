@@ -196,7 +196,7 @@ const navItems = [
       },
       {
         label: "HoD",
-        link: "#",
+        link: "/Administration/HOD",
         iconImage: Person,
       },
       {
@@ -233,25 +233,25 @@ const navItems = [
       },
       {
         label: "Minutes of Meeting ",
-        link: "#",
+        link: "/Others/BOG",
         iconImage: Person,
-        children: [
-          {
-            label: "Minutes of BoG Meeting",
-            link: "/Others/BOG",
-            iconImage: Director,
-          },
-          {
-            label: "Minutes of FC Meeting",
-            link: "/Others/BOG",
-            iconImage: Programs,
-          },
-          {
-            label: "Minutes of Senate Meeting",
-            link: "/Others/BOG",
-            iconImage: Rules,
-          },
-        ],
+        // children: [
+        //   {
+        //     label: "Minutes of BoG Meeting",
+        //     link: "/Others/BOG",
+        //     iconImage: Director,
+        //   },
+        //   {
+        //     label: "Minutes of FC Meeting",
+        //     link: "/Others/BOG",
+        //     iconImage: Programs,
+        //   },
+        //   {
+        //     label: "Minutes of Senate Meeting",
+        //     link: "/Others/BOG",
+        //     iconImage: Rules,
+        //   },
+        //],
       },
       {
         label: "Others",
@@ -522,7 +522,7 @@ const navItems = [
       },
       {
         label: "Holidays/Restricted Holidays ",
-        link: "#",
+        link: "https://drive.google.com/file/d/1qL_eR9y5y4uTz0dR0_woqFSv3sQNUhwD/view?usp=sharing",
         iconImage: International,
       },
     ],
@@ -561,7 +561,7 @@ const navItems = [
       },
       {
         label: "Anti Ragging",
-        link: "#",
+        link: "/Student/AntiRagging",
         iconImage: Notice,
       },
       {
@@ -826,7 +826,7 @@ function DropdownItem({ item, parentLabel }) {
 
   return (
     <div
-      className="relative"
+      className="relative "
       onMouseEnter={() => setIsSOpen(true)}
       onMouseLeave={() => setIsSOpen(false)}
     >
@@ -839,10 +839,10 @@ function DropdownItem({ item, parentLabel }) {
       
       {item.children && (
         
-        <div className={`absolute left-full top-0  w-auto flex-col gap-1 rounded-lg bg-white  shadow-md transition-all ${isSOpen ? "flex" : "hidden"}`}>
+        <div className={`absolute left-full top-0  w-auto flex-col gap-1 rounded-lg shadow-md transition-all  bg-neutral-200 md:bg-neutral-100 ${isSOpen ? "flex" : "hidden"}`}>
           <div className="border-solid border-2 border-red-800 m-4 p-2 rounded-lg	">
           {item.children.map((subChild, subIndex) => (
-            <Link key={subIndex} href={subChild.link ?? "#"} className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-neutral-800 hover:text-red-900 hover:bg-red-100">
+            <Link key={subIndex} href={subChild.link ?? "#"} className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-black md:text-neutral-900 hover:text-red-900 hover:bg-red-100">
               {subChild.iconImage && <Image src={subChild.iconImage} alt="item-icon" />}
               <span className="whitespace-nowrap pl-3">{subChild.label}</span>
             </Link>

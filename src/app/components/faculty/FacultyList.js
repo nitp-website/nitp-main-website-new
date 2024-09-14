@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Loading from "../../loading";
 
-const FacultyCard = dynamic(() => import("./Facultycard"), {
+const FacultyCard = dynamic(() => import("../../components/faculty/Facultycard.js"), {
   loading: () => <div className="w-[100%] h-[100%] m-4 p-4 bg-[grey]"><Loading/></div>
 });
 
