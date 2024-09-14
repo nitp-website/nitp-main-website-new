@@ -17,7 +17,7 @@ const Notices = [
 export default function Chem() {
   const router = useRouter();
   return (
-    <div className="p-10 max-sm:px-0 border border-red-700 text-black">
+    <div className="p-10 max-sm:px-0  text-black">
       {/* heading */}
       <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-3">
         CHEMISTRY
@@ -30,7 +30,7 @@ export default function Chem() {
         {/* Department Picture */}
         <div className="h-[500px] flex justify-start py-10 col-span-3 mr-4 max-sm:mr-0">
           <Image
-            src="/cseimg.png"
+            src="/nit-patna-003.jpg"
             className="rounded-lg max-sm:rounded-none shadow-lg shadow-slate-600 h-full"
             alt="Logo"
             width={700}

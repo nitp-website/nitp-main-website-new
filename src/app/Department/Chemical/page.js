@@ -28,7 +28,7 @@ export default function Page() {
         {/* Department Picture */}
         <div className="h-[500px] flex justify-start py-10 col-span-3 mr-4 max-sm:mr-0">
           <Image
-            src="/cseimg.png"
+            src="/nit-patna-003.jpg"
             className="rounded-lg max-sm:rounded-none shadow-lg shadow-slate-600 h-full"
             alt="Logo"
             width={700}

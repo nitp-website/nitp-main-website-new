@@ -1,38 +1,27 @@
 "use client"
+import { useEffect, useState } from 'react'
 import BackDepartment from "../../components/department/BackDepartment";
 import { DepartmentNavigationButton } from "../../components/department/DepartmentNavigationButton"
-import DepartmentNotify from "../../components/department/DepartmentNotify";
+import DepartmentNotify1 from "../../components/department/DepartmentNotify1";
 import Image from "next/image"
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
-const Notices = [
-  {
-    id: 1,
-    notice: "Lab viva schedule of ME_UG_1st semester",
-    link: "https://drive.google.com/file/d/1mhVc_W1HORQAHEUcFoAwoqBFA2B96nLE/view"
-  },
-  {
-    id: 2,
-    notice: "Lab viva schedule of ME",
-    link: "https://drive.google.com/file/d/1a1bPf-cwduGqyPJBTCf8XjEW2_ODObZn/view"
-  },
-  {
-    id: 3,
-    notice: "Lab Viva-voce Schedule of B.Tech: 2nd Sem 2022 Batch Students.",
-    link: "https://drive.google.com/file/d/18o-IMapYIWkUDOdSZFCNPYA7G_0zUO0z/view"
-  },
-  {
-    id: 4,
-    notice: "Schedule of Practical Exam Viva - voce Jan_June-2024",
-    link: "https://drive.google.com/file/d/1pgfw_k7rSY0NUxqWd4tzX83y9N2lh3E7/view"
-  },
 
-]
 
 export default function ME() {
   const router = useRouter();
+  const [Notices, setNotices] = useState([]);
+  useEffect(()=>{
+    const getData = async()=>{
+      const response =await axios.get("https://admin.nitp.ac.in/api/notice/me");
+      console.log(response.data);
+      setNotices(response.data);
+    }
+    getData();
+  },[])
   return (
-    <div className="p-10 max-sm:px-0 border border-red-700  text-black">
+    <div className="p-10 max-sm:px-0   text-black">
       {/* heading */}
       <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-10">
         MECHANICAL ENGINEERING
@@ -43,7 +32,7 @@ export default function ME() {
         {/* Department Picture */}
         <div className="h-[500px] flex justify-start py-10 col-span-3 mr-4 max-sm:mr-0">
           <Image
-            src="/cseimg.png"
+            src="/nit-patna-003.jpg"
             className="rounded-lg max-sm:rounded-none shadow-lg shadow-slate-600 h-full"
             alt="Logo"
             width={700}
@@ -58,17 +47,19 @@ export default function ME() {
               <div>Announcement</div>
               <button className="hover:text-blue-500">View All</button>
             </div>
-            <div className="overflow-hidden flex flex-col-reverse">
-              {Notices.map((notice, id) => {
-                return (
-                  <DepartmentNotify
-                    key={id}
-                    title={notice.notice}
-                    link={notice.link ? notice.link : ""}
-                  />
-                )
-              })}
-            </div>
+            <div className="overflow-hidden flex flex-col">
+                {Notices.map((notice, id) => {
+                  return (
+                    <DepartmentNotify1
+                        key={id}
+                        title={notice.title}
+                        attachments = {notice.attachments}
+                        important = {notice.important}
+                        link={notice.notice_link? notice.notice_link : ""}
+                    />
+                 )
+                })}
+              </div>
           </div>
         </div>
       </div>
