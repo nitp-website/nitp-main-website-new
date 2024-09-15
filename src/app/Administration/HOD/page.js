@@ -7,12 +7,11 @@ const FacultyCard = dynamic(() => import("../../components/faculty/Facultycard")
   loading: () => <div className="w-[100%] h-[100%] m-4 p-4 bg-[grey]"><Loading/></div>
 });
 
-const FacultyList = ({ department }) => {
+const FacultyList = () => {
   const [facultyData, setFacultyData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!department) return;
 
     const apiEndpoint = `https://admin.nitp.ac.in/api/faculty/all`;
 
@@ -31,7 +30,7 @@ const FacultyList = ({ department }) => {
     };
 
     fetchData();
-  }, [department]);
+  }, []);
 
   if (loading) {
     return <div><Loading/></div>;
@@ -81,14 +80,6 @@ const FacultyList = ({ department }) => {
 
   return (
     <div className="flex flex-col p-2">
-      <div>
-        <p className="text-red-900 ml-10 text-3xl font-bold">Faculty</p>
-      </div>
-      <div className="mt-2">
-        <p className="text-gray-500 text-xl ml-10 font-semibold">
-          {department}
-        </p>
-      </div>
       <div>
         {renderHODFaculties()}
       </div>
