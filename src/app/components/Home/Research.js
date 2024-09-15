@@ -165,7 +165,7 @@ export default function Research() {
 
   return (
     <ScrollTrigger onEnter={()=>setCounterOn(true)} onExit={()=>setCounterOn(false)} className="Researchdiv">
-    <div className="w-full px-4 py-8 md:px-6 md:py-12 ">
+    <div className="w-full px-4 py-8 md:px-6 md:py-12  bg-transparent">
       <div className="flex text-center items-center justify-center mb-8 py-6">
         <div className="w-full h-0.5 mr-4 bg-[#a51818] " />
         <svg className="text-primary mr-5" fill="#a51818" height="130px" width="130px"  viewBox="0 0 496 496" stroke="#a51818">

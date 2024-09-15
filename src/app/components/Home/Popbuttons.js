@@ -17,9 +17,9 @@ const Popbuttons = () => {
  }, [])
   return (
     
-    <div className='maindiv flex'>
+    <div className='maindiv bg-transparent flex'>
       <div className='h-auto text-white containersideleft' data-aos="zoom-out-up"></div>
-      <div className='container'>
+      <div className='container  bg-transparent'>
       <div className="card card1" >
       <Link href="/Student" className="card card1">
           <FontAwesomeIcon icon={faUserGraduate} size="4x" className="mobileicondiv"color='#f7cece'/>

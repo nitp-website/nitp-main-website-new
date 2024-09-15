@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 export default function Page() {  
   const router = useRouter();
  return (
-  <div className="flex justify-center py-10 px-0 text-black bg-[url('https://i.postimg.cc/GtvY6WhY/6402687-3274764.jpg')] bg-cover bg-center">
+  <div className="flex justify-center py-10 px-0 text-black bg-[url('https://i.postimg.cc/GtvY6WhY/6402687-3274764.jpg')] bg-cover bg-center ">
     <div className="flex flex-col w-full bg-transparent">
         {/* heading */}
         <div className="font-bold text-3xl text-red-900 flex justify-center">DEPARTMENTS</div>
@@ -14,16 +14,16 @@ export default function Page() {
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/Archi");}}department={"Architecture & Planning"} icon={"/architecture_icon.png"}/>
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/Chem");}}department={"Chemistry"} icon={"/chemistry_icon.png"}/>
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/Chemical");}}department={"Chemical Engineering and Technology"} icon={"/chemical_icon.png"}/>
-            <DepartmentNavigateButton onClick={()=>{router.push("/Department/CE");}}department={"Civil"} icon={"/civil_icon.png"}/>
-            <DepartmentNavigateButton onClick={()=>{router.push("/Department/CSE");}}department={"Computer Science"} icon={"/computer_icon.png"}/>
-            <DepartmentNavigateButton onClick={()=>{router.push("/Department/EE");}}department={"Electrical"} icon={"/electric_icon.png"} />
-            <DepartmentNavigateButton onClick={()=>{router.push("/Department/ECE");}}department={"Electronics And Comunication"} icon={"/electronics_icon.png"}/>
+            <DepartmentNavigateButton onClick={()=>{router.push("/Department/CE");}}department={"Civil Engineering"} icon={"/civil_icon.png"}/>
+            <DepartmentNavigateButton onClick={()=>{router.push("/Department/CSE");}}department={"Computer Science and Technology"} icon={"/computer_icon.png"}/>
+            <DepartmentNavigateButton onClick={()=>{router.push("/Department/EE");}}department={"Electrical Engineering"} icon={"/electric_icon.png"} />
+            <DepartmentNavigateButton onClick={()=>{router.push("/Department/ECE");}}department={"Electronics And Comunication Engineering"} icon={"/electronics_icon.png"}/>
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/Humanities");}}department={"Humanities & Social Sciences"} icon={"/humanities_icon.png"}/>
-            <DepartmentNavigateButton onClick={()=>{router.push("/Department/Material");}}department={"Material Science & Engineering"} icon={"/mathematics-icon.png"}/>
+            <DepartmentNavigateButton onClick={()=>{router.push("/Department/Material");}}department={"Material Science & Engineering"} icon={"/mse-icon.png"}/>
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/Math");}}department={"Mathmatics And Computing"} icon={"/mathematics-icon.png"}/>
             {/* <DepartmentNavigateButton onClick={()=>{router.push("/Department/MCA");}}department={"Master of Computer Applications"} icon={"/mathematics-icon.png"}/> */}
-            <DepartmentNavigateButton onClick={()=>{router.push("/Department/ME");}}department={"Mechanical"} icon={"/mechanical_icon.png"}/>
-            <DepartmentNavigateButton onClick={()=>{router.push("/Department/Mechatronics");}}department={"Mechatronics & Automation"} icon={"/mechatronics_icon.png"}/>
+            <DepartmentNavigateButton onClick={()=>{router.push("/Department/ME");}}department={"Mechanical Engineering"} icon={"/mechanical_icon.png"}/>
+            <DepartmentNavigateButton onClick={()=>{router.push("/Department/Mechatronics");}}department={"Mechatronics & Automation Engineering"} icon={"/mechatronics_icon.png"}/>
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/Phy");}}department={"Physics"} icon={"/physics_icon.png"}/>
           </div>                      
       </div>
