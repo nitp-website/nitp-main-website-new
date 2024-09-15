@@ -119,9 +119,9 @@ export default function CSE() {
     },[it])
 
     return (
-      <div className="p-10 max-sm:px-0 bg-transparent text-black">
+      <div className="p-10 max-sm:px-0  text-black bg-[url('https://i.postimg.cc/mrqHkLPC/6359670-3258484.jpg')] bg-cover bg-center">
         {/* heading */}
-        <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-3 text-center">
+        <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-3 text-center bg-transparent">
           COMPUTER SCIENCE AND ENGINEERING
         </div>
         <div>
@@ -193,7 +193,7 @@ export default function CSE() {
               are also offered a wide variety of electives. 
               <button
               onClick={() => router.push('/Department/CSE/about')}
-              className="text-blue-600"
+              className="text-red-900"
             >  Read More
             </button>
             </div>

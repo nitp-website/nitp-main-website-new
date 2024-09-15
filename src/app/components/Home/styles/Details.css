@@ -23,7 +23,7 @@
   padding: 20px;
   overflow-y: auto;
   height: 80%;
-  border: 3px solid #ddd;
+  border: 1px solid #ddd;
 
   width: 30%;
   padding-top: 0px;
@@ -34,7 +34,7 @@
   padding: 20px;
   overflow-y: auto;
   height: 80%;
-  border: 3px solid #ddd;
+  border: 1px solid #ddd;
 
   width: 25%;
   padding-top: 0px;
@@ -86,11 +86,49 @@
   margin: 0 0 1px;
 }
 
-.notice.important {
+/* .notice.important {
   border-left: 4px solid red;
   background-color: rgb(255, 245, 245);
+} */
+@keyframes colorChange {
+  0% {
+    background-color: rgb(255, 245, 245); /* Red */
+  }
+  50% {
+    background-color: rgb(244, 255, 255); /* Orange */
+  }
+  
+  100% {
+    background-color: rgb(255, 245, 245); /* Red */
+  }
 }
+@keyframes borderColorChange {
+  0% {
+      border-left-color: red;
+  }
+  50% {
+      border-left-color: yellow;
+  }
+  100% {
+      border-left-color: red;
+  }
+}
+.notice.important {
+  position: relative;
 
+  background-color: rgb(255, 245, 245); /* Initial background color */
+  animation: colorChange 3s infinite ease-in-out;
+}
+.notice.important::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px; /* Border width */
+  background: linear-gradient(0deg, red, yellow);
+  animation: borderColorChange 3s infinite ease-in-out;
+}
 .notice p,
 .eventcard p {
   margin: 0px 0;
