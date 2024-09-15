@@ -139,7 +139,7 @@ const navItems = [
           },
           {
             label: "Data of ARIIA",
-            link: "#",
+            link: "/Others/UpdatedSoon",
             iconImage: Notice,
           },
         ],
@@ -201,7 +201,7 @@ const navItems = [
       },
       {
         label: "Chief Vigilance Officers",
-        link: "#",
+        link: "/Others/UpdatedSoon",
         iconImage: Person,
       },
       {
@@ -226,7 +226,7 @@ const navItems = [
           },
           {
             label: "Grievance Redressal Committees",
-            link: "#",
+            link: "/Others/UpdatedSoon",
             iconImage: Sperson,
           },
         ],
@@ -712,10 +712,10 @@ export default function Navbar() {
   <div className="flex justify-between items-center px-4 py-1 text-white text-xs md:text-sm">
     <div className="flex space-x-2 text-xs md:text-sm">
       <a
-        href="/Notices/JobsNITP"
+        href="http://15.207.239.227:8000/"
         className="hover:underline text-xs md:text-sm"
       >
-        Jobs@NITP
+        Old Website
       </a>
       <span className="text-xs md:text-sm">|</span>
       <a
@@ -888,7 +888,7 @@ function SingleNavItem({ item ,closeSideMenu}) {
         {item.children && <IoIosArrowDown className={`text-xs transition-all ${isItemOpen && "rotate-180"}`} />}
       </p>
       {isItemOpen && item.children && (
-        <p className="w-auto flex-col gap-1  bg-white py-3 transition-all flex">
+        <p className="w-auto flex-col gap-1  bg-neutral-50 py-3 transition-all flex">
           {item.children.map((child, index) => (
             <SubSidemenu key={index} item={child}/>
           ))}
@@ -905,7 +905,7 @@ function SubSidemenu({ item,closeSideMenu }) {
   };
 
   return (
-    <div className="relative px-1 py-1 transition-all">
+    <div className="relative px-1 py-1 transition-all ">
       <p onClick={handleSubToggle} className="flex cursor-pointer items-center gap-1 text-neutral-700 group-hover:text-black">
       {item.iconImage && <Image src={item.iconImage} alt="item-icon" />}
         <Link href={item.link ?? "#"} onClick={closeSideMenu}>
@@ -914,7 +914,7 @@ function SubSidemenu({ item,closeSideMenu }) {
         {item.children && <IoIosArrowDown className={`text-xs transition-all ${isSubItemOpen && "rotate-180"} `} />}
       </p>
       {isSubItemOpen && item.children && (
-        <div className="w-auto flex-col gap-1 bg-white py-1 transition-all">
+        <div className="w-auto flex-col gap-1 bg-white py-1 transition-all text-sm">
           {item.children.map((subChild, index) => (
             <p key={index} className="flex pl-4">
               {item.iconImage && <Image src={subChild.iconImage} alt="item-icon" />}

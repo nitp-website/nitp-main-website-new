@@ -165,7 +165,7 @@ export default function Research() {
 
   return (
     <ScrollTrigger onEnter={()=>setCounterOn(true)} onExit={()=>setCounterOn(false)} className="Researchdiv">
-    <div className="w-full px-4 py-8 md:px-6 md:py-12 ">
+    <div className="w-full px-4 py-8 md:px-6 md:py-12  bg-transparent">
       <div className="flex text-center items-center justify-center mb-8 py-6">
         <div className="w-full h-0.5 mr-4 bg-[#a51818] " />
         <svg className="text-primary mr-5" fill="#a51818" height="130px" width="130px"  viewBox="0 0 496 496" stroke="#a51818">
@@ -235,14 +235,14 @@ export default function Research() {
           <div className="flex items-center mb-4 p-7 section-headerp ">
             
             <div className="w-8 h-0.5 bg-primary mr-4 py-6" />
-            <h3 className="text-lg font-medium text-primary text-red-800">Recent Publication</h3>
+            <h3 className="text-base md:text-lg font-medium text-primary text-red-800">Recent Publication</h3>
             <div className="w-8 h-0.5 bg-primary ml-4" />
             
           </div>
           <div className="p-4">
             <ul className="space-y-4">
             {recentPublications.length === 0 ? (
-          <div className="flex justify-center items-center h-52 ">
+          <div className="text-sm md:text-base flex justify-center items-center h-52 ">
           <svg
             version="1.1"
             id="L1"
@@ -368,7 +368,7 @@ export default function Research() {
         <div className="flex items-center mb-4 p-7 section-headerp">
             
             <div className="w-auto h-0.5 bg-primary mr-4 py-6" />
-            <h3 className="text-lg font-medium text-primary text-red-800">Recent Projects</h3>
+            <h3 className="text-base md:text-lg font-medium text-primary text-red-800">Recent Projects</h3>
             <div className="w-auto h-0.5 bg-primary ml-4" />
             
           </div>
