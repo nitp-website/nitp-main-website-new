@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
 
-function page(){
+function Page(){
   const [grant,setGrant]=useState(false);
   const [publish,setPublish]=useState(true);
   const [data,setData]=useState([]);
@@ -179,5 +179,5 @@ function page(){
   )
 }
 
-export default page
+export default Page
 
