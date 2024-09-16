@@ -32,22 +32,6 @@ export default function Page() {
                         <li>To provide quality teaching, learning, and research in the field of Humanities and Social Sciences by creating, preserving, transmitting and utilizing knowledge especially to engineering students so that intellectually capable and imaginatively gifted leaders can emerge in the technical education and industry.</li>
                     </ol>
                 </div>
-                <div className="mb-10">
-                    <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">Program Objectives :-</div>
-                    <ul className="list-disc list-inside ml-5 space-y-4 lg:text-base text-sm">
-                        <li>To involve entire range of knowledge pertinent to human relationship with society interaction and teaching towards problems solving of the nation.</li>
-                        <li>To develop into well rounded personalities and to propagate knowledge that is utilitarian and aesthetic in its makeup.</li>
-                        <li>To develop good technological skills with the ability to interact with different organs of an organization.</li>
-                        <li>To develop essential skills in critical thinking and writing along with the knowledge of literature,society, economic value, and philosophies of the mind and body.</li>
-                    </ul>
-                </div>
-                <div className="mb-10">
-                    <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">Program Outcomes :-</div>
-                    <ul className="list-disc list-inside ml-5 space-y-4 lg:text-base text-sm">
-                        <li>Producing Technocrats with all round knowledge and development skills.</li>
-                        <li>Developing professional ethics, communication skills and managerial knowledge among students to work in corporate world effectively and efficiently.</li>
-                    </ul>
-                </div>
             </div>
         </div>
     )
