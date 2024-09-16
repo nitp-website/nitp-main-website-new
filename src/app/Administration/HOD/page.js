@@ -45,9 +45,6 @@ const FacultyList = () => {
       "HoD & Professor",
       "HoD & Associate Professor",
       "HoD and Professor",
-      "Professor",
-      "Associate Professor",
-      "Assistant Professor",
     ];
 
     const hodFaculties = facultyData.filter(faculty =>
