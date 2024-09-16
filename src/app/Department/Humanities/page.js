@@ -116,7 +116,10 @@ export default function Humanities() {
             onClick={() => router.push('/Department/Humanities/mission')}
             Title={'MISSION AND VISSION'}
           />
-
+          <DepartmentNavigationButton
+            onClick={() => router.push('/Department/Humanities/PO')}
+            Title={'P O'}
+          />
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/Humanities/faculty')}
             Title={'FACULTY'}
@@ -142,8 +145,12 @@ export default function Humanities() {
             Title={'ACTIVITIES'}
           />
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/Humanities/research')}
-            Title={'RESEARCH HIGHLIGHT'}
+            onClick={() => router.push('/Department/Humanities/achivements')}
+            Title={'ACHIVEMENTS'}
+          />
+          <DepartmentNavigationButton
+            onClick={() => router.push('/Department/Humanities/moreInfo')}
+            Title={'MORE INFO'}
           />
         
         </div>
