@@ -105,7 +105,7 @@ export default function Page() {
                         <div className=" grid grid-cols-12  border border-black border-t-0 text-[12px">
                             <div className="px-2  flex flex-col justify-center col-span-1 border-r border-black text-left pl-2">8</div>
                             <div className="flex flex-col justify-center col-span-4 border-r border-black">
-                                <div className="h-10 flex flex-col justify-center col-span-4  border-black">Dr. Ashish Ranjan Sinha
+                                <div className="h-10 flex flex-col justify-center col-span-4  border-black px-2">Dr. Ashish Ranjan Sinha
                                     (Coordinator)</div>
                             </div>
                             <div className="px-2  flex flex-col justify-center col-span-5 border-r border-black">One Day National Workshop on ‘Proactive Approach to Build Life Skills'</div>
@@ -124,7 +124,7 @@ export default function Page() {
                         <div className=" grid grid-cols-12  border border-black border-t-0 text-[12px">
                             <div className="px-2  flex flex-col justify-center col-span-1 border-r border-black text-left pl-2">10</div>
                             <div className="flex flex-col justify-center col-span-4 border-r border-black">
-                                <div className="h-10 flex flex-col justify-center col-span-4  border-black">Dr. Deepak K Behera (Coordinator)</div>
+                                <div className="h-10 flex flex-col justify-center col-span-4  border-black px-2">Dr. Deepak K Behera (Coordinator)</div>
                             </div>
                             <div className="px-2  flex flex-col justify-center col-span-5 border-r border-black">AICTE Training and Learning (ATAL) Academy sponsored Five Days online FDP on “Capacity Building on Research Methods and Effective Teaching Methodology” </div>
                             <div className="px-2  flex flex-col justify-center col-span-2 ">14-18 December 2020</div>
@@ -133,7 +133,7 @@ export default function Page() {
                         <div className=" grid grid-cols-12  border border-black border-t-0 text-[12px">
                             <div className="px-2  flex flex-col justify-center col-span-1 border-r border-black text-left pl-2">11</div>
                             <div className="flex flex-col justify-center col-span-4 border-r border-black">
-                                <div className="h-10 flex flex-col justify-center col-span-4  border-black">Dr. Deepak K Behera (Coordinator)</div>
+                                <div className="px-2 h-10 flex flex-col justify-center col-span-4  border-black ">Dr. Deepak K Behera (Coordinator)</div>
                             </div>
                             <div className="px-2  flex flex-col justify-center col-span-5 border-r border-black">Webinar on “Aatmanirbhar Bharat: A Roadmap for Inclusive Growth” </div>
                             <div className="px-2  flex flex-col justify-center col-span-2 ">2 October 2020</div>
@@ -142,7 +142,7 @@ export default function Page() {
                         <div className=" grid grid-cols-12  border border-black border-t-0 text-[12px">
                             <div className="px-2  flex flex-col justify-center col-span-1 border-r border-black text-left pl-2">12</div>
                             <div className="flex flex-col justify-center col-span-4 border-r border-black">
-                                <div className="h-10 flex flex-col justify-center col-span-4  border-black">Dr. Deepak K Behera (Coordinator)</div>
+                                <div className="h-10 flex flex-col justify-center col-span-4  border-black px-2">Dr. Deepak K Behera (Coordinator)</div>
                             </div>
                             <div className="px-2  flex flex-col justify-center col-span-5 border-r border-black">Online Expert Lecture on “Understanding New National Education Policy” </div>
                             <div className="px-2  flex flex-col justify-center col-span-2 ">5 September 2020</div>
