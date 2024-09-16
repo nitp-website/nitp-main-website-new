@@ -532,11 +532,11 @@ const navItems = [
     label: "Students",
     link: "/Student",
     children: [
-      {
-        label: "Dean Student Welfare",
-        link: "/Facilities/Hostel",
-        iconImage: Person,
-      },
+      // {
+      //   label: "Dean Student Welfare",
+      //   link: "/Facilities/Hostel",
+      //   iconImage: Person,
+      // },
 
       {
         label: "Hostel & Mess",
