@@ -15,7 +15,7 @@ export default function Page() {
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/Chem");}}department={"Chemistry"} icon={"/chemistry_icon.png"}/>
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/Chemical");}}department={"Chemical Engineering and Technology"} icon={"/chemical_icon.png"}/>
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/CE");}}department={"Civil Engineering"} icon={"/civil_icon.png"}/>
-            <DepartmentNavigateButton onClick={()=>{router.push("/Department/CSE");}}department={"Computer Science and Technology"} icon={"/computer_icon.png"}/>
+            <DepartmentNavigateButton onClick={()=>{router.push("/Department/CSE");}}department={"Computer Science and Engineering"} icon={"/computer_icon.png"}/>
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/EE");}}department={"Electrical Engineering"} icon={"/electric_icon.png"} />
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/ECE");}}department={"Electronics And Comunication Engineering"} icon={"/electronics_icon.png"}/>
             <DepartmentNavigateButton onClick={()=>{router.push("/Department/Humanities");}}department={"Humanities & Social Sciences"} icon={"/humanities_icon.png"}/>
