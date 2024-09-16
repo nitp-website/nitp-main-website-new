@@ -54,7 +54,7 @@ const AllFaculty = () => {
     return (
       <div key={title}>
         <h6 className='font-bold text-black'>{title}</h6>
-        <div className="grid grid-cols-2 gap-1 text-black">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 text-black">
           {filteredFaculties.map(faculty => (
             <FacultyCard
               key={faculty.id}

@@ -13,7 +13,7 @@ const FacultyList = () => {
 
   useEffect(() => {
 
-    const apiEndpoint = `https://admin.nitp.ac.in/api/faculty/all`;
+    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty/all`;
 
     const fetchData = async () => {
       try {
@@ -56,7 +56,7 @@ const FacultyList = () => {
     return (
       <div>
         <h6 className='font-bold text-black'>Head of Department</h6>
-        <div className="grid grid-cols-2 gap-1 text-black">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 text-black">
           {hodFaculties.map(faculty => (
             <FacultyCard
               key={faculty.id}
