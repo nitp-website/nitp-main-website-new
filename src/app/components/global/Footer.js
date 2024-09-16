@@ -105,7 +105,7 @@ const Footer = () => {
           <div className="w-full h-0.5 bg-[#a51818] mb-3" />
           <ul className="space-y-2">
             <li>
-              <a href="/Departments" className="hover:underline">
+              <a href="/Department" className="hover:underline">
                 Departments
               </a>
             </li>
