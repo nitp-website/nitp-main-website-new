@@ -142,6 +142,11 @@ export default function Humanities() {
           />
 
           <DepartmentNavigationButton
+            onClick={() => router.push('/Department/Humanities/research')}
+            Title={'Reaserch Highlights'}
+          />
+
+          <DepartmentNavigationButton
             onClick={() => router.push('/Department/Humanities/activities')}
             Title={'ACTIVITIES'}
           />
