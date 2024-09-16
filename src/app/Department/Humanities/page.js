@@ -123,7 +123,7 @@ export default function Humanities() {
           />
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/Humanities/faculty')}
-            Title={'FACULTY'}
+            Title={'People'}
           />
 
           <DepartmentNavigationButton
