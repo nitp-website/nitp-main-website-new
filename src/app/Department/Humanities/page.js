@@ -55,7 +55,7 @@ export default function Humanities() {
     <div className="p-10 max-sm:px-0  text-black">
       {/* heading */}
       <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-2">
-      Humanities & Social Sciences
+        Humanities & Social Sciences
       </div>
       <BackDepartment navigate={"/Department"} />
       {/* Section 1 */}
@@ -84,7 +84,7 @@ export default function Humanities() {
                   <DepartmentNotify
                     key={id}
                     title={notice.notice}
-                    link={notice.link? notice.link : ""}
+                    link={notice.link ? notice.link : ""}
                   />
                 )
               })}
@@ -100,7 +100,8 @@ export default function Humanities() {
             About
           </div>
           <div className="text-justify max-sm:text-[12px]">
-          With an interdisciplinary perspective at the heart of its approach, the Department of Humanities and Social Sciences at NIT Patna provides intellectual and cultural foundations for the study of human relations with society interaction and teaching towards problem solving of the nation in contemporary contexts. The department, with its diverse expertise offers students in the B Tech programme courses aimed at developing essential skills in critical thinking and writing along with the knowledge of literature, society, economic value, and philosophies of the mind and body. The department also offers doctoral programmes in humanities and social sciences especially in English, Economics, Sociology and Human Resource Management besides elective courses for the undergraduate programmes of the institute.
+            With an interdisciplinary perspective at the heart of its approach, the Department of Humanities and Social Sciences at NIT Patna provides intellectual and cultural foundations for the study of human relations with society interaction and teaching towards problem solving of the nation in contemporary contexts. The Department, with its diverse expertise offers students to various courses like communicative english with language lab, social and professional ethics, professional ethics, universal human value, sociology and building economics, industrial economics and financial management, business environment and Indian economy, intellectual property right etc. in the UG programme that aimed at developing essential skills in critical thinking and writing along with the knowledge of literature, society, economic value, and philosophies of the mind and body. The Department offers Doctoral programmes in Economics, English and Sociology. Department has also actively involved in conducting research projects, publishing research papers in SCI/SCIE/ESCI/Scopus indexed journals, organising expert lecture, workshops, short-term course and FDPs for the students and aspiring participants.
+
             {/* <button
               onClick={() => router.push('/Department/EE/about')}
               className="text-blue-600"
@@ -111,7 +112,7 @@ export default function Humanities() {
         </div>
         {/* Navigation Button  */}
         <div className="grid grid-cols-3 max-sm:grid-cols-2 mt-10">
-          
+
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/Humanities/mission')}
             Title={'MISSION AND VISSION'}
@@ -152,7 +153,7 @@ export default function Humanities() {
             onClick={() => router.push('/Department/Humanities/moreInfo')}
             Title={'MORE INFO'}
           />
-        
+
         </div>
       </div>
     </div>
