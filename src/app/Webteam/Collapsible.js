@@ -53,7 +53,7 @@ const Collapsible = ({ title, data, years }) => {
               className="text-center text-neutral-900 text-xl font-bold underline"
               style={{ width: `100%`, marginTop: `0` }}
             >
-              Faculty Coordinators
+              Professor In Charge
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 items-center justify-evenly grid-flow-dense mx-auto pt-5 mb-16">
               {facultyCoordinators.map((member) => (
