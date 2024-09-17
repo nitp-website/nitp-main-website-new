@@ -4,182 +4,173 @@ import axios from "axios"
 import React from "react"
 import Webcard from "../components/Webteam/Webcard"
 import "./wpage.css"
+import Collapsible from "./Collapsible";
 
-const years = [20241]
+const currentYear = 20241; // Assuming current year is fixed as 20241
+const oldyears = [2024, 2023, 2022, 2021];
 const data = [
-   {
-
-  
-     name: "Dr. B Balaji Naik",
-     email: "balaji.cs@nitp.ac.in",
-     extn: "balaji.cs@nitp.ac.in",
-     id: "balaji.cs@nitp.ac.in",
-     interests: ["Cloud Computing", "Nature Inspired Algorithms", "Edge Computing"," Workflow Scheduling Algorithm", "Optimization", "Quantum Computing"],
-     image: "https://drive.google.com/thumbnail?authuser=0&sz=w320&id=1Abn5VMv4oWnpUYyNtO_j-mrh5YBNzD-C",
-     desg: "Assistant Professor",
-     url: "https://www.nitp.ac.in/profile/?id=balaji.cs@nitp.ac.in & https://www.nitp.ac.in/profile/?id=balaji.cs@nitp.ac.in & mailto:balaji.cs@nitp.ac.in"
-   },]
+  {
+    name: "Dr. B Balaji Naik",
+    email: "balaji.cs@nitp.ac.in",
+    extn: "balaji.cs@nitp.ac.in",
+    id: "balaji.cs@nitp.ac.in",
+    interests: [
+      "Cloud Computing",
+      "Nature Inspired Algorithms",
+      "Edge Computing",
+      "Workflow Scheduling Algorithm",
+      "Optimization",
+      "Quantum Computing",
+    ],
+    image: "https://drive.google.com/thumbnail?authuser=0&sz=w320&id=1Abn5VMv4oWnpUYyNtO_j-mrh5YBNzD-C",
+    desg: "Assistant Professor",
+    url: "https://www.nitp.ac.in/profile/?id=balaji.cs@nitp.ac.in",
+  },
+];
 const Webteam = () => {
- const [webteam, setWebteam] = useState([])
- const [filteredteam, setFilteredteam] = useState([])
- const [view, setView] = useState("maintainers")
- const [year, setYear] = useState(20241)
- let webteamUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/webteam`
+  const [webteam, setWebteam] = useState([]);
+  const [filteredteam, setFilteredteam] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [oldData, setOldData] = useState([]);
 
- useEffect(() => {
-  axios
-   .get(webteamUrl)
-   .then(res => {
-    const web = res.data
-    setWebteam(web)
-    let filtered = web.filter(member => {
-     return member.year === year
-    })
-    setFilteredteam(filtered)
-   })
-   .catch(e => {
-    console.log(e)
-   })
- }, [year, webteamUrl])
+  const webteamUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/webteam`;
 
- return (
-  <>
-     <div className="webteam-page text-black pr-5 pl-5 md:pr-28 md:pl-28">
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get(webteamUrl)
+      .then((res) => {
+        const web = res.data;
+        setWebteam(web);
+
+        // Filter current members
+        const currentMembers = web.filter((member) => member.year === currentYear);
+        setFilteredteam(currentMembers);
+
+        // Filter old members and set old data
+        const oldMembers = web.filter((member) => oldyears.includes(member.year));
+        setOldData(oldMembers);
+        
+        setLoading(false);
+      })
+      .catch((e) => {
+        console.log(e);
+        setLoading(false);
+      });
+  }, [webteamUrl]);
+
+  return (
+    <div className="webteam-page text-black pr-5 pl-5 pb-5 md:pr-28 md:pl-28 bg-[url('https://i.postimg.cc/fbcBY1cJ/bg.jpg')] bg-center">
       <div className="layoutrow layoutrowmain">
-       <div className="col-6" style={{ width: `100%` }}>
-        <div className="row rowmarl3 text-center pt-5 pb-4">
-         <h1 data-aos="zoom-in-right" className="text-4xl text-red-800 font-extrabold">Web Team</h1>
-        </div>
-        <div className="row rowmarl3 text-center">
-         <h2 data-aos="zoom-in-right" className="text-2xl font-semibold">
-          The Team behind the website of NIT Patna
-         </h2>
-        </div>
-       </div>
-       <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-5 gap-5 md:gap-6 items-center justify-center grid-flow-dense mx-auto">
-       </div>
-
-       <>
-        <div className="">
-         <div className="">
-          <h2 data-aos="zoom-in-right" className="text-center text-red-900 text-2xl font-bold pt-5" style={{ width: `100%`, marginTop: `0` }}>
-           Students
-          </h2>
-
-          {/* <h3
-             style={{
-              padding: `0.25rem 0`,
-              borderBottom: `2px red dotted`,
-              width: `fit-content`,
-              margin: `0`,
-             }}
+        <div className="col-6" style={{ width: `100%` }}>
+          <div className="row rowmarl3 text-center pt-5 pb-4">
+            <h1
+              data-aos="zoom-in-right"
+              className="text-xl md:text-4xl text-red-900 font-extrabold underline"
             >
-             Previous Student Volunteers
-            </h3> */}
-         </div>
-         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 items-center justify-evenly grid-flow-dense mx-auto pt-5 mb-16">
-         {filteredteam &&
-          filteredteam
-           .filter(member => member.role === "volunteer")
-           .map(member => (
-            <Webcard
-             key={member.email}  // Adding key prop
-             name={member.name}
-             email={member.email}
-             extn={member.ext_no}
-             id={member.email}
-             interests={member.interests}
-             image={member.image}
-             desg={member.desg}
-             url={member.url}
-            />
-           ))}
-         </div>
+              Web Development Cell
+            </h1>
+          </div>
+          <div className="row rowmarl3 text-center pb-6">
+            <h2
+              data-aos="zoom-in-right"
+              className="text-sm md:text-xl font-semibold"
+            >
+              Think coding is challenging? Try mastering web design!” This
+              sentiment truly captures the spirit of the Web Development Cell at
+              NIT Patna. 🌐
+            </h2>
+            <h2
+              data-aos="zoom-in-right"
+              className="text-xs md:text-xl bg-white/35 text-justify pt-3 px-4 py-4"
+            >
+              The WDC at NIT Patna is a premier team of dedicated students
+              responsible for managing and enhancing the Institute's website. ✨
+              Our goal is to merge technical skills with innovative ideas,
+              ensuring that our site is both visually engaging and content-rich,
+              featuring high-quality images and up-to-date information. 📸
+              <br />
+              <br />
+              Our mission is to ensure that the Institute's website reaches every
+              corner of India, fostering a platform for learning and critical
+              thinking. Through our efforts, we aim to contribute to a brighter
+              and more informed future.
+              <br />
+              <br />
+              Being part of WDC means diving into a world of hard work,
+              dedication, and skill enhancement. Our members gain valuable
+              experience in web design and development, honing their skills in
+              coding, user experience optimization, and creative layout design. 🚀
+              <br />
+              <br />
+              At WDC NIT Patna, we’re not just developing a website—we’re
+              shaping the digital identity of our Institute and making a
+              significant impact. Join us in this exciting journey of
+              innovation and excellence! 💻
+            </h2>
+          </div>
         </div>
-       </>
-      </div>
 
-       <>
+        <hr />
         <div className="row rowmarl3">
-         <h2 data-aos="zoom-in-right" className="text-center text-red-900 text-2xl font-bold pt-5" style={{ width: `100%`, marginTop: `0` }}>Faculties/Officers</h2>
+          <h2
+            data-aos="zoom-in-right"
+            className="text-center text-neutral-900 text-2xl font-bold pt-5 overline"
+            style={{ width: `100%`, marginTop: `0` }}
+          >
+            Faculty Coordinators
+          </h2>
         </div>
         <div className="col-6">
-         <div className="row layoutrow">
-          <div className="row rowmarl3">
-           <h2 data-aos="zoom-in-right" className="text-center text-green-900 text-2xl font-bold pt-5" style={{ width: `100%`, marginTop: `0` }}>PI Website</h2>
+          <div className="row layoutrow">
+            <div className="row grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 md:gap-6 items-center justify-center grid-flow-dense mx-auto pt-5 mb-16">
+              {data.map((member) => (
+                <Webcard
+                  key={member.id} // Use email as the unique key
+                  name={member.name}
+                  email={member.email}
+                  extn={member.extn}
+                  id={member.id}
+                  interests={member.interests}
+                  image={member.image}
+                  desg={member.desg}
+                  url={member.url}
+                />
+              ))}
+            </div>
           </div>
-          <div className="row grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 items-center justify-center grid-flow-dense mx-auto pt-5 mb-16">
-          {data.map(member => (
-      <Webcard
-        key={member.id} // Use email as the unique key
-        name={member.name}
-        email={member.email}
-        extn={member.extn}
-        id={member.id}
-        interests={member.interests}
-        image={member.image}
-        desg={member.desg}
-        url={member.url}
-      />
-    ))}
-          </div>
-         </div>
         </div>
-        {/* {view === "maintainers" && (
-         <div className="row layoutrow">
-          <div className="row rowmarl3">
-           <h2 data-aos="zoom-in-right">PI IT Services</h2>
-          </div>
-          <div className="row grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 items-center justify-center grid-flow-dense mx-auto pt-5 mb-16">
-           {filteredteam &&
-            filteredteam
-             .filter(member => member.role === "pi-it")
-             .map(member => (
-              <Webcard
-               key={member.email}  // Adding key prop
-               name={member.name}
-               email={member.email}
-               extn={member.ext_no}
-               id={member.email}
-               interests={member.interests}
-               image={member.image}
-               desg={member.desg}
-               url={member.url}
-              />
-             ))}
-          </div>
-         </div>
-        )} */}
 
-        {/* {view === "maintainers" && (
-         <div className="row layoutrow">
-          <div className="row rowmarl3">
-           <h2 data-aos="zoom-in-right">Scientific Officer</h2>
+        <hr />
+        <div className="text-center pt-5 text-black">
+          <h2  data-aos="zoom-in-left" className="text-center text-neutral-900 text-2xl font-bold pt-5 overline" style={{ width: `100%`, marginTop: `0` }}>Current Members</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 items-center justify-evenly grid-flow-dense mx-auto pt-5 mb-16">
+            {filteredteam &&
+              filteredteam
+                .filter((member) => member.role === "volunteer")
+                .map((member) => (
+                  <Webcard
+                    key={member.email} // Adding key prop
+                    name={member.name}
+                    email={member.email}
+                    extn={member.ext_no}
+                    id={member.email}
+                    interests={member.interests}
+                    image={member.image}
+                    desg={member.desg}
+                    url={member.url}
+                  />
+                ))}
           </div>
-          <div className="row grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-6 items-center justify-center grid-flow-dense mx-auto pt-5 mb-16">
-           {filteredteam &&
-            filteredteam
-             .filter(member => member.role === "scientificofficer")
-             .map(member => (
-              <Webcard
-               key={member.email}  // Adding key prop
-               name={member.name}
-               email={member.email}
-               extn={member.ext_no}
-               id={member.email}
-               interests={member.interests}
-               image={member.image}
-               desg={member.desg}
-               url={member.url}
-              />
-             ))}
-          </div>
-         </div>
-        )} */}
-       </>
-     </div>
-  </>
- )
-}
+        </div>
+              <div className="bg-gray-500 p-5 text-white pb-5 text-lg ">
+        {!loading && (
+          <Collapsible title={`Team Lineups Through the Years 🔽`} data={oldData} years={oldyears} />
+        )}
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Webteam
+export default Webteam;

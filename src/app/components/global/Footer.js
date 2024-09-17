@@ -11,7 +11,7 @@ const Footer = () => {
   const fetchWeatherData = async () => {
     try {
       const response = await fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?lat=25.5941&lon=85.1376&appid=${process.env.NEXT_PUBLIC_YOUR_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=25.5941&lon=85.1376&appid=da63ce5f202fc08ca2f84ddf36e4c303`
       );
       const data = await response.json();
       setWeatherData(data);
@@ -23,7 +23,7 @@ const Footer = () => {
   const fetchPollutionData = async () => {
     try {
       const response = await fetch(
-        `http://api.openweathermap.org/data/2.5/air_pollution?lat=25.5941&lon=85.1376&appid=${process.env.NEXT_PUBLIC_YOUR_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/air_pollution?lat=25.5941&lon=85.1376&appid=da63ce5f202fc08ca2f84ddf36e4c303`
       );
       const data = await response.json();
       setPollutionData(data);
