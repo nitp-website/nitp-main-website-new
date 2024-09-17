@@ -118,7 +118,7 @@ const Webteam = () => {
             className="text-center text-neutral-900 text-2xl font-bold pt-5 overline"
             style={{ width: `100%`, marginTop: `0` }}
           >
-            Faculty Coordinators
+            Professor In Charge
           </h2>
         </div>
         <div className="col-6">

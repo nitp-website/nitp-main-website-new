@@ -137,11 +137,11 @@ const navItems = [
             link: "/Others/NIRF",
             iconImage: Document,
           },
-          {
-            label: "Data of ARIIA",
-            link: "/Others/UpdatedSoon",
-            iconImage: Notice,
-          },
+          // {
+          //   label: "Data of ARIIA",
+          //   link: "/Others/UpdatedSoon",
+          //   iconImage: Notice,
+          // },
         ],
       },
       {
@@ -211,7 +211,7 @@ const navItems = [
         iconImage: Person,
       },
       {
-        label: "Finance committee",
+        label: "Finance Committee",
         link: "/Administration/FinanceCommittee",
         iconImage: Person,
       },
