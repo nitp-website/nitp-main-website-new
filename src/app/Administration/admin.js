@@ -29,7 +29,18 @@ const Deans = [
   },
  ]
  
- 
+ const AssDeans = [
+  {
+    name: "Prof. M. P. Singh",
+    designation: "Associate Dean , Academic",
+    type: "associ.deanac@nitp.ac.in",
+   },
+   {
+    name: "Prof. A. R. Quaff",
+    designation: "Associate Dean , Exam",
+    type: "examoffice@nitp.ac.in",
+   },
+ ]
 const BOG = [
  {
   name: "Shri Ashok Kumar Modi",
@@ -333,7 +344,7 @@ const ServiceUNIT = [
  {
   designation: "Website",
   type: "Prof. In-charge",
-  name: "Dr. Amitesh Kumar",
+  name: "Dr. B Balaji Naik",
  },
  {
   designation: "Examination",
@@ -386,7 +397,7 @@ const Admin = [
     { data: "director", content: director },
     { data: "senate", content: Senate },
     { data: "serviceunit", content: ServiceUNIT },
-   
+    { data:"assdeans",content:AssDeans},
   ];
   
 export default Admin;

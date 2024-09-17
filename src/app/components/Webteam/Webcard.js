@@ -34,7 +34,12 @@ const Webcard = ({ name, email, extn, desg, image, url, interests}) => {
     <div className="card">
       <div className="card__border">
         <div className="card__perfil">
-          <img src={pimage} alt="card image" className="card__img" />
+        <img
+        src={pimage}
+        alt={name}
+        className="webcard-image"
+        onError={(e) => (e.target.src = 'https://www.svgrepo.com/show/274909/programmer.svg')} // Fallback to default image if the provided image fails to load
+      />
         </div>
       </div>
 

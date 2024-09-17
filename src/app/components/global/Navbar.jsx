@@ -199,36 +199,49 @@ const navItems = [
         link: "/Administration/HOD",
         iconImage: Person,
       },
+
+      // {
+      //   label: "Chief Vigilance Officers",
+      //   link: "/Others/UpdatedSoon",
+      //   iconImage: Person,
+      // },
       {
-        label: "Chief Vigilance Officers",
-        link: "/Others/UpdatedSoon",
+        label: "Service Unit Heads ",
+        link: "/Administration/SUH",
         iconImage: Person,
       },
       {
-        label: "Institute Functionaries",
-        link: "/Administration/IDC",
+        label: "Finance committee",
+        link: "/Administration/FinanceCommittee",
         iconImage: Person,
       },
+      {
+        label: "Building Work Committee ",
+        link: "/Administration/BWC",
+        iconImage: Person,
+      },
+      // {
+      //   label: "Institute Functionaries",
+      //   link: "/Administration/IDC",
+      //   iconImage: Person,
+      // },
       {
         label: "Committees",
         link: "#",
         iconImage: Person,
         children: [
+          
           {
-            label: "Finance committee",
-            link: "/Administration/FinanceCommittee",
+            label: "Institute Disciplinary Committee",
+            link: "/Administration/IDC",
             iconImage: Person,
           },
-          {
-            label: "Building Work Committee ",
-            link: "/Administration/BWC",
-            iconImage: Person,
-          },
-          {
-            label: "Grievance Redressal Committees",
-            link: "/Others/UpdatedSoon",
-            iconImage: Sperson,
-          },
+
+          // {
+          //   label: "Grievance Redressal Committees",
+          //   link: "/Others/UpdatedSoon",
+          //   iconImage: Sperson,
+          // },
         ],
       },
       {
@@ -253,29 +266,21 @@ const navItems = [
         //   },
         //],
       },
-      {
-        label: "Others",
-        link: "#",
-        iconImage: Digital,
-        children: [
-          // {
-          //   label: "Organization Chart",
-          //   link: "#",
-          //   iconImage: Notice,
-          // },
-          {
-            label: "Institute Disciplinary Committee",
-            link: "/Administration/IDC",
-            iconImage: Person,
+      // {
+      //   label: "Others",
+      //   link: "#",
+      //   iconImage: Digital,
+      //   children: [
+         
+         
+         
+      //   ],
+      // },
+       {
+            label: "Organization Chart",
+            link: "https://drive.google.com/file/d/1-rCS5RsPydppIQKOYVM8qNYK8y4tUTMZ/view?usp=sharing",
+            iconImage: Notice,
           },
-
-          {
-            label: "Service Unit Heads Organisation Chart",
-            link: "/Administration/SUH",
-            iconImage: Person,
-          },
-        ],
-      },
     ],
   },
   {

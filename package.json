@@ -39,6 +39,7 @@
     "nitp-new-website": "file:",
     "postcss": "8.4.38",
     "react": "^18",
+    "react-collapsed": "^4.1.2",
     "react-countup": "^6.5.3",
     "react-dom": "^18",
     "react-icons": "^5.2.1",

@@ -116,10 +116,15 @@ Refer the link for more detail: <a href='https://www.nitp.ac.in/' target='_blank
     <div className="partnership-content pt-16">
       {activePartnershipSubsection === 'OngoingMoUs' && (
         <div>
-          <h2 className="text-xl mb-6 text-neutral-700">
-            <ul className='list-disc'>
+          <h2 className="text-xl mb-6 text-neutral-800">
+            <ul className='list-disc underline'>
                 <li>
                     <a href="https://drive.google.com/file/d/1avWRhDy5-sXe6gaBkFi6edrfWQyi6XTl/view?usp=sharing">MoU between Pennsylvania State University, USA & NIT Patna.</a>
+                </li>
+                <br></br>
+                <li>
+                <a href="https://drive.google.com/file/d/17y8UJgYGZIklBkQ48B9crgXPxxygXrpE/view?usp=sharing">MoU between University of Calabria, Italy  & NIT Patna</a>
+
                 </li>
             </ul>
             
@@ -129,28 +134,32 @@ Refer the link for more detail: <a href='https://www.nitp.ac.in/' target='_blank
       )}
       {activePartnershipSubsection === 'MoUInProcess' && (
         <div>
-           <h2 className="text-xl mb-6 text-neutral-700">
-           <ul className="list-disc">
+           <h2 className="text-xl mb-6 text-neutral-800">
+           <ul className="list-disc underline">
            <li>
           <a href="https://aicybersecuritycenter.com/" >
             International Center for AI and Cyber Security Research and Innovations (CCRI), Asia University, Taiwan
           </a>
         </li>
+        <br></br>
         <li>
           <a href="https://www.unical.it/" >
             UNIVERSITA’ DELLA CALABRIA, Italy
           </a>
         </li>
+        <br></br>
         <li>
           <a href="https://www.unifi.it/" >
             University of Florence, Italy
           </a>
         </li>
+        <br></br>
         <li>
           <a href="https://eiu.edu.vn/en/" >
             Eastern International University, Vietnam
           </a>
         </li>
+        <br></br>
         <li>
           <a href="https://www.ufscar.br/" >
             University of São Carlos (UFSCar), Brazil
@@ -231,46 +240,48 @@ amit_245singh@yahoo.com<br></br><br></br>
               <div className='grid gird-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-10'>
                 
                 <div className="grid-cols-1">
-            <img
+           <a href="https://www.nitp.ac.in/Department/ME"> <img
              src="https://web.nitp.ac.in/intl-affair/mech-dep.jpg"
              
-            ></img>
+            ></img></a>
             <strong>Mechanical Department</strong>
            </div>
            <div className="">
-            <img
+           <a href="https://www.nitp.ac.in/Department/CSE"><img
              src="https://web.nitp.ac.in/intl-affair/cse-dep.jpg"
              
-            ></img>
+            ></img></a>
             <strong>Computer Science Department</strong>
            </div>
             
             <div className="">
-            <img
+            <a href="https://www.nitp.ac.in/Department/ECE"><img
              src="https://web.nitp.ac.in/intl-affair/ece-dep.jpg"
              
-            ></img>
+            ></img></a>
             <strong>Electronics and Communication Department</strong>
            </div>
            <div className="">
-            <img
+           <a href="https://www.nitp.ac.in/Department/EE"><img
              src="https://web.nitp.ac.in/intl-affair/electrical-dep.jpg"
              
-            ></img>
+            ></img></a>
             <strong>Electrical Department</strong>
            </div>
                 <div className="">
+                <a href="https://www.nitp.ac.in/Department/Chem">
             <img
              src="https://web.nitp.ac.in/intl-affair/chem-dep.jpg"
              
-            ></img>
+            ></img></a>
             <strong>Chemistry Department</strong>
            </div>
            <div className="">
+           <a href="https://www.nitp.ac.in/Department/Archi">
             <img
              src="https://web.nitp.ac.in/intl-affair/architecture-dep.jpg"
              
-            ></img>
+            ></img></a>
             <strong>Architecture Department</strong>
            </div>
                
