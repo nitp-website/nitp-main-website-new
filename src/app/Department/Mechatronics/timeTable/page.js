@@ -17,7 +17,7 @@ function Page(){
                     </p>
                 </div>
                 <div>
-                <BackDepartment navigate={'/AllDepartment/Mechatronics'}/>
+                <BackDepartment navigate={'/Department/Mechatronics'}/>
                 </div>
             </div>
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md h-screen">

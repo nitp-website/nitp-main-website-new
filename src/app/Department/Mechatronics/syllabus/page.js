@@ -15,7 +15,7 @@ export default function page(){
                     Mechatronics & Automation
                     </p>
                 </div>
-                <BackDepartment navigate={"/AllDepartment/Mechatronics"}/>
+                <BackDepartment navigate={"/Department/Mechatronics"}/>
 
             </div>
 
