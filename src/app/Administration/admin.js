@@ -347,6 +347,11 @@ const ServiceUNIT = [
   name: "Dr. B Balaji Naik",
  },
  {
+  designation: "International Affairs",
+  type: "Prof. In-charge",
+  name: "Dr. Amit Kumar Singh",
+ },
+ {
   designation: "Examination",
   type: "Deputy Registrar",
   name: "Mrs. Bobby",
