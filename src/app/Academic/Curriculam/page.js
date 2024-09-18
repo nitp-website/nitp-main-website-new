@@ -79,7 +79,7 @@ const DocumentsTable = () => {
      const datatrans= [
       {
        link:
-        "http://web.nitp.ac.in/uploads20/Declaration_copyright_transfer_certificate.pdf",
+        "https://drive.google.com/file/d/1iytqtAcQRWSVdg_s3bbfa01dITJB5vUr/view?usp=sharing",
        para:
         "Notice: regarding Declaration and Copyright transfer certificate (UG,PG & Ph.D) required to be included in the dissertation/thesis",
       },
