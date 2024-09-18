@@ -39,7 +39,7 @@ const Home = () => {
 
           <div className="mt-2 w-full justify-center flex">
             <p className="text-gray-500 text-sm lg:text-xl font-semibold">
-            CHEMISTRY
+            CIVIL ENGINEERING
             </p>
           </div>
           <div>
