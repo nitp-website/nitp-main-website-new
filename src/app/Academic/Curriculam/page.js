@@ -4,11 +4,17 @@ const DocumentsTable = () => {
 
      const dataUG= [
       {
-       link:
-        "http://web.nitp.ac.in/downloads/firstyear/Curricula%202022%20_B.Tech,%20B.Arch%20and%20Dual%20Degree%20Programmes.pdf",
-       para:
-        "UG_Curricula_2022(Effective from academic session 2021-22 and onwards)",
-      },
+        link:
+         "https://drive.google.com/file/d/1NLUkqhhwj_ytZL1Rq4T2pASMcKok2nEt/view?usp=sharing",
+        para:
+         "Notification regarding Multiple Exit option,UG.",
+       },
+      // {
+      //  link:
+      //   "http://web.nitp.ac.in/downloads/firstyear/Curricula%202022%20_B.Tech,%20B.Arch%20and%20Dual%20Degree%20Programmes.pdf",
+      //  para:
+      //   "UG_Curricula_2022(Effective from academic session 2021-22 and onwards)",
+      // },
       {
        link:
         "http://web.nitp.ac.in/downloads/firstyear/UG%20Program%20Curricula%20Approved%20in%2032nd%20Senate%20on%2021092020-1.pdf",

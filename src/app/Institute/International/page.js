@@ -141,12 +141,12 @@ Refer the link for more detail: <a href='https://www.nitp.ac.in/' target='_blank
             International Center for AI and Cyber Security Research and Innovations (CCRI), Asia University, Taiwan
           </a>
         </li>
-        <br></br>
+        {/* <br></br>
         <li>
           <a href="https://www.unical.it/" >
             UNIVERSITA’ DELLA CALABRIA, Italy
           </a>
-        </li>
+        </li> */}
         <br></br>
         <li>
           <a href="https://www.unifi.it/" >
