@@ -7,7 +7,7 @@ import "./wpage.css"
 import Collapsible from "./Collapsible";
 
 const currentYear = 20241; // Assuming current year is fixed as 20241
-const oldyears = [2024, 2023, 2022, 2021];
+const oldyears = [ 2023, 2022, 2021];
 const data = [
   {
     name: "Dr. B Balaji Naik",

@@ -193,7 +193,7 @@ export default function Research() {
         <ActivityIcon className="w-6 h-6 text-primary md:w-8 md:h-8" />
         <h3 className="text-sm font-medium mt-2 text-primary md:text-lg">Patents</h3>
         <span className="text-2xl font-bold text-primary md:text-4xl">
-          {counterOn && <CountUp end={data.patents} duration={5} delay={1}/>}
+          {counterOn && <CountUp end={202} duration={5} delay={1}/>}
         </span>
       </div>
       
