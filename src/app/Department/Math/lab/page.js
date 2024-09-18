@@ -12,10 +12,10 @@ export default function lab(){
                 </div>
                 <div className="mt-2">
                     <p className="text-gray-500 text-base font-semibold">
-                    Physics
+                    Mathematics
                     </p>
                 </div>
-                <BackDepartment navigate={"/Department/Phy"}/>
+                <BackDepartment navigate={"/Department/Math"}/>
 
             </div>
 

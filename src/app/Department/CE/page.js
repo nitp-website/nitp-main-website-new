@@ -99,7 +99,7 @@ export default function CE() {
             Title={'SYLLABUS'}
           />
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/CE/timeTable')}
+            onClick={() => router.push('/Department/CE/table')}
             Title={'TIME TABLE'}
           />
 

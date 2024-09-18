@@ -12,11 +12,11 @@ function Page(){
                 </div>
                 <div className="mt-2">
                     <p className="text-gray-500 text-xl font-semibold">
-                    CHEMICAL ENGINEERING
+                    Chemistry
                     </p>
                 </div>
                 <div>
-                <BackDepartment navigate={'/Department/Chemical'}/>
+                <BackDepartment navigate={'/Department/Chem'}/>
                 </div>
             </div>
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md h-screen">

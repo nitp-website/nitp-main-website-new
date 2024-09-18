@@ -104,7 +104,7 @@ export default function Math() {
           />
 
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/Math/hod')}
+            onClick={() => router.push('/Department/Math/lab')}
             Title={'LABS'}
           />
 
