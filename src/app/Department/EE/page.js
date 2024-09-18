@@ -96,7 +96,7 @@ export default function EE() {
           />
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/EE/faculty')}
-            Title={'FACULTY'}
+            Title={'People'}
           />
             <DepartmentNavigationButton
               onClick={() => router.push('/Department/EE/syllabus')}
