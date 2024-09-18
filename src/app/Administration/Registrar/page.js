@@ -7,7 +7,7 @@ const RegistrarPage = () => {
     {
       name: "Dr. Asit Narayan",
       designation: "Registrar",
-      type:"asit.narayan@nitp.ac.in"
+      type:"registrar@nitp.ac.in"
     }
   ]
 
