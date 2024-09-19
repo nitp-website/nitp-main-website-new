@@ -39,6 +39,7 @@ const Slider = () => {
             <SwiperSlide><img src="https://i.postimg.cc/fyY06783/nit-patna-005.jpg" /></SwiperSlide>
             <SwiperSlide><img src="https://i.postimg.cc/sgvVmgT5/Screenshot_2024-07-31_154315.png"/></SwiperSlide>
             <SwiperSlide><img src="https://i.postimg.cc/vZgyyTkp/image.png" /></SwiperSlide>
+            <SwiperSlide><img src="https://i.postimg.cc/qv31954s/2-scientist.png" /></SwiperSlide>
           </Swiper>
         </>
       );

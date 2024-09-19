@@ -1,56 +1,67 @@
 'use client'
+import axios from "axios";
 import BackDepartment from '../../components/department/BackDepartment'
 import { DepartmentNavigationButton } from '../../components/department/DepartmentNavigationButton'
-import DepartmentNotify from '../../components/department/DepartmentNotify'
+import DepartmentNotify1 from '../../components/department/DepartmentNotify'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import {useRouter} from 'next/navigation';
+import { useEffect, useState } from "react";
 
-const Notices = [
-  {
-    id: 1,
-    notice: 'Master Time-Table July-Dec.2023',
-    link: 'https://drive.google.com/file/d/15MN9uSLnkBhyibh4BjxZ7nDun97LrO5v/a',
-  },
-  {
-    id: 2,
-    notice: 'Communicative English Lab Viva-Vove Schedule (UG & DD.1st Semester) July-Dec 2022',
-    link: 'https://drive.google.com/file/d/1a9GhlTCxBzWOpvHqLfLjyAWk4_Bw30d2/view',
-  },
-  {
-    id: 3,
-    notice: 'UG_6th & M.SC 8th Sem OPEN Elective Time-Table_HSS Dept (Jan-June 2023)',
-    link: 'https://drive.google.com/file/d/1BzW9dupGBPKRVQ6iWvISY8kUgb7U0WLQ/view',
-  },
-  {
-    id: 4,
-    notice: 'MTech-PhD Time Table_HSS Dept ( JAN -JUNE 2023)',
-    link: 'https://drive.google.com/file/d/1lgdJlHUIJKrPqxgC2sTS0lJ3m6RqpCXD/view',
-  },
-  {
-    id: 5,
-    notice: 'Schedule of Comprehensive Viva of Saraswati Keshri, Roll no 215HS008',
-    link: 'https://drive.google.com/file/d/1bSsERrTDGUKNJqOk9an116lEEqTDyH0d/view',
-  },
-  {
-    id: 6,
-    notice: 'Schedule of Comprehensive Viva of Sneha Das, Roll no 215HS002',
-    link: 'https://drive.google.com/file/d/1UNVjS2cHEJeEtBNyxGULjO-EDiDa-bCe/view',
-  },
+// const Notices = [
+//   {
+//     id: 1,
+//     notice: 'Master Time-Table July-Dec.2023',
+//     link: 'https://drive.google.com/file/d/15MN9uSLnkBhyibh4BjxZ7nDun97LrO5v/a',
+//   },
+//   {
+//     id: 2,
+//     notice: 'Communicative English Lab Viva-Vove Schedule (UG & DD.1st Semester) July-Dec 2022',
+//     link: 'https://drive.google.com/file/d/1a9GhlTCxBzWOpvHqLfLjyAWk4_Bw30d2/view',
+//   },
+//   {
+//     id: 3,
+//     notice: 'UG_6th & M.SC 8th Sem OPEN Elective Time-Table_HSS Dept (Jan-June 2023)',
+//     link: 'https://drive.google.com/file/d/1BzW9dupGBPKRVQ6iWvISY8kUgb7U0WLQ/view',
+//   },
+//   {
+//     id: 4,
+//     notice: 'MTech-PhD Time Table_HSS Dept ( JAN -JUNE 2023)',
+//     link: 'https://drive.google.com/file/d/1lgdJlHUIJKrPqxgC2sTS0lJ3m6RqpCXD/view',
+//   },
+//   {
+//     id: 5,
+//     notice: 'Schedule of Comprehensive Viva of Saraswati Keshri, Roll no 215HS008',
+//     link: 'https://drive.google.com/file/d/1bSsERrTDGUKNJqOk9an116lEEqTDyH0d/view',
+//   },
+//   {
+//     id: 6,
+//     notice: 'Schedule of Comprehensive Viva of Sneha Das, Roll no 215HS002',
+//     link: 'https://drive.google.com/file/d/1UNVjS2cHEJeEtBNyxGULjO-EDiDa-bCe/view',
+//   },
 
-  {
-    id: 7,
-    notice: 'Schedule of Open Viva-Voce Examination of Maryam Sabreen, Roll no. 165HS01',
-    link: 'https://drive.google.com/file/d/1AObYsaKVMew-ZnqWSZ1y4qYbxz1TTOd6/view',
-  },
-  {
-    id: 8,
-    notice: 'Schedule of End Sem Viva-Voce Examination for UG (AR, CSE, ECE) 2nd Semester.',
-    link: 'https://drive.google.com/file/d/1KfJqDtLwCvyRgz0SI-tV1mxW44EyUc7y/view',
-  },
-]
+//   {
+//     id: 7,
+//     notice: 'Schedule of Open Viva-Voce Examination of Maryam Sabreen, Roll no. 165HS01',
+//     link: 'https://drive.google.com/file/d/1AObYsaKVMew-ZnqWSZ1y4qYbxz1TTOd6/view',
+//   },
+//   {
+//     id: 8,
+//     notice: 'Schedule of End Sem Viva-Voce Examination for UG (AR, CSE, ECE) 2nd Semester.',
+//     link: 'https://drive.google.com/file/d/1KfJqDtLwCvyRgz0SI-tV1mxW44EyUc7y/view',
+//   },
+// ]
 
 export default function Humanities() {
   const router = useRouter()
+  const [Notices, setNotices] = useState([]);
+  useEffect(()=>{
+    const getData = async()=>{
+      const response =await axios.get("https://admin.nitp.ac.in/api/notice/hss");
+      console.log(response.data);
+      setNotices(response.data);
+    }
+    getData();
+  },[])
   return (
     <div className="p-10 max-sm:px-0  text-black">
       {/* heading */}
@@ -81,11 +92,13 @@ export default function Humanities() {
             <div className="overflow-hidden flex flex-col-reverse">
               {Notices.map((notice, id) => {
                 return (
-                  <DepartmentNotify
-                    key={id}
-                    title={notice.notice}
-                    link={notice.link ? notice.link : ""}
-                  />
+                  <DepartmentNotify1
+                        key={id}
+                        title={notice.title}
+                        attachments = {notice.attachments}
+                        important = {notice.important}
+                        link={notice.notice_link? notice.notice_link : ""}
+                    />
                 )
               })}
             </div>
