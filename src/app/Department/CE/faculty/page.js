@@ -12,26 +12,26 @@ const Home = () => {
   const [phd_candidate, setphd_candidate] = useState([]);
   const [phd_render, setphd_render] = useState([])
   const [loading, setloading] = useState(false)
-  const fetchphd = async () => {
-    setloading(true)
-    const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty/ce`
-    const { data } = await axios(api);
-    console.log(data)
-    setphd_candidate(data)
-    const phd_info = [];
-    for (let i = 0; i < phd_candidate.length; i++) {
-      const phddata = await axios(`https://admin.nitp.ac.in/api/faculty/${phd_candidate[i].email}`);
-      const info = phddata.data
-      for (let j = 0; j < info.phd_candidates?.length; j++) {
-        phd_info.push(info.phd_candidates[j]);
-      }
-    }
-    setphd_render(phd_info)
-    setloading(false)
-  }
-  useEffect(() => {
-    fetchphd()
-  }, [phd])
+  // const fetchphd = async () => {
+  //   setloading(true)
+  //   const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty/ce`
+  //   const { data } = await axios(api);
+  //   console.log(data)
+  //   setphd_candidate(data)
+  //   const phd_info = [];
+  //   for (let i = 0; i < phd_candidate.length; i++) {
+  //     const phddata = await axios(`https://admin.nitp.ac.in/api/faculty/${phd_candidate[i].email}`);
+  //     const info = phddata.data
+  //     for (let j = 0; j < info.phd_candidates?.length; j++) {
+  //       phd_info.push(info.phd_candidates[j]);
+  //     }
+  //   }
+  //   setphd_render(phd_info)
+  //   setloading(false)
+  // }
+  // useEffect(() => {
+  //   fetchphd()
+  // }, [phd])
   return (
     <>
       <div className="flex flex-col px-3 py-10  max-sm:p-4 text-black">
@@ -80,14 +80,19 @@ const Home = () => {
                 Staffs
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2">
               <DeptStaffcard image={"/hssstaff1.png"} name={"Shailendra Kumar Singh"} designation={"Peon"} />
-            </div>
+            </div> */}
           </div>
         }
 
         
         {phd && <div className="grid grid-cols-1 md:grid-cols-2">
+          <div>
+              <p className="text-red-900 text-xl lg:text-2xl font-bold">
+              Phd Candidates
+              </p>
+            </div>
           {loading && <div>loading</div>}
           {
             phd_render?.map((item) => {

@@ -86,6 +86,11 @@ const Home = () => {
         }
         {
           phd&&<div className="grid grid-cols-1 md:grid-cols-2">
+            <div>
+              <p className="text-red-900 text-xl lg:text-2xl font-bold">
+              Phd Candidates
+              </p>
+            </div>
             {
               phd_render?.map((item)=>{
                 return <PhdCandidate key={item.id} image={""} name={item.phd_student_name} supervisor={item.email} topic={item.thesis_topic} />
