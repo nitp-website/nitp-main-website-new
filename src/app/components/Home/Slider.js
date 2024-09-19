@@ -38,7 +38,7 @@ const Slider = () => {
             <SwiperSlide><img src="https://i.postimg.cc/h4mxzgKS/nit-patna-004.jpg" /></SwiperSlide>
             <SwiperSlide><img src="https://i.postimg.cc/fyY06783/nit-patna-005.jpg" /></SwiperSlide>
             <SwiperSlide><img src="https://i.postimg.cc/sgvVmgT5/Screenshot_2024-07-31_154315.png"/></SwiperSlide>
-            <SwiperSlide><img src="https://i.postimg.cc/zBjz8PBw/NIRF-NIT-Patna-Updated-Poster.png" /></SwiperSlide>
+            <SwiperSlide><img src="https://i.postimg.cc/vZgyyTkp/image.png" /></SwiperSlide>
           </Swiper>
         </>
       );
