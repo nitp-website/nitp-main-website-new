@@ -717,10 +717,10 @@ export default function Navbar() {
   <div className="flex justify-between items-center px-4 py-1 text-white text-xs md:text-sm">
     <div className="flex space-x-2 text-xs md:text-sm">
       <a
-        href="http://15.207.239.227:8000/"
+        href="/Notices/JobsNITP"
         className="hover:underline text-xs md:text-sm"
       >
-        Old Website
+        Jobs@NITP
       </a>
       <span className="text-xs md:text-sm">|</span>
       <a
