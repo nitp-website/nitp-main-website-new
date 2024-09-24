@@ -100,7 +100,7 @@ useEffect(() => {
         phd&&<div className="grid grid-cols-1 md:grid-cols-2">
           {
             phd_render?.map((item)=>{
-              return <PhD Candidate
+              return <PhdCandidate
               key={item.id}
               image={""}
               name={item.phd_student_name}
