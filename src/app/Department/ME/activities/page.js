@@ -7,16 +7,14 @@ function Compo({ project, pi, sponsor, amount, year, sno }) {
                 {sno}
             </div>
             <div className="col-span-3 border border-black pl-4 py-2 flex flex-col justify-center">
-                {PI
+                {pi}
             </div>
             <div className="col-span-4 border border-black pl-4 py-2 flex flex-col justify-center">
-                {Project}
+                {project}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {Year}
+                {year}
             </div>
-
-
         </>
     )
 }

@@ -66,7 +66,7 @@ export default function Humanities() {
             About
           </div>
           <div className="text-justify max-sm:text-[12px]">
-            About fdsfdsf sdfjkdsjfdksfj
+            About
                 <button
                 onClick={() => router.push('/Department/Material/about')}
                 className="text-blue-600"
