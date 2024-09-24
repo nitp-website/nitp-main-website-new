@@ -50,7 +50,7 @@ useEffect(() => {
 
         <div className="mt-2 w-full justify-center flex">
           <p className="text-gray-500 text-sm lg:text-xl font-semibold">
-          MECHANICAL ENGINEERING
+          Mechanical Engineering
           </p>
         </div>
         <div>
@@ -100,7 +100,7 @@ useEffect(() => {
         phd&&<div className="grid grid-cols-1 md:grid-cols-2">
           {
             phd_render?.map((item)=>{
-              return <PhdCandidate
+              return <PhD Candidate
               key={item.id}
               image={""}
               name={item.phd_student_name}
