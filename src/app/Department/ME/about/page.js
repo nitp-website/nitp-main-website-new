@@ -7,12 +7,12 @@ function page() {
             <div className="flex flex-col  mb-6">
                 <div>
                     <p className="text-red-900 text-3xl max-sm:text-2xl font-bold">
-                        ABOUT
+                        About
                     </p>
                 </div>
                 <div className="mt-2">
                     <p className="text-gray-500 text-xl font-semibold">
-                        MECHANICAL ENGINEERING
+                        Mechanical Engineering 
                     </p>
                 </div>
                 <BackDepartment navigate={"/Department/ME"} />
