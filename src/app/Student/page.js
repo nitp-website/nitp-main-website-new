@@ -75,7 +75,7 @@ const studentResources = [
         "link": "/Student/UnnatBharat",
     },
     {
-        "title": "Chanakya Portal",
+        "title": "Academic Portal",
         "image": "https://i.postimg.cc/GBGJQL4m/Chankaya64.png", 
         "link": "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",
     }
