@@ -52,7 +52,7 @@ function Page() {
                 </div>
                 <div className="lg:mt-2">
                     <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        MECHANICAL ENGINEERING
+                        Mechanical Engineering 
                     </p>
                 </div>
                 <BackDepartment navigate={"/Department/ME"}/>
