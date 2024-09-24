@@ -103,7 +103,7 @@ function Page() {
                 </div>
                 <div className="mt-14">
                     <p className="text-grey-800 text-xl font-semibold">
-                        Research area of Faculty wise for the Electrical Engineering Department:
+                        Research area of Faculty wise for the Mechanical Engineering Department:
                     </p>
                 </div>
                 <div className="mb-10 overflow-x-auto lg:mr-10 mt-5">
