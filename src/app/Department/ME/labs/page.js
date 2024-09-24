@@ -25,12 +25,12 @@ export default function labs() {
             <div className="flex flex-col  mb-6">
                 <div>
                     <p className="text-red-900 text-xl lg:text-2xl font-bold">
-                        LABS
+                        Labs
                     </p>
                 </div>
                 <div className="mt-1 lg:mt-2">
                     <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        MECHANICAL ENGINEERING
+                        Mechanical Engineering
                     </p>
                 </div>
                 <BackDepartment navigate={"/Department/ME"} />
