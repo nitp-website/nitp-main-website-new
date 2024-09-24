@@ -8,19 +8,19 @@ function Compo({ project, pi, sponsor, amount, year, sno }) {
             </div>
 
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {project}
+                {Project}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {pi}
+                {PI}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {sponsor}
+                {Sponsor}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {amount}
+                {Amount}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {year}
+                {Year}
             </div>
 
 
@@ -38,19 +38,19 @@ function Compon({ app, pi, title, filldate, Patent, grant, sno }) {
                 {app}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {title}
+                {Title}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {filldate}
+                {Filldate}
             </div>
             <div className="col-span-1 border border-black pl-4 py-2 flex flex-col justify-center">
                 {Patent}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {grant}
+                {Grant}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {pi}
+                {PI}
             </div>
 
 
@@ -68,7 +68,7 @@ function Page() {
                 </div>
                 <div className="lg:mt-2">
                     <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        MECHANICAL ENGINEERING
+                        Mechanical Engineering
                     </p>
                 </div>
                 <BackDepartment navigate={"/Department/ME"}/>
