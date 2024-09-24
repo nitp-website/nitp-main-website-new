@@ -1,9 +1,9 @@
 import BackDepartment from "../../../components/department/BackDepartment";
 
 
-export default function mission(){
+export default function mission() {
     return (
-        <div className=" flex flex-col p-10 max-sm:p-2 text-black">  
+        <div className=" flex flex-col p-10 max-sm:p-2 text-black">
             <div className="flex flex-col  mb-16">
                 <div>
                     <p className="text-red-900 text-2xl  font-bold">
@@ -12,10 +12,10 @@ export default function mission(){
                 </div>
                 <div className="mt-2">
                     <p className="text-gray-500 text-base font-semibold">
-                    CHEMICAL ENGINEERING
+                        CHEMICAL ENGINEERING
                     </p>
                 </div>
-                <BackDepartment navigate={"/Department/Chemical"}/>
+                <BackDepartment navigate={"/Department/Chemical"} />
 
             </div>
 
@@ -23,21 +23,28 @@ export default function mission(){
                 {/* vision */}
                 <div className="mb-10">
                     <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">VISION :-</div>
-                    {/* <ul className="list-disc list-inside ml-5 space-y-4 text-sm lg:text-base">
-                        <li>To offer quality education in electrical engineering to meet the requirements of industry, society and nation.</li>
-                        <li>To provide contemporary technical knowhow by regular upgradation of curriculum as per the needs of industry and educative exposures like short term courses, conferences, etc.</li>
-                        <li>To establish state-of-the-art infrastructural facilities in the arena of academics and research.</li>
-                        <li>To inculcate leadership, moral and ethical values among the students.</li>
-                    </ul> */}
+                    <ul>
+                        <li>
+                            To become a globally recognized Chemical Engineering and Technology Department renowned for excellence in education, research, and innovation, driving sustainable development and addressing the complex challenges of the future.
+                        </li>
+                    </ul>
                 </div>
                 {/* mission */}
                 <div className="mb-10">
                     <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">MISSION :-</div>
-                    {/* <ul className="list-disc list-inside ml-5 space-y-4 text-sm lg:text-base">
-                        <li>To achieve sustainable growth towards academic excellence in the field of Electrical Engineering.</li>
-                    </ul> */}
+                    <ul>
+                        <li>
+                            Provide rigorous, comprehensive education that prepares students for leadership roles in the chemical engineering profession and allied fields.</li>
+                        <li>Foster a research environment that promotes innovative and impactful research, contributing to the advancement of chemical engineering knowledge and technology.</li>
+                        <li>Lead initiatives that promote sustainable development, improving quality of life, and addressing global challenges through education, research, and community engagement.</li>
+                        <li>Build strong collaborations with alumni, industry, research organizations, and academic institutions at both national and international levels to enhance educational and research outcomes.</li>
+                        <li>Cultivate professional and ethical leadership among students and faculty, emphasizing the importance of integrity, responsibility, and lifelong learning in their careers.</li>
+                        <li>Encourage a multidisciplinary approach to problem-solving, integrating knowledge from various fields to address society's and industry's evolving needs.
+                        </li>
+
+                    </ul>
                 </div>
-                
+
             </div>
         </div>
     )
