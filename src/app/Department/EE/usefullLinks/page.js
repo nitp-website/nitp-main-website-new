@@ -22,11 +22,11 @@ function page(){
                 {/* LINKS */}
                 <div className="mb-10">
                     <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
-                        <li className="hover:text-blue-800"><a href="">Study Materials</a></li>
-                        <li className="hover:text-blue-800"><a href="">Sample Question Papers</a></li>
-                        <li className="hover:text-blue-800"><a href="">Lab Manuals</a></li>
-                        <li className="hover:text-blue-800"><a href="">Placement</a></li>
-                        <li className="hover:text-blue-800"><a href="">E-Learning Resources</a></li>
+                        <li className="hover:text-blue-800"><a href="https://docs.google.com/spreadsheets/d/1cLbd7aYSImOAz_7GpMMt1MPifE9erSGf_TI2qglHzis/edit?usp=sharing_eip_se_dm&ts=661c01da" target="blank">Study Materials</a></li>
+                        <li className="hover:text-blue-800"><a href="https://drive.google.com/drive/folders/13AA_X_5qbcNRD0ni-ZQnvIOY3Ko1pgOJ?usp=drive_link" target="blank">Sample Question Papers</a></li>
+                        <li className="hover:text-blue-800"><a href="https://electricallab.in/" target="blank">Lab Manuals</a></li>
+                        <li className="hover:text-blue-800"><a href="https://drive.google.com/file/d/1UMNojontWLypMfbavmYk8ZwMV2KiKcuw/view?usp=drive_link" target="blank">Placement</a></li>
+                        <li className="hover:text-blue-800"><a href="https://drive.google.com/file/d/1QXYr176K2TnlxSfJIJD2bdyjXtvL7nvz/view" target="blank">E-Learning Resources</a></li>
                     </ul>
                 </div>
             </div>
