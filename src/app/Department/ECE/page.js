@@ -75,22 +75,20 @@ export default function ECE() {
             About
           </div>
           <div className="text-justify max-sm:text-[12px]">
-            The Department of Computer Science and Engineering offers courses
-            leading to Bachelor of Technology in Computer Science and
-            Engineering. The department has a very good infrastructure and
-            faculty to provide excellent education. The curriculum is updated
-            regularly to keep up with the growing demands and the changing
-            trends of the software industry and research laboratories. The
-            department provides a wide range of courses. The prominent among
-            them includes Data Structures, Design and Analysis of Algorithms,
-            System Programming, Computer Networks, Data Mining and Warehousing,
-            Distributed and Parallel Computing, Mobile and Wireless Computing,
-            Real-time Systems, Cryptography, Genetic Algorithm and Artificial
-            Intelligence. Apart from these, students are also offered a wide
-            variety of electives.
+          The Department of Electronics and Communication Engineering is one of the established and largest department in the institute. It was established in
+          the year 1978 with an intake of 10 students only. The Department offers
+          B.Tech programme in "Electronics & Communication Engineering" with 161 intake
+          capacity, and M.Tech programme in "Communication System, Microelectronics and
+          VLSI System Design" with 22 intake capacity for each specialization.
+          Department introduces dual degree program in "Microelectronics and VLSI
+          System Design" in the year 2022 onwards with 22 intake capacity. The
+          department is also offering Ph.D. program (Full time and Part time research
+          program) in Electronics and Communication Engineering since 2012 provides a
+          platform for bright graduates and postgraduates to conduct research in the
+          following areas:
             <button
                 onClick={() => router.push('/Department/ECE/about')}
-                className="text-blue-600"
+                className="text-blue-600 ml-2"
               >
                 more..
             </button>
