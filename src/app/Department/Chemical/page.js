@@ -66,9 +66,9 @@ export default function Page() {
             About
           </div>
           <div className="text-justify max-sm:text-[12px]">
-            
+          The Department of Chemical Engineering at the National Institute of Technology Patna was established in 2024 with the vision to become a leader in Chemical Engineering education and research. Our engineering programs will provide a robust foundation in chemical engineering principles, combining traditional courses with emerging specializations. Students delve into core subjects such as material and energy balance, thermodynamics, mass transfer, heat transfer, fluid mechanics, chemical reaction engineering, process control, petroleum and polymer processing, and computational systems. We are dedicated to fostering an environment of innovative research and development.
                 <button
-                onClick={() => router.push('/Department/Mechatronics/about')}
+                onClick={() => router.push('/Department/Chemical/about')}
                 className="text-blue-600"
                 >
                 more...
