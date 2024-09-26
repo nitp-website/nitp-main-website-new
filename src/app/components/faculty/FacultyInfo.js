@@ -283,10 +283,18 @@ const FacultyInfo = () => {
                   <ul className='list-decimal flex flex-col gap-3'>
                     {
                       conference.map((item) => {
-                        return <li key={item.id} className='flex'>
-                          <div className='w-[5px] h-[5px] rounded-full bg-black mt-3 mr-2 p-[4px]'></div>
-                          <div className='text-md'><span className='font-semibold mr-1'>{item?.authors ? item.authors : ""}</span> , &quot; {item?.title ? item.title : ""} &quot; ,{item?.journal_name ? item.journal_name : ""} ,{item?.citation_key ? item.citation_key : ""} , {item?.year ? item.year : ""} </div>
-                        </li>
+                        return   <li key={item.id} className="flex">
+                        <div className="w-[5px] h-[5px] rounded-full bg-black mt-3 mr-2 p-[4px]"></div>
+                        <div className="text-md">
+                          <span className="font-semibold mr-1">
+                            {item?.authors ? `${item.authors},` : ""}
+                          </span>
+                          {item?.title ? `"${item.title}"` : ""}
+                          {item?.journal_name ? ` ${item.journal_name},` : ""}
+                          {item?.citation_key ? ` ${item.citation_key},` : ""}
+                          {item?.year ? ` ${item.year}` : ""}
+                        </div>
+                      </li>
                       }
                       )
                     }
