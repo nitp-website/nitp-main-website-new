@@ -20,7 +20,7 @@ function Compo({ project, pi, sponsor, amount, year, sno }) {
 }
 function Page() {
     return (
-        <div className=" flex flex-col p-5">
+        <div className=" flex flex-col p-5 text-neutral-800">
             <div className="flex flex-col md:ml-10 mb-3">
                 <div>
                     <p className="text-red-900 text-xl lg:text-2xl font-bold">
