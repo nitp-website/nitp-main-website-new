@@ -8,19 +8,19 @@ function Compo({ project, pi, sponsor, amount, year, sno }) {
             </div>
 
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {Project}
+                {project}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {PI}
+                {pi}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {Sponsor}
+                {sponsor}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {Amount}
+                {amount}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {Year}
+                {year}
             </div>
 
 
@@ -38,19 +38,19 @@ function Compon({ app, pi, title, filldate, Patent, grant, sno }) {
                 {app}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {Title}
+                {title}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {Filldate}
+                {filldate}
             </div>
             <div className="col-span-1 border border-black pl-4 py-2 flex flex-col justify-center">
                 {Patent}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {Grant}
+                {grant}
             </div>
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
-                {PI}
+                {pi}
             </div>
 
 
@@ -59,7 +59,7 @@ function Compon({ app, pi, title, filldate, Patent, grant, sno }) {
 }
 function Page() {
     return (
-        <div className="flex flex-col p-5">
+        <div className="flex flex-col p-5 text-neutral-800">
             <div className="flex flex-col md:ml-10">
                 <div>
                     <p className="text-red-900 text-xl lg:text-2xl font-bold">

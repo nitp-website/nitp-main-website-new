@@ -12,6 +12,7 @@ const Home=() =>{
   const [phd, setphd] = useState(false);
   const [phd_candidate,setphd_candidate]=useState([]);
   const [phd_render,setphd_render]=useState([])
+  const [loading, setloading] = useState(false);
   
   const fetchphd = async () => {
     setloading(true);
@@ -100,7 +101,7 @@ useEffect(() => {
         phd&&<div className="grid grid-cols-1 md:grid-cols-2">
           {
             phd_render?.map((item)=>{
-              return <PhD Candidate
+              return <PhdCandidate
               key={item.id}
               image={""}
               name={item.phd_student_name}
