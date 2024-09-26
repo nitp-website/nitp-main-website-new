@@ -291,6 +291,7 @@ const FacultyInfo = () => {
                           </span>
                           {item?.title ? `"${item.title}"` : ""}
                           {item?.journal_name ? ` ${item.journal_name},` : ""}
+                          {item?.booktitle ? ` ${item.booktitle},` : ""}
                           {item?.citation_key ? ` ${item.citation_key},` : ""}
                           {item?.year ? ` ${item.year}` : ""}
                         </div>
