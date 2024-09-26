@@ -12,6 +12,7 @@ const Home=() =>{
   const [phd, setphd] = useState(false);
   const [phd_candidate,setphd_candidate]=useState([]);
   const [phd_render,setphd_render]=useState([])
+  const [loading, setloading] = useState(false);
   
   const fetchphd = async () => {
     setloading(true);

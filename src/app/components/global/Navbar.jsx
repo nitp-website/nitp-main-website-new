@@ -349,23 +349,7 @@ const navItems = [
           },
         ],
       },
-      {
-        label: "Centers",
-        link: "#",
-        iconImage: Structure,
-        children: [
-          {
-            label: "Computer Center",
-            link: "/Facilities/ComputerCenter",
-            iconImage: ComputerCentre,
-          },
-          {
-            label: "Incubation Center",
-            link: "https://web.nitp.ac.in/incubation_center/index.html",
-            iconImage: Ecell,
-          },
-        ],
-      },
+      
       {
         label: "Programmes",
         link: "/Course",
@@ -454,11 +438,11 @@ const navItems = [
         ],
         iconImage: Excellence,
       },
-      {
-        label: "Digital Intiatives",
-        link: "/Academic/DI",
-        iconImage: Digital,
-      },
+      // {
+      //   label: "Digital Intiatives",
+      //   link: "/Academic/DI",
+      //   iconImage: Digital,
+      // },
       // {
       //   label: "ICT Academy",
       //   link: "#",
@@ -623,7 +607,7 @@ const navItems = [
         iconImage: Bharat,
       },
       {
-        label: "Chanakya Portal",
+        label: "Academic Portal",
         link: "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",
         iconImage: Chankaya,
       },
@@ -633,6 +617,23 @@ const navItems = [
     label: "Facilities",
     link: "/Facilities",
     children: [
+      {
+        label: "Centers",
+        link: "#",
+        iconImage: Structure,
+        children: [
+          {
+            label: "Computer Center",
+            link: "/Facilities/ComputerCenter",
+            iconImage: ComputerCentre,
+          },
+          {
+            label: "Incubation Center",
+            link: "https://web.nitp.ac.in/incubation_center/index.html",
+            iconImage: Ecell,
+          },
+        ],
+      },
       {
         label: "Health Center",
         link: "/Facilities/MedicalFacilities",
