@@ -13,38 +13,39 @@ const DocumentsTable = () => {
        link:
         "http://web.nitp.ac.in/downloads/firstyear/Curricula%202022%20_B.Tech,%20B.Arch%20and%20Dual%20Degree%20Programmes.pdf",
        para:
-        "UG_Curricula_2022(Effective from academic session 2021-22 and onwards)",
+        "UG Regulation 2022(Effective from academic session 2021-22 and onwards)",
       },
       {
        link:
         "http://web.nitp.ac.in/downloads/firstyear/UG%20Program%20Curricula%20Approved%20in%2032nd%20Senate%20on%2021092020-1.pdf",
        para:
-        "UG Curricula 2020. (Application for Academic Session 2020-21 and onward)",
+        "UG Regulation 2020 (Effective for Academic Session 2020-21 )",
       },
       {
        link:
         "http://web.nitp.ac.in/downloads/firstyear/UG%20Regulation%20&%20Curiculla%20amended%20upto%2018th%20Senate%20with%20effect%20from%20session%202016-17.pdf",
        para:
-        "UG REGULATION 2016. (to be effective from the Academic session 2016-17 and onwards)",
+        "UG Regulation 2016 (Effective for the Academic session 2016-17 to 2019-20)",
       },
       {
        link: "http://web.nitp.ac.in/downloads/firstyear/UG%20Curricula%202013.pdf",
-       para: "UG REGULATION 2013. (UG CURRICULA' 2013 FOR B.TECH, B.ARCH PROGRAM",
+       para: "UG Regulation 2013 (Effective from the Academic session 2013-14 to 2015-16)",
       },
      ]
    
      const dataPG= [
-      {
-       link:
-        "http://web.nitp.ac.in/downloads/M.Tech%20&%20MURP%20Regulation%202013-14%20-%20Scanned%20%20copy.pdf",
-       para:
-        "M.Tech/MURP (PG) REGULATION 2013. ( Effective from Session 2013-14 to 2016-2017)",
-      },
+   
       {
        link:
         "http://web.nitp.ac.in/downloads/firstyear/PG%20Regulation%20&%20Curiculla%20amended%20upto%2022nd%20Senate%20with%20effect%20from%20session%202017-18.pdf",
        para:
-        "M.Tech/MURP (PG) REGULATION 2017. (to be effective from the Academic session 2017-18 and onwards)",
+        "M.Tech/MURP (PG) Regulation 2017 (Effective from the Academic session 2017-18 and onwards)",
+      },
+      {
+       link:
+        "http://web.nitp.ac.in/downloads/M.Tech%20&%20MURP%20Regulation%202013-14%20-%20Scanned%20%20copy.pdf",
+       para:
+        "M.Tech/MURP Regulation 2013 ( Effective from Academic session 2013-14 to 2016-2017)",
       },
      ]
     
