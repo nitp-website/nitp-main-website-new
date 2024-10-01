@@ -495,8 +495,8 @@ const navItems = [
         iconImage: Admin,
       },
       {
-        label: "Academic Portal",
-        link: "http://exam.nitp.ac.in:9001/",
+        label: "Faculty Academic Portal",
+        link: "http://mis.nitp.ac.in:81/",
         iconImage: Portal,
       },
       // {
@@ -607,7 +607,7 @@ const navItems = [
         iconImage: Bharat,
       },
       {
-        label: "Academic Portal",
+        label: "Student Academic Portal",
         link: "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",
         iconImage: Chankaya,
       },
