@@ -505,7 +505,7 @@ const Sidebar = ({
                 className="mt-1 mx-1 w-[25px] h-[25px]"
               />
               <div className="bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]">
-                <span className="cursor-pointer">Phd Candidates</span>
+                <span className="cursor-pointer">PhD Candidates</span>
               </div>
             </div>
           ) : (
