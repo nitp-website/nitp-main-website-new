@@ -405,12 +405,12 @@ const navItems = [
         children: [
           { label: "UG", link: "/Course/Ug", iconImage: Structure },
           {
-            label: "PG(M. tech / MURP)",
+            label: "Post Graduate",
             link: "/Course/Pg",
             iconImage: Structure,
           },
           {
-            label: "M.tech/MURP-PHD(DD)",
+            label: "Dual Degree",
             link: "/Course/MTech",
             iconImage: Structure,
           },
