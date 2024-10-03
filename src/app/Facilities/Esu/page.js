@@ -8,7 +8,8 @@ export default function Home() {
 
       subheading: "Estate Service Unit (ESU)",
       text: `Complaint Form:
-      <a href="https://drive.google.com/file/d/1ieNmS6_xYi8Azm2HAU9tikhDcQQXGTCT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="text-black  hover:text-red-800">Click Here</a>
+<a href="https://drive.google.com/file/d/1ieNmS6_xYi8Azm2HAU9tikhDcQQXGTCT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="text-black hover:text-red-800">Click Here</a>`,
+
     },
   ];
 
@@ -71,3 +72,4 @@ export async function generateMetadata({ params }) {
     title: "Estate Service Unit (ESU) | NIT Patna",
   };
 }
+    
