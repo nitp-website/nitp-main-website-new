@@ -405,12 +405,12 @@ const navItems = [
         children: [
           { label: "UG", link: "/Course/Ug", iconImage: Structure },
           {
-            label: "PG(M. tech / MURP)",
+            label: "Post Graduate",
             link: "/Course/Pg",
             iconImage: Structure,
           },
           {
-            label: "M.tech/MURP-PHD(DD)",
+            label: "Dual Degree",
             link: "/Course/MTech",
             iconImage: Structure,
           },
@@ -484,19 +484,19 @@ const navItems = [
         iconImage: Director,
       },
 
-      {
-        label: "Rules and Regulation",
-        link: "/Academic/Curriculam",
-        iconImage: Rules,
-      },
+      // {
+      //   label: "Rules and Regulation",
+      //   link: "/Academic/Curriculam",
+      //   iconImage: Rules,
+      // },
       {
         label: "Admin Portal",
         link: "https://admin.nitp.ac.in/",
         iconImage: Admin,
       },
       {
-        label: "Academic Portal",
-        link: "http://exam.nitp.ac.in:9001/",
+        label: "Faculty Academic Portal",
+        link: "http://mis.nitp.ac.in:81/",
         iconImage: Portal,
       },
       // {
@@ -533,11 +533,11 @@ const navItems = [
         iconImage: Hostel,
       },
 
-      {
-        label: "Sports",
-        link: "/Facilities/SportsFacilities",
-        iconImage: Sports,
-      },
+      // {
+      //   label: "Sports",
+      //   link: "/Facilities/SportsFacilities",
+      //   iconImage: Sports,
+      // },
       {
         label: "Scholarship",
         link: "/Student/Scholarship",
@@ -607,7 +607,7 @@ const navItems = [
         iconImage: Bharat,
       },
       {
-        label: "Academic Portal",
+        label: "Student Academic Portal",
         link: "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",
         iconImage: Chankaya,
       },
