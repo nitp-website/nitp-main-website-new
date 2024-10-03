@@ -88,7 +88,7 @@ const FacultyInfo = () => {
     <div>
       <FacultyHeader vidwan={vidwan} scopus={scopus} orcid={orcid} personal_webpage={personal_webpage} linkedin={linkedin} google_scholar={google_scholar} image={image} name={name} email={email} designation={designation} research={research} />
       {
-        resume||books.length!==0||conference.length!==0||membership||education||publications||subjects||pg_ug_projects||phd_students||work_experience||Professional_Service||curr_admin_responsibility||past_admin_responsibility?
+        resume||books.length!==0||conference.length!==0||membership||education||publications||subjects||pg_ug_projects||phd_students||work_experience||Professional_Service||curr_admin_responsibility.length > 0|| past_admin_responsibility.length > 0?
       <div className='flex flex-col md:flex-row'>
         <Sidebar setstate={setstate} resume={resume} subjects={subjects} article={article} past_admin={past_admin_responsibility} work={work_experience} curr_admin={curr_admin_responsibility} phd_students={phd_students} memebership={membership} education={education} pg_ug_projects={pg_ug_projects} books={books} conference={conference} professional={Professional_Service} publications={publications}/>
         <div className='md:mx-3 md:mt-3  w-full overflow-scroll  '>
