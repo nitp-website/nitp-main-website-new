@@ -484,11 +484,11 @@ const navItems = [
         iconImage: Director,
       },
 
-      {
-        label: "Rules and Regulation",
-        link: "/Academic/Curriculam",
-        iconImage: Rules,
-      },
+      // {
+      //   label: "Rules and Regulation",
+      //   link: "/Academic/Curriculam",
+      //   iconImage: Rules,
+      // },
       {
         label: "Admin Portal",
         link: "https://admin.nitp.ac.in/",
