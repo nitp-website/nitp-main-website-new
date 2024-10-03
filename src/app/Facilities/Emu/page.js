@@ -9,7 +9,7 @@ export default function Home() {
  <a href="https://drive.google.com/drive/folders/1DJjrqjQVvjGdRnU1Hd1sJpqmJM7WGAZe" target="_blank" rel="noopener noreferrer" className="text-black  hover:text-red-800">Click here to download EMU Maintenance Complaint form, kindly fill the form and submit</a>
 Land line- 0612-2371715 Extension No.-116
 
-For any type of Electrical Complaint kindly fill the form.`,
+`,
     },
   ];
 
