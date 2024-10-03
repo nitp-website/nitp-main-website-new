@@ -11,7 +11,7 @@ const Notices = [
     notice: 'Data to be updated soon',
     link: '',
   },
-  
+
 ]
 
 export default function Humanities() {
@@ -20,7 +20,7 @@ export default function Humanities() {
     <div className="p-10 max-sm:px-0 text-black">
       {/* heading */}
       <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-2">
-      Material Science & Engineering
+        Material Science & Engineering
       </div>
       <BackDepartment navigate={"/Department"} />
       {/* Section 1 */}
@@ -48,7 +48,7 @@ export default function Humanities() {
                   <DepartmentNotify
                     key={id}
                     title={notice.notice}
-                    link={notice.link? notice.link : ""}
+                    link={notice.link ? notice.link : ""}
                   />
                 )
               })}
@@ -66,20 +66,23 @@ export default function Humanities() {
             About
           </div>
           <div className="text-justify max-sm:text-[12px]">
-            About fdsfdsf sdfjkdsjfdksfj
-                <button
+
+            The Department of Materials Science and Engineering started in the year 2022. The Department has started a new Dual degree program B.Tech-M.Tech in Material Science and Engineering from the session 2022-23. There are 08 candidates enrolled in dual degree program in the session 2022-23 and 09 candidates enrolled in the session 2023-24. As of now, the department has been jointly supervised by the head of the physics, two faculties of Materials Science and Engineering department and existing faculties of the physics department. The two faculties of Material Science and Engineering department are very young and dynamic in nature and have good number of publications in different areas of Materials research. The new department is an interdisciplinary department which draws attention from all other engineering applications with basic understanding of Materials science. The different laboratories of Materials and Engineering  department mainly focuses on the study of the development of new materials and its advanced manufacturing methods and modification of its properties by suitable compositional and heat treatment methods by altering the physical and mechanical behaviour materials for its widespread application.  The department is aiming to develop its own ceramic and composite laboratories for the application of these materials in high temperature and structural areas of civil construction. Further aim is to develop materials modelling section for optimising and predicting materials deformation and rupture behaviour in the design context.
+
+
+            {/* <button
                 onClick={() => router.push('/Department/Material/about')}
                 className="text-blue-600"
                 >
                 more...
-                </button>
+                </button> */}
           </div>
         </div>
 
         {/* Navigation Button  */}
 
-        <div className="grid grid-cols-3 max-sm:grid-cols-2 mt-10">
-          <DepartmentNavigationButton
+        <div className="grid grid-cols-3 max-sm:grid-cols-2 mt-10 h-[20vh]">
+          <DepartmentNavigationButton 
             onClick={() => router.push('/Department/Material/mission')}
             Title={'MISSION AND VISSION'}
           />

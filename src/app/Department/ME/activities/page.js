@@ -15,8 +15,6 @@ function Compo({ project, pi, sponsor, amount, year, sno }) {
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
                 {year}
             </div>
-
-
         </>
     )
 }
