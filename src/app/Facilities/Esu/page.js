@@ -8,8 +8,7 @@ export default function Home() {
 
       subheading: "Estate Service Unit (ESU)",
       text: `Complaint Form:
-      <a href="https://drive.google.com/file/d/1ieNmS6_xYi8Azm2HAU9tikhDcQQXGTCT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="text-black  hover:text-red-800">Click here to download ESU Maintenance Complaint form, kindly fill the form and submit</a>
-      .`,
+      <a href="https://drive.google.com/file/d/1ieNmS6_xYi8Azm2HAU9tikhDcQQXGTCT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="text-black  hover:text-red-800">Click Here</a>
     },
   ];
 
