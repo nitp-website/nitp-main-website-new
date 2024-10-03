@@ -6,7 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 const Sidebar = ({
   setstate,
-  resume,
+  
   books,
   article,
   conference,
@@ -20,6 +20,7 @@ const Sidebar = ({
   professional,
   curr_admin,
   past_admin,
+  project,
 }) => {
   const [active, setactive] = useState(false);
   const onClick = () => {
@@ -44,7 +45,7 @@ const Sidebar = ({
           } bg-[#941B0C]  rounded-xl mx-3 p-3 text-sm text-[rgb(255,249,239)] z-2`}
         >
           <ul className="flex flex-col gap-2 border-2 p-2 hover:border-[#941B0C]">
-            {resume ? (
+            {/* {resume ? (
               <li
                 className="flex cursor-pointer "
                 onClick={() => {
@@ -63,7 +64,7 @@ const Sidebar = ({
               </li>
             ) : (
               <></>
-            )}
+            )} */}
             {education ? (
               <li
                 className="flex cursor-pointer"
@@ -306,13 +307,33 @@ const Sidebar = ({
             ) : (
               <></>
             )}
+            {project ? (
+              <li
+                className="flex cursor-pointer"
+                onClick={() => {
+                  setstate(14);
+                  setactive(!active);
+                }}
+              >
+                <Image
+                  src={"/project.png"}
+                  alt="blank"
+                  width={50}
+                  height={50}
+                  className="mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover"
+                />
+                <span className="mt-1">Projects</span>
+              </li>
+            ) : (
+              <></>
+            )}
           </ul>
         </div>
       </div>
       {/* laptop view */}
       <div className="hidden md:block">
         <div className="w-[280px] flex flex-col mt-6 ">
-          {resume ? (
+          {/* {resume ? (
             <div
               className="flex mt-2 cursor-pointer"
               onClick={() => {
@@ -332,7 +353,7 @@ const Sidebar = ({
             </div>
           ) : (
             <></>
-          )}
+          )} */}
           {education ? (
             <div
               className="flex mt-2 cursor-pointer"
@@ -547,7 +568,7 @@ const Sidebar = ({
                 className="mt-1 mx-1 w-[25px] h-[25px]"
               />
               <div className="bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]">
-                <span className="cursor-pointer">Confernces</span>
+                <span className="cursor-pointer">Conferences</span>
               </div>
             </div>
           ) : (
@@ -592,6 +613,27 @@ const Sidebar = ({
               />
               <div className="bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]">
                 <span className="cursor-pointer">Articles</span>
+              </div>
+            </div>
+          ) : (
+            <></>
+          )}
+          {project ? (
+            <div
+              className="flex mt-2 cursor-pointer"
+              onClick={() => {
+                setstate(14);
+              }}
+            >
+              <Image
+                src={"/project.png"}
+                alt="blank"
+                width={25}
+                height={25}
+                className="mt-1 mx-1 w-[25px] h-[25px]"
+              />
+              <div className="bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]">
+                <span className="cursor-pointer">Projects</span>
               </div>
             </div>
           ) : (
