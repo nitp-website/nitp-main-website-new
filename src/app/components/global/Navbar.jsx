@@ -533,11 +533,11 @@ const navItems = [
         iconImage: Hostel,
       },
 
-      {
-        label: "Sports",
-        link: "/Facilities/SportsFacilities",
-        iconImage: Sports,
-      },
+      // {
+      //   label: "Sports",
+      //   link: "/Facilities/SportsFacilities",
+      //   iconImage: Sports,
+      // },
       {
         label: "Scholarship",
         link: "/Student/Scholarship",
