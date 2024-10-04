@@ -1,21 +1,23 @@
 'use client'
 import BackDepartment from '../../components/department/BackDepartment'
 import { DepartmentNavigationButton } from '../../components/department/DepartmentNavigationButton'
-import DepartmentNotify from '../../components/department/DepartmentNotify'
+import DepartmentNotify1 from '../../components/department/DepartmentNotify1'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-
-const Notices = [
-  {
-    id: 1,
-    notice: 'No any notice for now',
-    link: '',
-  },
-  
-]
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Math() {
-  const router = useRouter()
+  const router = useRouter();
+  const [Notices, setNotices] = useState([]);
+  useEffect(()=>{
+    const getData = async()=>{
+      const response =await axios.get("https://admin.nitp.ac.in/api/notice/maths");
+      console.log(response.data);
+      setNotices(response.data);
+    }
+    getData();
+  },[])
   return (
     <div className="p-10 max-sm:px-0   text-black">
       {/* heading */}
@@ -44,15 +46,19 @@ export default function Math() {
               <button className="hover:text-blue-500">View All</button>
             </div>
             <div className="overflow-hidden space-y-2">
-              {Notices.map((notice, id) => {
-                return (
-                  <DepartmentNotify
-                    key={id}
-                    title={notice.notice}
-                    fun={notice.fun}
-                  />
-                )
-              })}
+            {Notices.map((notice, id) => {
+                  if(notice.isVisible === 1){
+                    return (
+                      <DepartmentNotify1
+                        key={id}
+                        title={notice.title}
+                        attachments = {notice.attachments}
+                        important = {notice.important}
+                        link={notice.notice_link? notice.notice_link : ""}
+                    />
+                  )
+                  }
+                })}
             </div>
           </div>
         </div>
