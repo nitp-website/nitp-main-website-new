@@ -1,33 +1,3 @@
-// "use client"
-// import React,{useState,useEffect} from 'react'
-
-// function Carousel({children:pics,
-//     autoSlideInterval=3000,
-//     autoSlide=true,}){
-
-//     const [curr,setCurr]=useState(0)
-//     const prev=()=>{
-//         setCurr((curr)=>(curr===0?pics.length-1:curr-1))
-//     }
-//     const next=()=>{
-//         setCurr((curr)=>(curr===pics.length-1?0:curr+1))
-//     }
-//     useEffect(()=>{
-//         if(!autoSlide) return 
-//         const slideInterval=setInterval(next,autoSlideInterval)
-//         return ()=>clearInterval(slideInterval)
-//     },[])
-//     return(
-//         <div className=' relative overflow-hidden'>
-//             <div className='flex transition-transform ease-out duration-1000'
-//             style={{transform:`translateX(-${curr*100}%)`}}>
-//                 {pics}
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default Carousel
 "use client"
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
@@ -61,11 +31,12 @@ const Carousel = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="mySwiper"
           >
-             <SwiperSlide><img src="https://i.postimg.cc/j2Rcm5BV/4.jpg" /></SwiperSlide>      
-            <SwiperSlide><img src="https://i.postimg.cc/Pfbj3bYD/DSC09197.jpg" /></SwiperSlide>
-            <SwiperSlide><img src="https://i.postimg.cc/0jDVqSGQ/Image-1-00001.jpg" /></SwiperSlide>
-
-            
+            <SwiperSlide><img src="https://i.postimg.cc/23pT7V6p/Receiving-Championship-trophy-from-Union-Minister-of-State-Ministry-of-Education-Shri-Subhas-Sarka.jpg" /></SwiperSlide>      
+            <SwiperSlide><img src="https://i.postimg.cc/j2Rcm5BV/4.jpg" /></SwiperSlide>
+            <SwiperSlide><img src="https://i.postimg.cc/zXXpkynK/DSC09197.jpg" /></SwiperSlide>
+            <SwiperSlide><img src="https://i.postimg.cc/gcwWsQJ4/2017-18-A.jpg" /></SwiperSlide>
+            <SwiperSlide><img src="https://i.postimg.cc/prs1Q2jR/2022-23A.jpg" /></SwiperSlide>
+            <SwiperSlide><img src="https://i.postimg.cc/d1rY9TQv/2017-18-B.jpg" /></SwiperSlide>
             
           </Swiper>
         </>

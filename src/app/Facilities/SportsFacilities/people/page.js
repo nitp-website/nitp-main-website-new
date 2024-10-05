@@ -1,9 +1,10 @@
-
+"use-client"
+import PeopleList from '../../../../components/sportsComponents/PeopleList'
 
 function Page() {
   return (
-    <div>page</div>
+    <PeopleList/>
   )
 }
 
-export default Page
+export default Page  
