@@ -94,7 +94,11 @@ const Details = () => {
       try {
         const eventsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/events/active`;
         const response = await axios.get(eventsUrl);
-        setEvents(response.data);
+    
+        // Filter the events to include only those with type "general"
+        const filteredEvents = response.data.filter(event => event.type === 'general');
+    
+        setEvents(filteredEvents);
       } catch (e) {
         console.error("Error fetching events:", e);
       }
