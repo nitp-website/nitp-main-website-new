@@ -11,7 +11,7 @@ function Sports({game,desc}){
       </div>
       <div className='col-span-2 border-t border-l border-r border-black p-2'>
         {desc}
-      </div>
+      </div> 
     </div>
   )
 }
@@ -20,7 +20,7 @@ export default function Home() {
   
   return (
     
-    <div className='flex flex-col-reverse md:flex-row px-4 md:px-20 lg:px-32 mt-10 md:justify-between md:gap-0 w-full mb-8'>
+    <div className='flex flex-col-reverse md:flex-row px-4 md:px-16 lg:px-16 mt-10 md:justify-between md:gap-0 w-full mb-8'>
       {/* Sidebar */}
       <div className='mt-6 md:mt-0 '>
         <SideBar />
