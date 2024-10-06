@@ -5,11 +5,11 @@ import Carousel from '../../../components/sportsComponents/Carousel'
 
 function Sports({game,desc}){
   return(
-    <div className='grid grid-cols-3 w-2/3 font-medium'>
-      <div className='col-span-1 border-t border-l border-black p-2'>
+    <div className='grid grid-cols-3 w-2/3 font-medium shadow-md'>
+      <div className='col-span-1 border-t border-l text-neutral-800 p-2'>
         {game}
       </div>
-      <div className='col-span-2 border-t border-l border-r border-black p-2'>
+      <div className='col-span-2 border-t border-l border-r text-neutral-800 p-2'>
         {desc}
       </div>
     </div>
@@ -38,7 +38,7 @@ export default function Home() {
           <p className='text-justify'>
           The <span className='font-bold text-black'>National Institute of Technology Patna (NIT Patna)</span> has a vibrant sports culture, which plays an integral role in the holistic development of students. The institute promotes a healthy balance between academics and physical activities, encouraging students to participate in a variety of sports. The students of NIT Patna manifested these exemplary qualities with great aplomb every year in terms of Sports. Their achievements have been manifold and the following is a summation of their efforts: A packed calendar saw different Inter-Department / open sports, cultural and technical events have been conducted round the year. NIT Patna became the Overall Champion at All India inter NIT Weightlifting Competition for consecutive 5th times.
           </p>
-          <p className='mt-4'>
+          <div className='mt-4'>
             <span className='text-black font-bold'>Sports Facilities:</span>
             <ul className='list-disc mt-4'>
               <li className='text-justify'>
@@ -74,7 +74,7 @@ export default function Home() {
                 NIT Patna students participate in inter-NIT sports competitions held across various NITs in India. These tournaments are highly competitive and provide students with an opportunity to showcase their talents at a national level.
               </li>
             </ol>
-          </p>
+          </div>
           <p>
           Overall, sports are an important part of the student experience at NIT Patna, contributing to the overall physical and mental well-being of t
           </p>
@@ -131,7 +131,7 @@ export default function Home() {
           game={"Yoga"}
           desc={"One Yoga hall"}
           />
-          <p className='w-2/3 border-t border-black'></p>
+          <p className='w-2/3 border-t'></p>
         </div>
       </div>
     </div>

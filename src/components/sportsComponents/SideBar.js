@@ -6,7 +6,6 @@ import { FaHome, FaUserFriends, FaCalendarAlt, FaPhotoVideo } from 'react-icons/
 const Sidebar = () => {
   const pathname = usePathname(); // Get the current pathname (parent route)
   const router = useRouter(); // Get the router for client-side navigation
-
   const handleNavigation = (path) => {
     router.push(`${pathname}/${path}`); // Navigate by appending to the current route
   };
