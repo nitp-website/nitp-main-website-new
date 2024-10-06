@@ -1,6 +1,5 @@
 import Head from "next/head";
 import SideBar from '../../../components/sportsComponents/SideBar'
-import Image from 'next/image';
 import Carousel from '../../../components/sportsComponents/Carousel'
 
 function Sports({game,desc}){

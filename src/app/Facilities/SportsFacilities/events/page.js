@@ -23,6 +23,7 @@ function Page() {
           {/* current events */}
         </div>
         <div className='flex flex-col border shadow-lg'>
+          {/* Past events */}
           <div className='bg-red-100 px-2 py-3 font-semibold'>
             <p className='text-black'>
               Past Events
@@ -37,8 +38,33 @@ function Page() {
             </div>
             <PastEve
             event={"NIT Patna at All India inter NIT Sports"}
-            url={"https://docs.google.com/document/d/1FbMIA3TLpe8SVNj4LhA2425SVW71CmQw"}
+            url={"https://drive.google.com/file/d/1brqbCN9ycnnhFJ4sylYG66vNKHf5fxkZ/view?usp=drive_link"}
             />
+            <PastEve
+            event={"Receiving Championship trophy from Union Minister of State, Ministry of Education, Shri Subhas Sarkar at NIT Durgapur"}
+            url={"https://drive.google.com/file/d/1Ed4l3mlMKEVlk027yV5Q9kGFI9v-DUvD/view?usp=drive_link"}
+            />
+            <PastEve
+            event={"Flyer 2024"}
+            url={"https://drive.google.com/file/d/1Nwjgsz3dAdeWw5HtnyWtLC-7jge153PW/view?usp=drive_link"}
+            />
+            <PastEve
+            event={"Intramural 2024"}
+            url={"https://drive.google.com/file/d/1jIs7fqmHqq3VdLifiCyd5ZHOuufEpUma/view?usp=drive_link"}
+            />
+            <PastEve
+            event={"Flyer 2023"}
+            url={"https://drive.google.com/file/d/1RuIQuqVhdTS3Yuz8INVJIhe9yQfhUbn9/view?usp=drive_link"}
+            />
+            <PastEve
+            event={"Intramural 2023"}
+            url={"https://drive.google.com/file/d/1HK5YGMcaifHJRW3KAIX5pnRdfZxL3g-Q/view?usp=drive_link"}
+            />
+            <PastEve
+            event={"Annual Report SAS 2023-24"}
+            url={"https://drive.google.com/file/d/1SHgWQ6ZH-4u_8sLnL3ThSikP1ERHY4Dx/view?usp=drive_link"}
+            />
+
           </div>
         </div>
       </div>
