@@ -19,6 +19,10 @@ module.exports = withVideos({
         protocol: 'https',
         hostname: 'i.postimg.cc',
       },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos', // Add picsum.photos to the allowed hostnames
+      },
     ],
   },
 });

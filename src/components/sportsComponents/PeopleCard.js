@@ -21,7 +21,7 @@ function PeopleCard({
   return (
     <>
         <div
-          className={`backdrop-blur-md text-black static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-4 m-5`}
+          className={`backdrop-blur-md text-black static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-10 m-5`}
         >
           <div className="flex justify-center items-center md:w-1/4">
             <div
@@ -29,7 +29,7 @@ function PeopleCard({
             >
               <Image
                 className={`rounded-md object-cover "h-[100px] w-[100px]"}`}
-                src={"/faculty.jpeg"}
+                src={image==""?'/faculty.jpeg':image}
                 alt={name}
                 height={300}
                 width={300}
