@@ -9,7 +9,7 @@ function FacilitiesComp({text,url}) {
         setIsOpen(!isOpen);
     }
   return (
-    <div className='text-neutral-800 lg:w-2/3'>
+    <div className='text-neutral-800 lg:w-2/3 shadow-md'>
         <div onClick={toggleDropDown} className={`cursor-pointer pr-2 pl-3 py-3 rounded-md flex flex-row justify-between border ${isOpen?'border-2 border-red-800 bg-red-100':'' }`}>
             <p className='font-semibold my-auto'>
                 {text}

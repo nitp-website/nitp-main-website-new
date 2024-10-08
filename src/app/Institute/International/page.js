@@ -118,6 +118,10 @@ Refer the link for more detail: <a href='https://www.nitp.ac.in/' target='_blank
         <div>
           <h2 className="text-xl mb-6 text-neutral-800">
             <ul className='list-disc underline'>
+              <li>
+                    <a href="https://drive.google.com/drive/folders/1uxd7A3sY8kbZ23Le777q7qLqJHMTxBpu"> MoU between  Federal University of São Carlos (UFSCar), Brazil  & NIT Patna.</a>
+                </li>
+             <br></br>
                 <li>
                     <a href="https://drive.google.com/file/d/1avWRhDy5-sXe6gaBkFi6edrfWQyi6XTl/view?usp=sharing">MoU between Pennsylvania State University, USA & NIT Patna.</a>
                 </li>
@@ -159,12 +163,12 @@ Refer the link for more detail: <a href='https://www.nitp.ac.in/' target='_blank
             Eastern International University, Vietnam
           </a>
         </li>
-        <br></br>
-        <li>
-          <a href="https://www.ufscar.br/" >
-            University of São Carlos (UFSCar), Brazil
-          </a>
-        </li>
+        // <br></br>
+        // <li>
+        //   <a href="https://www.ufscar.br/" >
+        //     University of São Carlos (UFSCar), Brazil
+        //   </a>
+        // </li>
            </ul>
            </h2>
         </div>

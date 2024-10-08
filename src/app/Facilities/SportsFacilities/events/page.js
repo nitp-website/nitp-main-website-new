@@ -1,4 +1,4 @@
-import SideBar from '../../../../components/sportsComponents/SideBar';
+import Sidebar from '../components/Sidebar';
 
 const pastEvents = [
   {
@@ -46,13 +46,13 @@ function PastEvent({ event, url }) {
 
 function Page() {
   return (
-    <div className="flex flex-col-reverse md:flex-row px-2 md:px-16 lg:px-16 mt-10 md:justify-between md:gap-0 w-full mb-8">
-      <div className="mt-6 md:mt-0">
-        <SideBar />
+    <div className="flex flex-col md:flex-row px-2 md:px-16 lg:px-16 mt-10 md:justify-between md:gap-0 w-full mb-8">
+      <div className="mt-6 mb-12 md:mt-0">
+        <Sidebar />
       </div>
       <div className="flex flex-col md:w-3/4">
         <div>{/* current events */}</div>
-        <div className="flex flex-col border shadow-lg">
+        <div className="flex flex-col shadow-lg">
           {/* Past events */}
           <div className="bg-red-800 rounded-lg px-2 py-3 font-semibold">
             <p className="text-white">Past Events</p>

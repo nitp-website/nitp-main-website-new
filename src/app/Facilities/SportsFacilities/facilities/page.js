@@ -1,6 +1,6 @@
 "use client"
-import react, { useState } from 'react';
-import SideBar from '../../../../components/sportsComponents/SideBar';
+import { useState } from 'react';
+import Sidebar from '../components/Sidebar';
 import FacilitiesComp from '../../../../components/sportsComponents/FacilitiesComp';
 
 function Page() {
@@ -9,7 +9,7 @@ function Page() {
   return (
     <div className='flex flex-col-reverse md:flex-row px-2 md:px-16 lg:px-16 mt-10 md:justify-between md:gap-0 w-full mb-8'>
       <div className='mt-6 md:mt-0 '>
-        <SideBar />
+        <Sidebar />
       </div>
       <div className='flex flex-col md:w-3/4 '>
         <div className="mb-10 flex space-x-1 max-sm:text-[14px] mx-auto w-2/3">

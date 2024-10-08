@@ -2,46 +2,56 @@
 
 import BackDepartment from "../../components/department/BackDepartment"
 import { DepartmentNavigationButton } from "../../components/department/DepartmentNavigationButton"
-import DepartmentNotify from "../../components/department/DepartmentNotify";
+import DepartmentNotify1 from "../../components/department/DepartmentNotify1";
 import Image from "next/image"
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from "react";
+import axios from "axios";
+// const Notices = [
+//   {
+//     id: 1,
+//     notice: 'Scheduled of End Sem Viva-Voce of B.Arch. 9th Semester-July-Dec 2022',
+//     link: 'https://drive.google.com/file/d/1AY3MC3BVrjz8RiFk3UTe97W-06RGji_s/view',
+//   },
+//   {
+//     id: 2,
+//     notice: 'Scheduled of End Sem Viva-Voce of B.Arch. 3rd, 5th & 7th semester_July-Dec 2022',
+//     link: 'https://drive.google.com/file/d/1NL3MXJbn0FKQ4fCGQyIRUp86XAil_rZh/view',
+//   },
+//   {
+//     id: 3,
+//     notice: 'Scheduled of End Sem Viva-Voce of PG PG 1st and 4th Semester_July-Dec 2022',
+//     link: 'https://drive.google.com/file/d/1nvkrxgSEAxF5mm2J9zTHrZi9l-ojJSo4/view',
+//   },
+//   {
+//     id: 4,
+//     notice: 'End Semester Viva-Voce of PG 3rd Semester_July-Dec 2022',
+//     link: 'https://drive.google.com/file/d/1iecnGLUzdOVJmZbTFDhVqBHEvzR3atB0/view',
+//   },
+//   {
+//     id: 5,
+//     notice: 'Scheduled of End Semester Viva-Voce_B.Arch._Jan-June 2023',
+//     link: 'https://drive.google.com/file/d/15uAvGugY6w28Owq5M0YE4pHa_-2gnUGU/view',
+//   },
+//   {
+//     id: 6,
+//     notice: 'Scheduled of End Semester Viva-Voce_MURP/ M.Arch/ Ph.D_Jan-June 2023',
+//     link: 'https://drive.google.com/file/d/1w2NtfpnD4EgnZ1jRBbKL-ReZMqTuWQza/view',
+//   },
 
-const Notices = [
-  {
-    id: 1,
-    notice: 'Scheduled of End Sem Viva-Voce of B.Arch. 9th Semester-July-Dec 2022',
-    link: 'https://drive.google.com/file/d/1AY3MC3BVrjz8RiFk3UTe97W-06RGji_s/view',
-  },
-  {
-    id: 2,
-    notice: 'Scheduled of End Sem Viva-Voce of B.Arch. 3rd, 5th & 7th semester_July-Dec 2022',
-    link: 'https://drive.google.com/file/d/1NL3MXJbn0FKQ4fCGQyIRUp86XAil_rZh/view',
-  },
-  {
-    id: 3,
-    notice: 'Scheduled of End Sem Viva-Voce of PG PG 1st and 4th Semester_July-Dec 2022',
-    link: 'https://drive.google.com/file/d/1nvkrxgSEAxF5mm2J9zTHrZi9l-ojJSo4/view',
-  },
-  {
-    id: 4,
-    notice: 'End Semester Viva-Voce of PG 3rd Semester_July-Dec 2022',
-    link: 'https://drive.google.com/file/d/1iecnGLUzdOVJmZbTFDhVqBHEvzR3atB0/view',
-  },
-  {
-    id: 5,
-    notice: 'Scheduled of End Semester Viva-Voce_B.Arch._Jan-June 2023',
-    link: 'https://drive.google.com/file/d/15uAvGugY6w28Owq5M0YE4pHa_-2gnUGU/view',
-  },
-  {
-    id: 6,
-    notice: 'Scheduled of End Semester Viva-Voce_MURP/ M.Arch/ Ph.D_Jan-June 2023',
-    link: 'https://drive.google.com/file/d/1w2NtfpnD4EgnZ1jRBbKL-ReZMqTuWQza/view',
-  },
-
-]
+// ]
 
 export default function Archi() {
   const router = useRouter();
+  const [Notices, setNotices] = useState([]);
+  useEffect(()=>{
+    const getData = async()=>{
+      const response =await axios.get("https://admin.nitp.ac.in/api/notice/arch");
+      console.log(response.data);
+      setNotices(response.data);
+    }
+    getData();
+  },[])
   return (
     <div className="p-10 max-sm:px-0   text-black">
       {/* heading */}
@@ -72,15 +82,19 @@ export default function Archi() {
               <button className="hover:text-blue-500">View All</button>
             </div>
             <div className="overflow-hidden flex flex-col-reverse">
-              {Notices.map((notice, id) => {
-                return (
-                  <DepartmentNotify
-                    key={id}
-                    title={notice.notice}
-                    link={notice.link ? notice.link : ""}
-                  />
-                )
-              })}
+            {Notices.map((notice, id) => {
+                  if(notice.isVisible === 1){
+                    return (
+                      <DepartmentNotify1
+                        key={id}
+                        title={notice.title}
+                        attachments = {notice.attachments}
+                        important = {notice.important}
+                        link={notice.notice_link? notice.notice_link : ""}
+                    />
+                  )
+                  }
+                })}
             </div>
           </div>
         </div>
