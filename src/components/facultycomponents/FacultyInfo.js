@@ -45,6 +45,7 @@ const FacultyInfo = () => {
   const [vidwan, setvidwan] = useState("");
   const [personal_webpage, setpersonal_webpage] = useState("");
   const [article, setarticle] = useState([]);
+  const [patent, setpatent] = useState([]);
   const res = useParams();
   console.log(res.facultyid);
   const uri = `https://admin.nitp.ac.in/api/faculty/${res.facultyid}`;
@@ -86,6 +87,10 @@ const FacultyInfo = () => {
         setbooks(booksdata);
         let articledata = arr.filter((item) => item.type === "article");
         setarticle(articledata);
+        let patentdata = arr.filter((item) => item.type === "patent");
+        console.log("Filtered Patent Data:", patentdata);
+        setpatent(patentdata);
+
         setresume(data.profile.cv);
       });
   }, []);
@@ -114,8 +119,7 @@ const FacultyInfo = () => {
         research={research}
         resume={resume}
       />
-      {
-      books.length !== 0 ||
+      {books.length !== 0 ||
       conference.length !== 0 ||
       membership ||
       education ||
@@ -123,6 +127,7 @@ const FacultyInfo = () => {
       subjects ||
       pg_ug_projects ||
       project ||
+      patent ||
       phd_students ||
       work_experience ||
       Professional_Service ||
@@ -131,7 +136,6 @@ const FacultyInfo = () => {
         <div className="flex flex-col md:flex-row">
           <Sidebar
             setstate={setstate}
-            
             subjects={subjects}
             article={article}
             past_admin={past_admin_responsibility}
@@ -142,6 +146,7 @@ const FacultyInfo = () => {
             education={education}
             pg_ug_projects={pg_ug_projects}
             project={project}
+            patent={patent}
             books={books}
             conference={conference}
             professional={Professional_Service}
@@ -831,6 +836,56 @@ const FacultyInfo = () => {
                     data not found
                   </div>
                 )}
+              </div>
+            ) : (
+              <></>
+            )}
+
+            {state === 15 ? (
+              <div className="w-[100%] p-3 text-black font-poppins">
+                {/* Title Component for Patents */}
+                <Title title={"Patents"} />
+                <div className="w-[100%] overflow-scroll h-[60vh] p-4 border shadow-lg hover:shadow-2xl">
+                  {/* Display if there are no patents */}
+                  {patent.length === 0 ? (
+                    <div className="font-bold uppercase p-4 border w-[100%] h-[70vh]">
+                      Data not found
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+
+                  {/* Displaying the list of patents */}
+                  <ul className="list-decimal gap-3 flex flex-col">
+                    {patent?.map((item, i) => {
+                      return (
+                        <li key={i} className="flex">
+                          <div className="w-[5px] h-[5px] rounded-full bg-black mt-3 mr-2 p-[4px]"></div>
+                          <div className="text-md">
+                            {/* Displaying the citation key */}
+                            <span className="font-semibold mr-1">
+                              {item?.citation_key ? item.citation_key : ""}
+                            </span>{" "}
+                            <br />
+                            {/* Displaying additional information like patent number, year filed, etc. */}
+                            <span>
+                              {item?.number ? `Patent No: ${item.number}` : ""}{" "}
+                              ,{" "}
+                              {item?.yearfiled
+                                ? `Filed in: ${item.yearfiled}`
+                                : ""}{" "}
+                              ,{" "}
+                              {item?.nationality
+                                ? `Nationality: ${item.nationality}`
+                                : ""}{" "}
+                              , {item?.year ? `Year: ${item.year}` : ""}
+                            </span>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
             ) : (
               <></>

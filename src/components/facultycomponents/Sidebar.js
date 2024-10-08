@@ -6,7 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 const Sidebar = ({
   setstate,
-  
+
   books,
   article,
   conference,
@@ -21,12 +21,12 @@ const Sidebar = ({
   curr_admin,
   past_admin,
   project,
+  patent,
 }) => {
   const [active, setactive] = useState(false);
   const onClick = () => {
     setactive(!active);
   };
-
 
   return (
     <div>
@@ -323,6 +323,27 @@ const Sidebar = ({
                   className="mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover"
                 />
                 <span className="mt-1">Projects</span>
+              </li>
+            ) : (
+              <></>
+            )}
+
+            {patent.length !== 0 ? (
+              <li
+                className="flex cursor-pointer"
+                onClick={() => {
+                  setstate(15);
+                  setactive(!active);
+                }}
+              >
+                <Image
+                  src={"/patent.png"} // Update this to your patent image path
+                  alt="blank"
+                  width={50}
+                  height={50}
+                  className="mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110 object-cover"
+                />
+                <span className="mt-1">Patents</span>
               </li>
             ) : (
               <></>
@@ -634,6 +655,27 @@ const Sidebar = ({
               />
               <div className="bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]">
                 <span className="cursor-pointer">Projects</span>
+              </div>
+            </div>
+          ) : (
+            <></>
+          )}
+          {patent.length !== 0 ? (
+            <div
+              className="flex mt-2 cursor-pointer"
+              onClick={() => {
+                setstate(15);
+              }}
+            >
+              <Image
+                src={"/patent.png"} // Update this to your patent image path
+                alt="blank"
+                width={25}
+                height={25}
+                className="mt-1 mx-1 w-[25px] h-[25px]"
+              />
+              <div className="bg-[#941B0C] hover:bg-red-500 h-6 p-2 flex justify-center items-center rounded-md text-white w-[280px]">
+                <span className="cursor-pointer">Patents</span>
               </div>
             </div>
           ) : (
