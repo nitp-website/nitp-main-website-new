@@ -163,12 +163,12 @@ Refer the link for more detail: <a href='https://www.nitp.ac.in/' target='_blank
             Eastern International University, Vietnam
           </a>
         </li>
-        // <br></br>
+        {/* //<br></br>
         // <li>
         //   <a href="https://www.ufscar.br/" >
         //     University of São Carlos (UFSCar), Brazil
         //   </a>
-        // </li>
+        // </li> */}
            </ul>
            </h2>
         </div>
