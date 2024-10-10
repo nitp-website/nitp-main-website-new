@@ -1,5 +1,3 @@
-
-
 export default function Home() {
   const places = [
     {
@@ -15,52 +13,60 @@ export default function Home() {
 Professor (Computer Science and Engineering Dept.) 
 & प्राध्यापक (कंप्यूटर विज्ञान और इंजीनियरिंग विभाग)
 Head, Centre for Computing and Information Services (CCIS)
-विभागाध्यक्ष, कम्प्यूटिंग और सूचना सेवा केंद्र (सीसीआईएस)`
+विभागाध्यक्ष, कम्प्यूटिंग और सूचना सेवा केंद्र (सीसीआईएस)`,
     },
-    
-    
   ];
 
   return (
     <div className="mx-auto pl-5 pr-5 md:pl-32 md:pr-32 pt-8 bg-white bg-opacity-50">
-
       <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
         {places.map((place, index) => (
-          <div key={index} className="flex flex-col md:flex-row  gap-10 items-center">
+          <div
+            key={index}
+            className="flex flex-col md:flex-row  gap-10 items-center"
+          >
             {index % 2 === 0 ? (
               <>
-              <div className="md:pl-4 ">
-                  <h2 className="text-xl font-bold mb-2 text-neutral-800 items-start" >{place.subheading}</h2>
-                  <p className="text-gray-600 "> {place.text.split('\n').map((line, i) => (
+                <div className="md:pl-4 ">
+                  <h2 className="text-xl font-bold mb-2 text-neutral-800 items-start">
+                    {place.subheading}
+                  </h2>
+                  <p className="text-gray-600 ">
+                    {" "}
+                    {place.text.split("\n").map((line, i) => (
                       <span key={i}>
                         {line}
                         <br />
                       </span>
-                    ))}</p>
+                    ))}
+                  </p>
                 </div>
                 <img
                   src={place.image}
                   alt={place.subheading}
                   className="w-3/4 md:w-2/5 rounded-md"
                 />
-                
               </>
             ) : (
               <>
-                
                 <img
                   src={place.image}
                   alt={place.subheading}
                   className="w-3/4 md:w-1/4 rounded-md "
                 />
                 <div className="md:pr-4">
-                  <h2 className="text-xl font-bold mb-2 text-neutral-800">{place.subheading}</h2>
-                  <p className="text-gray-600"> {place.text.split('\n').map((line, i) => (
+                  <h2 className="text-xl font-bold mb-2 text-neutral-800">
+                    {place.subheading}
+                  </h2>
+                  <p className="text-gray-600">
+                    {" "}
+                    {place.text.split("\n").map((line, i) => (
                       <span key={i}>
                         {line}
                         <br />
                       </span>
-                    ))}</p>
+                    ))}
+                  </p>
                 </div>
               </>
             )}
@@ -72,7 +78,7 @@ Head, Centre for Computing and Information Services (CCIS)
 }
 
 export async function generateMetadata({ params }) {
-    return {
-      title: 'Computer Centre | NIT Patna',
-    }
-  }
+  return {
+    title: "Computer Centre | NIT Patna",
+  };
+}

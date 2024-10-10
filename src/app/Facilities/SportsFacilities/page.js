@@ -24,7 +24,7 @@ export default function Home() {
       <div className='mt-6 mb-12 md:mt-0 '>
         <Sidebar />
       </div>
-      <div className='flex flex-col md:w-2/3 '>
+      <div className='flex flex-col md:w-3/4 '>
         <div>
           <span className='text-xl  font-semibold border-b-2 pb-2 border-red-800'>
             NIT PATNA SPORTS
