@@ -4,7 +4,7 @@ import Carousel from './components/Carousel'
 
 function Sports({game,desc}){
   return(
-    <div className='grid grid-cols-3 w-2/3 font-medium shadow-md'>
+    <div className='grid grid-cols-3 w-full md:w-2/3 font-medium shadow-md'>
       <div className='col-span-1 border-t border-l text-neutral-800 p-2'>
         {game}
       </div>
@@ -78,7 +78,7 @@ export default function Home() {
           Overall, sports are an important part of the student experience at NIT Patna, contributing to the overall physical and mental well-being of t
           </p>
         </div>
-        <div>
+        <div className='w-full'>
           <p className='text-lg mt-8 font-bold mb-8'>
           Sports Infrastructure at NIT Patna
           </p>
