@@ -52,7 +52,7 @@ function Page() {
       </div>
       <div className="flex flex-col md:w-3/4">
         <div>{/* current events */}</div>
-        <div className="flex flex-col border shadow-lg">
+        <div className="flex flex-col shadow-lg">
           {/* Past events */}
           <div className="bg-red-800 rounded-lg px-2 py-3 font-semibold">
             <p className="text-white">Past Events</p>
