@@ -13,7 +13,7 @@ const StaffResources = [
     },
     {
       "title": "Academic Portal",
-      link: "http://exam.nitp.ac.in:9001/",
+      link: "http://mis.nitp.ac.in:81/Default.aspx?ReturnUrl=%2fhome.aspx",
       "image":"https://i.postimg.cc/SKtTmjqC/Chankaya64.png",
     },
     {

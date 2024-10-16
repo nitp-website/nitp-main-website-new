@@ -11,24 +11,37 @@ const Home=() =>{
   const [phd, setphd] = useState(false);
   const [phd_candidate,setphd_candidate]=useState([]);
   const [phd_render,setphd_render]=useState([])
-  // const fetchphd=async ()=>{
-  //   const api=`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty/mae`
-  //   const {data}=await axios(api); 
-  //   console.log(data)
-  //   setphd_candidate(data)
-  //   const phd_info=[];
-  //   for(let i=0;i<phd_candidate.length;i++){
-  //     const phddata=await axios(`https://admin.nitp.ac.in/api/faculty/${phd_candidate[i].email}`);
-  //     const info=phddata.data
-  //     for(let j=0;j<info.phd_candidates?.length;j++){
-  //       phd_info.push(info.phd_candidates[j]);
-  //     }
-  //   }
-  //   setphd_render(phd_info)
-  // }
-  // useEffect(()=>{
-  //   fetchphd()
-  // },[phd])
+  const [loading, setloading] = useState(false)
+  const fetchphd = async () => {
+    setloading(true);
+    const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty/mae`;
+    const { data } = await axios(api);
+    setphd_candidate(data);
+    const phd_info = [];
+    
+    for (let i = 0; i < data.length; i++) {
+        const facultyEmail = data[i].email;
+        const phddata = await axios(`https://admin.nitp.ac.in/api/faculty/${facultyEmail}`);
+        const info = phddata.data;
+        
+        
+        const facultyName = info.profile.name;
+
+        for (let j = 0; j < info.phd_candidates?.length; j++) {
+            phd_info.push({
+                ...info.phd_candidates[j],
+                supervisor: facultyName 
+            });
+        }
+    }
+    
+    setphd_render(phd_info);
+    setloading(false);
+};
+
+useEffect(() => {
+    fetchphd();
+}, [phd]);
   return (
     <>
     <div className="flex flex-col px-3 py-10  max-sm:p-4 text-black">
@@ -54,12 +67,12 @@ const Home=() =>{
           setphd(true);
           setstaff(false);
           // fetchphd()
-        }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Phd Candidates</button>
-        <button onClick={() => {
+        }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>PhD Candidates</button>
+        {/* <button onClick={() => {
           setfaculty(false);
           setphd(false);
           setstaff(true);
-        }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button>
+        }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button> */}
       </div>
       {faculty &&
         <div className="flex flex-col">
@@ -91,7 +104,13 @@ const Home=() =>{
           </div>
           {
             phd_render?.map((item)=>{
-              return <PhdCandidate key={item.id} image={""} name={item.phd_student_name} supervisor={item.email} topic={item.thesis_topic} />
+              return <PhdCandidate
+              key={item.id}
+              image={""}
+              name={item.phd_student_name}
+              supervisor={item.supervisor} // Use faculty name here
+              topic={item.thesis_topic}
+          />
             })
           }
         </div>

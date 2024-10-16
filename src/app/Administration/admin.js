@@ -266,21 +266,7 @@ const Senate = [
 ]
 
 const ServiceUNIT = [
- {
-  designation: "Personal",
-  type: "Registrar",
-  name: "Dr. Asit Narayan",
- },
- {
-  designation: "Establishment & Administration",
-  type: "Deputy Registrar",
-  name: "Dr. Asit Narayan",
- },
- {
-  designation: "Examinations",
-  type: "Associate Dean (Exam)",
-  name: "Prof. Abdur Rahman Quaff",
- },
+
  {
   designation: "Training and Placement",
   type: "Prof. In-charge",
@@ -289,7 +275,7 @@ const ServiceUNIT = [
  {
   designation: "HMC",
   type: "Chairman",
-  name: "Prof. Samrat Mukherjee",
+  name: "Dr. Bambam Kumar",
  },
  {
   designation: "Procurement",
@@ -301,13 +287,14 @@ const ServiceUNIT = [
   type: "Add. Professor Incharge",
   name: "Prof. Amit Kumar",
  },
- {
-  designation: "TEQIP-III",
-  type: "Coordinator",
-  name: "Prof. M. P. Singh",
- },
+
  {
   designation: "Centre for Computing and Information Services",
+  type: "Prof. In-charge",
+  name: "Prof. Prabhat Kumar",
+ },
+   {
+  designation: "IT Services",
   type: "Prof. In-charge",
   name: "Prof. Prabhat Kumar",
  },
@@ -316,26 +303,13 @@ const ServiceUNIT = [
   type: "Prof. In-charge",
   name: "Dr. S. K. Mandal",
  },
- {
-  designation: "IT Services",
-  type: "Prof. In-charge",
-  name: "Prof. Prabhat Kumar",
- },
+
  {
   designation: "Web Services and MIS",
   type: "Prof. In-charge",
   name: "Dr. Akshay Deepak",
  },
- {
-  designation: "Finance & Accounts",
-  type: "Deputy Registrar",
-  name: "Shri Mani Shankar Singh",
- },
- {
-  designation: "R&D",
-  type: "Deputy Registrar",
-  name: "Sri Sunil Kumar Dwivedi",
- },
+ 
  {
   designation: "EMU",
   type: "Prof. In-charge",
@@ -351,11 +325,32 @@ const ServiceUNIT = [
   type: "Prof. In-charge",
   name: "Dr. Amit Kumar Singh",
  },
+   {
+  designation: "Personal",
+  type: "Registrar",
+  name: "Dr. Asit Narayan",
+ },
+ {
+  designation: "Establishment & Administration",
+  type: "Deputy Registrar",
+  name: "Dr. Asit Narayan",
+ },
  {
   designation: "Examination",
   type: "Deputy Registrar",
   name: "Mrs. Bobby",
  },
+  {
+  designation: "Finance & Accounts",
+  type: "Deputy Registrar",
+  name: "Shri Mani Shankar Singh",
+ },
+ {
+  designation: "R&D",
+  type: "Deputy Registrar",
+  name: "Sri Sunil Kumar Dwivedi",
+ },
+  
  {
   designation: "IT Service",
   type: "Scientific & Technical Officer",

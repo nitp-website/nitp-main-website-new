@@ -1,21 +1,23 @@
 'use client'
 import BackDepartment from '../../components/department/BackDepartment'
 import { DepartmentNavigationButton } from '../../components/department/DepartmentNavigationButton'
-import DepartmentNotify from '../../components/department/DepartmentNotify'
+import DepartmentNotify1 from '../../components/department/DepartmentNotify1'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-
-const Notices = [
-  {
-    id: 1,
-    notice: 'Data to be updated soon',
-    link: '',
-  },
-  
-]
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Page() {
-  const router = useRouter()
+  const router = useRouter();
+  const [Notices, setNotices] = useState([]);
+  useEffect(()=>{
+    const getData = async()=>{
+      const response =await axios.get("https://admin.nitp.ac.in/api/notice/cse");
+      console.log(response.data);
+      setNotices(response.data);
+    }
+    getData();
+  },[])
   return (
     <div className="p-10 max-sm:px-0 text-black">
       {/* heading */}
@@ -43,15 +45,19 @@ export default function Page() {
               <button className="hover:text-blue-500">View All</button>
             </div>
             <div className="overflow-hidden flex flex-col-reverse">
-              {Notices.map((notice, id) => {
-                return (
-                  <DepartmentNotify
-                    key={id}
-                    title={notice.notice}
-                    link={notice.link? notice.link : ""}
-                  />
-                )
-              })}
+            {Notices.map((notice, id) => {
+                  if(notice.isVisible === 1){
+                    return (
+                      <DepartmentNotify1
+                        key={id}
+                        title={notice.title}
+                        attachments = {notice.attachments}
+                        important = {notice.important}
+                        link={notice.notice_link? notice.notice_link : ""}
+                    />
+                  )
+                  }
+                })}
             </div>
           </div>
         </div>
@@ -66,9 +72,9 @@ export default function Page() {
             About
           </div>
           <div className="text-justify max-sm:text-[12px]">
-            
+          The Department of Chemical Engineering at the National Institute of Technology Patna was established in 2024 with the vision to become a leader in Chemical Engineering education and research. Our engineering programs will provide a robust foundation in chemical engineering principles, combining traditional courses with emerging specializations. Students delve into core subjects such as material and energy balance, thermodynamics, mass transfer, heat transfer, fluid mechanics, chemical reaction engineering, process control, petroleum and polymer processing, and computational systems. We are dedicated to fostering an environment of innovative research and development.
                 <button
-                onClick={() => router.push('/Department/Mechatronics/about')}
+                onClick={() => router.push('/Department/Chemical/about')}
                 className="text-blue-600"
                 >
                 more...

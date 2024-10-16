@@ -7,12 +7,12 @@ export default function achivments(){
             <div className="flex flex-col  mb-16">
                 <div>
                     <p className="text-red-900 text-xl lg:text-2xl font-bold">
-                        LIST OF NON-TEACHING STAFF
+                        List of Non Teaching Staff 
                     </p>
                 </div>
                 <div className="lg:mt-2">
                     <p className="text-gray-500  text-sm lg:text-base font-semibold">
-                        MECHANICAL ENGINEERING
+                        Mechanical Engineering 
                     </p>
                 </div>
                 <BackDepartment navigate={"/Department/ME"}/>

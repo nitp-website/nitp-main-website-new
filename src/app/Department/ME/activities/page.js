@@ -15,14 +15,12 @@ function Compo({ project, pi, sponsor, amount, year, sno }) {
             <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
                 {year}
             </div>
-
-
         </>
     )
 }
 function Page() {
     return (
-        <div className=" flex flex-col p-5">
+        <div className=" flex flex-col p-5 text-neutral-800">
             <div className="flex flex-col md:ml-10 mb-3">
                 <div>
                     <p className="text-red-900 text-xl lg:text-2xl font-bold">
@@ -31,7 +29,7 @@ function Page() {
                 </div>
                 <div className="lg:mt-2">
                     <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        MECHANICAL ENGINEERING
+                        Mechanical Engineering
                     </p>
                 </div>
                 <BackDepartment navigate={"/Department/ME"}/>
@@ -50,7 +48,7 @@ function Page() {
                         </div>
 
                         <div className="  col-span-3 border border-black pl-4 py-2 flex flex-col justify-center text-red-900 font-semibold">
-                            Name of the faculty
+                            Name of the Faculty
                         </div>
                         <div className="  col-span-4 border border-black pl-4 py-2 flex flex-col justify-center text-red-900 font-semibold">
                             Organized Workshop/FDP/STC/Conference/GIAN program

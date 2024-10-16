@@ -349,23 +349,7 @@ const navItems = [
           },
         ],
       },
-      {
-        label: "Centers",
-        link: "#",
-        iconImage: Structure,
-        children: [
-          {
-            label: "Computer Center",
-            link: "/Facilities/ComputerCenter",
-            iconImage: ComputerCentre,
-          },
-          {
-            label: "Incubation Center",
-            link: "https://web.nitp.ac.in/incubation_center/index.html",
-            iconImage: Ecell,
-          },
-        ],
-      },
+      
       {
         label: "Programmes",
         link: "/Course",
@@ -421,12 +405,12 @@ const navItems = [
         children: [
           { label: "UG", link: "/Course/Ug", iconImage: Structure },
           {
-            label: "PG(M. tech / MURP)",
+            label: "Post Graduate",
             link: "/Course/Pg",
             iconImage: Structure,
           },
           {
-            label: "M.tech/MURP-PHD(DD)",
+            label: "Dual Degree",
             link: "/Course/MTech",
             iconImage: Structure,
           },
@@ -454,11 +438,11 @@ const navItems = [
         ],
         iconImage: Excellence,
       },
-      {
-        label: "Digital Intiatives",
-        link: "/Academic/DI",
-        iconImage: Digital,
-      },
+      // {
+      //   label: "Digital Intiatives",
+      //   link: "/Academic/DI",
+      //   iconImage: Digital,
+      // },
       // {
       //   label: "ICT Academy",
       //   link: "#",
@@ -500,19 +484,19 @@ const navItems = [
         iconImage: Director,
       },
 
-      {
-        label: "Rules and Regulation",
-        link: "/Academic/Curriculam",
-        iconImage: Rules,
-      },
+      // {
+      //   label: "Rules and Regulation",
+      //   link: "/Academic/Curriculam",
+      //   iconImage: Rules,
+      // },
       {
         label: "Admin Portal",
         link: "https://admin.nitp.ac.in/",
         iconImage: Admin,
       },
       {
-        label: "Academic Portal",
-        link: "http://exam.nitp.ac.in:9001/",
+        label: "Faculty Academic Portal",
+        link: "http://mis.nitp.ac.in:81/",
         iconImage: Portal,
       },
       // {
@@ -549,11 +533,11 @@ const navItems = [
         iconImage: Hostel,
       },
 
-      {
-        label: "Sports",
-        link: "/Facilities/SportsFacilities",
-        iconImage: Sports,
-      },
+      // {
+      //   label: "Sports",
+      //   link: "/Facilities/SportsFacilities",
+      //   iconImage: Sports,
+      // },
       {
         label: "Scholarship",
         link: "/Student/Scholarship",
@@ -623,7 +607,7 @@ const navItems = [
         iconImage: Bharat,
       },
       {
-        label: "Chanakya Portal",
+        label: "Student Academic Portal",
         link: "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",
         iconImage: Chankaya,
       },
@@ -633,6 +617,24 @@ const navItems = [
     label: "Facilities",
     link: "/Facilities",
     children: [
+      {
+        label: "Centers",
+        link: "#",
+        iconImage: Structure,
+        children: [
+          
+          {
+            label: "Incubation Center",
+            link: "https://web.nitp.ac.in/incubation_center/index.html",
+            iconImage: Ecell,
+          },
+        ],
+      },
+      {
+        label: "Computer Center",
+        link: "/Facilities/ComputerCenter",
+        iconImage: ComputerCentre,
+      },
       {
         label: "Health Center",
         link: "/Facilities/MedicalFacilities",
@@ -675,11 +677,6 @@ const navItems = [
         iconImage: ESU,
       },
       {
-        label: "IT Service Unit",
-        link: "/Facilities/ItServices",
-        iconImage: itservice,
-      },
-      {
         label: "Laboratories",
         link: "/Facilities/Laboratories",
         iconImage: Labs,
@@ -717,10 +714,10 @@ export default function Navbar() {
   <div className="flex justify-between items-center px-4 py-1 text-white text-xs md:text-sm">
     <div className="flex space-x-2 text-xs md:text-sm">
       <a
-        href="http://15.207.239.227:8000/"
+        href="/Notices/JobsNITP"
         className="hover:underline text-xs md:text-sm"
       >
-        Old Website
+        Jobs@NITP
       </a>
       <span className="text-xs md:text-sm">|</span>
       <a
