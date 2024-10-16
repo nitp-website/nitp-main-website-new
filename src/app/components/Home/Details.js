@@ -81,7 +81,9 @@ const Eventcard = ({ detail, time, attachments, location, event_link, link }) =>
 const Details = () => {
   const [events, setEvents] = useState([]);
   const [notices, setNotices] = useState([]);
+  const [homenotices,setnoticies]=useState([])
   const [academics, setAcademics] = useState([]);
+  const [homeacad,sethomeacad]=useState([])
   const [scrollingNotices, setScrollingNotices] = useState(true); // Start scrolling
   const [scrollingAcademics, setScrollingAcademics] = useState(true); // Start scrolling
   const noticesRef = useRef(null);
@@ -111,6 +113,9 @@ const Details = () => {
         const sortedNotices = response.data
           .filter(notice => notice.isVisible === 1)
           .sort((a, b) => b.important - a.important);
+          let data=sortedNotices.slice(0,21)
+          console.log(data)
+          setnoticies(data)
         setNotices(sortedNotices);
       } catch (e) {
         console.error("Error fetching notices:", e);
@@ -124,6 +129,9 @@ const Details = () => {
         const sortedAcademics = response.data
           .filter(notice => notice.isVisible === 1)
           .sort((a, b) => b.important - a.important);
+          let data=sortedAcademics.slice(0,21)
+          console.log(data)
+          sethomeacad(data)
         setAcademics(sortedAcademics);
       } catch (e) {
         console.error("Error fetching academic notices:", e);
@@ -213,7 +221,7 @@ const Details = () => {
           onMouseLeave={handleMouseLeaveNotices}
           style={{ overflowY: 'auto', maxHeight: '300px' }} // Set max height for scrolling
         >
-          {notices.length === 0 ? (
+          {homenotices.length === 0 ? (
             <div className="flex justify-center items-center">
               <div className="text-center">
               <svg
@@ -233,7 +241,7 @@ const Details = () => {
               </div>
             </div>
           ) : (
-            notices.map(notice => (
+            homenotices.map(notice => (
               <Noticecard
                 detail={notice.title}
                 time={notice.timestamp}
@@ -314,7 +322,7 @@ const Details = () => {
           onMouseLeave={handleMouseLeaveAcademics}
           style={{ overflowY: 'auto', maxHeight: '300px' }} // Set max height for scrolling
         >
-          {academics.length === 0 ? (
+          {homeacad.length === 0 ? (
             <div className="flex justify-center items-center">
               <div className="text-center">
               <svg
@@ -334,7 +342,7 @@ const Details = () => {
               </div>
             </div>
           ) : (
-            academics.map(notice => (
+            homeacad.map(notice => (
               <Noticecard
                 detail={notice.title}
                 time={notice.timestamp}

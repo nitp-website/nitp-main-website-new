@@ -617,18 +617,23 @@ const navItems = [
     label: "Facilities",
     link: "/Facilities",
     children: [
-      {
-        label: "Centers",
-        link: "#",
-        iconImage: Structure,
-        children: [
+      // {
+      //   label: "Centers",
+      //   link: "#",
+      //   iconImage: Structure,
+      //   children: [
           
-          {
-            label: "Incubation Center",
-            link: "https://web.nitp.ac.in/incubation_center/index.html",
-            iconImage: Ecell,
-          },
-        ],
+      //     {
+      //       label: "Incubation Center",
+      //       link: "https://web.nitp.ac.in/incubation_center/index.html",
+      //       iconImage: Ecell,
+      //     },
+      //   ],
+      // },
+      {
+        label: "Incubation Center",
+        link: "https://web.nitp.ac.in/incubation_center/index.html",
+        iconImage: Ecell,
       },
       {
         label: "Computer Center",
