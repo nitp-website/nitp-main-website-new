@@ -14,7 +14,7 @@ const Sidebar = dynamic(() => import("./Sidebar"), {
   ),
 });
 const FacultyInfo = () => {
-  const [state, setstate] = useState(2);
+  const [state, setstate] = useState(13);
   const [name, setname] = useState("");
   const [designation, setdesignation] = useState("");
   const [email, setemail] = useState("");
@@ -153,7 +153,7 @@ const FacultyInfo = () => {
             publications={publications}
           />
           <div className="md:mx-3 md:mt-3  w-full overflow-scroll  ">
-            {/* {state === 1 && (
+            {state === 13 && (
               <div className="w-full p-3 text-black">
                 <Title title={"Resume"} />
                 <div className="w-full p-3 text-black border rounded-md  flex justify-center items-center overflow-scroll h-[60vh] shadow-lg hover:shadow-2xl">
@@ -170,8 +170,8 @@ const FacultyInfo = () => {
                   </button>
                 </div>
               </div>
-            )} */}
-            {state === 2 && (
+            )}
+            {state === 5 && (
               <div className="w-full p-3 text-black ">
                 <Title title={"Education"} />
                 {education ? (
@@ -215,7 +215,7 @@ const FacultyInfo = () => {
                 )}
               </div>
             )}
-            {state === 3 ? (
+            {state === 15 ? (
               <div className="w-full p-3 text-black font-poppins">
                 <Title title={"Teaching Experience"} />
                 {work_experience ? (
@@ -270,7 +270,7 @@ const FacultyInfo = () => {
               <></>
             )}
 
-            {state === 4 ? (
+            {state === 12 ? (
               <div className="w-full p-3 text-black font-poppins">
                 <Title title={"Professional Services"} />
                 {Professional_Service ? (
@@ -308,7 +308,7 @@ const FacultyInfo = () => {
               <></>
             )}
 
-            {state === 5 ? (
+            {state === 1 ? (
               <div className="w-full p-3 text-black font-poppins">
                 <Title title={"Administrative Responsibilities"} />
                 {curr_admin_responsibility || past_admin_responsibility ? (
@@ -429,7 +429,7 @@ const FacultyInfo = () => {
                 </div>
               </div>
             )}
-            {state === 7 ? (
+            {state === 4 ? (
               <div className="w-[100%] p-3 text-black ">
                 <Title title={"Conferences"} />
 
@@ -468,7 +468,7 @@ const FacultyInfo = () => {
               <></>
             )}
 
-            {state === 8 ? (
+            {state === 11 ? (
               <div className="w-[100%] p-3 text-black ">
                 <Title title={"Phd Candidates"} />
                 {phd_students ? (
@@ -524,7 +524,7 @@ const FacultyInfo = () => {
               <></>
             )}
 
-            {state === 9 ? (
+            {state === 10 ? (
               <div className="w-[100%] p-3 text-black ">
                 <Title title={"PG/UG Projects"} />
                 {pg_ug_projects ? (
@@ -586,7 +586,7 @@ const FacultyInfo = () => {
               <></>
             )}
 
-            {state === 10 ? (
+            {state === 14 ? (
               <div className="w-[100%] p-3 text-black font-poppins">
                 <Title title={"Subjects Teaching"} />
                 {subjects ? (
@@ -643,7 +643,7 @@ const FacultyInfo = () => {
               <></>
             )}
 
-            {state === 11 ? (
+            {state === 3 ? (
               <div className="w-[100%] p-3 text-black font-poppins">
                 <Title title={"Books"} />
                 {
@@ -682,7 +682,7 @@ const FacultyInfo = () => {
               <></>
             )}
 
-            {state === 12 ? (
+            {state === 7 ? (
               <div className="w-full p-3 text-black font-poppins ">
                 <Title title={"memberships"} />
                 {membership ? (
@@ -744,7 +744,7 @@ const FacultyInfo = () => {
               <></>
             )}
 
-            {state === 13 ? (
+            {state === 2 ? (
               <div className="w-[100%] p-3 text-black font-poppins">
                 <Title title={"Articles"} />
                 {
@@ -783,7 +783,7 @@ const FacultyInfo = () => {
               <></>
             )}
 
-            {state === 14 ? (
+            {state === 9 ? (
               <div className="w-[100%] p-3 text-black ">
                 <Title title={" Projects"} />
                 {project ? (
@@ -841,7 +841,7 @@ const FacultyInfo = () => {
               <></>
             )}
 
-            {state === 15 ? (
+            {state === 8 ? (
               <div className="w-[100%] p-3 text-black font-poppins">
                 {/* Title Component for Patents */}
                 <Title title={"Patents"} />

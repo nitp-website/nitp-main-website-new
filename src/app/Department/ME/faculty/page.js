@@ -92,13 +92,18 @@ useEffect(() => {
              Staffs
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2">
             <DeptStaffcard image={"/hssstaff1.png"} name={"Shailendra Kumar Singh"} designation={"Peon"}/>
-          </div>
+          </div> */}
       </div>
       }
       {
         phd&&<div className="grid grid-cols-1 md:grid-cols-2">
+          <div>
+            <p className="text-red-900 text-xl lg:text-2xl font-bold">
+            Phd Candidates
+            </p>
+          </div>
           {
             phd_render?.map((item)=>{
               return <PhdCandidate
