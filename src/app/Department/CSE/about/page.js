@@ -33,8 +33,8 @@ function Page(){
               System Programming, Computer Networks, Data Mining and
               Warehousing, Distributed and Parallel Computing, Mobile and
               Wireless Computing, Real-time Systems, Cryptography, Genetic
-              Algorithm and Artificial Intelligence. Apart from these, students
-              are also offered a wide variety of electives.
+              Algorithm, Quantum Algorithms and Artificial Intelligence. Apart from these, students
+              are also offered a wide variety of electives. 
                 </p>
 
             </div>
