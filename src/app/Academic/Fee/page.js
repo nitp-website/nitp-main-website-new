@@ -2,6 +2,7 @@ import React from 'react';
 
 const FeeStructureTable = () => {
   const data = [
+    { name: 'UG : Fee Structure  2024-25 onwords', link: 'https://drive.google.com/file/d/1MhS_UIYkOF2G3h0ms_kk8ZRjidr0IvGZ/view?usp=sharing' },
     { name: 'PhD: Fee Structure', link: 'https://drive.google.com/file/d/1b6bsHkVHfPa0gsG3Z9vhUKrsrGb3Sw4h/view' },
     { name: 'PG: Fee Structure', link: 'https://drive.google.com/file/d/1qSQMYVRWFoWXad4Z765LtsPMXBofYKzK/view' },
     { name: 'UG fee structure effective from session 2023-24 and onwards', link: 'https://drive.google.com/file/d/10zxZd3mxCp-ypZhgAY1ShcagD_NweXbe/view?usp=drivesdk' },
