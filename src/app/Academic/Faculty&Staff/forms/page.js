@@ -65,7 +65,7 @@ const content = [
   },
   {
     "Downloads": "LTC Application Form",
-    "DLink": "https://drive.google.com/file/d/1AYfw5ZIovBJmR0Y2BszAHRJwfvItrNMx/view?usp=drivesdk",
+    "DLink": "https://drive.google.com/file/d/1h6cPENor0JFXubpd1ymO9vsp-RKsNYLN/view?usp=sharing",
     "Office order": "LTC Claim Form",
     "OLink": "https://drive.google.com/file/d/1ZAHxlpCd7LCxdxb0JBLyZEbuhw6V2UI7/view?usp=drivesdk"
   },

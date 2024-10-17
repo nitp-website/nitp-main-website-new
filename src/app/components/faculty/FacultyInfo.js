@@ -186,7 +186,7 @@ const FacultyInfo = () => {
                             institution
                           </td>
                           <td className=" px-3  capitalize w-[100px] font-bold">
-                            passing_year
+                            passing year
                           </td>
                         </tr>
                         {education.map((item) => {
