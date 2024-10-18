@@ -1,6 +1,9 @@
 import Head from "next/head";
 
+import Nss from "../../components/StudentComponents/Nss"
+
 export default function Home() {
+  
   const places = [
     {
       subheading: "National Service Scheme",
@@ -11,47 +14,21 @@ export default function Home() {
   ];
 
   return (
-    <div className=" mx-auto pl-4 pr-4 md:pl-20 md:pr-20 pt-6 bg-white bg-opacity-50">
-
+    <div className=" mx-auto pl-4 pr-4  pt-6 bg-white bg-opacity-50">
       <Head>
-        <title>Students</title>
+        <title>NSS</title>
       </Head>
 
       <h1 className="text-3xl font-bold text-center mb-8 text-red-800">
       National Service Scheme
       </h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
-        {places.map((place, index) => (
-          <div key={index} className="flex flex-col md:flex-row  gap-4 items-center">
-            {index % 2 === 0 ? (
-              <>
-              <div className="md:pl-4 ">
-                  <h2 className="text-xl font-bold mb-2 text-neutral-800 items-start" >{place.subheading}</h2>
-                  <p className="text-gray-600 ">{place.text}</p>
-                </div>
-           
-                
-              </>
-            ) : (
-              <>
-                
-               
-                <div className="md:pr-4">
-                  <h2 className="text-xl font-bold mb-2 text-neutral-800">{place.subheading}</h2>
-                  <p className="text-gray-600">{place.text}</p>
-                </div>
-              </>
-            )}
-          </div>
-        ))}
-      </div>
+      <Nss/>
+      
     </div>
   );
 }
-
 export async function generateMetadata({ params }) {
-    return {
-      title: ' Student | NIT Patna',
-    }
-  }
+  return {
+    title: "NSS | NIT Patna",
+  };
+}

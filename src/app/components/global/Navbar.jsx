@@ -114,9 +114,9 @@ const navItems = [
             link: "/Institute/?tab=campus",
             iconImage: Campus,
           },
+          
         ],
       },
-
       {
         label: "NIT Status & Acts",
         link: "/Others/NITAct",
@@ -137,6 +137,7 @@ const navItems = [
             link: "/Others/NIRF",
             iconImage: Document,
           },
+          
           // {
           //   label: "Data of ARIIA",
           //   link: "/Others/UpdatedSoon",
@@ -150,6 +151,11 @@ const navItems = [
           link: "/Institute/Magazine",
           iconImage: Digital,
         
+      },
+      {
+        label: "PAN/GST",
+        link:"https://drive.google.com/file/d/1Njk4q-iZudKaNHgZ7eYprCfaFKd1BroC/view?usp=sharing",
+        iconImage:Resource
       },
     ],
   },
@@ -586,11 +592,11 @@ const navItems = [
         iconImage: Fest,
       },
 
-      {
-        label: "Student Exchange",
-        link: "/Student/StudentExchange",
-        iconImage: Studentexchange,
-      },
+      // {
+      //   label: "Student Exchange",
+      //   link: "/Student/StudentExchange",
+      //   iconImage: Studentexchange,
+      // },
       {
         label: "NSS@NITP",
         link: "/Student/NSS",
