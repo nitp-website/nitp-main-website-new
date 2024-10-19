@@ -36,11 +36,12 @@ const SCSTCell = () => {
                         {
                             state === "People" ?
                                 <>
-                                    <div className="border shadow-xl w-full h-[70vh] p-3 text-md font-semibold flex justify-center items-center text-black">
-                                        <div className="border shadow-2xl p-5">
-                                            <span className="text-lg font-semibold">Prof.-In-Charge</span>
-                                            <span className="text-2xl font-bold">Dr. Om Ji Shukla</span>
-
+                                    <div className="border shadow-xl w-full h-[60vh] p-3 text-md font-semibold text-black">
+                                        <div className="border shadow-2xl p-5 text-black flex flex-col">
+                                            <span className="text-lg font-semibold">Liaison Officer</span>
+                                            <span className="text-2xl font-bold text-red-800">Prof. Fulena Rajak</span>
+                                            <span>Professor, Department of Architecture & Planning</span>
+                                            <span>Email: sc.st.cell@nitp.ac.in</span>
                                         </div>
                                     </div>
                                 </>
