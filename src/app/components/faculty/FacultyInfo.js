@@ -86,10 +86,12 @@ const FacultyInfo = () => {
         let booksdata = arr.filter((item) => item.type === "book");
         setbooks(booksdata);
         let articledata = arr.filter((item) => item.type === "article");
-        setarticle(articledata);
+        let art=articledata.sort((a, b) => b?.year.localeCompare(a?.year))
+        setarticle(art);
         let patentdata = arr.filter((item) => item.type === "patent");
+        let pat=patentdata.sort((a, b) => b?.year.localeCompare(a?.year))
         console.log("Filtered Patent Data:", patentdata);
-        setpatent(patentdata);
+        setpatent(pat);
 
         setresume(data.profile.cv);
       });
