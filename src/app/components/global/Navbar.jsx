@@ -205,12 +205,11 @@ const navItems = [
         link: "/Administration/HOD",
         iconImage: Person,
       },
-
-      // {
-      //   label: "Chief Vigilance Officers",
-      //   link: "/Others/UpdatedSoon",
-      //   iconImage: Person,
-      // },
+      {
+        label: "Chief Vigilance Officers",
+        link: "/Administration/CVO",
+        iconImage: Person,
+      },
       {
         label: "Service Unit Heads ",
         link: "/Administration/SUH",
