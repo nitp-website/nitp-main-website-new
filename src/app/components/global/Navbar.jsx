@@ -206,7 +206,7 @@ const navItems = [
         iconImage: Person,
       },
       {
-        label: "Chief Vigilance Officers",
+        label: "Chief Vigilance Officer",
         link: "/Administration/CVO",
         iconImage: Person,
       },
