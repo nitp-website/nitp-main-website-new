@@ -153,6 +153,12 @@ export default function InstitutePage() {
           </tr>
         </tbody>
       </table>
+      <div className='flex mt-4'>
+      <h1 className='mt-4 ml-16 font-bold'>International Student Registration -</h1>
+      <a href="https://www.studyinindia.gov.in/admission/registrations " className="  text-red-700 font-bold py-2 px-4 rounded-lg shadow-md  ml-5 mt-2 mb-3">
+         Click Here
+      </a>
+    </div>
     </div>
         </section>
         )}
