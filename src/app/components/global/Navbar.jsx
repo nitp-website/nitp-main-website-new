@@ -501,7 +501,7 @@ const navItems = [
       },
       {
         label: "Faculty Academic Portal",
-        link: "http://mis.nitp.ac.in:81/",
+        link: "http://exam.nitp.ac.in:81/",
         iconImage: Portal,
       },
       // {
