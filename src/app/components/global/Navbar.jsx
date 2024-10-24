@@ -729,16 +729,23 @@ export default function Navbar() {
     <div className="flex space-x-2 text-xs md:text-sm">
       <a
         href="/Notices/JobsNITP"
-        className="hover:underline text-xs md:text-sm"
+        className="hover:underline text-[0.6rem] md:text-sm"
       >
         Jobs@NITP
       </a>
-      <span className="text-xs md:text-sm">|</span>
+      <span className="text-[0.5rem] md:text-sm">|</span>
       <a
         href="https://paydirect.eduqfix.com/app/mnYv9Q6+C+3lIMqghRCwdaqVZusPrJtq2RGJrJFnKnmtz3KBqtsEFPVrZFvoPubG/3466"
-        className="hover:underline text-xs md:text-sm"
+        className="hover:underline text-[0.6rem] md:text-sm"
       >
         Fee Payment
+      </a>
+      <span className="text-[0.5rem] md:text-sm">|</span>
+      <a
+        href="/Academic/Intranet"
+        className="hover:underline text-[0.6rem] md:text-sm"
+      >
+        Intranet
       </a>
     </div>
     <div className="flex space-x-2">
