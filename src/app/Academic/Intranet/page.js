@@ -33,8 +33,8 @@ const IntranetRedirect = () => {
           Connect to NIT Network (WiFi or Ethernet)
         </h2>
         <p>
-          Please connect to the NIT Network to access the intranet website. You
-          will be redirected in {seconds} seconds.
+          If connected, You
+          will be redirected in {seconds} seconds and you will be able to access the Intranet.
         </p>
         <p>If the redirection does not work, click below:</p>
         <a href="http://192.168.1.16:3333" className="intranet-link">
