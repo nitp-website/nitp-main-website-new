@@ -354,7 +354,11 @@ const navItems = [
           },
         ],
       },
-      
+      {
+        label: "Intranet Portal",
+        link: "/Academic/Intranet",
+        iconImage: Admin,
+      },
       {
         label: "Programmes",
         link: "/Course",
