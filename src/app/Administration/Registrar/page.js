@@ -1,6 +1,5 @@
 import React from "react";
-import Admincard from "../Admincard";
-import Admin from "../admin"; 
+import Admincard from "../Admincard"; 
 import "../style.css"
 const RegistrarPage = () => {
   const RegistrarData = [

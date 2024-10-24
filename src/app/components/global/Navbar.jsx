@@ -114,9 +114,9 @@ const navItems = [
             link: "/Institute/?tab=campus",
             iconImage: Campus,
           },
+          
         ],
       },
-
       {
         label: "NIT Status & Acts",
         link: "/Others/NITAct",
@@ -137,6 +137,7 @@ const navItems = [
             link: "/Others/NIRF",
             iconImage: Document,
           },
+          
           // {
           //   label: "Data of ARIIA",
           //   link: "/Others/UpdatedSoon",
@@ -150,6 +151,11 @@ const navItems = [
           link: "/Institute/Magazine",
           iconImage: Digital,
         
+      },
+      {
+        label: "PAN/GST",
+        link:"https://drive.google.com/file/d/1Njk4q-iZudKaNHgZ7eYprCfaFKd1BroC/view?usp=sharing",
+        iconImage:Resource
       },
     ],
   },
@@ -199,12 +205,11 @@ const navItems = [
         link: "/Administration/HOD",
         iconImage: Person,
       },
-
-      // {
-      //   label: "Chief Vigilance Officers",
-      //   link: "/Others/UpdatedSoon",
-      //   iconImage: Person,
-      // },
+      {
+        label: "Chief Vigilance Officer",
+        link: "/Administration/CVO",
+        iconImage: Person,
+      },
       {
         label: "Service Unit Heads ",
         link: "/Administration/SUH",
@@ -496,7 +501,7 @@ const navItems = [
       },
       {
         label: "Faculty Academic Portal",
-        link: "http://mis.nitp.ac.in:81/",
+        link: "http://exam.nitp.ac.in:81/",
         iconImage: Portal,
       },
       // {
@@ -586,11 +591,11 @@ const navItems = [
         iconImage: Fest,
       },
 
-      {
-        label: "Student Exchange",
-        link: "/Student/StudentExchange",
-        iconImage: Studentexchange,
-      },
+      // {
+      //   label: "Student Exchange",
+      //   link: "/Student/StudentExchange",
+      //   iconImage: Studentexchange,
+      // },
       {
         label: "NSS@NITP",
         link: "/Student/NSS",
@@ -617,22 +622,28 @@ const navItems = [
     label: "Facilities",
     link: "/Facilities",
     children: [
+      // {
+      //   label: "Centers",
+      //   link: "#",
+      //   iconImage: Structure,
+      //   children: [
+          
+      //     {
+      //       label: "Incubation Center",
+      //       link: "https://web.nitp.ac.in/incubation_center/index.html",
+      //       iconImage: Ecell,
+      //     },
+      //   ],
+      // },
       {
-        label: "Centers",
-        link: "#",
-        iconImage: Structure,
-        children: [
-          {
-            label: "Computer Center",
-            link: "/Facilities/ComputerCenter",
-            iconImage: ComputerCentre,
-          },
-          {
-            label: "Incubation Center",
-            link: "https://web.nitp.ac.in/incubation_center/index.html",
-            iconImage: Ecell,
-          },
-        ],
+        label: "Incubation Center",
+        link: "https://web.nitp.ac.in/incubation_center/index.html",
+        iconImage: Ecell,
+      },
+      {
+        label: "Computer Center",
+        link: "/Facilities/ComputerCenter",
+        iconImage: ComputerCentre,
       },
       {
         label: "Health Center",
@@ -674,11 +685,6 @@ const navItems = [
         label: "ESU",
         link: "/Facilities/Esu",
         iconImage: ESU,
-      },
-      {
-        label: "IT Service Unit",
-        link: "/Facilities/ItServices",
-        iconImage: itservice,
       },
       {
         label: "Laboratories",

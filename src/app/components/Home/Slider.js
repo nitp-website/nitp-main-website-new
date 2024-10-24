@@ -31,6 +31,8 @@ const Slider = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="mySwiper"
           >
+             <SwiperSlide><img src="/home1.png" /></SwiperSlide>      
+             <SwiperSlide><img src="/home2.png" /></SwiperSlide>      
              <SwiperSlide><img src="https://i.postimg.cc/J42hsCPZ/2-scientist.png" /></SwiperSlide>      
             <SwiperSlide><img src="https://i.postimg.cc/vZgyyTkp/image.png" /></SwiperSlide>
             <SwiperSlide><img src="https://i.postimg.cc/0jDVqSGQ/Image-1-00001.jpg" /></SwiperSlide>

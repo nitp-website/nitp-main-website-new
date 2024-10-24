@@ -130,6 +130,7 @@ Refer the link for more detail: <a href='https://www.nitp.ac.in/' target='_blank
                 <a href="https://drive.google.com/file/d/17y8UJgYGZIklBkQ48B9crgXPxxygXrpE/view?usp=sharing">MoU between University of Calabria, Italy  & NIT Patna</a>
 
                 </li>
+                <br></br>
             </ul>
             
           </h2>
@@ -145,13 +146,13 @@ Refer the link for more detail: <a href='https://www.nitp.ac.in/' target='_blank
             International Center for AI and Cyber Security Research and Innovations (CCRI), Asia University, Taiwan
           </a>
         </li>
-        {/* <br></br>
-        <li>
+        <br></br>
+        {/* <li>
           <a href="https://www.unical.it/" >
             UNIVERSITA’ DELLA CALABRIA, Italy
           </a>
-        </li> */}
-        <br></br>
+        </li>
+        <br></br> */}
         <li>
           <a href="https://www.unifi.it/" >
             University of Florence, Italy
@@ -163,12 +164,12 @@ Refer the link for more detail: <a href='https://www.nitp.ac.in/' target='_blank
             Eastern International University, Vietnam
           </a>
         </li>
-        // <br></br>
-        // <li>
-        //   <a href="https://www.ufscar.br/" >
-        //     University of São Carlos (UFSCar), Brazil
-        //   </a>
-        // </li>
+         <br></br>
+         {/* <li>
+          <a href="https://www.ufscar.br/" >
+            University of São Carlos (UFSCar), Brazil
+          </a>
+         </li> */}
            </ul>
            </h2>
         </div>

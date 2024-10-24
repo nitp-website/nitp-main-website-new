@@ -1,5 +1,6 @@
 
-
+import Head from "next/head";
+import SCSTCell from "../../components/StudentComponents/SCSTCell"
 export default function Home() {
   const places = [
     {
@@ -25,48 +26,19 @@ sc.st.cell@nitp.ac.in`,
 
   return (
     <div className="mx-auto pl-5 pr-5 md:pl-32 md:pr-32 pt-8 bg-white bg-opacity-50">
-
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
-        {places.map((place, index) => (
-          <div key={index} className="flex flex-col md:flex-row  gap-10 items-center">
-            {index % 2 === 0 ? (
-              <>
-              <div className="md:pl-4 ">
-                  <h2 className="text-3xl font-bold mb-2 text-red-800 items-start" >{place.subheading}</h2>
-                  <p className="text-gray-600 "> {place.text.split('\n').map((line, i) => (
-                      <span key={i}>
-                        {line}
-                        <br />
-                      </span>
-                    ))}</p>
-                </div>
-               
-                
-              </>
-            ) : (
-              <>
-                
-               
-                <div className="md:pr-4">
-                  <h2 className="text-xl font-bold mb-2 text-neutral-800">{place.subheading}</h2>
-                  <p className="text-gray-600"> {place.text.split('\n').map((line, i) => (
-                      <span key={i}>
-                        {line}
-                        <br />
-                      </span>
-                    ))}</p>
-                </div>
-              </>
-            )}
-          </div>
-        ))}
-      </div>
+      <Head>
+        <title>SC/ST Cell</title>
+      </Head>
+      <h1 className="text-3xl font-bold text-center mb-2 text-red-800">
+      SC/ST Cell , NIT Patna
+      </h1>
+      <SCSTCell/>
     </div>
   );
 }
 
 export async function generateMetadata({ params }) {
     return {
-      title: 'Computer Centre | NIT Patna',
+      title: 'SC/ST Cell | NIT Patna',
     }
   }
