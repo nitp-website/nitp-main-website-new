@@ -1,0 +1,73 @@
+/* Base styles for the page */
+#intranet-redirect {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f400;
+  padding: 20px;
+}
+
+.intranet {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Max width for larger screens */
+  width: 100%; /* Ensure it takes up full width on smaller screens */
+}
+
+.intranet-info h1 {
+  font-size: 48px;
+  color: #b60000;
+  margin-bottom: 20px;
+}
+
+/* Padding for content */
+.pt-10 {
+  padding-top: 10px;
+}
+
+/* Link button styles */
+.intranet-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 5px 10px;
+  background-color: #ff9156;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.intranet-link:hover {
+  background-color: #6d0000;
+}
+
+/* Media queries for responsiveness */
+/* Small devices (phones) */
+@media (max-width: 600px) {
+  .intranet {
+    padding: 20px;
+  }
+  .intranet-info h1 {
+    font-size: 32px;
+  }
+  .intranet-link {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .intranet-info h1 {
+    font-size: 40px;
+  }
+  .intranet-link {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
