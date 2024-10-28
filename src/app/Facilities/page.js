@@ -15,7 +15,7 @@ const FacilitiesResources = [
   {
     "title": "IT Service Unit",
     "image": "https://i.postimg.cc/5tHMkF1T/IT64.png", 
-    "link": "/Facilities/ItServices",
+    "link": "/Facilities/ComputerCenter",
   },
   {
     "title": "TEQUIP",
