@@ -14,12 +14,12 @@ const Sidebar = () => {
     }
   };
 
-  const basePath = '/Facilities/ComputerCenter';
+  const basePath = '/Administration/CVO';
   const baseRoute = pathname.replace(basePath, ''); 
 
   return (
     <div className="md:w-64 text-black bg-white shadow-md p-4 md:p-6">
-      <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">CCIS</h2>
+      <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">CVO</h2>
       <ul className="space-y-3 md:space-y-4">
         <li
           className={`flex items-center p-2 rounded-lg cursor-pointer ${
@@ -32,35 +32,13 @@ const Sidebar = () => {
         </li>
         <li
           className={`flex items-center p-2 rounded-lg cursor-pointer ${
-            baseRoute === '/ItServices' ? 'bg-red-100 text-red-600' : 'hover:bg-gray-100'
+            baseRoute === '/gallary' ? 'bg-red-100 text-red-600' : 'hover:bg-gray-100'
           }`}
-          onClick={() => handleNavigation(`${basePath}/ItServices`)}
+          onClick={() => handleNavigation(`${basePath}/gallary`)}
         >
           <FaPhotoVideo className="mr-2 md:mr-3" />
-          <span>IT Services</span>
+          <span>Gallery</span>
         </li>
-       
-       
-        <li
-          className={`flex items-center p-2 rounded-lg cursor-pointer ${
-            baseRoute === '/people' ? 'bg-red-100 text-red-600' : 'hover:bg-gray-100'
-          }`}
-          onClick={() => handleNavigation(`${basePath}/people`)}
-        >
-          <FaUserFriends className="mr-2 md:mr-3" />
-          <span>People</span>
-        </li>
-
-        <li
-          className={`flex items-center p-2 rounded-lg cursor-pointer ${
-            baseRoute === '/notice' ? 'bg-red-100 text-red-600' : 'hover:bg-gray-100'
-          }`}
-          onClick={() => handleNavigation(`${basePath}/notice`)}
-        >
-          <FaPhotoVideo className="mr-2 md:mr-3" />
-          <span>Notice</span>
-        </li>
-        
        
       </ul>
     </div>

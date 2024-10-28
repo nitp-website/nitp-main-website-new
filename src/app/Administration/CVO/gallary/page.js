@@ -1,6 +1,6 @@
 "use client";
-import Sidebar from './components/Sidebar.js'
-import Home from './components/Home.js'
+import Sidebar from '../components/Sidebar.js'
+import Gallary from '../components/Gallary.js'
 
 function Page() {
   return (
@@ -9,7 +9,7 @@ function Page() {
       <Sidebar />
     </div>
     <div className='flex flex-col md:w-3/4 '>
-     <Home/>
+     <Gallary/>
     </div>
   </div>
   )
