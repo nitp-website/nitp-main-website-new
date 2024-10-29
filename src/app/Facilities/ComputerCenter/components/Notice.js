@@ -20,6 +20,22 @@ const dummyNotices = [
     important: true,
     isVisible: 1,
   },
+   {
+    id: 2,
+    title: "Cyber Security Guidelines for Government Employees",
+    // timestamp: 1696281600000,
+    timestamp: 0, 
+    attachments: [
+      {
+        typeLink: true,
+        url: "https://drive.google.com/file/d/1s0dp_D7yTvpB6dxkawavzGn-OyREAqIE/view?usp=drive_link",
+        caption: "View in Detail",
+      },
+    ],
+    important: true,
+    isVisible: 1,
+  },
+  
 ];
 
 const Noticecard = ({ detail, time, attachments, imp, link }) => (
