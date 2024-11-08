@@ -94,6 +94,14 @@ const GalleryData = {
       src: "/DSC_0098.JPG",
       alt: "Image 4074",
     },
+    {
+      src: "/bihta1.jpg",
+      alt: "Image 4075",
+    },
+    {
+      src: "/bihta2.jpg",
+      alt: "Image 4076",
+    },
   ],
 };
 
