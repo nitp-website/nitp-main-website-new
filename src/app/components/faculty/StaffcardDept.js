@@ -38,7 +38,7 @@ function StaffCard({
           {designation}
         </span>
 
-        {experience && (
+        {/* {experience && (
           <div className="flex items-center mt-2">
             <FontAwesomeIcon icon={faBriefcase} className="w-5 mr-2 text-gray-600" />
             <span>Experience: {experience}</span>
@@ -50,7 +50,7 @@ function StaffCard({
             <FontAwesomeIcon icon={faGraduationCap} className="w-5 mr-2 text-gray-600" />
             <span>Education: {education}</span>
           </div>
-        )}
+        )} */}
 
         {expertise && (
           <div className="flex items-center mt-2">
