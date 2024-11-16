@@ -29,7 +29,7 @@ const FacultyHeader = ({
 
       <div className="w-full flex justify-center items-center md:w-fit">
         {image ? (
-          <Image
+          <img
             alt="blank"
             src={image}
             className="rounded-full h-32 w-32 md:h-44 md:w-52 md:mx-8 md:hover:h-48 md:hover:w-60"

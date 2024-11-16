@@ -21,7 +21,7 @@ function DeptStaffcard({
             <div
               className="relative h-[100px] w-[100px] transition-all duration-300"
             >
-              <Image
+              <img
                 className="rounded-md object-cover  h-[100px] w-[100px]"
                 src={image !== null ? image : "/faculty.jpeg"}
                 alt={name}
