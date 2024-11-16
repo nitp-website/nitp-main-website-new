@@ -5,6 +5,8 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import DeptStaffcard from "../../../components/faculty/DeptStaff"
 import PhdCandidate from "../../../components/faculty/PhdCandidate"
+import staffData from "../../staffData";
+import StaffcardDept from "../../../components/faculty/StaffcardDept"
 const Home = () => {
   const [faculty, setfaculty] = useState(true);
   const [staff, setstaff] = useState(false);
@@ -14,7 +16,7 @@ const Home = () => {
   const [loading, setloading] = useState(false)
   const fetchphd = async () => {
     setloading(true);
-    const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty/cee`;
+    const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty/ce`;
     const { data } = await axios(api);
     setphd_candidate(data);
     const phd_info = [];
@@ -38,7 +40,7 @@ const Home = () => {
     setphd_render(phd_info);
     setloading(false);
 };
-
+const Staff = staffData.find((dept) => dept.department === "Civil")?.staff || [];
 useEffect(() => {
     fetchphd();
 }, [phd]);
@@ -68,11 +70,11 @@ useEffect(() => {
             setstaff(false);
             // fetchphd()
           }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>PhD Candidates</button>
-          {/* <button onClick={() => {
+          <button onClick={() => {
             setfaculty(false);
             setphd(false);
             setstaff(true);
-          }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button> */}
+          }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button>
         </div>
         {faculty &&
           <div className="flex flex-col">
@@ -90,9 +92,11 @@ useEffect(() => {
                 Staffs
               </p>
             </div>
-            {/* <div className="grid grid-cols-1 md:grid-cols-2">
-              <DeptStaffcard image={"/hssstaff1.png"} name={"Shailendra Kumar Singh"} designation={"Peon"} />
-            </div> */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Staff.map((staffMember, index) => (
+              <StaffcardDept key={index} {...staffMember} />
+            ))}
+          </div>
           </div>
         }
 

@@ -1,0 +1,70 @@
+const staffData = [
+  {
+    department: "Civil",
+    staff: [
+      {
+        name: "Dr. Abidhan Bardhan",
+        designation: "Sr. Technical Assistant",
+        experience: "Geotechnical Engineering",
+        education: "Ph.D. (Civil Engineering – Geotechnical Engineering)",
+        expertise: "Geotechnical Engineering",
+        email: "abidhan@nitp.ac.in",
+        mobile: "9088265565",
+        image: "https://i.postimg.cc/VLRjCKWF/image.png",
+      },
+     
+      {
+        name: "Lal Babu Tiwari",
+        designation: "Sr. Technical Assistant",
+        experience: "9 Years 5 Months",
+        education: "B.Tech in Civil Engineering",
+        expertise: "Civil Engineering",
+        email: "lalbabut.ce@nitp.ac.in",
+        mobile: "6205207798",
+        image: "https://i.postimg.cc/NfqcH4jL/image.png",
+      },
+      {
+        name: "Gautam Kumar",
+        designation: "Sr. Technical Assistant",
+        experience: "9 Years 5 Months 15 Days",
+        education: "PhD in Civil Engineering and MTech in Structural Engineering",
+        expertise: "Structural Engineering",
+        email: "Gautamkr.ce@nitp.ac.in",
+        mobile: "8507015142",
+        image: "https://i.postimg.cc/Gp9NN8mZ/image.png",
+      },
+      {
+        name: "Rajesh Ranjan",
+        designation: "Technical Assistant",
+        experience: "10th Jan 2017 to Present – Technical Assistant (Civil Engineering Department) NIT Patna",
+        education: "B.Tech in Civil Engineering (1st class with distinction)",
+        expertise: "Civil Engineering",
+        email: "rajeshr.ce@nitp.ac.in",
+        mobile: "8709831540",
+        image: "https://i.postimg.cc/TP7x5vKX/image.png",
+      },
+      {
+        name: "Ankit Anand",
+        designation: "Technical Assistant",
+        experience: "1 Year 2 Months 19 Days",
+        education: "B.Tech.",
+        expertise: "Civil Engineering",
+        email: "Ankit.ta@nitp.ac.in",
+        mobile: "9576767822",
+        image: "https://i.postimg.cc/N01TQbFT/image.png",
+      },
+      {
+        name: "Gaurav Kushwaha",
+        designation: "Technician",
+        experience: "5 Months",
+        education: "Diploma in Civil Engineering",
+        expertise: "Environmental Engineering",
+        email: "gaurav.tech@nitp.ac.in",
+        mobile: "8303143094",
+        image: "https://i.postimg.cc/7ZhmYvrz/image.png",
+      },
+    ],
+  },
+];
+
+export default staffData;

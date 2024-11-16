@@ -22,3 +22,12 @@ module.exports = withVideos({
       ],
   },
 });
+
+
+module.exports = {
+    reactStrictMode: true,
+    images: {
+      domains: ['via.placeholder.com', 'drive.google.com'], // Add external domains here
+    },
+  };
+  
