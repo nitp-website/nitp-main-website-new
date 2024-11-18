@@ -123,7 +123,7 @@ export default function CSE() {
             />
               <DepartmentNavigationButton
                 onClick={() => router.push('/Department/CSE/faculty')}
-                Title={'FACULTY'}
+                Title={'PEOPLE'}
               />
             <DepartmentNavigationButton
               onClick={() => router.push('/Department/CSE/syllabus')}

@@ -136,7 +136,7 @@ export default function Archi() {
 
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/Archi/faculty')}
-            Title={'FACULTY'}
+            Title={'PEOPLE'}
           />
 
           <DepartmentNavigationButton

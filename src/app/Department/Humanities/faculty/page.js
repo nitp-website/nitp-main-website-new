@@ -65,15 +65,15 @@ useEffect(() => {
           }} className={`border border-black rounded ${(faculty) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Faculties</button>
           <button onClick={() => {
             setfaculty(false);
+            setphd(false);
+            setstaff(true);
+          }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button>
+          <button onClick={() => {
+            setfaculty(false);
             setphd(true);
             setstaff(false);
             // fetchphd()
           }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>PhD Candidates</button>
-          <button onClick={() => {
-            setfaculty(false);
-            setphd(false);
-            setstaff(true);
-          }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button>
         </div>
         {faculty &&
           <div className="flex flex-col">

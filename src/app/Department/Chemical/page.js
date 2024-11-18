@@ -91,7 +91,7 @@ export default function Page() {
           />
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/Chemical/faculty')}
-            Title={'FACULTY'}
+            Title={'PEOPLE'}
           />
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/Chemical/syllabus')}

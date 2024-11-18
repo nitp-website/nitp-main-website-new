@@ -3,8 +3,11 @@ import BackDepartment from "../../../components/department/BackDepartment"
 import FacultyList from '../../../../components/facultycomponents/FacultyList';
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
+import staffData from "../../staffMach";
 import DeptStaffcard from "../../../components/faculty/DeptStaff"
 import PhdCandidate from "../../../components/faculty/PhdCandidate"
+import StaffcardDept from "../../../components/faculty/StaffcardDept"
+
 const Home=() =>{
   const [faculty, setfaculty] = useState(true);
   const [staff, setstaff] = useState(false);
@@ -38,6 +41,10 @@ const Home=() =>{
     setphd_render(phd_info);
     setloading(false);
 };
+const Staff = staffData.find((dept) => dept.department === "Mechatronics and Automation Engineering")?.staff || [];
+useEffect(() => {
+    fetchphd();
+}, [phd]);
 
 useEffect(() => {
     fetchphd();
@@ -64,15 +71,15 @@ useEffect(() => {
         }} className={`border border-black rounded ${(faculty) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Faculties</button>
         <button onClick={() => {
           setfaculty(false);
+          setphd(false);
+          setstaff(true);
+        }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button>
+        <button onClick={() => {
+          setfaculty(false);
           setphd(true);
           setstaff(false);
           // fetchphd()
         }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>PhD Candidates</button>
-        {/* <button onClick={() => {
-          setfaculty(false);
-          setphd(false);
-          setstaff(true);
-        }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button> */}
       </div>
       {faculty &&
         <div className="flex flex-col">
@@ -83,18 +90,20 @@ useEffect(() => {
           </div>
           <FacultyList url={"/Department/Mechatronics/faculty"} branch={"mae"} />
         </div>}
-      {staff &&
-      <div className="flex flex-col">
-          <div>
-            <p className="text-red-900 text-xl lg:text-2xl font-bold">
-             Staffs
-            </p>
+        {staff &&
+          <div className="flex flex-col">
+            <div>
+              <p className="text-red-900 text-xl lg:text-2xl font-bold">
+                Staffs
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Staff.map((staffMember, index) => (
+              <StaffcardDept key={index} {...staffMember} />
+            ))}
           </div>
-          {/* <div className="grid grid-cols-1 md:grid-cols-2">
-            <DeptStaffcard image={"/hssstaff1.png"} name={"Shailendra Kumar Singh"} designation={"Peon"}/>
-          </div> */}
-      </div>
-      }
+          </div>
+        }
       {
         phd&&<div className="grid grid-cols-1 md:grid-cols-2">
           <div>
