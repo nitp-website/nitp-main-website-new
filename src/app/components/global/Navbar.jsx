@@ -366,7 +366,7 @@ const navItems = [
       },
       {
         label: "Academic Calendar",
-        link: "https://drive.google.com/file/d/1tVgQSygS8GRTZIglbVWVClasegdd6BCi/view",
+        link: "/Academic/Calender",
         iconImage: Calendar,
       },
       {
