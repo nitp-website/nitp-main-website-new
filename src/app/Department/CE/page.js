@@ -105,7 +105,7 @@ export default function CE() {
 
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/CE/faculty')}
-            Title={'FACULTY'}
+            Title={'PEOPLE'}
           />
 
           <DepartmentNavigationButton

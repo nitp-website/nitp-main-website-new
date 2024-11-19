@@ -111,7 +111,7 @@ export default function Chem() {
 
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/Chem/faculty')}
-            Title={'FACULTY'}
+            Title={'PEOPLE'}
           />
 
           <DepartmentNavigationButton

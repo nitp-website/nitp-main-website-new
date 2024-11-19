@@ -12,7 +12,7 @@ export default function achivments(){
                 </div>
                 <div className="mt-2">
                     <p className="text-gray-500 text-xl font-semibold">
-                        MECHANICAL ENGINEERING
+                        Civil ENGINEERING
                     </p>
                 </div>
                 <BackDepartment navigate={"/Department/CE"}/>

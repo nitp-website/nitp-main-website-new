@@ -106,7 +106,7 @@ export default function ECE() {
 
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/ECE/faculty')}
-            Title={'FACULTY'}
+            Title={'PEOPLE'}
           />
 
           <DepartmentNavigationButton

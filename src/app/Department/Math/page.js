@@ -98,7 +98,7 @@ export default function Math() {
           />
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/Math/faculty')}
-            Title={'FACULTY'}
+            Title={'PEOPLE'}
           />
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/Math/syllabus')}
