@@ -81,7 +81,7 @@ export default function Archi() {
               <div>Announcement</div>
               <button className="hover:text-blue-500">View All</button>
             </div>
-            <div className="overflow-hidden flex flex-col-reverse">
+            <div className="overflow-hidden flex flex-col">
             {Notices.map((notice, id) => {
                   if(notice.isVisible === 1){
                     return (
