@@ -1,85 +1,68 @@
 import Head from "next/head";
+import Sidebar from "./components/Sidebar";
 
 export default function Home() {
-  const places = [
-    {
-      image:
-        "https://i.postimg.cc/Jz40WW7S/medical.jpg",
-      subheading: "Medical Facilities",
-      text: `Two permanent doctor has a fixed chamber within the institute premises. He can be consulted by the students and employees for any health related problems on every working day free of cost.
-
-Profile of the health consultants:
-Dr.Vikas Kumar Raj
-Senior Medical Officer
-MBBS, MD, MBA(HCA)
-PGD in DP & R and Family Medicine
-PGC in Hospital Management Dr.V K Raj
-
-Dr.Santosh Kumar Sudhakar
-Medical Officer
-MBBS
-Ex - Resident of DR.RML Hospital
-New Delhi Dr.S K Sudhakar
-
-The institute also maintains a 24x7 ambulance which is used for transferring patients from the institute to Patna Medical College and Hospital(PMCH) in case of any emergency.
-
-`,
-    },
-  ];
-
   return (
-    <div className="mx-auto pl-4 pr-4 md:pl-32 md:pr-32 pt-8 bg-white bg-opacity-50">
-      <Head>
-        <title>Medical Facilities</title>
-      </Head>
+    <div className="flex flex-col md:flex-row px-4 md:px-16 lg:px-16 mt-10 md:justify-between md:gap-0 w-full mb-8">
+      <div className="mt-6 mb-12 md:mt-0 ">
+        <Sidebar />
+      </div>
+      <div className="flex flex-col md:w-3/4 ">
+        <div>
+          <span className="text-xl ml-3  font-semibold border-b-2 pb-2 border-red-800">
+            Medical Facilities
+          </span>
+        </div>
+       
+        <div className="mt-8 text-base text-gray-500 mx-4">
+          <p className="text-justify">
+            The National Institute of Technology Patna (hereinafter referred to as NIT
+            Patna or Institute) is fully committed to provide all types of basic healthcare
+            facilities 24x7 to its students through Health Centre of NIT Patna (hereinafter
+            referred to as health centre). To serve the students of NIT Patna in a better
+            and organized way, following Standard Operating Procedure (SoP) is hereby
+            proposed to be followed:
+          </p>
+          <li className='text-justify'>
+            <span className='font-semibold text-gray'>
+              Primary and basic healthcare treatments will be provided by health centre.
+              Accordingly, in case of any medical emergency, the affected students will
+              be transported to nearby hospitals immediately through the fastest
+              possible means.
+            </span>
+          </li>
+          <li className='text-justify'>
+            <span className='font-semibold text-gray'>
+              In case of non-emergency cases such as minor injury while playing sports,
+              seasonal illnesses and old history of diseases etc, the students should visit
+              the health centre along with the medical health book provided by the
+              Institute. The students will invariably carry their medical health book as
+              and when they visit the health centre.
+            </span>
+          </li>
+          <li className='text-justify'>
+            <span className='font-semibold text-gray'>
+              Further emergency cases such as unconscious patient, myocardial
+              infarction (Heart Attack), stroke attack, seizures attack, electric shock
+              patient, suspected fracture injured patient etc would be immediately
+              transported to nearby hospitals in an ambulance or any available vehicle.
+              Depending upon assessment by Medical Officer/ Paramedical staff of
+              respective hospital, the patient may be referred to higher or district
+              hospital as deemed necessary. It should be noted that the list of
+              empanelled hospitals with the Institute is available on Institute’s website.
+              The same may be referred to in case of emergency.
+            </span>
+          </li>
 
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
-        {places.map((place, index) => (
-          <div
-            key={index}
-            className="flex flex-col md:flex-row  gap-10 items-center"
-          >
-            {index % 2 === 0 ? (
-              <>
-                <div className="md:pl-4 ">
-                  <h2 className="text-3xl font-bold mb-2 text-red-800 items-start">
-                    {place.subheading}
-                  </h2>
-                  <p className="text-gray-600 whitespace-pre-line ">
-                    {place.text}{" "}
-                  </p>
-                </div>
-                <img
-                  src={place.image}
-                  alt={places.subheading}
-                  className="w-3/4 md:w-2/5 rounded-md"
-                />
-              </>
-            ) : (
-              <>
-                <img
-                  src={place.image}
-                  alt=""
-                  className="w-full md:w-1/2 rounded-md"
-                />
-                <div className="md:pr-4">
-                  <h2 className="text-3xl font-bold mb-2 text-red-800">
-                    {place.subheading}
-                  </h2>
-                  <p className="text-gray-600 whitespace-pre-line">
-                    {place.text}
-                  </p>
-                </div>
-              </>
-            )}
-          </div>
-        ))}
+        </div>
+
       </div>
     </div>
   );
 }
+
 export async function generateMetadata({ params }) {
   return {
-    title: "Medical Facilities | NIT Patna",
+    title: "Sports Facilities | NIT Patna",
   };
 }
