@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import DeptStaffcard from "../../../components/faculty/DeptStaff"
 import PhdCandidate from "../../../components/faculty/PhdCandidate"
-import staffData from "../../staffData";
+import staffData from "../../staffCse";
 import StaffcardDept from "../../../components/faculty/StaffcardDept"
 const Home = () => {
   const [faculty, setfaculty] = useState(true);
@@ -69,15 +69,16 @@ useEffect(() => {
           }} className={`border border-black rounded ${(faculty) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Faculties</button>
           <button onClick={() => {
             setfaculty(false);
+            setphd(false);
+            setstaff(true);
+          }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button>
+          <button onClick={() => {
+            setfaculty(false);
             setphd(true);
             setstaff(false);
             // fetchphd()
           }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Phd Candidates</button>
-          {/* <button onClick={() => {
-            setfaculty(false);
-            setphd(false);
-            setstaff(true);
-          }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button> */}
+          
         </div>
         {faculty &&
           <div className="flex flex-col">
