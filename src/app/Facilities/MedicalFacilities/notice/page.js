@@ -5,15 +5,16 @@ import Sidebar from '../components/Sidebar';
 
 const content = [
   {
-    "Downloads": "List of Hospitals",
-    "DLink": "https://drive.google.com/file/d/1YC839XCnkbgAfpW9pFLqko6t135i1kD1/view?usp=drivesdk",
-    "Office order": ""
-  },
-  {
     "Downloads": "SOP",
     "DLink": "https://drive.google.com/file/d/1_6KN00R1HR6x9YfgV85XXs3ns9oZqPpY/view?usp=sharing",
     "Office order": ""
   },
+  {
+    "Downloads": "List of Empanelled  Hospitals",
+    "DLink": "https://drive.google.com/file/d/1YC839XCnkbgAfpW9pFLqko6t135i1kD1/view?usp=drivesdk",
+    "Office order": ""
+  },
+
 ];
 
 const DownloadsPage = () => {
