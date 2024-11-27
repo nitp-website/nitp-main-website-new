@@ -2,6 +2,17 @@ const staffData = [
     {
         department: "CSE",
         staff: [
+                  {
+                name: "Mr. Ranjeet Kumar",
+                designation: "Technical Assistant",
+                experience: "Technical Assistant (CSE) in NIT Patna from 11.07.2024 Till now.",
+                education: "Diploma in Electronics Engineering,",
+                expertise: "Routing, Switching, Cisco Wireless, LAN Controller and Cisco ASA Firewall.",
+                email: "ranjeet.ta@nitp.ac.in",
+                mobile: "+91-9771027007",
+                image: "/staffCse4.jpg",
+            },
+            
             {
                 name: "Mr. Ajay Kumar",
                 designation: " Sr.Technician ",
@@ -12,16 +23,7 @@ const staffData = [
                 mobile: "+91-7903419130",
                 image: "/staffCse3.jpg",
             },
-            {
-                name: "Mr. Ranjeet Kumar",
-                designation: "Technical Assistant",
-                experience: "Technical Assistant (CSE) in NIT Patna from 11.07.2024 Till now.",
-                education: "Diploma in Electronics Engineering,",
-                expertise: "Routing, Switching, Cisco Wireless, LAN Controller and Cisco ASA Firewall.",
-                email: "ranjeet.ta@nitp.ac.in",
-                mobile: "+91-9771027007",
-                image: "/staffCse4.jpg",
-            },
+
             {
                 name: "Mr. Abrar Khan",
                 designation: "Sr. Technician ",
