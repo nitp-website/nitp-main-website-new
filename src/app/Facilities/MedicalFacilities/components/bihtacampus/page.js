@@ -191,6 +191,12 @@ const DoctorSchedule = () => {
               ))}
             </tbody>
           </table>
+          <li className='text-justify'>
+            <span className=' text-gray'>
+            Duty hours for Counsellor<b> (Mr. Tinku Kumar): Monday to Thursday ; and Saturday to Sunday from
+              05:00 PM to 08:00 PM.</b>
+            </span>
+          </li>
         </div>
       </div>
     </div>
