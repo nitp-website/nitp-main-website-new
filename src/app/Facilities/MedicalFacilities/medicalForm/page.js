@@ -8,18 +8,14 @@ const content = [
     "Downloads": "Medical Claim Form",
     "DLink": "https://drive.google.com/file/d/1Rx2FxIqoWBsxqFbmBTvWCl52ZLN_DfMy/view?usp=drivesdk",
   },
+
   {
-    "Downloads": "List of Hospitals",
-    "DLink": "https://drive.google.com/file/d/1YC839XCnkbgAfpW9pFLqko6t135i1kD1/view?usp=drivesdk",
-    "Office order": ""
-  },
-  {
-    "Downloads": "Medical Certificate (A)",
+    "Downloads": "Medical Certificate (A) : Patients who are not admitted to hospital for treatment)",
     "DLink": "https://drive.google.com/file/d/1pHaYlHR2PJW29pUAfaLTJ_fnoEOuu4Iv/view?usp=drivesdk",
     "Office order": ""
   },
   {
-    "Downloads": "Medical Certificate (B)",
+    "Downloads": "Medical Certificate (B) : Patients who are admitted to hospital for treatment)",
     "DLink": "https://drive.google.com/file/d/1hXLAzspVCDdoQt9pKQ9WuTCpOOQZPZTu/view?usp=drivesdk",
     "Office order": ""
   },
