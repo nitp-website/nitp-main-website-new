@@ -5,6 +5,10 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import DeptStaffcard from "../../../components/faculty/DeptStaff"
 import PhdCandidate from "../../../components/faculty/PhdCandidate"
+import staffData from "../../staffChemical";
+import StaffcardDept from "../../../components/faculty/StaffcardDept"
+
+
 const Home = () => {
   const [faculty, setfaculty] = useState(true);
   const [staff, setstaff] = useState(false);
@@ -38,6 +42,8 @@ const Home = () => {
     setphd_render(phd_info);
     setloading(false);
 };
+const Staff = staffData.find((dept) => dept.department === "Chemical")?.staff || [];
+
 
 useEffect(() => {
     fetchphd();
@@ -62,17 +68,18 @@ useEffect(() => {
             setphd(false);
             setstaff(false);
           }} className={`border border-black rounded ${(faculty) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Faculties</button>
+           <button onClick={() => {
+            setfaculty(false);
+            setphd(false);
+            setstaff(true);
+          }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button>
           <button onClick={() => {
             setfaculty(false);
             setphd(true);
             setstaff(false);
             // fetchphd()
           }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>PhD Candidates</button>
-          {/* <button onClick={() => {
-            setfaculty(false);
-            setphd(false);
-            setstaff(true);
-          }} className={`border border-black rounded ${(staff) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Staffs</button> */}
+         
         </div>
         {faculty &&
           <div className="flex flex-col">
@@ -90,9 +97,11 @@ useEffect(() => {
                 Staffs
               </p>
             </div>
-            {/* <div className="grid grid-cols-1 md:grid-cols-2">
-              <DeptStaffcard image={"/hssstaff1.png"} name={"Shailendra Kumar Singh"} designation={"Peon"} />
-            </div> */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Staff.map((staffMember, index) => (
+              <StaffcardDept key={index} {...staffMember} />
+            ))}
+          </div>
           </div>
         }
 
