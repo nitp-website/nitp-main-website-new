@@ -12,10 +12,10 @@ const scheduleData = [
       },
       {
         time: '10:00 AM to 01:30 PM',
-        time1:'02:00 PM to 6:30 PM',
+        time1: '02:00 PM to 6:30 PM',
         doctor: 'Dr. A. K. Arya, Medical Officer',
       },
-      
+
       {
         time: '12:30 PM to 02:30 PM',
         time1: '03:00 PM to 09:00 PM',
@@ -33,10 +33,10 @@ const scheduleData = [
       },
       {
         time: '10:00 AM to 01:30 PM',
-        time1:'02:00 PM to 6:30 PM',
+        time1: '02:00 PM to 6:30 PM',
         doctor: 'Dr. A. K. Arya, Medical Officer',
       },
-      
+
       {
         time: '12:30 PM to 02:30 PM',
         time1: '03:00 PM to 09:00 PM',
@@ -54,10 +54,10 @@ const scheduleData = [
       },
       {
         time: '10:00 AM to 01:30 PM',
-        time1:'02:00 PM to 6:30 PM',
+        time1: '02:00 PM to 6:30 PM',
         doctor: 'Dr. A. K. Arya, Medical Officer',
       },
-      
+
       {
         time: '12:30 PM to 02:30 PM',
         time1: '03:00 PM to 09:00 PM',
@@ -75,10 +75,10 @@ const scheduleData = [
       },
       {
         time: '10:00 AM to 01:30 PM',
-        time1:'02:00 PM to 6:30 PM',
+        time1: '02:00 PM to 6:30 PM',
         doctor: 'Dr. A. K. Arya, Medical Officer',
       },
-      
+
       {
         time: '12:30 PM to 02:30 PM',
         time1: '03:00 PM to 09:00 PM',
@@ -96,10 +96,10 @@ const scheduleData = [
       },
       {
         time: '10:00 AM to 01:30 PM',
-        time1:'02:00 PM to 6:30 PM',
+        time1: '02:00 PM to 6:30 PM',
         doctor: 'Dr. A. K. Arya, Medical Officer',
       },
-      
+
       {
         time: '12:30 PM to 02:30 PM',
         time1: '03:00 PM to 09:00 PM',
@@ -117,10 +117,10 @@ const scheduleData = [
       },
       {
         time: '10:00 AM to 01:30 PM',
-        time1:'02:00 PM to 6:30 PM',
+        time1: '02:00 PM to 6:30 PM',
         doctor: 'Dr. A. K. Arya, Medical Officer',
       },
-      
+
       {
         time: '12:30 PM to 02:30 PM',
         time1: '03:00 PM to 09:00 PM',
@@ -133,19 +133,19 @@ const scheduleData = [
     sessions: [
       {
         time: '09:00 AM to 01:30 PM',
-     
+
         doctor: 'Dr. A. K. Arya, Medical Officer',
       },
-     
+
     ],
   },
-  
+
 ];
 
 const DoctorSchedule = () => {
   return (
     <div className="bg-gray-100 py-10 flex flex-col md:flex-row">
-    
+
       <div className="mt-10 mb-6 md:mt-10 md:ml-8">
         <Sidebar />
       </div>
@@ -189,6 +189,18 @@ const DoctorSchedule = () => {
               ))}
             </tbody>
           </table>
+          <li className='text-justify'>
+            <span className=' text-gray'>
+              Duty hours for Counsellor<b> (Ms. Saroj Verma) : Monday to Friday from
+              02:30 PM to 05:30 PM.</b>
+            </span>
+          </li>
+          <li className='text-justify'>
+            <span className=' text-gray'>
+            Duty hours for Physiotherapist <b>(Dr. Niranjan Kumar) : Monday to
+            Saturday from 12:00 Noon to 04:00 PM.</b>
+            </span>
+          </li>
         </div>
       </div>
     </div>
