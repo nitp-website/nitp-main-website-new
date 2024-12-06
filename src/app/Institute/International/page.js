@@ -376,6 +376,14 @@ amit_245singh@yahoo.com<br></br><br></br>
                   <div>
                     <h2 className='text-2xl text-center font-bold pb-5 text-red-800'>International Visits</h2>
                     <div className="event-card">
+                      <img src="/Visit on 26.jpg" alt="Visit to University Of Leicester, UK" className="event-image border-black border-2 mx-auto h-[50vh] w-auto" />
+                      <h3 className='mx-auto text-center pb-10'>Visit to University Of Leicester, UK</h3>
+                      <div className="event-description mx-5 md:mx-40">
+                        
+                        <p>Dr. Amit Kumar Singh and Dr. Jyoti Prakash Singh visited University of Leicester, UK as a part of an International Exchanges award for overseas travel between collaborators in the UK and India funded by Royal Society, UK, from November 20, 2024, to November 27 2024.</p>
+                      </div>
+                    </div>
+                    <div className="event-card mt-16">
                       <img src="https://web.nitp.ac.in/intl-affair/faculty-visit.jpg" alt="Visit to University Of Leicester, UK" className="event-image border-black border-2 mx-auto h-[50vh] w-auto" />
                       <h3 className='mx-auto text-center pb-10'>Visit to University Of Leicester, UK</h3>
                       <div className="event-description mx-5 md:mx-40">

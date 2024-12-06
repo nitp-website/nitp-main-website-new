@@ -8,6 +8,7 @@ import {
   faEnvelope,
   faPhone,
   faEye,
+  faLightbulb,
 } from "@fortawesome/free-solid-svg-icons";
 
 function PeopleCard({
@@ -16,6 +17,7 @@ function PeopleCard({
   image,
   email,
   phone,
+  Expertise,
   }) 
   {
   return (
@@ -43,7 +45,13 @@ function PeopleCard({
               <FontAwesomeIcon icon={faIdCard} className="w-5 mr-1" />{" "}
               {designation}
             </span>
-           
+           {Expertise && <span
+              className={`flex mt-1 transition-opacity duration-300 "opacity-0"}`}
+            >
+              <FontAwesomeIcon icon={faLightbulb} className="w-5 mr-1" />{" "}
+              <a href={`mailto:${Expertise}`}>{Expertise}</a>
+            </span>
+            }
            {email && <span
               className={`flex mt-1 transition-opacity duration-300 "opacity-0"}`}
             >
@@ -51,13 +59,14 @@ function PeopleCard({
               <a href={`mailto:${email}`}>{email}</a>
             </span>
             }
-            {/* <span
-              className={`flex mt-1 transition-opacity duration-300  "opacity-0"
-              }`}
+           {phone && <span
+              className={`flex mt-1 transition-opacity duration-300 "opacity-0"}`}
             >
-              <FontAwesomeIcon icon={faPhone} className="w-5 mr-1" /> {phone}
-            </span> */}
-           
+              <FontAwesomeIcon icon={faPhone} className="w-5 mr-1" />{" "}
+              <a href={`mailto:${phone}`}>{phone}</a>
+            </span>
+            }
+                    
           </div>
         </div>
     </>

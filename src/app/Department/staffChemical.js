@@ -10,7 +10,7 @@ const staffData = [
                 expertise: "Organic Chemistry",
                 email: "debabrata.tech@nitp.ac.in",
                 mobile: "+91-",
-                image: "/staffChemical.jpg",
+                image: "/staffChemical.png",
             },
             
         ],
