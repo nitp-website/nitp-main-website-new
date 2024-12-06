@@ -27,26 +27,46 @@ export default function PeopleList() {
 
   const other = [
     
-      {
-        id: 1,
-        name: "Ritesh Kumar",
-        image: "",
-        designation: "Technical Assistant",
-        email: "",
-      },
-      {
-        id: 2,
-        name: "Paritosh Bhushan",
-        image: "",
-        designation: "Technical Assistant",
-        email: "",
-      },
+      // {
+      //   id: 1,
+      //   name: "Ritesh Kumar",
+      //   image: "",
+      //   designation: "Technical Assistant",
+      //   email: "",
+      // },
+      // {
+      //   id: 2,
+      //   name: "Paritosh Bhushan",
+      //   image: "",
+      //   designation: "Technical Assistant",
+      //   email: "",
+      // },
       {
         id: 3,
         name: "Coomar Kislay",
-        image: "",
-        designation: "Technical Assistant",
-        email: "",
+        image: "/other3.jpg",
+        designation: "Technical Assistant(MIS)",
+        Expertise:"Full Stack Developer in .NET Platform",
+        email: "kislay.mis@nitp.ac.in",
+        phone:"+91-7970639369",
+      },
+      {
+        id: 4,
+        name: "Purushottam Kumar",
+        image: "/other4.jpg",
+        designation: "Technical Assistant (Server &amp; Network)",
+        Expertise:"Server and Network Configuration",
+        email: "purushottam.its@nitp.ac.in",
+        phone:"+91-9097204890",
+      },
+      {
+        id: 5,
+        name: "Aakash Kumar",
+        image: "/other5.png",
+        designation: "Technical Assistant (MIS)",
+        Expertise:"Full Stack Developer in .NET Platform",
+        email: "aakash.ta@nitp.ac.in",
+        phone:"+91-9798202709",
       },
     
   ];
@@ -93,7 +113,8 @@ export default function PeopleList() {
                 image={faculty.image}
                 designation={faculty.designation}
                 email={faculty.email}
-                phone={faculty.ext_no}
+                phone={faculty.phone}
+                Expertise={faculty.Expertise}
               />
             ))}
           </div>
