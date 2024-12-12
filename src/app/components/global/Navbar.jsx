@@ -242,11 +242,11 @@ const navItems = [
             iconImage: Person,
           },
 
-          // {
-          //   label: "Grievance Redressal Committees",
-          //   link: "/Others/UpdatedSoon",
-          //   iconImage: Sperson,
-          // },
+          {
+            label: "Proctorial Board",
+            link: "/Administration/PB",
+            iconImage: Sperson,
+          },
         ],
       },
       {
