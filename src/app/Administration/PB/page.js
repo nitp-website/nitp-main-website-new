@@ -27,12 +27,12 @@ const SenatePage = () => {
      },
      {
       name: "Dr. Shailesh Mani Pandey ",
-      designation:"Associate Professor, Mechanical Engineering Dept.",
+      designation:"Assistant Professor, Mechanical Engineering Dept.",
       type: "Proctor",
      },
      {
       name: "Dr. Gagandeep Meena ",
-      designation:"Associate Professor, Electrical Engineering Dept.",
+      designation:"Assistant Professor, Electrical Engineering Dept.",
       type: "Proctor",
      },
   ]
