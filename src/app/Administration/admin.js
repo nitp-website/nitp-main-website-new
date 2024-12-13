@@ -322,6 +322,11 @@ const ServiceUNIT = [
   name: "Prof. Samrat Mukherjee",
  },
  {
+  designation: "Training and Placement",
+  type: "Assistant Prof. In-charge",
+  name: "Dr. Ajay Kumar",
+ },
+ {
   designation: "HMC",
   type: "Chairman",
   name: "Dr. Bambam Kumar",
@@ -354,9 +359,9 @@ const ServiceUNIT = [
  },
 
  {
-  designation: "Web Services and MIS",
+  designation: "MIS",
   type: "Prof. In-charge",
-  name: "Dr. Akshay Deepak",
+  name: "Dr. Jyoti Prakash Singh",
  },
  
  {
@@ -365,7 +370,7 @@ const ServiceUNIT = [
   name: "Dr. Vimlesh Verma",
  },
  {
-  designation: "Website",
+  designation: "Web Service",
   type: "Prof. In-charge",
   name: "Dr. B Balaji Naik",
  },
