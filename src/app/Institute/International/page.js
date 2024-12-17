@@ -375,6 +375,12 @@ amit_245singh@yahoo.com<br></br><br></br>
                 {activeEventSubsection === 'InternationalVisit' && (
                   <div>
                     <h2 className='text-2xl text-center font-bold pb-5 text-red-800'>International Visits</h2>
+                  <div className="event-description mx-5 md:mx-40">
+                        
+                        <p>Prof. Rajeev Raman, Professor and Director of Research (Computing), School of Computing and Mathematical Sciences, University of Leicester, United Kingdom visited National Institute of Technology Patna from 16th to 17th December, 2024. We had a wonderful meeting for a discussion on the exciting research opportunities and collaborations. Further, a very informative and explicative talk on "Algorithmic Data Analysis" was given by Prof. Rajeev for faculty and students of NIT Patna. </p>
+
+                         <p>A heartfelt thanks to Prof. Rajeev for their visit and inspiring collaborations!</p>
+                      </div>
                     <div className="event-card">
                       <img src="/Visit on 26.jpg" alt="Visit to University Of Leicester, UK" className="event-image border-black border-2 mx-auto h-[50vh] w-auto" />
                       <h3 className='mx-auto text-center pb-10'>Visit to University Of Leicester, UK</h3>
