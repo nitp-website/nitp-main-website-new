@@ -1,0 +1,25 @@
+.admincarddiv {
+    display: flex;
+    padding: 5rem;
+    row-gap: 50px;
+    height: auto;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: scroll;
+    align-content: flex-start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @media (max-width: 768px) {
+    .admincarddiv {
+      margin: 0px;
+      row-gap: 35px;
+      padding: 0px;
+    }
+  }
+  
