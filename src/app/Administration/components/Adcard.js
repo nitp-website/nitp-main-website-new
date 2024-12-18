@@ -1,6 +1,6 @@
 import React from "react";
 import "./Adcard.css";
-const Adcard = ({ name, designation, type }) => {
+const Adcard = ({ name, designation, type, url }) => {
   return (
     
     <div className="maincard mb-3">
@@ -12,9 +12,8 @@ const Adcard = ({ name, designation, type }) => {
     <div className="wave"></div>
 
     <div className="infotop mt-5 md:mt-2">
-     <div className=" hidden md:block"><br/></div>     
-      {name}
-      <br />
+    <div classname="hidden md:block"><a href={url}>{name}</a></div>
+
       <div className="name mt-2 md:mt-0">{designation}</div>
         <div className="name md:mt-2  text-neutral-300">{type}</div>
     </div>
