@@ -44,27 +44,10 @@ const page = () => {
   ]
 
   return (
-    // <div className="md:p-4">
-    //   <h1 className="text-2xl text-center pt-5 pb-7 md:pb-0 md:pt-10 text-red-900 font-bold">Proctorial Board</h1>
-    //   <div className="admincarddiv items-center justify-center">
-        // {RegistrarData.map((item, idx) => (
-        //   <div key={idx}>
-        //     <Admincard
-        //       name={item.name}
-        //       designation={item.designation}
-        //       type={item.type}
-        //     />
-        //   </div>
-        // ))}
-    //   </div>
-    // </div>
     <div className='flex flex-col md:flex-row px-2 md:px-16 lg:px-16 mt-10 md:justify-between md:gap-0 w-full mb-8'>
     <div className='mt-6 mb-12 md:mt-0 '>
       <Sidebar />
     </div>
-    {/* <div className='flex flex-col md:w-3/4 '>
-     <PeopleList/>
-    </div> */}
     <div className="admincarddiv  items-center justify-center">
     {RegistrarData.map((item, idx) => (
           <div key={idx}>

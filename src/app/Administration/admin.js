@@ -6,26 +6,31 @@ const Deans = [
    name: "Prof. Pijush Samui",
    designation: "Dean, Planning & Development",
    type: "dean.pd@nitp.ac.in",
+   url:"https://www.nitp.ac.in/Department/CE/faculty/pijush@nitp.ac.in",
   },
   {
    name: "Prof. Ramesh Kumar",
    designation: "Dean, Research & Consultancy",
    type: "dean.rc@nitp.ac.in",
+   url:"https://www.nitp.ac.in/Department/EE/faculty/ramesh@nitp.ac.in",
   },
   {
    name: "Prof. Samrat Mukherjee",
    designation: "Dean, Student Welfare",
    type: "dean.sw@nitp.ac.in",
+   url:"https://www.nitp.ac.in/Department/Phy/faculty/samrat@nitp.ac.in",
   },
   {
    name: "Prof. Vivekanand Singh ",
    designation: "Dean, Academic",
    type: "dean.ac@nitp.ac.in",
+   url:"https://www.nitp.ac.in/Department/CE/faculty/vsingh@nitp.ac.in",
   },
   {
    name: "Prof. Manoj Kumar",
    designation: "Dean, Faculty Welfare",
    type: "dean.fw@nitp.ac.in",
+   url:"https://www.nitp.ac.in/Department/Archi/faculty/manoj@nitp.ac.in",
   },
  ]
  

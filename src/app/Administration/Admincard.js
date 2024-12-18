@@ -1,9 +1,9 @@
 import React from "react";
 import Adcard from "./components/Adcard";
 
-const Admincard = ({ name, designation, type, image }) => {
+const Admincard = ({ name, designation, type, url }) => {
   return (
-    <Adcard name={name} designation={designation} type={type}/>
+    <Adcard name={name} designation={designation} type={type} url={url}/>
   );
 };
 
