@@ -242,11 +242,11 @@ const navItems = [
             iconImage: Person,
           },
 
-          {
-            label: "Proctorial Board",
-            link: "/Administration/PB",
-            iconImage: Sperson,
-          },
+          // {
+          //   label: "Proctorial Board",
+          //   link: "/Administration/PB",
+          //   iconImage: Sperson,
+          // },
         ],
       },
       {
