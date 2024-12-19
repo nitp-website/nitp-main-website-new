@@ -394,7 +394,7 @@ export default function InternationalAffairsPage() {
                       </div>
                     </div>
                     <div className="event-card mt-16">
-                      <img src="https://web.nitp.ac.in/intl-affair/faculty-visit.jpg" alt="Visit to University Of Leicester, UK" className="event-image border-black border-2 mx-auto h-[50vh] w-auto" />
+                      <img src="/Leicester.jpg" alt="Visit to University Of Leicester, UK" className="event-image border-black border-2 mx-auto h-[50vh] w-auto" />
                       <h3 className='mx-auto text-center pb-10'>Visit to University Of Leicester, UK</h3>
                       <div className="event-description mx-5 md:mx-40">
 
@@ -421,7 +421,7 @@ export default function InternationalAffairsPage() {
                 {activeEventSubsection === 'Others' && (
                   <div className='text-center mx-auto max-w-96'>
                     <h2 className='text-2xl text-center font-bold pb-5 text-red-800'>Other Events</h2>
-                    <img src="https://web.nitp.ac.in/intl-affair/taiwan.jpg" className='mx-auto max-w-96'></img>
+                    <img src="/Rushikesh Khire.jpg" className='mx-auto max-w-96'></img>
                     <p className='font-bold text-black'>An online meeting on "Higher Education Opportunities for Indian Students" with Dr. Rushikesh Khire, Providence University, Taiwan on August 22, 2023.</p>
                   </div>
                 )}
