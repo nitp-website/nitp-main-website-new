@@ -11,24 +11,24 @@ const DocumentsTable = () => {
        },
       {
        link:
-        "http://web.nitp.ac.in/downloads/firstyear/Curricula%202022%20_B.Tech,%20B.Arch%20and%20Dual%20Degree%20Programmes.pdf",
+        "https://drive.google.com/file/d/1Jobn8OBYPUf1ekffjTS0ZIzXuzfQ8CNa/view?usp=sharing",
        para:
         "UG Regulation 2022(Effective from academic session 2021-22 and onwards)",
       },
       {
        link:
-        "http://web.nitp.ac.in/downloads/firstyear/UG%20Program%20Curricula%20Approved%20in%2032nd%20Senate%20on%2021092020-1.pdf",
+        "https://drive.google.com/file/d/1aW72cez0wwGQ5N29U2mj2zK2RgW682dv/view?usp=sharing",
        para:
         "UG Regulation 2020 (Effective for Academic Session 2020-21 )",
       },
       {
        link:
-        "http://web.nitp.ac.in/downloads/firstyear/UG%20Regulation%20&%20Curiculla%20amended%20upto%2018th%20Senate%20with%20effect%20from%20session%202016-17.pdf",
+        "https://drive.google.com/file/d/14Q4K9hvmK9iOi2GWrh0tNsFW91R-ShwU/view?usp=sharing",
        para:
         "UG Regulation 2016 (Effective for the Academic session 2016-17 to 2019-20)",
       },
       {
-       link: "http://web.nitp.ac.in/downloads/firstyear/UG%20Curricula%202013.pdf",
+       link: "https://drive.google.com/file/d/1fP3jFeeWI1E3hSSOhL6vj37TIZYzk8U2/view?usp=sharing",
        para: "UG Regulation 2013 (Effective from the Academic session 2013-14 to 2015-16)",
       },
      ]
