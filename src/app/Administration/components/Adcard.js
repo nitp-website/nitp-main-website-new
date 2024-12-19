@@ -3,7 +3,7 @@ import "./Adcard.css";
 const Adcard = ({ name, designation, type, url }) => {
   return (
     
-    <div className="maincard mb-3">
+    <div className="maincard my-4 md:my-0 md:mx-4">
     <div className="e-card playing bg-white w-4/5">
     <div className="image"></div>
     
@@ -11,7 +11,7 @@ const Adcard = ({ name, designation, type, url }) => {
     <div className="wave"></div>
     <div className="wave"></div>
 
-    <div className="infotop mt-5 md:mt-2">
+    <div className="infotop mt-8 md:mt-2">
     <div classname="hidden md:block"><a href={url}>{name}</a></div>
 
       <div className="name mt-2 md:mt-0">{designation}</div>
