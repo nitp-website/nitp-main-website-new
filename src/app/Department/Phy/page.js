@@ -23,7 +23,7 @@ export default function ME() {
     <div className="p-10 max-sm:px-0  text-black">
       {/* heading */}
       <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-4">
-        PHYSICS
+      Applied Physics and Materials Engineering
       </div>
       <BackDepartment navigate={"/Department"} />
       {/* Section one */}

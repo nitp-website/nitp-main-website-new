@@ -64,7 +64,7 @@ function Page() {
                 </div>
                 <div className="mt-2">
                     <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        CHEMISTRY
+                    Chemical Science and Technology
                     </p>
                 </div>
                 <div>
