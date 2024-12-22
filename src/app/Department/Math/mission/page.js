@@ -10,7 +10,7 @@ export default function mission() {
           </p>
         </div>
         <div className="lg:mt-2">
-          <p className="text-gray-500 text-sm lg:text-base font-semibold">MATHEMATICS</p>
+          <p className="text-gray-500 text-sm lg:text-base font-semibold">Mathematics and Computing Technology</p>
         </div>
         <BackDepartment navigate={"/Department/Math"} />
       </div>

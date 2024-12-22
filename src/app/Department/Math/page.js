@@ -22,7 +22,7 @@ export default function Math() {
     <div className="p-10 max-sm:px-0   text-black">
       {/* heading */}
       <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-10">
-        MATHEMATICS
+      Mathematics and Computing Technology
       </div>
       <BackDepartment navigate={"/Department"}/>
       {/* Section one */}

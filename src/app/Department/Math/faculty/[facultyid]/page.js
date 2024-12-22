@@ -14,7 +14,7 @@ const page = () => {
         </div>
         <div className="mt-2">
             <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                ELECTRICAL ENGINEERING
+            Mathematics and Computing Technology
             </p>
         </div>
         <div>

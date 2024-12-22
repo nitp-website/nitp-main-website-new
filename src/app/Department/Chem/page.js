@@ -31,7 +31,7 @@ export default function Chem() {
     <div className="p-10 max-sm:px-0  text-black">
       {/* heading */}
       <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-3">
-        CHEMISTRY
+      Chemical Science and Technology
       </div>
       <div>
         <BackDepartment navigate={'/Department'} />

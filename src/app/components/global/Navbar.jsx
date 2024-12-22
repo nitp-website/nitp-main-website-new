@@ -299,12 +299,13 @@ const navItems = [
         mlabel: "Departments",
         iconImage: Department,
         children: [
+          { label: "Applied Physics and Materials Engineering", link: "/Department/Phy", iconImage: physics },
           {
             label: "Architecture & Planning",
             link: "/Department/Archi",
             iconImage: archi,
           },
-          { label: "Chemistry", link: "/Department/Chem", iconImage: chem },
+          { label: "Chemical Science and Technology", link: "/Department/Chem", iconImage: chem },
           {
             label: "Civil Engineering",
             link: "/Department/CE",
@@ -330,28 +331,28 @@ const navItems = [
             link: "/Department/Humanities",
             iconImage: hss,
           },
-          { label: "Mathematics", link: "/Department/Math", iconImage: math },
-          {
-            label: "Mechanical Engineering",
-            link: "/Department/ME",
-            iconImage: mech,
-          },
-          { label: "Physics", link: "/Department/Phy", iconImage: physics },
-          {
-            label: "Mechatronics & Automation Engineering",
-            link: "/Department/Mechatronics",
-            iconImage: mech,
-          },
-          {
-            label: "Chemical Engineering and Technology",
-            link: "/Department/Chemical",
-            iconImage: chem,
-          },
           {
             label: "Materials Science & Engineering",
             link: "/Department/Material",
             iconImage: mech,
           },
+          { label: " Mathematics and Computing Technology", link: "/Department/Math", iconImage: math },
+          {
+            label: "Mechanical Engineering",
+            link: "/Department/ME",
+            iconImage: mech,
+          },
+          {
+            label: "Mechatronics & Automation Engineering",
+            link: "/Department/Mechatronics",
+            iconImage: mech,
+          },
+          // {
+          //   label: "Chemical Engineering and Technology",
+          //   link: "/Department/Chemical",
+          //   iconImage: chem,
+          // },
+          
         ],
       },
       {

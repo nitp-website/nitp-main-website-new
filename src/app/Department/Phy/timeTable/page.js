@@ -13,7 +13,7 @@ function Page(){
                 </div>
                 <div className="mt-2">
                     <p className="text-gray-500 text-xl font-semibold">
-                    Physics
+                    Applied Physics and Materials Engineering
                     </p>
                 </div>
                 <div>
