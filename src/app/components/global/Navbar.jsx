@@ -472,11 +472,6 @@ const navItems = [
         link: "/Academic/BIS",
         iconImage: Bis,
       },
-      {
-        label: "Electronics & ICT Academy",
-        link: "https://nitp-ict.ct.ws",
-        iconImage: Bis,
-      },
     ],
   },
   {

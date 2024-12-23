@@ -58,6 +58,10 @@ const Popbuttons = () => {
         <FontAwesomeIcon icon={faBuilding} size="3x" className="mobileicondiv" color='#f7cece'/>
         <p className="headingp headingp1 headingp1t">TRAINING AND PLACEMENT</p>
       </a>
+      <a href="https://nitp-ict.ct.ws" className="card card1" target="_blank" >
+        <FontAwesomeIcon icon={faBuilding} size="3x" className="mobileicondiv" color='#f7cece'/>
+        <p className="headingp headingp1 headingp1t">Electronics & ICT Academy</p>
+      </a>
 
     </div>
     <div className='h-auto text-white containersideright' data-aos="zoom-out-up"></div>
