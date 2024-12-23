@@ -331,11 +331,11 @@ const navItems = [
             link: "/Department/Humanities",
             iconImage: hss,
           },
-          {
-            label: "Materials Science & Engineering",
-            link: "/Department/Material",
-            iconImage: mech,
-          },
+          // {
+          //   label: "Materials Science & Engineering",
+          //   link: "/Department/Material",
+          //   iconImage: mech,
+          // },
           { label: " Mathematics and Computing Technology", link: "/Department/Math", iconImage: math },
           {
             label: "Mechanical Engineering",
@@ -470,6 +470,11 @@ const navItems = [
       {
         label: "BIS Dashboard",
         link: "/Academic/BIS",
+        iconImage: Bis,
+      },
+      {
+        label: "Electronics & ICT Academy",
+        link: "https://nitp-ict.ct.ws",
         iconImage: Bis,
       },
     ],
