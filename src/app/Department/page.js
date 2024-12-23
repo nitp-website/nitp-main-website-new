@@ -20,7 +20,7 @@ export default function Page() {
                     <DepartmentNavigateButton onClick={() => { router.push("/Department/EE"); }} department={"Electrical Engineering"} icon={"/electric_icon.png"} />
                     <DepartmentNavigateButton onClick={() => { router.push("/Department/ECE"); }} department={"Electronics And Comunication Engineering"} icon={"/electronics_icon.png"} />
                     <DepartmentNavigateButton onClick={() => { router.push("/Department/Humanities"); }} department={"Humanities & Social Sciences"} icon={"/humanities_icon.png"} />
-                    <DepartmentNavigateButton onClick={() => { router.push("/Department/Material"); }} department={"Material Science & Engineering"} icon={"/mse-icon.png"} />
+                    {/* <DepartmentNavigateButton onClick={() => { router.push("/Department/Material"); }} department={"Material Science & Engineering"} icon={"/mse-icon.png"} /> */}
                     <DepartmentNavigateButton onClick={() => { router.push("/Department/Math"); }} department={"Mathematics and Computing Technology"} icon={"/mathematics-icon.png"} />
                     {/* <DepartmentNavigateButton onClick={()=>{router.push("/Department/MCA");}}department={"Master of Computer Applications"} icon={"/mathematics-icon.png"}/> */}
                     <DepartmentNavigateButton onClick={() => { router.push("/Department/ME"); }} department={"Mechanical Engineering"} icon={"/mechanical_icon.png"} />
