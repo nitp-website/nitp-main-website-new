@@ -119,6 +119,11 @@ const content = [
     "Downloads": "Security Gate Pass",
     "DLink": "https://drive.google.com/file/d/167jo8PmiS5lR5bhe9fGDwbadWr-Lvb28/view?usp=drivesdk",
     "Office order": ""
+  },
+  {
+    "Downloads": "Income Tax declaration form",
+    "DLink": "https://docs.google.com/spreadsheets/d/1852IWuph_vyjk61hVualmnDSh5Jdnl31/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true",
+    "Office order": ""
   }
 ];
 
