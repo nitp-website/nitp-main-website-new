@@ -4,7 +4,7 @@ import BackDepartment from "../../../components/department/BackDepartment"
 function Page(){
     const data = [
         { 
-          name: "Time Table for the Class Jan- June 2025 (Even Semster)", 
+          name: "ECE Dept Time Table for the Class Jan- June 2025 (Even Semster)", 
           link: "https://drive.google.com/file/d/1f2W1eax78zmITSCb6xlHlu_OD49yTdwO/view?usp=drive_link" 
         },
         
