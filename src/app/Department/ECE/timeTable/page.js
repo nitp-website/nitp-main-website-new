@@ -4,27 +4,11 @@ import BackDepartment from "../../../components/department/BackDepartment"
 function Page(){
     const data = [
         { 
-          name: "1st Semester ECE Time Table", 
-          link: "https://drive.google.com/file/d/1tZpHlXHhBhDIOTRm--cPYKFqRlJ_95zz/view?usp=drivesdk" 
+          name: "Time Table for the Class Jan- June 2025 (Even Semster)", 
+          link: "https://drive.google.com/file/d/1f2W1eax78zmITSCb6xlHlu_OD49yTdwO/view?usp=drive_link" 
         },
         
-        { 
-          name: "3rd Sem ECE Sec A_B Time Table", 
-          link: "https://drive.google.com/file/d/1gCp3bS01PsWZNAs8H5oudFQbj1Ucvu8V/view?usp=drivesdk" 
-        },
-        { 
-            name: "3rd Semester Sec A1 ECE Time Table", 
-            link: "https://drive.google.com/file/d/1qxhZTfbDmX1_5-XuBEd9yCqWgqQ4Vtwx/view?usp=drivesdk" 
-          },
-        { 
-          name: "5th Semester ECE Time Table", 
-          link: "https://drive.google.com/file/d/1eaKpE_iQFXeUNXW9GnvoGaZO56EAvWr0/view?usp=drivesdk" 
-        },
-        
-        { 
-            name: "7th Semester ECE Time Table", 
-            link: "https://drive.google.com/file/d/1luNXXj1_jS5XE8lypF9n_SVCXJKJtfhy/view?usp=drivesdk" 
-          },
+    
       ];
     return (
         <div className=" flex flex-col p-5 h-screen text-black">  
