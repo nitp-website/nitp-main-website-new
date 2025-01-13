@@ -31,7 +31,7 @@ export default function page() {
                 </div>
                 {/* Dual Degree Program  */}
                 <div className="mb-10">
-                    <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">DUAl DEGREE PROGRAM :-</div>
+                    <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">DUAL DEGREE PROGRAM :-</div>
                     <ul className="list-disc list-inside ml-5 space-y-4 lg:text-base text-sm">
                         <li className="hover:text-blue-800"><a href="https://drive.google.com/file/d/1L5qTBi_cuLJ0RhBPIRp6bYNb7jfQeI9d/view?usp=sharing">Dual Degree (B.Tech + M.Tech) _ Course Structure _ 2022 Onwards.</a></li>
                         <li className="hover:text-blue-800"><a href="https://drive.google.com/file/d/1qeKZ5b7lvsQivN7oXQmS8rOnt88qYIt0/view?usp=sharing">Dual Degree ( B.Tech + M.Tech) _ Detailed Syllabus _ 3rd Semester Onwards.</a></li>
@@ -47,7 +47,7 @@ export default function page() {
                 </div>
                 {/* PhD Program   */}
                 <div className="mb-10">
-                    <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">PHD PROGRAM :-</div>
+                    <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">PhD PROGRAM :-</div>
                     <ul className="list-disc list-inside ml-5 space-y-4 lg:text-base text-sm">
                         <li className="hover:text-blue-800"><a href="https://drive.google.com/file/d/17AU1_ZRrrKfa7zCAgS0St2EZTTlHHRj_/view?usp=sharing">Ph.D. in Mechanical Engineering</a></li>
                     </ul>
