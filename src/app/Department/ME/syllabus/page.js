@@ -22,7 +22,7 @@ export default function page() {
                 <div className="mb-10">
                     <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">UG Program  :-</div>
                     <ul className="list-disc list-inside ml-5 space-y-4 lg:text-base text-sm">
-                        <li className="hover:text-blue-800"><a href="">B.Tech_Course_Structure_2021 - (2024 April update)</a></li>
+                      
                         <li className="hover:text-blue-800"><a href="https://drive.google.com/file/d/1xEnUsHvSnrt3YZw3TAp7jtc6Kegzv7gc/view?usp=sharing">B.Tech_Course_Structure_2022 onwards - (2024 April update)</a></li>
                         <li className="hover:text-blue-800"><a href="https://drive.google.com/file/d/1pvAJ83EWECcfZwEGFLobwDr6Wj9QUs_J/view?usp=sharing">B.Tech_Detailed Syllabus_3rd Semester Onwards.</a></li>
                         <li className="hover:text-blue-800"><a href="">B.Tech 1st Year Even Semester Syllabus</a></li>
