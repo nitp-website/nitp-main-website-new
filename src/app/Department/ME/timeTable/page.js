@@ -4,8 +4,8 @@ import BackDepartment from "../../../components/department/BackDepartment"
 function Page(){
     const data = [
         { 
-          name: "Mechanical Dept Time Table for the Class Jan- June 2025 (Even Semster)", 
-          link: "https://drive.google.com/drive/folders/1YB2EDOfCm0IRzc300eF72VuEprvn9J40" 
+          name: "Time Table for the Class Jan- June 2025 (Even Semster)", 
+          link: "https://drive.google.com/file/d/1ckg8zrQP4LugTz-DB5MrxR0yydwUnnhl/view?usp=sharing" 
         },
         
     
