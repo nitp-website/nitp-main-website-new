@@ -4,14 +4,16 @@ import BackDepartment from "../../../components/department/BackDepartment"
 
 function Page() {
     const data = [
+           {
+            name: "Humanities & Social Sciences Dept Time Table for the Class Jan- June 2025 (Even Semster)",
+            link: "https://drive.google.com/file/d/106cCdw6SbsN1GIjM4reh3WY8XzsmkCHO/view?usp=sharing"
+        },
+        
         {
             name: "Humanities & Social Sciences Dept Time Table for the Class July- December 2024 (odd Semster)",
             link: "https://drive.google.com/file/d/1c6f2tp-MMqf9SzPudHyerB7NfdDB4ffo/view"
         },
-        {
-            name: "Humanities & Social Sciences Dept Time Table for the Class Jan- June 2025 (Even Semster)",
-            link: "https://drive.google.com/file/d/106cCdw6SbsN1GIjM4reh3WY8XzsmkCHO/view?usp=sharing"
-        },
+     
 
 
     ];
