@@ -53,7 +53,7 @@ const DocumentsTable = () => {
      
    ]
 
-  
+   
 
   return (
     <div className=" mx-auto px-4 py-8 w-11/12 md:w-4/5">
@@ -81,27 +81,27 @@ const DocumentsTable = () => {
         </tbody>
       </table>
      
-      // <h1 className="text-xl font-bold mb-6 text-neutral-800 text-center">PG</h1>
-      // <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg">
-      //   <thead>
-      //     <tr>
-      //       <th className="text-left px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Document</th>
-      //       <th className="text-center px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
-      //     </tr>
-      //   </thead>
-      //   <tbody>
-      //     {dataPG.map((item, index) => (
-      //       <tr key={index}>
-      //         <td className="text-left px-4 py-2 border-b border-gray-300 text-black">{item.para}</td>
-      //         <td className="text-center px-4 py-3 border-b border-gray-300">
-      //           <a href={item.link} className="bg-blue-400 text-white font-bold px-4 py-2 rounded-md hover:bg-gradient-to-r from-cyan-500 to-blue-500 md:text-xs text-xs">
-      //             Download
-      //           </a>
-      //         </td>
-      //       </tr>
-      //     ))}
-      //   </tbody>
-      // </table>
+      {/* <h1 className="text-xl font-bold mb-6 text-neutral-800 text-center">PG</h1>
+      <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg">
+        <thead>
+         <tr>
+           <th className="text-left px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Document</th>
+            <th className="text-center px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
+         </tr>
+       </thead>
+       <tbody>
+         {dataPG.map((item, index) => (
+           <tr key={index}>
+              <td className="text-left px-4 py-2 border-b border-gray-300 text-black">{item.para}</td>
+             <td className="text-center px-4 py-3 border-b border-gray-300">
+               <a href={item.link} className="bg-blue-400 text-white font-bold px-4 py-2 rounded-md hover:bg-gradient-to-r from-cyan-500 to-blue-500 md:text-xs text-xs">
+                 Download
+               </a>
+             </td>
+           </tr>
+         ))}
+       </tbody>
+      </table> */}
       <h1 className="text-xl font-bold mb-6 text-neutral-800 text-center">PhD</h1>
       <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg">
         <thead>
