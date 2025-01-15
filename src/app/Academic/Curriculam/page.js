@@ -33,21 +33,6 @@ const DocumentsTable = () => {
       },
      ]
    
-     const dataPG= [
-   
-      {
-       link:
-        "http://web.nitp.ac.in/downloads/firstyear/PG%20Regulation%20&%20Curiculla%20amended%20upto%2022nd%20Senate%20with%20effect%20from%20session%202017-18.pdf",
-       para:
-        "M.Tech/MURP (PG) Regulation 2017 (Effective from the Academic session 2017-18 and onwards)",
-      },
-      {
-       link:
-        "http://web.nitp.ac.in/downloads/M.Tech%20&%20MURP%20Regulation%202013-14%20-%20Scanned%20%20copy.pdf",
-       para:
-        "M.Tech/MURP Regulation 2013 ( Effective from Academic session 2013-14 to 2016-2017)",
-      },
-     ]
     
      const dataPhD=[
       {
@@ -55,26 +40,7 @@ const DocumentsTable = () => {
         "https://drive.google.com/file/d/1c7AUJbIH3J7Bh0KBfk2lgIKFngZ5CwwF/view?usp=sharing",
        para: "PhD updated D-1 to D-10 forms",
       },
-      {
-       link:
-        "http://web.nitp.ac.in/uploads22/Notice_Thesis printing on both sides_19_10_22.pdf",
-       para: "Notice regarding printing of Ph.D thesis on both sides of the paper",
-      },
-      {
-       link:
-        "http://web.nitp.ac.in/uploads/Notice%20regarding%20DSC_02_03_2020.jpg",
-       para:
-        "Notice: PhD Supervisor will be Chairman DSC irrespective of admission date",
-      },
-      {
-       link: "http://web.nitp.ac.in/uploads/Ph.D%20Regulation%202018-(FINAL).pdf",
-       para: "Ph.D. REGULATION",
-      },
-      {
-       link:
-        "http://web.nitp.ac.in/uploads/Ph.D.%20Offline%20Registration%20Form%20(Tripilicate)%20Format%20(1)%20in%20PDF.pdf",
-       para: "Ph.D. Registration Form (Triplicate)",
-      },
+      
      ]
    
      const datatrans= [
