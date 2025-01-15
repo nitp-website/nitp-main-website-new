@@ -33,14 +33,27 @@ const DocumentsTable = () => {
       },
      ]
    
-    
+    const dataPG=[
+      {
+       link:
+        "https://drive.google.com/file/d/1MkSM_cgd1ZIF-zqUAE1TFJIf42idIpyp/view?usp=sharing",
+       para: "Postgraduate Program Regulation",
+      },
+      
+     ]
+
+     
      const dataPhD=[
       {
+       link:
+        "https://drive.google.com/file/d/17IzwBvYtiyR8iEV27fXr6rBMQGHOHCeb/view?usp=sharing",
+       para: "Regulation for PhD Programme",
+      },
+        {
        link:
         "https://drive.google.com/file/d/1c7AUJbIH3J7Bh0KBfk2lgIKFngZ5CwwF/view?usp=sharing",
        para: "PhD updated D-1 to D-10 forms",
       },
-      
      ]
    
      const datatrans= [
@@ -81,7 +94,7 @@ const DocumentsTable = () => {
         </tbody>
       </table>
      
-      {/* <h1 className="text-xl font-bold mb-6 text-neutral-800 text-center">PG</h1>
+      <h1 className="text-xl font-bold mb-6 text-neutral-800 text-center">PG</h1>
       <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg">
         <thead>
          <tr>
@@ -101,7 +114,7 @@ const DocumentsTable = () => {
            </tr>
          ))}
        </tbody>
-      </table> */}
+      </table> 
       <h1 className="text-xl font-bold mb-6 text-neutral-800 text-center">PhD</h1>
       <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg">
         <thead>
