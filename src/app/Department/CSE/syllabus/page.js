@@ -5241,7 +5241,7 @@ export default function Page() {
                             title={"Mathematics for Data Science"}
                             L={"3"} T={"1"} P={"0"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1PpN5yLR15VwlRhL2B0F2faqw25T61v_v/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/15PacB_x_Z1zhd4s4nGcZVV8uK9fBWOzF/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5250,7 +5250,7 @@ export default function Page() {
                             title={"Introduction to Programming & Problem Solving"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/16CTMRhAvqZlBIW9JuMC_gxi3d-QJKRnm/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1uG_lL0dbQqlkNIwsF1P31QM2EmkjQaRT/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5259,7 +5259,7 @@ export default function Page() {
                             title={"Computing with Python"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1YLOq94fsG48gya9FlaRFaDSrl9uXGSgf/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1tvSUqOdffHdAXt6j9W3bnLp41nxcUxWF/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5277,7 +5277,7 @@ export default function Page() {
                             title={"Introduction to Informatics"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1zAzCjC_o6vLSSzRNudQCna7IIeUWIoeI/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1EwDykCXuXvAJaQmzKaoQk2NwoVBs-trn/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5295,7 +5295,7 @@ export default function Page() {
                             title={"Data Communication and Networks"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/133-lw_PyZZ_gSx_nvUaeuZFVFunbqZKe/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1PJBUU50zuQ6Jn4js_SRE_5BCYMbjd1gw/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5304,7 +5304,7 @@ export default function Page() {
                             title={"Data Structures"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1qtJ3oOQgOK22-bgpWEouewhM3x689KMg/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/14KpllkAco3LwmyBJP4XvAb2vA0JxO0zl/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5313,7 +5313,7 @@ export default function Page() {
                             title={"Database Management Systems"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/1WR349G54m62-T_y3Bw2ZiptSAe0-a-du/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5322,7 +5322,7 @@ export default function Page() {
                             title={"Object Oriented Programming using Java"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/1ivhOdmtDt7YSSm0jru_lu_zTXFls08sa/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5331,7 +5331,7 @@ export default function Page() {
                             title={"Discrete Mathematics & Graph Theory"}
                             L={"3"} T={"1"} P={"0"}
                             cred={"4"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/12qQuqOJ9mL4L-upIhhAC8VRK90wfz_jb/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5358,7 +5358,7 @@ export default function Page() {
                             title={"Operating Systems"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/1QmT3YerSIhA9rqzIJFglEoDKhAIk21j-/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5367,7 +5367,7 @@ export default function Page() {
                             title={"Machine Learning"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/15sEvDxr1uO4FW6wHt9mLYa9aAdlh0-UR/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1OHgm7MJifvA0Fy_PBq8Rwsk-Esb1W8Wv/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5376,7 +5376,7 @@ export default function Page() {
                             title={"Design and Analysis of Algorithms"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1OViNAmZtN0iDxVwnWBSZW7nDFQKesuhU/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1SAPPqtzll06DY9NmCP2_Jk3dabVZSMlL/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5385,7 +5385,7 @@ export default function Page() {
                             title={"Data Preparation & Visualization"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/14ezMq5L5faidMaGIH3L9JMmKdnM0GETR/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5394,7 +5394,7 @@ export default function Page() {
                             title={"Big Data Analytics"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/16pUrDDA4Icvo_jXIXwu_JDNbnNIK05EJ/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5403,7 +5403,7 @@ export default function Page() {
                             title={"Bioinformatics"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/1l8Q6AIi1w70PO4_IN21FqxEyCRLjxYvt/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5412,7 +5412,7 @@ export default function Page() {
                             title={"Deep Learning"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/14tRhe9UYlhZyabLrth9r3-QAet2bxp44/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1mG4ssfeZJUEKXwEkIiIelWVGj-Nu2dRx/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5421,7 +5421,7 @@ export default function Page() {
                             title={"Information Retrieval"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/13Qkt2N2E1BpazvR01fPcj0Fe0ZNgOUzX/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5430,7 +5430,7 @@ export default function Page() {
                             title={"Computer Vision"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1DehuBC1_5Yqo67fcTXmxilnaeRV5suIx/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1Fwmoz4vrnj4Pw4fwL6Y9ZR-I-dAuV193/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5448,7 +5448,7 @@ export default function Page() {
                             title={"Human Computer Interaction"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1rGFs0c5B3kJ0-feIBoZUrB_EKDktNl-m/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1uDgZ3KeyuYzejJl-82KeetP87k_xWjJT/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5502,7 +5502,7 @@ export default function Page() {
                             title={"Explainable AI"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1MMh-AQmO93ynUSQhZfNdHOZ1pA9YJ3GU/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1KjiTARXwV3dtKdL1GQQFTepp3sAaRCuw/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5511,7 +5511,7 @@ export default function Page() {
                             title={"Internet of Things"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1l6cko5vCHklOGMbmTUks8y1lFqhkWMa3/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1qqxKsvpXn3Xt6J2H5hWlEuKTeXQnG4u7/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5520,7 +5520,7 @@ export default function Page() {
                             title={"Game Theory"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1nn0W-Hk2wVx_oJ0gELxl3jwLHhadtcA6/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1vSciwSNByKSgld9ntm1At19TkEaYH_pO/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5529,7 +5529,7 @@ export default function Page() {
                             title={"Augmented Reality/Virtual Reality"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/18UaBQc4kVPVKtYDk4Q4Z5f6SxKZhv5RM/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5538,7 +5538,7 @@ export default function Page() {
                             title={"Intrusion Detection"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1wBE-0B-J6f0CU6FIOBPHaBiVPCc7gSj3/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1eBD4WveWHS3GNTscblF3m8jxy67NbHmW/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5547,7 +5547,7 @@ export default function Page() {
                             title={"Malware Analysis"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1BZz1wjJ94xgjn6dlycM44ktI9REGG-4c/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1bbtI5laHbsBncqpAazSut-ALPZ6ZE49M/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5556,7 +5556,7 @@ export default function Page() {
                             title={"Digital Forensic"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/1LnJ78iOUKUtRSaApdYdXmgUExR4z1KYP/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5565,7 +5565,7 @@ export default function Page() {
                             title={"Text Analytics"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/1b3D8nOlDVIQpiK8Gjtxn80E087q1PgQK/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5574,7 +5574,7 @@ export default function Page() {
                             title={"Reinforcement Learning"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/10jdQZX70Kim8-U0kYvz4fxGzqvSoPXrw/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1H48hURtZjatIUtM4UrpE8APR4MK8C4nb/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5583,7 +5583,7 @@ export default function Page() {
                             title={"Blockchain Technology"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1b1k9a1mbtKMLkqMLT7HZD09Y6xmSOSlt/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1j5xuNoXbTgPwnQN7W9ztzfiHdZh2hm-l/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5592,7 +5592,7 @@ export default function Page() {
                             title={"Data Mining and Warehousing"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1QRKLvJ3OKTlwg3DNoBcf1A2CRRnmSNB5/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1oSd28W5RdZ_NVndmbd6oX1L7GcABpKjB/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5601,7 +5601,7 @@ export default function Page() {
                             title={"Recommendation Systems"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/13ulTng6qu0A-CpfmUxWS2_AILdpKMRiU/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1PtMufhG3s4TDVpt3E_F3wpcip9KhJIEm/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5610,7 +5610,7 @@ export default function Page() {
                             title={"Cloud Computing"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/1GIAJG-s7ZmHr_RMm_Q2yUHfNrOyhMxua/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5619,7 +5619,7 @@ export default function Page() {
                             title={"Computer System and Security"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1Lwk2fR-NVaS4UNEiGDdMkgZ9suJtYotR/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1ruALr7BirbLfmkT0-C0UB4kXHHd1Ow5J/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5628,7 +5628,7 @@ export default function Page() {
                             title={"Biomedical Engineering"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/1HQqPUvJJ7KvIj51vzk6DxNCKs1_R7uVg/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5637,7 +5637,7 @@ export default function Page() {
                             title={"Soft Computing"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1WyUG19aPT01GTHtjbsIsR2CLk1joNQ5q/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1Z8bOGgslFVcxZE2cq8v_nWSR9y4uU0O3/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5646,7 +5646,7 @@ export default function Page() {
                             title={"Distributed and Parallel Computing"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1bK4a1OhAyKbSV8B9Gv72cN5IAfGG9ymA/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1oOuIoGGNrrx4te1EpW4jgk2MTViGi6Sd/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5655,7 +5655,7 @@ export default function Page() {
                             title={"Federated Learning"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1wbZinUwlrvNk5raikf63kojTfsKpF59Q/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1hSk3wVPAFxDJ8R9Na7nsDthqZ50HHyQB/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5664,7 +5664,7 @@ export default function Page() {
                             title={"Quantum Computing"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1sP5JOxg4CUMDIm5ovLKRfpU01dPozJT2/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1OaHjjsViSHsVCYyUebhAs1h4v6wgWJAg/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5673,7 +5673,7 @@ export default function Page() {
                             title={"Pattern Recognition"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1Okc5hh-wg7NHGkcCq6nZP_xGo_8-s8yg/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1gWCe30OFE-g7BZo_C8WE8vNGStx79Rjj/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5682,7 +5682,7 @@ export default function Page() {
                             title={"Nature-Inspired Computing"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/1dXqvD8FcVhpYzT9ZkZkQL4V86oIbd8Lb/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5691,7 +5691,7 @@ export default function Page() {
                             title={"Optimization Techniques"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1tWnig9pGSZ3uXTplymV2ofeQmVUojuca/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1wNW7-_F1ZkPuhdIa_PDkVW9MHGxrYyvI/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5700,7 +5700,7 @@ export default function Page() {
                             title={"Health Informatics"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={""}
+                            url={"https://docs.google.com/document/d/17WMutXk5XSsvZUzNVPWPcIzXKDh4RMnw/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5709,7 +5709,7 @@ export default function Page() {
                             title={"Image Processing Techniques"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1NPzYW9M01nsJjnpFtYbLuiRyFoXvG_XE/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1hshrZ1axwaf7hsbwT8LYdo6-AIDVDnHN/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />  
 
                         </div>
@@ -5735,7 +5735,7 @@ export default function Page() {
                             title={"Problem Solving through C"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1kndjcymXM29c7ZseZdEvhfRZNqHyY3od/edit?usp=drivesdk&amp;ouid=105912413414551043045&amp;rtpof=true&amp;sd=true"}
+                            url={"https://docs.google.com/document/d/1FV1oOQYuIZ2V_mIjTy03sGI_61pjReHe/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5744,7 +5744,7 @@ export default function Page() {
                             title={"Mathematical Foundations of Computer Applications"}
                             L={"3"} T={"1"} P={"0"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1whwb8xFRFesKmFasotgSFhovDkWJvwAN/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1rvOt5qrTRMpMIRI43RNWsy55SG7UcUDL/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5753,7 +5753,7 @@ export default function Page() {
                             title={"Computer Networks"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1XS0u_rhuhJ6MGlAic7kSj2PufiKkFLyE/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/16tnFG5QhraUox3TYYvCBr1_kXRqk7359/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5771,7 +5771,7 @@ export default function Page() {
                             title={"Computer Organization and Architecture"}
                             L={"3"} T={"1"} P={"0"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1eZ8JLS73CMB3Kn5tAgho0wL2vxMiN9Zk/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1yC4wpsK1jzKUHQg_YxmtfVYj89oLO0KB/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5789,7 +5789,7 @@ export default function Page() {
                             title={"Data Structures"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1eZ8JLS73CMB3Kn5tAgho0wL2vxMiN9Zk/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/16k64wYC83vzOdqnKdahUw-E0UARnsapf/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5798,7 +5798,7 @@ export default function Page() {
                             title={"Computing with Python"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1Cmm7Z66gvehIeFFo9ul8LRdDW-AZbmVu/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1mttudLuSXrWk3uZI9xiuUa6jxzPxarTu/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5807,7 +5807,7 @@ export default function Page() {
                             title={"Database Management Systems"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1I9Vs_zTLO8UrH6cgGarCmikysZA3Q6Nb/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1yYLYR_Z8tP5F0FcC5QebQfryfzA_e3Hn/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5816,7 +5816,7 @@ export default function Page() {
                             title={"Operating Systems"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/18PWt_0Owp7zQ2jTzPPcUyTO7Wvd3CPvm/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1tcrTuUCCSBgTh6SqwemI50Fq7YH6GzEc/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5825,7 +5825,7 @@ export default function Page() {
                             title={"Ad-hoc & Sensor Networks"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1IuRtyGhQiwECYfnSz1BC85ZDjlscuu1F/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1NtNu0-gRLUb1kYO_EDI_mtEti9alODsA/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5843,7 +5843,7 @@ export default function Page() {
                             title={"Design and Analysis of Algorithms"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1V0zN7T_SBf16EZdwkL_bUovPOlPcOqoU/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1EORwBA86cVS6RvzaJbWxdyAEUQnCSp37/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5852,7 +5852,7 @@ export default function Page() {
                             title={"Artificial Intelligence"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1ThEKAFLPz9_L6Lf507kDic93mCpeUAZE/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1Cxb6ytGbaPPsGSd1ic2SHscNQmwXNO6y/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5861,7 +5861,7 @@ export default function Page() {
                             title={"Object Oriented Programming using JAVA"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1hQTXNS3JPK1-Z1deC8L6Z847RnKQkUCo/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1KY0yEMR3BY5UM7CPpceYUDLS02FO-SqO/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5870,7 +5870,7 @@ export default function Page() {
                             title={"Internet of Things"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1m3ouhYcwRGPP7hHydH80rb3Xj0H-rUFd/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1f2a1dNGuy-xiPSKGS4C3YBjdkoqY6ZpM/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5879,7 +5879,7 @@ export default function Page() {
                             title={"Machine Learning"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1cQRXm-MJlfYB-iV_3bG4njH3OMLU4HcA/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/16x1uez62ptwFn-3KuGEPukDnuB8ubNix/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5888,7 +5888,7 @@ export default function Page() {
                             title={"Deep Learning"}
                             L={"3"} T={"0"} P={"2"}
                             cred={"4"}
-                            url={"https://docs.google.com/document/d/1MN0ynoNDdA9rGgfE1NpfQGLJbX3SyGT2/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1zAGN8fR3J-7QX17-1iKpWIL2_QKNU3zh/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5897,7 +5897,7 @@ export default function Page() {
                             title={"Artificial Intelligence of Things"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1mK9ZvLJ9yJ-jtL4kvvDM7l-y7Nm_2BDk/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=truehttps://docs.google.com/document/d/1mK9ZvLJ9yJ-jtL4kvvDM7l-y7Nm_2BDk/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1YxrOLNDayJ6_C5E9BIeMINHBdV2DHoFM/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5906,7 +5906,7 @@ export default function Page() {
                             title={"Data Visualization"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1KvJJdpFISmfsb0O-CXoTHuhN1vy-pedn/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1X8mv-lKL_Y8B_S7Cj06eomkyvDNrkPmQ/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5915,7 +5915,7 @@ export default function Page() {
                             title={"Web Programming"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1bL_DqI-5fok_ASsVCQyExhaX5lsdCgkm/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1pTSzQauz4zjtRhgeDfHWmnad6a4iOtqg/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5933,7 +5933,7 @@ export default function Page() {
                             title={"Mobile Applications Development"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1hFe6SoFOcWWqS4HkUQHgGvjm7B26bfDe/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1EYUscj_LWiWNFhwLaBUNl2nNSMWKqpc_/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5951,7 +5951,7 @@ export default function Page() {
                             title={"Information Security"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1YjSQzIx29EmbpiKI4x-GSuB5WjvD0M3k/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1eYDBWHnOAXUOX0e6dF21HHNhTTvBUlzA/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5996,7 +5996,7 @@ export default function Page() {
                             title={"Generative Deep Models"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1jg9PPqH6WmQtegL9rtnJy2IJkS0qdcH0/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1XD5scsobfqtqq-MrAZX7_Qabh8H0L8Md/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6005,7 +6005,7 @@ export default function Page() {
                             title={"Explainable AI"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1aZiHyhEy2nrLFHXaG_KLxkqXb2J3upLD/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/10RXR8pYih1_oQGNgLJBC2H4wbg8ZBPWg/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6014,7 +6014,7 @@ export default function Page() {
                             title={"Information Retrieval"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1_6cVMA8fp6jVvjnSSgQfLLAvCg50RTZd/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/18qaM83QmYyQAoY6IIqAMHovAq3iwuMjO/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6023,7 +6023,7 @@ export default function Page() {
                             title={"Game Theory"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1Zi26rB-pzSgzCOqKcOPtYmmJMgz25H0u/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1MDFOhtE_LVjfpxN5QBW6M1OlPn-RY_Cq/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6032,7 +6032,7 @@ export default function Page() {
                             title={"Augmented Reality (AR) and Virtual Reality (VR)"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1U6n8cOxRFribiEvtyGRP-JchdbYG-zdC/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1P5FhovipLcJyDojRgX6ohOK42ZwAUfJJ/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6041,7 +6041,7 @@ export default function Page() {
                             title={"Intrusion Detection"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1Be-Z3Uv4hymaVwV-gj5EDFwt8qiQCgp8/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1Hn0Nxik3PU0iwrNq4umiBnbC9Nn2cHkH/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6050,7 +6050,7 @@ export default function Page() {
                             title={"Malware Analysis"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1wwHj6NEvCLClaS3ZVU3NDi4GZ9pAgzDi/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1bi_OU13XYC9yG496WrWb0A6lYrhNXylO/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6059,7 +6059,7 @@ export default function Page() {
                             title={"Digital Forensic"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1R7kdo8TmTLOp--zW39iwR7hUS3Jl20vf/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/18OsoyNsgrirX5NHddVpLBvWUKffLCz0j/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6068,7 +6068,7 @@ export default function Page() {
                             title={"Text Analytics"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1ZKdLsQ24w1LwG5-1PDV5fTG8D5WyttFY/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1gXNxUGZREP4i3NaIVLxzVHhdM-9O3a3J/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6077,7 +6077,7 @@ export default function Page() {
                             title={"Computer Vision"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1YonNhhVqGOgRvvPgpIzDEfY6MGf4h6Ev/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1EHskGa1oJyDm0FGbCqU-r6VQzbM_064x/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6086,7 +6086,7 @@ export default function Page() {
                             title={"Reinforcement Learning"}
                             L={"2"} T={"0"} P={"2"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1wUizdKt9hAIR-cK2SG0RnjjQXVBP8rV0/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1gczkVV2yA5bDvtrRafSmbe1n4BJSpXC9/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6095,7 +6095,7 @@ export default function Page() {
                             title={"Blockchain Technology"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1pvjzoUjBMIkUuG2Ci2yJOlHOlmbWMvHA/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1uhjjBoaKjmd7BiJVsJEdPbBGgA_OAp8R/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6104,7 +6104,7 @@ export default function Page() {
                             title={"Data Mining and Warehousing"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1XzeejKkbBSrUyVbpxXUzx-k24g_s8Hmg/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1juciqJ33CwhcD7QKynIax_OXik5uSxOs/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6113,7 +6113,7 @@ export default function Page() {
                             title={"Recommendation Systems"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1CvKX3zJP4PFvydHEYtVl6JhjB7nHK-Gm/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1O-x-b_Wzu_PdSIimQg0sjavP4fqXLXSs/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6122,7 +6122,7 @@ export default function Page() {
                             title={"Cloud Computing"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1Th2fRoTZES42Q4wC1sgy3WPNqv4YzTsI/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1oiciDT_511AjsYdPFlW1VVN6VhQfNVUN/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6131,7 +6131,7 @@ export default function Page() {
                             title={"Image Processing Techniques"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1_GwbfJlaWvwMHGA6GNGIIBmU9tnfBxwS/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/19xR8HraOPVy7p1cH5xgLNKm7267w5k7J/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6140,7 +6140,7 @@ export default function Page() {
                             title={"Computer System and Security"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1Ewv1FBngRA9PXZSZlo-7dqpm5Gm1dpQV/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1DkP_kXBUycqU7G0ubITXrE0OjNg5do7P/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6149,7 +6149,7 @@ export default function Page() {
                             title={"Smart Agriculture"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1wyh2-VZXZqwusZ2paOGui8gialUe_Kiy/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1i776pUS1_glxH83qVWTmGcEHgeYogSSi/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6158,7 +6158,7 @@ export default function Page() {
                             title={"Human Computer Interaction"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/15qZoKgaxzjk5MSHEEGvF4t-hZxO0Su0X/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1LcP5ZRTCoVwaHmCOXXDIx1HaxN51aIBL/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -6167,7 +6167,7 @@ export default function Page() {
                             title={"Social IoT"}
                             L={"3"} T={"0"} P={"0"}
                             cred={"3"}
-                            url={"https://docs.google.com/document/d/1Vb88qKFjQ1Sc8Z55Tsf8JRizZdu5aSaZ/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
+                            url={"https://docs.google.com/document/d/1WVcCufZiel02dQz9aYydX9ujE9uYvGkK/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         </div>
                     </div>
