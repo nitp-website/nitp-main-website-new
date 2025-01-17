@@ -50,60 +50,44 @@ const BOG = [
  {
   name: "Shri Ashok Kumar Modi",
   designation: "Chairperson",
-  type: "Chairperson",
+  type: "Chief Managing Director, Eden Group, Kolkata",
  },
  {
   name: "Prof. Pradip Kumar Jain",
   designation: "Ex-Officio Member, NIT Patna",
   type: "Director NIT Patna",
  },
- {
-  name: "Dr. Asit Narayan",
-  designation: "Registrar, NIT Patna",
-  type: "Secretary",
- },
+ 
  {
   name: "Joint Secretary(Technical) or his/her nominee",
-  designation: "Department of Higher Education, MHRD",
-  type: "Member",
+  type: "Department of Higher Education, MHRD",
+  designation: "Ex-Officio Member",
  },
  {
   name: "JS and Financial Advisor or his/her nominee",
-  designation: "Department of Higher Education, MHRD",
-  type: "Member",
+  type: "Department of Higher Education, MHRD",
+  designation: "Ex-Officio Member",
  },
- {
-  name: "Sri Shailendra P. Sinha",
-  designation:
-   "Managing Director Kalyanpur Cement Ltd.,Maurya Center,1 , Frazer Road, PB No. 89, Patna-800001(Bihar)",
-  type: "Member",
- },
- {
-  name: "Sri Aditya Prakash Mishra",
-  designation: "Former Member, Railway Engineering Board",
-  type: "Member",
- },
- {
-  name: "Dr. Chandrawati Jee",
-  designation:
-   "Former Head, P.G. Department of Biotechnology, A.N. College, Patna",
-  type: "Member",
- },
- {
-  name: "Dr. Narendra Kumar Singh",
-  designation:
-   "Associate Professor & Head,Department of Physics, S.N. Sinha College, Jehanabad",
-  type: "Member",
- },
- {
-  name: "Prof. S.K. Verma",
-  designation: "Professor, Mechanical Engg. Dept., NIT Patna",
-  type: "Member",
- },
+
  {
   name: "Director IIT Patna",
-  designation: "or his nominee not below the rank of professor",
-  type: "Member",
+  type: "or his nominee not below the rank of professor",
+  designation: "Ex-Officio Member",
+ },
+ {
+  name: "Prof. Fulena Rajak",
+  type: "Professor, Dept. of Architecture & Planning, NIT Patna",
+  designation: "Member",
+ },
+ {
+  name: "Prof. Reena Singh",
+  type: "Assistant Professor, Dept. of Civil Engineering, NIT Patna",
+  designation: "Member",
+ },
+ {
+  name: "Dr. Asit Narayan",
+  type: "Registrar, NIT Patna",
+  designation: "Secretary",
  },
 ]
 const BWC = [
@@ -322,129 +306,191 @@ const Jai = [
 const ServiceUNIT = [
 
  {
-  designation: "Training and Placement",
-  type: "Prof. In-charge",
   name: "Prof. Samrat Mukherjee",
- },
- {
+  type: "Prof. In-charge",
   designation: "Training and Placement",
-  type: "Assistant Prof. In-charge",
-  name: "Dr. Ajay Kumar",
  },
  {
-  designation: "HMC",
-  type: "Chairman",
-  name: "Dr. Bambam Kumar",
- },
- {
-  designation: "Procurement",
-  type: "Professor Incharge",
+  designation: "PI (Procurement)",
+  type: "Chairman (Health Centre)",
   name: "Prof. Prakash Chandra",
  },
  {
-  designation: "Procurement",
-  type: "Add. Professor Incharge",
+  designation: "PI (Procurement)",
+  type: "Nodal Officer – IPR,Nodal Officer – IoE,Nodal Officer – BIS",
   name: "Prof. Amit Kumar",
  },
-
  {
-  designation: "Centre for Computing and Information Services",
-  type: "Prof. In-charge",
-  name: "Prof. Prabhat Kumar",
- },
-   {
-  designation: "IT Services",
-  type: "Prof. In-charge",
+  designation: "CCIS",
+  type: "Head",
   name: "Prof. Prabhat Kumar",
  },
  {
-  designation: "Central Library",
-  type: "Prof. In-charge",
-  name: "Dr. S. K. Mandal",
+  designation: "Co-PI (Procurement)",
+  type: "PI (Incubation Centre);",
+  name: "Prof. Prabhat Kumar",
  },
-
  {
-  designation: "MIS",
-  type: "Prof. In-charge",
-  name: "Dr. Jyoti Prakash Singh",
- },
- 
- {
-  designation: "EMU",
-  type: "Prof. In-charge",
+  name: "Prof. Prabhat Kumar",
+  type: "Professor",
+  designation: "Computer Science & Engineering, Head – CCIS"
+},
+{
+  name: "Prof. Bharat Gupta",
+  type: "Professor",
+  designation: "Electronics and Communications Engineering, PI (Incubation Centre); Co-PI (Procurement)"
+},
+{
+  name: "Dr. Shailendra K. Mandal",
+  type: "Associate Professor",
+  designation: "Architecture & Planning, PI - Library"
+},
+{
+  name: "Dr. Shailesh Mani Pandey",
+  type: "Assistant Professor",
+  designation: "ME, T & P Officer"
+},
+{
+  name: "Dr. J. P. Singh",
+  type: "Associate Professor",
+  designation: "Architecture & Planning, Coordinator, Bihta Campus; PI-MIS"
+},
+{
+  name: "Dr. Gayadhar Pradhan",
+  type: "Associate Professor",
+  designation: "ECE, Co-Coordinator-Bihta Campus"
+},
+{
   name: "Dr. Vimlesh Verma",
- },
- {
-  designation: "Web Service",
-  type: "Prof. In-charge",
-  name: "Dr. B Balaji Naik",
- },
- {
-  designation: "International Affairs",
-  type: "Prof. In-charge",
+  type: "Associate Professor",
+  designation: "EE, PI – Electrical Maintenance Unit (EMU); Associate Dean, Student Welfare"
+},
+{
+  name: "Dr. B. Balaji Naik",
+  type: "Assistant Professor",
+  designation: "CSE, PI – Website"
+},
+{
   name: "Dr. Amit Kumar Singh",
- },
-   {
-  designation: "Personal",
-  type: "Registrar",
-  name: "Dr. Asit Narayan",
- },
+  type: "Associate Professor",
+  designation: "CSE, PI – International Affairs; Chief Vigilance Officer, NIT Patna"
+},
+{
+  name: "Dr. Om Ji Shukla",
+  type: "Assistant Professor",
+  designation: "ME, PI – E-Cell; Coordinator – Unnat Bharat; Associate Dean, Student Welfare"
+},
+{
+  name: "Dr. Gagan Deep Meena",
+  type: "Assistant Professor",
+  designation: "EE, Co PI – EMU; Coordinator - NSS"
+},
+{
+  name: "Dr. Ajay Kumar",
+  type: "Assistant Professor",
+  designation: "Architecture & Planning, Asst. PI (T&P)"
+},
+{
+  name: "Dr. S K Tripathy",
+  type: "Assistant Professor",
+  designation: "CSE, Asst. PI (T&P)"
+},
  {
-  designation: "Establishment & Administration",
-  type: "Deputy Registrar",
-  name: "Dr. Asit Narayan",
- },
- {
-  designation: "Examination",
-  type: "Deputy Registrar",
-  name: "Mrs. Bobby",
- },
-  {
-  designation: "Finance & Accounts",
-  type: "Deputy Registrar",
-  name: "Shri Mani Shankar Singh",
- },
- {
-  designation: "R&D",
-  type: "Deputy Registrar",
-  name: "Sri Sunil Kumar Dwivedi",
- },
-  
- {
-  designation: "IT Service",
-  type: "Scientific & Technical Officer",
-  name: "Dr. Santosh Kumar",
- },
- {
-  designation: "Academics & Examination & Scholarship",
-  type: "Assistant Registrar",
-  name: "Shri Shardul Vikram",
- },
- {
-  designation: "Establishment",
-  type: "Assistant Registrar",
-  name: "Shri Rajesh Kumar",
- },
- {
-  designation: "Security & Housekeeping",
-  type: "Assistant Registrar",
-  name: "Sri J P Sharma",
- },
- {
-  designation: "Research & Consulatancy",
-  type: "Assistant Registrar",
-  name: "Sri Sunny Choudhary",
- },
- {
-  designation: "Academics",
-  type: "Assistant Registrar",
-  name: "Sri Abhay Kumar",
- },
- {
-  designation: "Student Activity and Sports",
-  type: "Officer In-charge",
-  name: "Sri Arijit Putatunda",
- },
+  name: "Dr. Bambam Kumar",
+  type: "Assistant Professor",
+  designation: "ECE, Chairman, Hostel Management Committee; Asst. EE (ESU)"
+},
+{
+  name: "Dr. Amitesh Kumar",
+  type: "Assistant Professor",
+  designation: "CSE, Warden – Kosi Extension, Bagmati; Co PI – EMU"
+},
+{
+  name: "Dr. Chetan Kumar Hirwani",
+  type: "Assistant Professor",
+  designation: "ME, Warden – Sone Hostel; Asst. EE (ESU)"
+},
+{
+  name: "Dr. Yogesh Kumar",
+  type: "Assistant Professor",
+  designation: "ME, Warden – Brahmaputra Hostel"
+},
+{
+  name: "Dr. Subodh Srivastava",
+  type: "Assistant Professor",
+  designation: "ECE, Warden – Aryabhatt Hostel; Associate Dean, Student Welfare"
+},
+{
+  name: "Dr. Lini Dev K",
+  type: "Assistant Professor",
+  designation: "CE, Warden – Ganga Hostel"
+},
+{
+  name: "Dr. Ambrish Maurya",
+  type: "Assistant Professor",
+  designation: "ME, Warden – Kosi Hostel; Asst. EE (ESU)"
+},
+{
+  name: "Dr. Manpuran Mahto",
+  type: "Assistant Professor",
+  designation: "ECE, Warden – Kautilya Hostel"
+},
+{
+  name: "Dr. Kakali Chatterjee",
+  type: "Assistant Professor",
+  designation: "CSE, Warden – Kadambini Hostel"
+},
+{
+  name: "Dr. Bhabani Shankar Das",
+  type: "Assistant Professor",
+  designation: "CE, Warden – Brahmaputra Hostel"
+},
+{
+  name: "Dr. Satyajit Mondal",
+  type: "Assistant Professor",
+  designation: "CE, Assistant Warden – Sone Hostel"
+},
+{
+  name: "Dr. Rajan Agrahari",
+  type: "Assistant Professor",
+  designation: "ECE, Assistant Warden – Brahmaputra Hostel"
+},
+{
+  name: "Dr. Shubham Meena",
+  type: "Assistant Professor",
+  designation: "Architecture & Planning, Assistant Warden – Brahmaputra Hostel"
+},
+{
+  name: "Dr. Supriya Kumari",
+  type: "Assistant Professor",
+  designation: "Architecture & Planning, Assistant Warden – Ganga Hostel"
+},
+{
+  name: "Dr. Sandeep Kumar",
+  type: "Assistant Professor",
+  designation: "Architecture & Planning, Assistant Warden – Kosi Hostel"
+},
+{
+  name: "Dr. Anil Kumar Sharma",
+  type: "Assistant Professor",
+  designation: "CE, Assistant Warden – Kosi Extension, Bagmati"
+},
+{
+  name: "Dr. Ajay Kumar Maurya",
+  type: "Assistant Professor",
+  designation: "ECE, Assistant Warden – Aryabhatt Hostel"
+},
+{
+  name: "Dr. Richa Agrawal",
+  type: "Assistant Professor",
+  designation: "ECE, Assistant Warden – Kadambini Hostel"
+},
+{
+  name: "Dr. Meena Panchore",
+  type: "Assistant Professor",
+  designation: "ECE, Assistant Warden – Kadambini Hostel"
+}
+ 
 ]
 
 const Admin = [
