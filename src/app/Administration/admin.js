@@ -45,6 +45,30 @@ const Deans = [
     designation: "Associate Dean , Exam",
     type: "examoffice@nitp.ac.in",
    },
+      {
+    name: "Dr. Vimlesh Verma",
+    designation: "Associate Dean, Student Welfare",
+    type: "",
+   },
+     {
+    name: "Dr. Om Ji Shukla",
+    designation: "Associate Dean, Student Welfare",
+    type: "",
+   },
+
+         {
+    name: "Dr. Subodh Srivastava",
+    designation: "Associate Dean, Student Welfare",
+    type: "",
+   },
+   
+      {
+    name: "Dr. Abhimanyu Kumar",
+    designation: "Associate Dean, Student Welfare",
+    type: "",
+   },
+    
+
  ]
 const BOG = [
  {
@@ -374,7 +398,7 @@ const ServiceUNIT = [
 {
   name: "Dr. Vimlesh Verma",
   type: "Associate Professor",
-  designation: " PI – Electrical Maintenance Unit (EMU),Associate Dean, Student Welfare"
+  designation: " PI – Electrical Maintenance Unit (EMU)"
 },
 {
   name: "Dr. B. Balaji Naik",
@@ -389,7 +413,7 @@ const ServiceUNIT = [
 {
   name: "Dr. Om Ji Shukla",
   type: "Assistant Professor",
-  designation: "PI – E-Cell; Coordinator – Unnat Bharat,Associate Dean, Student Welfare"
+  designation: "PI – E-Cell; Coordinator – Unnat Bharat"
 },
 {
   name: "Dr. Gagan Deep Meena",
@@ -429,7 +453,7 @@ const ServiceUNIT = [
 {
   name: "Dr. Subodh Srivastava",
   type: "Assistant Professor",
-  designation: "Warden – Aryabhatt Hostel; Associate Dean, Student Welfare"
+  designation: "Warden – Aryabhatt Hostel"
 },
 {
   name: "Dr. Lini Dev K",
