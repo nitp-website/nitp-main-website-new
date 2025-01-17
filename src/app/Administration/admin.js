@@ -80,7 +80,7 @@ const BOG = [
   designation: "Member",
  },
  {
-  name: "Prof. Reena Singh",
+  name: "Dr. Reena Singh",
   type: "Assistant Professor, Dept. of Civil Engineering, NIT Patna",
   designation: "Member",
  },
@@ -353,7 +353,7 @@ const ServiceUNIT = [
 {
   name: "Dr. J. P. Singh",
   type: "Associate Professor",
-  designation: "Architecture & Planning, Coordinator, Bihta Campus; PI-MIS"
+  designation: "CSE, Coordinator, Bihta Campus; PI-MIS"
 },
 {
   name: "Dr. Gayadhar Pradhan",
@@ -368,7 +368,7 @@ const ServiceUNIT = [
 {
   name: "Dr. B. Balaji Naik",
   type: "Assistant Professor",
-  designation: "CSE, PI – Website"
+  designation: "CSE, PI – Webservice"
 },
 {
   name: "Dr. Amit Kumar Singh",
