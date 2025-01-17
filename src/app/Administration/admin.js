@@ -305,18 +305,38 @@ const Jai = [
 
 const ServiceUNIT = [
 
+   {
+  name: "Prof. Vivekanand Singh",
+  type: "Prof. In-charge",
+  designation: "Chief Proctor – Security",
+ },
+
  {
   name: "Prof. Samrat Mukherjee",
   type: "Prof. In-charge",
   designation: "Training and Placement",
  },
  {
+  name: "Prof. M P Singh",
+  type: "Chief Investigator",
+  designation: " E&ICT Academy Phase II, Associate Dean Academic",
+ },
+
+   {
+  name: "Prof. A R Quaff",
+  type: "Professor",
+  designation: " Associate Dean Examinations",
+ },
+
+
+  
+ {
   designation: "PI (Procurement)",
   type: "Chairman (Health Centre)",
   name: "Prof. Prakash Chandra",
  },
  {
-  designation: "PI (Procurement)",
+  designation: "Addl. PI (Procurement)",
   type: "Nodal Officer – IPR,Nodal Officer – IoE,Nodal Officer – BIS",
   name: "Prof. Amit Kumar",
  },
@@ -325,170 +345,161 @@ const ServiceUNIT = [
   type: "Head",
   name: "Prof. Prabhat Kumar",
  },
- {
-  designation: "Co-PI (Procurement)",
-  type: "PI (Incubation Centre);",
-  name: "Prof. Prabhat Kumar",
- },
- {
-  name: "Prof. Prabhat Kumar",
-  type: "Professor",
-  designation: "Computer Science & Engineering, Head – CCIS"
-},
+
 {
   name: "Prof. Bharat Gupta",
   type: "Professor",
-  designation: "Electronics and Communications Engineering, PI (Incubation Centre); Co-PI (Procurement)"
+  designation: "PI (Incubation Centre); Co-PI (Procurement)"
 },
 {
   name: "Dr. Shailendra K. Mandal",
   type: "Associate Professor",
-  designation: "Architecture & Planning, PI - Library"
+  designation: " PI - Library"
 },
 {
   name: "Dr. Shailesh Mani Pandey",
   type: "Assistant Professor",
-  designation: "ME, T & P Officer"
+  designation: " T & P Officer"
 },
 {
   name: "Dr. J. P. Singh",
   type: "Associate Professor",
-  designation: "CSE, Coordinator, Bihta Campus; PI-MIS"
+  designation: "Coordinator Bihta Campus; PI-MIS"
 },
 {
   name: "Dr. Gayadhar Pradhan",
   type: "Associate Professor",
-  designation: "ECE, Co-Coordinator-Bihta Campus"
+  designation: "Co-Coordinator-Bihta Campus"
 },
 {
   name: "Dr. Vimlesh Verma",
   type: "Associate Professor",
-  designation: "EE, PI – Electrical Maintenance Unit (EMU); Associate Dean, Student Welfare"
+  designation: " PI – Electrical Maintenance Unit (EMU),Associate Dean, Student Welfare"
 },
 {
   name: "Dr. B. Balaji Naik",
   type: "Assistant Professor",
-  designation: "CSE, PI – Webservice"
+  designation: "PI – Webservice"
 },
 {
   name: "Dr. Amit Kumar Singh",
   type: "Associate Professor",
-  designation: "CSE, PI – International Affairs; Chief Vigilance Officer, NIT Patna"
+  designation: "PI – International Affairs; Chief Vigilance Officer, NIT Patna"
 },
 {
   name: "Dr. Om Ji Shukla",
   type: "Assistant Professor",
-  designation: "ME, PI – E-Cell; Coordinator – Unnat Bharat; Associate Dean, Student Welfare"
+  designation: "PI – E-Cell; Coordinator – Unnat Bharat,Associate Dean, Student Welfare"
 },
 {
   name: "Dr. Gagan Deep Meena",
   type: "Assistant Professor",
-  designation: "EE, Co PI – EMU; Coordinator - NSS"
+  designation: "Co PI – EMU; Coordinator - NSS"
 },
 {
   name: "Dr. Ajay Kumar",
   type: "Assistant Professor",
-  designation: "Architecture & Planning, Asst. PI (T&P)"
+  designation: " Asst. PI (T&P)"
 },
 {
   name: "Dr. S K Tripathy",
   type: "Assistant Professor",
-  designation: "CSE, Asst. PI (T&P)"
+  designation: " Asst. PI (T&P)"
 },
  {
   name: "Dr. Bambam Kumar",
   type: "Assistant Professor",
-  designation: "ECE, Chairman, Hostel Management Committee; Asst. EE (ESU)"
+  designation: " Chairman, Hostel Management Committee; Asst. EE (ESU)"
 },
 {
   name: "Dr. Amitesh Kumar",
   type: "Assistant Professor",
-  designation: "CSE, Warden – Kosi Extension, Bagmati; Co PI – EMU"
+  designation: "Warden – Kosi Extension, Bagmati; Co PI – EMU"
 },
 {
   name: "Dr. Chetan Kumar Hirwani",
   type: "Assistant Professor",
-  designation: "ME, Warden – Sone Hostel; Asst. EE (ESU)"
+  designation: "Warden – Sone Hostel; Asst. EE (ESU)"
 },
 {
   name: "Dr. Yogesh Kumar",
   type: "Assistant Professor",
-  designation: "ME, Warden – Brahmaputra Hostel"
+  designation: " Warden – Brahmaputra Hostel"
 },
 {
   name: "Dr. Subodh Srivastava",
   type: "Assistant Professor",
-  designation: "ECE, Warden – Aryabhatt Hostel; Associate Dean, Student Welfare"
+  designation: "Warden – Aryabhatt Hostel; Associate Dean, Student Welfare"
 },
 {
   name: "Dr. Lini Dev K",
   type: "Assistant Professor",
-  designation: "CE, Warden – Ganga Hostel"
+  designation: " Warden – Ganga Hostel"
 },
 {
   name: "Dr. Ambrish Maurya",
   type: "Assistant Professor",
-  designation: "ME, Warden – Kosi Hostel; Asst. EE (ESU)"
+  designation: " Warden – Kosi Hostel; Asst. EE (ESU)"
 },
 {
   name: "Dr. Manpuran Mahto",
   type: "Assistant Professor",
-  designation: "ECE, Warden – Kautilya Hostel"
+  designation: "Warden – Kautilya Hostel"
 },
 {
   name: "Dr. Kakali Chatterjee",
   type: "Assistant Professor",
-  designation: "CSE, Warden – Kadambini Hostel"
+  designation: "Warden – Kadambini Hostel"
 },
 {
   name: "Dr. Bhabani Shankar Das",
   type: "Assistant Professor",
-  designation: "CE, Warden – Brahmaputra Hostel"
+  designation: " Warden – Brahmaputra Hostel"
 },
 {
   name: "Dr. Satyajit Mondal",
   type: "Assistant Professor",
-  designation: "CE, Assistant Warden – Sone Hostel"
+  designation: "Assistant Warden – Sone Hostel"
 },
 {
   name: "Dr. Rajan Agrahari",
   type: "Assistant Professor",
-  designation: "ECE, Assistant Warden – Brahmaputra Hostel"
+  designation: "Assistant Warden – Brahmaputra Hostel"
 },
 {
   name: "Dr. Shubham Meena",
   type: "Assistant Professor",
-  designation: "Architecture & Planning, Assistant Warden – Brahmaputra Hostel"
+  designation: "Assistant Warden – Brahmaputra Hostel"
 },
 {
   name: "Dr. Supriya Kumari",
   type: "Assistant Professor",
-  designation: "Architecture & Planning, Assistant Warden – Ganga Hostel"
+  designation: " Assistant Warden – Ganga Hostel"
 },
 {
   name: "Dr. Sandeep Kumar",
   type: "Assistant Professor",
-  designation: "Architecture & Planning, Assistant Warden – Kosi Hostel"
+  designation: "Assistant Warden – Kosi Hostel"
 },
 {
   name: "Dr. Anil Kumar Sharma",
   type: "Assistant Professor",
-  designation: "CE, Assistant Warden – Kosi Extension, Bagmati"
+  designation: "Assistant Warden – Kosi Extension, Bagmati"
 },
 {
   name: "Dr. Ajay Kumar Maurya",
   type: "Assistant Professor",
-  designation: "ECE, Assistant Warden – Aryabhatt Hostel"
+  designation: "Assistant Warden – Aryabhatt Hostel"
 },
 {
   name: "Dr. Richa Agrawal",
   type: "Assistant Professor",
-  designation: "ECE, Assistant Warden – Kadambini Hostel"
+  designation: "Assistant Warden – Kadambini Hostel"
 },
 {
   name: "Dr. Meena Panchore",
   type: "Assistant Professor",
-  designation: "ECE, Assistant Warden – Kadambini Hostel"
+  designation: "Assistant Warden – Kadambini Hostel"
 }
  
 ]
