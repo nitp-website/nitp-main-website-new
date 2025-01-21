@@ -74,6 +74,7 @@ function Page() {
             <div className="mx-4 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 <ActComp
                     title={'Chemistry'}
+                    
                     content={['Engineering Chemistry Course for ALL Engg. Branches(B.Tech NewSyllabus) 2021',
                         'B. Tech. 1st year (1st and 2nd Semester) General Chemistry course (600 students) Chemical Sciences (1CH101)',
                         'B. Tech. 1st year (1st and 2nd Semester) General Chemistry Lab (600 students) Chemical Sciences Lab (1CH102)',

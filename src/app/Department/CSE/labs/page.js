@@ -39,7 +39,7 @@ export default function labs(){
                         </div>
                     </div>
                     <Image
-                    src={"https://web.nitp.ac.in/dept/cse/labs/DSC_0004.jpg"}
+                    src={"/Cselab1.jpg"}
                     alt="labs"
                     width={300}
                     height={500}
@@ -62,7 +62,7 @@ export default function labs(){
                         </div>
                     </div>
                     <Image
-                    src={"https://web.nitp.ac.in/dept/cse/labs/DSC_0001.jpg"}
+                    src={"/Cselab2.jpg"}
                     alt="labs"
                     width={300}
                     height={500}
@@ -83,7 +83,7 @@ export default function labs(){
                         </div>
                     </div>
                     <Image
-                    src={"https://web.nitp.ac.in/dept/cse/labs/DSC_0002.jpg"}
+                    src={"/Cselab3.jpg"}
                     alt="labs"
                     width={300}
                     height={500}
@@ -106,7 +106,7 @@ export default function labs(){
                         </div>
                     </div>
                     <Image
-                    src={"https://web.nitp.ac.in/dept/cse/labs/DSC_0008.jpg"}
+                    src={"/Cselab4.jpg"}
                     alt="labs"
                     width={300}
                     height={500}
