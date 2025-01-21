@@ -42,12 +42,12 @@ function Page() {
                             </ol>
                             <div className=" flex  flex-col items-center mt-4">
                                 <div className="flex flex-col">
-                                    <Image src={"https://web.nitp.ac.in/dept/ece/labs/eceimage002.jpg"}
+                                    <Image src={"/ecelab1.jpg"}
                                         width={350}
                                         height={300}
                                         alt="labsPic"
                                         className="mb-4 rounded-lg bg-rose-200" />
-                                    <Image src={"https://web.nitp.ac.in/dept/ece/labs/eceimage003.jpg"}
+                                    <Image src={"/ecelab2.jpg"}
                                         width={350}
                                         height={300}
                                         alt="labsPic"
@@ -79,12 +79,12 @@ function Page() {
                             </ol>
                             <div className=" flex  flex-col items-center mt-4">
                                 <div className="flex flex-col">
-                                    <Image src={"https://web.nitp.ac.in/dept/ece/labs/eceimage005.jpg"}
+                                    <Image src={"/ecelab3.jpg"}
                                         width={350}
                                         height={300}
                                         alt="labsPic"
                                         className="mb-4 rounded-lg bg-rose-200" />
-                                    <Image src={"https://web.nitp.ac.in/dept/ece/labs/eceimage006.jpg"}
+                                    <Image src={"/ecelab4.jpg"}
                                         width={350}
                                         height={300}
                                         alt="labsPic"
@@ -123,17 +123,17 @@ function Page() {
                             </ol>
                             <div className=" flex  flex-col items-center mt-4">
                                 <div className="flex flex-col">
-                                    <Image src={"https://web.nitp.ac.in/dept/ece/labs/eceimage007.jpg"}
+                                    <Image src={"/ecelab5.jpg"}
                                         width={350}
                                         height={300}
                                         alt="labsPic"
                                         className="mb-4 rounded-lg bg-rose-200" />
-                                    <Image src={"https://web.nitp.ac.in/dept/ece/labs/DSC_0031.jpg"}
+                                    <Image src={"/ecelab6.jpg"}
                                         width={350}
                                         height={300}
                                         alt="labsPic"
                                         className="rounded-lg bg-rose-200" />
-                                    <Image src={"https://web.nitp.ac.in/dept/ece/labs/DSC_0011.jpg"}
+                                    <Image src={"/ecelab7.jpg"}
                                         width={350}
                                         height={300}
                                         alt="labsPic"

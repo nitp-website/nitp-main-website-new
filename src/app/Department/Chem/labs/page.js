@@ -30,28 +30,26 @@ function Carousel({ children: pics,
 
 function Page() {
     var labUrl = [
-        "https://web.nitp.ac.in/dept/chem/labs/tl_04.jpg",
-        "https://web.nitp.ac.in/dept/chem/labs/tl_03.jpg",
-        "https://web.nitp.ac.in/dept/chem/labs/tl_02.jpg",
-        "https://web.nitp.ac.in/dept/chem/labs/tl_01.jpg",
-        "https://web.nitp.ac.in/dept/chem/labs/tl_04.jpg",
+        '/tl_01.jpg',
+        '/tl_02.jpg',
+        '/tl_03.jpg',
+        '/tl_04.jpg',
     ]
     var resLab = [
-        'https://web.nitp.ac.in/dept/chem/labs/rl_08.jpg',
-        'https://web.nitp.ac.in/dept/chem/labs/rl_07.jpg',
-        'https://web.nitp.ac.in/dept/chem/labs/rl_06.jpg',
-        'https://web.nitp.ac.in/dept/chem/labs/rl_05.jpg',
-        'https://web.nitp.ac.in/dept/chem/labs/rl_04.jpg',
-        'https://web.nitp.ac.in/dept/chem/labs/rl_03.jpg',
-        'https://web.nitp.ac.in/dept/chem/labs/rl_02.jpg',
-        'https://web.nitp.ac.in/dept/chem/labs/rl_01.jpg',
-        'https://web.nitp.ac.in/dept/chem/labs/rl_08.jpg',
+        '/rl_01.jpg',
+        '/rl_02.jpg',
+        '/rl_03.jpg',
+        '/rl_04.jpg',
+        '/rl_05.jpg',
+        '/rl_06.jpg',
+        '/rl_07.jpg',
+        '/rl_08.jpg',
     ]
     var InsLab = [
-        'https://web.nitp.ac.in/dept/chem/labs/il_03.jpg',
-        'https://web.nitp.ac.in/dept/chem/labs/il_02.jpg',
-        'https://web.nitp.ac.in/dept/chem/labs/il_01.jpg',
-        'https://web.nitp.ac.in/dept/chem/labs/il_03.jpg',
+        '/il_01.jpg',
+        '/il_02.jpg',
+        '/il_03.jpg',
+        
     ]
 
     return (

@@ -53,17 +53,23 @@ function Page() {
                     </p>
                 </div>
                 <div>
-                    <BackDepartment navigate={'/Department/Archi'}/>
+                    <BackDepartment navigate={'/Department/Archi'} />
                 </div>
             </div>
             <div className="mx-4 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
-                <div>
-                    <ActComp
+                <div className="ml-10">
+                    {/* <ActComp
                         content={['B.Arch All Semester course structure',
                             'M.Arch.(Sustainable Architecture) Syllabus',
                             'MURP Syllabus'
                         ]}
-                    />
+                    /> */}
+                    <ol>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1Et1TS21Rk3esAWdWaAyt2nYGeR6oY9TX/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true">B.Arch All Semester course structure</a>
+                        </li>
+                        <li><a href="https://docs.google.com/document/d/1d1mzOzYLzPL8QSY6BJws69dGHe6_zl9w/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true">M.Arch.(Sustainable Architecture) Syllabus</a></li>
+                        <li><a href="https://docs.google.com/document/d/1jTFrdVph3WQXdKf1Qu48yfGCeZdYbbTR/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true">MURP Syllabus</a></li>
+                    </ol>
                 </div>
                 <div className="mt-6">
                     <div className="mb-10 flex space-x-1 max-sm:text-[14px]">
@@ -78,7 +84,7 @@ function Page() {
                     </div>
                     {/* UG PROGRAM */}
                     <div className={`mb-10 ${(ug == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">UG Courses :-</div>
+                        <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">UG Courses :-</div>
                         <div className=" overflow-x-auto mr-10">
                             <div className="border grid grid-cols-12 min-w-[1100px]">
                                 <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
@@ -105,7 +111,7 @@ function Page() {
                                     title={"English Literature"}
                                     L={"2"} T={"1"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/HS101.docx"}
+                                    url={"https://docs.google.com/document/d/1yovUf2R7D48OUBjUqyg0jLOttboUJGsS/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -123,7 +129,7 @@ function Page() {
                                     title={"Introduction to computing"}
                                     L={"2"} T={"1"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/CS101.docx"}
+                                    url={"https://docs.google.com/document/d/1fKA1LaZWC_nhT4mk-9kPkyQvMN8TPA23/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -141,7 +147,7 @@ function Page() {
                                     title={"Workshop Practice"}
                                     L={"0"} T={"0"} P={"3"}
                                     cred={"1"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/ME102.docx"}
+                                    url={"https://docs.google.com/document/d/1tMzqGbBuZq0nFTU3vExVj1pfSUaTtlfC/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -150,7 +156,7 @@ function Page() {
                                     title={"Basic Design 1"}
                                     L={"2"} T={"0"} P={"4"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR101.docx"}
+                                    url={"https://docs.google.com/document/d/1HXvPQsPB-E3OlOEaT209swqtHuSshnkl/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -159,7 +165,7 @@ function Page() {
                                     title={"Architectural Graphics 1"}
                                     L={"1"} T={"0"} P={"6"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR102.docx"}
+                                    url={"https://docs.google.com/document/d/1F0V6bW_IyiIwymUaKWFYpm-4B2wHXQcN/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -168,7 +174,7 @@ function Page() {
                                     title={"History of Art,Architectural & Culture"}
                                     L={"2"} T={"0"} P={"2"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR103.docx"}
+                                    url={"https://docs.google.com/document/d/1K_S6fMOkqqnPtn2SWeYuxjMCSckNNNUE/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -177,7 +183,7 @@ function Page() {
                                     title={"Communication Skills Development & Technical Writing"}
                                     L={"0"} T={"1"} P={"3"}
                                     cred={"2"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/HS102.docx"}
+                                    url={"https://docs.google.com/document/d/1ZadIQN89DVS7bPTLcCY56WqbBC215wyE/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -186,7 +192,7 @@ function Page() {
                                     title={"Enginlring Mechanics"}
                                     L={"3"} T={"1"} P={"0"}
                                     cred={"4"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/CE101.docx"}
+                                    url={"https://docs.google.com/document/d/1CMz8Z2jDSIc-XJkwrVxhNfbcf35EFGVX/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -195,7 +201,7 @@ function Page() {
                                     title={"Science Society and Ethical Values"}
                                     L={"1"} T={"1"} P={"0"}
                                     cred={"2"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/HS105.docx"}
+                                    url={"https://docs.google.com/document/d/12s-v9Oe43IEiVUNG21-C-jjKsPG-YTkx/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -204,7 +210,7 @@ function Page() {
                                     title={"Basic Design II"}
                                     L={"1"} T={"1"} P={"6"}
                                     cred={"4"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR111.docx"}
+                                    url={"https://docs.google.com/document/d/1_KmHWN8afcOn6lXM_HQqWbG50u2mV-uc/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -213,7 +219,7 @@ function Page() {
                                     title={"Architectural Graphics II"}
                                     L={"1"} T={"0"} P={"6"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR112.docx"}
+                                    url={"https://docs.google.com/document/d/1v4cmJY5tPE_eSv8WjkB1cf2pLnjPS6SY/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -222,7 +228,7 @@ function Page() {
                                     title={"Architectural workshop"}
                                     L={"0"} T={"0"} P={"4"}
                                     cred={"1"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR113.docx"}
+                                    url={"https://docs.google.com/document/d/1_J-sM7CWCB9k05SZJKy2cQW0O75fumkQ/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -231,7 +237,7 @@ function Page() {
                                     title={"History of Architecture-I"}
                                     L={"2"} T={"0"} P={"2"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR114.docx"}
+                                    url={"https://docs.google.com/document/d/1jCu-gPm7gYLFVI-2y3deK9CDEZtGmo8O/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -240,7 +246,7 @@ function Page() {
                                     title={"Principal of Architecture"}
                                     L={"2"} T={"1"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR115.docx"}
+                                    url={"https://docs.google.com/document/d/1JMthMkX0nxn7jL01mHlLXFNuat3hA-Hb/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -249,7 +255,7 @@ function Page() {
                                     title={"Seminar/Educational Tour/NASA/Zonasa-I"}
                                     L={"0"} T={"0"} P={"0"}
                                     cred={"0"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR119.docx"}
+                                    url={"https://docs.google.com/document/d/1_iRNKW7gN2uG9EMH8d-zefklAD4R3YXI/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -267,7 +273,7 @@ function Page() {
                                     title={"Architectural Design-I & Field Study"}
                                     L={"3"} T={"0"} P={"6"}
                                     cred={"5"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR121.docx"}
+                                    url={"https://docs.google.com/document/d/1eGwFMrNeqA8RiPbTFcux3qBmRwSrGo5X/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -276,7 +282,7 @@ function Page() {
                                     title={"Building Construction-I"}
                                     L={"2"} T={"0"} P={"4"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR122.docx"}
+                                    url={"https://docs.google.com/document/d/1dL8zTSEMzK0jdfYKJxxi6NZPp-CtNDLP/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -285,7 +291,7 @@ function Page() {
                                     title={"History of Architecture-II"}
                                     L={"2"} T={"0"} P={"2"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR123.docx"}
+                                    url={"https://docs.google.com/document/d/1xohM0odcurLTgxkpx3FT-jTvl_DheLPS/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -294,7 +300,7 @@ function Page() {
                                     title={"Building Materials(Material Science & Technology)"}
                                     L={"1"} T={"1"} P={"0"}
                                     cred={"2"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR124.docx"}
+                                    url={"https://docs.google.com/document/d/1JTaYzLcegZpvK9YZX2TZGYqYmxptxU9M/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -303,7 +309,7 @@ function Page() {
                                     title={"Climatology and Solar Passive Architecture"}
                                     L={"2"} T={"1"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR125.docx"}
+                                    url={"https://docs.google.com/document/d/1gl2LpCdNpkn9zJnjqR5Voa_kGcImLhGe/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -312,7 +318,7 @@ function Page() {
                                     title={"Structure,Form & Architecture"}
                                     L={"2"} T={"1"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR127.docx"}
+                                    url={"https://docs.google.com/document/d/1-Pf3KZOSfCipRYLxCNl3p_ypd2QugsAM/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -321,7 +327,7 @@ function Page() {
                                     title={"Computer Application in Architecture"}
                                     L={"0"} T={"0"} P={"4"}
                                     cred={"1"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR126.docx"}
+                                    url={"https://docs.google.com/document/d/18x1WhIUKHs7tG0DtBmTh70ZL7quNiuAi/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -348,7 +354,7 @@ function Page() {
                                     title={"Architectural Design - II & field study"}
                                     L={"3"} T={"0"} P={"6"}
                                     cred={"5"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR131.docx"}
+                                    url={"https://docs.google.com/document/d/1LWXY5zX_dczKdQUT9WkN-dGVC9mRYXjZ/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -357,7 +363,7 @@ function Page() {
                                     title={"Building Construction - II"}
                                     L={"2"} T={"0"} P={"4"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR132.docx"}
+                                    url={"https://docs.google.com/document/d/1OBrNEFi2lNk2tQCZdmz4hV258JqwhhLx/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -366,7 +372,7 @@ function Page() {
                                     title={"Contemporary Architecture"}
                                     L={"2"} T={"1"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR133.docx"}
+                                    url={"https://docs.google.com/document/d/18xuXYm2dLWRPR3xRvd5Ko3tb7qg-R0Wi/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -375,7 +381,7 @@ function Page() {
                                     title={"Building Services(Water Supply and Sanitation)"}
                                     L={"2"} T={"1"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR142.docx"}
+                                    url={"https://docs.google.com/document/d/1IgO43OASIIYXm3kif8jOeyeq2zNEGuL8/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -384,7 +390,7 @@ function Page() {
                                     title={"Seminar/Educational Tour/NASA/Zonasa-II"}
                                     L={"0"} T={"0"} P={"1"}
                                     cred={"0"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR149.docx"}
+                                    url={"https://docs.google.com/document/d/13ZwZNcNjRC0e98XJYp89IJN5guKjWR90/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -393,7 +399,7 @@ function Page() {
                                     title={"Basic Surveying"}
                                     L={"3"} T={"0"} P={"3"}
                                     cred={"4"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/CE108.docx"}
+                                    url={"https://docs.google.com/document/d/15fnQ0xPO_eEi7rOMhjClPrr_bHKQ6-M5/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -402,7 +408,7 @@ function Page() {
                                     title={"Structural Mechanics"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/CE116.docx"}
+                                    url={"https://docs.google.com/document/d/1WBHEpc3YzApeHp8uI07v3vl_9aH1TZhx/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -429,7 +435,7 @@ function Page() {
                                     title={"Architectural Design - III & Field Study"}
                                     L={"3"} T={"0"} P={"6"}
                                     cred={"5"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR141.docx"}
+                                    url={"https://docs.google.com/document/d/1g2Rtw-Vs10lrN9M5LErrRX68zWmRdFFO/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -438,7 +444,7 @@ function Page() {
                                     title={"Building Construction - III"}
                                     L={"1"} T={"0"} P={"4"}
                                     cred={"2"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR143.docx"}
+                                    url={"https://docs.google.com/document/d/1GKkknoLfLTorwy7t6YsCnaGoMjtk9VZY/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -456,7 +462,7 @@ function Page() {
                                     title={"Building Services(Illumination,Electrical Services and Acoustics)"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR145.docx"}
+                                    url={"https://docs.google.com/document/d/11yat3Qta6sJV0gGA2kMb3KEvZ4HFmiwq/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -465,7 +471,7 @@ function Page() {
                                     title={"Quantity Survey & Specifications"}
                                     L={"2"} T={"1"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR146.docx"}
+                                    url={"https://docs.google.com/document/d/16YhtI36jl6LZxbpSqHpgUoWJQ53aPe64/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -474,7 +480,7 @@ function Page() {
                                     title={"Sociology and Building Economics"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/HS106.docx"}
+                                    url={"https://docs.google.com/document/d/1lhkt6TWBoNFL-kmv-8yqblvuEYhpCKL_/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -483,7 +489,7 @@ function Page() {
                                     title={"Indeterminate Structures"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/CE107.docx"}
+                                    url={"https://docs.google.com/document/d/1jG4-eM4G-u5RUGAj4JUvZQuhBo45V7Oy/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -501,7 +507,7 @@ function Page() {
                                     title={"Architectural Design - IV & Field Study"}
                                     L={"3"} T={"0"} P={"6"}
                                     cred={"5"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR151.docx"}
+                                    url={"https://docs.google.com/document/d/1amMm_nArGyAdE-IXwENwqQEzL2te9gXj/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -510,7 +516,7 @@ function Page() {
                                     title={"Building Construction-IV"}
                                     L={"1"} T={"0"} P={"4"}
                                     cred={"2"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR152.docx"}
+                                    url={"https://docs.google.com/document/d/14DVWz4R1Z1hoH9Ialo8QcTW5iDgP6aPA/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -519,7 +525,7 @@ function Page() {
                                     title={"Housing"}
                                     L={"2"} T={"0"} P={"2"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR153.docx"}
+                                    url={"https://docs.google.com/document/d/1lryHQVNchgeUycinRTjUhTBG7vkQDBpY/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -528,7 +534,7 @@ function Page() {
                                     title={"Departmental Elective-I"}
                                     L={"2"} T={"1"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR154.docx"}
+                                    url={"https://docs.google.com/document/d/1MHqbsbdXOwxDFvfynXzfQrCWG5ZJXGs1/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -537,7 +543,7 @@ function Page() {
                                     title={"Building Services (HVAC)"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://www.nitp.ac.in/arch/syllabus/%20./archi/ME120.docx"}
+                                    url={"https://docs.google.com/document/d/1EOoZ2rkSXItnGCKSop1dGP-SbIosi3_L/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -546,7 +552,7 @@ function Page() {
                                     title={"Building Byelaws and Codes of Practice"}
                                     L={"2"} T={"0"} P={"0"}
                                     cred={"2"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR155.docx"}
+                                    url={"https://docs.google.com/document/d/14FKgcnSbDv__6amv87wr1ZFDtaQBDF1s/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -555,7 +561,7 @@ function Page() {
                                     title={"Concrete Structure"}
                                     L={"0"} T={"0"} P={"2"}
                                     cred={"1"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/CE123.docx"}
+                                    url={"https://docs.google.com/document/d/1Vjwhh34rTZP5gkz2_4oQEUMy16ZwlG_1/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -582,7 +588,7 @@ function Page() {
                                     title={"Architectural Design - V & Field Study"}
                                     L={"3"} T={"0"} P={"6"}
                                     cred={"5"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR161.docx"}
+                                    url={"https://docs.google.com/document/d/1c5OjplI2vPcA5eSQc38b7Z9MmzabNkWT/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -591,7 +597,7 @@ function Page() {
                                     title={"Architectural Detailing"}
                                     L={"2"} T={"0"} P={"4"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR162.docx"}
+                                    url={"https://docs.google.com/document/d/1GR75mjdDuzLRvYrB9HwvsnRGXDP4PeUp/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -600,7 +606,7 @@ function Page() {
                                     title={"City Planning"}
                                     L={"2"} T={"0"} P={"2"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR163.docx"}
+                                    url={"https://docs.google.com/document/d/1Dy7-4Z3oLG18movjpoVw1XeWiyloUufU/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -609,7 +615,7 @@ function Page() {
                                     title={"Urban Design"}
                                     L={"2"} T={"0"} P={"3"}
                                     cred={"4"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR164.docx"}
+                                    url={"https://docs.google.com/document/d/1rsuVv7ndklgjhAx_8WI1Ob4RNbB1N4BN/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -618,7 +624,7 @@ function Page() {
                                     title={"Design of Stll Structure / Concrete str."}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/CE129.docx"}
+                                    url={"https://docs.google.com/document/d/1BjCCbhpPOeSG7W_7WUV1SjeqvbbKXkzz/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -636,7 +642,7 @@ function Page() {
                                     title={"Architectural Design - VI & Field Study"}
                                     L={"3"} T={"0"} P={"6"}
                                     cred={"5"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR171.docx"}
+                                    url={"https://docs.google.com/document/d/1ODVAewY5mF78IspcQAu-Zt3BQjtCsVPY/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -645,7 +651,7 @@ function Page() {
                                     title={"Working Drawing"}
                                     L={"1"} T={"0"} P={"4"}
                                     cred={"2"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR172.docx"}
+                                    url={"https://docs.google.com/document/d/1RaXacaG6AFgUi56K-0Y3n23NrRt8WE97/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -654,7 +660,7 @@ function Page() {
                                     title={"Landscape Design & Ecological Architecture"}
                                     L={"2"} T={"0"} P={"2"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR173.docx"}
+                                    url={"https://docs.google.com/document/d/1_kkdm0aCt5Nn0gfMk0IFotiAUWBxhh7k/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -681,7 +687,7 @@ function Page() {
                                     title={"Project Planning & Management"}
                                     L={"2"} T={"1"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR175.docx"}
+                                    url={"https://docs.google.com/document/d/1R-E8q5dSyu-SvIiMwj89En-eR4h4SQwb/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -708,7 +714,7 @@ function Page() {
                                     title={"Architectural Training"}
                                     L={"0"} T={"0"} P={"60"}
                                     cred={"20"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR192.docx"}
+                                    url={"https://docs.google.com/document/d/1hPr9qx0CQCRXh5WdIw5tiiX-fGPMyPDs/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -726,7 +732,7 @@ function Page() {
                                     title={"Professional Practice,Valuation & Management"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR193.docx"}
+                                    url={"https://docs.google.com/document/d/1dBYlpMVcEQSClEsLsh6QrgHhpafcNp6n/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -744,7 +750,7 @@ function Page() {
                                     title={"Design for Barrier Frl Environment"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR201.docx"}
+                                    url={"https://docs.google.com/document/d/1H3Ejgl6n4xxSS7zCRi753EJIuPSiscjV/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -753,7 +759,7 @@ function Page() {
                                     title={"Building Software lab"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/Ar202.docx"}
+                                    url={"https://docs.google.com/document/d/1C80gXFLKDrDqxdC0AqBlLSjKPboTfqyi/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -762,7 +768,7 @@ function Page() {
                                     title={"Vastushastra"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR203.docx"}
+                                    url={"https://docs.google.com/document/d/12TWz6jLdtCcbEvrTV2DhLmZylrD5vq8e/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -771,7 +777,7 @@ function Page() {
                                     title={"Art In Architecture"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR204.docx"}
+                                    url={"https://docs.google.com/document/d/1UETz5og4i-9ma9uWKGwj1XZg0GSPmtYu/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -780,7 +786,7 @@ function Page() {
                                     title={"Architectural Conservation"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR211.docx"}
+                                    url={"https://docs.google.com/document/d/1ccstBY03ZQ0LnakJomB87yCfGI8TP4n_/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -789,7 +795,7 @@ function Page() {
                                     title={"Sustainable Architecture"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR212.docx"}
+                                    url={"https://docs.google.com/document/d/1fZo1RF0wMda-9PoRXiicWKssnUTCQaBe/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -798,7 +804,7 @@ function Page() {
                                     title={"Visual Semantics"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/Ar213.docx"}
+                                    url={"https://docs.google.com/document/d/1q_LNBU70cUEcymU9Sy4DU64OcCBlt8N_/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -807,7 +813,7 @@ function Page() {
                                     title={"Modular Co-ordination"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/Ar214.docx"}
+                                    url={"https://docs.google.com/document/d/1DmeyysASRoUJ_1bDOWcjB1BYPVhN2BXZ/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -816,7 +822,7 @@ function Page() {
                                     title={"Facility planning and Specialized Building Design"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR215.docx"}
+                                    url={"https://docs.google.com/document/d/19bFaXT2cXADOOw5q-kj95Myu5rCAGNnN/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -825,7 +831,7 @@ function Page() {
                                     title={"Interior Design"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR221.docx"}
+                                    url={"https://docs.google.com/document/d/1-Fy7ePhAjxwmVQgnEYH3ZzHBEOhS3-D8/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -834,7 +840,7 @@ function Page() {
                                     title={"Intelligent Buildings"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR222.docx"}
+                                    url={"https://docs.google.com/document/d/1k_9w9IPzD5Z_lvyQzoxje7u1laSQ1cYn/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -843,7 +849,7 @@ function Page() {
                                     title={"Building Automation and Management System"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR223.docx"}
+                                    url={"https://docs.google.com/document/d/1ZiQMp18a-nIYTsL97niZKy8Wu_uTsk6P/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -852,7 +858,7 @@ function Page() {
                                     title={"Behavioral Studies in Architecture"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR224.docx"}
+                                    url={"https://docs.google.com/document/d/1UY1Kau9WMuJtk1Ng1mAO80xezTbocQR4/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -861,7 +867,7 @@ function Page() {
                                     title={"Ergonomics and Product Design"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR225.docx"}
+                                    url={"https://docs.google.com/document/d/1euXdV3m40SLhqAFP__kWFAfYhJ9YxZKM/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -870,7 +876,7 @@ function Page() {
                                     title={"Energy Conscious Architecture"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR231.docx"}
+                                    url={"https://docs.google.com/document/d/10rvWZjP8hTCZCbA-rAaCD48R_MPf2LoE/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -879,7 +885,7 @@ function Page() {
                                     title={"Appropriate Building Technology"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR232.docx"}
+                                    url={"https://docs.google.com/document/d/1N8_3470vJtaSpdM9wZRzjQezZKOoTclR/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -888,7 +894,7 @@ function Page() {
                                     title={"Futuristic Architecture"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR233.docx"}
+                                    url={"https://docs.google.com/document/d/1dHuLvvLnYkCxsZujTwvKy1xBqOEuMi5h/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
                                 <SyallbusComp
                                     dep={"ARUG"}
@@ -897,7 +903,7 @@ function Page() {
                                     title={"Marketing skill"}
                                     L={"3"} T={"0"} P={"0"}
                                     cred={"3"}
-                                    url={"https://web.nitp.ac.in/dept/arch/syllabus/AR234.docx"}
+                                    url={"https://docs.google.com/document/d/14VMOVZy38wxsxxdy4fEsilKy-HGSqrpc/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                                 />
 
 

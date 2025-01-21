@@ -30,11 +30,11 @@ function Carousel({children:pics,
 
 function Page(){
     var labUrl = [
-        "https://web.nitp.ac.in/dept/arch/labs/DSC_0686.jpg",
-        "https://web.nitp.ac.in/dept/arch/labs/DSC_0680.jpg",
-        "https://web.nitp.ac.in/dept/arch/labs/DSC_0675.jpg",
-        "https://web.nitp.ac.in/dept/arch/labs/DSC_0666.jpg",
-        "https://web.nitp.ac.in/dept/arch/labs/DSC_0663.jpg",
+        "/alab1.jpg",
+        "/alab2.jpg",
+        "/alab3.jpg",
+        "/alab4.jpg",
+        "/alab5.jpg",
     ]
     return (
         <div className=" flex flex-col p-5 text-black">  

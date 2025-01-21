@@ -4,15 +4,14 @@ import BackDepartment from "../../../components/department/BackDepartment";
 import { useEffect, useState } from "react";
 
 export default function Labs(){
-    const [feature , setFeature] = useState("https://web.nitp.ac.in/dept/ee/labs/DSC_0057.jpg")
+    const [feature , setFeature] = useState("/eelab1.jpg")
     const [it, setIt]= useState(0);
     var picture = [
-        "https://web.nitp.ac.in/dept/ee/labs/DSC_0057.jpg",
-        "https://web.nitp.ac.in/dept/ee/labs/DSC_0056.jpg",
-        "https://web.nitp.ac.in/dept/ee/labs/DSC_0063.jpg",
-        "https://web.nitp.ac.in/dept/ee/labs/DSC_0058.jpg",
-        "https://web.nitp.ac.in/dept/ee/labs/DSC_0061.jpg",
-        "https://web.nitp.ac.in/dept/ee/labs/DSC_0063.jpg",
+        "/eelab1.jpg",
+        "/eelab2.jpg",
+        "/eelab3.jpg",
+        "/eelab4.jpg",
+       
     ]
     useEffect(()=>{
         const interval = setInterval(()=>{
