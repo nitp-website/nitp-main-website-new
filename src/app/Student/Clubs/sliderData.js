@@ -60,5 +60,11 @@ export const sliderData = [
       heading: 'DesCo club',
       description: 'Design Company (DesCo) club represents the forefront of design and creativity at NIT Patna. It serves as a platform for students passionate about various design disciplines, offering opportunities to enhance their skills in graphic design, UI/UX, digital art, VFX, and animation. Established in 2023 under the guidance of Dr. Rajan Agrahari, DesCo has quickly grown into one of the most active and dynamic communities on campus. Our vision is to lead with creativity, seamlessly blending aesthetics with functionality to develop designs that drive success, foster meaningful connections, and make a lasting impact.',
   },
+  {
+      image: '/GYBlogo.png',
+      heading: 'GYB club',
+      description:'Get Your Book (GYB) is the premier book donation and social welfare club of NIT Patna. Our mission is to foster community engagement, promote literacy, and support underprivileged communities through a variety of initiatives. Some of our key activities include: Blanket Donation Drive: Distributing blankets to those in need during the winter season. Social Events : Organizing heartwarming initiatives such as Jyoti and Sahyog, which bring joy and essential resources to orphanages and underprivileged children. In Jyoti, we celebrate the spirit of Diwali by spreading light and happiness among orphans, while in Sahyog, we embrace the vibrance of Holi, sharing colors of joy and unity with them. Fun Events : organizing vibrant and engaging events like Abhiyaanta and Utkrisht, filled with music, dance, quizzes, poetry, and fun activities. These events aim to foster creativity,celebrate talent, and build camaraderie among students while providing a platform for self-expression and enjoyment.'
+
+  },
 ];
  

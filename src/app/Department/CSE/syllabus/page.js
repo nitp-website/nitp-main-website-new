@@ -2164,7 +2164,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS14102_Programming in C.docx"
+                            url="https://docs.google.com/document/d/1Laetf_V2obTG6UuyRObSpBjbnbeNQ4Ug/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2175,7 +2175,7 @@ export default function Page() {
                             T={"1"}
                             P={"0"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/MA14102_Engineering Mathematics I.docx"
+                            url="https://drive.google.com/file/d/1PqRPghnNBMyU9Mz22AJIKWt2bt2V2pYG/view?usp=sharing"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2208,7 +2208,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS14106_Information Technology  Workshop.docx"
+                            url="https://docs.google.com/document/d/1Kb8c-AWBe32jR5Hkk9ThzpWAWvG7XnfV/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2230,7 +2230,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS24107_Web Technology.docx"
+                            url="https://docs.google.com/document/d/1pawxJaXFRBxaSvKfbYDbAIuau_NBMMc5/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2241,7 +2241,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/HS24101_Communicative English.docx"
+                            url="https://docs.google.com/document/d/19MQXNBQcV-WrtjN07o5ZF2RzyS3K8sgf/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2263,7 +2263,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS24108_Computer Organization.docx"
+                            url="https://docs.google.com/document/d/1J4-POYcGi0EjoK0bl7MFrmYj7y-ma7ZD/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2296,7 +2296,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS34104_Data Structures.docx"
+                            url="https://docs.google.com/document/d/1RSWe4Ol_OzUJZ_Xnw1aBx7oRgOtFBnGJ/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2307,7 +2307,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS34105_Object Oriented Programming.docx"
+                            url="https://docs.google.com/document/d/1AcIFHwdg-TjrxGE9ydHR03KJgR_LOsQ3/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2318,7 +2318,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS34109_Database Management Systems.docx"
+                            url="https://docs.google.com/document/d/1XmBsCdlZZ1R6hVx5yxvHAAfak8MK6n7N/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2329,7 +2329,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS34110_Discrete Mathematics and Graph Theory.docx"
+                            url="https://docs.google.com/document/d/1ieTOepzsLN47AIcbMPAvrICt1Ee_91cm/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2340,7 +2340,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS34111_Operating Systems.docx"
+                            url="https://docs.google.com/document/d/17S9_8GLb7BVUeA72VeC172dbBSLjP8wV/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2362,7 +2362,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS44112_Artificial Intelligence.docx"
+                            url="https://docs.google.com/document/d/1qxTfzoloOXHFzcar7gHBBGjXk6of46Ie/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2373,7 +2373,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS44113_Computer Networks.docx"
+                            url="https://docs.google.com/document/d/1m3-hcz_J_Gy3ZgEpLdmmgmL_7_n9r4RF/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2384,7 +2384,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS44114_Automata Theory and compiler design.docx"
+                            url="https://docs.google.com/document/d/1b2fKT61VoInfgfdYE2hfqQN6NaCfni5y/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2395,7 +2395,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS44115_Design and Analysis of Algorithms.docx"
+                            url="https://docs.google.com/document/d/1cFVD0jPIkMKl5_U56ADKeC088VzF2NFG/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2417,7 +2417,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS54116_Software Enginnering.docx"
+                            url="https://docs.google.com/document/d/1Ly-i_E97RWD-CnpK9rOP46zuc9uKGF2n/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2428,7 +2428,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS54117_Internet of Things.docx"
+                            url="https://docs.google.com/document/d/1UZI9kjg2W73ANTPhIumW2jLb_p1o5lRT/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2439,7 +2439,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS54118_Machine Learning.docx"
+                            url="https://docs.google.com/document/d/1HmwRemL1TZKZvJwDls7KrZ_5y9Eanf6n/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2450,7 +2450,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS54119_Information Security.docx"
+                            url="https://docs.google.com/document/d/1MTJLtyNnuurT5g77toJOMroncmjcBFjw/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2483,7 +2483,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS64120_Data Mining.docx"
+                            url="https://docs.google.com/document/d/1nP4g9zgMIsg9Z-Z_YMl-wfT4tgkqXuFy/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2494,7 +2494,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS64121_Cloud Computing.docx"
+                            url="https://docs.google.com/document/d/1bcXC_1-9K_yRR-RpvjHYqI6TOr4KDNOM/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2616,7 +2616,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4145_Distributed Database Systems.docx"
+                            url="https://docs.google.com/document/d/1l65d9AUyYad4SX_C05PhvxFzhbcqKluI/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2627,7 +2627,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4146_Operations Research.docx"
+                            url="https://docs.google.com/document/d/1SMdn4Dlszgv9aB97GfP8SSPo4NinGI6b/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2638,7 +2638,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4147_Digital Image Processing.docx"
+                            url="https://docs.google.com/document/d/1gxUT-PfAQEAYuJ6egXShByW8X2T7tRU6/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2649,7 +2649,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4148_Intrusion Detection.docx"
+                            url="https://docs.google.com/document/d/14nJ0D2cXbO9QcTNxBQleRnVaUhnf6Hne/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2660,7 +2660,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4149_Real Time Systems.docx"
+                            url="https://docs.google.com/document/d/1qZ1t0PUOUljOw19JOW5kNcoYa93hbcmj/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2671,7 +2671,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4150_Computer Vision.docx"}
+                            url={"https://docs.google.com/document/d/1YL2rJGcfookQ7xnX0eRXQ9TJu7E0rSz9/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2682,7 +2682,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4151_Social Networks.docx"}
+                            url={"https://docs.google.com/document/d/1JOarJ7Yt1Y6Sz72R80YMOgxuCzIpEc1Q/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2693,7 +2693,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4152_Big Data Analytics.docx"}
+                            url={"https://docs.google.com/document/d/1CZJKqsgYSZ3ZkCT9GDCkBfR-ZKA_13WS/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2704,7 +2704,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4153_Network Security.docx"}
+                            url={"https://docs.google.com/document/d/1A69iHWwZpSZnv3IXzNgJAk1Rkg1sqheq/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2715,7 +2715,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4154_Object Oriented Systems Development.docx"}
+                            url={"https://docs.google.com/document/d/1Nl7iOnagsXHAeZrr9Zefh3MPVjjD2EQZ/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2726,7 +2726,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4155_Computer Graphics.docx"}
+                            url={"https://docs.google.com/document/d/1QRNtJpewM3GyXcNvxNwhkobXwOE1seR2/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2737,7 +2737,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4156_Malware Analysis.docx"}
+                            url={"https://docs.google.com/document/d/14DKdLQoEUJp7LoEmsDkV8RFYBRPfeDkQ/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2748,7 +2748,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4157_Microprocesor and Microcontrollers.docx"}
+                            url={"https://docs.google.com/document/d/1bcMLi4k5ZFqsBAY6qTikHcQcAhnBKXaX/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2759,7 +2759,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4158_Distributed Systems.docx"}
+                            url={"https://docs.google.com/document/d/1EMlH-ckCc06Kh8tTBJ1qd6b9WNV513HE/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2770,7 +2770,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4159_Virtual Reality.docx"}
+                            url={"https://docs.google.com/document/d/1gAqAZIIZrREhSE4h85efeqgmouYLkAe2/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2792,7 +2792,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4161_Blockchain Technology.docx"}
+                            url={"https://docs.google.com/document/d/19gB-WwR_AW59vdjUrb4Rstbq6620j9Nj/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2803,7 +2803,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4162_Biometrics.docx"}
+                            url={"https://docs.google.com/document/d/1e3FUKMS6uF0suqwg7oNpnz7aGeMgksJK/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2814,7 +2814,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4163_Recommendation Systems.docx"}
+                            url={"https://docs.google.com/document/d/12yx2A54mJK0V_wOGyofy8HNWVtszJngE/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2825,7 +2825,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4164_Computer System Parallelism.docx"}
+                            url={"https://docs.google.com/document/d/1ciPxkdXRfDyNW4mwkroOi5XSXIaXleOg/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2836,7 +2836,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4165_Advanced Algorithms.docx"}
+                            url={"https://docs.google.com/document/d/10GfpuVyUl1SE8erm7eTK8A5qcsisGURM/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2847,7 +2847,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4166_File System Forensic .docx"}
+                            url={"https://docs.google.com/document/d/1sxsTWXYjaows_Iv8bSvyRCGgODGHmy8J/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2858,7 +2858,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4167_Distributed Operating Systems .docx"}
+                            url={"https://docs.google.com/document/d/1Dt68ddGSW_1uF-EzFnOSOePf02qgLaaO/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2869,7 +2869,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4171_Adversarial ML.docx"}
+                            url={"https://docs.google.com/document/d/1-2xt39Nny462tcyOYdbYQUf-vag37ftn/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2880,7 +2880,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={<a target="_blank" rel="noopener noreferrer" href="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4172_Digital Signal Processing  .docx">Digital Signal Processing  </a>}
+                            url={<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1U0YNTBGw375B8V-aBDYF25QNu6bq6DrC/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true">Digital Signal Processing  </a>}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2891,7 +2891,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={<a target="_blank" rel="noopener noreferrer" href="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4173_IOT Systems .docx">IOT Systems </a>}
+                            url={<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1R3FigmRSFBRRXdZBq2z1LCVcMk45SfpB/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true">IOT Systems </a>}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2902,7 +2902,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={<a href="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4174_Nature Inspired Computing.docx" target="_blank" rel="noopener noreferrer">Nature Inspired Computing</a>}
+                            url={<a href="https://docs.google.com/document/d/1K7KEaFieY18TibIK2fUKdNAoNjpQ8Nbh/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Nature Inspired Computing</a>}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2913,7 +2913,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={<a href="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4175_Image Processing Techniques.docx" target="_blank" rel="noopener noreferrer">Image Processing Techniques</a>}
+                            url={<a href="https://docs.google.com/document/d/1miIX9l7SZBTfB8LRDAjl2KWcc0dD8orN/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Image Processing Techniques</a>}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2924,7 +2924,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={<a target="_blank" rel="noopener noreferrer" href="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4176_Bioinformatics.docx">Bioinformatics</a>}
+                            url={<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1eMJ5ISZCCL88a5MatCmkDm6PINGqqh4q/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true">Bioinformatics</a>}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2935,7 +2935,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4177_Information Retrieval.docx"
+                            url="https://docs.google.com/document/d/1KCXKqgy9REBafSRt2BwHRRJuX6RUZiSc/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2946,7 +2946,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4178_Computer Vision.docx"
+                            url="https://docs.google.com/document/d/1X4gz-aloliMvHRcKoRADamwQ996II6eN/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2957,7 +2957,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4179_Reinforcement Learning.docx"
+                            url="https://docs.google.com/document/d/1ty5cVwLoFtZUbjCq3eP5xTxmCrE0wFF5/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2968,7 +2968,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4180_Social Networks.docx"
+                            url="https://docs.google.com/document/d/1gYd_G-esxH4MFpCDMk2IvszNvRzrLAK2/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2979,7 +2979,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4181_Recommendation Systems.docx"
+                            url="https://docs.google.com/document/d/1hwLgXncyaViDFfFJv8T4IR96PRuelZJJ/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -2990,7 +2990,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4182_Speech Processing.docx"
+                            url="https://docs.google.com/document/d/1jz8G1Sa35OvY3zQF4-AtT7lGm2IlFDAr/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3001,7 +3001,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4183_Malware Analysis.docx"
+                            url="https://docs.google.com/document/d/1Fh3GfZuqFMzkO7SQvpJHZSy2RlgwKde5/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3012,7 +3012,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4184_Network Security .docx"
+                            url="https://docs.google.com/document/d/1YSSBl6bX5etTV23kXT2nm1pl36NTmVbX/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3023,7 +3023,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4185_Intrusion Detection .docx"
+                            url="https://docs.google.com/document/d/1Z7mghmRukFoQCyUuLhdRCQcWDIlKWflR/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3034,7 +3034,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4186_Time Series Analysis.docx"
+                            url="https://docs.google.com/document/d/1y6bTaesesALe8LMmJt_rUprn3ZKcWRHQ/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3045,7 +3045,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4187_Big Data Analytics.docx"
+                            url="https://docs.google.com/document/d/1mFKJt-b3wB2Z9iamL7afmm_ZDq4R4V3T/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3056,7 +3056,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4188_Multimedia Systems.docx"}
+                            url={"https://docs.google.com/document/d/1OEnWO0_xJ3hLVOiBVP29sFJQeY5KasCO/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3067,7 +3067,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4189_Biometric Security.docx"
+                            url="https://docs.google.com/document/d/1EhWC2uIWE1hA85QvmspTCCFzHLh6zsVm/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3078,7 +3078,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4190_Federated Learning.docx"
+                            url="https://docs.google.com/document/d/1VLIlM1YX8cdjIO_Sw751R7cogm2DpxrI/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3100,7 +3100,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4201_Adversarial ML.docx"
+                            url="https://docs.google.com/document/d/1HqRTRrFRZKAbD60VSgzOYpEzBc3_UexD/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3111,7 +3111,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4202_Deep Learning Algorithms.docx"
+                            url="https://docs.google.com/document/d/1o6lfGSbmQdO9kw7u-wRn1a0bCZZI2xY5/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3122,7 +3122,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4203_Mathematical Foundations for Information Security.docx"
+                            url="https://docs.google.com/document/d/1IrZ9aRn7IpNo4AI_eFFz7cE8LiREgYY2/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3133,7 +3133,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4204_Information Theory and Coding.docx"
+                            url="https://docs.google.com/document/d/1TJR89VDIpmlILB-G7dbhWVbf8ABrz4UV/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3144,7 +3144,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4205_Wireless & Mobile Security.docx"
+                            url="https://docs.google.com/document/d/1shUg9uOiPycMGj3xOuMDcNoovXnZW1ev/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3155,7 +3155,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4206_Image Processing Techniques.docx"
+                            url="https://docs.google.com/document/d/1iwsa5RqOc0DTwLMfI5uiltc4lnDw-ftn/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3166,7 +3166,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4207_Cyber Security.docx"
+                            url="https://docs.google.com/document/d/1j3ft9g3DKeGvj60mO4V7mvb_u7rxCcxh/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3177,7 +3177,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4208_Multimedia System.docx"}
+                            url={"https://docs.google.com/document/d/10pwkrKzpK8YK6FFyUCW3r7291-zs9xS_/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3188,7 +3188,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4209_Computer Vision.docx"}
+                            url={"https://docs.google.com/document/d/1ftET6LAOoxixZEMsZc4Mh6Hv1rryk7LS/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3199,7 +3199,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4210_Big Data Analytics.docx"}
+                            url={"https://docs.google.com/document/d/1tEMO9w4AA3Fp57suQ4-QRFxhaTUVWouw/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3210,7 +3210,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4211_Cloud Computing Security.docx"}
+                            url={"https://docs.google.com/document/d/1esRjPnXyMoFka_eOmKpvaBH2eCyiwCM4/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3221,7 +3221,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4212_Biometric Security.docx"}
+                            url={"https://docs.google.com/document/d/1UmOi2k0Z-jBbwXnM9mZH2oHMXYBfZpPX/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3232,7 +3232,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4213_Ethical Hacking.docx"}
+                            url={"https://docs.google.com/document/d/1oD30Q_Ix31f4eSWzuq1mhVemriiKmJTM/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3243,7 +3243,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4214_Blockchain Technology.docx"}
+                            url={"https://docs.google.com/document/d/1bqmy27VUjzWR2p0i_NyjSY4zE3C2ua_r/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3254,7 +3254,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4215_Cyber laws and rights.docx"}
+                            url={"https://docs.google.com/document/d/1d4bUJwQvsOBC_tww9Kh9pHl4wzvoYziK/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3265,7 +3265,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4216_Digital Watermarking and Steganography.docx"}
+                            url={"https://docs.google.com/document/d/1WfK0HsPEg0HI5YLgmjLFkRExJ3KuEHrH/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3276,7 +3276,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4217_Privacy and Security for Online Social Networks.docx"}
+                            url={"https://docs.google.com/document/d/1myfSFHGRbvMCRQR1JAajOLOLbms1ATMv/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3287,7 +3287,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4218_Malware Analysis.docx"}
+                            url={"https://docs.google.com/document/d/1DA2GOZXtzKdVLIyagPWar9V3aoUhoc_1/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3298,7 +3298,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4219_Soft Computing.docx"}
+                            url={"https://docs.google.com/document/d/1YuDUg5YpD6Jdq3zw6yfTvl856FgZFPFj/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3309,7 +3309,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4220_Ubiquitous Computing.docx"}
+                            url={"https://docs.google.com/document/d/1gwC-83z24lw3afgqFkJbCmEwNpi-dIhf/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3320,7 +3320,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4221_Embedded System and Hardware Security.docx"}
+                            url={"https://docs.google.com/document/d/1Tq4nLaeHan2DObRFfcjUdJYjOVkiRo4b/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3331,7 +3331,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4222_Distributed System Design.docx"}
+                            url={"https://docs.google.com/document/d/1PXdX-tEq21RiwHsES6xQmB6MMcv5FfXw/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3342,7 +3342,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4223_Software Defined Networks.docx"}
+                            url={"https://docs.google.com/document/d/1wr2yl0kC-3GH_z0rQt8Z1o6d-wfjvYU5/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3353,7 +3353,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4224_Secure Software Systems.docx"}
+                            url={"https://docs.google.com/document/d/1IqPLXgz1Wlx6E2c74qAeWpqqbU5GGG4_/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3364,7 +3364,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4225_Pattern Recognition Technique.docx"}
+                            url={"https://docs.google.com/document/d/1Z-J6TY5QdH97ETNeGi2opFJLbaLDfMbB/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3375,7 +3375,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4226_Natural Language Processing Technique.docx"}
+                            url={"https://docs.google.com/document/d/16A7uezJcbx3IEQuqKSIKMH6TTb9GHIMK/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -3386,7 +3386,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4227_Data Visualization.docx"}
+                            url={"https://docs.google.com/document/d/1E2jMs7RXCepPOPHoDtp8u5dkF-pftjB8/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSUG"}
@@ -4169,7 +4169,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS14102_Programming in C.docx"}
+                            url={"https://docs.google.com/document/d/1Laetf_V2obTG6UuyRObSpBjbnbeNQ4Ug/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4213,7 +4213,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS14106_Information Technology Workshop.docx"}
+                            url={"https://docs.google.com/document/d/1Kb8c-AWBe32jR5Hkk9ThzpWAWvG7XnfV/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4236,7 +4236,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS24107_Web Technology.docx"}
+                            url={"https://docs.google.com/document/d/1pawxJaXFRBxaSvKfbYDbAIuau_NBMMc5/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4247,7 +4247,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/HS24101_Communicative English.docx"}
+                            url={"https://docs.google.com/document/d/19MQXNBQcV-WrtjN07o5ZF2RzyS3K8sgf/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4269,7 +4269,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS24108_Computer Organization.docx"}
+                            url={"https://docs.google.com/document/d/1J4-POYcGi0EjoK0bl7MFrmYj7y-ma7ZD/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4303,7 +4303,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS34104_Data Structures.docx"}
+                            url={"https://docs.google.com/document/d/1RSWe4Ol_OzUJZ_Xnw1aBx7oRgOtFBnGJ/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4314,7 +4314,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS34105_Object Oriented Programming.docx"}
+                            url={"https://docs.google.com/document/d/1AcIFHwdg-TjrxGE9ydHR03KJgR_LOsQ3/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4325,7 +4325,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS34109_Database Management Systems.docx"}
+                            url={"https://docs.google.com/document/d/1XmBsCdlZZ1R6hVx5yxvHAAfak8MK6n7N/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4336,7 +4336,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS34110_Discrete Mathematics and Graph Theory.docx"}
+                            url={"https://docs.google.com/document/d/1ieTOepzsLN47AIcbMPAvrICt1Ee_91cm/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4347,7 +4347,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS34111_Operating Systems.docx"}
+                            url={"https://docs.google.com/document/d/17S9_8GLb7BVUeA72VeC172dbBSLjP8wV/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4370,7 +4370,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS44112_Artificial Intelligence.docx"}
+                            url={"https://docs.google.com/document/d/1qxTfzoloOXHFzcar7gHBBGjXk6of46Ie/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4381,7 +4381,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS44113_Computer Networks.docx"}
+                            url={"https://docs.google.com/document/d/1m3-hcz_J_Gy3ZgEpLdmmgmL_7_n9r4RF/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4392,7 +4392,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS44114_Automata Theory and compiler design.docx"}
+                            url={"https://docs.google.com/document/d/1b2fKT61VoInfgfdYE2hfqQN6NaCfni5y/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4403,7 +4403,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS44115_Design and Analysis of Algorithms.docx"}
+                            url={"https://docs.google.com/document/d/1cFVD0jPIkMKl5_U56ADKeC088VzF2NFG/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4426,7 +4426,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS54116_Software Enginnering.docx"}
+                            url={"https://docs.google.com/document/d/1Ly-i_E97RWD-CnpK9rOP46zuc9uKGF2n/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4437,7 +4437,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS54117_Internet of Things.docx"}
+                            url={"https://docs.google.com/document/d/1UZI9kjg2W73ANTPhIumW2jLb_p1o5lRT/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4448,7 +4448,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS54118_Machine Learning.docx"}
+                            url={"https://docs.google.com/document/d/1HmwRemL1TZKZvJwDls7KrZ_5y9Eanf6n/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4459,7 +4459,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS54119_Information Security.docx"}
+                            url={"https://docs.google.com/document/d/1MTJLtyNnuurT5g77toJOMroncmjcBFjw/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4493,7 +4493,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS64120_Data Mining.docx"}
+                            url={"https://docs.google.com/document/d/1nP4g9zgMIsg9Z-Z_YMl-wfT4tgkqXuFy/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4504,7 +4504,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS64121_Cloud Computing.docx"}
+                            url={"https://docs.google.com/document/d/1bcXC_1-9K_yRR-RpvjHYqI6TOr4KDNOM/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4549,7 +4549,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS74135_Applied Cryptography.docx"}
+                            url={"https://docs.google.com/document/d/1n4DxgPfJlmVSM0supB9XKyXwCJWKgxc_/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4560,7 +4560,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS74136_Network Security System.docx"}
+                            url={"https://docs.google.com/document/d/1uaGmw_I-FrhMnzC2LQfo3fdb_fvMri58/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4616,7 +4616,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS84138_Intrusion Detection and Prevention .docx"}
+                            url={"https://docs.google.com/document/d/1Mt_db_mMNxMgr_Ah0Pr5mA05NgTxmLpw/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4627,7 +4627,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS84139_Advanced Internet of Things (IoT).docx"}
+                            url={"https://docs.google.com/document/d/14ZqQt4PPndjFaQZMXejF0QxkB7v_uNll/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4638,7 +4638,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"4"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CS84140_Cyber Forensics.docx"}
+                            url={"https://docs.google.com/document/d/1o9AgSJ8HCdj-YKLMKuHewamHU1TYGMyz/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4965,7 +4965,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CSX4204_Information%20Theory%20and%20Coding.docx"}
+                            url={"https://docs.google.com/document/d/1TJR89VDIpmlILB-G7dbhWVbf8ABrz4UV/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -4986,7 +4986,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CSX4206_Image%20Processing%20Techniques.docx"}
+                            url={"https://docs.google.com/document/d/1iwsa5RqOc0DTwLMfI5uiltc4lnDw-ftn/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5017,7 +5017,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CSX4150_Computer%20Vision.docx"}
+                            url={"https://docs.google.com/document/d/1ftET6LAOoxixZEMsZc4Mh6Hv1rryk7LS/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5088,7 +5088,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CSX4216_Digital%20Watermarking%20and%20Steganography.docx"}
+                            url={"https://docs.google.com/document/d/1WfK0HsPEg0HI5YLgmjLFkRExJ3KuEHrH/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5109,7 +5109,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CSX4218_Malware%20Analysis.docx"}
+                            url={"https://docs.google.com/document/d/1DA2GOZXtzKdVLIyagPWar9V3aoUhoc_1/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5120,7 +5120,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CSX4219_Soft%20Computing.docx"}
+                            url={"https://docs.google.com/document/d/1YuDUg5YpD6Jdq3zw6yfTvl856FgZFPFj/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5151,7 +5151,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CSX4222_Distributed%20System%20Design.docx"}
+                            url={"https://docs.google.com/document/d/1PXdX-tEq21RiwHsES6xQmB6MMcv5FfXw/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5162,7 +5162,7 @@ export default function Page() {
                             T={"0"}
                             P={"0"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CSX4223_Software%20Defined%20Networks.docx"}
+                            url={"https://docs.google.com/document/d/1wr2yl0kC-3GH_z0rQt8Z1o6d-wfjvYU5/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5173,7 +5173,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CSX4224_Secure%20Software%20Systems.docx"}
+                            url={"https://docs.google.com/document/d/1IqPLXgz1Wlx6E2c74qAeWpqqbU5GGG4_/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5184,7 +5184,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CSX4225_Pattern%20Recognition%20Technique.docx"}
+                            url={"https://docs.google.com/document/d/1Z-J6TY5QdH97ETNeGi2opFJLbaLDfMbB/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
@@ -5195,7 +5195,7 @@ export default function Page() {
                             T={"0"}
                             P={"2"}
                             cred={"3"}
-                            url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_dual_degree_cyber_security/CSX4226_Natural%20Language%20Processing%20Technique.docx"}
+                            url={"https://docs.google.com/document/d/16A7uezJcbx3IEQuqKSIKMH6TTb9GHIMK/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                         />
                         <SyllabusComp
                             dep={"CSE"}
