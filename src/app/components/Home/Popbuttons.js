@@ -1,7 +1,7 @@
 "use client"
 import React,{useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserGraduate, faGraduationCap, faSchool, faBookOpen, faBolt, faUsers, faCalendarAlt, faBuilding,faPlaneDeparture } from '@fortawesome/free-solid-svg-icons';
+import { faUserGraduate, faGraduationCap, faSchool, faBookOpen, faBolt, faUsers, faCalendarAlt, faBuilding,faPlaneDeparture, faHandHoldingDollar } from '@fortawesome/free-solid-svg-icons';
 import './styles/Popbutton.css';
 import Link from 'next/link';
 import AOS from 'aos';
@@ -61,6 +61,10 @@ const Popbuttons = () => {
       <a href="https://nitp-ict.ct.ws" className="card card1" target="_blank" >
         <FontAwesomeIcon icon={faBuilding} size="3x" className="mobileicondiv" color='#f7cece'/>
         <p className="headingp headingp1 headingp1t">Electronics & ICT Academy</p>
+      </a>
+      <a href="/DevelopmentFund" className="card">
+      <FontAwesomeIcon icon={faHandHoldingDollar} size="4x" className="mobileicondiv" color='#BA210E' />
+      <p className="headingp ">Development Fund</p>
       </a>
 
     </div>
