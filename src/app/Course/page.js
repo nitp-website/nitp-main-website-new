@@ -3,17 +3,20 @@
 import { useRouter } from "next/navigation";
 
 
-export default function Page() {  
+export default function Page() {
     const router = useRouter();
-    return(
+    return (
         <div>
             <div className="my-10 mx-2 flex space-x-1 overflow-x-auto ">
                 <div className="min-w-[800px] flex space-x-1 text-sm lg:text-base">
-                    <button onClick={() => {
+                    <div class=" items-center justify-center ml-auto">
+                        <h1 class="text-4xl font-bold text-center">All Courses</h1>
+                    </div>
+                    {/* <button onClick={() => {
                         router.push("/Course")
-                    }} className={`border border-black rounded text-white bg-red-900 px-2`}>ALL Courses</button>
-                    
-                    <button onClick={() => {
+                    }} className={`border border-black rounded text-white bg-red-900 px-2`}>ALL Courses</button> */}
+
+                    {/* <button onClick={() => {
                         router.push("/Course/Ug")
                     }} className={`border border-black rounded  text-red-900 px-2`}>UG Courses</button>
                     
@@ -31,7 +34,7 @@ export default function Page() {
                     
                     <button onClick={() => {
                         router.push("/Course/MCA")
-                    }} className={`border border-black rounded text-red-900 px-2`}>MCA program</button>
+                    }} className={`border border-black rounded text-red-900 px-2`}>MCA program</button> */}
                 </div>
             </div>
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
@@ -157,7 +160,7 @@ export default function Page() {
                             </div>
                             <div className="px-2 flex flex-col justify-center col-span-1 ">2 years</div>
                         </div>
-                       
+
                         {/* Master of Technology (Electrical Engineering) */}
                         <div className=" grid grid-cols-12  border-b border-l border-r border-black">
                             <div className="flex flex-col justify-center col-span-1 border-r border-black">
@@ -192,7 +195,7 @@ export default function Page() {
                             </div>
                             <div className="px-2 flex flex-col justify-center col-span-1 ">2 years</div>
                         </div>
-                        
+
                         {/* Five Years Integrated Programs */}
                         <div className=" grid grid-cols-12  border-b border-l border-r border-black">
                             <div className="px-2 h-10 flex flex-col justify-center col-span-12">Five Years Integrated Programs</div>
