@@ -340,6 +340,16 @@ const ServiceUNIT = [
   type: "Prof. In-charge",
   designation: "Training and Placement",
  },
+  {
+  name: "Dr. Ajay Kumar",
+  type: "Associate Professor",
+  designation: " Asst. PI (T&P)"
+},
+{
+  name: "Dr. S K Tripathy",
+  type: "Assistant Professor",
+  designation: " Asst. PI (T&P)"
+},
  {
   name: "Prof. M P Singh",
   type: "Chief Investigator",
@@ -420,16 +430,7 @@ const ServiceUNIT = [
   type: "Assistant Professor",
   designation: "Co PI – EMU; Coordinator - NSS"
 },
-{
-  name: "Dr. Ajay Kumar",
-  type: "Assistant Professor",
-  designation: " Asst. PI (T&P)"
-},
-{
-  name: "Dr. S K Tripathy",
-  type: "Assistant Professor",
-  designation: " Asst. PI (T&P)"
-},
+
  {
   name: "Dr. Bambam Kumar",
   type: "Assistant Professor",
