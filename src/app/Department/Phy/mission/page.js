@@ -37,9 +37,10 @@ function Page(){
                     <br/><br/>
                     To create National and International collaborations for research engagement in strategic areas of research
                     <br/><br/>
-                    To undertake joint initiatives which offer opportunities for long-term interaction with academia, industry, government and society.
-                    <br/><br/>
-                    To create National and International collaborations for research engagement in strategic areas of research
+             
+                  To create National and International collaborations for research engagement in strategic areas of research
+
+
                     </p>
                 </div>
             </div>
