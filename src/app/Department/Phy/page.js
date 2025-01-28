@@ -72,12 +72,24 @@ export default function ME() {
             About
           </div>
           <div className="text-justify max-sm:text-[12px]">
-            The Department of Physics was established in 1924 and since then
+            {/* The Department of Physics was established in 1924 and since then
             has been functioning as an important part of the institute. As of
             now, the Department has eight faculty members and four support
             staffs at different levels. At present, there are 12 students
             enrolled in Integrated M. Sc. And 8 students enrolled in the Ph.
-            D. program.The Department is mentored by Prof. K.L.Chopra, Ex-Director, IIT Kharagpur.
+            D. program.The Department is mentored by Prof. K.L.Chopra, Ex-Director, IIT Kharagpur. */}
+            The Department of Physics was established in the year 1924 and since then
+            has been functioning as an important unit of the institute. As of 
+            now, the Department has nine faculty members who are actively involved 
+            in both teaching and research and three supporting staffs including one Technical Assistant 
+            for Labs. The Department of Materials Science and Engineering started in the year 2022. 
+            The Department has started a new Dual degree program B.Tech-M.Tech
+            in Material Science and Engineering from the session 2022-23. 
+            There are 08 candidates enrolled in dual degree program in the session 2022-23 and 09 candidates 
+            enrolled in the session 2023-24 and 10 candidates enrolled in the session 2024-25. 
+            In the year of 2024-25 the department has been merged with Physics department 
+            and thereafter new department has started and named as “Applied Physics and Materials Engineering”. 
+            The Department is mentored by Prof. K.L.Chopra, Ex-Director, IIT Kharagpur.
             <button
               onClick={() => router.push('/Department/Phy/about')}
               className="text-blue-600"
@@ -100,14 +112,14 @@ export default function ME() {
             onClick={() => router.push('/Department/Phy/syllabus')}
             Title={'SYLLABUS'}
           />
-          <DepartmentNavigationButton
+          {/* <DepartmentNavigationButton
             onClick={() => router.push('/Department/Phy/timeTable')}
             Title={'TIME TABLE'}
-          />
-          <DepartmentNavigationButton
+          /> */}
+          {/* <DepartmentNavigationButton
             onClick={() => router.push('/Department/Phy/lab')}
             Title={'LABS'}
-          />
+          /> */}
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/Phy/activities')}
             Title={'ACTIVITIES'}
@@ -118,10 +130,10 @@ export default function ME() {
             onClick={() => router.push('/Department/Phy/achievements')}
             Title={'ACHIEVEMENTS'}
           />
-          <DepartmentNavigationButton
+          {/* <DepartmentNavigationButton
             onClick={() => router.push('/Department/Phy/research')}
             Title={'Research Highlights'}
-          />
+          /> */}
         </div>
       </div>
     </div>

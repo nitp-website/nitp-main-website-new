@@ -395,11 +395,11 @@ const navItems = [
             link: "/Academic/Admission?tab=JoSAA",
             iconImage: Admission,
           },
-          {
-            label: "Relaxation Criteria",
-            link: "/Academic/Admission?tab=Relaxation",
-            iconImage: Admission,
-          },
+          // {
+          //   label: "Relaxation Criteria",
+          //   link: "/Academic/Admission?tab=Relaxation",
+          //   iconImage: Admission,
+          // },
         ],
       },
 
@@ -408,30 +408,30 @@ const navItems = [
         link: "/Academic/Format",
         iconImage: Document,
       },
-      {
-        label: "Course Structure",
-        link: "/Course",
-        iconImage: Structure,
-        children: [
-          { label: "UG", link: "/Course/Ug", iconImage: Structure },
-          {
-            label: "Post Graduate",
-            link: "/Course/Pg",
-            iconImage: Structure,
-          },
-          {
-            label: "Dual Degree",
-            link: "/Course/MTech",
-            iconImage: Structure,
-          },
-          {
-            label: "Integrated M.Sc",
-            link: "/Course/MSc",
-            iconImage: Structure,
-          },
-          { label: "MCA", link: "/Course/MCA", iconImage: Structure },
-        ],
-      },
+      // {
+      //   label: "Course Structure",
+      //   link: "/Course",
+      //   iconImage: Structure,
+      //   children: [
+      //     { label: "UG", link: "/Course/Ug", iconImage: Structure },
+      //     {
+      //       label: "Post Graduate",
+      //       link: "/Course/Pg",
+      //       iconImage: Structure,
+      //     },
+      //     {
+      //       label: "Dual Degree",
+      //       link: "/Course/MTech",
+      //       iconImage: Structure,
+      //     },
+      //     {
+      //       label: "Integrated M.Sc",
+      //       link: "/Course/MSc",
+      //       iconImage: Structure,
+      //     },
+      //     { label: "MCA", link: "/Course/MCA", iconImage: Structure },
+      //   ],
+      // },
 
       {
         label: "Academic Notices",
@@ -640,11 +640,11 @@ const navItems = [
       //     },
       //   ],
       // },
-      {
-        label: "Incubation Center",
-        link: "https://web.nitp.ac.in/incubation_center/index.html",
-        iconImage: Ecell,
-      },
+      // {
+      //   label: "Incubation Center",
+      //   link: "https://web.nitp.ac.in/incubation_center/index.html",
+      //   iconImage: Ecell,
+      // },
       {
         label: "Computer Center",
         link: "/Facilities/ComputerCenter",
