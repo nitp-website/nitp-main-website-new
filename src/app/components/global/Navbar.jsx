@@ -343,7 +343,7 @@ const navItems = [
             iconImage: mech,
           },
           {
-            label: "Mechatronics & Automation Engineering",
+            label: "Mechatronics and Automation Engineering",
             link: "/Department/Mechatronics",
             iconImage: mech,
           },
