@@ -119,6 +119,9 @@ export default function InternationalAffairsPage() {
                     <h2 className="text-xl mb-6 text-neutral-800">
                       <ul className='list-disc underline'>
                         <li>
+                          <a href="https://drive.google.com/file/d/1Yyan0BBPf1JleGl0epiJ8mI0btjtV7hB/view?usp=sharing"> MoU between University of Florence, Italy & NIT Patna</a>
+                        </li>
+                        <li>
                           <a href="https://drive.google.com/drive/folders/1uxd7A3sY8kbZ23Le777q7qLqJHMTxBpu"> MoU between  Federal University of São Carlos (UFSCar), Brazil  & NIT Patna.</a>
                         </li>
                         <br></br>
