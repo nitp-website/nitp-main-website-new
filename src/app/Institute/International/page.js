@@ -123,7 +123,7 @@ export default function InternationalAffairsPage() {
                         </li>
                    <br></br>
                         <li>
-                          <a href="https://drive.google.com/drive/folders/1uxd7A3sY8kbZ23Le777q7qLqJHMTxBpu"> MoU between  Federal University of São Carlos (UFSCar), Brazil  & NIT Patna.</a>
+                          <a href="https://drive.google.com/file/d/1BAEX9dfIIvRJrstSGASpSDT8ljsD17JN/view?usp=sharing"> MoU between  Federal University of São Carlos (UFSCar), Brazil  & NIT Patna.</a>
                         </li>
                         <br></br>
                         <li>
@@ -156,7 +156,7 @@ export default function InternationalAffairsPage() {
             UNIVERSITA’ DELLA CALABRIA, Italy
           </a>
         </li>
-        <br></br> */}
+        <br></br> 
                         <li>
                           <a href="https://www.unifi.it/" >
                             University of Florence, Italy
@@ -164,6 +164,7 @@ export default function InternationalAffairsPage() {
                         </li>
                         <br></br>
                         <li>
+                     */}
                           <a href="https://eiu.edu.vn/en/" >
                             Eastern International University, Vietnam
                           </a>
