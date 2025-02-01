@@ -155,16 +155,18 @@ export default function InternationalAffairsPage() {
           <a href="https://www.unical.it/" >
             UNIVERSITA’ DELLA CALABRIA, Italy
           </a>
-        </li>
+        </li> 
+        */}
         <br></br> 
+                        {/*
                         <li>
                           <a href="https://www.unifi.it/" >
                             University of Florence, Italy
                           </a>
-                        </li>
+                        </li> */}
                         <br></br>
                         <li>
-                     */}
+                    
                           <a href="https://eiu.edu.vn/en/" >
                             Eastern International University, Vietnam
                           </a>
