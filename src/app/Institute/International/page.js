@@ -253,14 +253,14 @@ export default function InternationalAffairsPage() {
 
                 <div className="grid-cols-1">
                   <a href="https://www.nitp.ac.in/Department/ME"> <img
-                    src="https://web.nitp.ac.in/intl-affair/mech-dep.jpg"
+                    src="/mech-dep.JPG"
 
                   ></img></a>
                   <strong>Mechanical Department</strong>
                 </div>
                 <div className="">
                   <a href="https://www.nitp.ac.in/Department/CSE"><img
-                    src="https://web.nitp.ac.in/intl-affair/cse-dep.jpg"
+                    src="/cse-dep.jpg"
 
                   ></img></a>
                   <strong>Computer Science Department</strong>
@@ -268,14 +268,14 @@ export default function InternationalAffairsPage() {
 
                 <div className="">
                   <a href="https://www.nitp.ac.in/Department/ECE"><img
-                    src="https://web.nitp.ac.in/intl-affair/ece-dep.jpg"
+                    src="/ece-dep.JPG"
 
                   ></img></a>
                   <strong>Electronics and Communication Department</strong>
                 </div>
                 <div className="">
                   <a href="https://www.nitp.ac.in/Department/EE"><img
-                    src="https://web.nitp.ac.in/intl-affair/electrical-dep.jpg"
+                    src="/electrical-dep.JPG"
 
                   ></img></a>
                   <strong>Electrical Department</strong>
@@ -283,7 +283,7 @@ export default function InternationalAffairsPage() {
                 <div className="">
                   <a href="https://www.nitp.ac.in/Department/Chem">
                     <img
-                      src="https://web.nitp.ac.in/intl-affair/chem-dep.jpg"
+                      src="/chem-dep.jpg"
 
                     ></img></a>
                   <strong>Chemistry Department</strong>
@@ -291,7 +291,7 @@ export default function InternationalAffairsPage() {
                 <div className="">
                   <a href="https://www.nitp.ac.in/Department/Archi">
                     <img
-                      src="https://web.nitp.ac.in/intl-affair/architecture-dep.jpg"
+                      src="/architecture-dep.jpg"
 
                     ></img></a>
                   <strong>Architecture Department</strong>
@@ -302,28 +302,28 @@ export default function InternationalAffairsPage() {
               <div className='grid gird-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-10'>
                 <div className="">
                   <img
-                    src="https://web.nitp.ac.in/intl-affair/ece-lab.jpg"
+                    src="/ece-lab.jpg"
 
                   ></img>
                   <strong>Microwave Lab</strong>
                 </div>
                 <div className="">
                   <img
-                    src="https://web.nitp.ac.in/intl-affair/cse-lab.jpg"
+                    src="/cse-lab.jpg"
 
                   ></img>
                   <strong>Computer Lab</strong>
                 </div>
                 <div className="">
                   <img
-                    src="https://web.nitp.ac.in/intl-affair/ee-lab.jpg"
+                    src="/ee-lab.jpg"
 
                   ></img>
                   <strong>Electrical Lab</strong>
                 </div>
                 <div className="">
                   <img
-                    src="https://web.nitp.ac.in/intl-affair/lib.jpg"
+                    src="/lib.jpg"
 
                   ></img>
                   <strong>Library</strong>
