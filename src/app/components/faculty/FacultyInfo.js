@@ -24,7 +24,7 @@ const FacultyInfo = () => {
   const res = useParams();
   // console.log(res.facultyid);
 
-  const apiEndpoint = `${process.env.NEXT_PUBLIC_NEW_BACKED_API}/api/faculty?type=${res.facultyid}`;
+  const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=${res.facultyid}`;
 
   useEffect(() => {
     fetch(`${apiEndpoint}`)
