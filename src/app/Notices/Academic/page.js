@@ -46,7 +46,7 @@ const Page = () => {
   useEffect(() => {
     const fetchAcademics = async () => {
       try {
-        const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice/academics`;
+        const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=academics`;
         const response = await axios.get(academicsUrl);
         const sortedNotices = response.data
         // setAcademics(response.data.

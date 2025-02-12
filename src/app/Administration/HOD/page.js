@@ -3,17 +3,23 @@ import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Loading from "../../Loading";
 
-const FacultyCard = dynamic(() => import("../../components/faculty/Facultycard"), {
-  loading: () => <div className="w-[100%] h-[100%] m-4 p-4 bg-[grey]"><Loading/></div>
-});
+const FacultyCard = dynamic(
+  () => import("../../components/faculty/Facultycard"),
+  {
+    loading: () => (
+      <div className="w-[100%] h-[100%] m-4 p-4 bg-[grey]">
+        <Loading />
+      </div>
+    ),
+  }
+);
 
 const FacultyList = () => {
   const [facultyData, setFacultyData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
-    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty/all`;
+    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=all`;
 
     const fetchData = async () => {
       try {
@@ -21,7 +27,7 @@ const FacultyList = () => {
         const data = await response.json();
         const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
         setFacultyData(sortedData);
-        console.log(sortedData);
+        // console.log(sortedData);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching faculty data:", error);
@@ -33,7 +39,11 @@ const FacultyList = () => {
   }, []);
 
   if (loading) {
-    return <div><Loading/></div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   const renderHODFaculties = () => {
@@ -47,21 +57,24 @@ const FacultyList = () => {
       "HoD and Professor",
     ];
 
-    const hodFaculties = facultyData.filter(faculty =>
+    const hodFaculties = facultyData.filter((faculty) =>
       hodDesignations.includes(faculty.designation)
     );
+
+    console.log(hodFaculties);
 
     if (hodFaculties.length === 0) return null;
 
     return (
       <div>
-        <h6 className='font-bold text-black'>Head of Department</h6>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 text-black">
-          {hodFaculties.map(faculty => (
+        <h6 className="font-bold text-black">Head of Department</h6>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {hodFaculties.map((faculty) => (
             <FacultyCard
               key={faculty.id}
               name={faculty.name}
               image={faculty.image}
+              department={faculty.department}
               designation={faculty.designation}
               qualification={faculty.qualification}
               researchInterests={faculty.research_interest}
@@ -77,9 +90,7 @@ const FacultyList = () => {
 
   return (
     <div className="flex flex-col p-2">
-      <div>
-        {renderHODFaculties()}
-      </div>
+      <div>{renderHODFaculties()}</div>
     </div>
   );
 };

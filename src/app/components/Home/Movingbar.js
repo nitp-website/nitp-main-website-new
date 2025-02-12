@@ -10,7 +10,7 @@ const Movingbar = () => {
     useEffect(() => {
         const fetchNotices = async () => {
             try {
-                const noticesUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice/active`;
+                const noticesUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=active`;
               
 
                 const [noticesResponse, academicsResponse] = await Promise.all([

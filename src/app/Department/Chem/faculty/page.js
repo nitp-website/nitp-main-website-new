@@ -16,7 +16,7 @@ const Home = () => {
   const [loading, setloading] = useState(false)
   const fetchphd = async () => {
     setloading(true);
-    const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty/chem`;
+    const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=chem`;
     const { data } = await axios(api);
     setphd_candidate(data);
     const phd_info = [];

@@ -108,7 +108,7 @@ const Details = () => {
 
     const fetchNotices = async () => {
       try {
-        const noticesUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice/active`;
+        const noticesUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=active`;
         const response = await axios.get(noticesUrl);
         const sortedNotices = response.data
           .filter(notice => notice.isVisible === 1)
@@ -124,7 +124,7 @@ const Details = () => {
 
     const fetchAcademics = async () => {
       try {
-        const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice/academics`;
+        const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=academics`;
         const response = await axios.get(academicsUrl);
         const sortedAcademics = response.data
           .filter(notice => notice.isVisible === 1)

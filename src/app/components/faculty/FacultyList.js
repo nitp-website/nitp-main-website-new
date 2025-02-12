@@ -14,7 +14,7 @@ const FacultyList = ({ department }) => {
   useEffect(() => {
     if (!department) return;
 
-    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty/${department}`;
+    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=${department}`;
 
     const fetchData = async () => {
       try {
