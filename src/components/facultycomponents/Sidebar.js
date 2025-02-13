@@ -40,17 +40,19 @@ const Sidebar = ({ profileData, aboutMe }) => {
         <div className="relative">
           <div className="flex justify-center p-2 rounded-md">
             {image ? (
-              <Image
-                src={image}
-                alt="Profile Image"
-                width={200} // Set a fixed width
-                height={200} // Set a fixed height
-                className="mx-auto rounded-3xl h-32 w-32 md:h-44 md:w-52 md:mx-8 md:hover:h-48 md:hover:w-60"
-                loading="lazy"
-                objectFit="cover"
-              />
+              <div className="relative h-[200px] w-auto max-w-full">
+                <Image
+                  src={image}
+                  alt="Profile Image"
+                  height={200} // Fixed height
+                  width={200} // A default width (will be overridden)
+                  className="mx-auto rounded-3xl w-auto max-w-full"
+                  loading="lazy"
+                  style={{ objectFit: "cover", height: "200px", width: "auto" }}
+                />
+              </div>
             ) : (
-              <CgProfile className="rounded-full h-32 w-32 md:h-44 md:w-52 md:mx-8"></CgProfile>
+              <CgProfile className="rounded-full h-32 w-32 md:h-44 md:w-52 md:mx-8" />
             )}
           </div>
 

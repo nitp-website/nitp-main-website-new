@@ -51,7 +51,7 @@ function FacultyCard({
         </div>
   
         <div className="px-4">
-          <h3 className="text-lg text-black font-semibold">{name}</h3>
+        <h3 className="text-md text-black font-bold">{name}</h3>
           <h4 className="block text-[15px] text-[#4e5052] capitalize">{designation}</h4>
           {/* <h4 className="block text-[15px] text-[#4e5052] capitalize">{department}</h4> */}
         </div>

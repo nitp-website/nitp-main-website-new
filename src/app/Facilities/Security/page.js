@@ -8,7 +8,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col md:w-3/4 ">
         <div>
-          <span className="text-xl  font-semibold border-b-2 pb-2 border-red-800">
+          <span className="text-xl text-black font-semibold border-b-2 pb-2 border-red-800">
             Security
           </span>
         </div>

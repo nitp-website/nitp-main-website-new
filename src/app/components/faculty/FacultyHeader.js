@@ -70,16 +70,30 @@ const FacultyHeader = ({ Data }) => {
             <h1 className="text-2xl font-bold">{name}</h1>
             <p className="font-semibold">{designation}</p>
             <p className="font-semibold">{department}</p>
-            <p>
-              <MdEmail className="inline-block" size={25} />:{" "}
-              <a href={`mailto:${email}`} className="underline">
-                {email}
-              </a>
-            </p>
-            <p className="flex items-center">
-              <IoMdCall className="inline-block mt-2" size={25} />:{" "}
-              <a href={`tel:${ext_no}`}>{ext_no}</a>
-            </p>
+            {email && (
+              <p>
+                <MdEmail className="inline-block" size={25} />:{" "}
+                <a
+                  href="#"
+                  className="underline"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(
+                      `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${email}`,
+                      "_blank"
+                    );
+                  }}
+                >
+                  {email}
+                </a>
+              </p>
+            )}
+            {ext_no && (
+              <p className="flex items-center">
+                <IoMdCall className="inline-block mt-2" size={25} />:{" "}
+                <a href={`tel:${ext_no}`}>{ext_no}</a>
+              </p>
+            )}
           </div>
 
           <div className="flex flex-col items-center">
