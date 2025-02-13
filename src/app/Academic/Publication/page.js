@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 const fetchFacultyDetails = async (email) => {
   try {
-    const response = await fetch(`https://admin.nitp.ac.in/api/faculty/${email}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=${email}`);
     const data = await response.json();
     return {
       name: data.profile.name,
@@ -26,7 +26,7 @@ const ArticlesTable = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://admin.nitp.ac.in/api/publications/all"
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=all`
       );
       const data = await response.json();
 

@@ -10,7 +10,7 @@ const FacultyList = ({url,branch}) => {
 
   useEffect(() => {
     // Actual API endpoint
-    const apiEndpoint = `https://admin.nitp.ac.in/api/faculty/${branch}`;
+    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=${branch}`;
 
     const fetchData = async () => {
       try {

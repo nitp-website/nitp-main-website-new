@@ -63,11 +63,11 @@ export default function Research() {
   const[counterOn,setCounterOn]=useState(false);
   const [data, setData] = useState({
     patents: 0,
-    books: 0,
-    journals: 0,
-    conferences: 0,
-    articles: 0,
-    projectCount: 0,
+    books: 1069,
+    journals: 234,
+    conferences: 179,
+    articles: 542,
+    projectCount: 649,
   });
   
   const fetchPatents = async () => {

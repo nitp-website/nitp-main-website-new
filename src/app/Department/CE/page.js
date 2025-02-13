@@ -22,7 +22,7 @@ export default function CE() {
   const [Notices, setNotices] = useState([]);
     useEffect(()=>{
       const getData = async()=>{
-        const response =await axios.get("https://admin.nitp.ac.in/api/notice/ce");
+        const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=ce`);
         console.log(response.data);
         setNotices(response.data);
       }
