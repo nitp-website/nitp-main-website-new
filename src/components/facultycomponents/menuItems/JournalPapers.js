@@ -58,7 +58,7 @@ const JournalPapers = ({ data }) => {
                     )}{" "}
                     {paper.volume && (
                       <span className="text-gray-700">
-                        Volume: {paper.volume} //{" "}
+                        Volume: {paper.volume} {" "}
                       </span>
                     )}{" "}
                     {paper.publication_year && (
