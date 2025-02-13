@@ -142,7 +142,7 @@ const FacultyHeader = ({ Data }) => {
                 </h3>
               </div>
             )}
-            {project_supervision?.length > 0 && (
+            {patents?.length > 0 && (
               <div className="w-24 h-24 flex items-center text-center justify-center text-black font-bold bg-yellow-400 rounded-lg">
                 <h3>
                   <span className="text-4xl">{patents.length}</span>

@@ -21,7 +21,7 @@ const Home=() =>{
     
     for (let i = 0; i < data.length; i++) {
         const facultyEmail = data[i].email;
-        const phddata = await axios(`https://admin.nitp.ac.in/api/faculty/${facultyEmail}`);
+        const phddata = await axios(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=${facultyEmail}`);
         const info = phddata.data;
         
         

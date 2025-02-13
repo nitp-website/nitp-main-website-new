@@ -39,7 +39,7 @@ const FacultyInfo = () => {
   const [article,setarticle]=useState([])
   const res = useParams()
   console.log(res.facultyid)
-  const uri = `https://admin.nitp.ac.in/api/faculty/${res.facultyid}`
+  const uri = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=${res.facultyid}`
   useEffect(() => {
     fetch(uri).then(res => res.json()).then((data) => {
       console.log(data)

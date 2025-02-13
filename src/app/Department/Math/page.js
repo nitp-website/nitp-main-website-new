@@ -12,7 +12,7 @@ export default function Math() {
   const [Notices, setNotices] = useState([]);
   useEffect(()=>{
     const getData = async()=>{
-      const response =await axios.get("https://admin.nitp.ac.in/api/notice/maths");
+      const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=maths`);
       console.log(response.data);
       setNotices(response.data);
     }

@@ -12,7 +12,7 @@ export default function Page() {
   const [Notices, setNotices] = useState([]);
   useEffect(()=>{
     const getData = async()=>{
-      const response =await axios.get("https://admin.nitp.ac.in/api/notice/cse");
+      const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=chet`);
       console.log(response.data);
       setNotices(response.data);
     }
