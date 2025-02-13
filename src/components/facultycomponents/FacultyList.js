@@ -1,25 +1,27 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-const FacultyCard=dynamic(()=>import("./Facultycard"),{
-  loading:()=><div className="w-[100%] h-[100%] m-4 p-4 bg-[grey]">Loading</div>
-})
-const FacultyList = ({url,branch}) => {
+const FacultyCard = dynamic(() => import("./Facultycard"), {
+  loading: () => (
+    <div className="w-[100%] h-[100%] m-4 p-4 bg-[grey]">Loading</div>
+  ),
+});
+
+const FacultyList = ({ url, branch }) => {
   const [facultyData, setFacultyData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Actual API endpoint
-    const apiEndpoint = `https://admin.nitp.ac.in/api/faculty/${branch}`;
+    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=${branch}`;
 
     const fetchData = async () => {
       try {
         const response = await fetch(apiEndpoint);
         const data = await response.json();
-        console.log(data)
+        // console.log(data);
         const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
         setFacultyData(sortedData);
-        console.log(sortedData);
+        // console.log(sortedData);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching faculty data:", error);
@@ -35,7 +37,7 @@ const FacultyList = ({url,branch}) => {
   }
 
   const renderFacultiesByDesignation = (designations, title) => {
-    const filteredFaculties = facultyData.filter(faculty =>
+    const filteredFaculties = facultyData.filter((faculty) =>
       designations.includes(faculty.designation)
     );
 
@@ -43,19 +45,19 @@ const FacultyList = ({url,branch}) => {
 
     return (
       <div key={title}>
-        <h6 className='font-bold'>{title}</h6>
-        <div className="grid md:grid-cols-2 gap-1 ">
-          {filteredFaculties.map(faculty => (
+        <h6 className="font-bold">{title}</h6>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredFaculties.map((faculty) => (
             <FacultyCard
               key={faculty.id}
               name={faculty.name}
-              image={faculty.image} 
+              image={faculty.image}
               designation={faculty.designation}
-              // qualification={faculty.qualification}
+              department={faculty.department}
               researchInterests={faculty.research_interest}
               email={faculty.email}
               phone={faculty.ext_no}
-              profileLink={`${url}/${faculty.email}`} // 
+              profileLink={`${url}/${faculty.email}`}
             />
           ))}
         </div>
@@ -75,30 +77,31 @@ const FacultyList = ({url,branch}) => {
       "Professor",
       "Associate Professor",
       "Assistant Professor",
-      "Registrar"
+      "Registrar",
     ];
 
     const remainingFaculties = facultyData.filter(
-      faculty => !classifiedDesignations.includes(faculty.designation)
+      (faculty) => !classifiedDesignations.includes(faculty.designation)
     );
 
     if (remainingFaculties.length === 0) return null;
 
     return (
       <div key="Others">
-        <h6 className='font-bold'>Others</h6>
-        <div className="grid md:grid-cols-2 gap-1 ">
-          {remainingFaculties.map(faculty => (
+        <h6 className="font-bold">Others</h6>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {remainingFaculties.map((faculty) => (
             <FacultyCard
               key={faculty.id}
               name={faculty.name}
-              image={faculty.image} 
+              image={faculty.image}
               designation={faculty.designation}
+              department={faculty.department}
               qualification={faculty.qualification}
-              researchInterests={faculty.researchInterests} 
+              researchInterests={faculty.researchInterest}
               email={faculty.email}
               phone={faculty.ext_no}
-              profileLink={`${url}/${faculty.email}`} 
+              profileLink={`${url}/${faculty.email}`}
             />
           ))}
         </div>
@@ -118,7 +121,7 @@ const FacultyList = ({url,branch}) => {
               "Associate Professor & HoD",
               "HoD & Professor",
               "HoD & Associate Professor",
-              "HoD and Professor"
+              "HoD and Professor",
             ],
             "Head of Department"
           )}

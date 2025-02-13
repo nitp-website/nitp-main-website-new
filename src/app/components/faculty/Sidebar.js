@@ -1,63 +1,156 @@
-"use client"
-import React from 'react'
-import { useState } from 'react';
-import { RxHamburgerMenu } from "react-icons/rx";
-import { RxCross2 } from "react-icons/rx";
-import Image from 'next/image';
-const Sidebar = ({setstate,resume,books,article,conference,memebership,education,publications,subjects,pg_ug_projects,phd_students,work,professional,curr_admin,past_admin,project,patent}) => {
-    const [active,setactive]=useState(false);
-    const onClick=()=>{
-        setactive(!active)
-    }
+import React, { useState } from "react";
+import Image from "next/image";
 
-    
+import { CgProfile } from "react-icons/cg";
+import { FaPhone } from "react-icons/fa6";
+import { MdOutlineMail } from "react-icons/md";
+import { SiGooglescholar, SiScopus, SiOrcid, SiLinkedin } from "react-icons/si";
+import { TbLetterV } from "react-icons/tb";
+import { FaFileAlt, FaFilePdf, FaRegFile } from "react-icons/fa";
+
+import Link from "next/link";
+const Sidebar = ({ profileData, aboutMe }) => {
+  const [profile, setProfile] = useState(profileData);
+  const {
+    name,
+    email,
+    designation,
+    cv,
+    ext_no,
+    department,
+    image,
+    linkedin,
+    vidwan,
+    scopus,
+    orcid,
+    google_scholar,
+    research_interest,
+    about,
+  } = profile || {};
+
+  // console.log(profile);
+
+  const aboutMeData = aboutMe || {};
+  // console.log(aboutMeData[0]);
+  const [loading, setLoading] = useState(true);
+
   return (
-    <div>
-        {/* phone view bg-[rgb(255,249,239)]*/}
-        <div className='block md:hidden'>
-           <div >{!active?<RxHamburgerMenu className='m-2 text-xl border text-black' onClick={onClick}/>:<RxCross2 className='m-2 text-xl border text-black' onClick={onClick}/>}</div>
-           <div className={`absolute ${active?"visible":"hidden"} bg-[#941B0C]  rounded-xl mx-3 p-3 text-sm text-[rgb(255,249,239)] z-2`}>
-            <ul className='flex flex-col gap-2 border-2 p-2 hover:border-[#941B0C]'>
-                {work?<li className='flex cursor-pointer' onClick={()=>{setstate(15);setactive(!active);}}><Image src={"/expeience.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Teaching Experience</span></li>:<></>}
-                {subjects?<li className='flex cursor-pointer' onClick={()=>{setstate(14);setactive(!active);}}><Image src={"/sub.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Subjects Teaching</span></li>:<></>}
-                {resume?<li className='flex cursor-pointer ' onClick={()=>{setstate(13);setactive(!active);}}><Image src={"/resume.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Resume</span></li>:<></>}
-                {professional?.length>0?<li className='flex cursor-pointer' onClick={()=>{setstate(12);setactive(!active);}}><Image src={"/pro.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Professional Services</span></li>:<></>}
-                {phd_students?<li className='flex cursor-pointer' onClick={()=>{setstate(11);setactive(!active);}}><Image src={"/phd.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>PhD Candidates</span></li>:<></>}
-                {pg_ug_projects?<li className='flex cursor-pointer' onClick={()=>{setstate(10);setactive(!active);}}><Image src={"/project.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>PG/UG Projects</span></li>:<></>}
-                {project?project.length>0?<li className='flex cursor-pointer' onClick={()=>{setstate(9);setactive(!active);}}><Image src={"/project.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Personal Projects</span></li>:<></>:<></>}
-                {patent.length>0?<li className='flex cursor-pointer' onClick={()=>{setstate(8);setactive(!active);}}><Image src={"/project.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Patents</span></li>:<></>}
-                {memebership?<li className='flex cursor-pointer' onClick={()=>{setstate(7);setactive(!active);}}><Image src={"/mem.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Memberships</span></li>:<></>}
-                {publications?publications[0]?.pub_pdf?.length?<li className='flex cursor-pointer' onClick={()=>{setstate(6);setactive(!active);}}><Image src={"/jou.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Journal Publications</span></li>:<></>:<></>}
-                {education?<li className='flex cursor-pointer' onClick={()=>{setstate(5);setactive(!active);}}><Image src={"/qual.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Educational Qualifications</span></li>:<></>}
-                {conference.length!==0?<li className='flex cursor-pointer' onClick={()=>{setstate(4);setactive(!active);}}><Image src={"/conference.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Conferences</span></li>:<></>}
-                {books.length!==0?<li className='flex cursor-pointer' onClick={()=>{setstate(3);setactive(!active);}}><Image src={"/book.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Books/Chapters Written</span></li>:<></>}
-                {article.length!==0?<li className='flex cursor-pointer' onClick={()=>{setstate(2);setactive(!active);}}><Image src={"/article.jpg"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Articles</span></li>:<></>}
-                {past_admin?.length>0||curr_admin?.length>0?<li className='flex cursor-pointer' onClick={()=>{setstate(1);setactive(!active);}}><Image src={"/ad.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 mr-2 w-[25px] h-[25px] brightness-110  object-cover'/><span className='mt-1'>Administrative Responsibilities</span></li>:<></>}
-            </ul>
-           </div>
-        </div>
-        {/* laptop view */}
-        <div className='hidden md:block'>
-           <div className='w-[280px] flex flex-col mt-6 ' >
-           {work?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(15)}}><Image src={"/expeience.png"} alt='blank' width={25} height={25}  className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer' >Teaching Experience</span></div></div>:<></>}
-           {subjects?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(14)}}><Image src={"/sub.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer' >Subjects Teaching</span></div></div>:<></>}
-           {resume?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(13)}}><Image src={"/resume.png"} alt='blank' width={50} height={50} className='mt-1 mx-1 w-[25px] h-[25px] brightness-110  object-cover'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer'   >Resume</span></div></div>:<></>}
-           {professional?.length>0? <div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(12)}}><Image src={"/ad.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer text-xs'  >Professional Services</span></div></div>:<></>}
-           {phd_students?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(11)}}><Image src={"/phd.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer' >Phd Candidates</span></div></div>:<></>}
-           {pg_ug_projects?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(10)}}><Image src={"/project.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer' >PG/UG Projects</span></div></div>:<></>}
-           {project?.length>0?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(9)}}><Image src={"/project.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer' >Personal projects</span></div></div>:<></>}
-           {patent.length>0?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(8)}}><Image src={"/project.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer' >Patents</span></div></div>:<></>}
-           {memebership?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(7)}}><Image src={"/mem.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer' >Memberships</span></div></div>:<></>}
-           {publications?publications[0]?.pub_pdf?.length?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(6)}}><Image src={"/jou.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer' >Journal Publications</span></div></div>:<></>:<></>}
-           {education?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(5)}}><Image src={"/qual.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer text-sm' >Educational Qualifications</span></div></div>:<></>}
-           {conference.length!==0?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(4)}}><Image src={"/conference.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer' >Confernces</span></div></div>:<></>}
-           {books.length!==0?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(3)}}><Image src={"/book.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer text-[14px]' >Books/Chapters Written</span></div></div>:<></>}
-           {article.length!==0?<div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(2)}}><Image src={"/article.jpg"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer' >Articles</span></div></div>:<></>}
-           {past_admin?.length>0||curr_admin?.length>0? <div className='flex mt-2 cursor-pointer' onClick={()=>{setstate(1)}}><Image src={"/pro.png"} alt='blank' width={25} height={25} className='mt-1 mx-1 w-[25px] h-[25px]'/><div className='bg-[#941B0C] hover:bg-red-500 h-6  p-2 flex justify-center items-center rounded-md text-white w-[280px]'><span className='cursor-pointer text-[14px]' >Administersative Responsibilities</span></div></div>:<></>}
-           </div>
-        </div>
-    </div>
-  )
-}
+    <div className="h-fit w-full flex-col shadow-lg text-black rounded-md">
+      <div className="h-fit w-full rounded-md">
+        <div className="relative">
+          <div className="flex justify-center p-2 rounded-md">
+            {image ? (
+              <div className="relative h-[200px] w-auto max-w-full">
+                <Image
+                  src={image}
+                  alt="Profile Image"
+                  height={200} // Fixed height
+                  width={200} // A default width (will be overridden)
+                  className="mx-auto rounded-3xl w-auto max-w-full"
+                  loading="lazy"
+                  style={{ objectFit: "cover", height: "200px", width: "auto" }}
+                />
+              </div>
+            ) : (
+              <CgProfile className="rounded-full h-32 w-32 md:h-44 md:w-52 md:mx-8" />
+            )}
+          </div>
 
-export default Sidebar
+          {linkedin ? (
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-16 h-16 flex flex-col gap-2 bg-red-600 items-center justify-center rounded-l-lg px-2">
+              <Link href={`${linkedin}`} className="flex flex-col items-center">
+                <img
+                  src={`/linkedin.svg`}
+                  className="bg-black rounded-full h-8 w-8"
+                />
+              </Link>
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
+        <div className="flex p-2 justify-evenly gap-2 h-fit text-black">
+          {vidwan ? (
+            <div className="w-16 h-16 bg-slate-200 flex justify-center rounded-md items-center">
+              <Link href={`${vidwan}`} className="flex flex-col items-center">
+                <TbLetterV className="w-8 h-8" />
+                Vidwan
+              </Link>
+            </div>
+          ) : (
+            <></>
+          )}
+
+          {scopus ? (
+            <div className="w-16 h-16 bg-slate-200 flex justify-center rounded-md items-center">
+              <Link href={`${scopus}`} className="flex flex-col items-center">
+                <img
+                  src={`/scopus.svg`}
+                  className="bg-red-600 rounded-full h-8 w-8"
+                />
+                <h3>scopus</h3>
+              </Link>
+            </div>
+          ) : (
+            <></>
+          )}
+
+          {google_scholar ? (
+            <div className="w-16 h-16 bg-slate-200 flex justify-center rounded-md items-center">
+              <Link
+                href={`${google_scholar}`}
+                className="flex flex-col items-center"
+              >
+                <img
+                  src={`/googleScholar.svg`}
+                  className="bg-red-600 rounded-full h-8 w-8"
+                />
+                <h3>Scholar</h3>
+              </Link>
+            </div>
+          ) : (
+            <></>
+          )}
+
+          {orcid ? (
+            <div className="w-16 h-16 bg-slate-200 flex justify-center rounded-md items-center">
+              <Link href={`${orcid}`} className="flex flex-col items-center">
+                <img
+                  src={`/orcid.svg`}
+                  className="bg-red-600 rounded-full h-8 w-8"
+                />
+                <h3>ORCID</h3>
+              </Link>
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
+      </div>
+
+      <div className="w-full">
+        {aboutMeData[0]?.content && (
+          <div className="mt-6 p-3 bg-white rounded-md shadow-sm">
+            <h2 className="text-2xl font-bold border-b pb-2 uppercase">
+              About
+            </h2>
+            <p className="text-gray-700 mt-2">{aboutMeData[0].content}</p>
+          </div>
+        )}
+
+        {research_interest ? (
+          <div className="mt-6 p-3 bg-white rounded-md shadow-sm">
+            <h2 className="text-2xl font-bold border-b pb-2 uppercase">
+              Expertise
+            </h2>
+            <p className="text-gray-700 mt-2">{research_interest}</p>
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Sidebar;

@@ -39,7 +39,7 @@ const Page = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const jobsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice/facultystaffjob`;
+        const jobsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=facultystaffjob`;
         const response = await axios.get(jobsUrl);
         setJobs(response.data.filter((notice) => notice.isVisible === 1));
         setIsLoading(false);

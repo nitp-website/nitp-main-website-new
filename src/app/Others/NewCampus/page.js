@@ -39,7 +39,7 @@ const Page = () => {
   useEffect(() => {
     const fetchAcademics = async () => {
       try {
-        const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice/newcampus`;
+        const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=newcampus`;
         const response = await axios.get(academicsUrl);
         setAcademics(response.data.filter((notice) => notice.isVisible === 1));
         setIsLoading(false);

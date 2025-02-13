@@ -50,7 +50,7 @@ const Page = () => {
       </div>
       <div className="flex flex-col w-full">
         <div className="admincarddiv items-center justify-center">
-          <span className="text-xl font-semibold border-b-2 pb-2 border-red-800">
+          <span className="text-xl text-black font-semibold border-b-2 pb-2 border-red-800">
             Proctorial Board
           </span>
         </div>
