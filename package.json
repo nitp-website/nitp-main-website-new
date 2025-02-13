@@ -40,6 +40,7 @@
     "next-videos": "^1.4.1",
     "nitp-new-website": "file:",
     "postcss": "8.4.38",
+    "qrcode": "^1.5.4",
     "react": "^18",
     "react-collapsed": "^4.1.2",
     "react-countup": "^6.5.3",

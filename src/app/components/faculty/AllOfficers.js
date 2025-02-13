@@ -12,7 +12,7 @@ const AllOfficers = () => {
     const [officers, setofficers] = useState([]);
     const [error, setError] = useState(false);
     const [loading, setloading] = useState(false);
-    const api = "https://admin.nitp.ac.in/api/faculty/all";
+    const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=all`;
     useEffect(() => {
         const fetchFaculty = async () => {
             try {
