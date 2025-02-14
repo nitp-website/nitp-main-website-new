@@ -17,9 +17,6 @@ const FacultyInfo = () => {
   const [facultyData, setFacultyData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const [profile, setProfile] = useState(null);
-  const [aboutMe, setAboutMe] = useState(null);
 
   const res = useParams();
   // console.log(res.facultyid);
@@ -32,8 +29,6 @@ const FacultyInfo = () => {
       .then((data) => {
         // console.log(data);
         setFacultyData(data);
-        setProfile(data.profile);
-        setAboutMe(data.about_me);
         setLoading(false);
       })
       .catch((error) => {
@@ -51,7 +46,7 @@ const FacultyInfo = () => {
   return (
     <div className="md:w-[90%] mx-auto flex flex-col md:flex-row gap-2">
       <div className="w-full md:w-[35%]">
-        <Sidebar profileData={profile} aboutMe={aboutMe} />
+        <Sidebar Data={facultyData} />
       </div>
       <div className="w-full md:w-[65%]">
         {facultyData ? (
