@@ -78,25 +78,25 @@ const BOG = [
  },
  {
   name: "Prof. Pradip Kumar Jain",
-  designation: "Ex-Officio Member, NIT Patna",
-  type: "Director NIT Patna",
+  designation: "Director, NIT Patna",
+  type: "Ex-Officio Member",
  },
  
  {
-  name: "Joint Secretary(Technical) or his/her nominee",
-  type: "Department of Higher Education, MHRD",
-  designation: "Ex-Officio Member",
+  name: "Ms. Saumya Gupta",
+  type: "Joint Secretary Department of Higher Education, Ministry of Education, Govt. of India",
+  designation: "Member",
  },
  {
-  name: "JS and Financial Advisor or his/her nominee",
-  type: "Department of Higher Education, MHRD",
-  designation: "Ex-Officio Member",
+  name: "Sri Narayan Singh Bisht",
+  type: "Dy. Secretary (IFD) Department of Higher Education, Ministry of Education, Govt. of India",
+  designation: "Member",
  },
 
  {
-  name: "Director IIT Patna",
-  type: "or his nominee not below the rank of professor",
-  designation: "Ex-Officio Member",
+  name: "Prof. T.N. Singh",
+  type: "Director, IIT Patna",
+  designation: "Member",
  },
  {
   name: "Prof. Fulena Rajak",
@@ -118,11 +118,11 @@ const BWC = [
  {
   name: "Prof. Pradip Kumar Jain",
   designation: "Director, NIT Patna",
-  type: "Ex-Officio Chairperson",
+  type: "Chairperson, BWC, NIT Patna",
  },
  {
-  name: "Director or Deputy Secretary",
-  designation: "or his nominee Dealing with NITs in Ministry",
+  name: "Director (Finance)",
+  designation: "or his nominee Deptt. of Higher Education, Ministry of Education, GOI",
   type: "Ex-Officio Member",
  },
  {
@@ -142,14 +142,7 @@ const BWC = [
   type: "Member",
  },
  {
-  name: "Sri Pawan Kumar",
-  designation: `Executive Engineer
-Construction Divison-1
-BCD, Govt. of Bihar`,
-  type: "Member",
- },
- {
-  name: `Prof. Fulena Rajak`,
+  name: `Prof. Pijush Sammui`,
   designation: `Dean (Planning & Development), NIT Patna`,
   type: `Member`,
  },
@@ -201,19 +194,19 @@ const FC = [
   type: "Chairperson",
  },
  {
-  name: "Joint Secretary (Technical) or his/her nominee",
-  designation: "Department of Higher Education,MHRD",
+  name: "Ms. Saumya Gupta",
+  designation: "JS (NITs) Department of Higher Education, Ministry of Education, Govt. of India",
   type: "Member",
  },
  {
-  name: "JS and FInancial Advisor",
-  designation: "Department of Higher Education, MHRD",
+  name: "Sri Narayan Singh Bisht",
+  designation: "Dy. Secretary (IFD) Department of Higher Education, Ministry of Education, Govt. of India",
   type: "Member",
  },
  {
-  name: "Director IIT Patna",
-  designation: "or his nominee not below the rank of professor",
-  type: "Member",
+  name: "Dr. T.N. Singh",
+  designation: "Director, IIT Patna",
+  type: "member",
  },
  {
   name: "Dr. Asit Narayan",
@@ -229,53 +222,186 @@ const director = [
 ]
 
 const Senate = [
- {
-  name: "Prof. P. K. Jain",
-  designation:"Director, NIT Patna",
-  type: "Ex-Officio Chairman",
- },
- {
-  name: "Prof. Nityanand Singh Maurya ",
-  designation:"Professor, Civil Engineering Dept.",
-  type: "Member",
- },
- {
-  name:
-   "Prof. Prabhat Kumar ",
-   designation:"Professor, Computer Science and Engineering Dept.",
-  type: "Member",
- },
- {
-  name: "Prof. M.P. Singh  ",
-  designation:"Professor, Computer Science and Engineering Dept.",
-  type: "Member",
- },
- { name: "Prof. Samrat Mukherjee ", designation: "Professor, Physics Dept.", type: "Member" },
-  { name: "Prof. Bharat Gupta", designation: "Professor, Electronics and Communication Engineering Dept.", type: "Member" },
-  { name: "Prof. Abdur Rahman Quaff,", designation: "Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. Baboo Rai", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. Anshuman Singh", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. Pijush Samui", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. Sunita Kumari", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. Amit Kumar", designation: "Professor, Mechanical Engineering Dept.", type: "Member" },
-  { name: "Prof. Manoj Kumar", designation: "Professor, Architecture Dept.", type: "Member" },
-  { name: "Prof. Fulena Rajak", designation: "Professor, Architecture Dept.", type: "Member" },
-  { name: "Prof. L. B. Roy", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. Sanjeev Sinha", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. Ajay Kumar Sinha", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. S. S. Mishra", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. Vivekanand Singh", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. Ramesh Kumar", designation: "Professor, Electrical Engineering Dept.", type: "Member" },
-  { name: "Prof. Sawal Kishore Singh", designation: "Mathematics Dept.", type: "Member" },
-  { name: "Prof. S. K. Verma", designation: "Professor, Mechanical Engineering Dept.", type: "Member" },
-  { name: "Prof. Om Prakash", designation: "Professor, Mechanical Engineering Dept.", type: "Member" },
-  { name: "Prof. Ramakar Jha", designation: "Professor, Civil Engineering Dept.", type: "Member" },
-  { name: "Prof. Prakash Chandra", designation: "Professor, Mechanical Engineering Dept.", type: "Member" },
-  { name: "Prof. A. N. Sinha", designation: "Professor, Mechanical Engineering Dept.", type: "Member" },
-  { name: "Prof. K. P. Singh", designation: "Former Director, IIT BHU", type: "External Member" },
-  { name: "Prof. S. K. Singh", designation: "Vice-Chancellor, LNMU, Darbhanga", type: "External Member" },
-  { name: "Prof. Pushplata Tripathi,", designation: "Pro-Vice Chancellor, Guru-Govind Singh Indraprastha University, New Delhi.", type: "External Member" },
-  { name: "Prof. Asit Narayan", designation: "Registrar, NIT Patna", type: "Ex-Officio Member Secretary" }
+  {
+    name: "Prof. P.K. Jain",
+    designation: "Director, NIT Patna",
+    type: "Chairman"
+  },
+  {
+    name: "Prof. Manoj Kumar",
+    designation: "Professor, Architecture & Planning Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Fulena Rajak",
+    designation: "Professor, Architecture & Planning Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. L.B. Roy",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Sanjeev Sinha",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Ajay Kr Sinha",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. S.S. Mishra",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Vivekanand Singh",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Ramakar Jha",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. N.S. Maurya",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. A.R. Quaff",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Anshuman Singh",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Baboo Rai",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Sunita Kumari",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Pijush Samui",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. M.P. Singh",
+    designation: "Professor, Computer Science and Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Prabhat Kumar",
+    designation: "Professor, Computer Science and Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Ramesh Kumar",
+    designation: "Professor, Electrical Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Bharat Gupta",
+    designation: "Professor, Electronics and Communication Engg.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Om Prakash",
+    designation: "Professor, Mechanical Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Prakash Chandra",
+    designation: "Professor, Mechanical Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. A.N. Sinha",
+    designation: "Professor, Mechanical Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Amit Kumar",
+    designation: "Professor, Mechanical Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Samrat Mukherjee",
+    designation: "Professor, Applied Physics and Materials Engg. Dept.",
+    type: "Member"
+  },
+  {
+    name: "Dr. Subrata Das",
+    designation: "Associate Professor & Head, Chemical Science and Technology",
+    type: "Member"
+  },
+  {
+    name: "Dr. D.K. Mahato",
+    designation: "Associate Professor & Head, Applied Physics and Materials Engg. Dept.",
+    type: "Member"
+  },
+  {
+    name: "Dr. R.K. Jha",
+    designation: "Associate Professor & Head, Mathematics and Computing Technology",
+    type: "Member"
+  },
+  {
+    name: "Dr. R.K. Mandal",
+    designation: "Associate Professor & Head, Electrical Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Dr. Jayanta Ghosh",
+    designation: "Associate Professor & Head, Electronics and Communication Engg. Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Amit Kumar",
+    designation: "Professor & Head, Mechatronics and Automation Engg.",
+    type: "Member"
+  },
+  {
+    name: "Dr. Deepak Kumar Behera",
+    designation: "Associate Professor & Head, HSS Dept.",
+    type: "Member"
+  },
+  {
+    name: "Dr. J.P. Singh",
+    designation: "Associate Professor & PI (MIS)",
+    type: "Member"
+  },
+  {
+    name: "Prof. K.P. Singh",
+    designation: "Former Director, IIT BHU",
+    type: "Member"
+  },
+  {
+    name: "Prof. S.K. Singh",
+    designation: "Vice-Chancellor, LNMU, Darbhanga",
+    type: "Member"
+  },
+  {
+    name: "Prof. Pushplata Tripathi",
+    designation: "Former Pro-Vice Chancellor, Guru Gobind Singh Indraprastha University, New Delhi",
+    type: "Member"
+  },
+  {
+    name: "Dr. Asit Narayan",
+    designation: "Registrar, NIT Patna",
+    type: "Secretary"
+  }
 ]
 const Jai = [
  {
