@@ -128,13 +128,13 @@ const Sidebar = ({ profileData, aboutMe }) => {
         </div>
       </div>
 
-      <div className="w-full">
+      <div className="w-full px-4">
         {aboutMeData[0]?.content && (
           <div className="mt-6 p-3 bg-white rounded-md shadow-sm">
             <h2 className="text-2xl font-bold border-b pb-2 uppercase">
               About
             </h2>
-            <p className="text-gray-700 mt-2">{aboutMeData[0].content}</p>
+            <p className="text-gray-700 mt-2 text-justify">{aboutMeData[0].content}</p>
           </div>
         )}
 
@@ -143,7 +143,7 @@ const Sidebar = ({ profileData, aboutMe }) => {
             <h2 className="text-2xl font-bold border-b pb-2 uppercase">
               Expertise
             </h2>
-            <p className="text-gray-700 mt-2">{research_interest}</p>
+            <p className="text-gray-700 mt-2 text-justify">{research_interest}</p>
           </div>
         ) : (
           <></>

@@ -1,7 +1,10 @@
 import React from "react";
 
 const DepartmentActivities = ({ data }) => {
-  // console.log(data);
+  // Sort activities by start_date (latest first)
+  const sortedActivities = [...data].sort(
+    (a, b) => new Date(b.start_date) - new Date(a.start_date)
+  );
 
   return (
     <div className="p-6 border border-teal-600 rounded-lg text-black bg-teal-100 shadow-lg">
@@ -9,7 +12,7 @@ const DepartmentActivities = ({ data }) => {
         Department Activities
       </h2>
       <ul className="space-y-4">
-        {data.map((activity, index) => (
+        {sortedActivities.map((activity, index) => (
           <li
             key={index}
             className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
@@ -22,7 +25,7 @@ const DepartmentActivities = ({ data }) => {
                 in {activity.institute_name}
               </span>
               <span>
-                from- {new Date(activity.start_date).toLocaleDateString()} to{" "}
+                from {new Date(activity.start_date).toLocaleDateString()} to {" "}
                 {activity.end_date === "Continue"
                   ? "Ongoing"
                   : new Date(activity.end_date).toLocaleDateString()}

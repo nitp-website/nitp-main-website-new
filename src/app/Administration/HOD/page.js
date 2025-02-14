@@ -67,8 +67,8 @@ const FacultyList = () => {
 
     return (
       <div>
-        <h6 className="font-bold text-black">Head of Department</h6>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <h6 className="font-bold text-black text-2xl mt-4 px-4">Head of Departments</h6>
+        <div className="flex flex-wrap justify-center gap-4 p-4 mt-4">
           {hodFaculties.map((faculty) => (
             <FacultyCard
               key={faculty.id}
