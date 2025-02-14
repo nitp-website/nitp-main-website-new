@@ -19,35 +19,36 @@ const ProjectCard = ({
   // console.log("ProjectCard Props:", project_title, facultyName, sponsor, amount, start, end);
 
   return (
-    <div className="bg-white border border-gray-300 p-3 mb-2 md:flex md:flex-col md:justify-between md:mr-4 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
+    <div className="bg-white border border-gray-200 p-4 mb-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
       <div className="flex items-center">
-        <h3 className="text-sm font-semibold mt-2 text-primary md:text-sm">
+        <h3 className="text-base font-semibold text-purple-700">
           {project_title}
         </h3>
       </div>
-      <ul className="text-sm text-gray-600 mt-2 space-y-1">
+      <ul className="text-sm text-gray-700 mt-2 space-y-2">
         {facultyName && (
           <li>
-            <strong>Faculty:</strong> {facultyName}
+            <strong className="text-gray-900">Faculty:</strong> {facultyName}
           </li>
         )}
         {sponsor && (
           <li>
-            <strong>Sponsor:</strong> {sponsor}
+            <strong className="text-gray-900">Sponsor:</strong> {sponsor}
           </li>
         )}
         {amount && (
           <li>
-            <strong>Amount:</strong> {amount}
+            <strong className="text-gray-900">Amount:</strong> {amount}
           </li>
         )}
         {start && end && (
           <li>
-            <strong>Duration:</strong> {start} - {end}
+            <strong className="text-gray-900">Duration:</strong> {start} - {end}
           </li>
         )}
       </ul>
     </div>
+
   );
 };
 
@@ -60,35 +61,15 @@ const PublicationCard = ({
   title,
 }) => {
   return (
-    <div className="bg-white border border-gray-300 p-3 mb-2 md:flex md:flex-col md:justify-between md:mr-4 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
-      <div className="flex items-center">
-        <h3 className="text-sm font-semibold mt-2 text-primary md:text-sm">
-          {title}
-        </h3>
-      </div>
-      <ul className="text-sm text-gray-600 mt-2 space-y-1">
-        {authors && (
-          <li>
-            <strong>Authors:</strong> {authors}
-          </li>
-        )}
-        {/* {facultyName && (
-          <li>
-            <strong>Faculty:</strong> {facultyName}
-          </li>
-        )} */}
-        {journalName && (
-          <li>
-            <strong>Conference:</strong> {journalName}
-          </li>
-        )}
-        {year && (
-          <li>
-            <strong>Year:</strong> {year}
-          </li>
-        )}
-      </ul>
+    <div className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300">
+      <h3 className="text-lg font-semibold text-blue-700">{title}</h3>
+      <p className="text-gray-800 mt-2">
+        {authors && <span className="font-semibold">{authors}</span>}
+        {journalName && <span> | <span className="font-semibold">{journalName}</span></span>}
+        {year && <span> | <span className="font-semibold">{year}</span></span>}
+      </p>
     </div>
+
   );
 };
 
@@ -376,8 +357,8 @@ export default function Research() {
               <div className="w-8 h-0.5 bg-primary ml-4" />
             </div>
 
-            <div className="p-4">
-              <ul className="space-y-4">
+            <div className="p-4 h-80 overflow-hidden relative">
+              <ul className="space-y-4 flex flex-col animate-scroll">
                 {recentPublications.length === 0 ? (
                   <div className="text-sm md:text-base flex justify-center items-center h-52">
                     <svg
@@ -486,20 +467,25 @@ export default function Research() {
                   </div>
                 ) : (
                   recentPublications.map((publication) => {
+
                     // Check if 'publications' array exists
                     const publications = publication.publications || [
                       publication,
                     ]; // Use the current publication if no 'publications' array
-                    return publications.map((pub) => (
-                      <PublicationCard
-                        key={pub.id}
-                        // facultyName={pub.email || "Unknown"}
-                        year={pub.conference_year || "Unknown"}
-                        authors={pub.authors || "N/A"}
-                        journalName={pub.conference_name || "N/A"}
-                        title={pub.title || "Untitled"}
-                      />
-                    ));
+                    return publications
+                      .filter((pub) => pub.conference_year === 2024)
+                      .slice(0, 100)
+                      .slice(0, 30)
+                      .map((pub) => (
+                        <PublicationCard
+                          key={pub.id}
+                          // facultyName={pub.email || "Unknown"}
+                          year={pub.conference_year || "Unknown"}
+                          authors={pub.authors || "N/A"}
+                          journalName={pub.conference_name || "N/A"}
+                          title={pub.title || "Untitled"}
+                        />
+                      ));
                   })
                 )}
               </ul>
@@ -514,127 +500,133 @@ export default function Research() {
               </h3>
               <div className="w-auto h-0.5 bg-primary ml-4" />
             </div>
-            <ul className="section-contentp">
-              {recentProjects.length === 0 ? (
-                <div className="flex justify-center items-center h-52 ">
-                  <svg
-                    version="1.1"
-                    id="L1"
-                    height="100px"
-                    width="100px"
-                    x="0px"
-                    y="0px"
-                    viewBox="0 0 100 100"
-                    enable-background="new 0 0 100 100"
-                  >
-                    <circle
-                      fill="none"
-                      stroke="#f87171"
-                      stroke-width="6"
-                      stroke-miterlimit="15"
-                      stroke-dasharray="14.2472,14.2472"
-                      cx="50"
-                      cy="50"
-                      r="47"
+            <div className="p-4 h-80 overflow-hidden relative">
+              <ul className="space-y-4 flex flex-col animate-scroll">
+                {recentProjects.length === 0 ? (
+                  <div className="flex justify-center items-center h-52 ">
+                    <svg
+                      version="1.1"
+                      id="L1"
+                      height="100px"
+                      width="100px"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 100 100"
+                      enable-background="new 0 0 100 100"
                     >
-                      <animateTransform
-                        attributeName="transform"
-                        attributeType="XML"
-                        type="rotate"
-                        dur="5s"
-                        from="0 50 50"
-                        to="360 50 50"
-                        repeatCount="indefinite"
+                      <circle
+                        fill="none"
+                        stroke="#f87171"
+                        stroke-width="6"
+                        stroke-miterlimit="15"
+                        stroke-dasharray="14.2472,14.2472"
+                        cx="50"
+                        cy="50"
+                        r="47"
+                      >
+                        <animateTransform
+                          attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          dur="5s"
+                          from="0 50 50"
+                          to="360 50 50"
+                          repeatCount="indefinite"
+                        />
+                      </circle>
+                      <circle
+                        fill="none"
+                        stroke="#f87171"
+                        stroke-width="1"
+                        stroke-miterlimit="10"
+                        stroke-dasharray="10,10"
+                        cx="50"
+                        cy="50"
+                        r="39"
+                      >
+                        <animateTransform
+                          attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          dur="5s"
+                          from="0 50 50"
+                          to="-360 50 50"
+                          repeatCount="indefinite"
+                        />
+                      </circle>
+                      <g fill="#f87171">
+                        <rect x="30" y="35" width="5" height="30">
+                          <animateTransform
+                            attributeName="transform"
+                            dur="1s"
+                            type="translate"
+                            values="0 5 ; 0 -5; 0 5"
+                            repeatCount="indefinite"
+                            begin="0.1"
+                          />
+                        </rect>
+                        <rect x="40" y="35" width="5" height="30">
+                          <animateTransform
+                            attributeName="transform"
+                            dur="1s"
+                            type="translate"
+                            values="0 5 ; 0 -5; 0 5"
+                            repeatCount="indefinite"
+                            begin="0.2"
+                          />
+                        </rect>
+                        <rect x="50" y="35" width="5" height="30">
+                          <animateTransform
+                            attributeName="transform"
+                            dur="1s"
+                            type="translate"
+                            values="0 5 ; 0 -5; 0 5"
+                            repeatCount="indefinite"
+                            begin="0.3"
+                          />
+                        </rect>
+                        <rect x="60" y="35" width="5" height="30">
+                          <animateTransform
+                            attributeName="transform"
+                            dur="1s"
+                            type="translate"
+                            values="0 5 ; 0 -5; 0 5"
+                            repeatCount="indefinite"
+                            begin="0.4"
+                          />
+                        </rect>
+                        <rect x="70" y="35" width="5" height="30">
+                          <animateTransform
+                            attributeName="transform"
+                            dur="1s"
+                            type="translate"
+                            values="0 5 ; 0 -5; 0 5"
+                            repeatCount="indefinite"
+                            begin="0.5"
+                          />
+                        </rect>
+                      </g>
+                    </svg>
+                  </div>
+                ) : (
+                  recentProjects
+                    .filter((project) => new Date(project.start_date).getFullYear() === 2024)
+                    .slice(0, 100)
+                    .slice(0, 30)
+                    .map((project) => (
+                      <ProjectCard
+                        key={project.id}
+                        project_title={project.project_title} // Correct field from API
+                        facultyName={project.investigators || "Unknown"}
+                        sponsor={project.funding_agency}
+                        amount={project.financial_outlay}
+                        start={project.start_date}
+                        end={project.end_date}
                       />
-                    </circle>
-                    <circle
-                      fill="none"
-                      stroke="#f87171"
-                      stroke-width="1"
-                      stroke-miterlimit="10"
-                      stroke-dasharray="10,10"
-                      cx="50"
-                      cy="50"
-                      r="39"
-                    >
-                      <animateTransform
-                        attributeName="transform"
-                        attributeType="XML"
-                        type="rotate"
-                        dur="5s"
-                        from="0 50 50"
-                        to="-360 50 50"
-                        repeatCount="indefinite"
-                      />
-                    </circle>
-                    <g fill="#f87171">
-                      <rect x="30" y="35" width="5" height="30">
-                        <animateTransform
-                          attributeName="transform"
-                          dur="1s"
-                          type="translate"
-                          values="0 5 ; 0 -5; 0 5"
-                          repeatCount="indefinite"
-                          begin="0.1"
-                        />
-                      </rect>
-                      <rect x="40" y="35" width="5" height="30">
-                        <animateTransform
-                          attributeName="transform"
-                          dur="1s"
-                          type="translate"
-                          values="0 5 ; 0 -5; 0 5"
-                          repeatCount="indefinite"
-                          begin="0.2"
-                        />
-                      </rect>
-                      <rect x="50" y="35" width="5" height="30">
-                        <animateTransform
-                          attributeName="transform"
-                          dur="1s"
-                          type="translate"
-                          values="0 5 ; 0 -5; 0 5"
-                          repeatCount="indefinite"
-                          begin="0.3"
-                        />
-                      </rect>
-                      <rect x="60" y="35" width="5" height="30">
-                        <animateTransform
-                          attributeName="transform"
-                          dur="1s"
-                          type="translate"
-                          values="0 5 ; 0 -5; 0 5"
-                          repeatCount="indefinite"
-                          begin="0.4"
-                        />
-                      </rect>
-                      <rect x="70" y="35" width="5" height="30">
-                        <animateTransform
-                          attributeName="transform"
-                          dur="1s"
-                          type="translate"
-                          values="0 5 ; 0 -5; 0 5"
-                          repeatCount="indefinite"
-                          begin="0.5"
-                        />
-                      </rect>
-                    </g>
-                  </svg>
-                </div>
-              ) : (
-                recentProjects.map((project) => (
-                  <ProjectCard
-                    key={project.id}
-                    project_title={project.project_title} // Correct field from API
-                    facultyName={project.investigators || "Unknown"}
-                    sponsor={project.funding_agency}
-                    amount={project.financial_outlay}
-                    start={project.start_date}
-                    end={project.end_date}
-                  />
-                ))
-              )}
-            </ul>
+                    ))
+                )}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
