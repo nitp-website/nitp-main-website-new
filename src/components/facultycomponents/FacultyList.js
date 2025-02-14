@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+
 const FacultyCard = dynamic(() => import("./Facultycard"), {
   loading: () => (
     <div className="w-[100%] h-[100%] m-4 p-4 bg-[grey]">Loading</div>
@@ -18,10 +19,24 @@ const FacultyList = ({ url, branch }) => {
       try {
         const response = await fetch(apiEndpoint);
         const data = await response.json();
-        // console.log(data);
-        const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
+
+        const order = [
+          "HoD & Professor",
+          "HoD & Associate Professor",
+          "HoD and Professor",
+          "Professor",
+          "Associate Professor",
+          "Assistant Professor",
+          "Registrar",
+          "Temporary Faculty"
+        ];
+
+        // Sorting the faculty data based on the order of designations
+        const sortedData = data.sort((a, b) => {
+          return order.indexOf(a.designation) - order.indexOf(b.designation);
+        });
+
         setFacultyData(sortedData);
-        // console.log(sortedData);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching faculty data:", error);
@@ -36,18 +51,38 @@ const FacultyList = ({ url, branch }) => {
     return <div>Loading...</div>;
   }
 
-  const renderFacultiesByDesignation = (designations, title) => {
-    const filteredFaculties = facultyData.filter((faculty) =>
-      designations.includes(faculty.designation)
-    );
+  // Filter faculties that are not in the specified order
+  const others = facultyData.filter(
+    (faculty) => ![
+      "HoD & Professor",
+      "HoD & Associate Professor",
+      "HoD and Professor",
+      "Professor",
+      "Associate Professor",
+      "Assistant Professor",
+      "Registrar",
+      "Temporary Faculty"
+    ].includes(faculty.designation)
+  );
 
-    if (filteredFaculties.length === 0) return null;
-
-    return (
-      <div key={title}>
-        <h6 className="font-bold">{title}</h6>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredFaculties.map((faculty) => (
+  return (
+    <div className="flex flex-col p-2">
+      <div className="flex flex-wrap justify-center gap-4 p-4">
+        {/* Render faculty data based on the specified order */}
+        {facultyData
+          .filter((faculty) =>
+            [
+              "HoD & Professor",
+              "HoD & Associate Professor",
+              "HoD and Professor",
+              "Professor",
+              "Associate Professor",
+              "Assistant Professor",
+              "Registrar",
+              "Temporary Faculty"
+            ].includes(faculty.designation)
+          )
+          .map((faculty) => (
             <FacultyCard
               key={faculty.id}
               name={faculty.name}
@@ -60,78 +95,28 @@ const FacultyList = ({ url, branch }) => {
               profileLink={`${url}/${faculty.email}`}
             />
           ))}
-        </div>
+
+        {/* Render other faculties not in the order list */}
+        {others.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-4 p-4 mt-8">
+            <h6 className="font-bold">Others</h6>
+            {others.map((faculty) => (
+              <FacultyCard
+                key={faculty.id}
+                name={faculty.name}
+                image={faculty.image}
+                designation={faculty.designation}
+                department={faculty.department}
+                researchInterests={faculty.research_interest}
+                email={faculty.email}
+                phone={faculty.ext_no}
+                profileLink={`${url}/${faculty.email}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
-    );
-  };
-
-  const renderRemainingFaculties = () => {
-    const classifiedDesignations = [
-      "Professor & HOD",
-      "Associate Professor & HOD",
-      "Professor & HoD",
-      "Associate Professor & HoD",
-      "HoD & Professor",
-      "HoD & Associate Professor",
-      "HoD and Professor",
-      "Professor",
-      "Associate Professor",
-      "Assistant Professor",
-      "Registrar",
-    ];
-
-    const remainingFaculties = facultyData.filter(
-      (faculty) => !classifiedDesignations.includes(faculty.designation)
-    );
-
-    if (remainingFaculties.length === 0) return null;
-
-    return (
-      <div key="Others">
-        <h6 className="font-bold">Others</h6>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {remainingFaculties.map((faculty) => (
-            <FacultyCard
-              key={faculty.id}
-              name={faculty.name}
-              image={faculty.image}
-              designation={faculty.designation}
-              department={faculty.department}
-              qualification={faculty.qualification}
-              researchInterests={faculty.researchInterest}
-              email={faculty.email}
-              phone={faculty.ext_no}
-              profileLink={`${url}/${faculty.email}`}
-            />
-          ))}
-        </div>
-      </div>
-    );
-  };
-
-  return (
-    <>
-      <div className="flex flex-col p-2">
-        <div>
-          {renderFacultiesByDesignation(
-            [
-              "Professor & HOD",
-              "Associate Professor & HOD",
-              "Professor & HoD",
-              "Associate Professor & HoD",
-              "HoD & Professor",
-              "HoD & Associate Professor",
-              "HoD and Professor",
-            ],
-            "Head of Department"
-          )}
-          {renderFacultiesByDesignation(["Professor"], "Professor")}
-          {renderFacultiesByDesignation(["Associate Professor"], "Associate Professor")}
-          {renderFacultiesByDesignation(["Assistant Professor"], "Assistant Professor")}
-          {renderRemainingFaculties()}
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 

@@ -67,10 +67,28 @@ const FacultyDropdown = ({ facultyData }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleDropdown = (id) => {
-    setOpenDropdown(openDropdown === id ? null : id);
+    setOpenDropdown((prev) => (prev === id ? null : id));
+  
+    setTimeout(() => {
+      const element = document.getElementById(`dropdown-${id}`);
+      if (element) {
+        const yOffset = -100; // Adjust this value to control the offset
+        const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+  
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }, 200);
   };
+  
 
   const menuItems = [
+    {
+      condition: work_experience?.length > 0,
+      title: "Work Experience",
+      icon: <FaBriefcase />,
+      id: 20,
+      component: <WorkExperience data={work_experience} />,
+    },
     {
       condition: education?.length > 0,
       title: "Education",
@@ -79,11 +97,18 @@ const FacultyDropdown = ({ facultyData }) => {
       component: <Education data={education} />,
     },
     {
-      condition: phd_candidates?.length > 0,
-      title: "PhD Candidates",
-      icon: <FaGraduationCap />,
-      id: 11,
-      component: <PhdCandidates data={phd_candidates} />,
+      condition: teaching_engagement?.length > 0,
+      title: "Teaching Engagement",
+      icon: <FaLaptopCode />,
+      id: 18,
+      component: <TeachingEngagement data={teaching_engagement} />,
+    },
+    {
+      condition: memberships?.length > 0,
+      title: "Memberships",
+      icon: <FaIdBadge />,
+      id: 21,
+      component: <Memberships data={memberships} />,
     },
     {
       condition: journal_papers?.length > 0,
@@ -114,81 +139,11 @@ const FacultyDropdown = ({ facultyData }) => {
       component: <ConsultancyProjects data={consultancy_projects} />,
     },
     {
-      condition: teaching_engagement?.length > 0,
-      title: "Teaching Engagement",
-      icon: <FaLaptopCode />,
-      id: 18,
-      component: <TeachingEngagement data={teaching_engagement} />,
-    },
-    {
-      condition: textbooks?.length > 0,
-      title: "Textbooks",
-      icon: <FaBook />,
-      id: 8,
-      component: <Textbooks data={textbooks} />,
-    },
-    {
-      condition: edited_books?.length > 0,
-      title: "Edited Books",
-      icon: <FaBook />,
-      id: 9,
-      component: <EditedBooks data={edited_books} />,
-    },
-    {
-      condition: internships?.length > 0,
-      title: "Internships",
-      icon: <FaUserGraduate />,
-      id: 19,
-      component: <Internships data={internships} />,
-    },
-    {
-      condition: work_experience?.length > 0,
-      title: "Work Experience",
-      icon: <FaBriefcase />,
-      id: 20,
-      component: <WorkExperience data={work_experience} />,
-    },
-    {
-      condition: memberships?.length > 0,
-      title: "Memberships",
-      icon: <FaIdBadge />,
-      id: 21,
-      component: <Memberships data={memberships} />,
-    },
-    {
-      condition: department_activities?.length > 0,
-      title: "Department Activities",
-      icon: <FaUniversity />,
-      id: 22,
-      component: <DepartmentActivities data={department_activities} />,
-    },
-    {
-      condition: institute_activities?.length > 0,
-      title: "Institute Activities",
-      icon: <FaBuilding />,
-      id: 23,
-      component: <InstituteActivities data={institute_activities} />,
-    },
-    {
-      condition: workshops_conferences?.length > 0,
-      title: "Workshops & Conferences",
-      icon: <FaChalkboardTeacher />,
-      id: 24,
-      component: <WorkshopsConferences data={workshops_conferences} />,
-    },
-    {
-      condition: project_supervision?.length > 0,
-      title: "Project Supervision",
-      icon: <FaProjectDiagram />,
-      id: 27,
-      component: <ProjectSupervision data={project_supervision} />,
-    },
-    {
-      condition: book_chapters?.length > 0,
-      title: "Book Chapters",
-      icon: <FaBook />,
-      id: 10,
-      component: <BookChapters data={book_chapters} />,
+      condition: patents?.length > 0,
+      title: "Patents",
+      icon: <TbCertificate />,
+      id: 30,
+      component: <Patents data={patents} />,
     },
     {
       condition: ipr?.length > 0,
@@ -205,18 +160,74 @@ const FacultyDropdown = ({ facultyData }) => {
       component: <Startups data={startups} />,
     },
     {
-      condition: patents?.length > 0,
-      title: "Patents",
-      icon: <TbCertificate />,
-      id: 30,
-      component: <Patents data={patents} />,
+      condition: book_chapters?.length > 0,
+      title: "Book Chapters",
+      icon: <FaBook />,
+      id: 10,
+      component: <BookChapters data={book_chapters} />,
+    },
+    {
+      condition: textbooks?.length > 0,
+      title: "Textbooks",
+      icon: <FaBook />,
+      id: 8,
+      component: <Textbooks data={textbooks} />,
+    },
+    {
+      condition: edited_books?.length > 0,
+      title: "Edited Books",
+      icon: <FaBook />,
+      id: 9,
+      component: <EditedBooks data={edited_books} />,
+    },
+    {
+      condition: workshops_conferences?.length > 0,
+      title: "Workshops & Conferences",
+      icon: <FaChalkboardTeacher />,
+      id: 24,
+      component: <WorkshopsConferences data={workshops_conferences} />,
+    },
+    {
+      condition: phd_candidates?.length > 0,
+      title: "PhD Candidates",
+      icon: <FaGraduationCap />,
+      id: 11,
+      component: <PhdCandidates data={phd_candidates} />,
+    },
+    {
+      condition: project_supervision?.length > 0,
+      title: "Project Supervision",
+      icon: <FaProjectDiagram />,
+      id: 27,
+      component: <ProjectSupervision data={project_supervision} />,
+    },
+    {
+      condition: internships?.length > 0,
+      title: "Internships",
+      icon: <FaUserGraduate />,
+      id: 19,
+      component: <Internships data={internships} />,
+    },
+    {
+      condition: institute_activities?.length > 0,
+      title: "Institute Activities",
+      icon: <FaBuilding />,
+      id: 23,
+      component: <InstituteActivities data={institute_activities} />,
+    },
+    {
+      condition: department_activities?.length > 0,
+      title: "Department Activities",
+      icon: <FaUniversity />,
+      id: 22,
+      component: <DepartmentActivities data={department_activities} />,
     },
   ].filter((item) => item.condition);
 
   return (
     <div className="w-full mt-6">
       {menuItems.map((item) => (
-        <div key={item.id} className="mb-4">
+        <div key={item.id} id={`dropdown-${item.id}`} className="mb-4">
           <button
             className={`w-full flex justify-between items-center px-4 py-2 rounded-lg hover:opacity-90 transition-all duration-300 bg-red-600 text-white`}
             onClick={() => toggleDropdown(item.id)}

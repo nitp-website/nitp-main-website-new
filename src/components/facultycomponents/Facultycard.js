@@ -36,7 +36,7 @@ function FacultyCard({
   interestsArray.sort();
 
   return (
-    <div className="w-[300px] h-[325px] mx-4 my-2">
+    <div className="w-[300px] h-[325px] mx-4 my-4">
       <div className="py-8 pb-10 mb-8 bg-[#f7f5ec] text-center overflow-hidden relative rounded-[20px] group h-full">
         <div className="inline-block h-[130px] w-[130px] mb-12 z-[1] relative">
           <div className="absolute w-full h-0 rounded-full bg-[rgb(153,27,27)] bottom-[135%] right-0 left-0 opacity-90 scale-[3] transition-all duration-300 group-hover:h-full"></div>
