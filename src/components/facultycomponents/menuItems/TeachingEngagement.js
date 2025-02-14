@@ -30,31 +30,33 @@ const TeachingEngagement = ({ data }) => {
   return (
     <div className="p-6 border border-blue-600 rounded-lg text-black bg-blue-100 shadow-lg">
       <h2 className="text-xl font-bold text-blue-800 border-b-2 border-blue-500 pb-2 mb-4">
-        Teaching Engagement
+        Teaching Engagements
       </h2>
-      {Object.keys(groupedCourses).map((level) => (
-        <div key={level} className="mb-6">
-          <h3 className="text-2xl font-bold text-gray-900">{level} LEVEL</h3>
-          {Object.keys(groupedCourses[level])
-            .sort((a, b) => b - a)
-            .map((year) => (
-              <div key={year} className="mb-6">
-                <h4 className="text-lg font-bold text-white bg-blue-500 px-4 py-1 rounded-lg">
-                  {year}
-                </h4>
-                <ul className="space-y-4 mt-2">
-                  {groupedCourses[level][year].map((course, index) => (
-                    <li key={index} className="text-lg mt-2 font-semibold text-gray-800">
-                      {course.course_number} -
-                      <span className="text-black font-semibold"> {course.course_title}</span>
-                      {getCourseType(course)}, Semester {course.semester}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-        </div>
-      ))}
+      {Object.keys(groupedCourses)
+        .filter((level) => Object.keys(groupedCourses[level]).length > 0) // Only show levels with courses
+        .map((level) => (
+          <div key={level} className="mb-6">
+            <h3 className="text-2xl mb-2 font-bold text-gray-900">{level} LEVEL</h3>
+            {Object.keys(groupedCourses[level])
+              .sort((a, b) => b - a)
+              .map((year) => (
+                <div key={year} className="mb-6">
+                  <h4 className="text-lg font-bold text-white bg-blue-500 px-4 py-1 rounded-lg">
+                    {year}
+                  </h4>
+                  <ul className="space-y-4 mt-2">
+                    {groupedCourses[level][year].map((course, index) => (
+                      <li key={index} className="text-lg mt-2 font-semibold text-gray-800">
+                        {course.course_number} -
+                        <span className="text-black font-semibold"> {course.course_title}</span>
+                        {getCourseType(course)}, Semester {course.semester}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+          </div>
+        ))}
     </div>
   );
 };
