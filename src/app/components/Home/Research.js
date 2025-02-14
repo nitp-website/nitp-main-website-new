@@ -48,7 +48,6 @@ const ProjectCard = ({
         )}
       </ul>
     </div>
-
   );
 };
 
@@ -65,18 +64,23 @@ const PublicationCard = ({
       <h3 className="text-lg font-semibold text-blue-700">{title}</h3>
       <p className="text-gray-800 mt-2">
         {authors && <span className="font-semibold">{authors}</span>}
-        {journalName && <span> | <span className="font-semibold">{journalName}</span></span>}
-        {year && <span> | <span className="font-semibold">{year}</span></span>}
+        {journalName && (
+          <span>
+            {" "}
+            | <span className="font-semibold">{journalName}</span>
+          </span>
+        )}
+        {year && (
+          <span>
+            {" "}
+            | <span className="font-semibold">{year}</span>
+          </span>
+        )}
       </p>
     </div>
-
   );
 };
 
-const extractYear = (publication) => {
-  const yearMatch = publication.match(/\b(19|20)\d{2}\b/);
-  return yearMatch ? parseInt(yearMatch[0], 10) : null;
-};
 const fetchFacultyName = async (email) => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=${email}`
@@ -144,19 +148,7 @@ export default function Research() {
           `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=all`
         );
         const publications = response.data;
-
-        publications.sort((a, b) => parseInt(b.year) - parseInt(a.year));
-
-        const limitedPublications = publications.slice(0, 25);
-
-        const publicationsWithFaculty = await Promise.all(
-          limitedPublications.map(async (publication) => {
-            const facultyName = await fetchFacultyName(publication.email); // Assuming email is the identifier
-            return { ...publication, facultyName };
-          })
-        );
-
-        setRecentPublications(publicationsWithFaculty);
+        setRecentPublications(publications);
       } catch (error) {
         console.error("Error fetching recent publications:", error);
       }
@@ -164,39 +156,21 @@ export default function Research() {
 
     fetchRecentPublications();
   }, []);
+
   useEffect(() => {
-    const fetchRecentProjectsAndJournals = async () => {
+    const fetchRecentProjects = async () => {
       try {
         const projectResponse = await fetch(
           `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=all`
         );
-        const journalResponse = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=all`
-        );
-
         const projects = await projectResponse.json();
-        const journals = await journalResponse.json();
-
-        // Limit to 15 projects and journals
-        const limitedProjects = projects.slice(0, 15);
-        const limitedJournals = journals.slice(0, 15);
-
-        // Fetch faculty names for projects
-        const projectsWithFaculty = await Promise.all(
-          limitedProjects.map(async (project) => {
-            const facultyName = await fetchFacultyName(project.email);
-            return { ...project, facultyName };
-          })
-        );
-
-        setRecentProjects(projectsWithFaculty);
-        setRecentJournals(limitedJournals);
+        setRecentProjects(projects);
       } catch (error) {
         console.error("Error fetching recent projects or journals:", error);
       }
     };
 
-    fetchRecentProjectsAndJournals();
+    fetchRecentProjects();
   }, []);
 
   return (
@@ -358,137 +332,137 @@ export default function Research() {
             </div>
 
             <div className="p-4 h-80 overflow-hidden relative">
-              <ul className="space-y-4 flex flex-col animate-scroll">
-                {recentPublications.length === 0 ? (
-                  <div className="text-sm md:text-base flex justify-center items-center h-52">
-                    <svg
-                      version="1.1"
-                      id="L1"
-                      height="100px"
-                      width="100px"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 100 100"
-                      enable-background="new 0 0 100 100"
+              {recentPublications.length === 0 ? (
+                <div className="text-sm md:text-base flex justify-center items-center h-52">
+                  <svg
+                    version="1.1"
+                    id="L1"
+                    height="100px"
+                    width="100px"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 100 100"
+                    enableBackground="new 0 0 100 100"
+                  >
+                    <circle
+                      fill="none"
+                      stroke="#f87171"
+                      strokeWidth="6"
+                      strokeMiterlimit="15"
+                      strokeDasharray="14.2472,14.2472"
+                      cx="50"
+                      cy="50"
+                      r="47"
                     >
-                      <circle
-                        fill="none"
-                        stroke="#f87171"
-                        stroke-width="6"
-                        stroke-miterlimit="15"
-                        stroke-dasharray="14.2472,14.2472"
-                        cx="50"
-                        cy="50"
-                        r="47"
-                      >
+                      <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="rotate"
+                        dur="5s"
+                        from="0 50 50"
+                        to="360 50 50"
+                        repeatCount="indefinite"
+                      />
+                    </circle>
+                    <circle
+                      fill="none"
+                      stroke="#f87171"
+                      strokeWidth="1"
+                      strokeMiterlimit="10"
+                      strokeDasharray="10,10"
+                      cx="50"
+                      cy="50"
+                      r="39"
+                    >
+                      <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="rotate"
+                        dur="5s"
+                        from="0 50 50"
+                        to="-360 50 50"
+                        repeatCount="indefinite"
+                      />
+                    </circle>
+                    <g fill="#f87171">
+                      <rect x="30" y="35" width="5" height="30">
                         <animateTransform
                           attributeName="transform"
-                          attributeType="XML"
-                          type="rotate"
-                          dur="5s"
-                          from="0 50 50"
-                          to="360 50 50"
+                          dur="1s"
+                          type="translate"
+                          values="0 5 ; 0 -5; 0 5"
                           repeatCount="indefinite"
+                          begin="0.1"
                         />
-                      </circle>
-                      <circle
-                        fill="none"
-                        stroke="#f87171"
-                        stroke-width="1"
-                        stroke-miterlimit="10"
-                        stroke-dasharray="10,10"
-                        cx="50"
-                        cy="50"
-                        r="39"
-                      >
+                      </rect>
+                      <rect x="40" y="35" width="5" height="30">
                         <animateTransform
                           attributeName="transform"
-                          attributeType="XML"
-                          type="rotate"
-                          dur="5s"
-                          from="0 50 50"
-                          to="-360 50 50"
+                          dur="1s"
+                          type="translate"
+                          values="0 5 ; 0 -5; 0 5"
                           repeatCount="indefinite"
+                          begin="0.2"
                         />
-                      </circle>
-                      <g fill="#f87171">
-                        <rect x="30" y="35" width="5" height="30">
-                          <animateTransform
-                            attributeName="transform"
-                            dur="1s"
-                            type="translate"
-                            values="0 5 ; 0 -5; 0 5"
-                            repeatCount="indefinite"
-                            begin="0.1"
-                          />
-                        </rect>
-                        <rect x="40" y="35" width="5" height="30">
-                          <animateTransform
-                            attributeName="transform"
-                            dur="1s"
-                            type="translate"
-                            values="0 5 ; 0 -5; 0 5"
-                            repeatCount="indefinite"
-                            begin="0.2"
-                          />
-                        </rect>
-                        <rect x="50" y="35" width="5" height="30">
-                          <animateTransform
-                            attributeName="transform"
-                            dur="1s"
-                            type="translate"
-                            values="0 5 ; 0 -5; 0 5"
-                            repeatCount="indefinite"
-                            begin="0.3"
-                          />
-                        </rect>
-                        <rect x="60" y="35" width="5" height="30">
-                          <animateTransform
-                            attributeName="transform"
-                            dur="1s"
-                            type="translate"
-                            values="0 5 ; 0 -5; 0 5"
-                            repeatCount="indefinite"
-                            begin="0.4"
-                          />
-                        </rect>
-                        <rect x="70" y="35" width="5" height="30">
-                          <animateTransform
-                            attributeName="transform"
-                            dur="1s"
-                            type="translate"
-                            values="0 5 ; 0 -5; 0 5"
-                            repeatCount="indefinite"
-                            begin="0.5"
-                          />
-                        </rect>
-                      </g>
-                    </svg>
-                  </div>
-                ) : (
-                  recentPublications.map((publication) => {
+                      </rect>
+                      <rect x="50" y="35" width="5" height="30">
+                        <animateTransform
+                          attributeName="transform"
+                          dur="1s"
+                          type="translate"
+                          values="0 5 ; 0 -5; 0 5"
+                          repeatCount="indefinite"
+                          begin="0.3"
+                        />
+                      </rect>
+                      <rect x="60" y="35" width="5" height="30">
+                        <animateTransform
+                          attributeName="transform"
+                          dur="1s"
+                          type="translate"
+                          values="0 5 ; 0 -5; 0 5"
+                          repeatCount="indefinite"
+                          begin="0.4"
+                        />
+                      </rect>
+                      <rect x="70" y="35" width="5" height="30">
+                        <animateTransform
+                          attributeName="transform"
+                          dur="1s"
+                          type="translate"
+                          values="0 5 ; 0 -5; 0 5"
+                          repeatCount="indefinite"
+                          begin="0.5"
+                        />
+                      </rect>
+                    </g>
+                  </svg>
+                </div>
+              ) : (
+                (() => {
+                  const sortedPublications = recentPublications
+                    .sort(
+                      (a, b) =>
+                        new Date(b.conference_year) -
+                        new Date(a.conference_year)
+                    )
+                    .slice(0, 30);
 
-                    // Check if 'publications' array exists
-                    const publications = publication.publications || [
-                      publication,
-                    ]; // Use the current publication if no 'publications' array
-                    return publications
-                      .filter((pub) => pub.conference_year === 2024)
-                      .slice(0, 100)
-                      .slice(0, 30)
-                      .map((pub) => (
+                  return (
+                    <ul className="space-y-4 flex flex-col animate-scroll">
+                      {sortedPublications.map((pub) => (
                         <PublicationCard
                           key={pub.id}
-                          // facultyName={pub.email || "Unknown"}
-                          year={pub.conference_year || "Unknown"}
-                          authors={pub.authors || "N/A"}
-                          journalName={pub.conference_name || "N/A"}
-                          title={pub.title || "Untitled"}
+                          year={pub.conference_year}
+                          authors={pub.authors}
+                          journalName={pub.conference_name}
+                          title={pub.title}
                         />
-                      ));
-                  })
-                )}
-              </ul>
+                      ))}
+                    </ul>
+                  );
+                })()
+              )}
             </div>
           </div>
 
@@ -501,131 +475,135 @@ export default function Research() {
               <div className="w-auto h-0.5 bg-primary ml-4" />
             </div>
             <div className="p-4 h-80 overflow-hidden relative">
-              <ul className="space-y-4 flex flex-col animate-scroll">
-                {recentProjects.length === 0 ? (
-                  <div className="flex justify-center items-center h-52 ">
-                    <svg
-                      version="1.1"
-                      id="L1"
-                      height="100px"
-                      width="100px"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 100 100"
-                      enable-background="new 0 0 100 100"
+              {recentProjects.length === 0 ? (
+                <div className="flex justify-center items-center h-52 ">
+                  <svg
+                    version="1.1"
+                    id="L1"
+                    height="100px"
+                    width="100px"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 100 100"
+                    enable-background="new 0 0 100 100"
+                  >
+                    <circle
+                      fill="none"
+                      stroke="#f87171"
+                      stroke-width="6"
+                      stroke-miterlimit="15"
+                      stroke-dasharray="14.2472,14.2472"
+                      cx="50"
+                      cy="50"
+                      r="47"
                     >
-                      <circle
-                        fill="none"
-                        stroke="#f87171"
-                        stroke-width="6"
-                        stroke-miterlimit="15"
-                        stroke-dasharray="14.2472,14.2472"
-                        cx="50"
-                        cy="50"
-                        r="47"
-                      >
-                        <animateTransform
-                          attributeName="transform"
-                          attributeType="XML"
-                          type="rotate"
-                          dur="5s"
-                          from="0 50 50"
-                          to="360 50 50"
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-                      <circle
-                        fill="none"
-                        stroke="#f87171"
-                        stroke-width="1"
-                        stroke-miterlimit="10"
-                        stroke-dasharray="10,10"
-                        cx="50"
-                        cy="50"
-                        r="39"
-                      >
-                        <animateTransform
-                          attributeName="transform"
-                          attributeType="XML"
-                          type="rotate"
-                          dur="5s"
-                          from="0 50 50"
-                          to="-360 50 50"
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-                      <g fill="#f87171">
-                        <rect x="30" y="35" width="5" height="30">
-                          <animateTransform
-                            attributeName="transform"
-                            dur="1s"
-                            type="translate"
-                            values="0 5 ; 0 -5; 0 5"
-                            repeatCount="indefinite"
-                            begin="0.1"
-                          />
-                        </rect>
-                        <rect x="40" y="35" width="5" height="30">
-                          <animateTransform
-                            attributeName="transform"
-                            dur="1s"
-                            type="translate"
-                            values="0 5 ; 0 -5; 0 5"
-                            repeatCount="indefinite"
-                            begin="0.2"
-                          />
-                        </rect>
-                        <rect x="50" y="35" width="5" height="30">
-                          <animateTransform
-                            attributeName="transform"
-                            dur="1s"
-                            type="translate"
-                            values="0 5 ; 0 -5; 0 5"
-                            repeatCount="indefinite"
-                            begin="0.3"
-                          />
-                        </rect>
-                        <rect x="60" y="35" width="5" height="30">
-                          <animateTransform
-                            attributeName="transform"
-                            dur="1s"
-                            type="translate"
-                            values="0 5 ; 0 -5; 0 5"
-                            repeatCount="indefinite"
-                            begin="0.4"
-                          />
-                        </rect>
-                        <rect x="70" y="35" width="5" height="30">
-                          <animateTransform
-                            attributeName="transform"
-                            dur="1s"
-                            type="translate"
-                            values="0 5 ; 0 -5; 0 5"
-                            repeatCount="indefinite"
-                            begin="0.5"
-                          />
-                        </rect>
-                      </g>
-                    </svg>
-                  </div>
-                ) : (
-                  recentProjects
-                    .filter((project) => new Date(project.start_date).getFullYear() === 2024)
-                    .slice(0, 100)
-                    .slice(0, 30)
-                    .map((project) => (
-                      <ProjectCard
-                        key={project.id}
-                        project_title={project.project_title} // Correct field from API
-                        facultyName={project.investigators || "Unknown"}
-                        sponsor={project.funding_agency}
-                        amount={project.financial_outlay}
-                        start={project.start_date}
-                        end={project.end_date}
+                      <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="rotate"
+                        dur="5s"
+                        from="0 50 50"
+                        to="360 50 50"
+                        repeatCount="indefinite"
                       />
-                    ))
-                )}
-              </ul>
+                    </circle>
+                    <circle
+                      fill="none"
+                      stroke="#f87171"
+                      stroke-width="1"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="10,10"
+                      cx="50"
+                      cy="50"
+                      r="39"
+                    >
+                      <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="rotate"
+                        dur="5s"
+                        from="0 50 50"
+                        to="-360 50 50"
+                        repeatCount="indefinite"
+                      />
+                    </circle>
+                    <g fill="#f87171">
+                      <rect x="30" y="35" width="5" height="30">
+                        <animateTransform
+                          attributeName="transform"
+                          dur="1s"
+                          type="translate"
+                          values="0 5 ; 0 -5; 0 5"
+                          repeatCount="indefinite"
+                          begin="0.1"
+                        />
+                      </rect>
+                      <rect x="40" y="35" width="5" height="30">
+                        <animateTransform
+                          attributeName="transform"
+                          dur="1s"
+                          type="translate"
+                          values="0 5 ; 0 -5; 0 5"
+                          repeatCount="indefinite"
+                          begin="0.2"
+                        />
+                      </rect>
+                      <rect x="50" y="35" width="5" height="30">
+                        <animateTransform
+                          attributeName="transform"
+                          dur="1s"
+                          type="translate"
+                          values="0 5 ; 0 -5; 0 5"
+                          repeatCount="indefinite"
+                          begin="0.3"
+                        />
+                      </rect>
+                      <rect x="60" y="35" width="5" height="30">
+                        <animateTransform
+                          attributeName="transform"
+                          dur="1s"
+                          type="translate"
+                          values="0 5 ; 0 -5; 0 5"
+                          repeatCount="indefinite"
+                          begin="0.4"
+                        />
+                      </rect>
+                      <rect x="70" y="35" width="5" height="30">
+                        <animateTransform
+                          attributeName="transform"
+                          dur="1s"
+                          type="translate"
+                          values="0 5 ; 0 -5; 0 5"
+                          repeatCount="indefinite"
+                          begin="0.5"
+                        />
+                      </rect>
+                    </g>
+                  </svg>
+                </div>
+              ) : (
+                (() => {
+                  const sortedProjects = recentProjects
+                    .sort((a, b) => new Date(b.end_date) - new Date(a.end_date)) // Sort projects by end date (latest first)
+                    .slice(0, 30); // Get only the first 30 projects
+
+                  return (
+                    <ul className="space-y-4 flex flex-col animate-scroll">
+                      {sortedProjects.map((project) => (
+                        <ProjectCard
+                          key={project.id}
+                          project_title={project.project_title} // Correct field from API
+                          facultyName={project.investigators}
+                          sponsor={project.funding_agency}
+                          amount={project.financial_outlay}
+                          start={project.start_date}
+                          end={project.end_date}
+                        />
+                      ))}
+                    </ul>
+                  );
+                })()
+              )}
             </div>
           </div>
         </div>
@@ -649,46 +627,6 @@ function ActivityIcon(props) {
       strokeLinejoin="round"
     >
       <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" />
-    </svg>
-  );
-}
-
-function ArrowLeftIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m12 19-7-7 7-7" />
-      <path d="M19 12H5" />
-    </svg>
-  );
-}
-
-function ArrowRightIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M5 12h14" />
-      <path d="m12 5 7 7-7 7" />
     </svg>
   );
 }
@@ -757,26 +695,6 @@ function CpuIcon(props) {
       <path d="M20 9h2" />
       <path d="M9 2v2" />
       <path d="M9 20v2" />
-    </svg>
-  );
-}
-
-function FileIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
     </svg>
   );
 }
