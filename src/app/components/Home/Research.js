@@ -19,35 +19,36 @@ const ProjectCard = ({
   // console.log("ProjectCard Props:", project_title, facultyName, sponsor, amount, start, end);
 
   return (
-    <div className="bg-white border border-gray-300 p-3 mb-2 md:flex md:flex-col md:justify-between md:mr-4 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
-      <div className="flex items-center">
-        <h3 className="text-sm font-semibold mt-2 text-primary md:text-sm">
-          {project_title}
-        </h3>
-      </div>
-      <ul className="text-sm text-gray-600 mt-2 space-y-1">
-        {facultyName && (
-          <li>
-            <strong>Faculty:</strong> {facultyName}
-          </li>
-        )}
-        {sponsor && (
-          <li>
-            <strong>Sponsor:</strong> {sponsor}
-          </li>
-        )}
-        {amount && (
-          <li>
-            <strong>Amount:</strong> {amount}
-          </li>
-        )}
-        {start && end && (
-          <li>
-            <strong>Duration:</strong> {start} - {end}
-          </li>
-        )}
-      </ul>
+    <div className="bg-white border border-gray-200 p-4 mb-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+    <div className="flex items-center">
+      <h3 className="text-base font-semibold text-purple-700">
+        {project_title}
+      </h3>
     </div>
+    <ul className="text-sm text-gray-700 mt-2 space-y-2">
+      {facultyName && (
+        <li>
+          <strong className="text-gray-900">Faculty:</strong> {facultyName}
+        </li>
+      )}
+      {sponsor && (
+        <li>
+          <strong className="text-gray-900">Sponsor:</strong> {sponsor}
+        </li>
+      )}
+      {amount && (
+        <li>
+          <strong className="text-gray-900">Amount:</strong> {amount}
+        </li>
+      )}
+      {start && end && (
+        <li>
+          <strong className="text-gray-900">Duration:</strong> {start} - {end}
+        </li>
+      )}
+    </ul>
+  </div>
+  
   );
 };
 
@@ -60,35 +61,15 @@ const PublicationCard = ({
   title,
 }) => {
   return (
-    <div className="bg-white border border-gray-300 p-3 mb-2 md:flex md:flex-col md:justify-between md:mr-4 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
-      <div className="flex items-center">
-        <h3 className="text-sm font-semibold mt-2 text-primary md:text-sm">
-          {title}
-        </h3>
-      </div>
-      <ul className="text-sm text-gray-600 mt-2 space-y-1">
-        {authors && (
-          <li>
-            <strong>Authors:</strong> {authors}
-          </li>
-        )}
-        {/* {facultyName && (
-          <li>
-            <strong>Faculty:</strong> {facultyName}
-          </li>
-        )} */}
-        {journalName && (
-          <li>
-            <strong>Conference:</strong> {journalName}
-          </li>
-        )}
-        {year && (
-          <li>
-            <strong>Year:</strong> {year}
-          </li>
-        )}
-      </ul>
-    </div>
+    <div className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300">
+    <h3 className="text-lg font-semibold text-blue-700">{title}</h3>
+    <p className="text-gray-800 mt-2">
+      {authors && <span className="font-semibold">{authors}</span>}
+      {journalName && <span> | <span className="font-semibold">{journalName}</span></span>}
+      {year && <span> | <span className="font-semibold">{year}</span></span>}
+    </p>
+  </div>
+
   );
 };
 
@@ -376,8 +357,8 @@ export default function Research() {
               <div className="w-8 h-0.5 bg-primary ml-4" />
             </div>
 
-            <div className="p-4">
-              <ul className="space-y-4">
+            <div className="p-4 h-80 overflow-hidden relative">
+            <ul className="space-y-4 flex flex-col animate-scroll">
                 {recentPublications.length === 0 ? (
                   <div className="text-sm md:text-base flex justify-center items-center h-52">
                     <svg
@@ -514,7 +495,8 @@ export default function Research() {
               </h3>
               <div className="w-auto h-0.5 bg-primary ml-4" />
             </div>
-            <ul className="section-contentp">
+            <div className="p-4 h-80 overflow-hidden relative">
+            <ul className="space-y-4 flex flex-col animate-scroll">
               {recentProjects.length === 0 ? (
                 <div className="flex justify-center items-center h-52 ">
                   <svg
@@ -635,6 +617,7 @@ export default function Research() {
                 ))
               )}
             </ul>
+            </div>
           </div>
         </div>
       </div>
