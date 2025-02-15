@@ -81,58 +81,59 @@ const DocumentsTable = () => {
      link:
       "https://drive.google.com/file/d/1p60py5fKWJ_iWn9s17NCtStlhfOTRqea/view?usp=sharing",
     },
-    {
-      para: "10-Format of Application Undertaking to be submitted by M. Tech/MURP/Ph.D Scholar",
-      link:
-       "https://drive.google.com/file/d/1g5EKJIpNhLeUNqfioKYzaWTPra8jz3Kr/view?usp=drive_link",
-     },
      {
-      para: "11-Format of Application Choice of Ph.D Supervisor",
-      link:
-       "https://drive.google.com/file/d/1CoHol7qGM6UexBx87s4-mPNGn3c-9vl4/view?usp=drive_link",
-     },
-     {
-      para: "12-Format of Application Request for Change of Research Supervisor or inclusion of Additional Supervisor",
+      para: "10-Format of Application Request for Change of Research Supervisor or inclusion of Additional Supervisor",
       link:
        "https://drive.google.com/file/d/1Q7SqKkavqmPAzZ3SNTRJ_03zctz5pCpL/view?usp=drive_link",
      },
      {
-      para: "13-Format of Course Work Registration Form [Ph.D]",
-      link:
-       "https://drive.google.com/file/d/1KkZ_M3_oGDL_K245pdEy_80DO8_0Gpng/view?usp=drive_link",
-     },
-     {
-      para: "14-Format of List of Publications Based on Ph. D. Research Work",
-      link:
-       "https://drive.google.com/file/d/17IfUmicvFCiK5RVeOuQpl3DpecSjrVUw/view?usp=drive_link",
-     },
-     {
-      para: "15-Format of Semester Progress Application and Research Seminar Report",
+      para: "11-Format of Semester Progress Application and Research Seminar Report",
       link:
        "https://drive.google.com/file/d/1ls4o7n0vB04haEbk0uyS8qESKkYyXm8N/view?usp=drive_link",
      },
      {
-      para: "16-Format of  Plagiarism Report of Final Thesis",
+      para: "12-Format of  Plagiarism Report of Final Thesis",
       link:
        "https://drive.google.com/file/d/12U5J3LvThzzNg5Oob5SIBtiVkzSS59yf/view?usp=drive_link",
      },
      {
-      para: "17-Format of Report of the PhD thesis Examiner",
-      link:
-       "https://drive.google.com/file/d/1jHjC71_meJ4u-KYXOeqDKKtVBCLWitY8/view?usp=drive_link",
-     },
-     {
-      para: "18-Format of Report of Final Viva-Voce Examination Board",
+      para: "13-Format of Report of Final Viva-Voce Examination Board",
       link:
        "https://drive.google.com/file/d/1XFm-BTOUKubFflu1BhN6GK57lU3Ug9gr/view?usp=drive_link",
      },
      {
-      para: "19-Format of Application Form for Enhancement of Scholarship",
+      para: "14-Format of Application Form for Enhancement of Scholarship",
       link:
        "https://drive.google.com/file/d/1FhT6tnZqF2Lq4orVwL3nBp4S8k6Mvm26/view?usp=drive_link",
      },
    ]
-
+  const phd=[
+    {
+      para: "1-Format of Application Undertaking to be submitted by M. Tech/MURP/Ph.D Scholar",
+      link:
+       "https://drive.google.com/file/d/1g5EKJIpNhLeUNqfioKYzaWTPra8jz3Kr/view?usp=drive_link",
+     },
+     {
+      para: "2-Format of Application Choice of Ph.D Supervisor",
+      link:
+       "https://drive.google.com/file/d/1CoHol7qGM6UexBx87s4-mPNGn3c-9vl4/view?usp=drive_link",
+     },
+     {
+      para: "3-Format of Course Work Registration Form [Ph.D]",
+      link:
+       "https://drive.google.com/file/d/1KkZ_M3_oGDL_K245pdEy_80DO8_0Gpng/view?usp=drive_link",
+     },
+     {
+      para: "4-Format of List of Publications Based on Ph. D. Research Work",
+      link:
+       "https://drive.google.com/file/d/17IfUmicvFCiK5RVeOuQpl3DpecSjrVUw/view?usp=drive_link",
+     },
+     {
+      para: "5-Format of Report of the PhD thesis Examiner",
+      link:
+       "https://drive.google.com/file/d/1jHjC71_meJ4u-KYXOeqDKKtVBCLWitY8/view?usp=drive_link",
+     },
+  ]
   
 
   return (
@@ -147,6 +148,27 @@ const DocumentsTable = () => {
         </thead>
         <tbody>
           {data.map((item, index) => (
+            <tr key={index}>
+              <td className="text-left px-4 py-2 border-b border-gray-300 text-black">{item.para}</td>
+              <td className="text-center px-4 py-3 border-b border-gray-300">
+                <a href={item.link} className="bg-blue-400 text-white font-bold px-4 py-2 rounded-md hover:bg-gradient-to-r from-cyan-500 to-blue-500 md:text-xs text-xs">
+                  Download
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <h1 className="text-xl mt-3 font-bold mb-6 text-neutral-800 text-center">PhD</h1>
+      <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg mt-4">
+        <thead>
+          <tr>
+            <th className="text-left px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Format</th>
+            <th className="text-center px-1 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
+          </tr>
+        </thead>
+        <tbody>
+          {phd.map((item, index) => (
             <tr key={index}>
               <td className="text-left px-4 py-2 border-b border-gray-300 text-black">{item.para}</td>
               <td className="text-center px-4 py-3 border-b border-gray-300">
