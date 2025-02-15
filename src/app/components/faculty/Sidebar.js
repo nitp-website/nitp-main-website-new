@@ -18,7 +18,7 @@ const Sidebar = ({ Data }) => {
     sponsored_projects,
     consultancy_projects,
     startups,
-    patents,
+    ipr,
     book_chapters,
   } = facultyData || {};
   const [qrCode, setQrCode] = useState("");
@@ -65,7 +65,11 @@ const Sidebar = ({ Data }) => {
       bgColor: "bg-purple-500",
     },
     { label: "Startups", count: startups?.length, bgColor: "bg-pink-500" },
-    { label: "Patents", count: patents?.length, bgColor: "bg-orange-500" },
+    {
+      label: "Intellectual Property Rights",
+      count: ipr?.length,
+      bgColor: "bg-orange-500",
+    },
     {
       label: "Book Chapters",
       count: book_chapters?.length,

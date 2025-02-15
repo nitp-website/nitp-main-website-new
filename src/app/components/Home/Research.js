@@ -53,29 +53,31 @@ const ProjectCard = ({
 
 // PublicationCard Component
 const PublicationCard = ({
-  // facultyName,
   year,
   authors,
   journalName,
   title,
+  journalQuartile,
+  volume,
 }) => {
   return (
     <div className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300">
-      <h3 className="text-lg font-semibold text-blue-700">{title}</h3>
-      <p className="text-gray-800 mt-2">
-        {authors && <span className="font-semibold">{authors}</span>}
+      <p className="text-gray-800 text-base">
+        {authors && <span className="font-semibold">{authors}</span>},{" "}
+        {title && (
+          <span className="font-semibold text-blue-700">"{title}"</span>
+        )}
+        ,{" "}
         {journalName && (
-          <span>
-            {" "}
-            | <span className="font-semibold">{journalName}</span>
+          <span className="text-gray-700 text-lg font-semibold">
+            {journalName}
           </span>
-        )}
-        {year && (
-          <span>
-            {" "}
-            | <span className="font-semibold">{year}</span>
-          </span>
-        )}
+        )}{" "}
+        {journalQuartile && (
+          <span className="text-gray-700">({journalQuartile})</span>
+        )}{" "}
+        {volume && <span className="text-gray-700">Volume: {volume} </span>}{" "}
+        {year && <span className="text-gray-700">Year: {year}</span>}
       </p>
     </div>
   );
@@ -96,11 +98,11 @@ export default function Research() {
   const [counterOn, setCounterOn] = useState(false);
   const [data, setData] = useState({
     patents: 0,
-    books: 1069,
-    journals: 234,
-    conferences: 179,
-    articles: 542,
-    projectCount: 649,
+    books: 0,
+    journals: 0,
+    conferences: 0,
+    articles: 0,
+    projectCount: 0,
   });
 
   const fetchPatents = async () => {
@@ -111,31 +113,45 @@ export default function Research() {
       const projectResponse = await axios.get(
         `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=count`
       );
-
+  
       const publications = publicationsResponse.data;
-      const projectCount = projectResponse.data.projectCount;
-
+      const projectCount = projectResponse.data.projectCount; // Get project count
+  
+      // Calculate publication counts based on type
       const publicationCounts = publications.reduce(
         (acc, publication) => {
-          publication.publications.forEach((pub) => {
-            if (pub.type === "patent") acc.patents += 1;
-            if (pub.type === "book") acc.books += 1;
-            if (pub.type === "conference") acc.conferences += 1;
-            if (pub.type === "article") acc.articles += 1;
-          });
+          // Count conference papers
+          if (publication.conference_name) {
+            acc.conferences += 1;
+          }
+          // Count books (identified by publisher or ISBN)
+          if (publication.publisher || publication.isbn) {
+            acc.books += 1;
+          }
+          // Count journal articles (identified by journal_name or DOI)
+          if (publication.journal_name || publication.doi_url) {
+            acc.articles += 1;
+          }
+          // Count patents if type is "patent"
+          if (publication.type === "patent") {
+            acc.patents += 1;
+          }
           return acc;
         },
         { patents: 0, books: 0, conferences: 0, articles: 0 }
       );
-
+  
+      // Set the state with publication counts and project count
       setData({
         ...publicationCounts,
-        projectCount: projectCount,
+        projectCount: projectCount || 0, // Safely handle projectCount
       });
+  
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
+  
 
   useEffect(() => {
     fetchPatents();
@@ -147,7 +163,9 @@ export default function Research() {
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=all`
         );
-        const publications = response.data;
+        const publications = response.data.filter(
+          (paper) => paper.journal_name
+        );
         setRecentPublications(publications);
       } catch (error) {
         console.error("Error fetching recent publications:", error);
@@ -179,7 +197,7 @@ export default function Research() {
       onExit={() => setCounterOn(false)}
       className="Researchdiv"
     >
-      <div className="w-full px-4 py-8 md:px-6 md:py-12  bg-transparent">
+      <div className="w-full px-4 py-8 md:px-6 md:py-4 bg-transparent">
         <div className="flex text-center items-center justify-center mb-8 py-6">
           <div className="w-full h-0.5 mr-4 bg-[#a51818] " />
           <svg
@@ -321,7 +339,7 @@ export default function Research() {
           </div>
         </div>
 
-        <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 container1p">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 container1p">
           <div className="border border-primary shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg sectionp">
             <div className="flex items-center mb-4 p-7 section-headerp">
               <div className="w-8 h-0.5 bg-primary mr-4 py-6" />
@@ -331,7 +349,7 @@ export default function Research() {
               <div className="w-8 h-0.5 bg-primary ml-4" />
             </div>
 
-            <div className="p-4 h-80 overflow-hidden relative">
+            <div className="p-4 h-4/5 overflow-hidden relative">
               {recentPublications.length === 0 ? (
                 <div className="text-sm md:text-base flex justify-center items-center h-52">
                   <svg
@@ -449,14 +467,16 @@ export default function Research() {
                     .slice(0, 30);
 
                   return (
-                    <ul className="space-y-4 flex flex-col animate-scroll">
+                    <ul className="space-y-4 flex flex-col animate-scroll hover:[animation-play-state:paused]">
                       {sortedPublications.map((pub) => (
                         <PublicationCard
                           key={pub.id}
-                          year={pub.conference_year}
+                          year={pub.publication_year} // Use publication_year for journals
                           authors={pub.authors}
-                          journalName={pub.conference_name}
+                          journalName={pub.journal_name} // Use journal_name instead of conference_name
                           title={pub.title}
+                          journalQuartile={pub.journal_quartile} // Pass the quartile if available
+                          volume={pub.volume} // Pass volume if available
                         />
                       ))}
                     </ul>
@@ -474,7 +494,7 @@ export default function Research() {
               </h3>
               <div className="w-auto h-0.5 bg-primary ml-4" />
             </div>
-            <div className="p-4 h-80 overflow-hidden relative">
+            <div className="p-4 h-4/5 overflow-hidden relative">
               {recentProjects.length === 0 ? (
                 <div className="flex justify-center items-center h-52 ">
                   <svg
@@ -588,7 +608,7 @@ export default function Research() {
                     .slice(0, 30); // Get only the first 30 projects
 
                   return (
-                    <ul className="space-y-4 flex flex-col animate-scroll">
+                    <ul className="space-y-4 flex flex-col animate-scroll hover:[animation-play-state:paused]">
                       {sortedProjects.map((project) => (
                         <ProjectCard
                           key={project.id}

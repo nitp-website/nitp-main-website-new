@@ -10,11 +10,11 @@ module.exports = {
       keyframes: {
         scroll: {
           "0%": { transform: "translateY(0%)" },
-          "100%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(-98%)" },
         },
       },
       animation: {
-        scroll: "scroll 35s linear infinite",
+        scroll: "scroll 60s linear infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
