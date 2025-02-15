@@ -34,7 +34,6 @@ import ProjectSupervision from "./menuItems/ProjectSupervision";
 import BookChapters from "./menuItems/BookChapters";
 import IPR from "./menuItems/IPR";
 import Startups from "./menuItems/Startups";
-import Patents from "./menuItems/Patents";
 import ConsultancyProjects from "./menuItems/ConsultancyProjects";
 import Education from "./menuItems/Education";
 
@@ -52,7 +51,6 @@ const FacultyDropdown = ({ facultyData }) => {
     sponsored_projects,
     consultancy_projects,
     ipr,
-    patents,
     startups,
     teaching_engagement,
     project_supervision,
@@ -68,18 +66,18 @@ const FacultyDropdown = ({ facultyData }) => {
 
   const toggleDropdown = (id) => {
     setOpenDropdown((prev) => (prev === id ? null : id));
-  
+
     setTimeout(() => {
       const element = document.getElementById(`dropdown-${id}`);
       if (element) {
         const yOffset = -100; // Adjust this value to control the offset
-        const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
-  
+        const y =
+          element.getBoundingClientRect().top + window.scrollY + yOffset;
+
         window.scrollTo({ top: y, behavior: "smooth" });
       }
     }, 200);
   };
-  
 
   const menuItems = [
     {
@@ -137,13 +135,6 @@ const FacultyDropdown = ({ facultyData }) => {
       icon: <TbFileCertificate />,
       id: 14,
       component: <ConsultancyProjects data={consultancy_projects} />,
-    },
-    {
-      condition: patents?.length > 0,
-      title: "Patents",
-      icon: <TbCertificate />,
-      id: 30,
-      component: <Patents data={patents} />,
     },
     {
       condition: ipr?.length > 0,

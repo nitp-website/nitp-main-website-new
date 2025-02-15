@@ -20,7 +20,7 @@ const FacultyHeader = ({ Data }) => {
     sponsored_projects,
     consultancy_projects,
     startups,
-    patents,
+    ipr,
     book_chapters,
   } = facultyData || {};
 
@@ -85,7 +85,11 @@ const FacultyHeader = ({ Data }) => {
       bgColor: "bg-purple-500",
     },
     { label: "Startups", count: startups?.length, bgColor: "bg-pink-500" },
-    { label: "Patents", count: patents?.length, bgColor: "bg-orange-500" },
+    {
+      label: "Intellectual Property Rights",
+      count: ipr?.length,
+      bgColor: "bg-orange-500",
+    },
     {
       label: "Book Chapters",
       count: book_chapters?.length,
@@ -158,7 +162,7 @@ const FacultyHeader = ({ Data }) => {
             ))}
           </div>
           <div className="flex gap-4 flex-wrap justify-center">
-            {dataSections.slice(2,4).map((section, index) => (
+            {dataSections.slice(2, 4).map((section, index) => (
               <div
                 key={index}
                 className={`w-24 h-24 flex text-center items-center justify-center text-white font-bold ${section.bgColor} rounded-lg`}
