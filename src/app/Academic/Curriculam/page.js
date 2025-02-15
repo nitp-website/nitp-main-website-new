@@ -77,7 +77,7 @@ const DocumentsTable = () => {
         <thead>
           <tr>
             <th className="text-left px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Document</th>
-            <th className="text-center px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
+            <th className="text-center w-[10vw] px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
           </tr>
         </thead>
         <tbody>
@@ -99,7 +99,7 @@ const DocumentsTable = () => {
         <thead>
          <tr>
            <th className="text-left px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Document</th>
-            <th className="text-center px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
+            <th className="text-center w-[10vw] px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
          </tr>
        </thead>
        <tbody>
@@ -120,7 +120,7 @@ const DocumentsTable = () => {
         <thead>
           <tr>
             <th className="text-left px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Document</th>
-            <th className="text-center px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
+            <th className="text-center w-[10vw] px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
           </tr>
         </thead>
         <tbody>
@@ -141,7 +141,7 @@ const DocumentsTable = () => {
         <thead>
           <tr>
             <th className="text-left px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Document</th>
-            <th className="text-center px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
+            <th className="text-center w-[10vw] px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
           </tr>
         </thead>
         <tbody>
