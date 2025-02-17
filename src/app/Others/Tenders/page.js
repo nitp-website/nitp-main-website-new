@@ -52,7 +52,7 @@ const Page = () => {
         const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=tender`;
         const response = await axios.get(academicsUrl);
         // setAcademics(response.data.filter((notice) => notice.isVisible === 1));
-        setAcademics(response.data);
+        setAcademics(response.data.filter((notice) => notice.notice_type === "tender"));
         setIsLoading(false);
       } catch (e) {
         console.error("Error fetching notices:", e);
