@@ -3,23 +3,29 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import "../../components/Home/styles/Details.css";
-import Downloadicon from "../../../../public/downloadicon.png"; 
+import Downloadicon from "../../../../public/downloadicon.png";
 
 const Noticecard = ({ detail, time, attachments, imp, link }) => (
   <div className={`notice ${imp ? "important" : ""}`}>
     <h3 className="text-black md:text-sm text-sm">{detail}</h3>
-    <p className="text-neutral-500 text-sm">{new Date(time).toLocaleDateString()}</p>
+    <p className="text-neutral-500 text-sm">
+      {new Date(time).toLocaleDateString()}
+    </p>
     {attachments && attachments.length > 0 && (
       <ul className=" text-xs text-red-800">
         {attachments.map((attachment, index) => (
           <li key={index}>
             {attachment.typeLink ? (
-              <a href={attachment.url} target="_blank" rel="noopener noreferrer">
+              <a
+                href={attachment.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div className="download-icon inline-block"></div>
                 {attachment.caption}
               </a>
             ) : (
-              <a href={attachment.url} download className=" text-xs ">
+              <a href={attachment.url} download className="text-xs">
                 <div className="download-icon inline-block"></div>
                 {attachment.caption}
               </a>
@@ -28,7 +34,11 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
         ))}
       </ul>
     )}
-    {link && <a href={link} className="text-sm">View Details</a>}
+    {link && (
+      <a href={link} className="text-sm">
+        View Details
+      </a>
+    )}
   </div>
 );
 const Page = () => {
@@ -41,7 +51,8 @@ const Page = () => {
       try {
         const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=tender`;
         const response = await axios.get(academicsUrl);
-        setAcademics(response.data.filter((notice) => notice.isVisible === 1));
+        // setAcademics(response.data.filter((notice) => notice.isVisible === 1));
+        setAcademics(response.data);
         setIsLoading(false);
       } catch (e) {
         console.error("Error fetching notices:", e);
@@ -168,27 +179,75 @@ const Page = () => {
         ) : fetchError ? (
           <div className="flex justify-center items-center">
             <div className="text-center justify-center items-center">
-            <svg width="120px" className=" m-auto" height="120px" viewBox="0 0 16.00 16.00" fill="#e85e5e" stroke="#e85e5e" stroke-width="0.00016"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.128"></g><g id="SVGRepo_iconCarrier"> <path d="m 3 0 c -1.660156 0 -3 1.339844 -3 3 v 7 c 0 1.660156 1.339844 3 3 3 h 10 c 1.660156 0 3 -1.339844 3 -3 v -7 c 0 -1.660156 -1.339844 -3 -3 -3 z m 0 2 h 10 c 0.554688 0 1 0.445312 1 1 v 7 c 0 0.554688 -0.445312 1 -1 1 h -10 c -0.554688 0 -1 -0.445312 -1 -1 v -7 c 0 -0.554688 0.445312 -1 1 -1 z m 3 2 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m 4 0 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -2 3 c -1.429688 0 -2.75 0.761719 -3.464844 2 c -0.136718 0.238281 -0.054687 0.546875 0.183594 0.683594 c 0.238281 0.136718 0.546875 0.054687 0.683594 -0.183594 c 0.535156 -0.929688 1.523437 -1.5 2.597656 -1.5 s 2.0625 0.570312 2.597656 1.5 c 0.136719 0.238281 0.445313 0.320312 0.683594 0.183594 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.714844 -1.238281 -2.035156 -2 -3.464844 -2 z m -3 7 c -1.105469 0 -2 0.894531 -2 2 h 10 c 0 -1.105469 -0.894531 -2 -2 -2 z m 0 0" fill="#e85e5e"></path> </g></svg>
-            <div className="pt-10">
-            <p className="text-red-500">Sorry, failed to fetch the latest Tenders notices.</p>
-            </div>
-              
+              <svg
+                width="120px"
+                className=" m-auto"
+                height="120px"
+                viewBox="0 0 16.00 16.00"
+                fill="#e85e5e"
+                stroke="#e85e5e"
+                stroke-width="0.00016"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke="#CCCCCC"
+                  stroke-width="0.128"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  {" "}
+                  <path
+                    d="m 3 0 c -1.660156 0 -3 1.339844 -3 3 v 7 c 0 1.660156 1.339844 3 3 3 h 10 c 1.660156 0 3 -1.339844 3 -3 v -7 c 0 -1.660156 -1.339844 -3 -3 -3 z m 0 2 h 10 c 0.554688 0 1 0.445312 1 1 v 7 c 0 0.554688 -0.445312 1 -1 1 h -10 c -0.554688 0 -1 -0.445312 -1 -1 v -7 c 0 -0.554688 0.445312 -1 1 -1 z m 3 2 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m 4 0 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -2 3 c -1.429688 0 -2.75 0.761719 -3.464844 2 c -0.136718 0.238281 -0.054687 0.546875 0.183594 0.683594 c 0.238281 0.136718 0.546875 0.054687 0.683594 -0.183594 c 0.535156 -0.929688 1.523437 -1.5 2.597656 -1.5 s 2.0625 0.570312 2.597656 1.5 c 0.136719 0.238281 0.445313 0.320312 0.683594 0.183594 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.714844 -1.238281 -2.035156 -2 -3.464844 -2 z m -3 7 c -1.105469 0 -2 0.894531 -2 2 h 10 c 0 -1.105469 -0.894531 -2 -2 -2 z m 0 0"
+                    fill="#e85e5e"
+                  ></path>{" "}
+                </g>
+              </svg>
+              <div className="pt-10">
+                <p className="text-red-500">
+                  Sorry, failed to fetch the latest Tenders notices.
+                </p>
+              </div>
             </div>
           </div>
         ) : (
           <div className="section-content p-0 m-0">
             {academics.length === 0 ? (
               <div className="flex justify-center items-center">
-              <div className="text-center justify-center items-center">
-              <svg width="120px" className=" m-auto" height="120px" viewBox="0 0 16.00 16.00" fill="#e85e5e" stroke="#e85e5e" stroke-width="0.00016"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.128"></g><g id="SVGRepo_iconCarrier"> <path d="m 3 0 c -1.660156 0 -3 1.339844 -3 3 v 7 c 0 1.660156 1.339844 3 3 3 h 10 c 1.660156 0 3 -1.339844 3 -3 v -7 c 0 -1.660156 -1.339844 -3 -3 -3 z m 0 2 h 10 c 0.554688 0 1 0.445312 1 1 v 7 c 0 0.554688 -0.445312 1 -1 1 h -10 c -0.554688 0 -1 -0.445312 -1 -1 v -7 c 0 -0.554688 0.445312 -1 1 -1 z m 3 2 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m 4 0 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -2 3 c -1.429688 0 -2.75 0.761719 -3.464844 2 c -0.136718 0.238281 -0.054687 0.546875 0.183594 0.683594 c 0.238281 0.136718 0.546875 0.054687 0.683594 -0.183594 c 0.535156 -0.929688 1.523437 -1.5 2.597656 -1.5 s 2.0625 0.570312 2.597656 1.5 c 0.136719 0.238281 0.445313 0.320312 0.683594 0.183594 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.714844 -1.238281 -2.035156 -2 -3.464844 -2 z m -3 7 c -1.105469 0 -2 0.894531 -2 2 h 10 c 0 -1.105469 -0.894531 -2 -2 -2 z m 0 0" fill="#e85e5e"></path> </g></svg>
-              <div className="pt-10">
-              <p className="text-red-500">Sorry, No Data available.</p>
+                <div className="text-center justify-center items-center">
+                  <svg
+                    width="120px"
+                    className=" m-auto"
+                    height="120px"
+                    viewBox="0 0 16.00 16.00"
+                    fill="#e85e5e"
+                    stroke="#e85e5e"
+                    stroke-width="0.00016"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="#CCCCCC"
+                      stroke-width="0.128"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      {" "}
+                      <path
+                        d="m 3 0 c -1.660156 0 -3 1.339844 -3 3 v 7 c 0 1.660156 1.339844 3 3 3 h 10 c 1.660156 0 3 -1.339844 3 -3 v -7 c 0 -1.660156 -1.339844 -3 -3 -3 z m 0 2 h 10 c 0.554688 0 1 0.445312 1 1 v 7 c 0 0.554688 -0.445312 1 -1 1 h -10 c -0.554688 0 -1 -0.445312 -1 -1 v -7 c 0 -0.554688 0.445312 -1 1 -1 z m 3 2 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m 4 0 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -2 3 c -1.429688 0 -2.75 0.761719 -3.464844 2 c -0.136718 0.238281 -0.054687 0.546875 0.183594 0.683594 c 0.238281 0.136718 0.546875 0.054687 0.683594 -0.183594 c 0.535156 -0.929688 1.523437 -1.5 2.597656 -1.5 s 2.0625 0.570312 2.597656 1.5 c 0.136719 0.238281 0.445313 0.320312 0.683594 0.183594 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.714844 -1.238281 -2.035156 -2 -3.464844 -2 z m -3 7 c -1.105469 0 -2 0.894531 -2 2 h 10 c 0 -1.105469 -0.894531 -2 -2 -2 z m 0 0"
+                        fill="#e85e5e"
+                      ></path>{" "}
+                    </g>
+                  </svg>
+                  <div className="pt-10">
+                    <p className="text-red-500">Sorry, No Data available.</p>
+                  </div>
+                </div>
               </div>
-                
-              </div>
-            </div>
             ) : (
-                academics.map((notice) => (
+              academics.map((notice) => (
                 <Noticecard
                   detail={notice.title}
                   time={notice.timestamp}
