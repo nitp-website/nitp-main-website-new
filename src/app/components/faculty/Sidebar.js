@@ -22,18 +22,20 @@ const Sidebar = ({ Data }) => {
     book_chapters,
   } = facultyData || {};
   const [qrCode, setQrCode] = useState("");
-  const ongoingStatuses = [
-    "Admission",
-    "Comprehension",
-    "Presubmission",
-    "Thesis Submitted",
-    "Ongoing",
-  ];
 
-  const ongoingPhdCandidates =
-    phd_candidates?.filter((candidate) =>
-      ongoingStatuses.includes(candidate.current_status)
-    ) || [];
+
+  // const ongoingStatuses = [
+  //   "Admission",
+  //   "Comprehension",
+  //   "Presubmission",
+  //   "Thesis Submitted",
+  //   "Ongoing",
+  // ];
+
+  // const ongoingPhdCandidates =
+  //   phd_candidates?.filter((candidate) =>
+  //     ongoingStatuses.includes(candidate.current_status)
+  //   ) || [];
 
   // console.log(phd_candidates);
   // console.log(ongoingPhdCandidates);
@@ -51,7 +53,7 @@ const Sidebar = ({ Data }) => {
     },
     {
       label: "PhD Candidates",
-      count: ongoingPhdCandidates?.length,
+      count: phd_candidates?.length,
       bgColor: "bg-green-500",
     },
     {

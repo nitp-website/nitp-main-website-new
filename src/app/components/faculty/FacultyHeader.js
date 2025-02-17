@@ -42,18 +42,18 @@ const FacultyHeader = ({ Data }) => {
   if (loading) return <p className="text-black">Loading...</p>;
   if (error) return <p>Error loading data.</p>;
 
-  const ongoingStatuses = [
-    "Admission",
-    "Comprehension",
-    "Presubmission",
-    "Thesis Submitted",
-    "Ongoing",
-  ];
+  // const ongoingStatuses = [
+  //   "Admission",
+  //   "Comprehension",
+  //   "Presubmission",
+  //   "Thesis Submitted",
+  //   "Ongoing",
+  // ];
 
-  const ongoingPhdCandidates =
-    phd_candidates?.filter((candidate) =>
-      ongoingStatuses.includes(candidate.current_status)
-    ) || [];
+  // const ongoingPhdCandidates =
+  //   phd_candidates?.filter((candidate) =>
+  //     ongoingStatuses.includes(candidate.current_status)
+  //   ) || [];
 
   // console.log(phd_candidates);
   // console.log(ongoingPhdCandidates);
@@ -71,7 +71,7 @@ const FacultyHeader = ({ Data }) => {
     },
     {
       label: "PhD Candidates",
-      count: ongoingPhdCandidates?.length,
+      count: phd_candidates?.length,
       bgColor: "bg-green-500",
     },
     {
