@@ -456,9 +456,9 @@ const Jai = [
 const ServiceUNIT = [
 
    {
-  name: "Prof. Prabhat kumar",
-  type: " Prof., Deptt. of CS",
-  designation: "Chief Proctor - Security",
+  name: "Prof. Vivekanand Singh",
+  type: "Prof. In-charge",
+  designation: "Chief Proctor – Security",
  },
 
  {
@@ -481,11 +481,15 @@ const ServiceUNIT = [
   type: "Chief Investigator",
   designation: " E&ICT Academy Phase II, Associate Dean Academic",
  },
+
    {
   name: "Prof. A R Quaff",
   type: "Professor",
   designation: " Associate Dean Examinations",
  },
+
+
+  
  {
   designation: "PI (Procurement)",
   type: "Chairman (Health Centre)",
@@ -495,6 +499,11 @@ const ServiceUNIT = [
   designation: "Addl. PI (Procurement)",
   type: "Nodal Officer – IPR,Nodal Officer – IoE,Nodal Officer – BIS",
   name: "Prof. Amit Kumar",
+ },
+ {
+  designation: "CCIS",
+  type: "Head",
+  name: "Prof. Prabhat Kumar",
  },
 
 {

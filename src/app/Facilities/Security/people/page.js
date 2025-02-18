@@ -6,42 +6,41 @@ import "../style.css";
 const Page = () => {
   const RegistrarData = [
     {
-      name: "Prof. Prabhat Kumar",
-      designation: "Professor, Deptt. of CSE",
+      name: "Prof. Vivekanand Singh ",
+      designation: "Professor, Civil Engineering Dept.",
       type: "Chief Proctor",
+      url: "https://www.nitp.ac.in/Department/CE/faculty/vsingh@nitp.ac.in",
+    },
+    {
+      name: "Prof. Prabhat Kumar ",
+      designation: "Professor, CSE Dept.",
+      type: "Dy. Chief Proctor",
       url: "https://www.nitp.ac.in/Department/CSE/faculty/prabhat@nitp.ac.in",
-  },
-  {
-      name: "Prof. Sunita Kumari",
-      designation: "Professor, Deptt. of Civil Engg.",
-      type: "Dy. Chief Proctor",
+    },
+    {
+      name: "Prof. Sunita Kumari ",
+      designation: "Professor, Civil Engineering Dept.",
+      type: "Proctor",
       url: "https://www.nitp.ac.in/Department/CE/faculty/sunitafce@nitp.ac.in",
-  },
-  {
-      name: "Dr. Ajay Kumar",
-      designation: "Assoc. Prof., Deptt. of Arch. & Plann.",
-      type: "Dy. Chief Proctor",
+    },
+    {
+      name: "Dr. Ajay Kumar ",
+      designation: "Associate Professor, Arch. & Plann. Dept.",
+      type: "Proctor",
       url: "https://www.nitp.ac.in/Department/Archi/faculty/arajay@nitp.ac.in",
-  },
-  {
-      name: "Dr. Shailesh Mani Pandey",
-      designation: "Asstt. Prof., Deptt. of Mech. Engg.",
+    },
+    {
+      name: "Dr. Shailesh Mani Pandey ",
+      designation: "Assistant Professor, Mechanical Engineering Dept.",
       type: "Proctor",
       url: "https://www.nitp.ac.in/Department/ME/faculty/smp.me@nitp.ac.in",
-  },
-  {
-      name: "Dr. Gagandeep Meena",
-      designation: "Asstt. Prof., Deptt. of Elect. Engg.",
+    },
+    {
+      name: "Dr. Gagandeep Meena ",
+      designation: "Assistant Professor, Electrical Engineering Dept.",
       type: "Proctor",
       url: "https://www.nitp.ac.in/Department/EE/faculty/gagandeep.ee@nitp.ac.in",
-  },
-  {
-      name: "Dr. Bhawani Shankar Das",
-      designation: "Asstt. Prof., Deptt. of Civil Engg.",
-      type: "Proctor",
-      url: "https://www.nitp.ac.in/Department/CE/faculty/bsd.ce@nitp.ac.in"
-  }
-    
+    },
   ];
 
   return (
