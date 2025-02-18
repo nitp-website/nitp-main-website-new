@@ -90,7 +90,7 @@ const Eventcard = ({
       <p>{time}</p>
       <p className="text-opacity-25">Location: {location}</p>
 
-      {parsedAttachments && parsedAttachments.length > 0 && (
+      {/* {parsedAttachments && parsedAttachments.length > 0 && (
         <ul>
           {parsedAttachments.map((attachment, index) => (
             <li key={index}>
@@ -112,13 +112,13 @@ const Eventcard = ({
             </li>
           ))}
         </ul>
-      )}
+      )} */}
 
-      {parsedEventLink?.url && (
+      {/* {parsedEventLink?.url && (
         <a href={parsedEventLink.url} target="_blank" rel="noopener noreferrer">
           Event link
         </a>
-      )}
+      )} */}
 
       {link && <a href={link}>Read more</a>}
     </div>
