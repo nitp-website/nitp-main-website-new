@@ -90,35 +90,37 @@ const Eventcard = ({
       <p>{time}</p>
       <p className="text-opacity-25">Location: {location}</p>
 
-      {/* {parsedAttachments && parsedAttachments.length > 0 && (
-        <ul>
-          {parsedAttachments.map((attachment, index) => (
-            <li key={index}>
-              {attachment.typeLink ? (
-                <a
-                  href={attachment.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="download-icon inline-block"></div>
-                  {attachment.caption || "Download"}
-                </a>
-              ) : (
-                <a href={attachment.url} download>
-                  <div className="download-icon inline-block"></div>
-                  {attachment.caption || "Download"}
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
-      )} */}
+      {
+        console.log(parsedAttachments,'is parsed attachemnents')
+      }
 
-      {/* {parsedEventLink?.url && (
-        <a href={parsedEventLink.url} target="_blank" rel="noopener noreferrer">
-          Event link
+{parsedAttachments && parsedAttachments.length > 0 && (
+  <ul>
+    <li>
+      {parsedAttachments[0].typeLink ? (
+        <a
+          href={parsedAttachments[0].url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="download-icon inline-block"></div>
+          {parsedAttachments[0].caption || "Download"}
         </a>
-      )} */}
+      ) : (
+        <a href={parsedAttachments[0].url} download>
+          <div className="download-icon inline-block"></div>
+          {parsedAttachments[0].caption || "Download"}
+        </a>
+      )}
+    </li>
+  </ul>
+)}
+
+{parsedEventLink?.url && (
+  <a href={parsedEventLink.url} target="_blank" rel="noopener noreferrer">
+    Event link
+  </a>
+)}
 
       {link && <a href={link}>Read more</a>}
     </div>
