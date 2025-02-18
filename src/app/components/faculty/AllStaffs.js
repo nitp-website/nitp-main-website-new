@@ -18,7 +18,7 @@ const AllStaffs = () => {
             try {
                 setloading(true)
                 const { data } = await axios.get(api);
-                console.log(data)
+                // console.log(data)
                 const filteredFaculty = data.filter(
                     (item) => item.department === "Other Employees"
                 );
@@ -41,7 +41,7 @@ const AllStaffs = () => {
         );
     }
     return (
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 text-black">
+        <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
             {loading ? <>Loading ...</> : <></>}
             {otheremployee?.map((faculty) =>
                 <StaffCard

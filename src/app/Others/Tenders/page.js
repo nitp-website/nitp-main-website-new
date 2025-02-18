@@ -5,54 +5,64 @@ import Link from "next/link";
 import "../../components/Home/styles/Details.css";
 import Downloadicon from "../../../../public/downloadicon.png";
 
-const Noticecard = ({ detail, time, attachments, imp, link }) => (
-  <div className={`notice ${imp ? "important" : ""}`}>
-    <h3 className="text-black md:text-sm text-sm">{detail}</h3>
-    <p className="text-neutral-500 text-sm">
-      {new Date(time).toLocaleDateString()}
-    </p>
-    {attachments && attachments.length > 0 && (
-      <ul className=" text-xs text-red-800">
-        {attachments.map((attachment, index) => (
-          <li key={index}>
-            {attachment.typeLink ? (
-              <a
-                href={attachment.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="download-icon inline-block"></div>
-                {attachment.caption}
-              </a>
-            ) : (
-              <a href={attachment.url} download className="text-xs">
-                <div className="download-icon inline-block"></div>
-                {attachment.caption}
-              </a>
-            )}
-          </li>
-        ))}
-      </ul>
-    )}
-    {link && (
-      <a href={link} className="text-sm">
-        View Details
-      </a>
-    )}
-  </div>
-);
+const Noticecard = ({ detail, time, attachments }) => {
+  return (
+    <div className="notice">
+      {attachments.length === 1 ? (
+        <a
+          href={attachments[0].url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer"
+        >
+          <h3 className="text-black md:text-sm text-sm">{detail}</h3>
+        </a>
+      ) : (
+        <h3 className="text-black md:text-sm text-sm">{detail}</h3>
+      )}
+      <p className="text-neutral-500 text-sm">
+        {new Date(time).toLocaleDateString()}
+      </p>
+      {attachments && attachments.length > 0 && (
+        <ul className=" text-xs text-red-800">
+          {attachments.map((attachment, index) => (
+            <li key={index}>
+              {attachment.typeLink ? (
+                <a
+                  href={attachment.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="download-icon inline-block"></div>
+                  {attachment.caption}
+                </a>
+              ) : (
+                <a href={attachment.url} download className="text-xs">
+                  <div className="download-icon inline-block"></div>
+                  {attachment.caption}
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
 const Page = () => {
-  const [academics, setAcademics] = useState([]);
+  const [tender, setTender] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
-    const fetchAcademics = async () => {
+    const fetchTenders = async () => {
       try {
         const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=tender`;
         const response = await axios.get(academicsUrl);
-        // setAcademics(response.data.filter((notice) => notice.isVisible === 1));
-        setAcademics(response.data.filter((notice) => notice.notice_type === "tender"));
+        // setTender(response.data.filter((notice) => notice.isVisible === 1));
+        setTender(
+          response.data.filter((notice) => notice.notice_type === "tender")
+        );
         setIsLoading(false);
       } catch (e) {
         console.error("Error fetching notices:", e);
@@ -61,7 +71,7 @@ const Page = () => {
       }
     };
 
-    fetchAcademics();
+    fetchTenders();
   }, []);
 
   return (
@@ -213,7 +223,7 @@ const Page = () => {
           </div>
         ) : (
           <div className="section-content p-0 m-0">
-            {academics.length === 0 ? (
+            {tender.length === 0 ? (
               <div className="flex justify-center items-center">
                 <div className="text-center justify-center items-center">
                   <svg
@@ -247,20 +257,17 @@ const Page = () => {
                 </div>
               </div>
             ) : (
-              academics.map((notice) => (
-                <Noticecard
-                  detail={notice.title}
-                  time={notice.timestamp}
-                  key={notice.id}
-                  attachments={notice.attachments}
-                  imp={notice.important}
-                  link={
-                    notice.notice_link && JSON.parse(notice.notice_link).url
-                      ? JSON.parse(notice.notice_link).url
-                      : ""
-                  }
-                />
-              ))
+              tender.map((notice) => {
+                const { title, timestamp, id, attachments } = notice;
+                return (
+                  <Noticecard
+                    detail={title}
+                    time={timestamp}
+                    key={id}
+                    attachments={attachments}
+                  />
+                );
+              })
             )}
           </div>
         )}

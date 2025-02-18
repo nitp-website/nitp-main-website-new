@@ -97,7 +97,7 @@ useEffect(() => {
                 Staffs
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
             {Staff.map((staffMember, index) => (
               <StaffcardDept key={index} {...staffMember} />
             ))}
