@@ -90,9 +90,9 @@ const Eventcard = ({
       <p>{time}</p>
       <p className="text-opacity-25">Location: {location}</p>
 
-      {
+      {/* {
         console.log(parsedAttachments,'is parsed attachemnents')
-      }
+      } */}
 
 {parsedAttachments && parsedAttachments.length > 0 && (
   <ul>
