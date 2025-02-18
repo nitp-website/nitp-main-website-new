@@ -21,7 +21,7 @@ const AllOfficers = () => {
                 const filteredFaculty = data.filter(
                     (item) => item.department === "Officers"
                 );
-                console.log(filteredFaculty)
+                // console.log(filteredFaculty)
                 setofficers(filteredFaculty);
                 setloading(false)
             } catch (err) {
@@ -41,7 +41,7 @@ const AllOfficers = () => {
         );
     }
     return (
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 text-black">
+        <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
             {loading ? <>Loading ...</> : <></>}
             {officers?.map((faculty) =>
                 <StaffCard

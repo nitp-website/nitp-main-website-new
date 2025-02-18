@@ -14,30 +14,37 @@ function DeptStaffcard({
 }) {
   return (
     <>
-        <div
-          className="backdrop-blur-sm static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-4 m-5 transition-all duration-500 h-[17rem] md:h-[9rem] text-black"
-        >
-          <div className="flex justify-center items-center md:w-1/4">
-            <div
-              className="relative h-[100px] w-[100px] transition-all duration-300"
-            >
-              <img
-                className="rounded-md object-cover  h-[100px] w-[100px]"
-                src={image !== null ? image : "/faculty.jpeg"}
-                alt={name}
-                height={300}
-                width={300}
-              />
-            </div>
-          </div>
-          <div className="mt-8 md:ml-8 ml-4 md:w-3/4 md:mt-0 ">
-            <h5 className="m-0 text-red-800 font-bold">{name}</h5>
-            <span className="flex font-bold mt-1">
-              <FontAwesomeIcon icon={faIdCard} className="w-5 mr-1 mt-1" />{" "}
-              {designation}
-            </span>
+        <div className="w-[300px] h-[325px] mx-4 bg-slate-200 rounded-lg shadow-lg hover:shadow-2xl overflow-hidden">
+        <div className="bg-[rgb(153,27,27)] py-4">
+          <div className="w-[150px] h-[150px] mx-auto my-4 flex items-center justify-center bg-red-700 rounded-full border-8 border-white">
+            <Image
+              src={image || "/faculty.jpeg"}
+              alt={name}
+              width={150}
+              height={140}
+              className="w-[150px] h-[140px] object-cover rounded-full transform scale-100 transition-all duration-900 ease-in-out group-hover:shadow-[0_0_0_14px_#f7f5ec] group-hover:scale-[0.7]"
+            />
           </div>
         </div>
+        <div className=" text-black text-center">
+          <h3 className="text-xl font-bold mt-2">{name}</h3>
+          <h4 className="text-md font-[600] font-sans">
+            <FontAwesomeIcon icon={faIdCard} className="w-8 text-black" />
+            {designation}
+          </h4>
+          {email && (
+            <li className="inline-block">
+              <a
+                href={`mailto:${email}`}
+                className="block px-5 py-1 text-sm text-black hover:text-blue-500 transition-all duration-300"
+              >
+                <FontAwesomeIcon icon={faEnvelope} className="w-8 text-black" />{" "}
+                {email}
+              </a>
+            </li>
+          )}
+        </div>
+      </div>
     </>
   );
 }

@@ -3,7 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faIdCard, faEnvelope, faPhone, faGraduationCap, faBriefcase, faLightbulb } from "@fortawesome/free-solid-svg-icons";
+import {
+  faIdCard,
+  faEnvelope,
+  faPhone,
+  faGraduationCap,
+  faBriefcase,
+  faLightbulb,
+} from "@fortawesome/free-solid-svg-icons";
 
 function StaffCard({
   name,
@@ -16,65 +23,60 @@ function StaffCard({
   expertise = "Not Available",
 }) {
   return (
-    <div className="backdrop-blur-sm flex flex-col md:flex-row shadow-md border rounded-lg p-4 m-5 transition-all duration-500 h-auto text-black">
-      {/* Image Section */}
-      <div className="flex justify-center items-center md:w-1/4 mb-4 md:mb-0 pr-3 rounded-full">
-        <div className="relative h-[100px] w-[100px] transition-all duration-300 rounded-full">
-          <img
-            className="object-cover h-[100px] w-[100px] rounded-full"
-            src={image ? image : "/faculty.jpeg"}
-            alt={`${name}'s profile picture`}
-            height={100}
-            width={100}
+    <div className="w-[300px] h-[400px] mx-4 bg-slate-200 rounded-lg shadow-lg hover:shadow-2xl overflow-hidden">
+      <div className="bg-[rgb(153,27,27)] py-4">
+        <div className="w-[150px] h-[150px] mx-auto my-4 flex items-center justify-center bg-red-700 rounded-full border-8 border-white">
+          <Image
+            src={image || "/faculty.jpeg"}
+            alt={name}
+            width={150}
+            height={140}
+            className="w-[150px] h-[140px] object-cover rounded-full transform scale-100 transition-all duration-900 ease-in-out group-hover:shadow-[0_0_0_14px_#f7f5ec] group-hover:scale-[0.7]"
           />
         </div>
       </div>
-
-      {/* Details Section */}
-      <div className="md:w-3/4">
-        <h5 className="text-red-800 font-bold">{name}</h5>
-        <span className="flex items-center font-bold mt-2">
-          <FontAwesomeIcon icon={faIdCard} className="w-5 mr-2 text-gray-600" />
+      <div className=" text-black text-center px-3">
+        <h3 className="text-xl font-bold mt-2">{name}</h3>
+        <h4 className="text-md font-[600] font-sans">
+          <FontAwesomeIcon icon={faIdCard} className="w-8 text-black" />
           {designation}
-        </span>
+        </h4>
 
-        {/* {experience && (
-          <div className="flex items-center mt-2">
-            <FontAwesomeIcon icon={faBriefcase} className="w-5 mr-2 text-gray-600" />
-            <span>Experience: {experience}</span>
-          </div>
-        )}
-
-        {education && (
-          <div className="flex items-center mt-2">
+        {/* {education && (
+          <div className="mt-2">
             <FontAwesomeIcon icon={faGraduationCap} className="w-5 mr-2 text-gray-600" />
             <span>Education: {education}</span>
           </div>
         )} */}
 
         {expertise && (
-          <div className="flex items-center mt-2">
-            <FontAwesomeIcon icon={faLightbulb} className="w-5 mr-2 text-gray-600" />
-            <span>Expertise: {expertise}</span>
+          <div className="mt-1 text-md">
+            <FontAwesomeIcon
+              icon={faLightbulb}
+              className="w-5 mr-2 text-gray-600"
+            />
+            Expertise: {expertise}
           </div>
         )}
 
         {email && (
-          <div className="flex items-center mt-2">
-            <FontAwesomeIcon icon={faEnvelope} className="w-5 mr-2 text-gray-600" />
-            {email !== "Not Available" ? (
-              <a href={`mailto:${email}`} className="text-blue-600 underline">
-                {email}
-              </a>
-            ) : (
-              <span className="text-gray-500">{email}</span>
-            )}
-          </div>
+          <li className="inline-block">
+            <a
+              href={`mailto:${email}`}
+              className="block px-5 py-1 text-sm text-black hover:text-blue-500 transition-all duration-300"
+            >
+              <FontAwesomeIcon icon={faEnvelope} className="w-8 text-black" />{" "}
+              {email}
+            </a>
+          </li>
         )}
 
         {mobile && (
-          <div className="flex items-center mt-2">
-            <FontAwesomeIcon icon={faPhone} className="w-5 mr-2 text-gray-600" />
+          <div className="mt-1 text-sm">
+            <FontAwesomeIcon
+              icon={faPhone}
+              className="w-5 mr-2 text-gray-600"
+            />
             <span>{mobile}</span>
           </div>
         )}

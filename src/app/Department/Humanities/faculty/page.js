@@ -91,7 +91,7 @@ useEffect(() => {
                Staffs
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
               <DeptStaffcard image={"/hssstaff1.png"} name={"Shailendra Kumar Singh"} designation={"Peon"}/>
             </div>
         </div>

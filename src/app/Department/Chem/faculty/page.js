@@ -16,7 +16,7 @@ const Home = () => {
   const [loading, setloading] = useState(false)
   const fetchphd = async () => {
     setloading(true);
-    const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=chem`;
+    const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=che`;
     const { data } = await axios(api);
     setphd_candidate(data);
     const phd_info = [];
@@ -94,7 +94,7 @@ useEffect(() => {
                 Staffs
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
             {Staff.map((staffMember, index) => (
               <StaffcardDept key={index} {...staffMember} />
             ))}
