@@ -27,7 +27,6 @@ const FacultyList = () => {
         const data = await response.json();
         const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
         setFacultyData(sortedData);
-        // console.log(sortedData);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching faculty data:", error);
@@ -61,15 +60,23 @@ const FacultyList = () => {
       hodDesignations.includes(faculty.designation)
     );
 
-    console.log(hodFaculties);
+    const uniqueHODFaculties = new Map();
 
-    if (hodFaculties.length === 0) return null;
+    hodFaculties.forEach((faculty) => {
+      if (!uniqueHODFaculties.has(faculty.name) || faculty.image) {
+        uniqueHODFaculties.set(faculty.name, faculty);
+      }
+    });
+
+    const filteredHODFaculties = Array.from(uniqueHODFaculties.values());
+
+    if (filteredHODFaculties.length === 0) return null;
 
     return (
       <div>
         <h6 className="font-bold text-black text-2xl mt-4 px-4">Head of Departments</h6>
         <div className="flex flex-wrap justify-center gap-4 p-4 mt-4">
-          {hodFaculties.map((faculty) => (
+          {filteredHODFaculties.map((faculty) => (
             <FacultyCard
               key={faculty.id}
               name={faculty.name}

@@ -133,7 +133,7 @@ const navItems = [
             iconImage: Calendar,
           },
           {
-            label: "Data of NIRF Data",
+            label: "NIRF",
             link: "/Others/NIRF",
             iconImage: Document,
           },
