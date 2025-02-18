@@ -81,31 +81,6 @@ const DocumentsTable = () => {
      link:
       "https://drive.google.com/file/d/1p60py5fKWJ_iWn9s17NCtStlhfOTRqea/view?usp=sharing",
     },
-     {
-      para: "10-Format of Application Request for Change of Research Supervisor or inclusion of Additional Supervisor",
-      link:
-       "https://drive.google.com/file/d/1Q7SqKkavqmPAzZ3SNTRJ_03zctz5pCpL/view?usp=drive_link",
-     },
-     {
-      para: "11-Format of Semester Progress Application and Research Seminar Report",
-      link:
-       "https://drive.google.com/file/d/1ls4o7n0vB04haEbk0uyS8qESKkYyXm8N/view?usp=drive_link",
-     },
-     {
-      para: "12-Format of  Plagiarism Report of Final Thesis",
-      link:
-       "https://drive.google.com/file/d/12U5J3LvThzzNg5Oob5SIBtiVkzSS59yf/view?usp=drive_link",
-     },
-     {
-      para: "13-Format of Report of Final Viva-Voce Examination Board",
-      link:
-       "https://drive.google.com/file/d/1XFm-BTOUKubFflu1BhN6GK57lU3Ug9gr/view?usp=drive_link",
-     },
-     {
-      para: "14-Format of Application Form for Enhancement of Scholarship",
-      link:
-       "https://drive.google.com/file/d/1FhT6tnZqF2Lq4orVwL3nBp4S8k6Mvm26/view?usp=drive_link",
-     },
    ]
   const phd=[
     {
@@ -132,6 +107,31 @@ const DocumentsTable = () => {
       para: "5-Format of Report of the PhD thesis Examiner",
       link:
        "https://drive.google.com/file/d/1jHjC71_meJ4u-KYXOeqDKKtVBCLWitY8/view?usp=drive_link",
+     },
+     {
+      para: "6-Format of Application Request for Change of Research Supervisor or inclusion of Additional Supervisor",
+      link:
+       "https://drive.google.com/file/d/1Q7SqKkavqmPAzZ3SNTRJ_03zctz5pCpL/view?usp=drive_link",
+     },
+     {
+      para: "7-Format of Semester Progress Application and Research Seminar Report",
+      link:
+       "https://drive.google.com/file/d/1ls4o7n0vB04haEbk0uyS8qESKkYyXm8N/view?usp=drive_link",
+     },
+     {
+      para: "8-Format of  Plagiarism Report of Final Thesis",
+      link:
+       "https://drive.google.com/file/d/12U5J3LvThzzNg5Oob5SIBtiVkzSS59yf/view?usp=drive_link",
+     },
+     {
+      para: "9-Format of Report of Final Viva-Voce Examination Board",
+      link:
+       "https://drive.google.com/file/d/1XFm-BTOUKubFflu1BhN6GK57lU3Ug9gr/view?usp=drive_link",
+     },
+     {
+      para: "10-Format of Application Form for Enhancement of Scholarship",
+      link:
+       "https://drive.google.com/file/d/1FhT6tnZqF2Lq4orVwL3nBp4S8k6Mvm26/view?usp=drive_link",
      },
   ]
   
