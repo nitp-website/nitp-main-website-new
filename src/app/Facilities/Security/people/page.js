@@ -5,28 +5,23 @@ import "../style.css";
 
 const Page = () => {
   const RegistrarData = [
-    {
-      name: "Prof. Vivekanand Singh ",
-      designation: "Professor, Civil Engineering Dept.",
-      type: "Chief Proctor",
-      url: "https://www.nitp.ac.in/Department/CE/faculty/vsingh@nitp.ac.in",
-    },
+
     {
       name: "Prof. Prabhat Kumar ",
       designation: "Professor, CSE Dept.",
-      type: "Dy. Chief Proctor",
+      type: "Chief Proctor",
       url: "https://www.nitp.ac.in/Department/CSE/faculty/prabhat@nitp.ac.in",
     },
     {
       name: "Prof. Sunita Kumari ",
       designation: "Professor, Civil Engineering Dept.",
-      type: "Proctor",
+      type: "Dy. Chief Proctor",
       url: "https://www.nitp.ac.in/Department/CE/faculty/sunitafce@nitp.ac.in",
     },
     {
       name: "Dr. Ajay Kumar ",
       designation: "Associate Professor, Arch. & Plann. Dept.",
-      type: "Proctor",
+      type: "Dy. Chief Proctor",
       url: "https://www.nitp.ac.in/Department/Archi/faculty/arajay@nitp.ac.in",
     },
     {
@@ -40,6 +35,12 @@ const Page = () => {
       designation: "Assistant Professor, Electrical Engineering Dept.",
       type: "Proctor",
       url: "https://www.nitp.ac.in/Department/EE/faculty/gagandeep.ee@nitp.ac.in",
+    },
+        {
+      name: "Dr. Bhabani Shankar Das ",
+      designation: "Assistant Professor, Civil Engineering Dept.",
+      type: "Proctor",
+      url: "https://www.nitp.ac.in/Department/CE/faculty/bsd.ce@nitp.ac.in",
     },
   ];
 
