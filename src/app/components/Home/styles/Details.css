@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
 .container1 {
   position: relative;
   top: 40%;
@@ -8,8 +9,7 @@
   margin-top: 20px;
   padding-top: 5px;
   overflow-y: auto;
-  height: 70vh; /* Adjust this as needed */
-  /* background-color: rgb(182, 255, 229); */
+  height: 70vh;
   background-color: rgba(234, 243, 255, 0.623);
   align-items: center;
   justify-content: center;
@@ -24,10 +24,10 @@
   overflow-y: auto;
   height: 80%;
   border: 1px solid #ddd;
-
   width: 30%;
   padding-top: 0px;
 }
+
 .section1 {
   background: #f9f9f95d;
   border-radius: 8px;
@@ -35,7 +35,6 @@
   overflow-y: auto;
   height: 80%;
   border: 1px solid #ddd;
-
   width: 25%;
   padding-top: 0px;
 }
@@ -79,56 +78,62 @@
   padding: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
+  position: relative; /* Required for the pseudo-element */
 }
 
-.notice h3,
-.eventcard h3 {
-  margin: 0 0 1px;
-}
-
-/* .notice.important {
-  border-left: 4px solid red;
-  background-color: rgb(255, 245, 245);
-} */
+/* Animation for Notice & Event Cards */
 @keyframes colorChange {
   0% {
-    background-color: rgb(255, 245, 245); /* Red */
+    background-color: rgb(255, 245, 245);
   }
   50% {
-    background-color: rgb(244, 255, 255); /* Orange */
+    background-color: rgb(244, 255, 255);
   }
-  
   100% {
-    background-color: rgb(255, 245, 245); /* Red */
+    background-color: rgb(255, 245, 245);
   }
 }
+
 @keyframes borderColorChange {
   0% {
-      border-left-color: red;
+    border-left-color: red;
   }
   50% {
-      border-left-color: yellow;
+    border-left-color: yellow;
   }
   100% {
-      border-left-color: red;
+    border-left-color: red;
   }
 }
-.notice.important {
-  position: relative;
 
-  background-color: rgb(255, 245, 245); /* Initial background color */
+/* Notice Card: Add Animated Vertical Gradient */
+.notice.important {
+  background-color: rgb(255, 245, 245);
   animation: colorChange 3s infinite ease-in-out;
 }
+
 .notice.important::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 4px; /* Border width */
+  width: 4px;
   background: linear-gradient(0deg, red, yellow);
   animation: borderColorChange 3s infinite ease-in-out;
 }
+
+.eventcard::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(0deg, red, yellow);
+  animation: borderColorChange 3s infinite ease-in-out;
+}
+
 .notice p,
 .eventcard p {
   margin: 0px 0;
@@ -152,20 +157,11 @@
 }
 
 @media (max-width: 768px) {
-  .section-header h2 {
-    font-size: 1.2rem;
-  }
-
-  .section-header a {
-    font-size: 0.9rem;
-  }
-}
-@media (max-width: 768px) {
   .container1 {
     top: 30%;
-    flex-direction: column; /* Display buttons in a column on smaller screens */
-    align-items: center; /* Center align on smaller screens */
-    height: auto; /* Auto height */
+    flex-direction: column;
+    align-items: center;
+    height: auto;
   }
   .section {
     background: #f9f9f9;
@@ -173,9 +169,7 @@
     padding: 15px;
     overflow-y: auto;
     height: 400px;
-
     width: 90%;
-
     padding-top: 0px;
   }
   .section1 {
@@ -184,17 +178,15 @@
     padding: 15px;
     overflow-y: auto;
     height: 270px;
-
     width: 90%;
     padding-top: 0px;
   }
 }
 
 .download-icon {
-  width: 16px; /* Adjust the size as needed */
+  width: 16px;
   height: 16px;
   background-image: url(https://i.postimg.cc/1tWzRB6z/downloadicon.png);
   margin-top: 2px;
   margin-right: 8px;
-  /* Add some spacing */
 }
