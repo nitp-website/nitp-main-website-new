@@ -10,25 +10,28 @@ const Eventcard = ({ detail, time, attachments, location, event_link, link }) =>
     <h3 className="text-black  text-xs md:text-base">{detail}</h3>
     <p className="text-neutral-500 text-xs md:text-base">{time}</p>
     <p className="text-neutral-500 text-xs md:text-base">{location}</p>
-    {attachments && attachments.length > 0 && (
-      <ul>
-        {attachments.map((attachment, index) => (
-          <li key={index}>
-            {attachment.typeLink ? (
-              <a href={attachment.url} target="_blank" rel="noopener noreferrer">
-                <div className="download-icon inline-block"></div>
-                {attachment.caption}
-              </a>
-            ) : (
-              <a href={attachment.url} download>
-                <div className="download-icon inline-block"></div>
-                {attachment.caption}
-              </a>
-            )}
-          </li>
-        ))}
-      </ul>
-    )}
+    {Array.isArray(attachments) && attachments.length > 0 && (
+  <ul>
+    {attachments.map((attachment, index) => (
+      <li key={index}>
+        {attachment.typeLink ? ( 
+          // If typeLink is true, open in a new tab
+          <a href={attachment.url} target="_blank" rel="noopener noreferrer">
+            <div className="download-icon inline-block"></div>
+            {attachment.caption}
+          </a>
+        ) : (
+          // If typeLink is false or undefined, enable download
+          <a href={attachment.url} download>
+            <div className="download-icon inline-block"></div>
+            {attachment.caption}
+          </a>
+        )}
+      </li>
+    ))}
+  </ul>
+)}
+
     {event_link && <a href={event_link}>Event link</a>}
     {link && <a href={link}>View Details</a>}
   </div>
