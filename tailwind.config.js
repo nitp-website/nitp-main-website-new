@@ -14,7 +14,7 @@ module.exports = {
         },
       },
       animation: {
-        scroll: "scroll 60s linear infinite",
+        scroll: "scroll 360s linear infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
