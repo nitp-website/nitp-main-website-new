@@ -34,6 +34,9 @@ const Slider = () => {
           <img src="https://patnapress.com/wp-content/uploads/2024/12/NIT-Bihta.jpeg" />
         </SwiperSlide>
         <SwiperSlide>
+          <img src="https://i.postimg.cc/YCkm9fp1/Whats-App-Image-2025-02-19-at-21-09-47-816c3488.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
           <img src="/home1.png" />
         </SwiperSlide>
         <SwiperSlide>
