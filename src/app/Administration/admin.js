@@ -456,7 +456,7 @@ const Jai = [
 const ServiceUNIT = [
 
    {
-  name: "Prof. Vivekanand Singh",
+  name: "Prof. Prabhat Kumar",
   type: "Prof. In-charge",
   designation: "Chief Proctor – Security",
  },

@@ -118,6 +118,11 @@ export default function InternationalAffairsPage() {
                   <div>
                     <h2 className="text-xl mb-6 text-neutral-800">
                       <ul className='list-disc underline'>
+                    <li>
+                          <a href="https://drive.google.com/file/d/1mszlru6Kp0qb_Y0knAoOQsM6x__u-9sm/view?usp=sharing"> MoU between International Center for AI and Cyber Security Research and Innovations (CCRI), Asia University, Taiwan & NIT Patna
+</a>
+                        </li>
+                   <br></br>
                         <li>
                           <a href="https://drive.google.com/file/d/1Yyan0BBPf1JleGl0epiJ8mI0btjtV7hB/view?usp=sharing"> MoU between University of Florence, Italy & NIT Patna</a>
                         </li>
@@ -145,11 +150,7 @@ export default function InternationalAffairsPage() {
                   <div>
                     <h2 className="text-xl mb-6 text-neutral-800">
                       <ul className="list-disc underline">
-                        <li>
-                          <a href="https://aicybersecuritycenter.com/" >
-                            International Center for AI and Cyber Security Research and Innovations (CCRI), Asia University, Taiwan
-                          </a>
-                        </li>
+                     
                         <br></br>
                         {/* <li>
           <a href="https://www.unical.it/" >

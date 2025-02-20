@@ -94,33 +94,33 @@ const Eventcard = ({
         console.log(parsedAttachments,'is parsed attachemnents')
       } */}
 
-{parsedAttachments && parsedAttachments.length > 0 && (
-  <ul>
-    <li>
-      {parsedAttachments[0].typeLink ? (
-        <a
-          href={parsedAttachments[0].url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="download-icon inline-block"></div>
-          {parsedAttachments[0].caption || "Download"}
-        </a>
-      ) : (
-        <a href={parsedAttachments[0].url} download>
-          <div className="download-icon inline-block"></div>
-          {parsedAttachments[0].caption || "Download"}
+      {parsedAttachments && parsedAttachments.length > 0 && (
+        <ul>
+          <li>
+            {parsedAttachments[0].typeLink ? (
+              <a
+                href={parsedAttachments[0].url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="download-icon inline-block"></div>
+                {parsedAttachments[0].caption || "Download"}
+              </a>
+            ) : (
+              <a href={parsedAttachments[0].url} download>
+                <div className="download-icon inline-block"></div>
+                {parsedAttachments[0].caption || "Download"}
+              </a>
+            )}
+          </li>
+        </ul>
+      )}
+
+      {parsedEventLink?.url && (
+        <a href={parsedEventLink.url} target="_blank" rel="noopener noreferrer">
+          Event link
         </a>
       )}
-    </li>
-  </ul>
-)}
-
-{parsedEventLink?.url && (
-  <a href={parsedEventLink.url} target="_blank" rel="noopener noreferrer">
-    Event link
-  </a>
-)}
 
       {link && <a href={link}>Read more</a>}
     </div>
@@ -135,8 +135,10 @@ const Details = () => {
   const [homeacad, sethomeacad] = useState([]);
   const [scrollingNotices, setScrollingNotices] = useState(true); // Start scrolling
   const [scrollingAcademics, setScrollingAcademics] = useState(true); // Start scrolling
+  const [scrollingevents, setScrollingevents] = useState(true);
   const noticesRef = useRef(null);
   const academicsRef = useRef(null);
+  const eventsRef = useRef(null);
 
   useEffect(() => {
     AOS.init({ duration: 800, once: false, offset: 50 });
@@ -204,6 +206,14 @@ const Details = () => {
       },
       { threshold: 0.1 }
     );
+    const eventObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setScrollingevents(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1 }
+    );
 
     const academicObserver = new IntersectionObserver(
       (entries) => {
@@ -218,6 +228,9 @@ const Details = () => {
     if (noticesRef.current) {
       noticeObserver.observe(noticesRef.current);
     }
+    if (eventsRef.current) {
+      eventObserver.observe(eventsRef.current);
+    }
     if (academicsRef.current) {
       academicObserver.observe(academicsRef.current);
     }
@@ -226,11 +239,14 @@ const Details = () => {
       if (noticesRef.current) {
         noticeObserver.unobserve(noticesRef.current);
       }
+      if (eventsRef.current) {
+        eventObserver.unobserve(eventsRef.current);
+      }
       if (academicsRef.current) {
         academicObserver.unobserve(academicsRef.current);
       }
     };
-  }, [noticesRef, academicsRef]);
+  }, [noticesRef, eventsRef, academicsRef]);
 
   useEffect(() => {
     const scrollSection = (ref, scrolling) => {
@@ -253,16 +269,21 @@ const Details = () => {
     };
 
     const noticeScroll = scrollSection(noticesRef, scrollingNotices);
+    const eventScroll = scrollSection(eventsRef, scrollingevents);
     const academicScroll = scrollSection(academicsRef, scrollingAcademics);
 
     return () => {
       noticeScroll();
+      eventScroll();
       academicScroll();
     };
-  }, [scrollingNotices, scrollingAcademics]);
+  }, [scrollingNotices, scrollingevents, scrollingAcademics]);
 
   const handleMouseEnterNotices = () => setScrollingNotices(false);
   const handleMouseLeaveNotices = () => setScrollingNotices(true);
+
+  const handleMouseEnterEvents = () => setScrollingevents(false);
+  const handleMouseLeaveEvents = () => setScrollingevents(true);
 
   const handleMouseEnterAcademics = () => setScrollingAcademics(false);
   const handleMouseLeaveAcademics = () => setScrollingAcademics(true);
@@ -324,8 +345,13 @@ const Details = () => {
             <h2>Events</h2>
             <Link href="/Notices/Events">View all</Link>
           </div>
-
-          <div className="section-content">
+          <div
+            className="section-content text-red-950"
+            ref={eventsRef}
+            onMouseEnter={handleMouseEnterEvents}
+            onMouseLeave={handleMouseLeaveEvents}
+            style={{ overflowY: "auto", maxHeight: "300px" }} // Set max height for scrolling
+          >
             {events.length === 0 ? (
               <div className="flex justify-center items-center">
                 <div className="text-center">
@@ -346,35 +372,43 @@ const Details = () => {
                 </div>
               </div>
             ) : (
-              events.map((event, index) => {
-                const startDate = new Date(event.eventStartDate);
-                const endDate = new Date(event.eventEndDate);
-                const dayStart = startDate.getDate();
-                const monthStart = startDate.getMonth() + 1;
-                const yearStart = startDate.getFullYear();
-                const dayEnd = endDate.getDate();
-                const monthEnd = endDate.getMonth() + 1;
-                const yearEnd = endDate.getFullYear();
+              events
+                .filter((event) => {
+                  const endDate = new Date(event.eventEndDate);
+                  const today = new Date();
+                  today.setHours(0, 0, 0, 0); 
+                  return endDate >= today; 
+                })
+                .map((event, index) => {
+                  const startDate = new Date(event.eventStartDate);
+                  const endDate = new Date(event.eventEndDate);
+                  const dayStart = startDate.getDate();
+                  const monthStart = startDate.getMonth() + 1;
+                  const yearStart = startDate.getFullYear();
+                  const dayEnd = endDate.getDate();
+                  const monthEnd = endDate.getMonth() + 1;
+                  const yearEnd = endDate.getFullYear();
 
-                return (
-                  <Eventcard
-                    key={index}
-                    detail={event.title}
-                    time={`${dayStart}-${monthStart}-${yearStart} - ${dayEnd}-${monthEnd}-${yearEnd}`}
-                    attachments={event.attachments}
-                    location={event.venue.substring(0, 60)}
-                    event_link={
-                      (event.event_link && JSON.parse(event.event_link).url) ||
-                      ""
-                    }
-                    link={
-                      event.attachments.length !== 0
-                        ? event.attachments[0].url
-                        : ""
-                    }
-                  />
-                );
-              })
+                  return (
+                    <Eventcard
+                      key={index}
+                      detail={event.title}
+                      time={`${dayStart}-${monthStart}-${yearStart} - ${dayEnd}-${monthEnd}-${yearEnd}`}
+                      attachments={event.attachments}
+                      location={event.venue.substring(0, 60)}
+                      event_link={
+                        (event.event_link &&
+                          JSON.parse(event.event_link).url) ||
+                        ""
+                      }
+                      link={
+                        event.attachments.length !== 0
+                          ? event.attachments[0].url
+                          : ""
+                      }
+                    />
+                  );
+                })
             )}
           </div>
         </div>
