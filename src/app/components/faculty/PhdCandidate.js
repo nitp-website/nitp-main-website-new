@@ -2,12 +2,14 @@
 import React from "react";
 
 const PhdCandidate = ({ data }) => {
+  // console.log(data);
   const {
     student_name,
     supervisor,
     research_area,
     current_status,
     roll_no,
+    registration_type,
     registration_year,
     completion_year,
   } = data;
@@ -71,17 +73,21 @@ const PhdCandidate = ({ data }) => {
         <div className="absolute w-full h-px mt-1 bg-[rgb(153,27,27)]"></div>
         {/* <p className="text-gray-600 text-md mt-1 italic">{college}</p> */}
 
+        <div className="text-gray-700 text-md mt-1">
+          <span className="font-semibold text-md">{registration_type}</span>{" "}
+          
+        </div>
+
         {/* Details Section */}
-        <div className="mt-4 space-y-3">
+        <div className="mt-2">
           <p className="text-gray-700 text-md">
             <span className="font-semibold">Supervisor:</span>{" "}
             <span className="ml-1">{supervisor}</span>
           </p>
-
-          <div className="text-gray-700 text-sm">
-            <span className="font-semibold text-md">Research Area:</span>{" "}
-            {research_area}
-          </div>
+        </div>
+        <div className="mt-1 text-gray-700 text-sm">
+          <span className="font-semibold text-md">Research Area:</span>{" "}
+          {research_area}
         </div>
       </div>
     </div>
