@@ -185,12 +185,12 @@ const Home = () => {
                     Completed Research Scholars
                   </p>
 
-                  <div className="flex justify-center space-x-4 my-4">
+                  <div className="flex flex-col sm:flex-row gap-5 justify-center px-2 my-4">
                     {/* Completion Year Dropdown */}
                     <select
                       onChange={(e) => setSelectedYear(e.target.value)}
                       value={selectedYear}
-                      className="border p-2 rounded"
+                      className="w-full border p-2 rounded"
                     >
                       <option value="">Select Completion Year</option>
                       {completionYears.map((year) => (
@@ -204,7 +204,7 @@ const Home = () => {
                     <select
                       onChange={(e) => setSelectedFaculty(e.target.value)}
                       value={selectedFaculty}
-                      className="border p-2 rounded"
+                      className="w-full border p-2 rounded"
                     >
                       <option value="">Select Faculty Supervisor</option>
                       {facultyNames.map((name) => (
