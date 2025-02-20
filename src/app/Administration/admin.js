@@ -454,11 +454,16 @@ const Jai = [
 ]
 
 const ServiceUNIT = [
-
-   {
+{
+  designation: "CCIS",
+  type: "Head",
   name: "Prof. Prabhat Kumar",
-  type: "Prof. In-charge",
-  designation: "Chief Proctor – Security",
+ },
+
+ {
+  name: "Prof. M P Singh",
+  type: "Chief Investigator",
+  designation: " E&ICT Academy Phase II, Associate Dean Academic",
  },
 
  {
@@ -466,29 +471,12 @@ const ServiceUNIT = [
   type: "Prof. In-charge",
   designation: "Training and Placement",
  },
-  {
-  name: "Dr. Ajay Kumar",
-  type: "Associate Professor",
-  designation: " Asst. PI (T&P)"
-},
+
 {
-  name: "Dr. S K Tripathy",
-  type: "Assistant Professor",
-  designation: " Asst. PI (T&P)"
-},
- {
-  name: "Prof. M P Singh",
-  type: "Chief Investigator",
-  designation: " E&ICT Academy Phase II, Associate Dean Academic",
- },
-
-   {
-  name: "Prof. A R Quaff",
+  name: "Prof. Bharat Gupta",
   type: "Professor",
-  designation: " Associate Dean Examinations",
- },
-
-
+  designation: "Prof Incharge (Incubation Centre); Co-PI (Procurement)"
+},
   
  {
   designation: "PI (Procurement)",
@@ -500,26 +488,17 @@ const ServiceUNIT = [
   type: "Nodal Officer – IPR,Nodal Officer – IoE,Nodal Officer – BIS",
   name: "Prof. Amit Kumar",
  },
- {
-  designation: "CCIS",
-  type: "Head",
-  name: "Prof. Prabhat Kumar",
- },
-
-{
-  name: "Prof. Bharat Gupta",
-  type: "Professor",
-  designation: "PI (Incubation Centre); Co-PI (Procurement)"
+  {
+  name: "Dr. Ajay Kumar",
+  type: "Associate Professor",
+  designation: " Asst. PI (T&P)"
 },
+
+ 
 {
   name: "Dr. Shailendra K. Mandal",
   type: "Associate Professor",
   designation: " PI - Library"
-},
-{
-  name: "Dr. Shailesh Mani Pandey",
-  type: "Assistant Professor",
-  designation: " T & P Officer"
 },
 {
   name: "Dr. J. P. Singh",
@@ -537,14 +516,27 @@ const ServiceUNIT = [
   designation: " PI – Electrical Maintenance Unit (EMU)"
 },
 {
-  name: "Dr. B. Balaji Naik",
-  type: "Assistant Professor",
-  designation: "PI – Webservice"
-},
-{
   name: "Dr. Amit Kumar Singh",
   type: "Associate Professor",
   designation: "PI – International Affairs; Chief Vigilance Officer, NIT Patna"
+},
+
+{
+  name: "Dr. S K Tripathy",
+  type: "Assistant Professor",
+  designation: " Asst. PI (T&P)"
+},
+
+  
+{
+  name: "Dr. Shailesh Mani Pandey",
+  type: "Assistant Professor",
+  designation: " T & P Officer"
+},
+{
+  name: "Dr. B. Balaji Naik",
+  type: "Assistant Professor",
+  designation: "PI – Webservice"
 },
 {
   name: "Dr. Om Ji Shukla",
