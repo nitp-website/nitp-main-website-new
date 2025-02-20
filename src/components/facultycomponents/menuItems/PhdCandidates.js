@@ -15,11 +15,11 @@ const PhdCandidates = ({ data }) => {
 
   const extractYear = (dateString) => dateString?.split("-")[0];
 
-  const ongoingProjects = data
+  const ongoingCandidates = data
     ?.filter((candidate) => ongoingStatuses.includes(candidate.current_status))
     .sort((a, b) => b.registration_year - a.registration_year);
 
-  const completedProjects = data
+  const completedCandidates = data
     ?.filter((candidate) => completedStatuses.includes(candidate.current_status))
     .sort((a, b) => extractYear(b.completion_year) - extractYear(a.completion_year));
 
@@ -33,11 +33,11 @@ const PhdCandidates = ({ data }) => {
       {error && <p className="text-red-500">Error: {error.message}</p>}
 
       {/* Ongoing Projects */}
-      {ongoingProjects?.length > 0 && (
+      {ongoingCandidates?.length > 0 && (
         <div className="mb-6">
           <h3 className="text-xl font-semibold text-blue-700">Ongoing</h3>
           <ul className="space-y-4 mt-2">
-            {ongoingProjects.map((candidate, index) => (
+            {ongoingCandidates.map((candidate, index) => (
               <li
                 key={index}
                 className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
@@ -60,11 +60,11 @@ const PhdCandidates = ({ data }) => {
       )}
 
       {/* Completed Projects */}
-      {completedProjects?.length > 0 && (
+      {completedCandidates?.length > 0 && (
         <div className="mb-6">
           <h3 className="text-xl font-semibold text-green-700">Completed</h3>
           <ul className="space-y-4 mt-2">
-            {completedProjects.map((candidate, index) => (
+            {completedCandidates.map((candidate, index) => (
               <li
                 key={index}
                 className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"

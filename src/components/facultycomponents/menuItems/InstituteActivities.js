@@ -17,8 +17,8 @@ const InstituteActivities = ({ data }) => {
                 {activity.role_position}
               </span>{" "}
               <span className="text-lg font-semibold text-gray-700">
-                in {activity.institute_name}
-              </span>
+                in {activity.institute_name.replace(/,/g, '')}
+              </span>{" "}
               <span>
                 from- {new Date(activity.start_date).toLocaleDateString()} to{" "}
                 {activity.end_date === "Continue"
