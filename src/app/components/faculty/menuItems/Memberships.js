@@ -2,13 +2,25 @@ import React from "react";
 import { FaCalendarAlt } from "react-icons/fa";
 
 const Memberships = ({ data }) => {
+
+  const sortedMemberships = [...data].sort((a, b) => {
+    const isAContinuing = a.end.toLowerCase() === "continue";
+    const isBContinuing = b.end.toLowerCase() === "continue";
+    
+    if (isAContinuing && isBContinuing) {
+      return new Date(b.start) - new Date(a.start); // Sort by start date if both are ongoing
+    }
+    if (isAContinuing) return 1; // Ongoing at the end
+    if (isBContinuing) return -1;
+    return new Date(a.end) - new Date(b.end); // Sort by end date
+  });
   return (
     <div className="p-6 border border-indigo-600 rounded-lg text-black bg-indigo-100 shadow-lg">
       <h2 className="text-xl font-bold text-indigo-800 border-b-2 border-indigo-500 pb-2 mb-4">
         Memberships
       </h2>
       <ul className="space-y-4">
-        {data.map((membership, index) => {
+        {sortedMemberships.map((membership, index) => {
           const startDate = new Date(membership.start).toLocaleDateString();
           const endDate =
             membership.end.toLowerCase() === "continue"

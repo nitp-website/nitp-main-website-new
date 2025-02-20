@@ -1,31 +1,91 @@
-"use client"
-import Image from 'next/image'
-import React, { useState } from 'react'
+"use client";
+import React from "react";
 
-const PhdCandidate = ({ name, topic, image, supervisor }) => {
-    const [isHovered, setIsHovered] = useState(false);
-    return (
-        <>
-            <div
-                className={`backdrop-blur-sm	 static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-4 m-5 transition-all duration-500  h-[20rem] md:h-[10rem]
-                    `}
-                
-            >
-               
-                <div className="mt-12 md:ml-8 ml-4 md:w-3/4 md:mt-0 ">
-                    <h5 className="m-0 text-red-800 font-bold text-lg">{name}</h5>
-                    <span className="flex text-[12px] mt-1 md:text-xl">
-                    <p className='text-neutral-700 pl-2 pr-2 '>supervisor: </p><p> {supervisor}</p>
-                    </span>
-                    <span
-                        className={`flex mt-1 transition-opacity duration-300 pl-2 text-neutral-700 text-sm`}
-                    >
-                        Topic: {topic}
-                    </span>
-                </div>
-            </div>
-        </>
-    );
-}
+const PhdCandidate = ({ data }) => {
+  const {
+    student_name,
+    supervisor,
+    research_area,
+    current_status,
+    roll_no,
+    registration_year,
+    completion_year,
+  } = data;
 
-export default PhdCandidate
+  // Function to parse name and college
+  const parseNameAndCollege = (fullName) => {
+    const matches = fullName.match(/(.*?)\s*\((.*?)\)/);
+    if (matches) {
+      return {
+        name: matches[1].trim(),
+        college: matches[2].trim(),
+      };
+    }
+    return {
+      name: fullName.trim(),
+      college: "NIT PATNA",
+    };
+  };
+
+  // Extract name and college
+  const { name, college } = parseNameAndCollege(student_name);
+
+  // Function to safely extract year
+  const extractYear = (dateString) => {
+    if (!dateString) return null;
+    const yearString = String(dateString);
+    return parseInt(yearString.split("-")[0]);
+  };
+
+  // Extract start and end year
+  const startYear = extractYear(registration_year);
+  const endYear = extractYear(completion_year);
+
+  // Calculate duration or show "Ongoing"
+  const yearsSpent = startYear
+    ? endYear
+      ? endYear - startYear
+      : "Ongoing"
+    : "N/A";
+
+  return (
+    <div className="w-[400px] h-[250px] bg-gradient-to-br from-white to-slate-50 border-2 border-[rgb(153,27,27)] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+      <div className="relative">
+        {/* Name and Status Section */}
+        <div className="flex items-center justify-between">
+          <div>
+            <h5 className="text-[rgb(153,27,27)] font-bold text-xl">{name}</h5>
+          </div>
+          <div
+            className={`px-4 py-1.5 ${
+              current_status === "Completed" || current_status === "Awarded"
+                ? "bg-green-900"
+                : "bg-[rgb(153,27,27)]"
+            } text-white text-sm font-medium rounded-full`}
+          >
+            {current_status}
+          </div>
+        </div>
+
+        {/* Decorative Line */}
+        <div className="absolute w-full h-px mt-1 bg-[rgb(153,27,27)]"></div>
+        {/* <p className="text-gray-600 text-md mt-1 italic">{college}</p> */}
+
+        {/* Details Section */}
+        <div className="mt-4 space-y-3">
+          <p className="text-gray-700 text-md">
+            <span className="font-semibold">Supervisor:</span>{" "}
+            <span className="ml-1">{supervisor}</span>
+          </p>
+
+          <div className="text-gray-700 text-sm">
+            <span className="font-semibold text-md">Research Area:</span>{" "}
+            {research_area}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PhdCandidate;
