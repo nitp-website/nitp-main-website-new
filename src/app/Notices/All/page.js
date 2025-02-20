@@ -16,12 +16,12 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
             {attachment.typeLink ? (
               <a href={attachment.url} target="_blank" rel="noopener noreferrer">
                 <div className="download-icon inline-block"></div>
-                {attachment.caption}
+                {attachment.caption? attachment.caption:"View Notice"}
               </a>
             ) : (
               <a href={attachment.url} download className=" text-xs ">
                 <div className="download-icon inline-block"></div>
-                {attachment.caption}
+                {attachment.caption? attachment.caption:"View Notice"}
               </a>
             )}
           </li>
