@@ -206,6 +206,11 @@ const navItems = [
         iconImage: Person,
       },
       {
+        label: "Proctorial Board",
+        link: "/Administration/Proctorial_Board",
+        iconImage: Sperson,
+      },
+      {
         label: "Chief Vigilance Officer",
         link: "/Administration/CVO",
         iconImage: Person,
@@ -242,11 +247,11 @@ const navItems = [
             iconImage: Person,
           },
 
-          {
-            label: "Proctorial Board",
-            link: "/Facilities/Security/people",
-            iconImage: Sperson,
-          },
+          // {
+          //   label: "Proctorial Board",
+          //   link: "/Facilities/Security/people",
+          //   iconImage: Sperson,
+          // },
         ],
       },
       {
@@ -675,12 +680,11 @@ const navItems = [
         link: "/Facilities/Bank",
         iconImage: Bank,
       },
-      {
-        label: "Security",
-        link: "/Facilities/Security",
-
-        iconImage: security,
-      },
+      // {
+      //   label: "Security",
+      //   link: "/Facilities/Security",
+      //   iconImage: security,
+      // },
       {
         label: "EMU",
         link: "/Facilities/Emu",
