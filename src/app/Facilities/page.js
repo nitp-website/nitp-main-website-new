@@ -57,11 +57,11 @@ const FacilitiesResources = [
     "image": "https://i.postimg.cc/VN5YQV97/bank64.png", 
     "link": "/Facilities/Bank", 
   },
-  {
-    "title": "Security",
-    "image": "https://i.postimg.cc/4xWJ0gc7/security64.png", 
-    "link": "/Facilities/Security",
-  },
+  // {
+  //   "title": "Security",
+  //   "image": "https://i.postimg.cc/4xWJ0gc7/security64.png", 
+  //   "link": "/Facilities/Security",
+  // },
   {
     "title": "Women Cell",
     "image": "https://i.postimg.cc/yYzYgnBd/woman64.png", 
