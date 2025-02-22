@@ -451,7 +451,19 @@ const Details = () => {
                 detail={notice.title}
                 time={notice.timestamp}
                 key={notice.id}
-                attachments={notice.attachments}
+                attachments={
+                  notice.attachments.length > 0 ? (
+                    <ul>
+                      {notice.attachments.map((att, index) => (
+                        <li key={index}>
+                          <a href={att.url} target="_blank" rel="noopener noreferrer">
+                            {att.caption || "View here"}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null
+                }        
                 imp={notice.important}
                 link={
                   (notice.notice_link && JSON.parse(notice.notice_link).url) ||
