@@ -23,7 +23,7 @@ function StaffCard({
   expertise = "Not Available",
 }) {
   return (
-    <div className="w-[300px] h-[400px] mx-4 bg-slate-200 rounded-lg shadow-lg hover:shadow-2xl overflow-hidden">
+    <div className="w-[300px] h-[420px] mx-4 bg-slate-200 rounded-lg shadow-lg hover:shadow-2xl overflow-hidden">
       <div className="bg-[rgb(153,27,27)] py-4">
         <div className="w-[150px] h-[150px] mx-auto my-4 flex items-center justify-center bg-red-700 rounded-full border-8 border-white">
           <Image
@@ -36,7 +36,7 @@ function StaffCard({
         </div>
       </div>
       <div className=" text-black text-center px-3">
-        <h3 className="text-xl font-bold mt-2">{name}</h3>
+        <h3 className="text-xl font-bold mt-1">{name}</h3>
         <h4 className="text-md font-[600] font-sans">
           <FontAwesomeIcon icon={faIdCard} className="w-8 text-black" />
           {designation}
@@ -50,7 +50,7 @@ function StaffCard({
         )} */}
 
         {expertise && (
-          <div className="mt-1 text-md">
+          <div className="mt-1 text-sm">
             <FontAwesomeIcon
               icon={faLightbulb}
               className="w-5 mr-2 text-gray-600"
@@ -72,7 +72,7 @@ function StaffCard({
         )}
 
         {mobile && (
-          <div className="mt-1 text-sm">
+          <div className="text-sm">
             <FontAwesomeIcon
               icon={faPhone}
               className="w-5 mr-2 text-gray-600"
