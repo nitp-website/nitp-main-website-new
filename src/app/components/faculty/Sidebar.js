@@ -18,10 +18,16 @@ const Sidebar = ({ Data }) => {
     sponsored_projects,
     consultancy_projects,
     startups,
+    patents,
     ipr,
     book_chapters,
   } = facultyData || {};
   const [qrCode, setQrCode] = useState("");
+
+  // Filter the ipr array
+  const filteredIpr = ipr?.filter((item) => item.grant_date || item.registration_date || item.publication_date) || [];
+
+  // console.log(filteredIpr);
 
 
   // const ongoingStatuses = [
@@ -69,7 +75,7 @@ const Sidebar = ({ Data }) => {
     { label: "Startups", count: startups?.length, bgColor: "bg-pink-500" },
     {
       label: "Intellectual Property Rights",
-      count: ipr?.length,
+      count: filteredIpr?.length,
       bgColor: "bg-orange-500",
     },
     {

@@ -113,10 +113,15 @@ export default function Research() {
       const projectResponse = await axios.get(
         `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=count`
       );
-  
+      const patentResponse = await axios.get(
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/patent?type=count`
+      );
+
       const publications = publicationsResponse.data;
       const projectCount = projectResponse.data.projectCount; // Get project count
-  
+      const patentCount = patentResponse.data.patentCount;
+      console.log(patentCount);
+
       // Calculate publication counts based on type
       const publicationCounts = publications.reduce(
         (acc, publication) => {
@@ -132,26 +137,21 @@ export default function Research() {
           if (publication.journal_name || publication.doi_url) {
             acc.articles += 1;
           }
-          // Count patents if type is "patent"
-          if (publication.type === "patent") {
-            acc.patents += 1;
-          }
           return acc;
         },
-        { patents: 0, books: 0, conferences: 0, articles: 0 }
+        { books: 0, conferences: 0, articles: 0 }
       );
-  
+
       // Set the state with publication counts and project count
       setData({
         ...publicationCounts,
         projectCount: projectCount || 0, // Safely handle projectCount
+        patentCount: patentCount || 0,
       });
-  
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
-  
 
   useEffect(() => {
     fetchPatents();
@@ -164,7 +164,9 @@ export default function Research() {
           `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=all`
         );
         const publications = response.data.filter(
-          (paper) => paper.journal_name
+          (paper) =>
+            paper.journal_quartile === "Q1" &&
+            (paper.publication_year === 2024 || paper.publication_year === 2025)
         );
         setRecentPublications(publications);
       } catch (error) {
@@ -283,7 +285,9 @@ export default function Research() {
               Patents
             </h3>
             <span className="text-2xl font-bold text-primary md:text-4xl">
-              {counterOn && <CountUp end={202} duration={5} delay={1} />}
+              {counterOn && (
+                <CountUp end={data.patentCount} duration={5} delay={1} />
+              )}
             </span>
           </div>
 
@@ -459,11 +463,11 @@ export default function Research() {
               ) : (
                 (() => {
                   const sortedPublications = recentPublications
-                    .sort(
-                      (a, b) =>
-                        new Date(b.conference_year) -
-                        new Date(a.conference_year)
-                    )
+                    // .sort(
+                    //   (a, b) =>
+                    //     new Date(a.conference_year) -
+                    //     new Date(b.conference_year)
+                    // )
                     .slice(0, 30);
 
                   return (
