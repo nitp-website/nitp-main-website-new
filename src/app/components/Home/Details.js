@@ -6,6 +6,7 @@ import Link from "next/link";
 import "./styles/Details.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FiDownload } from 'react-icons/fi';
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -23,33 +24,48 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
   <div className={`notice ${imp ? "important" : ""}`}>
     <h3>{detail}</h3>
     <p>
-      {link && <a href={link}>View Notice</a>}
       <span className="text-neutral-400 text-xs">
         <FormatDate time={time} />
       </span>
     </p>
-    {attachments && attachments.length > 0 && (
-      <ul>
+    {Array.isArray(attachments) && attachments.length > 0 && (
+      <ul className="text-xs text-red-800">
         {attachments.map((attachment, index) => (
-          <li key={index}>
+          <li key={index} className="mb-1">
             {attachment.typeLink ? (
-              <a
-                href={attachment.url}
-                target="_blank"
+              <a 
+                href={attachment.url} 
+                target="_blank" 
                 rel="noopener noreferrer"
+                className="flex items-center gap-2"
               >
-                <div className="download-icon inline-block"></div>
-                {attachment.caption? attachment.caption:"View Notice"}
+                <FiDownload className="inline-block" />
+                {attachment.caption || "View Notice"}
               </a>
             ) : (
-              <a href={attachment.url} download>
-                <div className="download-icon inline-block"></div>
-                {attachment.caption? attachment.caption:"View Notice"}
+              <a 
+                href={attachment.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <FiDownload className="inline-block" />
+                {attachment.caption || "View Notice"}
               </a>
             )}
           </li>
         ))}
       </ul>
+    )}
+    {link && (
+      <a 
+        href={link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="text-xs text-blue-600 hover:text-blue-800"
+      >
+        View Notice
+      </a>
     )}
   </div>
 );

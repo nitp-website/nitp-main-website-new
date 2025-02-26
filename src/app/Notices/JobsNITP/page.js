@@ -9,17 +9,28 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
   <div className={`notice ${imp ? "important" : ""}`}>
     <h3 className="text-black md:text-xs text-sm">{detail}</h3>
     <p className="text-neutral-500 text-xs">{new Date(time).toLocaleDateString()}</p>
-    {attachments && attachments.length > 0 && (
-      <ul className=" text-xs text-red-800">
+    {Array.isArray(attachments) && attachments.length > 0 && (
+      <ul className="text-xs text-red-800">
         {attachments.map((attachment, index) => (
-          <li key={index}>
+          <li key={index} className="mb-1">
             {attachment.typeLink ? (
-              <a href={attachment.url} target="_blank" rel="noopener noreferrer">
+              <a 
+                href={attachment.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <FiDownload className="inline-block" />
                 {attachment.caption}
               </a>
             ) : (
-              <a href={attachment.url} download className=" text-xs text-red-800">
-                <FiDownload className="download-icon" />
+              <a 
+                href={attachment.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <FiDownload className="inline-block" />
                 {attachment.caption}
               </a>
             )}
