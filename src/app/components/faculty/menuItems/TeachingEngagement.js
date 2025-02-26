@@ -4,11 +4,16 @@ const TeachingEngagement = ({ data }) => {
   // Sort the courses by years_offered (latest first)
   const sortedData = [...data].sort((a, b) => b.years_offered - a.years_offered);
 
+  // console.log(sortedData);
+
   // Group courses by level first, then by year
   const groupedCourses = { UG: {}, PG: {} };
 
   sortedData.forEach((course) => {
     const { level, years_offered } = course;
+    if (!groupedCourses[level]) {
+      groupedCourses[level] = {}; // Ensure the level is defined
+    }
     if (!groupedCourses[level][years_offered]) {
       groupedCourses[level][years_offered] = [];
     }
