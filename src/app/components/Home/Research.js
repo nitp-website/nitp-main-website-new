@@ -120,7 +120,7 @@ export default function Research() {
       const publications = publicationsResponse.data;
       const projectCount = projectResponse.data.projectCount; // Get project count
       const patentCount = patentResponse.data.patentCount;
-      console.log(patentCount);
+      // console.log(patentCount);
 
       // Calculate publication counts based on type
       const publicationCounts = publications.reduce(

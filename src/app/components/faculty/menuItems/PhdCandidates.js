@@ -10,6 +10,7 @@ const PhdCandidates = ({ data }) => {
     "Presubmission",
     "Thesis Submitted",
     "Ongoing",
+    "Registered",
   ];
   const completedStatuses = ["Awarded", "Completed"];
 
