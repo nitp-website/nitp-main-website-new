@@ -7,7 +7,7 @@ const staffData = [
                 designation: "Technical Assistant",
                 experience: "Technical Assistant (CSE) in NIT Patna from 11.07.2024 Till now.",
                 education: "Diploma in Electronics Engineering,",
-                expertise: "Routing, Switching, Cisco Wireless, LAN Controller and Cisco ASA Firewall.",
+                expertise: "Routing, Switching, Cisco Wireless, Cisco ISE, Palo Alto, Fortinet and Cisco ASA, FTD Firewall.Cisco Certified - CCIE-S, CCNP, CCSA, CCNA, MCP",
                 email: "ranjeet.ta@nitp.ac.in",
                 mobile: "+91-9771027007",
                 image: "/staffCse4.jpg",
