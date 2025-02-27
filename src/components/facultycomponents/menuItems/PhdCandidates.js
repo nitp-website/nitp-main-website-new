@@ -11,6 +11,7 @@ const PhdCandidates = ({ data }) => {
     "Thesis Submitted",
     "Ongoing",
     "Registered",
+    "Thesis_Submitted",
   ];
   const completedStatuses = ["Awarded", "Completed"];
 
