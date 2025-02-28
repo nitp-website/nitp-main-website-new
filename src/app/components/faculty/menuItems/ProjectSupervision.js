@@ -15,7 +15,7 @@ const ProjectSupervision = ({ data }) => {
 
   const getProjectCategory = (category) => {
     const ugDegrees = ["BTech", "B.Arch"];
-    const pgDegrees = ["MTech", "M.Sc", "Int.M.Sc", "M.Arch", "MCA"];
+    const pgDegrees = ["MTech", "M.Sc", "Int.M.Sc", "M.Arch", "MCA", "Int.Msc"];
 
     if (ugDegrees.includes(category)) return "UG";
     if (pgDegrees.includes(category)) return "PG";
