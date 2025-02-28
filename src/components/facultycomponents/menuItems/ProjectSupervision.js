@@ -15,7 +15,7 @@ const ProjectSupervision = ({ data }) => {
 
   const getProjectCategory = (category) => {
     const ugDegrees = ["BTech", "B.Arch"];
-    const pgDegrees = ["MTech", "M.Sc", "Int.M.Sc", "M.Arch", "MCA"];
+    const pgDegrees = ["MTech", "M.Sc", "Int.M.Sc", "M.Arch", "MCA", "Int.Msc"];
 
     if (ugDegrees.includes(category)) return "UG";
     if (pgDegrees.includes(category)) return "PG";
@@ -85,11 +85,10 @@ const ProjectSupervision = ({ data }) => {
                               <p className="font-semibold text-gray-800">
                                 Status:{" "}
                                 <span
-                                  className={`text-lg font-semibold ${
-                                    project.isCompleted
+                                  className={`text-lg font-semibold ${project.isCompleted
                                       ? "text-green-600"
                                       : "text-blue-600"
-                                  }`}
+                                    }`}
                                 >
                                   {project.isCompleted
                                     ? "Completed"
