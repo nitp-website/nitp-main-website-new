@@ -107,7 +107,7 @@
 }
 
 /* Notice Card: Add Animated Vertical Gradient */
-.notice.important {
+/* .notice.important {
   background-color: rgb(255, 245, 245);
   animation: colorChange 3s infinite ease-in-out;
 }
@@ -132,7 +132,7 @@
   width: 4px;
   background: linear-gradient(0deg, red, yellow);
   animation: borderColorChange 3s infinite ease-in-out;
-}
+} */
 
 .notice p,
 .eventcard p {
@@ -141,7 +141,7 @@
 
 .notice ul,
 .eventcard ul {
-  padding: 2px;
+  /* padding: 2px; */
   list-style: none;
 }
 
@@ -189,4 +189,9 @@
   background-image: url(https://i.postimg.cc/1tWzRB6z/downloadicon.png);
   margin-top: 2px;
   margin-right: 8px;
+}
+
+.notice {
+  /* padding: 1rem; */
+  border-bottom: 1px solid #e5e7eb;
 }
