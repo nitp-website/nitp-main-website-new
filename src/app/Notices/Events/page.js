@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import "../../components/Home/styles/Details.css";
-import Downloadicon from "../../../../public/downloadicon.png";
+import { Calendar, MapPin, Download, ExternalLink } from 'lucide-react';
 
 const Eventcard = ({
   detail,
@@ -11,40 +11,87 @@ const Eventcard = ({
   attachments,
   location,
   event_link,
-  link,
-}) => (
-  <div className="eventcard">
-    <h3 className="text-black  text-xs md:text-base">{detail}</h3>
-    <p className="text-neutral-500 text-xs md:text-base">{time}</p>
-    <p className="text-neutral-500 text-xs md:text-base">{location}</p>
-    {Array.isArray(attachments) && attachments.length > 0 && (
-      <ul>
-        {attachments.map((attachment, index) => (
-          <li key={index}>
-            {attachment.typeLink ? (
-              <a
-                href={attachment.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="download-icon inline-block"></div>
-                {attachment.caption}
-              </a>
-            ) : (
-              <a href={attachment.url} download>
-                <div className="download-icon inline-block"></div>
-                {attachment.caption}
-              </a>
-            )}
-          </li>
-        ))}
-      </ul>
-    )}
+  doclink,
+}) => {
+  // Helper function to safely parse JSON
+  const safeParseJSON = (data, fallback) => {
+    try {
+      const parsed = JSON.parse(data);
+      return parsed;
+    } catch (e) {
+      return fallback;
+    }
+  };
 
-    {event_link && <a href={event_link}>Event link</a>}
-    {link && <a href={link}>View Details</a>}
-  </div>
-);
+  // Parse attachments from JSON string
+  const parsedAttachments = typeof attachments === "string" 
+    ? safeParseJSON(attachments, [])
+    : [];
+
+  // Parse event_link if it exists
+  const parsedEventLink = event_link
+    ? safeParseJSON(event_link, null)
+    : null;
+
+  return (
+    <div className="group/item rounded-lg p-3 transition-all hover:bg-purple-50 border border-gray-100 mb-4">
+      <p className="mb-3 text-sm text-gray-700">{detail}</p>
+      <div className="mb-2 flex items-center gap-2 text-sm text-gray-500">
+        <Calendar className="h-4 w-4" />
+        <span>{time}</span>
+      </div>
+      <div className="mb-3 flex items-center gap-2 text-sm text-gray-500">
+        <MapPin className="h-4 w-4" />
+        <span>{location}</span>
+      </div>
+
+      {/* Display attachments */}
+      {parsedAttachments && parsedAttachments.length > 0 && (
+        <div className="flex flex-col gap-2 mb-3">
+          {parsedAttachments.map((attachment, index) => (
+            <a
+              key={index}
+              href={attachment.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700"
+            >
+              <Download className="h-4 w-4" />
+              {attachment.caption || "Event Attachment"}
+            </a>
+          ))}
+        </div>
+      )}
+
+      {/* Display links in flex-col to ensure vertical layout */}
+      <div className="flex flex-col gap-2">
+        {doclink && (
+          <a
+            href={doclink.trim()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700"
+          >
+            <ExternalLink className="h-4 w-4" />
+            Event Registration
+          </a>
+        )}
+        {parsedEventLink?.url && (
+          <a
+            href={parsedEventLink.url.trim()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700"
+          >
+            <ExternalLink className="h-4 w-4" />
+            Event Link
+          </a>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const Page = () => {
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -53,9 +100,40 @@ const Page = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const eventsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/events/active`;
+        const eventsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/events?type=active`;
         const response = await axios.get(eventsUrl);
-        setEvents(response.data);
+        
+        // Sort events
+        const sortedEvents = response.data.sort((a, b) => {
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          const aStartDate = new Date(a.eventStartDate);
+          const bStartDate = new Date(b.eventStartDate);
+          const aEndDate = new Date(a.eventEndDate);
+          const bEndDate = new Date(b.eventEndDate);
+
+          // If both events haven't started yet
+          if (aStartDate > today && bStartDate > today) {
+            // Sort by start date
+            if (aStartDate.getTime() !== bStartDate.getTime()) {
+              return aStartDate.getTime() - bStartDate.getTime();
+            }
+            // If start dates are same, sort by end date
+            return aEndDate.getTime() - bEndDate.getTime();
+          }
+
+          // If both events have started
+          if (aStartDate <= today && bStartDate <= today) {
+            // Sort by end date
+            return aEndDate.getTime() - bEndDate.getTime();
+          }
+
+          // If one event has started and other hasn't
+          // Show future events first
+          return aStartDate > today ? -1 : 1;
+        });
+
+        setEvents(sortedEvents);
         setIsLoading(false);
       } catch (e) {
         console.error("Error fetching Events notices:", e);
@@ -220,33 +298,24 @@ const Page = () => {
               <p>No events available.</p>
             ) : (
               events.map((event, index) => {
-                const date = new Date(event.eventStartDate);
-                const day = date.getDate();
-                const month = date.getMonth() + 1;
-                const year = date.getFullYear();
-                const cdate = new Date(event.eventEndDate);
-                const cday = cdate.getDate();
-                const cmonth = cdate.getMonth() + 1;
-                const cyear = cdate.getFullYear();
-                const monthname = date
-                  .toLocaleString("default", { month: "short" })
-                  .toUpperCase();
+                const startDate = new Date(event.eventStartDate);
+                const endDate = new Date(event.eventEndDate);
+                const dayStart = startDate.getDate();
+                const monthStart = startDate.getMonth() + 1;
+                const yearStart = startDate.getFullYear();
+                const dayEnd = endDate.getDate();
+                const monthEnd = endDate.getMonth() + 1;
+                const yearEnd = endDate.getFullYear();
+
                 return (
                   <Eventcard
                     key={index}
                     detail={event.title}
-                    time={`${day}-${month}-${year} to ${cday}-${cmonth}-${cyear}`}
+                    time={`${dayStart}-${monthStart}-${yearStart} - ${dayEnd}-${monthEnd}-${yearEnd}`}
                     attachments={event.attachments}
-                    location={event.venue.substring(0, 60)}
-                    event_link={
-                      (event.event_link && JSON.parse(event.event_link).url) ||
-                      ""
-                    }
-                    link={
-                      event.attachments.length !== 0
-                        ? event.attachments[0].url
-                        : ""
-                    }
+                    location={event.venue}
+                    event_link={event.event_link}
+                    doclink={event.doclink}
                   />
                 );
               })
