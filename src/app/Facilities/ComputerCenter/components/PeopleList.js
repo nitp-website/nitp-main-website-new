@@ -48,7 +48,7 @@ export default function PeopleList() {
         designation: "Technical Assistant",
         Expertise:"Full Stack Developer in .NET Platform",
         email: "kislay.mis@nitp.ac.in",
-        phone:"+91-7970639369",
+        phone:"",
       },
       {
         id: 4,
@@ -56,8 +56,8 @@ export default function PeopleList() {
         image: "/other4.jpg",
         designation: "Technical Assistant",
         Expertise:"Server and Network Configuration",
-        email: "purushottam.its@nitp.ac.in",
-        phone:"+91-9097204890",
+        email: "purushottam.ccis@nitp.ac.in",
+        phone:"",
       },
       {
         id: 5,
@@ -66,7 +66,7 @@ export default function PeopleList() {
         designation: "Technical Assistant",
         Expertise:"Full Stack Developer in .NET Platform",
         email: "aakash.ta@nitp.ac.in",
-        phone:"+91-9798202709",
+        phone:"",
       },
     
   ];
