@@ -793,7 +793,7 @@ export default function Navbar() {
           <div className="font-bold textmob text-black">राष्ट्रीय प्रौद्योगिकी संस्थान पटना</div>
           <div className="text-sm textmob text-black">NATIONAL INSTITUTE OF TECHNOLOGY PATNA</div>
         </div>
-        <div className="left-content flex">
+        <div className="flex justify-center items-center">
           <Link href="/">  <Image src={logo} alt="NIT PATNA" height={70} /></Link>
         
         </div>

@@ -331,7 +331,7 @@ const Details = () => {
   const handleMouseLeaveAcademics = () => setScrollingAcademics(true);
 
   return (
-    <div className="container1">
+    <div className="container1 py-5 md:py-0">
       <div className="section">
         <div className="section-header">
           <h2>Notice 📢</h2>
