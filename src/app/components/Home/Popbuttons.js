@@ -45,10 +45,10 @@ const Popbuttons = () => {
         <p className="headingp">RECRUITMENT</p>
       </Link>
       
-      <Link href ="/Academic/Faculty&Staff" className="card card1">
+      {/* <Link href ="/Academic/Faculty&Staff" className="card card1">
       <FontAwesomeIcon icon={faUsers} size="3x" className="mobileicondiv" color='#f7cece' />
       <p className="headingp headingp1f ">FACULTY & STAFF</p>
-      </Link>
+      </Link> */}
       
       <a href="/Institute/International" className="card">
       <FontAwesomeIcon icon={faPlaneDeparture} size="4x" className="mobileicondiv" color='#BA210E' />
