@@ -62,6 +62,10 @@ const FacultyDropdown = ({ facultyData }) => {
     internships,
   } = facultyData || {};
 
+  const filteredIpr = ipr?.filter((item) => item.grant_date || item.registration_date || item.publication_date) || [];
+
+  // console.log(filteredIpr);
+
   const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleDropdown = (id) => {
@@ -137,11 +141,11 @@ const FacultyDropdown = ({ facultyData }) => {
       component: <ConsultancyProjects data={consultancy_projects} />,
     },
     {
-      condition: ipr?.length > 0,
+      condition: filteredIpr?.length > 0,
       title: "Intellectual Property Rights",
       icon: <FaCertificate />,
       id: 28,
-      component: <IPR data={ipr} />,
+      component: <IPR data={filteredIpr} />,
     },
     {
       condition: startups?.length > 0,

@@ -42,21 +42,10 @@ const FacultyHeader = ({ Data }) => {
   if (loading) return <p className="text-black">Loading...</p>;
   if (error) return <p>Error loading data.</p>;
 
-  // const ongoingStatuses = [
-  //   "Admission",
-  //   "Comprehension",
-  //   "Presubmission",
-  //   "Thesis Submitted",
-  //   "Ongoing",
-  // ];
+  // Filter the ipr array
+  const filteredIpr = ipr?.filter((item) => item.grant_date || item.registration_date || item.publication_date) || [];
 
-  // const ongoingPhdCandidates =
-  //   phd_candidates?.filter((candidate) =>
-  //     ongoingStatuses.includes(candidate.current_status)
-  //   ) || [];
-
-  // console.log(phd_candidates);
-  // console.log(ongoingPhdCandidates);
+  // console.log(filteredIpr);
 
   const dataSections = [
     {
@@ -87,7 +76,7 @@ const FacultyHeader = ({ Data }) => {
     { label: "Startups", count: startups?.length, bgColor: "bg-pink-500" },
     {
       label: "Intellectual Property Rights",
-      count: ipr?.length,
+      count: filteredIpr.length,
       bgColor: "bg-orange-500",
     },
     {

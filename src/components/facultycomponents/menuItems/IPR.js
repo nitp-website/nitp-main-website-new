@@ -7,37 +7,45 @@ const IPR = ({ data }) => {
         Intellectual Property Rights
       </h2>
       <ul className="space-y-4">
-        {data.map((ipr, index) => (
-          <li
-            key={index}
-            className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
-          >
-            <h3 className="text-lg font-semibold text-purple-700">
-              {ipr.title} ({ipr.type})
-            </h3>
-            <p className="text-gray-800">
-              <strong>Applicant:</strong> {ipr.applicant_name}
-            </p>
-            <p className="text-gray-800">
-              <strong>Inventors:</strong> {ipr.inventors}
-            </p>
-            <p className="text-gray-800">
-              <strong>Grant No.:</strong> {ipr.grant_no}
-            </p>
-            <p className="text-gray-800">
-              <strong>Registration Date:</strong>{" "}
-              {new Date(ipr.registration_date).toLocaleDateString()}
-            </p>
-            <p className="text-gray-800">
-              <strong>Publication Date:</strong>{" "}
-              {new Date(ipr.publication_date).toLocaleDateString()}
-            </p>
-            <p className="text-gray-800">
-              <strong>Grant Date:</strong>{" "}
-              {new Date(ipr.grant_date).toLocaleDateString()}
-            </p>
-          </li>
-        ))}
+        {data
+          .filter((ipr) => ipr.grant_date || ipr.registration_date || ipr.publication_date) // Filter to include only items with grant_no
+          .map((ipr, index) => (
+            <li
+              key={index}
+              className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
+            >
+              <h3 className="text-lg font-semibold text-purple-700">
+                {ipr.title} ({ipr.type})
+              </h3>
+              <p className="text-gray-800">
+                <strong>Applicant:</strong> {ipr.applicant_name}
+              </p>
+              <p className="text-gray-800">
+                <strong>Inventors:</strong> {ipr.inventors}
+              </p>
+              <p className="text-gray-800">
+                <strong>Grant No.:</strong> {ipr.grant_no}
+              </p>
+              {ipr.registration_date && (
+                <p className="text-gray-800">
+                  <strong>Registration Date:</strong>{" "}
+                  {new Date(ipr.registration_date).toLocaleDateString()}
+                </p>
+              )}
+              {ipr.publication_date && (
+                <p className="text-gray-800">
+                  <strong>Publication Date:</strong>{" "}
+                  {new Date(ipr.publication_date).toLocaleDateString()}
+                </p>
+              )}
+              {ipr.grant_date && (
+                <p className="text-gray-800">
+                  <strong>Grant Date:</strong>{" "}
+                  {new Date(ipr.grant_date).toLocaleDateString()}
+                </p>
+              )}
+            </li>
+          ))}
       </ul>
     </div>
   );
