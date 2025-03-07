@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import './Gpage.css';
 
 const images = [
@@ -32,11 +32,13 @@ const Gallery = () => {
   const openPopup = (index) => {
     setPopupImage(images[index]);
     setCurrentIndex(index);
+    document.body.style.overflow = 'hidden';
   };
 
   const closePopup = () => {
     setPopupImage(null);
     setCurrentIndex(null);
+    document.body.style.overflow = 'auto';
   };
 
   const showNextImage = () => {
@@ -56,6 +58,18 @@ const Gallery = () => {
   };
 
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!popupImage) return;
+      if (e.key === 'Escape') closePopup();
+      if (e.key === 'ArrowRight') showNextImage();
+      if (e.key === 'ArrowLeft') showPreviousImage();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [popupImage, currentIndex]);
+
+  useEffect(() => {
     const script = document.createElement("script");
     script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     script.setAttribute("async", "true");
@@ -64,15 +78,17 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className=" flex-col md:flex-row h-full gdiv grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 md:p-6">
-      
-      <div >
-        <h2 className="text-xl font-bold mb-4 text-center text-black">Glimpse of NIT Patna</h2>
-        <div className="image-grid grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 md:p-6">
+    <div className="min-h-screen bg-white/90 p-4 md:p-8">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#421010] text-center mb-8">
+          Glimpse of NIT Patna
+        </h2>
+        
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {images.map((image, index) => (
             <div
               key={index}
-              className="relative overflow-hidden rounded-lg group aspect-[4/3] image-item"
+              className="relative overflow-hidden rounded-lg group aspect-[4/3] shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <img
                 src={image}
@@ -80,37 +96,88 @@ const Gallery = () => {
                 className="object-cover w-full h-full transition-all duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button onClick={() => openPopup(index)} className="text-white font-medium w-4/5 h-4/5">
+                <button 
+                  onClick={() => openPopup(index)} 
+                  className="text-white font-medium hover:text-red-200 transition-colors"
+                >
                   View Image
                 </button>
               </div>
             </div>
           ))}
-          
         </div>
-      </div>
-      {popupImage && (
-        <>
-          <div className="overlay-background" onClick={closePopup}></div>
-          <div className="popup">
-            <button className="close-button text-black"  onClick={closePopup}>
-              ✖
-            </button>
-            <img src={popupImage} alt="Popup Image" />
-            <div className="navigation-buttons text-black">
-              <button className="prev-button" onClick={showPreviousImage}>
-                ←
+
+        {/* Improved Popup */}
+        {popupImage && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
+            <div 
+              className="fixed inset-0 bg-black/90 backdrop-blur-sm"
+              onClick={closePopup}
+            />
+            
+            <div className="relative z-10 w-full max-w-5xl bg-white rounded-lg shadow-2xl overflow-hidden">
+              {/* Close button */}
+              <button 
+                onClick={closePopup}
+                className="absolute top-4 right-4 z-20 p-1 text-white bg-black/50 hover:bg-black/70 rounded-full transition-colors"
+              >
+                <X className="w-6 h-6" />
               </button>
-              <button className="next-button" onClick={showNextImage}>
-                →
-              </button>
+
+              {/* Main image */}
+              <div className="relative aspect-video">
+                <img
+                  src={popupImage}
+                  alt="Gallery Preview"
+                  className="w-full h-full object-contain"
+                />
+                
+                {/* Navigation buttons */}
+                <button 
+                  onClick={showPreviousImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-white bg-black/50 hover:bg-black/70 rounded-full transition-colors"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                
+                <button 
+                  onClick={showNextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-white bg-black/50 hover:bg-black/70 rounded-full transition-colors"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Thumbnails */}
+              <div className="bg-gray-100 p-4 overflow-x-auto">
+                <div className="flex gap-2 justify-center">
+                  {images.map((thumb, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setPopupImage(images[index]);
+                        setCurrentIndex(index);
+                      }}
+                      className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden transition-all ${
+                        currentIndex === index ? 'ring-2 ring-red-600' : 'opacity-50 hover:opacity-100'
+                      }`}
+                    >
+                      <img
+                        src={thumb}
+                        alt={`Thumbnail ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        </>
-      )}
+        )}
+      </div>
     </div>
   );
-}
+};
 
 export default Gallery;
 
