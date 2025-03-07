@@ -3,79 +3,34 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import "../../components/Home/styles/Details.css";
-import { FiDownload } from 'react-icons/fi';
-import { Star } from 'lucide-react';
-
-//FormatDate component
-const FormatDate = ({ time }) => {
-  const formattedDate = new Intl.DateTimeFormat('en-GB', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric'
-  }).format(new Date(time));
-
-  return <>{formattedDate}</>;
-};
+import Downloadicon from "../../../../public/downloadicon.png"; 
 
 const Noticecard = ({ detail, time, attachments, imp, link }) => (
-  <div className="notice flex items-start gap-2">
-    {imp && (
-      <Star className="h-3 w-3 mt-[6px] flex-shrink-0 text-red-500 fill-red-500" />
+  <div className={`notice ${imp ? "important" : ""}`}>
+    <h3 className="text-black md:text-xs text-sm">{detail}</h3>
+    <p className="text-neutral-500 text-xs">{new Date(time).toLocaleDateString()}</p>
+    {attachments && attachments.length > 0 && (
+      <ul className=" text-xs text-red-800">
+        {attachments.map((attachment, index) => (
+          <li key={index}>
+            {attachment.typeLink ? (
+              <a href={attachment.url} target="_blank" rel="noopener noreferrer">
+                <div className="download-icon inline-block"></div>
+                {attachment.caption? attachment.caption:"View Notice"}
+              </a>
+            ) : (
+              <a href={attachment.url} download className=" text-xs ">
+                <div className="download-icon inline-block"></div>
+                {attachment.caption? attachment.caption:"View Notice"}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
     )}
-    <div className="flex-1">
-      <h3 className="text-black md:text-xs text-sm">{detail}</h3>
-      <p>
-        <span className="text-neutral-400 text-xs">
-          <FormatDate time={time} />
-        </span>
-      </p>
-      {Array.isArray(attachments) && attachments.length > 0 && (
-        <ul className="text-xs">
-          {attachments.map((attachment, index) => (
-            <li key={index} className="mb-1">
-              {attachment.typeLink ? (
-                <a 
-                  href={attachment.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-red-800 hover:text-red-900"
-                >
-                  <FiDownload className="inline-block text-red-800 hover:text-red-900" />
-                  <span className="text-red-800 hover:text-red-900">
-                    {attachment.caption || "View Notice"}
-                  </span>
-                </a>
-              ) : (
-                <a 
-                  href={attachment.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-red-800 hover:text-red-900"
-                >
-                  <FiDownload className="inline-block text-red-800 hover:text-red-900" />
-                  <span className="text-red-800 hover:text-red-900">
-                    {attachment.caption || "View Notice"}
-                  </span>
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
-      )}
-      {link && (
-        <a 
-          href={link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-xs text-red-800 hover:text-red-900"
-        >
-          <span className="text-red-800 hover:text-red-900">View Notice</span>
-        </a>
-      )}
-    </div>
+    {link && <a href={link} className="text-xs">View Details</a>}
   </div>
 );
-
 const Page = () => {
   const [academics, setAcademics] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

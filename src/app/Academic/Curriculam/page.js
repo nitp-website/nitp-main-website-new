@@ -1,4 +1,5 @@
 import React from 'react';
+import { Download } from 'lucide-react';
 
 const DocumentsTable = () => {
 
@@ -68,96 +69,62 @@ const DocumentsTable = () => {
 
    
 
+  const TableComponent = ({ data, title }) => (
+    <>
+      {title && (
+        <h2 className="text-xl font-bold mb-6 text-red-950 text-center">{title}</h2>
+      )}
+      <div className="overflow-hidden rounded-lg shadow-md border border-gray-100 mb-8">
+        <table className="w-full border-collapse bg-white">
+          <thead>
+            <tr className="bg-[#421010] text-white">
+              <th className="text-left px-6 py-4 font-semibold">Document</th>
+              <th className="text-center px-6 py-4 font-semibold w-48">Download Now</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item, index) => (
+              <tr
+                key={index}
+                className={`border-b border-gray-100 hover:bg-red-50 transition-colors ${
+                  index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                }`}
+              >
+                <td className="text-left px-6 py-4 text-gray-800">{item.para}</td>
+                <td className="text-center px-6 py-4">
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
+
   return (
-    <div className=" mx-auto px-4 py-8 w-11/12 md:w-4/5">
-      <h1 className="text-3xl font-bold mb-6 text-red-800 text-center">Regulation & Curriculum</h1>
-      <h1 className="text-xl font-bold mb-6 text-neutral-800 text-center">UG</h1>
-      
-      <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg p-0 m-0">
-        <thead>
-          <tr>
-            <th className="text-left px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Document</th>
-            <th className="text-center w-[10vw] px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
-          </tr>
-        </thead>
-        <tbody>
-          {dataUG.map((item, index) => (
-            <tr key={index}>
-              <td className="text-left px-4 py-2 border-b border-gray-300 text-black">{item.para}</td>
-              <td className="text-center px-4 py-3 border-b border-gray-300">
-                <a href={item.link} className="bg-blue-400 text-white font-bold px-4 py-2 rounded-md hover:bg-gradient-to-r from-cyan-500 to-blue-500 md:text-xs text-xs">
-                  Download
-                </a>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-     
-      <h1 className="text-xl font-bold mb-6 text-neutral-800 text-center">PG</h1>
-      <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg">
-        <thead>
-         <tr>
-           <th className="text-left px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Document</th>
-            <th className="text-center w-[10vw] px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
-         </tr>
-       </thead>
-       <tbody>
-         {dataPG.map((item, index) => (
-           <tr key={index}>
-              <td className="text-left px-4 py-2 border-b border-gray-300 text-black">{item.para}</td>
-             <td className="text-center px-4 py-3 border-b border-gray-300">
-               <a href={item.link} className="bg-blue-400 text-white font-bold px-4 py-2 rounded-md hover:bg-gradient-to-r from-cyan-500 to-blue-500 md:text-xs text-xs">
-                 Download
-               </a>
-             </td>
-           </tr>
-         ))}
-       </tbody>
-      </table> 
-      <h1 className="text-xl font-bold mb-6 text-neutral-800 text-center">PhD</h1>
-      <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg">
-        <thead>
-          <tr>
-            <th className="text-left px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Document</th>
-            <th className="text-center w-[10vw] px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
-          </tr>
-        </thead>
-        <tbody>
-          {dataPhD.map((item, index) => (
-            <tr key={index}>
-              <td className="text-left px-4 py-2 border-b border-gray-300 text-black">{item.para}</td>
-              <td className="text-center px-4 py-3 border-b border-gray-300">
-                <a href={item.link} className="bg-blue-400 text-white font-bold px-4 py-2 rounded-md hover:bg-gradient-to-r from-cyan-500 to-blue-500 md:text-xs text-xs">
-                  Download
-                </a>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <h1 className="text-xl font-bold mb-6 text-neutral-800 text-center">Notice related to Copyright transfer certificate (UG,PG & Ph.D)</h1>
-      <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg">
-        <thead>
-          <tr>
-            <th className="text-left px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Document</th>
-            <th className="text-center w-[10vw] px-4 py-4 bg-gradient-to-r from-blue-200 to-cyan-200 text-black">Download Now</th>
-          </tr>
-        </thead>
-        <tbody>
-          {datatrans.map((item, index) => (
-            <tr key={index}>
-              <td className="text-left px-4 py-2 border-b border-gray-300 text-black">{item.para}</td>
-              <td className="text-center px-4 py-3 border-b border-gray-300">
-                <a href={item.link} className="bg-blue-400 text-white font-bold px-4 py-2 rounded-md hover:bg-gradient-to-r from-cyan-500 to-blue-500 md:text-xs text-xs">
-                  Download
-                </a>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      
+    <div className="min-h-screen bg-white bg-opacity-50">
+      <div className="mx-auto px-4 py-8 max-w-7xl">
+        <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-950 text-center">
+          Regulation & Curriculum
+        </h1>
+        
+        <TableComponent data={dataUG} title="UG" />
+        <TableComponent data={dataPG} title="PG" />
+        <TableComponent data={dataPhD} title="PhD" />
+        <TableComponent 
+          data={datatrans} 
+          title="Notice related to Copyright transfer certificate (UG,PG & Ph.D)" 
+        />
+      </div>
     </div>
   );
 };

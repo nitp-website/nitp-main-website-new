@@ -1,51 +1,67 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import "../../components/Home/styles/Details.css";
-import { FiDownload } from 'react-icons/fi';
+import { Briefcase, Calendar, Download, ExternalLink, Star } from 'lucide-react';
 
 const Noticecard = ({ detail, time, attachments, imp, link }) => (
-  <div className={`notice ${imp ? "important" : ""}`}>
-    <h3 className="text-black md:text-xs text-sm">{detail}</h3>
-    <p className="text-neutral-500 text-xs">{new Date(time).toLocaleDateString()}</p>
-    {Array.isArray(attachments) && attachments.length > 0 && (
-      <ul className="text-xs text-red-800">
-        {attachments.map((attachment, index) => (
-          <li key={index} className="mb-1">
-            {attachment.typeLink ? (
-              <a 
-                href={attachment.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <FiDownload className="inline-block" />
-                {attachment.caption}
-              </a>
-            ) : (
-              <a 
-                href={attachment.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <FiDownload className="inline-block" />
-                {attachment.caption}
-              </a>
-            )}
-          </li>
-        ))}
-      </ul>
-    )}
-    {link && <a href={link} className="text-xs">View Details</a>}
+  <div className="notice bg-white rounded-lg p-4 mb-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
+    <div className="flex items-start gap-3">
+      <Briefcase className="w-5 h-5 text-red-800 mt-1 flex-shrink-0" />
+      <div className="flex-1">
+        <div className="flex items-start gap-2">
+          {imp && (
+            <Star className="h-4 w-4 mt-1 flex-shrink-0 text-yellow-500 fill-yellow-500" />
+          )}
+          <h3 className="text-gray-800 text-base font-medium flex-1">{detail}</h3>
+        </div>
+
+        <div className="flex items-center gap-2 my-3 text-gray-500 text-sm">
+          <Calendar className="w-4 h-4" />
+          <span>{new Date(time).toLocaleDateString()}</span>
+        </div>
+
+        <div className="space-y-2">
+          {/* Display attachments if they exist */}
+          {Array.isArray(attachments) && attachments.length > 0 && (
+            <div className="space-y-2">
+              {attachments.map((attachment, index) => (
+                <a
+                  key={index}
+                  href={attachment.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-red-800 hover:text-red-900 transition-colors"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>{attachment.caption || "Download Attachment"}</span>
+                </a>
+              ))}
+            </div>
+          )}
+
+          {/* Display link if it exists */}
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-red-800 hover:text-red-900 transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" />
+              <span>View Details</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
   </div>
 );
 
 const Page = () => {
   const [jobs, setJobs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [fetchError, setFetchError] = useState(false); // Add state for error
+  const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -57,7 +73,7 @@ const Page = () => {
       } catch (e) {
         console.error("Error fetching Jobs notices:", e);
         setIsLoading(false);
-        setFetchError(true); // Set error state to true
+        setFetchError(true);
       }
     };
 
@@ -65,13 +81,13 @@ const Page = () => {
   }, []);
 
   return (
-    <div>
-      <div className="w-full p-5 md:p-10 md:pl-28 md:pr-28">
+    <div className="bg-white bg-opacity-50">
+      <div className="p-5 md:p-10 md:pl-28 md:pr-28">
         <div className="text-2xl text-center pb-7 md:pb-10 text-red-950 font-bold">
           <h2>Jobs Notifications</h2>
         </div>
         {isLoading ? (
-          <div className="flex justify-center items-center h-screen">
+          <div className="flex justify-center items-center">
             <svg
               version="1.1"
               id="L1"
@@ -176,20 +192,68 @@ const Page = () => {
               </g>
             </svg>
           </div>
-        ) : fetchError ? ( // Show error message if fetchError is true
+        ) : fetchError ? (
           <div className="flex justify-center items-center">
-            <div className="text-center justify-center items-center">
-            <svg width="120px" className=" m-auto" height="120px" viewBox="0 0 16.00 16.00" fill="#e85e5e" stroke="#e85e5e" stroke-width="0.00016"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.128"></g><g id="SVGRepo_iconCarrier"> <path d="m 3 0 c -1.660156 0 -3 1.339844 -3 3 v 7 c 0 1.660156 1.339844 3 3 3 h 10 c 1.660156 0 3 -1.339844 3 -3 v -7 c 0 -1.660156 -1.339844 -3 -3 -3 z m 0 2 h 10 c 0.554688 0 1 0.445312 1 1 v 7 c 0 0.554688 -0.445312 1 -1 1 h -10 c -0.554688 0 -1 -0.445312 -1 -1 v -7 c 0 -0.554688 0.445312 -1 1 -1 z m 3 2 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m 4 0 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -2 3 c -1.429688 0 -2.75 0.761719 -3.464844 2 c -0.136718 0.238281 -0.054687 0.546875 0.183594 0.683594 c 0.238281 0.136718 0.546875 0.054687 0.683594 -0.183594 c 0.535156 -0.929688 1.523437 -1.5 2.597656 -1.5 s 2.0625 0.570312 2.597656 1.5 c 0.136719 0.238281 0.445313 0.320312 0.683594 0.183594 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.714844 -1.238281 -2.035156 -2 -3.464844 -2 z m -3 7 c -1.105469 0 -2 0.894531 -2 2 h 10 c 0 -1.105469 -0.894531 -2 -2 -2 z m 0 0" fill="#e85e5e"></path> </g></svg>
-            <div className="p-10">
-            <p className="text-red-500">Sorry, failed to fetch the latest notices.</p>
-            </div>
-              
+            <div className="text-center">
+              <svg
+                width="120px"
+                className="mx-auto"
+                height="120px"
+                viewBox="0 0 16.00 16.00"
+                fill="#e85e5e"
+                stroke="#e85e5e"
+                strokeWidth="0.00016"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  stroke="#CCCCCC"
+                  strokeWidth="0.128"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="m 3 0 c -1.660156 0 -3 1.339844 -3 3 v 7 c 0 1.660156 1.339844 3 3 3 h 10 c 1.660156 0 3 -1.339844 3 -3 v -7 c 0 -1.660156 -1.339844 -3 -3 -3 z m 0 2 h 10 c 0.554688 0 1 0.445312 1 1 v 7 c 0 0.554688 -0.445312 1 -1 1 h -10 c -0.554688 0 -1 -0.445312 -1 -1 v -7 c 0 -0.554688 0.445312 -1 1 -1 z m 3 2 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m 4 0 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -2 3 c -1.429688 0 -2.75 0.761719 -3.464844 2 c -0.136718 0.238281 -0.054687 0.546875 0.183594 0.683594 c 0.238281 0.136718 0.546875 0.054687 0.683594 -0.183594 c 0.535156 -0.929688 1.523437 -1.5 2.597656 -1.5 s 2.0625 0.570312 2.597656 1.5 c 0.136719 0.238281 0.445313 0.320312 0.683594 0.183594 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.714844 -1.238281 -2.035156 -2 -3.464844 -2 z m -3 7 c -1.105469 0 -2 0.894531 -2 2 h 10 c 0 -1.105469 -0.894531 -2 -2 -2 z m 0 0"
+                    fill="#e85e5e"
+                  ></path>
+                </g>
+              </svg>
+              <p className="text-red-500 mt-4">Sorry, failed to fetch the latest job notices.</p>
             </div>
           </div>
         ) : (
           <div className="section-content">
             {jobs.length === 0 ? (
-              <p>No Jobs notices available.</p>
+              <div className="flex justify-center items-center">
+                <div className="text-center">
+                  <svg
+                    width="120px"
+                    className="mx-auto"
+                    height="120px"
+                    viewBox="0 0 16.00 16.00"
+                    fill="#e85e5e"
+                    stroke="#e85e5e"
+                    strokeWidth="0.00016"
+                  >
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      stroke="#CCCCCC"
+                      strokeWidth="0.128"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="m 3 0 c -1.660156 0 -3 1.339844 -3 3 v 7 c 0 1.660156 1.339844 3 3 3 h 10 c 1.660156 0 3 -1.339844 3 -3 v -7 c 0 -1.660156 -1.339844 -3 -3 -3 z m 0 2 h 10 c 0.554688 0 1 0.445312 1 1 v 7 c 0 0.554688 -0.445312 1 -1 1 h -10 c -0.554688 0 -1 -0.445312 -1 -1 v -7 c 0 -0.554688 0.445312 -1 1 -1 z m 3 2 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m 4 0 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -2 3 c -1.429688 0 -2.75 0.761719 -3.464844 2 c -0.136718 0.238281 -0.054687 0.546875 0.183594 0.683594 c 0.238281 0.136718 0.546875 0.054687 0.683594 -0.183594 c 0.535156 -0.929688 1.523437 -1.5 2.597656 -1.5 s 2.0625 0.570312 2.597656 1.5 c 0.136719 0.238281 0.445313 0.320312 0.683594 0.183594 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.714844 -1.238281 -2.035156 -2 -3.464844 -2 z m -3 7 c -1.105469 0 -2 0.894531 -2 2 h 10 c 0 -1.105469 -0.894531 -2 -2 -2 z m 0 0"
+                        fill="#e85e5e"
+                      ></path>
+                    </g>
+                  </svg>
+                  <p className="text-red-500 mt-4">No job notices available at this time.</p>
+                </div>
+              </div>
             ) : (
               jobs.map((notice) => (
                 <Noticecard

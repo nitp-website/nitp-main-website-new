@@ -2,8 +2,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../components/Home/styles/Details.css";
-import { FiDownload } from 'react-icons/fi';
-import { Star } from 'lucide-react';
 
 //FormatDate component
 const FormatDate = ({ time }) => {
@@ -16,61 +14,28 @@ const FormatDate = ({ time }) => {
   return <>{formattedDate}</>;
 };
 const Noticecard = ({ detail, time, attachments, imp, link }) => (
-  <div className="notice flex items-start gap-2">
-    {imp && (
-      <Star className="h-3 w-3 mt-[6px] flex-shrink-0 text-red-500 fill-red-500" />
+  <div className={`notice ${imp ? "important" : ""}`}>
+    <h3 className="text-black md:text-xs text-sm">{detail}</h3>
+    <p>{link && <a href={link} className="text-xs">View Notice</a>}  <span className="text-neutral-400 text-xs"><FormatDate time={time} /> </span></p>
+    {attachments && attachments.length > 0 && (
+      <ul className=" text-xs text-red-800">
+        {attachments.map((attachment, index) => (
+          <li key={index} className=" text-xs text-red-800">
+            {attachment.typeLink ? (
+              <a href={attachment.url} target="_blank" rel="noopener noreferrer">
+                {attachment.caption? attachment.caption:"View Notice"}
+              </a>
+            ) : (
+              <a href={attachment.url} download className=" text-xs text-red-800">
+                <div className="download-icon inline-block"></div>
+                {attachment.caption? attachment.caption:"View Notice"}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
     )}
-    <div className="flex-1">
-      <h3 className="text-black md:text-xs text-sm">{detail}</h3>
-      <p>
-        <span className="text-neutral-400 text-xs">
-          <FormatDate time={time} />
-        </span>
-      </p>
-      {Array.isArray(attachments) && attachments.length > 0 && (
-        <ul className="text-xs">
-          {attachments.map((attachment, index) => (
-            <li key={index} className="mb-1">
-              {attachment.typeLink ? (
-                <a 
-                  href={attachment.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-red-800 hover:text-red-900"
-                >
-                  <FiDownload className="inline-block text-red-800 hover:text-red-900" />
-                  <span className="text-red-800 hover:text-red-900">
-                    {attachment.caption || "View Notice"}
-                  </span>
-                </a>
-              ) : (
-                <a 
-                  href={attachment.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-red-800 hover:text-red-900"
-                >
-                  <FiDownload className="inline-block text-red-800 hover:text-red-900" />
-                  <span className="text-red-800 hover:text-red-900">
-                    {attachment.caption || "View Notice"}
-                  </span>
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
-      )}
-      {link && (
-        <a 
-          href={link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-xs text-red-800 hover:text-red-900"
-        >
-          <span className="text-red-800 hover:text-red-900">View Notice</span>
-        </a>
-      )}
-    </div>
+   
   </div>
 );
 const Page = () => {
