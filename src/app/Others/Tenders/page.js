@@ -1,51 +1,59 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import "../../components/Home/styles/Details.css";
-import Downloadicon from "../../../../public/downloadicon.png";
+import { FileText, Download, Calendar } from 'lucide-react';
 
-const Noticecard = ({ detail, time, attachments }) => {
+const Noticecard = ({ detail, time, attachments, notice_link }) => {
+  // Parse notice_link if it exists
+  const parsedNoticeLink = notice_link ? JSON.parse(notice_link) : null;
+
   return (
-    <div className="notice">
-      {attachments.length === 1 ? (
-        <a
-          href={attachments[0].url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer"
-        >
-          <h3 className="text-black md:text-sm text-sm">{detail}</h3>
-        </a>
-      ) : (
-        <h3 className="text-black md:text-sm text-sm">{detail}</h3>
-      )}
-      <p className="text-neutral-500 text-sm">
-        {new Date(time).toLocaleDateString()}
-      </p>
-      {attachments && attachments.length > 0 && (
-        <ul className=" text-xs text-red-800">
-          {attachments.map((attachment, index) => (
-            <li key={index}>
-              {attachment.typeLink ? (
-                <a
-                  href={attachment.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="download-icon inline-block"></div>
-                  {attachment.caption}
-                </a>
-              ) : (
-                <a href={attachment.url} download className="text-xs">
-                  <div className="download-icon inline-block"></div>
-                  {attachment.caption}
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="notice bg-white rounded-lg p-4 mb-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
+      <div className="flex items-start gap-3">
+        <FileText className="w-5 h-5 text-red-800 mt-1 flex-shrink-0" />
+        <div className="flex-1">
+          <h3 className="text-gray-800 text-base mb-2 font-medium">{detail}</h3>
+          
+          <div className="flex items-center gap-2 mb-3 text-gray-500 text-sm">
+            <Calendar className="w-4 h-4" />
+            <span>{new Date(time).toLocaleDateString()}</span>
+          </div>
+
+          <div className="space-y-2">
+            {/* Display attachments if they exist */}
+            {attachments && attachments.length > 0 && (
+              <div className="space-y-2">
+                {attachments.map((attachment, index) => (
+                  <a
+                    key={index}
+                    href={attachment.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-red-800 hover:text-red-900 transition-colors"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>{attachment.caption || "Download Attachment"}</span>
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {/* Display notice_link if it exists */}
+            {parsedNoticeLink && (
+              <a
+                href={parsedNoticeLink.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-red-800 hover:text-red-900 transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                <span>View Notice</span>
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
@@ -258,13 +266,14 @@ const Page = () => {
               </div>
             ) : (
               tender.map((notice) => {
-                const { title, timestamp, id, attachments } = notice;
+                const { title, timestamp, id, attachments, notice_link } = notice;
                 return (
                   <Noticecard
                     detail={title}
                     time={timestamp}
                     key={id}
                     attachments={attachments}
+                    notice_link={notice_link}
                   />
                 );
               })

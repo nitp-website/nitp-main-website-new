@@ -331,11 +331,11 @@ const Details = () => {
   const handleMouseLeaveAcademics = () => setScrollingAcademics(true);
 
   return (
-    <div className="container1 py-5 md:py-0">
+    <div className="container1">
       <div className="section">
         <div className="section-header">
           <h2>Notice 📢</h2>
-          <Link href="/Notices/All" className="text-red-950">View all</Link>
+          <Link href="/Notices/All">View all</Link>
         </div>
         <div
           className="section-content text-red-950"
@@ -385,7 +385,7 @@ const Details = () => {
         <div>
           <div className="section-header">
             <h2>Events ⛓️‍💥</h2>
-            <Link href="/Notices/Events" className="text-red-950">View all</Link>
+            <Link href="/Notices/Events">View all</Link>
           </div>
           <div
             className="section-content text-red-950"
@@ -415,39 +415,9 @@ const Details = () => {
               </div>
             ) : (
               events
-                .filter((event) => {
-                  const endDate = new Date(event.eventEndDate);
-                  const today = new Date();
-                  today.setHours(0, 0, 0, 0); 
-                  return endDate >= today; 
-                })
                 .sort((a, b) => {
-                  const today = new Date();
-                  today.setHours(0, 0, 0, 0);
-                  const aStartDate = new Date(a.eventStartDate);
-                  const bStartDate = new Date(b.eventStartDate);
-                  const aEndDate = new Date(a.eventEndDate);
-                  const bEndDate = new Date(b.eventEndDate);
-
-                  // If both events haven't started yet
-                  if (aStartDate > today && bStartDate > today) {
-                    // Sort by start date
-                    if (aStartDate.getTime() !== bStartDate.getTime()) {
-                      return aStartDate.getTime() - bStartDate.getTime();
-                    }
-                    // If start dates are same, sort by end date
-                    return aEndDate.getTime() - bEndDate.getTime();
-                  }
-
-                  // If both events have started
-                  if (aStartDate <= today && bStartDate <= today) {
-                    // Sort by end date
-                    return aEndDate.getTime() - bEndDate.getTime();
-                  }
-
-                  // If one event has started and other hasn't
-                  // Show future events first
-                  return aStartDate > today ? -1 : 1;
+                  // Sort by updatedAt in descending order (most recent first)
+                  return new Date(b.updatedAt) - new Date(a.updatedAt);
                 })
                 .map((event, index) => {
                   const startDate = new Date(event.eventStartDate);
@@ -458,8 +428,6 @@ const Details = () => {
                   const dayEnd = endDate.getDate();
                   const monthEnd = endDate.getMonth() + 1;
                   const yearEnd = endDate.getFullYear();
-
-                  console.log('Event attachments:', event.attachments); // Debug log
 
                   return (
                     <Eventcard
@@ -481,7 +449,7 @@ const Details = () => {
       <div className="section">
         <div className="section-header">
           <h2>Academic Notices 👨‍🎓</h2>
-          <Link href="/Notices/Academic" className="text-red-950">View all</Link>
+          <Link href="/Notices/Academic">View all</Link>
         </div>
         <div
           className="section-content text-red-950"

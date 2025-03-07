@@ -39,61 +39,51 @@ const scholarships = [
 
 const ScholarshipTable = () => {
   return (
+    <div className="min-h-screen bg-white bg-opacity-50">
+      <div className="mx-auto px-4 py-8 max-w-7xl">
+        <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-950 text-center">
+          Scholarship
+        </h1>
 
-    <div className="containerschlor mx-auto p-4 px-2 md:px-20">
-        <h1 className="text-3xl font-bold text-center mb-14 text-red-800">
-        Scholarship
-       </h1>
-      <div className="overflow-x-auto">
-        <div className='relative'>
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-red-200 sticky top-0 z-10">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-red-900 uppercase tracking-wider">SL No.</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-red-900 uppercase tracking-wider">Scholarship/Stipends</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-red-900  uppercase tracking-wider">Awarding Authority</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-red-900 uppercase tracking-wider">Amount</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y text-xs md:text-base divide-gray-200 text-neutral-700">
-            {scholarships.map((item) => (
-              <tr key={item.slNo}>
-                <td className="px-6 py-4 whitespace-nowrap">{item.slNo}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.type}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.authority}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.amount}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="overflow-hidden rounded-lg shadow-md border border-gray-100">
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse bg-white">
+              <thead>
+                <tr className="bg-[#421010] text-white">
+                  <th className="text-left px-6 py-4 font-semibold">SL No.</th>
+                  <th className="text-left px-6 py-4 font-semibold">Scholarship/Stipends</th>
+                  <th className="text-left px-6 py-4 font-semibold">Awarding Authority</th>
+                  <th className="text-left px-6 py-4 font-semibold">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                {scholarships.map((item, index) => (
+                  <tr
+                    key={item.slNo}
+                    className={`border-b border-gray-100 hover:bg-red-50 transition-colors ${
+                      index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                    }`}
+                  >
+                    <td className="text-left px-6 py-4 text-gray-800">
+                      {item.slNo}
+                    </td>
+                    <td className="text-left px-6 py-4 text-gray-800">
+                      {item.type}
+                    </td>
+                    <td className="text-left px-6 py-4 text-gray-800">
+                      {item.authority}
+                    </td>
+                    <td className="text-left px-6 py-4 text-gray-800">
+                      {item.amount}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-    // <div className="container mx-auto p-4 px-2 md:px-20">
-    //     <h1 className="text-3xl font-bold text-center mb-14 text-red-800">
-    //     Scholarship
-    //   </h1>
-    //   <table className="min-w-full divide-y divide-gray-200">
-    //     <thead className="bg-gray-50">
-    //       <tr>
-    //         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">SL No.</th>
-    //         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Scholarship/Stipends</th>
-    //         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Awarding Authority</th>
-    //         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
-    //       </tr>
-    //     </thead>
-    //     <tbody className="bg-white divide-y divide-gray-200 text-neutral-700">
-    //       {scholarships.map((item) => (
-    //         <tr key={item.slNo}>
-    //           <td className="px-6 py-4 whitespace-nowrap">{item.slNo}</td>
-    //           <td className="px-6 py-4 whitespace-nowrap">{item.type}</td>
-    //           <td className="px-6 py-4 whitespace-nowrap">{item.authority}</td>
-    //           <td className="px-6 py-4 whitespace-nowrap">{item.amount}</td>
-    //         </tr>
-    //       ))}
-    //     </tbody>
-    //   </table>
-    // </div>
   );
 };
 

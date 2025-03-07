@@ -103,34 +103,9 @@ const Page = () => {
         const eventsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/events?type=active`;
         const response = await axios.get(eventsUrl);
         
-        // Sort events
+        // Sort events by updatedAt timestamp in descending order (most recent first)
         const sortedEvents = response.data.sort((a, b) => {
-          const today = new Date();
-          today.setHours(0, 0, 0, 0);
-          const aStartDate = new Date(a.eventStartDate);
-          const bStartDate = new Date(b.eventStartDate);
-          const aEndDate = new Date(a.eventEndDate);
-          const bEndDate = new Date(b.eventEndDate);
-
-          // If both events haven't started yet
-          if (aStartDate > today && bStartDate > today) {
-            // Sort by start date
-            if (aStartDate.getTime() !== bStartDate.getTime()) {
-              return aStartDate.getTime() - bStartDate.getTime();
-            }
-            // If start dates are same, sort by end date
-            return aEndDate.getTime() - bEndDate.getTime();
-          }
-
-          // If both events have started
-          if (aStartDate <= today && bStartDate <= today) {
-            // Sort by end date
-            return aEndDate.getTime() - bEndDate.getTime();
-          }
-
-          // If one event has started and other hasn't
-          // Show future events first
-          return aStartDate > today ? -1 : 1;
+          return new Date(b.updatedAt) - new Date(a.updatedAt);
         });
 
         setEvents(sortedEvents);

@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { Download } from 'lucide-react';
 
 const content = [
   {
@@ -129,45 +130,72 @@ const content = [
 
 const DownloadsPage = () => {
   return (
-    <div className="mx-auto p-4 text-neutral-600 bg-white/70">
-      <h1 className="text-3xl font-bold mb-6 text-red-900 text-center">Staffs Claim Form</h1>
-      <table className="table-auto border-collapse border border-gray-300 mx-0 md:mx-80">
-        <thead>
-          <tr>
-            <th className="border border-gray-300 px-4 py-2 w-1/6">Name</th>
-            <th className="border border-gray-300 px-4 py-2 w-1/12">Download Form</th>
-            <th className="border border-gray-300 px-4 py-2 w-1/6">Name</th>
-            <th className="border border-gray-300 px-4 py-2 w-1/12">Download Form</th>
-          </tr>
-        </thead>
-        <tbody>
-          {content.map((item, index) => (
-            <tr key={index}>
-              <td className="border border-gray-300 px-4 py-2 w-1/6">{item.Downloads}</td>
-              <td className="border border-gray-300 px-4 py-2 w-1/12 text-center">
-                {item.DLink ? (
-                  <a href={item.DLink} target="_blank" rel="noopener noreferrer" className="bg-blue-400 text-white font-bold px-4 py-2 rounded-md hover:bg-gradient-to-r from-cyan-500 to-blue-500 md:text-xs text-xs">
-                    Download
-                  </a>
-                ) : (
-                 
-                    <span></span>
-                )}
-              </td>
-              <td className="border border-gray-300 px-4 py-2 w-1/6">{item["Office order"]}</td>
-              <td className="border border-gray-300 px-4 py-2 w-1/12 text-center">
-                {item.OLink ? (
-                  <a href={item.OLink} target="_blank" rel="noopener noreferrer" className="bg-blue-400 text-white font-bold px-4 py-2 rounded-md hover:bg-gradient-to-r from-cyan-500 to-blue-500 md:text-xs text-xs">
-                    Download
-                  </a>
-                ) : (
-                  <span></span>
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="min-h-screen bg-white bg-opacity-50">
+      <div className="mx-auto px-4 py-8 max-w-7xl">
+        <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-950 text-center">
+          Staff Claims Form
+        </h1>
+
+        <div className="overflow-hidden rounded-lg shadow-md border border-gray-100">
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse bg-white">
+              <thead>
+                <tr className="bg-[#421010] text-white">
+                  <th className="text-left px-6 py-4 font-semibold">Form Name</th>
+                  <th className="text-center px-6 py-4 font-semibold w-48">Download</th>
+                  <th className="text-left px-6 py-4 font-semibold">Office Order</th>
+                  <th className="text-center px-6 py-4 font-semibold w-48">Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                {content.map((item, index) => (
+                  <tr
+                    key={index}
+                    className={`border-b border-gray-100 hover:bg-red-50 transition-colors ${
+                      index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                    }`}
+                  >
+                    <td className="text-left px-6 py-4 text-gray-800">
+                      {item.Downloads}
+                    </td>
+                    <td className="text-center px-6 py-4">
+                      {item.DLink && (
+                        <a
+                          href={item.DLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium"
+                        >
+                          <Download className="w-4 h-4" />
+                          Download
+                        </a>
+                      )}
+                    </td>
+                    <td className="text-left px-6 py-4 text-gray-800">
+                      {item["Office order"] || ''}
+                    </td>
+                    <td className="text-center px-6 py-4">
+                      {item.OLink ? (
+                        <a
+                          href={item.OLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium"
+                        >
+                          <Download className="w-4 h-4" />
+                          Download
+                        </a>
+                      ) : (
+                        <span className="text-gray-100">N/A</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

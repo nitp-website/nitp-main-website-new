@@ -1,54 +1,79 @@
-.slider-container {
-    position: relative;
-    max-width: 800px;
-    margin: auto;
-    overflow: hidden;
+/* Remove any existing slider-specific styles as they're now handled by Tailwind classes */
+.aspect-[16/9] {
+  aspect-ratio: 16/9;
 }
 
-.slider {
-    position: relative;
+.aspect-[21/9] {
+  aspect-ratio: 21/9;
 }
 
-.slider img {
-    height: 400px;
-    width: auto;
-    margin: auto;
-
+/* Smooth transitions for slides */
+.slider-transition {
+  transition: all 0.5s ease-in-out;
 }
-@media (max-width: 768px) {
-    .slider img {
-        height: 200px;
-        width: auto;
-        margin: auto;
-    
-    }
+
+/* Ensure images maintain aspect ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.5s ease-in-out;
 }
 
 .text-overlay {
-    padding: 10px;
-    background-color: rgba(255, 172, 172, 0.5);
+  padding: 10px;
+  background-color: rgba(255, 172, 172, 0.5);
 
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 10px; /* Add space between image and text */
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px; /* Add space between image and text */
 }
 
 button {
-    position: absolute;
-    top: 50%;
-    /* transform: translateY(-250px); */
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
+  position: absolute;
+  top: 50%;
+  /* transform: translateY(-250px); */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .prev {
-    left: 10px;
+  left: 10px;
 }
 
 .next {
-    right: 10px;
+  right: 10px;
+}
+
+/* Base transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Ensure proper aspect ratios */
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+@media (min-width: 768px) {
+  .md\:aspect-auto {
+    aspect-ratio: auto;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  button {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
