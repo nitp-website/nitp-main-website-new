@@ -163,34 +163,47 @@ export default function InstitutePage() {
             </section>
           )}
           {activeSection === 'JoSAA' && (
-            <section className="text-neutral-700">
-              <div className="admission-info">
+            <section className="w-full max-w-7xl mx-auto px-4 py-8">
+              <div className="bg-white rounded-lg shadow-md">
                 {Admissions.map((admission, index) => (
-                  <div key={index}>
+                  <div key={index} className="p-6 border-b border-gray-100 last:border-b-0">
                     {admission.heading && (
-                      <h1 className="section-title-heading text-sm text-red-800 mt-1">
+                      <h1 className="text-2xl font-bold text-black mb-4">
                         {admission.heading}
                       </h1>
                     )}
                     {admission.title && (
-                      <h2 className="section-title text-xs md:m-20 md:mb-0 md:mt-5 text-blue-500 ">
+                      <h2 className="text-lg font-semibold text-red-950 mb-6">
                         {admission.title}
                       </h2>
                     )}
-                    <div className="requirements-container">
-                      {admission.data.map((item, idx) => (
-                        <div key={idx}>
-                          <p className="pb-7 text-xs md:text-sm md:m-20 md:mb-0 md:mt-0 ">
-                            <strong>{item.para.split(' : ')[0]}: </strong>
-                            {item.para.split(' : ')[1]}
-                            {item.link && (
-                              <>
-                                <a href={item.link} target="_blank" className="bg-blue-400 text-white font-bold px-4 py-0 md:py-1 rounded-md hover:bg-gradient-to-r from-cyan-500 to-blue-500 md:text-xs text-xs"> View_Notice</a>
-                              </>
-                            )}
-                          </p>
-                        </div>
-                      ))}
+                    <div className="space-y-6">
+                      {admission.data.map((item, idx) => {
+                        const [title, content] = item.para.split(' : ');
+                        return (
+                          <div key={idx} className="flex flex-col md:flex-row md:items-start gap-2 md:gap-4">
+                            <strong className="text-red-800 min-w-[200px] md:text-right">{title}:</strong>
+                            <div className="flex-1 flex items-start gap-4">
+                              <p className="text-gray-700">{content}</p>
+                              {item.link && (
+                                <a 
+                                  href={item.link} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-1 rounded-md hover:bg-red-800 transition-colors text-sm font-medium whitespace-nowrap"
+                                >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                  </svg>
+                                  View Details
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 ))}
