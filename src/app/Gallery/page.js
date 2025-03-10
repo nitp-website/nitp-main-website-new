@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import './Gpage.css';
 
 const images = [
@@ -32,13 +32,11 @@ const Gallery = () => {
   const openPopup = (index) => {
     setPopupImage(images[index]);
     setCurrentIndex(index);
-    document.body.style.overflow = 'hidden';
   };
 
   const closePopup = () => {
     setPopupImage(null);
     setCurrentIndex(null);
-    document.body.style.overflow = 'auto';
   };
 
   const showNextImage = () => {
@@ -58,18 +56,6 @@ const Gallery = () => {
   };
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (!popupImage) return;
-      if (e.key === 'Escape') closePopup();
-      if (e.key === 'ArrowRight') showNextImage();
-      if (e.key === 'ArrowLeft') showPreviousImage();
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [popupImage, currentIndex]);
-
-  useEffect(() => {
     const script = document.createElement("script");
     script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     script.setAttribute("async", "true");
@@ -78,93 +64,83 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white/90 p-4 md:p-8">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#421010] text-center mb-8">
-          Glimpse of NIT Patna
-        </h2>
-        
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden rounded-lg group aspect-[4/3] shadow-sm hover:shadow-md transition-shadow duration-200"
-            >
-              <img
-                src={image}
-                alt={`Gallery Image ${index + 1}`}
-                className="object-cover w-full h-full transition-all duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button 
-                  onClick={() => openPopup(index)} 
-                  className="text-white font-medium hover:text-red-200 transition-colors"
-                >
-                  View Image
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Improved Popup */}
-        {popupImage && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
-            <div 
-              className="fixed inset-0 bg-black/90 backdrop-blur-sm"
-              onClick={closePopup}
+    <div className="container mx-auto px-4 py-8">
+      <h2 className="text-2xl font-bold mb-8 text-center text-black">Glimpse of NIT Patna</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className="relative overflow-hidden rounded-lg group aspect-[4/3] shadow-md hover:shadow-xl transition-shadow"
+          >
+            <img
+              src={image}
+              alt={`Gallery Image ${index + 1}`}
+              className="object-cover w-full h-full transition-all duration-300 group-hover:scale-105"
             />
-            
-            <div className="relative z-10 w-full max-w-5xl bg-white rounded-lg shadow-2xl overflow-hidden">
-              {/* Close button */}
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <button 
-                onClick={closePopup}
-                className="absolute top-4 right-4 z-20 p-1 text-white bg-black/50 hover:bg-black/70 rounded-full transition-colors"
+                onClick={() => openPopup(index)} 
+                className="text-white font-medium px-6 py-2 rounded-lg bg-[#421010]/80 hover:bg-[#421010] transition-colors"
               >
-                <X className="w-6 h-6" />
+                View Image
               </button>
+            </div>
+          </div>
+        ))}
+      </div>
 
-              {/* Main image */}
-              <div className="relative aspect-video">
-                <img
-                  src={popupImage}
-                  alt="Gallery Preview"
-                  className="w-full h-full object-contain"
+      {popupImage && (
+        <>
+          <div className="fixed inset-0 bg-black/80 z-[60000]" onClick={closePopup}></div>
+          <div className="fixed inset-0 z-[70000] flex items-center justify-center p-4">
+            <div className="relative bg-white rounded-lg shadow-2xl w-full max-w-[95vw] md:max-w-[85vw] lg:max-w-[1200px] mx-auto max-h-[90vh] flex flex-col">
+              <button 
+                className="absolute right-4 top-4 text-gray-600 hover:text-gray-800 z-[80] bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-all hover:shadow-xl"
+                onClick={closePopup}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <div className="relative flex-1 min-h-0 flex items-center justify-center p-4">
+                <img 
+                  src={popupImage} 
+                  alt="Popup Image" 
+                  className="w-auto h-auto max-w-full max-h-[65vh] object-contain mx-auto"
                 />
-                
-                {/* Navigation buttons */}
                 <button 
+                  className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-gray-800 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center shadow-lg transition-all hover:shadow-xl"
                   onClick={showPreviousImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-white bg-black/50 hover:bg-black/70 rounded-full transition-colors"
                 >
-                  <ChevronLeft className="w-6 h-6" />
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
                 </button>
-                
                 <button 
+                  className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-gray-800 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center shadow-lg transition-all hover:shadow-xl"
                   onClick={showNextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-white bg-black/50 hover:bg-black/70 rounded-full transition-colors"
                 >
-                  <ChevronRight className="w-6 h-6" />
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </button>
               </div>
-
-              {/* Thumbnails */}
-              <div className="bg-gray-100 p-4 overflow-x-auto">
-                <div className="flex gap-2 justify-center">
-                  {images.map((thumb, index) => (
+              <div className="bg-gray-100 p-2 md:p-4 rounded-b-lg">
+                <div className="flex gap-2 overflow-x-auto py-2 px-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+                  {images.map((thumb, idx) => (
                     <button
-                      key={index}
+                      key={idx}
                       onClick={() => {
-                        setPopupImage(images[index]);
-                        setCurrentIndex(index);
+                        setPopupImage(images[idx]);
+                        setCurrentIndex(idx);
                       }}
-                      className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden transition-all ${
-                        currentIndex === index ? 'ring-2 ring-red-600' : 'opacity-50 hover:opacity-100'
+                      className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-lg overflow-hidden transition-all hover:opacity-90 ${
+                        currentIndex === idx ? 'ring-2 ring-[#421010] ring-offset-2' : ''
                       }`}
                     >
                       <img
                         src={thumb}
-                        alt={`Thumbnail ${index + 1}`}
+                        alt={`Thumbnail ${idx + 1}`}
                         className="w-full h-full object-cover"
                       />
                     </button>
@@ -173,11 +149,11 @@ const Gallery = () => {
               </div>
             </div>
           </div>
-        )}
-      </div>
+        </>
+      )}
     </div>
   );
-};
+}
 
 export default Gallery;
 
