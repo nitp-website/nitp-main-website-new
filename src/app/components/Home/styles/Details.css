@@ -13,7 +13,7 @@
   background-color: rgba(234, 243, 255, 0.623);
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+
   padding-bottom: 5px;
 }
 
@@ -162,6 +162,7 @@
     flex-direction: column;
     align-items: center;
     height: auto;
+    padding-bottom: 20px;
   }
   .section {
     background: #f9f9f9;

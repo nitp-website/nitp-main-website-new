@@ -2,7 +2,7 @@ import React from 'react';
 
 const Disclaimer = () => {
   return (
-    <div className="container mx-auto p-4 text-black md:p-40 md:pt-14 bg-white bg-opacity-50 font-semibold">
+    <div className=" mx-auto p-4 text-black md:p-40 md:pt-14 bg-white bg-opacity-50 font-semibold">
       <h1 className="text-3xl font-bold mb-4 text-red-800 text-center">Disclaimer</h1>
       <p>
         National Institute of Technology Patna (NITP) does not provide any

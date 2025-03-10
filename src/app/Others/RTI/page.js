@@ -1,5 +1,4 @@
 import React from 'react'
-import { FileText } from 'lucide-react'
 
 const page = () => {
   const actData = [
@@ -142,103 +141,138 @@ const page = () => {
     },
   ];
 
-  const TableSection = ({ title, data }) => (
-    <div className="mb-12">
-      <h2 className="text-2xl font-bold mb-6 text-[#421010] text-center">
-        {title}
-      </h2>
-      <div className="overflow-hidden rounded-lg shadow-lg bg-gradient-to-r from-red-50 to-white">
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gradient-to-r from-red-900 to-red-800">
-              <tr>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider w-24">
-                  S.No.
-                </th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
-                  Name & Title
-                </th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
-                  Details
-                </th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-              {data.map((row, index) => (
-                <tr 
-                  key={row.sno}
-                  className={`${
-                    index % 2 === 0 ? 'bg-white' : 'bg-gradient-to-r from-red-50 to-white'
-                  } hover:bg-gradient-to-r hover:from-red-100 hover:to-red-50 transition-colors duration-200`}
-                >
-                  <td className="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
-                    {row.sno}
-                  </td>
-                  <td className="px-6 py-4 text-sm text-gray-900">
-                    {row.name}
-                  </td>
-                  <td className="px-6 py-4 text-sm text-gray-900 whitespace-pre-line">
-                    {row.details}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
-    <div className="min-h-screen bg-white bg-opacity-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl font-bold mb-8 text-[#421010] text-center">
-          Right To Information Act, 2005
+    <div className="mx-auto px-4 py-8 w-11/12 md:w-4/5 bg-white bg-opacity-60">
+      <h1 className="text-xl md:text-4xl font-bold mb-6 text-red-800 text-center">
+        Right To Information Act,2005
+      </h1>
+      <h1 className="text-sm md:text-base font-bold mb-6 text-neutral-700 ">
+        Information under RTI about National Institute of Technology (NIT)
+        Patna{" "}
+        <a
+          href="http://www.nitp.ac.in/uploads/rti_faa.pdf"
+          className="text-neutral-400 font-medium"
+        >
+          Click Here for Details
+        </a>
+      </h1>
+      <h1 className="text-sm md:text-base font-bold mb-6 text-neutral-700 ">
+        Details of the CPIO & FAA of NIT Patna{" "}
+        <a
+          href="http://www.nitp.ac.in/downloads/NITP_RTI.pdf"
+          className="text-neutral-400 font-medium"
+        >
+          Click Here
+        </a>
+      </h1>
+      <div>
+        <h1 className="text-2xl font-bold mb-6 text-red-800 text-center">
+          About ACT
         </h1>
-
-        <div className="bg-gradient-to-r from-red-50 to-white rounded-lg shadow-lg p-6 mb-8">
-          <h2 className="text-lg font-semibold mb-4 text-[#421010]">
-            Information under RTI about National Institute of Technology (NIT) Patna
-          </h2>
-          <div className="space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 space-y-2 sm:space-y-0">
-              <span className="text-gray-700">For Details:</span>
-              <a
-                href="http://www.nitp.ac.in/uploads/rti_faa.pdf"
-                className="inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-red-400 to-red-600 group-hover:from-red-500 group-hover:to-red-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-200"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0 flex items-center">
-                  <FileText className="w-4 h-4 mr-2" />
-                  View Document
-                </span>
-              </a>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 space-y-2 sm:space-y-0">
-              <span className="text-gray-700">Details of the CPIO & FAA of NIT Patna:</span>
-              <a
-                href="http://www.nitp.ac.in/downloads/NITP_RTI.pdf"
-                className="inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-red-400 to-red-600 group-hover:from-red-500 group-hover:to-red-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-200"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0 flex items-center">
-                  <FileText className="w-4 h-4 mr-2" />
-                  View Document
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <TableSection title="About ACT" data={actData} />
-        <TableSection title="About Organisation" data={actData2} />
-        <TableSection 
-          title="A directory of its officers and employees - Institute Telephone Directory" 
-          data={actData3} 
-        />
+        <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg p-0 m-0">
+          <thead>
+            <tr>
+              <th className="text-left px-4 py-4 bg-gray-200 text-black">
+                S.No.
+              </th>
+              <th className="text-left px-4 py-4 bg-gray-200 text-black">
+                Name & Title of the Act
+              </th>
+              <th className="text-left px-4 py-4 bg-gray-200 text-black">
+                Right to Information Act. 2005 (RTI Act)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {actData.map((row) => (
+              <tr key={row.sno}>
+                <td className="text-left px-4 py-2 border-b border-gray-300 text-black">
+                  {row.sno}
+                </td>
+                <td className="text-left px-4 py-2 border-b border-gray-300 text-black">
+                  {row.name}
+                </td>
+                <td className="text-left px-4 py-2 border-b border-gray-300 text-black">
+                  {row.details}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
+
+      <div>
+        <h1 className="text-2xl font-bold mb-6 text-red-800 text-center">
+        About Organisation
+        </h1>
+        <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg p-0 m-0">
+          <thead>
+            <tr>
+              <th className="text-left px-4 py-4 bg-gray-200 text-black">
+                S.No.
+              </th>
+              <th className="text-left px-4 py-4 bg-gray-200 text-black">
+                Name & Title of the Act
+              </th>
+              <th className="text-left px-4 py-4 bg-gray-200 text-black">
+                Right to Information Act. 2005 (RTI Act)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {actData2.map((row) => (
+              <tr key={row.sno}>
+                <td className="text-left px-4 py-2 border-b border-gray-300 text-black">
+                  {row.sno}
+                </td>
+                <td className="text-left px-4 py-2 border-b border-gray-300 text-black">
+                  {row.name}
+                </td>
+                <td className="text-left px-4 py-2 border-b border-gray-300 text-black">
+                  {row.details}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h1 className="text-2xl font-bold mb-6 text-red-800 text-center">
+        A directory of its officers and employees   -	Institute Telephone Directory
+        </h1>
+        <table className="w-full border-collapse border border-neutral-600 bg-white rounded-lg p-0 m-0">
+          <thead>
+            <tr>
+              <th className="text-left px-4 py-4 bg-gray-200 text-black">
+                S.No.
+              </th>
+              <th className="text-left px-4 py-4 bg-gray-200 text-black">
+                Name & Title of the Act
+              </th>
+              <th className="text-left px-4 py-4 bg-gray-200 text-black">
+                Right to Information Act. 2005 (RTI Act)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {actData3.map((row) => (
+              <tr key={row.sno}>
+                <td className="text-left px-4 py-2 border-b border-gray-300 text-black">
+                  {row.sno}
+                </td>
+                <td className="text-left px-4 py-2 border-b border-gray-300 text-black">
+                  {row.name}
+                </td>
+                <td className="text-left px-4 py-2 border-b border-gray-300 text-black">
+                  {row.details}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
     </div>
   );
 };

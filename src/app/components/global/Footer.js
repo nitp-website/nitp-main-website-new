@@ -65,39 +65,41 @@ const Footer = () => {
       <div className="mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Institute Info */}
-          <div className="lg:col-span-1">
-            <img
-              src="https://i.postimg.cc/k5CYZwwS/logo.png"
-              alt="NIT Patna Logo"
-              className="w-24 h-24 mb-4"
-            />
-            <div className="space-y-2">
-              <p className="font-medium">National Institute of Technology Patna</p>
-              <p className="text-sm text-gray-300">Ashok Rajpath, Mahendru, Patna, Bihar 800005</p>
-              <div className="space-y-1 mt-4">
-                <p className="flex items-center gap-2 text-sm">
-                  <PhoneIcon className="w-4 h-4" /> 0612-2371715
-                </p>
-                <p className="flex items-center gap-2 text-sm">
-                  <MailIcon className="w-4 h-4" /> info@nitp.ac.in
-                </p>
-                <p className="flex items-center gap-2 text-sm">
-                  <GlobeIcon className="w-4 h-4" /> www.nitp.ac.in
-                </p>
-              </div>
-              <div className="flex space-x-4 mt-4">
-                <a href="https://twitter.com/NITPatna1" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                  <TwitterIcon className="w-5 h-5" />
-                </a>
-                <a href="https://www.linkedin.com/company/nit-patna" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                  <LinkedinIcon className="w-5 h-5" />
-                </a>
-                <a href="https://www.facebook.com/NITPatna" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                  <FacebookIcon className="w-5 h-5" />
-                </a>
-                <a href="https://goo.gl/maps/srZ6whpfDGqg85sp6" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-                  <MapPin className="w-5 h-5" />
-                </a>
+          <div className="lg:col-span-1 flex justify-center lg:justify-start">
+            <div className="flex flex-col items-center text-center md:items-center lg:items-center">
+              <img
+                src="https://i.postimg.cc/k5CYZwwS/logo.png"
+                alt="NIT Patna Logo"
+                className="w-24 h-24 mb-4"
+              />
+              <div className="space-y-2">
+                <p className="font-medium text-center">National Institute of Technology Patna</p>
+                <p className="text-sm text-gray-300 text-center">Ashok Rajpath, Mahendru, Patna, Bihar 800005</p>
+                <div className="space-y-1 mt-4 pl-[75px]">
+                  <p className="flex items-center gap-2 text-sm">
+                    <PhoneIcon className="w-4 h-4" /> 0612-2371715
+                  </p>
+                  <p className="flex items-center gap-2 text-sm">
+                    <MailIcon className="w-4 h-4" /> info@nitp.ac.in
+                  </p>
+                  <p className="flex items-center gap-2 text-sm">
+                    <GlobeIcon className="w-4 h-4" /> www.nitp.ac.in
+                  </p>
+                </div>
+                <div className="flex justify-center space-x-4 mt-4">
+                  <a href="https://twitter.com/NITPatna1" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                    <TwitterIcon className="w-5 h-5" />
+                  </a>
+                  <a href="https://www.linkedin.com/company/nit-patna" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                    <LinkedinIcon className="w-5 h-5" />
+                  </a>
+                  <a href="https://www.facebook.com/NITPatna" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                    <FacebookIcon className="w-5 h-5" />
+                  </a>
+                  <a href="https://goo.gl/maps/srZ6whpfDGqg85sp6" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+                    <MapPin className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -188,7 +190,7 @@ const Footer = () => {
         <div className="mt-12 pt-4 border-t border-[#a51818]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-300">Copyright © 2024 National Institute of Technology Patna. All Rights Reserved.</p>
-            <Link href="/Webteam" className="text-sm text-gray-300 hover:text-white">
+            <Link href="/Webteam" className="text-sm text-gray-300 hover:text-white underline">
               Developed & Maintained by WDC NIT Patna
             </Link>
           </div>

@@ -19,13 +19,13 @@ const ProjectCard = ({
   // console.log("ProjectCard Props:", project_title, facultyName, sponsor, amount, start, end);
 
   return (
-    <div className="bg-white border border-red-100 p-2 mb-2 rounded-lg shadow-sm hover:shadow-md hover:bg-red-50 transition-all duration-300">
+    <div className="bg-white border border-gray-200 p-3 mb-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
       <div className="flex items-center">
-        <h3 className="text-sm font-semibold text-[#421010]">
+        <h3 className="text-sm font-semibold text-[#7a2020]">
           {project_title}
         </h3>
       </div>
-      <ul className="text-xs text-gray-700 mt-1 space-y-1">
+      <ul className="text-xs text-gray-700 mt-1.5 space-y-1">
         {facultyName && (
           <li>
             <strong className="text-[#421010]">Faculty:</strong> {facultyName}
@@ -61,23 +61,23 @@ const PublicationCard = ({
   volume,
 }) => {
   return (
-    <div className="p-2 border border-red-100 bg-white rounded-lg shadow-sm hover:shadow-md hover:bg-red-50 transition-transform duration-300">
+    <div className="p-3 border border-gray-200 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300">
       <p className="text-xs text-gray-800">
         {authors && <span className="font-semibold text-[#421010]">{authors}</span>},{" "}
         {title && (
-          <span className="font-semibold text-[#421010]">"{title}"</span>
+          <span className="font-semibold text-[#220909]">"{title}"</span>
         )}
         ,{" "}
         {journalName && (
-          <span className="text-[#421010] font-semibold">
+          <span className="text-[#7a2020] font-semibold">
             {journalName}
           </span>
         )}{" "}
         {journalQuartile && (
-          <span className="text-gray-700">({journalQuartile})</span>
+          <span className="text-gray-600">({journalQuartile})</span>
         )}{" "}
-        {volume && <span className="text-gray-700">Volume: {volume} </span>}{" "}
-        {year && <span className="text-gray-700">Year: {year}</span>}
+        {volume && <span className="text-gray-600">Volume: {volume} </span>}{" "}
+        {year && <span className="text-gray-600">Year: {year}</span>}
       </p>
     </div>
   );
@@ -199,14 +199,14 @@ export default function Research() {
       onExit={() => setCounterOn(false)}
       className="Researchdiv"
     >
-      <div className="w-full px-2 py-4 md:px-4 md:py-6 bg-transparent">
-        <div className="flex text-center items-center justify-center mb-4 py-3">
-          <div className="w-full h-0.5 mr-2 bg-[#a51818]" />
+      <div className="w-full px-4 py-8 md:px-6 md:py-4 bg-transparent">
+        <div className="flex text-center items-center justify-center py-6">
+          <div className="w-full h-0.5 mr-4 bg-[#a51818] " />
           <svg
-            className="text-primary mr-2"
+            className="text-primary mr-5"
             fill="#a51818"
-            height="80px"
-            width="80px"
+            height="130px"
+            width="130px"
             viewBox="0 0 496 496"
             stroke="#a51818"
           >
@@ -237,14 +237,14 @@ export default function Research() {
               </g>{" "}
             </g>
           </svg>
-          <h2 className="text-xl md:text-2xl font-bold text-primary">
+          <h2 className="text-3xl font-bold text-primary">
             RESEARCH HIGHLIGHTS
           </h2>
           <svg
-            className="text-primary ml-2"
+            className=" text-primary ml-5"
             fill="#a51818"
-            height="80px"
-            width="80px"
+            height="130px"
+            width="130px"
             viewBox="0 0 496 496"
             stroke="#a51818"
           >
@@ -275,60 +275,62 @@ export default function Research() {
               </g>{" "}
             </g>
           </svg>
-          <div className="w-full h-0.5 bg-[#a51818] ml-2" />
+          <div className="w-full h-0.5 bg-[#a51818] ml-4" />
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-4">
-          <div className="bg-gradient-to-br from-red-50 to-white rounded-lg p-2 flex flex-col items-center justify-center border border-red-200 shadow hover:shadow-lg hover:bg-red-100 transition-all duration-300">
-            <ActivityIcon className="w-4 h-4 md:w-6 md:h-6 text-[#421010]" />
-            <h3 className="text-xs font-medium mt-1 text-[#421010] md:text-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
+          <div className="bg-white rounded-lg p-3 flex flex-col items-center justify-center border border-[#421010] shadow-md hover:shadow-lg transition-shadow duration-300">
+            <ActivityIcon className="w-5 h-5 text-[#421010]" />
+            <h3 className="text-xs font-medium mt-1.5 text-[#421010]">
               Patents
             </h3>
-            <span className="text-lg font-bold text-[#421010] md:text-2xl">
-              {counterOn && <CountUp end={data.patentCount} duration={5} delay={1} />}
+            <span className="text-lg font-bold text-[#421010] md:text-xl">
+              {counterOn && (
+                <CountUp end={data.patentCount} duration={5} delay={1} />
+              )}
             </span>
           </div>
 
-          <div className="bg-gradient-to-br from-red-50 to-white rounded-lg p-2 flex flex-col items-center justify-center border border-red-200 shadow hover:shadow-lg hover:bg-red-100 transition-all duration-300">
-            <ClipboardIcon className="w-4 h-4 md:w-6 md:h-6 text-[#421010]" />
-            <h3 className="text-xs font-medium mt-1 text-[#421010] md:text-sm">
+          <div className="bg-white rounded-lg p-3 flex flex-col items-center justify-center border border-[#421010] shadow-md hover:shadow-lg transition-shadow duration-300">
+            <ClipboardIcon className="w-5 h-5 text-[#421010]" />
+            <h3 className="text-xs font-medium mt-1.5 text-[#421010]">
               Books
             </h3>
-            <span className="text-lg font-bold text-[#421010] md:text-2xl">
+            <span className="text-lg font-bold text-[#421010] md:text-xl">
               {counterOn && <CountUp end={data.books} duration={5} delay={1} />}
             </span>
           </div>
 
-          <div className="bg-gradient-to-br from-red-50 to-white rounded-lg p-2 flex flex-col items-center justify-center border border-red-200 shadow hover:shadow-lg hover:bg-red-100 transition-all duration-300">
-            <BriefcaseIcon className="w-4 h-4 md:w-6 md:h-6 text-[#421010]" />
-            <h3 className="text-xs font-medium mt-1 text-[#421010] md:text-sm">
+          <div className="bg-white rounded-lg p-3 flex flex-col items-center justify-center border border-[#421010] shadow-md hover:shadow-lg transition-shadow duration-300">
+            <BriefcaseIcon className="w-5 h-5 text-[#421010]" />
+            <h3 className="text-xs font-medium mt-1.5 text-[#421010]">
               Projects
             </h3>
-            <span className="text-lg font-bold text-[#421010] md:text-2xl">
+            <span className="text-lg font-bold text-[#421010] md:text-xl">
               {counterOn && (
                 <CountUp end={data.projectCount} duration={5} delay={1} />
               )}
             </span>
           </div>
 
-          <div className="bg-gradient-to-br from-red-50 to-white rounded-lg p-2 flex flex-col items-center justify-center border border-red-200 shadow hover:shadow-lg hover:bg-red-100 transition-all duration-300">
-            <UsersIcon className="w-4 h-4 md:w-6 md:h-6 text-[#421010]" />
-            <h3 className="text-xs font-medium mt-1 text-[#421010] md:text-sm">
+          <div className="bg-white rounded-lg p-3 flex flex-col items-center justify-center border border-[#421010] shadow-md hover:shadow-lg transition-shadow duration-300">
+            <UsersIcon className="w-5 h-5 text-[#421010]" />
+            <h3 className="text-xs font-medium mt-1.5 text-[#421010]">
               Article
             </h3>
-            <span className="text-lg font-bold text-[#421010] md:text-2xl">
+            <span className="text-lg font-bold text-[#421010] md:text-xl">
               {counterOn && (
                 <CountUp start={0} end={data.articles} duration={5} delay={1} />
               )}
             </span>
           </div>
 
-          <div className="bg-gradient-to-br from-red-50 to-white rounded-lg p-2 flex flex-col items-center justify-center border border-red-200 shadow hover:shadow-lg hover:bg-red-100 transition-all duration-300">
-            <CpuIcon className="w-4 h-4 md:w-6 md:h-6 text-[#421010]" />
-            <h3 className="text-xs font-medium mt-1 text-[#421010] md:text-sm">
+          <div className="bg-white rounded-lg p-3 flex flex-col items-center justify-center border border-[#421010] shadow-md hover:shadow-lg transition-shadow duration-300">
+            <CpuIcon className="w-5 h-5 text-[#421010]" />
+            <h3 className="text-xs font-medium mt-1.5 text-[#421010]">
               Conference
             </h3>
-            <span className="text-lg font-bold text-[#421010] md:text-2xl">
+            <span className="text-lg font-bold text-[#421010] md:text-xl">
               {counterOn && (
                 <CountUp
                   start={0}
@@ -341,17 +343,17 @@ export default function Research() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 container1p">
-          <div className="border border-red-200 shadow hover:shadow-lg transition-shadow duration-300 rounded-lg sectionp bg-gradient-to-br from-red-50 to-white">
-            <div className="flex items-center mb-2 p-3 section-headerp bg-[#421010] rounded-t-lg">
-              <div className="w-4 h-0.5 bg-white mr-2" />
-              <h3 className="text-sm md:text-base font-medium text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+          <div className="w-full border border-primary shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
+            <div className="flex items-center justify-center mb-4 p-3 md:p-5 section-headerp">
+              <div className="flex-1 h-0.5 bg-[#421010]" />
+              <h3 className="mx-4 text-sm md:text-base font-medium text-[#421010] whitespace-nowrap">
                 Recent Publication
               </h3>
-              <div className="w-4 h-0.5 bg-white ml-2" />
+              <div className="flex-1 h-0.5 bg-[#421010]" />
             </div>
 
-            <div className="p-2 h-[calc(100vh-300px)] overflow-hidden relative">
+            <div className="p-4 h-[500px] overflow-hidden relative">
               {recentPublications.length === 0 ? (
                 <div className="text-sm md:text-base flex justify-center items-center h-52">
                   <svg
@@ -488,15 +490,15 @@ export default function Research() {
             </div>
           </div>
 
-          <div className="border border-red-200 shadow hover:shadow-lg transition-shadow duration-300 rounded-lg sectionp bg-gradient-to-br from-red-50 to-white">
-            <div className="flex items-center mb-2 p-3 section-headerp bg-[#421010] rounded-t-lg">
-              <div className="w-4 h-0.5 bg-white mr-2" />
-              <h3 className="text-sm md:text-base font-medium text-white">
+          <div className="w-full border border-primary shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
+            <div className="flex items-center justify-center mb-4 p-3 md:p-5 section-headerp">
+              <div className="flex-1 h-0.5 bg-[#421010]" />
+              <h3 className="mx-4 text-sm md:text-base font-medium text-[#421010] whitespace-nowrap">
                 Recent Projects
               </h3>
-              <div className="w-4 h-0.5 bg-white ml-2" />
+              <div className="flex-1 h-0.5 bg-[#421010]" />
             </div>
-            <div className="p-2 h-[calc(100vh-300px)] overflow-hidden relative">
+            <div className="p-4 h-[500px] overflow-hidden relative">
               {recentProjects.length === 0 ? (
                 <div className="flex justify-center items-center h-52 ">
                   <svg
