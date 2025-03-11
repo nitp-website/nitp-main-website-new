@@ -39,9 +39,9 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
           {attachments.map((attachment, index) => (
             <li key={index} className="mb-1">
               {attachment.typeLink ? (
-                <a 
-                  href={attachment.url} 
-                  target="_blank" 
+                <a
+                  href={attachment.url}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-red-800 hover:text-red-900"
                 >
@@ -51,9 +51,9 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
                   </span>
                 </a>
               ) : (
-                <a 
-                  href={attachment.url} 
-                  target="_blank" 
+                <a
+                  href={attachment.url}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-red-800 hover:text-red-900"
                 >
@@ -68,9 +68,9 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
         </ul>
       )}
       {link && (
-        <a 
-          href={link} 
-          target="_blank" 
+        <a
+          href={link}
+          target="_blank"
           rel="noopener noreferrer"
           className="text-xs text-red-800 hover:text-red-900"
         >
@@ -101,7 +101,7 @@ const Eventcard = ({
   };
 
   // Parse attachments from JSON string
-  const parsedAttachments = typeof attachments === "string" 
+  const parsedAttachments = typeof attachments === "string"
     ? safeParseJSON(attachments, [])
     : [];
 
@@ -182,26 +182,6 @@ const Details = () => {
   const academicsRef = useRef(null);
   const eventsRef = useRef(null);
 
-  // Add important seating plan notice
-  const importantNotice = {
-    id: "seating-plan-2025",
-    title: "Seating Plan 11-03-2025 FN",
-    timestamp: "2024-03-11T10:00:00",
-    important: true,
-    attachments: [
-      {
-        caption: "Patna Campus",
-        url: "https://drive.google.com/file/d/1mFja2-wplGqnu7ljjdogIsjGeNWRo-UW/view?usp=sharing",
-        typeLink: true
-      },
-      {
-        caption: "Bihta Campus",
-        url: "https://drive.google.com/file/d/1nYH-PbBOzoY1AIo1R0Tx7m5nOb1O0MdH/view?usp=sharing",
-        typeLink: true
-      }
-    ]
-  };
-
   useEffect(() => {
     AOS.init({ duration: 800, once: false, offset: 50 });
 
@@ -228,16 +208,12 @@ const Details = () => {
         const sortedNotices = response.data
           .filter((notice) => notice.isVisible === 1)
           .sort((a, b) => b.important - a.important);
-        
-        // Add important notice at the top
-        let data = [importantNotice, ...sortedNotices].slice(0, 21);
+        let data = sortedNotices.slice(0, 21);
+        // console.log(data)
         setnoticies(data);
-        setNotices([importantNotice, ...sortedNotices]);
+        setNotices(sortedNotices);
       } catch (e) {
         console.error("Error fetching notices:", e);
-        // If API fails, at least show the important notice
-        setnoticies([importantNotice]);
-        setNotices([importantNotice]);
       }
     };
 
