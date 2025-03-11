@@ -182,6 +182,26 @@ const Details = () => {
   const academicsRef = useRef(null);
   const eventsRef = useRef(null);
 
+  // Add important seating plan notice
+  const importantNotice = {
+    id: "seating-plan-2025",
+    title: "Seating Plan 11-03-2025 FN",
+    timestamp: "2024-03-11T10:00:00",
+    important: true,
+    attachments: [
+      {
+        caption: "Patna Campus",
+        url: "https://drive.google.com/file/d/1mFja2-wplGqnu7ljjdogIsjGeNWRo-UW/view?usp=sharing",
+        typeLink: true
+      },
+      {
+        caption: "Bihta Campus",
+        url: "https://drive.google.com/file/d/1nYH-PbBOzoY1AIo1R0Tx7m5nOb1O0MdH/view?usp=sharing",
+        typeLink: true
+      }
+    ]
+  };
+
   useEffect(() => {
     AOS.init({ duration: 800, once: false, offset: 50 });
 
@@ -208,12 +228,16 @@ const Details = () => {
         const sortedNotices = response.data
           .filter((notice) => notice.isVisible === 1)
           .sort((a, b) => b.important - a.important);
-        let data = sortedNotices.slice(0, 21);
-        // console.log(data)
+        
+        // Add important notice at the top
+        let data = [importantNotice, ...sortedNotices].slice(0, 21);
         setnoticies(data);
-        setNotices(sortedNotices);
+        setNotices([importantNotice, ...sortedNotices]);
       } catch (e) {
         console.error("Error fetching notices:", e);
+        // If API fails, at least show the important notice
+        setnoticies([importantNotice]);
+        setNotices([importantNotice]);
       }
     };
 
