@@ -200,7 +200,7 @@ export default function Research() {
     const fetchPatents = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/patents`
+          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/patents?type=all`
         );
         setPatents(response.data || []);
         setIsLoadingPatents(false);
@@ -214,7 +214,7 @@ export default function Research() {
     const fetchRecentPublications = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications`
+          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=all`
         );
         const publications = response.data || [];
         setRecentPublications(publications);
@@ -229,7 +229,7 @@ export default function Research() {
     const fetchRecentProjects = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/projects`
+          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=all`
         );
         const projects = response.data || [];
         setRecentProjects(projects);
