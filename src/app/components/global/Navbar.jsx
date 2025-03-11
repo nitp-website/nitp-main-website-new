@@ -729,94 +729,110 @@ export default function Navbar() {
 
   return (
     <>
-       <div className="bg-black h-6">
-  <div className="flex justify-between items-center px-4 py-1 text-white text-xs md:text-sm">
-    <div className="flex space-x-2 text-xs md:text-sm">
-      <a
-        href="/Notices/JobsNITP"
-        className="hover:underline text-[0.6rem] md:text-sm"
-      >
-        Jobs@NITP
-      </a>
-      <span className="text-[0.5rem] md:text-sm">|</span>
-      <a
-        href="https://paydirect.eduqfix.com/app/mnYv9Q6+C+3lIMqghRCwdaqVZusPrJtq2RGJrJFnKnmtz3KBqtsEFPVrZFvoPubG/3466"
-        className="hover:underline text-[0.6rem] md:text-sm"
-      >
-        Fee Payment
-      </a>
-      <span className="text-[0.5rem] md:text-sm">|</span>
-      <a
-        href="/Academic/Intranet"
-        className="hover:underline text-[0.6rem] md:text-sm"
-      >
-        Intranet
-      </a>
-    </div>
-    <div className="flex space-x-2">
-      <a
-        href="https://www.facebook.com/story.php?story_fbid=704954328428607&id=100067421393593&mibextid=K8Wfd2"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="/facebook.png" alt="facebook" className="w-4 h-4 md:w-5 md:h-5" />
-      </a>
-      <a
-        href="https://twitter.com/nitpatna1/status/1749690769500430475?s=48"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="/twitter.svg" alt="twitter" className="w-4 h-4 md:w-5 md:h-5" />
-      </a>
-      <a
-        href="https://www.linkedin.com/school/national-institute-of-technology-patna/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="/linkedin.svg" alt="linkedin" className="w-4 h-4 md:w-5 md:h-5" />
-      </a>
-      <a
-        href="https://goo.gl/maps/srZ6whpfDGqg85sp6"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="/location.png" alt="location" className="w-4 h-4 md:w-5 md:h-5" />
-      </a>
-    </div>
-  </div>
-</div>
-
-    <div className={`mobiletest navbar-container  ${isSticky ? "sticky-nav md:py-0 stickdiv" : ""}`}>
-   
-      <div className="header-top mx-auto flex w-full max-w-9xl justify-between px-4 py-2 bg-white/40 backdrop-blur-lg shadow-lg">
-        <div className="right-content">
-          <div className="font-bold textmob text-black">राष्ट्रीय प्रौद्योगिकी संस्थान पटना</div>
-          <div className="text-sm textmob text-black">NATIONAL INSTITUTE OF TECHNOLOGY PATNA</div>
-        </div>
-        <div className="flex justify-center items-center">
-          <Link href="/">  <Image src={logo} alt="NIT PATNA" height={70} /></Link>
-        
-        </div>
-        <div className="institute-info pt-4 hidden text-center items-center justify-center md:block text-black">
-          <div>An Institute of National Importance under Ministry of Education</div>
-          <div>(Shiksha Mantralaya), Government of India</div>
+      <div className="bg-black h-6">
+        <div className="flex justify-between items-center px-4 py-1 text-white text-xs md:text-sm">
+          <div className="flex space-x-2 text-xs md:text-sm">
+            <a
+              href="/Notices/JobsNITP"
+              className="hover:underline text-[0.6rem] md:text-sm"
+            >
+              Jobs@NITP
+            </a>
+            <span className="text-[0.5rem] md:text-sm">|</span>
+            <a
+              href="https://paydirect.eduqfix.com/app/mnYv9Q6+C+3lIMqghRCwdaqVZusPrJtq2RGJrJFnKnmtz3KBqtsEFPVrZFvoPubG/3466"
+              className="hover:underline text-[0.6rem] md:text-sm"
+            >
+              Fee Payment
+            </a>
+            <span className="text-[0.5rem] md:text-sm">|</span>
+            <a
+              href="/Academic/Intranet"
+              className="hover:underline text-[0.6rem] md:text-sm"
+            >
+              Intranet
+            </a>
+          </div>
+          <div className="flex space-x-2">
+            <a
+              href="https://www.facebook.com/story.php?story_fbid=704954328428607&id=100067421393593&mibextid=K8Wfd2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/facebook.png" alt="facebook" className="w-4 h-4 md:w-5 md:h-5" />
+            </a>
+            <a
+              href="https://twitter.com/nitpatna1/status/1749690769500430475?s=48"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/twitter.svg" alt="twitter" className="w-4 h-4 md:w-5 md:h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/school/national-institute-of-technology-patna/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/linkedin.svg" alt="linkedin" className="w-4 h-4 md:w-5 md:h-5" />
+            </a>
+            <a
+              href="https://goo.gl/maps/srZ6whpfDGqg85sp6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/location.png" alt="location" className="w-4 h-4 md:w-5 md:h-5" />
+            </a>
+          </div>
         </div>
       </div>
 
-      <div className="desktopnav mx-auto flex w-full max-w-7xl justify-center px-4 py-3 text-sm bg-white/40 md:py-1 md:bg-[#811919] backdrop-blur-lg md:rounded-xl shadow-lg">
-        
-        <section className="nav-items hidden md:flex">
-        
-        {navItems.map((item, index) => (
-          
-          <NavItem key={index} item={item} />
-        ))}
-      </section>
-        <FiMenu onClick={() => setSideMenuOpen(true)} className="cursor-pointer text-4xl md:hidden text-black" />
-      </div>
+      <div className={`mobiletest navbar-container ${isSticky ? "sticky-nav md:py-0 stickdiv" : ""}`}>
+        <div className="header-top mx-auto flex w-full max-w-9xl justify-between px-[1px] md:px-4 py-2 bg-white/40 backdrop-blur-lg shadow-lg">
+          {/* Mobile Header Layout */}
+          <div className="flex md:hidden items-center justify-between w-full">
+            <div className="flex-shrink-0">
+              <Link href="/">
+                <Image src={logo} alt="NIT PATNA" width={50} height={50} className="w-auto h-12" />
+              </Link>
+            </div>
+            <div className="flex flex-col items-center flex-1 text-center">
+              <div className="text-[0.65rem] font-semibold text-black">राष्ट्रीय प्रौद्योगिकी संस्थान पटना</div>
+              <div className="text-[0.6rem] text-black">NATIONAL INSTITUTE OF TECHNOLOGY PATNA</div>
+              <div className="text-[0.5rem] text-black mt-1 hidden">An Institute of National Importance</div>
+            </div>
+          </div>
 
-      {isSideMenuOpen && <MobileNav closeSideMenu={() => setSideMenuOpen(false)} />}
-    </div></>
+          {/* Desktop Header Layout */}
+          <div className="right-content hidden md:block">
+            <div className="font-bold textmob text-black">राष्ट्रीय प्रौद्योगिकी संस्थान पटना</div>
+            <div className="text-sm textmob text-black">NATIONAL INSTITUTE OF TECHNOLOGY PATNA</div>
+          </div>
+          <div className="hidden md:flex justify-center items-center">
+            <Link href="/">
+              <Image src={logo} alt="NIT PATNA" height={70} />
+            </Link>
+          </div>
+          <div className="institute-info pt-4 hidden text-center items-center justify-center md:block text-black">
+            <div>An Institute of National Importance under Ministry of Education</div>
+            <div>(Shiksha Mantralaya), Government of India</div>
+          </div>
+        </div>
+
+        <div className="desktopnav mx-auto flex w-full max-w-7xl justify-between px-4 py-2 text-sm bg-white/40 md:py-1 md:bg-[#811919] backdrop-blur-lg md:rounded-xl shadow-lg">
+          <section className="nav-items hidden md:flex">
+            {navItems.map((item, index) => (
+              <NavItem key={index} item={item} />
+            ))}
+          </section>
+          <FiMenu 
+            onClick={() => setSideMenuOpen(true)} 
+            className="cursor-pointer text-3xl md:hidden text-black ml-auto" 
+          />
+        </div>
+
+        {isSideMenuOpen && <MobileNav closeSideMenu={() => setSideMenuOpen(false)} />}
+      </div>
+    </>
   );
 }
 
