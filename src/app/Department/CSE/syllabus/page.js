@@ -44,7 +44,7 @@ export default function Page() {
                             setmcad(false)
                             setmcaai(false)
                             setUg(true)
-                        }} className={`border border-black rounded ${(ug) ? "text-white bg-red-900" : "text-red-900"} px-2`}>UG Courses</button>
+                        }} className={`border border-black rounded ${(ug) ? "text-white bg-red-900" : "text-red-900"} px-2`}>B.Tech (Computer Science and Engineering)</button>
                         <button onClick={() => {
                             setUg2021(false);
                             setDualCyber(false);
@@ -80,7 +80,7 @@ export default function Page() {
                             setDualData(false);
                             setUg2022(false);
                             setUg(false);
-                        }} className={`border border-black rounded ${(pgd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech data science</button>
+                        }} className={`border border-black rounded ${(pgd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech (Data Science and Engineering)</button>
                         <button onClick={() => {
                             setUg2021(false);
                             setPgc(true);
@@ -92,7 +92,7 @@ export default function Page() {
                             setUg(false);
                             setmcad(false)
                             setmcaai(false)
-                        }} className={`border border-black rounded ${(pgc) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech Cyber Security</button>
+                        }} className={`border border-black rounded ${(pgc) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech (Cyber Security)</button>
                         <button onClick={() => {
                             setUg2021(false);
                             setDualCyber(false);
@@ -116,7 +116,7 @@ export default function Page() {
                             setDualData(false);
                             setUg2022(false);
                             setUg(false);
-                        }} className={`border border-black rounded ${(dualCyber) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Dual Degree (Cyber Security)</button>
+                        }} className={`border border-black rounded ${(dualCyber) ? "text-white bg-red-900" : "text-red-900"} px-2`}> B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Cyber Security)</button>
                         <button onClick={() => {
                             setUg2021(false);
                             setDualCyber(false);
@@ -128,7 +128,7 @@ export default function Page() {
                             setmcaai(false)
                             setUg2022(false);
                             setUg(false);
-                        }} className={`border border-black rounded ${(dualData) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Dual Degree (Data Science and Engineering)</button>
+                        }} className={`border border-black rounded ${(dualData) ? "text-white bg-red-900" : "text-red-900"} px-2`}> B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Data Science)</button>
                         <button onClick={() => {
                             setUg2021(false);
                             setPgc(false);
@@ -140,7 +140,7 @@ export default function Page() {
                             setUg(false);
                             setmcad(true)
                             setmcaai(false)
-                        }} className={`border border-black rounded ${(mcad) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA (DS & AI)</button>
+                        }} className={`border border-black rounded ${(mcad) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in AI & IoT</button>
                         <button onClick={() => {
                             setUg2021(false);
                             setPgc(false);
@@ -152,7 +152,7 @@ export default function Page() {
                             setUg(false);
                             setmcad(false)
                             setmcaai(true)
-                        }} className={`border border-black rounded ${(mcaai) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA(AI & IOT)</button>
+                        }} className={`border border-black rounded ${(mcaai) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in Data Science & Informatics</button>
                     </div>
                 </div>
                 <div className={`mb-10 ${(ug == false) ? "hidden" : ""}`}>
