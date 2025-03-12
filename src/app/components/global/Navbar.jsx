@@ -206,6 +206,11 @@ const navItems = [
         iconImage: Person,
       },
       {
+        label: "Cheif Proctor",
+        link: "/Administration/Proctorial_Board/cheif-proctor",
+        iconImage: Sperson,
+      },
+      {
         label: "Proctorial Board",
         link: "/Administration/Proctorial_Board",
         iconImage: Sperson,

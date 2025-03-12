@@ -1,49 +1,49 @@
 import React from "react";
-import "./style.css";
 
 const President = () => {
   return (
-    <div className="main-container mb-10">
-      <div className="maincard mb-3 pt-20">
-        <div className="e-card playing bg-white w-4/5">
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="infotop pt-10">
-            <img
-              className="icon"
-              src="https://i.postimg.cc/wBxrhY30/Dharmendra-Pradhan.webp"
-              alt="President"
-            />
-            <p className="description text-neutral-400 italic" >Hon'ble Education Minister</p>
-            <div className="hidden md:block">
-              <br />
-            </div>
+    <div className="flex justify-center items-center py-10">
+      <div className="relative bg-white shadow-lg rounded-xl overflow-hidden w-full max-w-md p-6">
+        <div className="absolute inset-0">
+          <div className="absolute -top-32 -left-32 w-80 h-80 bg-gradient-to-br from-pink-500 to-orange-400 rounded-full opacity-20"></div>
+          <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-20"></div>
+        </div>
+        <div className="relative flex flex-col items-center text-center">
+          <img
+            className="w-36 h-36 object-cover rounded-full border-4 border-gray-300 shadow-md"
+            src="https://i.postimg.cc/wBxrhY30/Dharmendra-Pradhan.webp"
+            alt="Education Minister"
+          />
+
+          <p className="mt-4 text-gray-500 italic">Hon'ble Education Minister</p>
+          <h2 className="mt-2 text-xl font-semibold text-gray-800">
             Shri Dharmendra Pradhan
-            <br />
-            <div className="description1 md:mt-0 m-9 md:m-20 mb-5 md:mb-5">
+          </h2>
+          <p className="mt-1 text-sm text-gray-600">
             Hon'ble Union Cabinet Minister, MoE, GoI
+            <br />
             Chairman, Council of NITs
-            </div>
-            <div className="md:pb-11">
-            <button type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a
-                href="https://www.education.gov.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-               Ministry of Education
-              </a></button>  
+          </p>
 
-              <button type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a
-                href="https://nitcouncil.org.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+          {/* Buttons */}
+          <div className="mt-5 flex flex-col gap-3 w-full">
+            <a
+              href="https://www.education.gov.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:scale-105 transition transform duration-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            >
+              Ministry of Education
+            </a>
+
+            <a
+              href="https://nitcouncil.org.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-white bg-gradient-to-br from-orange-400 to-pink-500 hover:scale-105 transition transform duration-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            >
               NIT Council
-              </a></button>
-
-              
-            </div>
+            </a>
           </div>
         </div>
       </div>

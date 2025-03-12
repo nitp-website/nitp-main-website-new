@@ -6,24 +6,24 @@ import "../style.css";
 const Page = () => {
   const RegistrarData = [
 
-    {
-      name: "Prof. Prabhat Kumar ",
-      designation: "Professor, CSE Dept.",
-      type: "Chief Proctor",
-      url: "https://www.nitp.ac.in/Department/CSE/faculty/prabhat@nitp.ac.in",
-    },
-    {
-      name: "Prof. Sunita Kumari ",
-      designation: "Professor, Civil Engineering Dept.",
-      type: "Dy. Chief Proctor",
-      url: "https://www.nitp.ac.in/Department/CE/faculty/sunitafce@nitp.ac.in",
-    },
-    {
-      name: "Dr. Ajay Kumar ",
-      designation: "Associate Professor, Arch. & Plann. Dept.",
-      type: "Dy. Chief Proctor",
-      url: "https://www.nitp.ac.in/Department/Archi/faculty/arajay@nitp.ac.in",
-    },
+    // {
+    //   name: "Prof. Prabhat Kumar ",
+    //   designation: "Professor, CSE Dept.",
+    //   type: "Chief Proctor",
+    //   url: "https://www.nitp.ac.in/Department/CSE/faculty/prabhat@nitp.ac.in",
+    // },
+    // {
+    //   name: "Prof. Sunita Kumari ",
+    //   designation: "Professor, Civil Engineering Dept.",
+    //   type: "Dy. Chief Proctor",
+    //   url: "https://www.nitp.ac.in/Department/CE/faculty/sunitafce@nitp.ac.in",
+    // },
+    // {
+    //   name: "Dr. Ajay Kumar ",
+    //   designation: "Associate Professor, Arch. & Plann. Dept.",
+    //   type: "Dy. Chief Proctor",
+    //   url: "https://www.nitp.ac.in/Department/Archi/faculty/arajay@nitp.ac.in",
+    // },
     {
       name: "Dr. Shailesh Mani Pandey ",
       designation: "Assistant Professor, Mechanical Engineering Dept.",
