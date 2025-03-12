@@ -30,7 +30,15 @@ const Sidebar = () => {
           <span className="font-semibold">Home</span>
         </li>
        
-       
+        <li
+          className={`flex items-center p-2 rounded-lg cursor-pointer ${
+            baseRoute === '/people/deputy' ? 'bg-red-100 text-red-600' : 'hover:bg-gray-100'
+          }`}
+          onClick={() => handleNavigation(`${basePath}/people/deputy`)}
+        >
+          <FaUserFriends className="mr-2 md:mr-3" />
+          <span>Deputy Proctor</span>
+        </li>
        
         <li
           className={`flex items-center p-2 rounded-lg cursor-pointer ${
