@@ -22,9 +22,9 @@ const Page = () => {
             Cheif Proctor
           </span>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+        <div className="flex w-full mt-6 justify-center items-center">
           {RegistrarData.map((item, idx) => (
-            <div key={idx} className="flex flex-col items-center">
+            <div key={idx} className="flex flex-col items-center w-full md:w-[25vw]">
               <Admincard
                 name={item.name}
                 designation={item.designation}
