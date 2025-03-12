@@ -111,6 +111,14 @@ function Page(){
                             sno={'11.'}
                             name={'Dr. Kranti Kumar Maurya'} 
                             research={'Urban and Rural Planning, Governance, Smart Cities'} />
+                                 <Compo
+                            sno={'12.'}
+                            name={'Dr Sandeep Kumar'} 
+                            research={'Landscape Architecture; Urban Green Space; Sustainable Site Planning'} />
+                                 <Compo
+                            sno={'13.'}
+                            name={'Dr Supriya Kumari'} 
+                            research={' Noise Pollution, Environment Pollution, Urban Planning, Urban Infrastructure management, Physical Infrastructure, Waste management'} />
                         </div>
                     </div>
                 </div>
