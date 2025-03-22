@@ -31,7 +31,10 @@ const Slider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="https://patnapress.com/wp-content/uploads/2024/12/NIT-Bihta.jpeg" />
+          <img src="/homepage/MainEntrance.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/homepage/MainBuilding.jpg" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="/RITEEC POSTER.png"/>
