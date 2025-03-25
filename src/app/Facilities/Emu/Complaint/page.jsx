@@ -22,7 +22,7 @@ const EmuComplaintPage = () => {
               <tr className="bg-[#421010] text-white">
                 <th className="text-left px-6 py-4 font-semibold">Language</th>
                 <th className="text-center px-6 py-4 font-semibold w-48">
-                  Document
+                  Word
                 </th>
                 <th className="text-center px-6 py-4 font-semibold w-48">
                   PDF
