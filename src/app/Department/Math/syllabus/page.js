@@ -1438,7 +1438,7 @@ export default function Page() {
         </div>
         <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
           <li className="hover:text-blue-800">
-            <a className='' href="https://web.nitp.ac.in//uploads22/Dual_Degree_Mathematics_and_Computing_Technology.pdf">
+            <a className='' href="https://drive.google.com/file/d/1tv0bgOzuhangYPr2imItc6uMfTB2z2cB/view">
              Mathematics and Computing Technology (5 Years, Bachelor and Master of Technology(Dual Degree))
             </a>
           </li>
