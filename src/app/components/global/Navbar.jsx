@@ -575,8 +575,13 @@ const navItems = [
       },
       {
         label: "Fee Payment",
-        link: "https://paydirect.eduqfix.com/app/mnYv9Q6+C+3lIMqghRCwdaqVZusPrJtq2RGJrJFnKnmtz3KBqtsEFPVrZFvoPubG/3466",
+        link: "https://mis.nitp.ac.in/Miscellaneous.aspx",
         iconImage: Fee,
+      },
+      {
+        label: "Academic Portal (New)",
+        link: "https://mis.nitp.ac.in/",
+        iconImage: Portal,
       },
 
       // {
@@ -627,7 +632,7 @@ const navItems = [
         iconImage: Bharat,
       },
       {
-        label: "Student Academic Portal",
+        label: "Student Academic Portal(Old)",
         link: "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",
         iconImage: Chankaya,
       },
@@ -745,7 +750,7 @@ export default function Navbar() {
             </a>
             <span className="text-[0.5rem] md:text-sm">|</span>
             <a
-              href="https://paydirect.eduqfix.com/app/mnYv9Q6+C+3lIMqghRCwdaqVZusPrJtq2RGJrJFnKnmtz3KBqtsEFPVrZFvoPubG/3466"
+              href="https://mis.nitp.ac.in/Miscellaneous.aspx"
               className="hover:underline text-[0.6rem] md:text-sm"
             >
               Fee Payment
@@ -756,6 +761,13 @@ export default function Navbar() {
               className="hover:underline text-[0.6rem] md:text-sm"
             >
               Intranet
+            </a>
+            <span className="text-[0.5rem] md:text-sm">|</span>
+            <a
+              href="https://mis.nitp.ac.in/"
+              className="hover:underline text-[0.6rem] md:text-sm"
+            >
+              Academic Portal (New)
             </a>
           </div>
           <div className="flex space-x-2">
