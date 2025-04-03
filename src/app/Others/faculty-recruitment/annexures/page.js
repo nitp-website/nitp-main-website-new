@@ -8,47 +8,47 @@ const Annexures = () => {
   const annexures = [
     { 
       id: 1, 
-      name: "Annexure I", 
+      name: "Annexure I (NITSER Act, 2007)", 
       link: "https://drive.google.com/file/d/1u5nISgtuyP78cG_MAoivaniXy3r2nyPl/view?usp=drivesdk" 
     },
     { 
       id: 2, 
-      name: "Annexure II", 
+      name: "Annexure II (First Statutes of NIT)", 
       link: "https://drive.google.com/file/d/1yPg3mcurceUDENcsnDqG_YDkblL0luye/view?usp=drivesdk" 
     },
     { 
       id: 3, 
-      name: "Annexure III", 
+      name: "Annexure III (MoE F.No.33-9/2011/TS.III dated 16th April 2019)", 
       link: "https://drive.google.com/file/d/1zCY0Uf3zcZ-VzLBf9--wWS27IENKka2p/view?usp=drivesdk" 
     },
     { 
       id: 4, 
-      name: "Annexure IV", 
+      name: "Annexure IV (MoEF.No. 33-9/2011-TS.III dated 30th November 2017)", 
       link: "https://drive.google.com/file/d/1KLxAiyxHeUMwGrwrK3yvtBhPsqUZ9n0D/view?usp=drivesdk" 
     },
     { 
       id: 5, 
-      name: "Annexure V", 
+      name: "Annexure V (MoEF.No. 33-9/2011-TS.III dated 20th April 2018)", 
       link: "https://drive.google.com/file/d/1PEu5W3MogQBITk5QA11TVCA5ejBHyWLy/view?usp=drivesdk" 
     },
     { 
       id: 6, 
-      name: "Annexure VI", 
+      name: "Annexure VI (MoEF.No. 33-9/2011-TS.III dated 13th September 2017)", 
       link: "https://drive.google.com/file/d/1RIp6fujRvMxTn-049eNu6eqWQZCtBm7I/view?usp=drivesdk" 
     },
     { 
       id: 7, 
-      name: "Annexure VII", 
+      name: "Annexure VII (Gazette Notification dated 07th March 2019 of CEI (Reservation in Annexure VII Teachers’ Cadre) Ordinance, 2019)", 
       link: "https://drive.google.com/file/d/1owLv1vykSBoZktMjI74v0Ju1ZF2I-1dq/view?usp=drivesdk" 
     },
     { 
       id: 8, 
-      name: "Annexure VIII", 
+      name: "Annexure VIII (Prescribed format for Category Certificate (SC/ST/OBC-NCL/EWS/PwD))", 
       link: "https://drive.google.com/file/d/1YhRsQCALYpJJX2MLAOxMQTf_kVv8JzyF/view?usp=drivesdk" 
     },
     {
       id: 9,
-      name: "Annexure IX",
+      name: "Annexure IX (NIT (Amendment) Statutes 2023)",
       link: "https://drive.google.com/file/d/1XWBLB-dGWhC8FMzGmrmEppscdwC0EXex/view?usp=drive_link"
     }
   ];
