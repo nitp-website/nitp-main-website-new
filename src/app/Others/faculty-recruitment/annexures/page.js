@@ -8,43 +8,48 @@ const Annexures = () => {
   const annexures = [
     { 
       id: 1, 
-      name: "Annexure I.pdf", 
+      name: "Annexure I", 
       link: "https://drive.google.com/file/d/1u5nISgtuyP78cG_MAoivaniXy3r2nyPl/view?usp=drivesdk" 
     },
     { 
       id: 2, 
-      name: "Annexure II.pdf", 
+      name: "Annexure II", 
       link: "https://drive.google.com/file/d/1yPg3mcurceUDENcsnDqG_YDkblL0luye/view?usp=drivesdk" 
     },
     { 
       id: 3, 
-      name: "Annexure III.pdf", 
+      name: "Annexure III", 
       link: "https://drive.google.com/file/d/1zCY0Uf3zcZ-VzLBf9--wWS27IENKka2p/view?usp=drivesdk" 
     },
     { 
       id: 4, 
-      name: "Annexure IV.pdf", 
+      name: "Annexure IV", 
       link: "https://drive.google.com/file/d/1KLxAiyxHeUMwGrwrK3yvtBhPsqUZ9n0D/view?usp=drivesdk" 
     },
     { 
       id: 5, 
-      name: "Annexure V.pdf", 
+      name: "Annexure V", 
       link: "https://drive.google.com/file/d/1PEu5W3MogQBITk5QA11TVCA5ejBHyWLy/view?usp=drivesdk" 
     },
     { 
       id: 6, 
-      name: "Annexure VI.pdf", 
+      name: "Annexure VI", 
       link: "https://drive.google.com/file/d/1RIp6fujRvMxTn-049eNu6eqWQZCtBm7I/view?usp=drivesdk" 
     },
     { 
       id: 7, 
-      name: "Annexure VII.pdf", 
+      name: "Annexure VII", 
       link: "https://drive.google.com/file/d/1owLv1vykSBoZktMjI74v0Ju1ZF2I-1dq/view?usp=drivesdk" 
     },
     { 
       id: 8, 
-      name: "Annexure VIII.pdf", 
+      name: "Annexure VIII", 
       link: "https://drive.google.com/file/d/1YhRsQCALYpJJX2MLAOxMQTf_kVv8JzyF/view?usp=drivesdk" 
+    },
+    {
+      id: 9,
+      name: "Annexure IX",
+      link: "https://drive.google.com/file/d/1XWBLB-dGWhC8FMzGmrmEppscdwC0EXex/view?usp=drive_link"
     }
   ];
 
