@@ -16,20 +16,20 @@ export default function Page() {
     return (
         <div className=" flex flex-col p-10 max-sm:p-2 text-black">
             <div className="flex flex-col mb-3">
-                <div>
+                    <div>
                     <p className="text-red-900 text-xl lg:text-2xl font-bold">
                         SYLLABUS
-                    </p>
-                </div>
-                <div className="mt-2">
+                        </p>
+                    </div>
+                    <div className="mt-2">
                     <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        COMPUTER SCIENCE ENGINEERING
-                    </p>
-                </div>
+                            COMPUTER SCIENCE ENGINEERING
+                        </p>
+                    </div>
                 <div>
                     <BackDepartment navigate={'/Department/CSE'} />
                 </div>
-            </div>
+                    </div>
             <div className="mx-4 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 <div className="mb-10 flex space-x-1 overflow-x-auto ">
                     <div className="min-w-[800px] flex space-x-1 text-sm lg:text-base">
@@ -153,8 +153,8 @@ export default function Page() {
                             setmcad(false)
                             setmcaai(true)
                         }} className={`border border-black rounded ${(mcaai) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in Data Science & Informatics</button>
+                            </div>
                     </div>
-                </div>
                 <div className={`mb-10 ${(ug == false) ? "hidden" : ""}`}>
                     <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">UG PROGRAM</div>
                     <div className=" overflow-x-auto">
