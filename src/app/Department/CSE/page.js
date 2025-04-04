@@ -5,21 +5,21 @@ import DepartmentNotify1 from "../../components/department/DepartmentNotify1";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState, useRef } from "react";
-import { ChevronRight, ChevronDown, Code, Server, Database, Brain, Users, Award, Mail, GraduationCap } from 'lucide-react';
+import { ChevronRight, ChevronDown, Code, Server, Database, Brain, Users, Award, Mail, GraduationCap, Calendar, Info } from 'lucide-react';
 
 const carouselImages = [
   {
-    src: "/ee-feature1.png",
+    src: "https://i.postimg.cc/13VM5Lpz/image.png",
     alt: "CSE Research Lab",
     caption: "Advanced Computing Research Laboratory"
   },
   {
-    src: "/ee-feature2.png",
+    src: "/homepage/MainBuilding.jpg",
     alt: "Student Projects",
     caption: "Student Innovation Showcase"
   },
   {
-    src: "/ee-feature3.png",
+    src: "/homepage/MainEntrance.jpg",
     alt: "Department Infrastructure",
     caption: "State-of-the-art Infrastructure"
   }
@@ -133,7 +133,7 @@ export default function CSE() {
             </svg>
           </div>
 
-          <div className="container mx-auto px-4 z-10 py-16">
+          <div className="mx-auto px-4 z-10 py-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8 text-center lg:text-left">
                 <h1 className="text-5xl md:text-6xl font-bold leading-tight">
@@ -171,7 +171,7 @@ export default function CSE() {
                       activeSlide === index ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    <Image
+                    <img
                       src={image.src}
                       alt={image.alt}
                       fill
@@ -204,7 +204,7 @@ export default function CSE() {
 
         {/* About Section */}
         <section id="about" ref={aboutRef} className="py-24 bg-gray-900 bg-opacity-70 backdrop-blur-sm">
-          <div className="container mx-auto px-4">
+          <div className="mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 About the <span className="text-red-400">Department</span>
@@ -272,15 +272,17 @@ export default function CSE() {
 
         {/* Navigation Grid (Simplified) */}
         <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
+          <div className="mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[
+                { title: 'ABOUT', path: '/Department/CSE/about', icon: <Info className="w-6 h-6" /> },
                 { title: 'MISSION & VISION', path: '/Department/CSE/mission', icon: <Server className="w-6 h-6" /> },
                 { title: 'FACULTY', path: '/Department/CSE/faculty', icon: <Users className="w-6 h-6" /> },
                 { title: 'SYLLABUS', path: '/Department/CSE/syllabus', icon: <GraduationCap className="w-6 h-6" /> },
                 { title: 'TIME TABLE', path: '/Department/CSE/timeTable', icon: <Code className="w-6 h-6" /> },
                 { title: 'LABS', path: '/Department/CSE/labs', icon: <Database className="w-6 h-6" /> },
-                { title: 'ACHIEVEMENTS', path: '/Department/CSE/achivments', icon: <Award className="w-6 h-6" /> }
+                { title: 'ACHIEVEMENTS', path: '/Department/CSE/achivments', icon: <Award className="w-6 h-6" /> },
+                { title: 'ACTIVITIES', path: '/Department/CSE/activities', icon: <Calendar className="w-6 h-6" /> }
               ].map((button, index) => (
                 <button
                   key={index}
