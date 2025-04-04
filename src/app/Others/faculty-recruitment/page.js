@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { FileText } from 'lucide-react';
 
 const RecruitmentProcess = () => {
-  const advertisementLink = "https://drive.google.com/file/d/1NP0z-kft9eGSkSoz8J5pciTnhZd4qFFz/view?usp=drive_link";
+  const advertisementLink = "https://drive.google.com/file/d/16v2OsI19FGdFGJa02mUAg6HTo_Zbk3-Q/view";
   
   return (
     <div className="bg-white bg-opacity-50">
