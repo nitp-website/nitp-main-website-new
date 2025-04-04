@@ -633,7 +633,7 @@ const navItems = [
         iconImage: Portal,
       },
       {
-        label: "Student Academic Portal(Old)",
+        label: "Academic Portal(Old)",
         link: "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",
         iconImage: Chankaya,
       },
