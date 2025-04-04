@@ -147,18 +147,18 @@ export default function CSE() {
                   Pioneering the future through innovation, research, and excellence in education
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                  <button 
+                  <a 
                     href="/Department/CSE/mission"
                     className="px-6 py-3 bg-red-500 hover:bg-red-800 text-white rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-red-500/50 hover:shadow-lg"
                   >
                     Mission & Vision
-                  </button>
-                  <button 
+                  </a>
+                  <a 
                     href="/Department/CSE/faculty"
                     className="px-6 py-3 bg-transparent border border-red-400 text-white hover:bg-red-900/30 rounded-md transition-all duration-300"
                   >
                     People
-                  </button>
+                  </a>
                 </div>
               </div>
 
