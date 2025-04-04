@@ -578,11 +578,7 @@ const navItems = [
         link: "https://mis.nitp.ac.in/Miscellaneous.aspx",
         iconImage: Fee,
       },
-      {
-        label: "Academic Portal (New)",
-        link: "https://mis.nitp.ac.in/",
-        iconImage: Portal,
-      },
+      
 
       // {
       //   label: "Transportation",
@@ -630,6 +626,11 @@ const navItems = [
         label: "Unnat Bharat",
         link: "/Student/UnnatBharat",
         iconImage: Bharat,
+      },
+      {
+        label: "Academic Portal (New)",
+        link: "https://mis.nitp.ac.in/",
+        iconImage: Portal,
       },
       {
         label: "Student Academic Portal(Old)",
