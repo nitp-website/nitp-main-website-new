@@ -25,13 +25,13 @@ const DocumentsTable = () => {
       para: "1-SOP to issue Original Degree Certificate",
 
       link:
-        "https://drive.google.com/file/d/1ojThnsLJgSUHY4Zr0QCTGHdxOUvLfY6t/view?usp=sharing",
+        "https://drive.google.com/file/d/1qM6BOW8YP31Wy2eWvJ6uyzYvPbDbJfSi/view?usp=drive_link",
     },
     {
       para: "2-SOP to issue Institute Leaving/Transfer Cum Migration Certificate",
 
       link:
-        "https://drive.google.com/file/d/1AymHBdkagkjfUfklSer4pg-3iaqlXhjN/view?usp=sharing",
+        "https://drive.google.com/file/d/18Np6gdfMuJoJKgZbKUy8zIh5D3YDR8Sw/view?usp=drive_link",
     },
     {
       para:
@@ -52,7 +52,7 @@ const DocumentsTable = () => {
       para: "5-SOP for Educational Verification",
 
       link:
-        " https://drive.google.com/file/d/1m5VB8SMkkllmXRZjaxWi8xc8E7PMGfkB/view?usp=sharing",
+        "https://drive.google.com/file/d/14yzsDNeIUsbrY6IY1uXRES323Bvww6j3/view?usp=drive_link",
     },
     {
 
