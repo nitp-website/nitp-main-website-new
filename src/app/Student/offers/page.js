@@ -1,2 +1,0 @@
-//Offer Page 
-//cpming soon
