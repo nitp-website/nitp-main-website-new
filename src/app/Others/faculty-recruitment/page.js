@@ -28,34 +28,6 @@ const RecruitmentProcess = () => {
               <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
                 <td className="text-left px-6 py-4 text-gray-800">
                   <p className="leading-relaxed">
-                 SOP Faculty Recruitment (Online Application form and Related Annexures)
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href={sopLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      SOP
-                    </a>
-                    <Link
-                      href="/Others/faculty-recruitment/SOP/annexures"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Annexures
-                    </Link>
-                  </div>
-                </td>
-              </tr>
-
-              <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
                     Professor, Associate Professor, Assistant Professor Grade-I, Assistant Professor Grade-II (on Contract Basis)
                   </p>
                 </td>
@@ -72,6 +44,34 @@ const RecruitmentProcess = () => {
                     </a>
                     <Link
                       href="/Others/faculty-recruitment/annexures"
+                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Annexures
+                    </Link>
+                  </div>
+                </td>
+              </tr>
+
+              <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
+                <td className="text-left px-6 py-4 text-gray-800">
+                  <p className="leading-relaxed">
+                 SOP Faculty Recruitment (Online Application form and Related Annexures)
+                  </p>
+                </td>
+                <td className="text-center px-6 py-4">
+                  <div className="flex flex-col items-center gap-2">
+                    <a
+                      href={sopLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
+                    >
+                      <FileText className="w-4 h-4" />
+                      SOP
+                    </a>
+                    <Link
+                      href="/Others/faculty-recruitment/SOP/annexures"
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
                     >
                       <FileText className="w-4 h-4" />
