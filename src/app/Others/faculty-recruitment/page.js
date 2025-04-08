@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { FileText } from 'lucide-react';
 
 const RecruitmentProcess = () => {
+
   const advertisementLink = "https://drive.google.com/file/d/16v2OsI19FGdFGJa02mUAg6HTo_Zbk3-Q/view";
   const sopLink="https://drive.google.com/file/d/13eb1I3HKKwwD5WhvfuswAQVx3yNEgqOB/view"
   return (
