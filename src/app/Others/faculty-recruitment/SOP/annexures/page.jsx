@@ -7,25 +7,29 @@ const Annexures = () => {
     { 
       id: 1, 
       name: "Annexure A -Background Details", 
-      docLink:"https://drive.google.com/file/d/1m0jzIOr2INBbWd-PQXDbTq6zQjes8uKx/view",
+      // docLink:"https://drive.google.com/file/d/1m0jzIOr2INBbWd-PQXDbTq6zQjes8uKx/view",
+      docLink:"/docs/Annexure A -BackgroundDetails.docx",
       pdfLink: "https://drive.google.com/uc?export=download&id=1JEFKzbzKTWl5XSh_SBMNJKYQSx4KIPIl"
     },
     { 
       id: 2, 
       name: "Annexure-B - Credit Point Summary", 
-      docLink:"https://drive.google.com/file/d/1EQOVKXf-PXRLXjSlGi8OygnWlOcBQ4pq/view",
+      // docLink:"https://drive.google.com/file/d/1EQOVKXf-PXRLXjSlGi8OygnWlOcBQ4pq/view",
+      docLink:"/docs/Annexure-B (Credit Point Summary).docx",
       pdfLink: "https://drive.google.com/uc?export=download&id=1-PTkeQR6wU5HPqBijaPAE9fXWqg0NiHq"
     },
     { 
       id: 3, 
       name: "Annexure-C - Carry Forward Credit Point Summary", 
-      docLink:"https://drive.google.com/file/d/1lTfCfd_lIukUi1sF73Zd0C_KxM6AbjBq/view",
+      // docLink:"https://drive.google.com/file/d/1lTfCfd_lIukUi1sF73Zd0C_KxM6AbjBq/view",
+      docLink:"/docs/Annexure-C(Carry Forward Credit Point Summary).docx",
       pdfLink: "https://drive.google.com/uc?export=download&id=1kLcDbPRkOUowTc1_jqE5t6tV3GZpB0X3"
     },
     { 
       id: 4, 
       name: "Annexure D - Career Highlights", 
-      docLink:"https://drive.google.com/file/d/159RYFlEF57ySGYPVn2WckdDDGKk5nPIR/view",
+      // docLink:"https://drive.google.com/file/d/159RYFlEF57ySGYPVn2WckdDDGKk5nPIR/view",
+      docLink:"/docs/Annexure D - Career Highlights.docx",
       pdfLink: "https://drive.google.com/uc?export=download&id=1r8o1YvM1BE3X5PjbNghSHirvu49g4d7l"
     }
   ];
@@ -63,7 +67,7 @@ const Annexures = () => {
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium"
                     >
                       <FileText className="w-4 h-4" />
-                      Download
+                      PDF
                     </a>
                   </td>
                   <td className="text-center px-6 py-4">
