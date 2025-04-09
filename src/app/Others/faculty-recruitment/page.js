@@ -80,6 +80,26 @@ const RecruitmentProcess = () => {
                   </div>
                 </td>
               </tr>
+
+              <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
+                <td className="text-left px-6 py-4 text-gray-800">
+                  <p className="leading-relaxed">
+                    Corrigendum to Advertisement for Faculty Positions 
+                  </p>
+                </td>
+                <td className="text-center px-6 py-4">
+                  <div className="flex flex-col items-center gap-2">
+                    <a
+                      href="https://drive.google.com/uc?export=download&id=1kBRuNhxo8gm-Zz-balhXd4ByJjjJETV4"
+                      download
+                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Download
+                    </a>
+                  </div>
+                </td>
+              </tr>
               
             </tbody>
           </table>
