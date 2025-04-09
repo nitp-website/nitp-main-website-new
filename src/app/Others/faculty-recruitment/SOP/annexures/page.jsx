@@ -7,26 +7,22 @@ const Annexures = () => {
     { 
       id: 1, 
       name: "Annexure A -Background Details", 
-      pdfLink: "https://drive.google.com/file/d/1JEFKzbzKTWl5XSh_SBMNJKYQSx4KIPIl/view",
-      docLink: "https://drive.google.com/file/d/1o17qgQ_9cxIPIsC0eDFPlte6pkH4b0OR/view" 
+      pdfLink: "https://drive.google.com/uc?export=download&id=1JEFKzbzKTWl5XSh_SBMNJKYQSx4KIPIl"
     },
     { 
       id: 2, 
       name: "Annexure-B - Credit Point Summary", 
-      pdfLink: "https://drive.google.com/file/d/1-PTkeQR6wU5HPqBijaPAE9fXWqg0NiHq/view",
-      docLink: "https://drive.google.com/file/d/1n9MIu2_phsSHP_UB7c8Jrv8uWXeLyxiU/view"
+      pdfLink: "https://drive.google.com/uc?export=download&id=1-PTkeQR6wU5HPqBijaPAE9fXWqg0NiHq"
     },
     { 
       id: 3, 
       name: "Annexure-C - Carry Forward Credit Point Summary", 
-      pdfLink: "https://drive.google.com/file/d/1kLcDbPRkOUowTc1_jqE5t6tV3GZpB0X3/view",
-      docLink: "https://drive.google.com/file/d/1rqvNk8s3mhhNhohdpz2AsTwHnh97Y-rp/view"
+      pdfLink: "https://drive.google.com/uc?export=download&id=1kLcDbPRkOUowTc1_jqE5t6tV3GZpB0X3"
     },
     { 
       id: 4, 
       name: "Annexure D - Career Highlights", 
-      pdfLink: "https://drive.google.com/file/d/1r8o1YvM1BE3X5PjbNghSHirvu49g4d7l/view",
-      docLink: "https://drive.google.com/file/d/1zoY9ycMG2yPxnrR5v5x7OF_QxClrVsjn/view"
+      pdfLink: "https://drive.google.com/uc?export=download&id=1r8o1YvM1BE3X5PjbNghSHirvu49g4d7l"
     }
   ];
 
@@ -43,8 +39,7 @@ const Annexures = () => {
               <tr className="bg-[#421010] text-white">
                 <th className="text-left px-6 py-4 font-semibold w-24">S.No.</th>
                 <th className="text-left px-6 py-4 font-semibold">Annexure</th>
-                <th className="text-center px-6 py-4 font-semibold w-48">PDF</th>
-                <th className="text-center px-6 py-4 font-semibold w-48">DOC</th>
+                <th className="text-center px-6 py-4 font-semibold w-48">Download</th>
               </tr>
             </thead>
             <tbody>
@@ -57,24 +52,12 @@ const Annexures = () => {
                   <td className="text-left px-6 py-4 text-gray-800">{item.name}</td>
                   <td className="text-center px-6 py-4">
                     <a
-                      href={item.docLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium"
-                    >
-                      <FileText className="w-4 h-4" />
-                      DOC
-                    </a>
-                  </td>
-                  <td className="text-center px-6 py-4">
-                    <a
                       href={item.pdfLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      download
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium"
                     >
                       <FileText className="w-4 h-4" />
-                      PDF
+                      Download
                     </a>
                   </td>
                 </tr>
