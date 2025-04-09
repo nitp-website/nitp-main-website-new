@@ -39,12 +39,8 @@ const Annexures = () => {
               <tr className="bg-[#421010] text-white">
                 <th className="text-left px-6 py-4 font-semibold w-24">S.No.</th>
                 <th className="text-left px-6 py-4 font-semibold">Annexure</th>
-// <<<<<<< main
+
                 <th className="text-center px-6 py-4 font-semibold w-48">Download</th>
-// =======
-//                 <th className="text-center px-6 py-4 font-semibold w-48">DOC</th>
-//                 <th className="text-center px-6 py-4 font-semibold w-48">PDF</th>
-// >>>>>>> main
               </tr>
             </thead>
             <tbody>
