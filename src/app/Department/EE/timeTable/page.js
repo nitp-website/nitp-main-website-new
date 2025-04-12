@@ -1,11 +1,12 @@
 import BackDepartment from "../../../components/department/BackDepartment"
 import { Download } from 'lucide-react';
 
+
 function Page() {
     const data = [
         {
-            name: "Applied Physics Dept Time Table for the Class Jan- June 2025 (Even Semster)",
-            link: "https://drive.google.com/file/d/16mfMhjDhREUaiUn0R9Dxxl5LgW9UTbTF/view"
+            name: "EE Dept Time Table for the Class Jan- June 2025 (Even Semster)",
+            link: "https://drive.google.com/file/d/18ixY0wSxktNUZra0mlrrSP8rBOJi25ZQ/view"
         },
     ];
     return (
@@ -18,11 +19,11 @@ function Page() {
                 </div>
                 <div className="mt-2">
                     <p className="text-gray-500 text-xl font-semibold">
-                        Applied Physics and Materials Engineering
+                        Electrical Engineering
                     </p>
                 </div>
                 <div>
-                    <BackDepartment navigate={'/Department/Phy'} />
+                    <BackDepartment navigate={'/Department/EE'} />
                 </div>
             </div>
             <div className="mx-auto px-4 py-8 w-full">
@@ -74,7 +75,6 @@ function Page() {
                 </div>
             </div>
         </div>
-
     )
 }
 export default Page

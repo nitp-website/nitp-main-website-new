@@ -22,17 +22,21 @@ export default function Page() {
                 <div className="mb-10">
                     <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">VISION :-</div>
                     <ul className="list-none list-inside ml-5 space-y-4 lg:text-base text-sm text-justify">
-                        <li>To provide globally competitive and high quality human resource by preparing students with broad-based / specialized technical education at UG, PG, and Ph.D. levels.
-                            To increase research intensity and become a leading product based innovation centre by significantly contributing towards development of new technologies.
-                            To contribute to the country and the society at large by strengthening the interaction between academia and industries for addressing the need of the mankind.</li>
+                        <li>To become a centre of excellence to impart up-to-date technical education, which will let our students to attain their maximum technical potential, managerial capability, be competitive in the job market and to emerge as a leading research hub.</li>
                     </ul>
                 </div>
                 {/* mission */}
                 <div className="mb-10">
                     <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">MISSION :-</div>
-                    <ol className="list-none list-inside ml-5 space-y-4 text-sm lg:text-base text-justify ">
+                    <ol className="list-decimal list-inside ml-5 space-y-4 text-sm lg:text-base text-justify ">
                         <li>
-                            To become a centre of excellence to impart up-to-date technical education, which will let our students to attain their maximum technical potential, managerial capability, be competitive in the job market and to emerge as a leading research hub.
+                            To provide globally competitive and high quality human resource by preparing students with broad-based / specialized technical education at UG, PG, and Ph.D. levels
+                        </li>
+                        <li>
+                            To increase research intensity and become a leading product based innovation centre by significantly contributing towards development of new technologies
+                        </li>
+                        <li>
+                            To contribute to the country and the society at large by strengthening the interaction between academia and industries for addressing the need of the mankind
                         </li>
                     </ol>
                 </div>

@@ -44,14 +44,14 @@ import axios from "axios";
 export default function Archi() {
   const router = useRouter();
   const [Notices, setNotices] = useState([]);
-  useEffect(()=>{
-    const getData = async()=>{
-      const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=arch`);
+  useEffect(() => {
+    const getData = async () => {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=arch`);
       console.log(response.data);
       setNotices(response.data);
     }
     getData();
-  },[])
+  }, [])
   return (
     <div className="p-10 max-sm:px-0   text-black">
       {/* heading */}
@@ -82,19 +82,19 @@ export default function Archi() {
               <button className="hover:text-blue-500">View All</button>
             </div>
             <div className="overflow-hidden flex flex-col">
-            {Notices.map((notice, id) => {
-                  if(notice.isVisible === 1){
-                    return (
-                      <DepartmentNotify1
-                        key={id}
-                        title={notice.title}
-                        attachments = {notice.attachments}
-                        important = {notice.important}
-                        link={notice.notice_link? notice.notice_link : ""}
+              {Notices.map((notice, id) => {
+                if (notice.isVisible === 1) {
+                  return (
+                    <DepartmentNotify1
+                      key={id}
+                      title={notice.title}
+                      attachments={notice.attachments}
+                      important={notice.important}
+                      link={notice.notice_link ? notice.notice_link : ""}
                     />
                   )
-                  }
-                })}
+                }
+              })}
             </div>
           </div>
         </div>
@@ -107,17 +107,7 @@ export default function Archi() {
             About
           </div>
           <div className="text-justify max-sm:text-[12px]">
-            The Department of Architecture was established in the Bihar
-            College of Engineering (BCE) Patna in the year 1979 under Patna
-            University. It was the ¬ first time that architectural education
-            had commenced in Bihar. When BCE Patna was rechristened as
-            National Institute of Technology Patna on 28th January 2004, it
-            came under the control of Ministry of Human Resource Development
-            (MHRD), Government of India. The Department of Architecture and
-            Planning offers programmes in Bachelor of Architecture (B.Arch.),
-            Master of Urban and Regional Planning (MURP), Master of
-            Architecture (Sustainable Architecture) and Ph.D. in Architecture
-            and Planning.
+            The Department of Architecture was established at the Bihar College of Engineering (BCE) Patna in 1979 under Patna University. It was the first time that architectural education had commenced in Bihar. When BCE Patna was rechristened as the National Institute of Technology Patna on 28th January 2004, it came under the control of the Ministry of Human Resource Development (MHRD), Government of India. The Department of Architecture and Planning offers programmes in Bachelor of Architecture (B.Arch.), Master of Urban and Regional Planning (MURP),  and Ph.D. in Architecture and Planning.
             <button
               onClick={() => router.push('/Department/Archi/about')}
               className="text-blue-600"
