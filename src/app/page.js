@@ -14,6 +14,9 @@ import 'slick-carousel/slick/slick-theme.css';
 export const metadata = {
   title: "NIT PATNA | National Institute of Technology Patna",
   description: "Official website of National Institute of Technology Patna",
+  verification: {
+    google: "5gbX6CeIgXNqZ2CuUrXtlfpdcPg-v8n4l_mx3CXfnwU",
+  },
 };
 export default function Home() {
   return (
