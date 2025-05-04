@@ -31,9 +31,6 @@ const Slider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="/homepage/front.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
           <img src="/homepage/MainEntrance.jpg" />
         </SwiperSlide>
         <SwiperSlide>
