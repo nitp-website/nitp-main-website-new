@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function DepartmentNotify1(props) {
-    const link = props.link ? JSON.parse(props.link).url : '';
+    const link = props.link ? JSON.parse(props.link).url : props.attachments?.[0]?.url || "";
     const color = ["yellow-700", "black"];
     const [textCol, settextCol] = useState("black");
     let flag = 0;

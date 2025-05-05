@@ -36,6 +36,9 @@ const Slider = () => {
         <SwiperSlide>
           <img src="/homepage/MainBuilding.jpg" />
         </SwiperSlide>
+        {/* <SwiperSlide>
+          <img src="/homepage/yoga.jpg" />
+        </SwiperSlide> */}
         <SwiperSlide>
           <img src="/RITEEC POSTER.png"/>
         </SwiperSlide>
@@ -57,18 +60,18 @@ const Slider = () => {
         <SwiperSlide>
           <img src="https://i.postimg.cc/02dwnf6F/nit-patna-002.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <img src="https://i.postimg.cc/zX1hTMfT/nit-patna-003.jpg" />
-        </SwiperSlide>
+        </SwiperSlide> */}
         <SwiperSlide>
           <img src="https://i.postimg.cc/h4mxzgKS/nit-patna-004.jpg" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://i.postimg.cc/fyY06783/nit-patna-005.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <img src="https://i.postimg.cc/sgvVmgT5/Screenshot_2024-07-31_154315.png" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </>
   );

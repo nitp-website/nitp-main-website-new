@@ -43,7 +43,7 @@ export default function Error({ error, reset }) {
         </div>
         
         <h1 className="text-2xl font-bold text-red-900 mb-4">
-          Under Maintenance
+          Under Maintenance...
         </h1>
         
         <p className="text-gray-600 mb-8">
