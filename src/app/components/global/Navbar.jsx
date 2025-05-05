@@ -38,7 +38,7 @@ import International from "../../assets/images/international.svg";
 import Jobs from "../../assets/images/jobs.svg";
 import Mail from "../../assets/images/mail.svg";
 import Notice from "../../assets/images/notice.svg";
-import Bharat from "../../assets/images/bharat.svg"
+import Bharat from "../../assets/images/bharat.svg";
 import NssNew from "../../assets/images/nssnew.svg";
 import Officers from "../../assets/images/officers.svg";
 import Portal from "../../assets/images/portal.svg";
@@ -52,7 +52,7 @@ import Structure from "../../assets/images/structure.svg";
 import Studentexchange from "../../assets/images/studentexchange.svg";
 import women from "../../assets/images/women.svg";
 import Tequip from "../../assets/images/Tequip.svg";
-import scst from "../../assets/images/scst.svg"
+import scst from "../../assets/images/scst.svg";
 import security from "../../assets/images/security.svg";
 import Library from "../../assets/images/Library.svg";
 import Hostel from "../../assets/images/hostel.svg";
@@ -61,25 +61,22 @@ import Bank from "../../assets/images/bank.svg";
 import Hospital from "../../assets/images/Hospital.svg";
 import EMU from "../../assets/images/EMU.svg";
 import ESU from "../../assets/images/ESU.svg";
-import ComputerCentre from "../../assets/images/ComputerCentre.svg"
-import itservice from "../../assets/images/itservice.svg"
-import cse from "../../assets/images/cse.svg"
-import ece from "../../assets/images/ECE.svg"
-import ee from "../../assets/images/ee.svg"
-import archi from "../../assets/images/archi.svg"
-import chem from "../../assets/images/chem.svg"
-import civil from "../../assets/images/civil.svg"
-import hss from "../../assets/images/hss.svg"
-import math from "../../assets/images/math.svg"
-import mech from "../../assets/images/mech.svg"
-import physics from "../../assets/images/physics.svg"
+import ComputerCentre from "../../assets/images/ComputerCentre.svg";
+import itservice from "../../assets/images/itservice.svg";
+import cse from "../../assets/images/cse.svg";
+import ece from "../../assets/images/ECE.svg";
+import ee from "../../assets/images/ee.svg";
+import archi from "../../assets/images/archi.svg";
+import chem from "../../assets/images/chem.svg";
+import civil from "../../assets/images/civil.svg";
+import hss from "../../assets/images/hss.svg";
+import math from "../../assets/images/math.svg";
+import mech from "../../assets/images/mech.svg";
+import physics from "../../assets/images/physics.svg";
 
-
-
-import useNavigationEvent from "./useNavigationEvent"
+import useNavigationEvent from "./useNavigationEvent";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
-
 
 //List of all nav items
 
@@ -114,7 +111,6 @@ const navItems = [
             link: "/Institute/?tab=campus",
             iconImage: Campus,
           },
-          
         ],
       },
       {
@@ -137,7 +133,7 @@ const navItems = [
             link: "/Others/NIRF",
             iconImage: Document,
           },
-          
+
           // {
           //   label: "Data of ARIIA",
           //   link: "/Others/UpdatedSoon",
@@ -146,16 +142,14 @@ const navItems = [
         ],
       },
       {
-        
-          label: "Magazine",
-          link: "/Institute/Magazine",
-          iconImage: Digital,
-        
+        label: "Magazine",
+        link: "/Institute/Magazine",
+        iconImage: Digital,
       },
       {
         label: "PAN/GST",
-        link:"https://drive.google.com/file/d/1Njk4q-iZudKaNHgZ7eYprCfaFKd1BroC/view?usp=sharing",
-        iconImage:Resource
+        link: "https://drive.google.com/file/d/1Njk4q-iZudKaNHgZ7eYprCfaFKd1BroC/view?usp=sharing",
+        iconImage: Resource,
       },
     ],
   },
@@ -245,7 +239,6 @@ const navItems = [
         link: "#",
         iconImage: Person,
         children: [
-          
           {
             label: "Institute Disciplinary Committee",
             link: "/Administration/IDC",
@@ -286,16 +279,14 @@ const navItems = [
       //   link: "#",
       //   iconImage: Digital,
       //   children: [
-         
-         
-         
+
       //   ],
       // },
-       {
-            label: "Organization Chart",
-            link: "https://drive.google.com/file/d/1-rCS5RsPydppIQKOYVM8qNYK8y4tUTMZ/view?usp=sharing",
-            iconImage: Notice,
-          },
+      {
+        label: "Organization Chart",
+        link: "https://drive.google.com/file/d/1-rCS5RsPydppIQKOYVM8qNYK8y4tUTMZ/view?usp=sharing",
+        iconImage: Notice,
+      },
     ],
   },
   {
@@ -309,13 +300,21 @@ const navItems = [
         mlabel: "Departments",
         iconImage: Department,
         children: [
-          { label: "Applied Physics and Materials Engineering", link: "/Department/Phy", iconImage: physics },
+          {
+            label: "Applied Physics and Materials Engineering",
+            link: "/Department/Phy",
+            iconImage: physics,
+          },
           {
             label: "Architecture & Planning",
             link: "/Department/Archi",
             iconImage: archi,
           },
-          { label: "Chemical Science and Technology", link: "/Department/Chem", iconImage: chem },
+          {
+            label: "Chemical Science and Technology",
+            link: "/Department/Chem",
+            iconImage: chem,
+          },
           {
             label: "Civil Engineering",
             link: "/Department/CE",
@@ -346,7 +345,11 @@ const navItems = [
           //   link: "/Department/Material",
           //   iconImage: mech,
           // },
-          { label: " Mathematics and Computing Technology", link: "/Department/Math", iconImage: math },
+          {
+            label: " Mathematics and Computing Technology",
+            link: "/Department/Math",
+            iconImage: math,
+          },
           {
             label: "Mechanical Engineering",
             link: "/Department/ME",
@@ -362,7 +365,6 @@ const navItems = [
           //   link: "/Department/Chemical",
           //   iconImage: chem,
           // },
-          
         ],
       },
       {
@@ -392,25 +394,8 @@ const navItems = [
       },
       {
         label: "Admission",
-        link: "/Academic/Admission?tab=JoSAA",
+        link: "/Academic/Admission",
         iconImage: Admission,
-        children: [
-          {
-            label: "Study in India (SII)",
-            link: "/Academic/Admission?tab=SII",
-            iconImage: Admission,
-          },
-          {
-            label: "CMCT/JoSSA/CSAB/Others",
-            link: "/Academic/Admission?tab=JoSAA",
-            iconImage: Admission,
-          },
-          // {
-          //   label: "Relaxation Criteria",
-          //   link: "/Academic/Admission?tab=Relaxation",
-          //   iconImage: Admission,
-          // },
-        ],
       },
 
       {
@@ -578,7 +563,6 @@ const navItems = [
         link: "https://mis.nitp.ac.in/Miscellaneous.aspx",
         iconImage: Fee,
       },
-      
 
       // {
       //   label: "Transportation",
@@ -648,7 +632,7 @@ const navItems = [
       //   link: "#",
       //   iconImage: Structure,
       //   children: [
-          
+
       //     {
       //       label: "Incubation Center",
       //       link: "https://web.nitp.ac.in/incubation_center/index.html",
@@ -736,8 +720,6 @@ export default function Navbar() {
     };
   }, []);
 
-
-
   return (
     <>
       <div className="bg-black h-6">
@@ -777,53 +759,89 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/facebook.png" alt="facebook" className="w-4 h-4 md:w-5 md:h-5" />
+              <img
+                src="/facebook.png"
+                alt="facebook"
+                className="w-4 h-4 md:w-5 md:h-5"
+              />
             </a>
             <a
               href="https://twitter.com/nitpatna1/status/1749690769500430475?s=48"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/twitter.svg" alt="twitter" className="w-4 h-4 md:w-5 md:h-5" />
+              <img
+                src="/twitter.svg"
+                alt="twitter"
+                className="w-4 h-4 md:w-5 md:h-5"
+              />
             </a>
             <a
               href="https://www.linkedin.com/school/national-institute-of-technology-patna/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/linkedin.svg" alt="linkedin" className="w-4 h-4 md:w-5 md:h-5" />
+              <img
+                src="/linkedin.svg"
+                alt="linkedin"
+                className="w-4 h-4 md:w-5 md:h-5"
+              />
             </a>
             <a
               href="https://goo.gl/maps/srZ6whpfDGqg85sp6"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/location.png" alt="location" className="w-4 h-4 md:w-5 md:h-5" />
+              <img
+                src="/location.png"
+                alt="location"
+                className="w-4 h-4 md:w-5 md:h-5"
+              />
             </a>
           </div>
         </div>
       </div>
 
-      <div className={`mobiletest navbar-container ${isSticky ? "sticky-nav md:py-0 stickdiv" : ""}`}>
+      <div
+        className={`mobiletest navbar-container ${
+          isSticky ? "sticky-nav md:py-0 stickdiv" : ""
+        }`}
+      >
         <div className="header-top mx-auto flex w-full max-w-9xl justify-between px-[1px] md:px-4 py-2 bg-white/40 backdrop-blur-lg shadow-lg">
           {/* Mobile Header Layout */}
           <div className="flex md:hidden items-center justify-between w-full">
             <div className="flex-shrink-0">
               <Link href="/">
-                <Image src={logo} alt="NIT PATNA" width={50} height={50} className="w-auto h-12" />
+                <Image
+                  src={logo}
+                  alt="NIT PATNA"
+                  width={50}
+                  height={50}
+                  className="w-auto h-12"
+                />
               </Link>
             </div>
             <div className="flex flex-col items-center flex-1 text-center">
-              <div className="text-[0.65rem] font-semibold text-black">राष्ट्रीय प्रौद्योगिकी संस्थान पटना</div>
-              <div className="text-[0.6rem] text-black">NATIONAL INSTITUTE OF TECHNOLOGY PATNA</div>
-              <div className="text-[0.5rem] text-black mt-1 hidden">An Institute of National Importance</div>
+              <div className="text-[0.65rem] font-semibold text-black">
+                राष्ट्रीय प्रौद्योगिकी संस्थान पटना
+              </div>
+              <div className="text-[0.6rem] text-black">
+                NATIONAL INSTITUTE OF TECHNOLOGY PATNA
+              </div>
+              <div className="text-[0.5rem] text-black mt-1 hidden">
+                An Institute of National Importance
+              </div>
             </div>
           </div>
 
           {/* Desktop Header Layout */}
           <div className="right-content hidden md:block">
-            <div className="font-bold textmob text-black">राष्ट्रीय प्रौद्योगिकी संस्थान पटना</div>
-            <div className="text-sm textmob text-black">NATIONAL INSTITUTE OF TECHNOLOGY PATNA</div>
+            <div className="font-bold textmob text-black">
+              राष्ट्रीय प्रौद्योगिकी संस्थान पटना
+            </div>
+            <div className="text-sm textmob text-black">
+              NATIONAL INSTITUTE OF TECHNOLOGY PATNA
+            </div>
           </div>
           <div className="hidden md:flex justify-center items-center">
             <Link href="/">
@@ -831,7 +849,9 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="institute-info pt-4 hidden text-center items-center justify-center md:block text-black">
-            <div>An Institute of National Importance under Ministry of Education</div>
+            <div>
+              An Institute of National Importance under Ministry of Education
+            </div>
             <div>(Shiksha Mantralaya), Government of India</div>
           </div>
         </div>
@@ -842,19 +862,21 @@ export default function Navbar() {
               <NavItem key={index} item={item} />
             ))}
           </section>
-          <FiMenu 
-            onClick={() => setSideMenuOpen(true)} 
-            className="cursor-pointer text-3xl md:hidden text-black ml-auto" 
+          <FiMenu
+            onClick={() => setSideMenuOpen(true)}
+            className="cursor-pointer text-3xl md:hidden text-black ml-auto"
           />
         </div>
 
-        {isSideMenuOpen && <MobileNav closeSideMenu={() => setSideMenuOpen(false)} />}
+        {isSideMenuOpen && (
+          <MobileNav closeSideMenu={() => setSideMenuOpen(false)} />
+        )}
       </div>
     </>
   );
 }
 
-// 
+//
 function NavItem({ item }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -864,24 +886,37 @@ function NavItem({ item }) {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      
-      <Link href={item.link ?? "#"} className="flex cursor-pointer items-center gap-2 px-10 py-3 text-white transition-all group-hover:text-red-200">
+      <Link
+        href={item.link ?? "#"}
+        className="flex cursor-pointer items-center gap-2 px-10 py-3 text-white transition-all group-hover:text-red-200"
+      >
         <span>{item.label}</span>
-        {item.children && <IoIosArrowDown className={`transition-all ${isOpen ? "rotate-180" : ""}`} />}
+        {item.children && (
+          <IoIosArrowDown
+            className={`transition-all ${isOpen ? "rotate-180" : ""}`}
+          />
+        )}
       </Link>
       {item.children && (
-        <div className={`absolute right-0 top-10 w-auto flex-col gap-1 rounded-lg bg-white  shadow-md transition-all ${isOpen ? "flex" : "hidden"} group`}>
+        <div
+          className={`absolute right-0 top-10 w-auto flex-col gap-1 rounded-lg bg-white  shadow-md transition-all ${
+            isOpen ? "flex" : "hidden"
+          } group`}
+        >
           <div className="border-solid border-2 border-red-800 m-4 p-2 rounded-lg	bg-white shadow-red-500/30 shadow-md">
-          {item.children.map((child, index) => (
-            <DropdownItem key={index} item={child} parentLabel={item.mlabel} />
-          ))}</div>
+            {item.children.map((child, index) => (
+              <DropdownItem
+                key={index}
+                item={child}
+                parentLabel={item.mlabel}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
   );
 }
-
-
 
 function DropdownItem({ item, parentLabel }) {
   const [isSOpen, setIsSOpen] = useState(false);
@@ -892,39 +927,54 @@ function DropdownItem({ item, parentLabel }) {
       onMouseEnter={() => setIsSOpen(true)}
       onMouseLeave={() => setIsSOpen(false)}
     >
-      
-      <Link href={item.link ?? "#"} className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-neutral-800 hover:text-red-900 hover:bg-red-100">
+      <Link
+        href={item.link ?? "#"}
+        className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-neutral-800 hover:text-red-900 hover:bg-red-100"
+      >
         {item.iconImage && <Image src={item.iconImage} alt="item-icon" />}
         <span className="whitespace-nowrap pl-3">{item.label}</span>
-        {item.children && <IoIosArrowDropright className={`ml-auto transition-all ${isSOpen ? "rotate-180" : ""}`} />}
+        {item.children && (
+          <IoIosArrowDropright
+            className={`ml-auto transition-all ${isSOpen ? "rotate-180" : ""}`}
+          />
+        )}
       </Link>
-      
+
       {item.children && (
-        
-        <div className={`absolute left-full top-0  w-auto flex-col gap-1 rounded-lg shadow-md transition-all  bg-neutral-200 md:bg-neutral-100 ${isSOpen ? "flex" : "hidden"}`}>
+        <div
+          className={`absolute left-full top-0  w-auto flex-col gap-1 rounded-lg shadow-md transition-all  bg-neutral-200 md:bg-neutral-100 ${
+            isSOpen ? "flex" : "hidden"
+          }`}
+        >
           <div className="border-solid border-2 border-red-800 m-4 p-2 rounded-lg	">
-          {item.children.map((subChild, subIndex) => (
-            <Link key={subIndex} href={subChild.link ?? "#"} className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-black md:text-neutral-900 hover:text-red-900 hover:bg-red-100">
-              {subChild.iconImage && <Image src={subChild.iconImage} alt="item-icon" />}
-              <span className="whitespace-nowrap pl-3">{subChild.label}</span>
-            </Link>
-          ))}</div>
+            {item.children.map((subChild, subIndex) => (
+              <Link
+                key={subIndex}
+                href={subChild.link ?? "#"}
+                className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-black md:text-neutral-900 hover:text-red-900 hover:bg-red-100"
+              >
+                {subChild.iconImage && (
+                  <Image src={subChild.iconImage} alt="item-icon" />
+                )}
+                <span className="whitespace-nowrap pl-3">{subChild.label}</span>
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </div>
   );
 }
 function MobileNav({ closeSideMenu }) {
-
-
-
   return (
     <div className="mobile-nav text-black">
       <div className="mobile-nav-content text-black">
-        <AiOutlineClose onClick={closeSideMenu} className="mobile-nav-close text-4xl text-black" />
+        <AiOutlineClose
+          onClick={closeSideMenu}
+          className="mobile-nav-close text-4xl text-black"
+        />
         <div className="flex flex-col text-base gap-2 transition-all ">
           {navItems.map((item, index) => (
-            
             <SingleNavItem key={index} item={item} onClick={closeSideMenu} />
           ))}
         </div>
@@ -933,33 +983,37 @@ function MobileNav({ closeSideMenu }) {
   );
 }
 
-
-
-
-function SingleNavItem({ item ,closeSideMenu}) {
+function SingleNavItem({ item, closeSideMenu }) {
   const [animationParent] = useAutoAnimate();
   const [isItemOpen, setItemOpen] = useState(false);
- 
+
   return (
     <div ref={animationParent} className="relative px-1 py-3 transition-all">
-      <p onClick={() => setItemOpen(!isItemOpen)} className="flex cursor-pointer items-center gap-2 text-neutral-900 group-hover:text-black">
-      {item.iconImage && <Image src={item.iconImage} alt="item-icon" />}
-      <Link href={ "#"} onClick={closeSideMenu} >
-                {item.label}
-              </Link>
-        {item.children && <IoIosArrowDown className={`text-xs transition-all ${isItemOpen && "rotate-180"}`} />}
+      <p
+        onClick={() => setItemOpen(!isItemOpen)}
+        className="flex cursor-pointer items-center gap-2 text-neutral-900 group-hover:text-black"
+      >
+        {item.iconImage && <Image src={item.iconImage} alt="item-icon" />}
+        <Link href={"#"} onClick={closeSideMenu}>
+          {item.label}
+        </Link>
+        {item.children && (
+          <IoIosArrowDown
+            className={`text-xs transition-all ${isItemOpen && "rotate-180"}`}
+          />
+        )}
       </p>
       {isItemOpen && item.children && (
         <p className="w-auto flex-col gap-1  bg-neutral-50 py-3 transition-all flex">
           {item.children.map((child, index) => (
-            <SubSidemenu key={index} item={child}/>
+            <SubSidemenu key={index} item={child} />
           ))}
         </p>
       )}
     </div>
   );
 }
-function SubSidemenu({ item,closeSideMenu }) {
+function SubSidemenu({ item, closeSideMenu }) {
   const [isSubItemOpen, setSubItemOpen] = useState(false);
   const [isItemOpen, setItemOpen] = useState(true);
   const handleSubToggle = () => {
@@ -968,19 +1022,33 @@ function SubSidemenu({ item,closeSideMenu }) {
 
   return (
     <div className="relative px-1 py-1 transition-all ">
-      <p onClick={handleSubToggle} className="flex cursor-pointer items-center gap-1 text-neutral-700 group-hover:text-black">
-      {item.iconImage && <Image src={item.iconImage} alt="item-icon" />}
+      <p
+        onClick={handleSubToggle}
+        className="flex cursor-pointer items-center gap-1 text-neutral-700 group-hover:text-black"
+      >
+        {item.iconImage && <Image src={item.iconImage} alt="item-icon" />}
         <Link href={item.link ?? "#"} onClick={closeSideMenu}>
-        <span>{item.label}</span>
-              </Link>
-        {item.children && <IoIosArrowDown className={`text-xs transition-all ${isSubItemOpen && "rotate-180"} `} />}
+          <span>{item.label}</span>
+        </Link>
+        {item.children && (
+          <IoIosArrowDown
+            className={`text-xs transition-all ${
+              isSubItemOpen && "rotate-180"
+            } `}
+          />
+        )}
       </p>
       {isSubItemOpen && item.children && (
         <div className="w-auto flex-col gap-1 bg-white py-1 transition-all text-sm">
           {item.children.map((subChild, index) => (
             <p key={index} className="flex pl-4">
-              {item.iconImage && <Image src={subChild.iconImage} alt="item-icon" />}
-              <Link href={subChild.link ?? "#"} className="flex cursor-pointer items-center py-1 text-neutral-700 hover:text-black pl-1">
+              {item.iconImage && (
+                <Image src={subChild.iconImage} alt="item-icon" />
+              )}
+              <Link
+                href={subChild.link ?? "#"}
+                className="flex cursor-pointer items-center py-1 text-neutral-700 hover:text-black pl-1"
+              >
                 <span>{subChild.label}</span>
               </Link>
             </p>
