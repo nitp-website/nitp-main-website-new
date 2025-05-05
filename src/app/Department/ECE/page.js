@@ -12,14 +12,14 @@ import axios from 'axios';
 export default function ECE() {
   const router = useRouter()
   const [Notices, setNotices] = useState([]);
-  useEffect(()=>{
-    const getData = async()=>{
-      const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=ece`);
+  useEffect(() => {
+    const getData = async () => {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=ece`);
       console.log(response.data);
       setNotices(response.data);
     }
     getData();
-  },[])
+  }, [])
   return (
     <div className="p-10 max-sm:px-0  text-black">
       {/* heading */}
@@ -52,18 +52,18 @@ export default function ECE() {
               <button className="hover:text-blue-500">View All</button>
             </div>
             <div className="overflow-hidden flex flex-col">
-                {Notices.map((notice, id) => {
-                  return (
-                    <DepartmentNotify1
-                        key={id}
-                        title={notice.title}
-                        attachments = {notice.attachments}
-                        important = {notice.important}
-                        link={notice.notice_link? notice.notice_link : ""}
-                    />
-                 )
-                })}
-              </div>
+              {Notices.map((notice, id) => {
+                return (
+                  <DepartmentNotify1
+                    key={id}
+                    title={notice.title}
+                    attachments={notice.attachments}
+                    important={notice.important}
+                    link={notice.notice_link ? notice.notice_link : ""}
+                  />
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -75,25 +75,25 @@ export default function ECE() {
             About
           </div>
           <div className="text-justify max-sm:text-[12px]">
-          The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students. The department is dedicated to providing quality education at both undergraduate (UG) and postgraduate levels. Currently, it offers the following programs:
-   <br />
-   1. B.Tech in "Electronics & Communication Engineering" with an intake of 161.
-   <br />
-   2. Dual degree (B.Tech + M.Tech) in "Microelectronics and VLSI System Design" with an intake of 22.
-   <br />
-   3. M.Tech in:
-   <br />
-   &nbsp;&nbsp;&nbsp;(a) "Next Generation Wireless Technologies" with an intake of 22.
-   <br />
-   &nbsp;&nbsp;&nbsp;(b) "Microelectronics and VLSI System Design" with an intake of 22.
-   <br />
-   4. Ph.D. (Full-time and Part-time) in Electronics and Communication Engineering.
-   <br />
+            The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students. The department is dedicated to providing quality education at both undergraduate (UG) and postgraduate levels. Currently, it offers the following programs:
+            <br />
+            1. B.Tech in "Electronics & Communication Engineering" with an intake of 161.
+            <br />
+            2. Dual degree (B.Tech + M.Tech) in "Microelectronics and VLSI System Design" with an intake of 22.
+            <br />
+            3. M.Tech in:
+            <br />
+            &nbsp;&nbsp;&nbsp;(a) "Next Generation Wireless Technologies" with an intake of 22.
+            <br />
+            &nbsp;&nbsp;&nbsp;(b) "Microelectronics and VLSI System Design" with an intake of 22.
+            <br />
+            4. Ph.D. (Full-time and Part-time) in Electronics and Communication Engineering.
+            <br />
             <button
-                onClick={() => router.push('/Department/ECE/about')}
-                className="text-blue-600 ml-2"
-              >
-                more..
+              onClick={() => router.push('/Department/ECE/about')}
+              className="text-blue-600 ml-2"
+            >
+              more..
             </button>
           </div>
         </div>
@@ -117,6 +117,16 @@ export default function ECE() {
           <DepartmentNavigationButton
             onClick={() => router.push('/Department/ECE/timeTable')}
             Title={'TIME TABLE'}
+          />
+
+          <DepartmentNavigationButton
+            onClick={() => router.push('/Department/ECE/PO')}
+            Title={'PO'}
+          />
+
+          <DepartmentNavigationButton
+            onClick={() => router.push('/Department/ECE/PEO')}
+            Title={'PEO'}
           />
 
           <DepartmentNavigationButton

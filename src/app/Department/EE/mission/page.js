@@ -1,9 +1,9 @@
 import BackDepartment from "../../../components/department/BackDepartment";
 
 
-export default function mission(){
+export default function mission() {
     return (
-        <div className=" flex flex-col p-10 max-sm:p-2 text-black">  
+        <div className=" flex flex-col p-10 max-sm:p-2 text-black">
             <div className="flex flex-col  mb-16">
                 <div>
                     <p className="text-red-900 text-2xl  font-bold">
@@ -15,7 +15,7 @@ export default function mission(){
                         ELECTRICAL ENGINEERING
                     </p>
                 </div>
-                <BackDepartment navigate={"/Department/EE"}/>
+                <BackDepartment navigate={"/Department/EE"} />
 
             </div>
 
@@ -24,17 +24,17 @@ export default function mission(){
                 <div className="mb-10">
                     <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">VISION :-</div>
                     <ul className="list-disc list-inside ml-5 space-y-4 text-sm lg:text-base">
-                        <li>To offer quality education in electrical engineering to meet the requirements of industry, society and nation.</li>
-                        <li>To provide contemporary technical knowhow by regular upgradation of curriculum as per the needs of industry and educative exposures like short term courses, conferences, etc.</li>
-                        <li>To establish state-of-the-art infrastructural facilities in the arena of academics and research.</li>
-                        <li>To inculcate leadership, moral and ethical values among the students.</li>
+                        <li>To achieve sustainable growth towards academic excellence in the field of Electrical Engineering.</li>
                     </ul>
                 </div>
                 {/* mission */}
                 <div className="mb-10">
                     <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">MISSION :-</div>
                     <ul className="list-disc list-inside ml-5 space-y-4 text-sm lg:text-base">
-                        <li>To achieve sustainable growth towards academic excellence in the field of Electrical Engineering.</li>
+                        <li>To offer quality education in Electrical Engineering to meet the requirements of industry, society and nation.</li>
+                        <li>To provide contemporary technical knowhow by regular upgradation of curriculum as per the needs of industry and educative exposures like short term courses, conferences, etc.</li>
+                        <li>To establish state-of-the-art infrastructural facilities in the arena of academics and research.</li>
+                        <li>To inculcate leadership, moral and ethical values among the students.</li>
                     </ul>
                 </div>
                 {/* B.tech */}
@@ -66,9 +66,18 @@ export default function mission(){
                     <div className="text-red-900 text-base lg:text-xl font-normal mt-8">Programme Specific Outcomes (PSO) for UG (B.Tech - EE)</div>
                     <div className="lg:text-base text-sm mt-2 font-semibold mb-8">Engineering Graduates will be able to:</div>
                     <ol className="list-decimal ml-5 px-3 space-y-4 lg:text-base text-sm">
-                        <li>Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</li>
-                        <li>Selection, design and prototype Power electronic systems and electrical machine drives for applications related to industrial, traction, electrical vehicle and renewable energy.</li>
-                        <li>Design and development of Instrumentation, Control and Automation systems for industries and intelligent systems.</li>
+                        <li>
+                            Specify, design and test the power system networks and protection relays using
+                            hardware power system models.
+                        </li>
+                        <li>
+                            Selection, design and prototype Power electronic systems and electrical machine
+                            drives for applications related to industrial, traction, electrical vehicle and renewable energy.
+                        </li>
+                        <li>
+                            Design and development of Instrumentation, Control and Automation systems for
+                            industries and intelligent systems.
+                        </li>
                     </ol>
                 </div>
                 {/* M.tech */}
