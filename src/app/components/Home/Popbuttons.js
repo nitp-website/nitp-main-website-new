@@ -30,7 +30,7 @@ const Popbuttons = () => {
           <FontAwesomeIcon icon={faGraduationCap} size="4x" className="mobileicondiv" color='#BA210E' />
           <p className="headingp12 headingp1">ALUMNI</p>
         </a>
-      <a href ="/Academic/Admission" className="card card1">
+      <a href ="/Academic/NITPAdmission" className="card card1">
         <FontAwesomeIcon icon={faSchool} size="4x" className="mobileicondiv" color='#f7cece' />
         <p className="headingp">ADMISSIONS</p>
       </a>
