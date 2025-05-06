@@ -61,7 +61,7 @@ const Footer = () => {
     });
   };
   return (
-    <footer className="bg-[#421010] text-white py-12">
+    <footer className="bg-[#421010] text-white py-12 z-[100]">
       <div className="mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Institute Info */}
