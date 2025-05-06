@@ -803,21 +803,19 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`mobiletest navbar-container ${
-          isSticky ? "sticky-nav md:py-0 stickdiv" : ""
-        }`}
+        className={`mobiletest navbar-container sticky top-0 z-50 ${isSticky?"stickdiv":""} `}
       >
         <div className="header-top mx-auto flex w-full max-w-9xl justify-between px-[1px] md:px-4 py-2 bg-white/40 backdrop-blur-lg shadow-lg">
           {/* Mobile Header Layout */}
           <div className="flex md:hidden items-center justify-between w-full">
-            <div className="flex-shrink-0">
+            <div className={`flex-shrink-0`}>
               <Link href="/">
                 <Image
                   src={logo}
                   alt="NIT PATNA"
                   width={50}
                   height={50}
-                  className="w-auto h-12"
+                  className={`w-auto h-12 `}
                 />
               </Link>
             </div>
