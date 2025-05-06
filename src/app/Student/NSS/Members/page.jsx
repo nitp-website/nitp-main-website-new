@@ -244,19 +244,24 @@ export default function AdministrationPage() {
             img: "https://lh3.googleusercontent.com/d/16PD0RIn9YC7b_krOSsAd1zHr4c9s_OAQ=w1000",
           },
           {
-            name: "Priyanshu Goswami",
+            name: "Priyanshu Goshwami",
             position: "Operations Lead",
             img: "https://lh3.googleusercontent.com/d/1CKI_ux0igkuLuOtLxre-TpNbrOABdzP9=w1000",
           },
           {
-            name: "Shubhanshu Shekhar",
+            name: "Sujal",
             position: "Operations Lead",
             img: "https://lh3.googleusercontent.com/d/1zAPd0t4-Gs7PQjWaeWyuZRhApqe0v4YM=w1000",
           },
           {
-            name: "Shubhanshu Kumar",
+            name: "Shubhranshu Kumar",
             position: "Operations Lead",
             img: "https://lh3.googleusercontent.com/d/1DwsymjRLG5ktd1zOgttCk8UdU7z8-jJU=w1000",
+          },
+          {
+            name: "Subhanshu Shekhar",
+            position: "Operations Lead",
+            img: "https://lh3.googleusercontent.com/d/1YEG6jyzMKdZa8_rsTxhVjfN0rVOK79Vo=w1000",
           },
           {
             name: "Anand",
