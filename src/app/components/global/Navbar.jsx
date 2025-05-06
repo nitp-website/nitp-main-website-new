@@ -854,7 +854,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className=" mx-auto flex w-full px-4 py-2 text-sm bg-white/40 md:py-1 md:bg-[#811919] backdrop-blur-lg justify-center items-center shadow-lg">
+        <div className={` mx-auto flex w-full px-4 py-2 text-sm bg-white/40 md:py-1 md:bg-[#811919] backdrop-blur-lg justify-center items-center shadow-lg ${isSticky?"max-w-7xl rounded-2xl ":""} transition-all ease-in-out duration-300`}>
           <section className="nav-items hidden md:flex">
             {navItems.map((item, index) => (
               <NavItem key={index} item={item} />
