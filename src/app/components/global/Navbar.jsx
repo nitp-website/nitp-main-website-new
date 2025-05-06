@@ -803,7 +803,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`mobiletest navbar-container sticky top-0 z-50 ${isSticky?"stickdiv":""} `}
+        className={`navbar-container sticky top-0 z-50 ${isSticky?"stickdiv":""} `}
       >
         <div className="header-top mx-auto flex w-full max-w-9xl justify-between px-[1px] md:px-4 py-2 bg-white/40 backdrop-blur-lg shadow-lg">
           {/* Mobile Header Layout */}
@@ -854,7 +854,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="desktopnav mx-auto flex w-full max-w-7xl justify-between px-4 py-2 text-sm bg-white/40 md:py-1 md:bg-[#811919] backdrop-blur-lg md:rounded-xl shadow-lg">
+        <div className=" mx-auto flex w-full px-4 py-2 text-sm bg-white/40 md:py-1 md:bg-[#811919] backdrop-blur-lg justify-center items-center shadow-lg">
           <section className="nav-items hidden md:flex">
             {navItems.map((item, index) => (
               <NavItem key={index} item={item} />
