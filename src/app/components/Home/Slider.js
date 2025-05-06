@@ -28,7 +28,7 @@ const Slider = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper w-full h-[30vh] md:h-[530px] flex justify-center items-center "
       >
         <SwiperSlide>
           <img src="/homepage/MainEntrance.jpg" />
