@@ -72,9 +72,6 @@
 
 .notice,
 .eventcard {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
   padding: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -194,5 +191,13 @@
 
 .notice {
   /* padding: 1rem; */
-  border-bottom: 1px solid #e5e7eb;
+  /* border-bottom: 1px solid #e5e7eb; */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
