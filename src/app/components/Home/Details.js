@@ -23,9 +23,9 @@ const FormatDate = ({ time }) => {
 
 // Noticecard Component
 const Noticecard = ({ detail, time, attachments, imp, link }) => (
-  <div className="notice flex items-start gap-2">
+  <div className="notice flex items-start gap-2 bg-transparent hover:bg-purple-50 rounded-md py-3 px-2 mr-2">
     {imp && (
-      <Star className="h-3 w-3 mt-[6px] flex-shrink-0 text-red-500 fill-red-500" />
+      <Star className="h-3 w-3 mt-[6px] flex-shrink-0 text-yellow-500 fill-yellow-500" />
     )}
     <div className="flex-1">
       <h3>{detail}</h3>
@@ -334,11 +334,11 @@ const Details = () => {
     <div className="container1">
       <div className="section">
         <div className="section-header">
-          <h2>Notice 📢</h2>
+          <h2>Notice</h2>
           <Link href="/Notices/All">View all</Link>
         </div>
         <div
-          className="section-content text-red-950"
+          className="section-content text-red-950 scrollbar-hide"
           ref={noticesRef}
           onMouseEnter={handleMouseEnterNotices}
           onMouseLeave={handleMouseLeaveNotices}
@@ -381,14 +381,14 @@ const Details = () => {
         </div>
       </div>
 
-      <div className="section1">
+      <div className="section">
         <div>
           <div className="section-header">
-            <h2>Events ⛓️‍💥</h2>
+            <h2>Events</h2>
             <Link href="/Notices/Events">View all</Link>
           </div>
           <div
-            className="section-content text-red-950"
+            className="section-content text-red-950 scrollbar-hide"
             ref={eventsRef}
             onMouseEnter={handleMouseEnterEvents}
             onMouseLeave={handleMouseLeaveEvents}
@@ -448,11 +448,11 @@ const Details = () => {
 
       <div className="section">
         <div className="section-header">
-          <h2>Academic Notices 👨‍🎓</h2>
+          <h2>Academic Notices</h2>
           <Link href="/Notices/Academic">View all</Link>
         </div>
         <div
-          className="section-content text-red-950"
+          className="section-content text-red-950 scrollbar-hide"
           ref={academicsRef}
           onMouseEnter={handleMouseEnterAcademics}
           onMouseLeave={handleMouseLeaveAcademics}
