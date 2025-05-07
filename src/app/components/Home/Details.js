@@ -334,7 +334,7 @@ const Details = () => {
     <div className="container1">
       <div className="section">
         <div className="section-header">
-          <h2>Notice 📢</h2>
+          <h2>Notice</h2>
           <Link href="/Notices/All">View all</Link>
         </div>
         <div
@@ -384,7 +384,7 @@ const Details = () => {
       <div className="section1">
         <div>
           <div className="section-header">
-            <h2>Events ⛓️‍💥</h2>
+            <h2>Events</h2>
             <Link href="/Notices/Events">View all</Link>
           </div>
           <div
@@ -448,7 +448,7 @@ const Details = () => {
 
       <div className="section">
         <div className="section-header">
-          <h2>Academic Notices 👨‍🎓</h2>
+          <h2>Academic Notices</h2>
           <Link href="/Notices/Academic">View all</Link>
         </div>
         <div
