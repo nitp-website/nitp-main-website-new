@@ -1,5 +1,134 @@
 import Head from "next/head";
 
+const AboutHMC = `NIT Patna is a fully residential institute that provides comprehensive accommodation facilities for its students. Each hostel is equipped with essential amenities, including a common room, indoor recreation area, lounge, and a spacious dining hall with a mess facility. The hostel system is overseen by the Chairman of the Hostel Management Committee (HMC), who serves as the head of the hostel administration. Assisting the Chairman are the Wardens, who are responsible for the day-to-day management of individual hostels, supported further by Assistant Wardens.`;
+
+const HostelFacilities = {
+  about: `The hostel facilities at NIT Patna are designed to ensure a comfortable and secure living environment for students. Each hostel provides uninterrupted access to essential utilities, including water, electricity, and 24/7 internet connectivity. To enhance the overall experience, hostels are equipped with additional amenities such as a TV room, washing machines, centralized water heaters powered by solar panels, and night canteens. For the convenience of residents, all hostels are fitted with lifts to facilitate easy movement.`,
+
+  facilities: [
+    {
+      name: `Security:`,
+      desc: [
+        `The safety and well-being of hostel residents are of utmost priority. All hostels are under continuous surveillance with CCTV cameras, and security personnel are stationed 24/7 to ensure a secure environment. Additionally, every hostel is equipped with comprehensive fire safety systems.`,
+      ],
+    },
+    {
+      name: `Medical Facilities:`,
+      desc: [
+        `Basic medical provisions, including first-aid kits, are available round the clock in all hostels. A dedicated health center within the institute caters to the medical needs of students. Moreover, a 24/7 ambulance service is accessible to all hostels to address any emergencies promptly.`,
+      ],
+    },
+    {
+      name: `Recreational and Convenience Facilities:`,
+      facility: [
+        {
+          title: "Indoor Sports Room",
+          description: "Each hostel includes an indoor sports area where students can enjoy games like carrom and table tennis at their convenience."
+        },
+        {
+          title: "Vending and Coffee Machines",
+          description: "Vending machines are installed in the hostels, allowing students to purchase snacks, coffee, and beverages anytime."
+        }
+      ],
+    },
+    {
+      name: "Special facilities for students with disabilities:",
+      facility: [
+        "Ramps in all Hostels.",
+        "Easy access toilets for boarders with disabilities.",
+        "In some hostels few rooms are reserved for physically challenged boarders. These rooms are attached to the toilet and bathroom. These rooms are kept near the main entrance of the hall for easy access by the physically challenged boarders.",
+        "24 x 7 support is being provided to the physically challenged boarders."
+      ],
+    }
+  ],
+};
+
+const Hostels = {
+  boys: [
+    `Sone Hostel`,
+    `Brahmaputra Hostel`,
+    `Kosi Hostel`,
+    `Bagmati Hostel`,
+    `Kosi Extension Hostel`,
+    `Aryabhatta Hostel`,
+  ],
+  girls: [
+    `Ganga Hostel`,
+    `Kadambini Hostel`,
+  ],
+}
+
+const HostelRules = [
+  {
+    title: "Hostel Rules & Regulations",
+    img: "https://i.postimg.cc/3xqYj0gN/rules.png",
+    points: [
+      "Ragging is a social crime and is strictly prohibited in any form.",
+      "DON’T Rag and DO NOT be a mute witness to Ragging.",
+      "Students during their stay in the hostel will be governed by the hostel management rules.",
+      "Students indulging in use of abusive and threatening language, physical fights, and use of force to get unfair act accomplished, etc. will be punished. Further, they are liable to be expelled from the hostel/ Institute."
+    ],
+  },
+  {
+    title: `SUBSTANCE ABUSE`,
+    img: "",
+    points: [
+      "This Institute is a drug-free workplace. Students are not allowed to consume alcoholic, narcotic drugs or any intoxicating substance on the campus and hostel premises.",
+      "Students indulging in the use of abusive and threatening language, physical fights, use of force to get unfair acts accomplished, etc., will be punished. Further, they are liable to be expelled from the hostel/ Institute."
+    ],
+  },
+  {
+    title: `Terms and Conditions`,
+    desc: `General rule of hostel will be applicable to all the boarders. However some important rules are as follows: `,
+    img: ``,
+    points: [
+      "Joining Institute mess is compulsory.",
+      "No guest of boarders will be allowed to stay in the hostel.",
+      "There will be a Base Menu applicable to all boarders. Extra items will be available on a payment basis through coupons.",
+      "Mess facilities for guests will be available only with prior written notice to the mess contractor and approval from the hostel warden.",
+      "Menu of the mess may be changed from time to time by the Hostel Management Committee.",
+      "Boarders must vacate the hostel at the end of each even semester.",
+      "No mutual transfer of room/seat will be allowed without the warden’s permission. Unauthorized transfers may lead to eviction.",
+      "Boarders must take prior permission from the concerned warden for any overnight absence.",
+      "Use of electric appliances like room heaters, coolers, air conditioners, TVs (except computers, laptops, mobiles, iPads) and parking of vehicles (except bicycles) is strictly prohibited.",
+      "Bringing or taking cooked food and/or mess utensils to rooms is strictly prohibited.",
+      "Consumption, possession, or bearing of alcoholic beverages and prohibited drugs is strictly banned.",
+      "Acts of indiscipline, ragging, damage to hostel property, or misbehavior will be severely dealt with and may result in fines, hostel expulsion, loss of campus placement, or institute expulsion.",
+      "Hostel fees once paid are non-refundable.",
+      "Boarders must strictly follow hostel and mess timings.",
+      "All applications must be routed through proper channel.",
+      "Decisions made by the Warden or Hostel Management Committee are final and binding on all boarders."
+    ],
+  }
+];
+
+const HMCOfficeContacts = [
+  {
+    name: "Dr. Bambam Kumar",
+    designation: "Chairman, HMC",
+    mobile: "7895717492",
+    email: "bambam.ec@nitp.ac.in"
+  },
+  {
+    name: "Yash Sinha",
+    designation: "Jr. Assistant",
+    mobile: "6200579307",
+    email: "yash.ja@nitp.ac.in"
+  },
+  {
+    name: "Sunil Kumar",
+    designation: "Office Clerk",
+    mobile: "9973031233",
+    email: ""
+  },
+  {
+    name: "Ajit Kumar",
+    designation: "Office Assistant",
+    mobile: "6207272377",
+    email: ""
+  },
+];
+
 const hostels = [
   {
     name: "Ganga Hostel",
@@ -251,32 +380,7 @@ const hostels = [
     capacity: "100+",
     images: [],
     description: `This Hostel is closest to the campus. Total Capacity of this beautiful Hostel is around 100+. This hostel has a well-decorated reading room. The Hostel has a well-maintained garden in the vast open space at the front, which has benches and pathways for boarders.`,
-    contacts: [
-      {
-        name: "Dr. Subodh Srivastava",
-        designation: "Warden",
-        mobile: "7565036892",
-        email: "subosh@nitp.ac.in",
-      },
-      {
-        name: "Dr. Mukesh Kumar",
-        designation: "Asst. Warden",
-        mobile: "8984142557",
-        email: "mukesh.kumar@nitp.ac.in",
-      },
-      {
-        name: "Dr. Ajay Kumar Maurya",
-        designation: "Asstt. Warden",
-        mobile: "9455262876",
-        email: "ajay.ec@nitp.ac.in",
-      },
-      {
-        name: "Nitish Gupta",
-        designation: "Office Assistant",
-        mobile: "9506400448",
-        email: "",
-      },
-    ],
+    contacts: [],
   },
 ];
 
