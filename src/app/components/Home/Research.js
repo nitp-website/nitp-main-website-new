@@ -168,7 +168,28 @@ export default function Research() {
             paper.journal_quartile === "Q1" &&
             (paper.publication_year === 2024 || paper.publication_year === 2025)
         );
-        setRecentPublications(publications);
+        
+        const quartileOrder = {
+          Q1: 1,
+          Q2: 2,
+          Q3: 3,
+          Q4: 4,
+          Q5: 5
+        };
+        
+        const sortedPublications = publications.sort((a, b) => {
+          const quartileA = quartileOrder[a.journal_quartile.toUpperCase()] || 6;
+          const quartileB = quartileOrder[b.journal_quartile.toUpperCase()] || 6;
+        
+          if (quartileA !== quartileB) {
+            return quartileA - quartileB;
+          }
+        
+          return b.publication_year - a.publication_year;
+        });
+        
+        setRecentPublications(sortedPublications);
+        
       } catch (error) {
         console.error("Error fetching recent publications:", error);
       }
@@ -184,7 +205,22 @@ export default function Research() {
           `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=all`
         );
         const projects = await projectResponse.json();
-        setRecentProjects(projects);
+        const sortedProjects = projects.sort((a, b) => {
+          const dateA = new Date(a.start_date);
+          const dateB = new Date(b.start_date);
+        
+          if (dateA.getTime() !== dateB.getTime()) {
+            return dateB.getTime() - dateA.getTime();
+          }
+        
+          const fundsA = parseFloat(a.financial_outlay || "0");
+          const fundsB = parseFloat(b.financial_outlay || "0");
+        
+          return fundsB - fundsA;
+        });
+        
+        setRecentProjects(sortedProjects);
+        
       } catch (error) {
         console.error("Error fetching recent projects or journals:", error);
       }
