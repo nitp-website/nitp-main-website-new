@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from "react";
+import Link from "next/link";
 import { 
   GraduationCap, 
   Settings, 
@@ -98,20 +99,29 @@ const admissionData = {
   study_in_india: {
     portals: [
       {
-        name: "CCMT",
-        image: "https://cdnbbsr.s3waas.gov.in/s301894d6f048493d2cacde3c579c315a3/uploads/2022/02/2022022590.png",
-        link: "https://ccmt.admissions.nic.in",
-        description: "Centralized Counselling for M.Tech/M.Arch/M.Plan Admissions"
+        name: "Study in India",
+        image: "https://studyinindia.gov.in/Content/images/logo_SII_new_2023_darkGlobe1.webp",
+        link: "https://studyinindia.gov.in/",
+        // description: "Study in India"
       },
     ],
     notices: [
-      // {
-      //   title: "CCMT 2023 Seat Allocation",
-      //   date: "2023-07-01",
-      //   content: "First round of seat allocation results will be declared on July 5th."
-      // }
+      {
+        title: "Schedule for the Admission through Study in India(SII) at NIT Patna for the Academic Year 2025-26",
+        date: "2025-05-08",
+        content: "Schedule for the Admission of the Academic Year 2025-26",
+        href:"https://drive.google.com/file/d/12zbdMzfMwcjLybK3PNZV6R8Zyi6tfAJb/view"
+      }
     ]
   }
+};
+
+const degreeMap = {
+  btech: "Bachelor of Technology",
+  mtech: "Master of Technology",
+  mca: "Master of Computer Application",
+  phd: "PhD",
+  study_in_india: "Study in India"
 };
 
 function AdmissionsPage() {
@@ -154,7 +164,7 @@ function AdmissionsPage() {
 
       {/* Mobile sidebar */}
       <aside
-        className={`xl:hidden fixed inset-0 z-[1001000] bg-red-800/95 backdrop-blur-sm transition-all duration-300 ease-in-out ${
+        className={`xl:hidden fixed inset-0 z-[1001000] backdrop-blur-sm transition-all duration-300 ease-in-out ${
           mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -189,6 +199,43 @@ function AdmissionsPage() {
                 M.Tech Admissions
               </span>
             </li>
+
+            <li
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${
+                selected === "mca" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+              }`}
+              onClick={() => setSelected("mca")}
+            >
+              <span className="flex items-center">
+                <GraduationCap className="w-5 h-5 mr-3" />
+                M.C.A Admissions
+              </span>
+            </li>
+
+            <li
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${
+                selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+              }`}
+              onClick={() => setSelected("study_in_india")}
+            >
+              <span className="flex items-center">
+                <GraduationCap className="w-5 h-5 mr-3" />
+                Study in india
+              </span>
+            </li>
+
+            <li
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md  hover:text-white ${
+                selected === "phd" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+              }`}
+              onClick={() => setSelected("phd")}
+            >
+              <span className="flex items-center">
+                <GraduationCap className="w-5 h-5 mr-3" />
+                P.hd Admissions
+              </span>
+            </li>
+
           </ul>
         </div>
       </aside>
@@ -216,7 +263,7 @@ function AdmissionsPage() {
               onClick={() => setSelected("mtech")}
             >
               <span className="flex items-center">
-                <Settings className="w-5 h-5 mr-3" />
+                <GraduationCap className="w-5 h-5 mr-3" />
                 M.Tech Admissions
               </span>
             </li>
@@ -228,8 +275,20 @@ function AdmissionsPage() {
               onClick={() => setSelected("mca")}
             >
               <span className="flex items-center">
-                <Settings className="w-5 h-5 mr-3" />
+                <GraduationCap className="w-5 h-5 mr-3" />
                 M.C.A Admissions
+              </span>
+            </li>
+
+            <li
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
+                selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+              }`}
+              onClick={() => setSelected("study_in_india")}
+            >
+              <span className="flex items-center">
+                <GraduationCap className="w-5 h-5 mr-3" />
+                Study in india
               </span>
             </li>
 
@@ -240,22 +299,12 @@ function AdmissionsPage() {
               onClick={() => setSelected("phd")}
             >
               <span className="flex items-center">
-                <Settings className="w-5 h-5 mr-3" />
+                <GraduationCap className="w-5 h-5 mr-3" />
                 P.hd Admissions
               </span>
             </li>
 
-            {/* <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
-                selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-              }`}
-              onClick={() => setSelected("study_in_india")}
-            >
-              <span className="flex items-center">
-                <Settings className="w-5 h-5 mr-3" />
-                study in india
-              </span>
-            </li> */}
+            
 
           </ul>
         </aside>
@@ -264,7 +313,7 @@ function AdmissionsPage() {
         <main className="flex-1 p-4 md:p-8 xl:ml-6">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-center text-red-800 relative pb-4">
-              {selected === "btech" ? "Bachelor of Technology" : "Master of Technology"} Admissions
+              {degreeMap[selected] || ""} Admissions
               <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-red-400 to-red-600 rounded-full"></span>
             </h1>
             
@@ -288,26 +337,26 @@ function AdmissionsPage() {
                             onClick={() => toggleNotice(index)}
                           >
                             <div>
-                              <h3 className="font-bold text-red-800">{notice.title}</h3>
-                              <p className="text-sm text-red-600 mt-1">
+                              <Link className="font-bold text-red-800 hover:underline" href={notice.href?notice.href:"#"} target="_blank">{notice.title}</Link>
+                              {/* <p className="text-sm text-red-600 mt-1">
                                 {new Date(notice.date).toLocaleDateString('en-US', {
                                   year: 'numeric',
                                   month: 'long',
                                   day: 'numeric'
                                 })}
-                              </p>
+                              </p> */}
                             </div>
-                            {expandedNotices[index] ? (
+                            {/* {expandedNotices[index] ? (
                               <ChevronUp className="text-red-600" />
                             ) : (
                               <ChevronDown className="text-red-600" />
-                            )}
+                            )} */}
                           </div>
-                          {expandedNotices[index] && (
+                          {/* {expandedNotices[index] && (
                             <div className="p-4 bg-white border-t border-red-50">
-                              <p className="text-gray-700">{notice.content}</p>
+                              <a className="text-gray-700 hover:text-blue-700" href={notice.href?notice.href:"#"}>{notice.content}</a>
                             </div>
-                          )}
+                          )} */}
                         </div>
                       ))
                     ) : (
