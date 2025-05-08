@@ -81,7 +81,7 @@ const admissionData = {
   mca: {
     portals: [
       {
-        name: "nimcet",
+        name: "NIMCET",
         image: "https://cdnbbsr.s3waas.gov.in/s33e6260b81898beacda3d16db379ed329/uploads/2025/03/2025031961.png",
         link: "https://nimcet.admissions.nic.in/",
         description: "Centralized Counselling for M.C.A. Admissions"
@@ -275,8 +275,10 @@ function AdmissionsPage() {
               onClick={() => setSelected("mca")}
             >
               <span className="flex items-center">
+
                 <GraduationCap className="w-5 h-5 mr-3" />
                 M.C.A Admissions
+
               </span>
             </li>
 
@@ -287,8 +289,10 @@ function AdmissionsPage() {
               onClick={() => setSelected("study_in_india")}
             >
               <span className="flex items-center">
+
                 <GraduationCap className="w-5 h-5 mr-3" />
                 Study in india
+
               </span>
             </li>
 
