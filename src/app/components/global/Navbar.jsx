@@ -394,7 +394,7 @@ const navItems = [
       },
       {
         label: "Admission",
-        link: "/Academic/Admission",
+        link: "/Academic/NITPAdmission",
         iconImage: Admission,
       },
 
