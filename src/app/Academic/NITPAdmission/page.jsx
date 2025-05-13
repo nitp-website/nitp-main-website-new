@@ -29,16 +29,16 @@ const admissionData = {
       },
     ],
     notices: [
-      {
-        title: "JoSAA 2023 Counselling Schedule",
-        date: "2023-06-15",
-        content: "JoSAA counselling will begin on June 19th. All candidates must register by June 25th."
-      },
-      {
-        title: "DASA 2023 Important Dates",
-        date: "2023-05-20",
-        content: "DASA application deadline extended to June 10th for international candidates."
-      }
+      // {
+      //   title: "JoSAA 2023 Counselling Schedule",
+      //   date: "2023-06-15",
+      //   content: "JoSAA counselling will begin on June 19th. All candidates must register by June 25th."
+      // },
+      // {
+      //   title: "DASA 2023 Important Dates",
+      //   date: "2023-05-20",
+      //   content: "DASA application deadline extended to June 10th for international candidates."
+      // }
     ]
   },
   mtech: {
@@ -51,11 +51,65 @@ const admissionData = {
       },
     ],
     notices: [
+      // {
+      //   title: "CCMT 2023 Seat Allocation",
+      //   date: "2023-07-01",
+      //   content: "First round of seat allocation results will be declared on July 5th."
+      // }
+    ]
+  },
+
+  phd: {
+    // portals: [
+    //   {
+    //     name: "CCMT",
+    //     image: "https://cdnbbsr.s3waas.gov.in/s301894d6f048493d2cacde3c579c315a3/uploads/2022/02/2022022590.png",
+    //     link: "https://ccmt.admissions.nic.in",
+    //     description: "Centralized Counselling for M.Tech/M.Arch/M.Plan Admissions"
+    //   },
+    // ],
+    notices: [
+      // {
+      //   title: "Phd Seat Allocation",
+      //   date: "2023-07-01",
+      //   content: "First round of seat allocation results will be declared on July 5th."
+      // }
+    ]
+  },
+
+  mca: {
+    portals: [
       {
-        title: "CCMT 2023 Seat Allocation",
-        date: "2023-07-01",
-        content: "First round of seat allocation results will be declared on July 5th."
-      }
+        name: "NIMCET",
+        image: "https://cdnbbsr.s3waas.gov.in/s33e6260b81898beacda3d16db379ed329/uploads/2025/03/2025031961.png",
+        link: "https://nimcet.admissions.nic.in/",
+        description: "Centralized Counselling for M.C.A. Admissions"
+      },
+    ],
+    notices: [
+      // {
+      //   title: "CCMT 2023 Seat Allocation",
+      //   date: "2023-07-01",
+      //   content: "First round of seat allocation results will be declared on July 5th."
+      // }
+    ]
+  },
+
+  study_in_india: {
+    portals: [
+      {
+        name: "CCMT",
+        image: "https://cdnbbsr.s3waas.gov.in/s301894d6f048493d2cacde3c579c315a3/uploads/2022/02/2022022590.png",
+        link: "https://ccmt.admissions.nic.in",
+        description: "Centralized Counselling for M.Tech/M.Arch/M.Plan Admissions"
+      },
+    ],
+    notices: [
+      // {
+      //   title: "CCMT 2023 Seat Allocation",
+      //   date: "2023-07-01",
+      //   content: "First round of seat allocation results will be declared on July 5th."
+      // }
     ]
   }
 };
@@ -166,6 +220,43 @@ function AdmissionsPage() {
                 M.Tech Admissions
               </span>
             </li>
+
+            <li
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
+                selected === "mca" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+              }`}
+              onClick={() => setSelected("mca")}
+            >
+              <span className="flex items-center">
+                <Settings className="w-5 h-5 mr-3" />
+                MCA Admissions
+              </span>
+            </li>
+
+            <li
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
+                selected === "phd" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+              }`}
+              onClick={() => setSelected("phd")}
+            >
+              <span className="flex items-center">
+                <Settings className="w-5 h-5 mr-3" />
+                PhD Admissions
+              </span>
+            </li>
+
+            {/* <li
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
+                selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+              }`}
+              onClick={() => setSelected("study_in_india")}
+            >
+              <span className="flex items-center">
+                <Settings className="w-5 h-5 mr-3" />
+                study in india
+              </span>
+            </li> */}
+
           </ul>
         </aside>
 
@@ -236,7 +327,7 @@ function AdmissionsPage() {
                     <BookOpen className="w-6 h-6 mr-2 text-red-600" />
                     Admission Portals
                   </h2>
-                  {admissionData[selected].portals.length > 0 ? (
+                  {admissionData[selected]?.portals?.length > 0 ? (
                     <div className="grid grid-cols-1 gap-6">
                       {admissionData[selected].portals.map((item, i) => (
                         <div

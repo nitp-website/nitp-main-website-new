@@ -11,8 +11,6 @@ body {
   width: 96%;
   height: 80vh;
 
-  border: 1px solid transparent; /* Initial transparent border */
-  border-radius: 10px; /* Rounded corners for the border */
   overflow: hidden; /* Ensure content doesn't overflow */
 }
 /* Blur border effect */
@@ -24,8 +22,7 @@ body {
   right: -10px;
   bottom: -10px;
   z-index: -1;
-  border: 10px solid rgba(255, 255, 255, 0.5); /* Adjust opacity (rgba) and size (10px) as needed */
-  border-radius: 20px; /* Match the border radius of the container */
+
   backdrop-filter: blur(10px); /* Blur effect for the border */
 }
 /* Tab view styles */
