@@ -36,7 +36,9 @@ import IPR from "./menuItems/IPR";
 import Startups from "./menuItems/Startups";
 import ConsultancyProjects from "./menuItems/ConsultancyProjects";
 import Education from "./menuItems/Education";
-
+import TalksAndLecture from "./menuItems/TalkAndLecture";
+import ConferenceChairs from "./menuItems/ConferenceChair";
+import InternationalJournalReviewer from "./menuItems/InternationalJournal";
 const FacultyDropdown = ({ facultyData }) => {
   //   console.log(facultyData);
 
@@ -60,6 +62,9 @@ const FacultyDropdown = ({ facultyData }) => {
     memberships,
     work_experience,
     internships,
+    talks_and_lectures,
+    conference_session_chairs,
+    international_journal_reviewers,
   } = facultyData || {};
 
   const filteredIpr = ipr?.filter((item) => item.grant_date || item.registration_date || item.publication_date) || [];
@@ -216,6 +221,28 @@ const FacultyDropdown = ({ facultyData }) => {
       icon: <FaUniversity />,
       id: 22,
       component: <DepartmentActivities data={department_activities} />,
+    },
+    
+    {
+      condition: talks_and_lectures?.length > 0,
+      title: "Talks and Lectures",
+      icon: <FaUniversity />,
+      id: 30,
+      component: <TalksAndLecture data={talks_and_lectures} />,
+    },
+    {
+      condition: conference_session_chairs?.length > 0,
+      title: "Conference Session Chairs",
+      icon: <FaUniversity />,
+      id: 31,
+      component: <ConferenceChairs data={conference_session_chairs} />,
+    },
+    {
+      condition: international_journal_reviewers?.length > 0,
+      title: "International Journal Reviewers",
+      icon: <FaUniversity />,
+      id: 32,
+      component: <InternationalJournalReviewer data={international_journal_reviewers} />,
     },
   ].filter((item) => item.condition);
 
