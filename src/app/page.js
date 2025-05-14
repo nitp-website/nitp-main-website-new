@@ -3,7 +3,7 @@ import Slider from "./components/Home/Slider";
 import Gallery from "./components/Home/Gallery"
 import Popbuttons from "./components/Home/Popbuttons";
 import Details from "./components/Home/Details";
-import Aboutus from "./components/Home/Aboutus";
+import Aboutus from "./components/Home/aboutNitPatna";
 import Placement from "./components/Home/Placement";
 import Movingbar from "./components/Home/Movingbar";
 import Research from "./components/Home/Research";

@@ -51,34 +51,34 @@ const FacultyHeader = ({ Data }) => {
     {
       label: "Journal Papers",
       count: journal_papers?.length,
-      bgColor: "bg-red-500",
-    },
-    {
-      label: "Conference Papers",
-      count: conference_papers?.length,
-      bgColor: "bg-blue-500",
-    },
-    {
-      label: "PhD Candidates",
-      count: phd_candidates?.length,
-      bgColor: "bg-green-500",
-    },
-    {
-      label: "Sponsored Projects",
-      count: sponsored_projects?.length,
-      bgColor: "bg-yellow-500",
+      bgColor: "bg-red-800",
     },
     {
       label: "Consultancy Projects",
       count: consultancy_projects?.length,
-      bgColor: "bg-purple-500",
+      bgColor: "bg-red-700",
     },
-    { label: "Startups", count: startups?.length, bgColor: "bg-pink-500" },
     {
       label: "Intellectual Property Rights",
       count: filteredIpr.length,
-      bgColor: "bg-orange-500",
+      bgColor: "bg-red-600",
     },
+    {
+      label: "PhD Candidates",
+      count: phd_candidates?.length,
+      bgColor: "bg-red-700",
+    },
+    {
+      label: "Conference Papers",
+      count: conference_papers?.length,
+      bgColor: "bg-red-800",
+    },
+    {
+      label: "Sponsored Projects",
+      count: sponsored_projects?.length,
+      bgColor: "bg-red-900",
+    },
+    { label: "Startups", count: startups?.length, bgColor: "bg-pink-500" },
     {
       label: "Book Chapters",
       count: book_chapters?.length,
@@ -86,7 +86,7 @@ const FacultyHeader = ({ Data }) => {
     },
   ]
     .filter((section) => section.count > 0)
-    .slice(0, 4);
+    .slice(0, 5);
 
   return (
     <div className="bg-slate-100 w-full">
@@ -151,7 +151,7 @@ const FacultyHeader = ({ Data }) => {
             ))}
           </div>
           <div className="flex gap-4 flex-wrap justify-center">
-            {dataSections.slice(2, 4).map((section, index) => (
+            {dataSections.slice(2, 6).map((section, index) => (
               <div
                 key={index}
                 className={`w-24 h-24 flex text-center items-center justify-center text-white font-bold ${section.bgColor} rounded-lg`}
