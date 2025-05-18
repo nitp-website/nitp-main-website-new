@@ -268,11 +268,6 @@ export default function AdministrationPage() {
             img: "https://lh3.googleusercontent.com/d/1YEG6jyzMKdZa8_rsTxhVjfN0rVOK79Vo=w1000",
           },
           {
-            name: "Anand",
-            position: "Event Coordinator",
-            img: "https://lh3.googleusercontent.com/d/1MZvhriSQqyHpw6bMX438Dl3kOclKWRaE=w1000",
-          },
-          {
             name: "Shriya Sharma",
             position: "Design Lead and Operations at Bihta Campus",
             img: "https://lh3.googleusercontent.com/d/12i4X-yU4D5S-GSdbR5iCfLhtL6OvSoNA=w1000",
