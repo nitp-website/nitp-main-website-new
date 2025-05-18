@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export const Allhostels = [
+const Allhostels = [
   {
     name: "Ganga Hostel",
     seater: "",
