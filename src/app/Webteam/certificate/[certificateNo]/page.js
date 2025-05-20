@@ -112,12 +112,11 @@ export default function CertificatePage() {
         </div>
         
         {/* Certificate Content */}
-        <div className="p-8 relative">
-          {/* Decorative corner elements - can be added with pseudo-elements */}
+        <div className="p-2 md:p-8 relative">
           
-          <div className="border-4 border-gray-200 p-8 rounded-lg relative z-10 bg-white">
+          <div className="border-4 border-gray-200 p-2 md:p-8 rounded-lg relative z-10 bg-white">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-gray-800">Certificate No: {certificate?.certificate_no}</h2>
+              <h2 className="text-lg md:text-2xl font-bold text-gray-800">Certificate No: {certificate?.certificate_no}</h2>
               <p className="text-gray-600 mt-1">
                 Generated on: {new Date(certificate?.generated_on).toLocaleDateString()}
               </p>
@@ -143,31 +142,31 @@ export default function CertificatePage() {
             <div className="mt-16 flex justify-between items-end">
               <div className="text-center">
                 <div className="relative">
-                  <div className="text-lg italic font-medium text-blue-900 mb-2">Digitally signed by</div>
+                  <div className="text-sm md:text-lg italic font-medium text-blue-900 mb-2">Digitally signed by</div>
                   <div className="font-signature text-xl mb-1 text-blue-800">Pradip K. Jain</div>
-                  <div className="h-0.5 w-40 bg-blue-500 mb-1 mx-auto"></div>
+                  <div className="h-0.5 w-30 md:w-40 bg-blue-500 mb-1 mx-auto"></div>
                   <div className="flex items-center justify-center gap-1">
                     <svg className="h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <p className="text-sm text-blue-600">Verified</p>
                   </div>
-                  <p className="text-sm text-gray-700 mt-1">DIRECTOR, NIT PATNA</p>
+                  <p className="text-xs md:text-sm text-gray-700 mt-1">DIRECTOR, NIT PATNA</p>
                   <p className="text-xs text-gray-500">Date: {new Date(certificate?.generated_on).toLocaleDateString()}</p>
                 </div>
               </div>
               <div className="text-center">
                 <div className="relative">
-                  <div className="text-lg italic font-medium text-blue-900 mb-2">Digitally signed by</div>
+                  <div className="text-sm md:text-lg italic font-medium text-blue-900 mb-2">Digitally signed by</div>
                   <div className="font-signature text-xl mb-1 text-blue-800">B Balaji Naik</div>
-                  <div className="h-0.5 w-40 bg-blue-500 mb-1 mx-auto"></div>
+                  <div className="h-0.5 w-30 md:w-40 bg-blue-500 mb-1 mx-auto"></div>
                   <div className="flex items-center justify-center gap-1">
                     <svg className="h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <p className="text-sm text-blue-600">Verified</p>
                   </div>
-                  <p className="text-sm text-gray-700 mt-1">PROFESSOR IN CHARGE</p>
+                  <p className="text-xs md:text-sm text-gray-700 mt-1">PROFESSOR IN CHARGE</p>
                   <p className="text-xs text-gray-500">Date: {new Date(certificate?.generated_on).toLocaleDateString()}</p>
                 </div>
               </div>
