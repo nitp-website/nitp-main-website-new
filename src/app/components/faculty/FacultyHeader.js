@@ -59,14 +59,14 @@ const FacultyHeader = ({ Data }) => {
       bgColor: "bg-red-900",
     },
     {
-      label: "Intellectual Property Rights",
-      count: filteredIpr.length,
-      bgColor: "bg-red-600",
-    },
-    {
       label: "PhD Candidates",
       count: phd_candidates?.length,
       bgColor: "bg-red-700",
+    },
+    {
+      label: "Intellectual Property Rights",
+      count: filteredIpr.length,
+      bgColor: "bg-red-600",
     },
     {
       label: "Conference Papers",

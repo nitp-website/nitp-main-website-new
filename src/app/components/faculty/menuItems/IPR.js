@@ -1,14 +1,25 @@
 import React from "react";
 
 const IPR = ({ data }) => {
+  const getLatestDate = (ipr) => {
+    return (
+      new Date(ipr.grant_date || ipr.publication_date || ipr.registration_date)
+    );
+  };
+
+  const sortedData = [...data]
+    .filter(
+      (ipr) =>
+        ipr.grant_date || ipr.publication_date || ipr.registration_date
+    )
+    .sort((a, b) => getLatestDate(b) - getLatestDate(a));
   return (
     <div className="p-6 border border-purple-600 rounded-lg text-black bg-purple-100 shadow-lg">
       <h2 className="text-xl font-bold text-purple-800 border-b-2 border-purple-500 pb-2 mb-4">
         Intellectual Property Rights
       </h2>
       <ul className="space-y-4">
-        {data
-          .filter((ipr) => ipr.grant_date || ipr.registration_date || ipr.publication_date) // Filter to include only items with grant_no
+        {sortedData
           .map((ipr, index) => (
             <li
               key={index}
