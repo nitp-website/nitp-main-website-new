@@ -31,7 +31,7 @@ const Webcard = ({ name, email, extn, desg, image, url, interests}) => {
   return (
    
     <div className="containerw webcardnew">
-    <div className="card">
+    <div className="cardwdc">
       <div className="card__border">
         <div className="card__perfil">
         <img
