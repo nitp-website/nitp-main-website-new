@@ -54,9 +54,9 @@ const FacultyHeader = ({ Data }) => {
       bgColor: "bg-red-800",
     },
     {
-      label: "Consultancy Projects",
-      count: consultancy_projects?.length,
-      bgColor: "bg-red-700",
+      label: "Sponsored Projects",
+      count: sponsored_projects?.length,
+      bgColor: "bg-red-900",
     },
     {
       label: "Intellectual Property Rights",
@@ -74,9 +74,9 @@ const FacultyHeader = ({ Data }) => {
       bgColor: "bg-red-800",
     },
     {
-      label: "Sponsored Projects",
-      count: sponsored_projects?.length,
-      bgColor: "bg-red-900",
+      label: "Consultancy Projects",
+      count: consultancy_projects?.length,
+      bgColor: "bg-red-700",
     },
     { label: "Startups", count: startups?.length, bgColor: "bg-pink-500" },
     {
