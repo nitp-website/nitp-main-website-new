@@ -54,8 +54,13 @@ const FacultyHeader = ({ Data }) => {
       bgColor: "bg-red-800",
     },
     {
-      label: "Consultancy Projects",
-      count: consultancy_projects?.length,
+      label: "Sponsored Projects",
+      count: sponsored_projects?.length,
+      bgColor: "bg-red-900",
+    },
+    {
+      label: "PhD Candidates",
+      count: phd_candidates?.length,
       bgColor: "bg-red-700",
     },
     {
@@ -64,19 +69,14 @@ const FacultyHeader = ({ Data }) => {
       bgColor: "bg-red-600",
     },
     {
-      label: "PhD Candidates",
-      count: phd_candidates?.length,
-      bgColor: "bg-red-700",
-    },
-    {
       label: "Conference Papers",
       count: conference_papers?.length,
       bgColor: "bg-red-800",
     },
     {
-      label: "Sponsored Projects",
-      count: sponsored_projects?.length,
-      bgColor: "bg-red-900",
+      label: "Consultancy Projects",
+      count: consultancy_projects?.length,
+      bgColor: "bg-red-700",
     },
     { label: "Startups", count: startups?.length, bgColor: "bg-pink-500" },
     {

@@ -26,14 +26,14 @@ const AboutHMC = `NIT Patna is a fully residential institute that provides compr
 const boysHostels = [
   "Aryabhatta Hostel",
   "Brahmaputra Hostel",
-  "Ganga Hostel",
+  "Bagmati Hostel",
   "Kosi Hostel",
   "Kosi Extension Hostel",
   "Sone Hostel"
 ];
 
 const girlsHostels = [
-  "Bagmati Hostel",
+   "Ganga Hostel",
   "Kadimbini Hostel"
 ];
 
