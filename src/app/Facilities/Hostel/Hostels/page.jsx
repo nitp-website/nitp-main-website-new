@@ -8,6 +8,7 @@ const Allhostels = [
     gender: "Female",
     capacity: "500",
     images: [
+      "https://lh3.googleusercontent.com/d/1iQNbzZNZlK0ers42tTvL5kn7hGFhkdR4",
       "https://lh3.googleusercontent.com/d/1g-ui6ih8j8cJVGbMPVwtF7g79r3b6yy1",
       "https://lh3.googleusercontent.com/d/1iEcDjtZz2RAbDWgbmxIUh_8il--QdFnV",
       "https://lh3.googleusercontent.com/d/1EiYMsqcs0TSFd7X5OUmgXQWaZQAuq4Qf",
@@ -56,6 +57,8 @@ const Allhostels = [
       "https://lh3.googleusercontent.com/d/1v1aGtkCHyuJ7P2I6mdUtSA2k8hNNCKad",
       "https://lh3.googleusercontent.com/d/1H-ScU0XPeRxrkYjOptxfW8Zvk2H2gG1u",
       "https://lh3.googleusercontent.com/d/191X9U9DAkJGPtYDABQ0B7Sh7ZsLNq9PR",
+      "https://lh3.googleusercontent.com/d/1w69gGhnqezPH6YMMpmziMCAhpQFj2m8u",
+      "https://lh3.googleusercontent.com/d/1RmWozOyRc4fasM8snz6bpvwSqe5pBB8r",
     ],
     description: `Sone Hostel is an abode to 410+ residents exclusively only for first year students. It has always been a popular choice among the students owing to its spacious rooms distributed in 2 blocks A and B. The hall has a reading room on the ground floor with a fitness room adjacent to it and a Television Room. The Hostel constitute spacious mess and an indoor playground for sports and other activities.`,
     contacts: [
@@ -85,6 +88,7 @@ const Allhostels = [
     gender: "Male",
     capacity: "322",
     images: [
+      "https://lh3.googleusercontent.com/d/1tc3VWjvN0CsUjAlbxvnoULeIetFSHFNA",
       "https://lh3.googleusercontent.com/d/1YGctsCG3uN1fG8lN5GcBf6vFVUheNGoH",
       "https://lh3.googleusercontent.com/d/1QoGMGBYUMsSV_sx9YLlfUblXXhTPCYcj",
       "https://lh3.googleusercontent.com/d/15t_j40M-N9wkAZSpqrRqS79S3YOL_TuR",
@@ -146,6 +150,8 @@ const Allhostels = [
     seater: "Single & Multi-Seater",
     capacity: "1200+",
     images: [
+      "https://lh3.googleusercontent.com/d/1quMxIYw9WULx_a2fG-jTNcpWlJKUcJ1O",
+      "https://lh3.googleusercontent.com/d/16n1mQLlBm2iRidpkTN3nKdB7D360Wr4P",
       "https://lh3.googleusercontent.com/d/169jwIsifASgskIKFRbX9ahbZb03Sd6ut",
       "https://lh3.googleusercontent.com/d/1dyhaJOO1spj-KVs-5rW1budN2CGu5kcu",
       "https://lh3.googleusercontent.com/d/15lkjI2SQAGKtd4Wc4k6ela06B6ao02vU",
@@ -198,6 +204,7 @@ const Allhostels = [
     capacity: "700+",
     images: [
       "https://lh3.googleusercontent.com/d/1G1NTAB6sUgL_8FC3ktFvX7kCUIIIxICc",
+      "https://lh3.googleusercontent.com/d/1aRPKSiFxf6GQPFUsZuakRPBapcI3e2ox",
       "https://lh3.googleusercontent.com/d/19VA-McwAxw5TUjKFBFNaqt5Fvvl-1jEv",
       "https://lh3.googleusercontent.com/d/1eDfG_0z5avoWCBy0J51dgcUokOdC9exD",
       "https://lh3.googleusercontent.com/d/1YcK5la6qqLeDzaFYHSFjQ5D_CAr6snMU",
@@ -248,6 +255,7 @@ const Allhostels = [
       "https://lh3.googleusercontent.com/d/1j-Dt4yXG3V3V_LifV_hd8Dnmp5byookd",
       "https://lh3.googleusercontent.com/d/1wqoqphjcH0duyD3lNlNOi4dMlnp_11tI",
       "https://lh3.googleusercontent.com/d/1G9UCSGl8Iy2aTYpYC4FE_G3_jZ_8Q0gV",
+      "https://lh3.googleusercontent.com/d/1XGAOvYrLThYAbyqEuGt7DkrxSeSSJcRq",
     ],
     description: `This Hostel is situated in the Bihta campus of NIT Patna, and is one of the largest Hostel comprising more than 1200+ Students. It has facilities like elevators, vending machines, 24x7 CCTV monitoring of the entrance and exit of the borders. Security guard is available 24x7 for the security of the boarders.`,
     contacts: [
