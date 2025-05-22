@@ -26,8 +26,6 @@ const FacultyCard = ({ facultyProfile, isLoading, error }) => {
     );
   if (!facultyProfile) return null;
 
-  // console.log(facultyProfile);
-
   const {
     name,
     designation,
@@ -159,7 +157,6 @@ const FacultyProfileWrapper = ({ email }) => {
           throw new Error("Failed to fetch faculty data");
         }
         const data = await response.json();
-        // console.log(data.profile);
         setFacultyProfile(data);
       } catch (err) {
         setError(err.message);
@@ -184,10 +181,12 @@ const FacultyProfileWrapper = ({ email }) => {
 
 // Main Component
 export default function AdministrationPage() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("core-members");
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+  const [selectedPOUnit, setSelectedPOUnit] = useState("UNIT-1 Incharge");
 
   // Define positions array directly in the component
+
   const positions = [
     {
       title: "Professor Incharge",
@@ -239,29 +238,34 @@ export default function AdministrationPage() {
             img: "https://lh3.googleusercontent.com/d/1-HrJH-1TFKHiMJt6wcaokRLDxbkgZrEq=w1000",
           },
           {
+            name: "Pratham Jain",
+            position: "Design Lead",
+            img: "https://lh3.googleusercontent.com/d/1i0hWwC2hAHUZEReAc36XYOF-qoJSzKxl=w1000",
+          },
+          {
             name: "Smita Kumari",
             position: "PR Lead & Operations at Bihta Campus",
             img: "https://lh3.googleusercontent.com/d/16PD0RIn9YC7b_krOSsAd1zHr4c9s_OAQ=w1000",
           },
           {
-            name: "Priyanshu Goswami",
+            name: "Priyanshu Goshwami",
             position: "Operations Lead",
             img: "https://lh3.googleusercontent.com/d/1CKI_ux0igkuLuOtLxre-TpNbrOABdzP9=w1000",
           },
           {
-            name: "Shubhanshu Shekhar",
+            name: "Sujal",
             position: "Operations Lead",
             img: "https://lh3.googleusercontent.com/d/1zAPd0t4-Gs7PQjWaeWyuZRhApqe0v4YM=w1000",
           },
           {
-            name: "Shubhanshu Kumar",
+            name: "Shubhranshu Kumar",
             position: "Operations Lead",
             img: "https://lh3.googleusercontent.com/d/1DwsymjRLG5ktd1zOgttCk8UdU7z8-jJU=w1000",
           },
           {
-            name: "Anand",
-            position: "Event Coordinator",
-            img: "https://lh3.googleusercontent.com/d/1MZvhriSQqyHpw6bMX438Dl3kOclKWRaE=w1000",
+            name: "Subhanshu Shekhar",
+            position: "Operations Lead",
+            img: "https://lh3.googleusercontent.com/d/1YEG6jyzMKdZa8_rsTxhVjfN0rVOK79Vo=w1000",
           },
           {
             name: "Shriya Sharma",
@@ -380,7 +384,7 @@ export default function AdministrationPage() {
           { name: "PRASANT KUMAR", rollNO: "2303102" },
           { name: "GAURAV KUMAR", rollNO: "2340160" },
           { name: "MANISH KUMAR", rollNO: "2356005" },
-          { name: "PRIYANSHU GOSHWAMI", rollNO: "" },
+          { name: "PRIYANSHU GOSHWAMI", rollNO: "2303105" },
           { name: "AKASH KUMAR", rollNO: "" },
           { name: "Rohit Nandan Singh", rollNO: "2301041" },
           { name: "Ankita Kumari", rollNO: "2301128" },
@@ -405,7 +409,7 @@ export default function AdministrationPage() {
           { name: "Vijeta Kumari", rollNO: "2301020" },
           { name: "Komal Deep", rollNO: "2303091" },
           { name: "ALOK KUMAR", rollNO: "2353011" },
-          { name: "RAJ VERMA", rollNO: "" },
+          { name: "RAJ VERMA", rollNO: "2353006" },
           { name: "ANSH KUMAR SINGH", rollNO: "2303034" },
           { name: "DHRUVRAJ CHAUDHARY", rollNO: "2350018" },
           { name: "ARYAN RAJ", rollNO: "2302035" },
@@ -423,144 +427,126 @@ export default function AdministrationPage() {
     },
   ];
 
-  // Set initial category
+  // Set initial subcategory for student core members
   useEffect(() => {
-    if (positions.length > 0 && !selectedCategory) {
-      setSelectedCategory(positions[0]);
-    }
-  }, []);
-
-  // Set initial subcategory when category changes
-  useEffect(() => {
-    if (!selectedCategory) return;
-
-    if (
-      selectedCategory.team &&
-      Object.keys(selectedCategory.team).length > 0
-    ) {
-      const firstTeamKey = Object.keys(selectedCategory.team)[0];
+    if (selectedCategory === "core-members") {
+      const firstTeamKey = Object.keys(positions[2].team)[0];
       setSelectedSubcategory(firstTeamKey);
-    } else if (
-      selectedCategory.members &&
-      typeof selectedCategory.members === "object" &&
-      Object.keys(selectedCategory.members).length > 0
-    ) {
-      const firstMemberKey = Object.keys(selectedCategory.members)[0];
-      setSelectedSubcategory(firstMemberKey);
-    } else {
-      setSelectedSubcategory(null);
     }
   }, [selectedCategory]);
 
-  // Render content based on selected category
-  const renderContent = () => {
-    if (!selectedCategory) return null;
+  // Render Faculty Leadership section (PI and PO together)
+  const renderFacultyLeadership = () => {
+    return (
+      <div className="w-full max-w-6xl mt-6">
+        <div className="flex flex-col gap-8">
+          {/* Professor Incharge Section */}
+          <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold text-red-800 mb-6 text-center">
+              Professor Incharge
+            </h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {positions[0].members.map((email, index) => (
+                <FacultyProfileWrapper key={index} email={email} />
+              ))}
+            </div>
+            <h3 className="text-xl font-semibold text-red-800 mb-6 text-center mt-10">
+              Program Officers
+            </h3>
+            <div className="w-full">
+              <div className="flex flex-wrap justify-center gap-2 mb-6">
+                {Object.keys(positions[1].members).map((unitTitle) => (
+                  <button
+                    key={unitTitle}
+                    className={`px-4 py-2 text-sm font-semibold rounded-md transition-all ${
+                      selectedPOUnit === unitTitle
+                        ? "bg-red-900 text-white"
+                        : "bg-gray-300 hover:bg-gray-400"
+                    }`}
+                    onClick={() => setSelectedPOUnit(unitTitle)}
+                  >
+                    {unitTitle}
+                  </button>
+                ))}
+              </div>
 
-    // For Professor Incharge (PI)
-    if (selectedCategory.label === "PI") {
-      return (
-        <div className="flex flex-wrap justify-center gap-4">
-          {selectedCategory.members.map((email, index) => (
-            <FacultyProfileWrapper key={index} email={email} />
-          ))}
-        </div>
-      );
-    }
-
-    // For Program Officers (PO)
-    if (selectedCategory.label === "PO") {
-      return (
-        <div className="w-full">
-          <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {Object.keys(selectedCategory.members).map((unitTitle) => (
-              <button
-                key={unitTitle}
-                className={`px-4 py-2 text-sm font-semibold rounded-md transition-all ${
-                  selectedSubcategory === unitTitle
-                    ? "bg-red-900 text-white"
-                    : "bg-gray-300 hover:bg-gray-400"
-                }`}
-                onClick={() => setSelectedSubcategory(unitTitle)}
-              >
-                {unitTitle}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            {selectedSubcategory &&
-              selectedCategory.members &&
-              selectedCategory.members[selectedSubcategory] &&
-              Array.isArray(selectedCategory.members[selectedSubcategory]) &&
-              selectedCategory.members[selectedSubcategory].map(
-                (email, index) => (
-                  <FacultyProfileWrapper key={index} email={email} />
-                )
-              )}
+              <div className="flex flex-wrap justify-center gap-4">
+                {selectedPOUnit &&
+                  positions[1].members[selectedPOUnit] &&
+                  positions[1].members[selectedPOUnit].map((email, index) => (
+                    <FacultyProfileWrapper key={index} email={email} />
+                  ))}
+              </div>
+            </div>
           </div>
         </div>
-      );
-    }
+      </div>
+    );
+  };
 
-    // For Student Core Members
-    if (selectedCategory.title === "Student Core Members") {
-      return (
-        <div className="w-full">
-          <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {Object.keys(selectedCategory.team).map((teamName) => (
-              <button
-                key={teamName}
-                className={`px-4 py-2 text-sm font-semibold rounded-md transition-all ${
-                  selectedSubcategory === teamName
-                    ? "bg-red-900 text-white"
-                    : "bg-gray-300 hover:bg-gray-400"
-                }`}
-                onClick={() => setSelectedSubcategory(teamName)}
-              >
-                {teamName}
-              </button>
-            ))}
-          </div>
+  // Render Student Core Members section
+  const renderStudentCoreMembers = () => {
+    return (
+      <div className="w-full max-w-6xl mt-6">
+        <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
+          <h3 className="text-xl font-semibold text-red-800 mb-6 text-center">
+            Student Core Members
+          </h3>
+          <div className="w-full">
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
+              {Object.keys(positions[2].team).map((teamName) => (
+                <button
+                  key={teamName}
+                  className={`px-4 py-2 text-sm font-semibold rounded-md transition-all ${
+                    selectedSubcategory === teamName
+                      ? "bg-red-900 text-white"
+                      : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  onClick={() => setSelectedSubcategory(teamName)}
+                >
+                  {teamName}
+                </button>
+              ))}
+            </div>
 
-          {selectedSubcategory === "Teaching Team" &&
-          selectedCategory.team &&
-          selectedCategory.team[selectedSubcategory] ? (
-            <div className="overflow-x-auto">
-              <table className="w-full text-black border-collapse border border-gray-300">
-                <thead>
-                  <tr className="bg-red-900 text-white">
-                    <th className="border border-gray-300 px-4 py-2">Name</th>
-                    <th className="border border-gray-300 px-4 py-2">
-                      Roll Number
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {selectedCategory.team[selectedSubcategory].map(
+            {selectedSubcategory === "Teaching Team" &&
+            positions[2].team &&
+            positions[2].team[selectedSubcategory] ? (
+              <div className="overflow-x-auto">
+                <table className="w-full text-black border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-red-900 text-white">
+                      <th className="border border-gray-300 px-4 py-2">Name</th>
+                      <th className="border border-gray-300 px-4 py-2">
+                        Roll Number
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {positions[2].team[selectedSubcategory].map(
+                      (member, index) => (
+                        <TeachingTeamMember key={index} member={member} />
+                      )
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <div className="flex flex-wrap justify-center">
+                {selectedSubcategory &&
+                  positions[2].team &&
+                  positions[2].team[selectedSubcategory] &&
+                  positions[2].team[selectedSubcategory].map(
                     (member, index) => (
-                      <TeachingTeamMember key={index} member={member} />
+                      <CoreMemberCard key={index} member={member} />
                     )
                   )}
-                </tbody>
-              </table>
-            </div>
-          ) : (
-            <div className="flex flex-wrap justify-center">
-              {selectedSubcategory &&
-                selectedCategory.team &&
-                selectedCategory.team[selectedSubcategory] &&
-                selectedCategory.team[selectedSubcategory].map(
-                  (member, index) => (
-                    <CoreMemberCard key={index} member={member} />
-                  )
-                )}
-            </div>
-          )}
+              </div>
+            )}
+          </div>
         </div>
-      );
-    }
-
-    return null;
+      </div>
+    );
   };
 
   return (
@@ -569,33 +555,34 @@ export default function AdministrationPage() {
         Administration
       </h2>
 
-      <div className="w-full max-w-6xl flex flex-col gap-8 items-stretch">
-        {/* Category Selection */}
-        <div className="flex flex-wrap justify-center gap-2 mb-4">
-          {positions.map((category) => (
-            <button
-              key={category.title}
-              className={`px-4 py-2 text-md font-semibold rounded-md transition-all w-full sm:w-auto text-center ${
-                selectedCategory?.title === category.title
-                  ? "bg-gray-900 text-white"
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category.title}
-            </button>
-          ))}
-        </div>
-
-        {/* Content Section */}
-        <div className="flex flex-col mx-auto w-full p-6 bg-gray-100 rounded-lg shadow-lg">
-          <h3 className="text-xl font-semibold text-red-800 mb-6 text-center">
-            {selectedCategory?.title}
-          </h3>
-
-          {renderContent()}
-        </div>
+      {/* Main Navigation */}
+      <div className="flex flex-wrap justify-center gap-2 mb-4 w-full max-w-6xl">
+        <button
+          className={`px-4 py-2 text-md font-semibold rounded-md transition-all w-full sm:w-auto text-center ${
+            selectedCategory === "faculty"
+              ? "bg-gray-900 text-white"
+              : "bg-gray-300 hover:bg-gray-400"
+          }`}
+          onClick={() => setSelectedCategory("faculty")}
+        >
+          Faculty Leadership
+        </button>
+        <button
+          className={`px-4 py-2 text-md font-semibold rounded-md transition-all w-full sm:w-auto text-center ${
+            selectedCategory === "core-members"
+              ? "bg-gray-900 text-white"
+              : "bg-gray-300 hover:bg-gray-400"
+          }`}
+          onClick={() => setSelectedCategory("core-members")}
+        >
+          Student Core Members
+        </button>
       </div>
+
+      {/* Content Section */}
+      {selectedCategory === "faculty"
+        ? renderFacultyLeadership()
+        : renderStudentCoreMembers()}
     </div>
   );
 }
