@@ -1,76 +1,71 @@
-"use client";
-import React, { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faIdCard,
-  faGraduationCap,
-  faEnvelope,
-  faPhone,
-  faEye,
-  faLightbulb,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
-function PeopleCard({
+export default function PeopleCard({
   name,
-  designation,
   image,
+  designation,
   email,
   phone,
   Expertise,
-  }) 
-  {
+  profileLink,
+}) {
   return (
-    <>
-        <div
-          className={`backdrop-blur-md text-black static flex flex-col overflow-hidden md:flex-row shadow-md border rounded p-7 m-5`}
-        >
-          <div className="flex justify-center mb-4 items-center md:w-1/4">
-            <div
-              className="relative  md:h-[90px] w-[100px]"
-            >
-              <Image
-                className={`rounded-md object-cover "h-[100px] w-[100px]"}`}
-                src={image==""?'/faculty.jpeg':image}
-                alt={name}
-                height={300}
-                width={300}
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div className="mt-1 md:ml-8 ml-4 md:w-3/4 md:mt-0 ">
-            <h5 className="m-0 text-red-800 font-bold">{name}</h5>
-            <span className="flex font-bold mt-1">
-              <FontAwesomeIcon icon={faIdCard} className="w-5 mr-1" />{" "}
-              {designation}
-            </span>
-           {Expertise && <span
-              className={`flex mt-1 transition-opacity duration-300 "opacity-0"}`}
-            >
-              <FontAwesomeIcon icon={faLightbulb} className="w-5 mr-1" />{" "}
-              <a href={`mailto:${Expertise}`}>{Expertise}</a>
-            </span>
-            }
-           {email && <span
-              className={`flex mt-1 transition-opacity duration-300 "opacity-0"}`}
-            >
-              <FontAwesomeIcon icon={faEnvelope} className="w-5 mr-1" />{" "}
-              <a href={`mailto:${email}`}>{email}</a>
-            </span>
-            }
-           {phone && <span
-              className={`flex mt-1 transition-opacity duration-300 "opacity-0"}`}
-            >
-              <FontAwesomeIcon icon={faPhone} className="w-5 mr-1" />{" "}
-              <a href={`mailto:${phone}`}>{phone}</a>
-            </span>
-            }
-                    
-          </div>
+    <div className="w-[300px] h-[325px] mx-4 my-4">
+      <div className="py-8 pb-10 mb-8 bg-[#f7f5ec] text-center overflow-hidden relative rounded-[20px] group h-full">
+        <div className="inline-block h-[130px] w-[130px] mb-8 z-[1] relative">
+          <div className="absolute w-full h-0 rounded-full bg-[rgb(153,27,27)] bottom-[135%] right-0 left-0 opacity-90 scale-[3] transition-all duration-300 group-hover:h-full"></div>
+          <div className="absolute w-full h-full rounded-full bg-[rgb(153,27,27)] top-0 left-0 -z-[1]"></div>
+          <Image
+            src={image || "/faculty.jpeg"}
+            alt={name}
+            width={130}
+            height={130}
+            className="w-[130px] h-[130px] object-cover rounded-full transform scale-100 transition-all duration-900 ease-in-out group-hover:shadow-[0_0_0_14px_#f7f5ec] group-hover:scale-[0.7]"
+          />
         </div>
-    </>
+        <div className="px-4">
+          <h3 className="text-md text-black font-bold">{name}</h3>
+          <h4 className="block text-[15px] text-[#4e5052] capitalize">{designation}</h4>
+          {Expertise && (
+            <h4 className="block text-sm text-black capitalize">{Expertise}</h4>
+          )}
+        </div>
+        <ul className="w-full flex justify-between p-0 m-0 bg-[rgb(153,27,27)] absolute -bottom-[100px] left-0 transition-all duration-500 ease-in-out group-hover:bottom-0">
+          {phone && (
+            <li className="inline-block">
+              <a
+                href={`tel:${phone}`}
+                className="block px-5 py-2 text-[17px] text-white hover:text-[rgb(153,27,27)] hover:bg-[#f7f5ec] transition-all duration-300"
+              >
+                <FontAwesomeIcon icon={faPhone} className="w-8" />
+              </a>
+            </li>
+          )}
+          {email && (
+            <li className="inline-block">
+              <a
+                href={`mailto:${email}`}
+                className="block px-5 py-2 text-[17px] text-white hover:text-[rgb(153,27,27)] hover:bg-[#f7f5ec] transition-all duration-300"
+              >
+                <FontAwesomeIcon icon={faEnvelope} className="w-8" />
+              </a>
+            </li>
+          )}
+                    {profileLink && (
+            <li className="inline-block">
+              <a
+                href={profileLink}
+                className="block px-5 py-2 text-[17px] text-white hover:text-[rgb(153,27,27)] hover:bg-[#f7f5ec] transition-all duration-300"
+              >
+                View Profile
+              </a>
+            </li>
+          )}
+        </ul>
+      </div>
+    </div>
   );
 }
 
-export default PeopleCard;

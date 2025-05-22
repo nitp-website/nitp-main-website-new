@@ -8,8 +8,7 @@ const dummyNotices = [
   {
     id: 1,
     title: "Guidelines on Information Security Practices for Government Entities",
-    // timestamp: 1696281600000,
-    timestamp: 0, 
+    timestamp: 0,
     attachments: [
       {
         typeLink: true,
@@ -20,11 +19,10 @@ const dummyNotices = [
     important: true,
     isVisible: 1,
   },
-   {
+  {
     id: 2,
     title: "Cyber Security Guidelines for Government Employees",
-    // timestamp: 1696281600000,
-    timestamp: 0, 
+    timestamp: 0,
     attachments: [
       {
         typeLink: true,
@@ -35,29 +33,43 @@ const dummyNotices = [
     important: true,
     isVisible: 1,
   },
-  
 ];
 
 const Noticecard = ({ detail, time, attachments, imp, link }) => (
-  <div className={`notice ${imp ? "important" : ""}`}>
-    <h3 className="text-black md:text-xs text-sm">{detail}</h3>
+  <div
+    className={`rounded-xl shadow-md px-6 py-5 mb-5 border-l-4 ${
+      imp
+        ? "border-red-700 bg-red-50 shadow-red-100"
+        : "border-gray-200 bg-white"
+    }`}
+  >
+    <h3 className="font-semibold text-red-900 text-base mb-1">{detail}</h3>
     {time !== 0 && (
-      <p className="text-neutral-500 text-xs">
+      <p className="text-gray-500 text-xs mb-2">
         {new Date(time).toLocaleDateString()}
       </p>
     )}
     {attachments && attachments.length > 0 && (
-      <ul className=" text-xs text-red-800">
+      <ul className="text-xs text-red-800 space-y-1">
         {attachments.map((attachment, index) => (
           <li key={index}>
             {attachment.typeLink ? (
-              <a href={attachment.url} target="_blank" rel="noopener noreferrer">
-                <div className="download-icon inline-block"></div>
+              <a
+                href={attachment.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-red-700 font-medium"
+              >
+                <span className="inline-block mr-1 align-middle">🔗</span>
                 {attachment.caption}
               </a>
             ) : (
-              <a href={attachment.url} download className=" text-xs ">
-                <div className="download-icon inline-block"></div>
+              <a
+                href={attachment.url}
+                download
+                className="underline hover:text-red-700 font-medium"
+              >
+                <span className="inline-block mr-1 align-middle">⬇️</span>
                 {attachment.caption}
               </a>
             )}
@@ -65,7 +77,14 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
         ))}
       </ul>
     )}
-    {link && <a href={link} className="text-xs">View Details</a>}
+    {link && (
+      <a
+        href={link}
+        className="text-xs underline text-red-700 hover:text-red-900 font-medium mt-2 block"
+      >
+        View Details
+      </a>
+    )}
   </div>
 );
 
@@ -76,11 +95,16 @@ const Notice = () => {
 
   useEffect(() => {
     const fetchAcademics = async () => {
-      // Simulate fetching data from API
-      setTimeout(() => {
-        setAcademics(dummyNotices.filter((notice) => notice.isVisible === 1));
+      try {
+        // Simulate fetching data from API
+        setTimeout(() => {
+          setAcademics(dummyNotices.filter((notice) => notice.isVisible === 1));
+          setIsLoading(false);
+        }, 1000); // Simulate delay
+      } catch (err) {
+        setFetchError(true);
         setIsLoading(false);
-      }, 1000); // Simulate delay
+      }
     };
 
     fetchAcademics();
@@ -88,12 +112,13 @@ const Notice = () => {
 
   return (
     <div>
-      <div className="p-5 md:p-10  md:pl-28 md:pr-28">
+      <div className="p-5 md:p-10 md:pl-28 md:pr-28">
         <div className="text-2xl text-center pb-7 md:pb-10 text-red-950 font-bold">
           <h2>Notice</h2>
         </div>
+
         {isLoading ? (
-          <div className="flex justify-center items-center ">
+          <div className="flex justify-center items-center">
             <svg
               version="1.1"
               id="L1"
@@ -102,14 +127,14 @@ const Notice = () => {
               x="0px"
               y="0px"
               viewBox="0 0 100 100"
-              enable-background="new 0 0 100 100"
+              enableBackground="new 0 0 100 100"
             >
               <circle
                 fill="none"
                 stroke="#f87171"
-                stroke-width="6"
-                stroke-miterlimit="15"
-                stroke-dasharray="14.2472,14.2472"
+                strokeWidth="6"
+                strokeMiterlimit="15"
+                strokeDasharray="14.2472,14.2472"
                 cx="50"
                 cy="50"
                 r="47"
@@ -127,9 +152,9 @@ const Notice = () => {
               <circle
                 fill="none"
                 stroke="#f87171"
-                stroke-width="1"
-                stroke-miterlimit="10"
-                stroke-dasharray="10,10"
+                strokeWidth="1"
+                strokeMiterlimit="10"
+                strokeDasharray="10,10"
                 cx="50"
                 cy="50"
                 r="39"
@@ -203,46 +228,30 @@ const Notice = () => {
             <div className="text-center justify-center items-center">
               <svg
                 width="120px"
-                className=" m-auto"
+                className="m-auto"
                 height="120px"
                 viewBox="0 0 16.00 16.00"
                 fill="#e85e5e"
                 stroke="#e85e5e"
-                stroke-width="0.00016"
+                strokeWidth="0.00016"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke="#CCCCCC"
-                  stroke-width="0.128"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  <path
-                    d="m 3 0 c -1.660156 0 -3 1.339844 -3 3 v 7 c 0 1.660156 1.339844 3 3 3 h 10 c 1.660156 0 3 -1.339844 3 -3 v -7 c 0 -1.660156 -1.339844 -3 -3 -3 z m 0 2 h 10 c 0.554688 0 1 0.445312 1 1 v 7 c 0 0.554688 -0.445312 1 -1 1 h -10 c -0.554688 0 -1 -0.445312 -1 -1 v -7 c 0 -0.554688 0.445312 -1 1 -1 z m 3 2 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m 4 0 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -2 3 c -1.429688 0 -2.75 0.761719 -3.464844 2 c -0.136718 0.238281 -0.054687 0.546875 0.183594 0.683594 c 0.238281 0.136718 0.546875 0.054687 0.683594 -0.183594 c 0.535156 -0.929688 1.523437 -1.5 2.597656 -1.5 s 2.0625 0.570312 2.597656 1.5 c 0.136719 0.238281 0.445313 0.320312 0.683594 0.183594 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.714844 -1.238281 -2.035156 -2 -3.464844 -2 z"
-                    fill-rule="evenodd"
-                  ></path>
-                </g>
+                <path d="M8 0a8 8 0 100 16A8 8 0 008 0zM7 4h2v5H7V4zm0 6h2v2H7v-2z" />
               </svg>
-              <p className="text-center text-xl text-neutral-700 p-4">
-                Something went wrong while fetching data.
+              <p className="text-red-700 mt-4 text-sm font-semibold">
+                Failed to fetch notices. Please try again later.
               </p>
             </div>
           </div>
         ) : (
-          <div>
-            {academics.map((item, index) => (
-              <Noticecard
-                key={index}
-                detail={item.title}
-                time={item.timestamp}
-                attachments={item.attachments}
-                imp={item.important}
-                link={item.link}
-              />
-            ))}
-          </div>
+          academics.map((notice) => (
+            <Noticecard
+              key={notice.id}
+              detail={notice.title}
+              time={notice.timestamp}
+              attachments={notice.attachments}
+              imp={notice.important}
+            />
+          ))
         )}
       </div>
     </div>
