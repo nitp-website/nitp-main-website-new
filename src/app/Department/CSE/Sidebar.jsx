@@ -1,14 +1,5 @@
 import React, { useState, useRef } from "react";
 import Link from "next/link";
-import { FaHome } from "react-icons/fa";
-import { RiAdminFill } from "react-icons/ri";
-import { MdEvent } from "react-icons/md";
-import { SiGoogleforms } from "react-icons/si";
-import { IoMdPhotos } from "react-icons/io";
-import { SlCalender } from "react-icons/sl";
-import { RxActivityLog } from "react-icons/rx";
-import { IoIosPeople } from "react-icons/io";
-import { HiMiniUserGroup } from "react-icons/hi2";
 import {
   ChevronDown,
   Home,
@@ -72,6 +63,7 @@ import {
   Award,
   PackageSearch,
   ChevronRight,
+  ChevronUp,
   ShieldCheck,
   BarChart3,
   Gavel,
@@ -80,12 +72,13 @@ import {
   GraduationCap,
   Activity,
   ActivityIcon,
+  Menu,
 } from "lucide-react";
 
 const dept = "CSE"; // Replace with the actual department name or variable
 
 const navItems = [
-  { name: "Home", url: `/Department/${dept}`, icon: <Home size={20} /> },
+  { name: "Overview", url: `/Department/${dept}`, icon: <BookOpen size={20} /> },
   {
     name: "About",
     icon: <BookOpen size={18} />,
@@ -93,17 +86,17 @@ const navItems = [
     dropdown: [
       {
         name: "About Your Department",
-        url: `/Department/${dept}/About`,
+        url: `/Department/${dept}/about`,
         icon: <BookOpen size={18} />,
       },
       {
         name: "Mission & Vision",
-        url: `/Department/${dept}/Mission`,
+        url: `/Department/${dept}/mission`,
         icon: <FileText size={18} />,
       },
       {
         name: "PO & PEO",
-        url: `/Department/${dept}/PO`,
+        url: `/Department/${dept}/po`,
         icon: <BookOpen size={18} />,
       },
     ],
@@ -115,17 +108,17 @@ const navItems = [
     dropdown: [
       {
         name: "Faculty",
-        url: `/Department/${dept}/Faculty`,
+        url: `/Department/${dept}/faculty`,
         icon: <Scroll size={18} />,
       },
       {
         name: "Staff",
-        url: `/Department/${dept}/Staff`,
+        url: `/Department/${dept}/staff`,
         icon: <FileText size={18} />,
       },
       {
         name: "Research Students",
-        url: `/Department/${dept}/ResearchStudents`,
+        url: `/Department/${dept}/researchStudents`,
         icon: <Building size={18} />,
       },
     ],
@@ -137,22 +130,22 @@ const navItems = [
     dropdown: [
       {
         name: "Journal",
-        url: `/Department/${dept}/Journal`,
+        url: `/Department/${dept}/journal`,
         icon: <Scroll size={18} />,
       },
       {
         name: "Conference",
-        url: `/Department/${dept}/Conference`,
+        url: `/Department/${dept}/conference`,
         icon: <FileText size={18} />,
       },
       {
         name: "Patents",
-        url: `/Department/${dept}/Patents`,
+        url: `/Department/${dept}/patents`,
         icon: <Building size={18} />,
       },
       {
         name: "Projects",
-        url: `/Department/${dept}/Projects`,
+        url: `/Department/${dept}/projects`,
         icon: <Building size={18} />,
       },
     ],
@@ -160,26 +153,26 @@ const navItems = [
   {
     name: "Syllabus",
     icon: <GraduationCap size={18} />,
-    url: `/Department/${dept}/Syllabus`,
+    url: `/Department/${dept}/syllabus`,
   },
   {
     name: "Time Table",
     icon: <Calendar size={18} />,
-    url: `/Department/${dept}/TimeTable`,
+    url: `/Department/${dept}/timeTable`,
   },
   {
     name: "Academic Programs",
     icon: <Award size={18} />,
-    url: `/Department/${dept}/AcadProgram`,
+    url: `/Department/${dept}/acadProgram`,
   },
   {
     name: "Labs",
     icon: <Labs size={18} />,
-    url: `/Department/${dept}/Lab`,
+    url: `/Department/${dept}/labs`,
   },
 ];
 
-const Sidebar = ({ onLinkClick }) => {
+const Sidebar = ({ onLinkClick, isMenuOpen }) => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const menuButtonRef = useRef(null);
@@ -198,12 +191,16 @@ const Sidebar = ({ onLinkClick }) => {
     }
   };
 
+  const handleLinkClick = () => {
+    if (window.innerWidth < 768) {
+      onLinkClick();
+    }
+  };
   return (
-    <div className="text-black">
+    <div className="text-black h-full">
       <div
-        className={`fixed top-0 left-0 w-64 h-screen bg-[#F8F0EE] border-r border-[#E8D0CB] z-40 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } md:relative md:translate-x-0 md:h-auto md:block`}
+        className={`fixed top-0 h-full z-40 transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
+          } md:relative md:translate-x-0 md:h-auto md:block`}
       >
         <nav className="p-2 overflow-y-auto h-[calc(100vh-64px)] md:h-auto">
           <ul className="space-y-1">
@@ -226,11 +223,10 @@ const Sidebar = ({ onLinkClick }) => {
                       )}
                     </button>
                     <ul
-                      className={`ml-6 mt-1 space-y-2 overflow-hidden transition-all duration-200 ${
-                        openSubmenu === item.name
-                          ? "max-h-40 overflow-y-auto"
-                          : "max-h-0"
-                      }`}
+                      className={`ml-6 mt-1 space-y-2 overflow-hidden transition-all duration-200 ${openSubmenu === item.name
+                        ? "max-h-40 overflow-y-auto"
+                        : "max-h-0"
+                        }`}
                     >
                       {item.dropdown.map((subitem) => (
                         <li key={subitem.name}>
@@ -250,6 +246,63 @@ const Sidebar = ({ onLinkClick }) => {
                     href={item.url}
                     className="flex items-center gap-2 p-2 rounded-md hover:bg-[#E8D0CB] text-red-700 font-medium"
                     onClick={closeSidebar}
+                  >
+                    {item.icon}
+                    {item.name}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      {/* for small screen */}
+      <div className="md:hidden w-fit h-fit z-50 flex items-center justify-between px-4">
+        <nav className="p-2 overflow-y-auto h-fit md:h-auto">
+          <ul className="space-y-1">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                {item.dropdown ? (
+                  <div>
+                    <button
+                      onClick={() => toggleSubmenu(item.name)}
+                      className="flex items-center justify-between w-full p-2 rounded-md hover:bg-[#E8D0CB] text-red-700 font-medium"
+                    >
+                      <span className="flex items-center gap-2">
+                        {item.icon}
+                        {item.name}
+                      </span>
+                      {openSubmenu === item.name ? (
+                        <ChevronUp size={16} />
+                      ) : (
+                        <ChevronDown size={16} />
+                      )}
+                    </button>
+                    <ul
+                      className={`ml-6 mt-1 space-y-2 overflow-hidden transition-all duration-200 ${openSubmenu === item.name
+                        ? "max-h-40 overflow-y-auto"
+                        : "max-h-0"
+                        }`}
+                    >
+                      {item.dropdown.map((subitem) => (
+                        <li key={subitem.name}>
+                          <Link
+                            href={subitem.url}
+                            className="block p-2 rounded-md hover:bg-[#E8D0CB] text-[#8B3A32]"
+                            onClick={handleLinkClick}
+                          >
+                            {subitem.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.url}
+                    className="flex items-center gap-2 p-2 rounded-md hover:bg-[#E8D0CB] text-red-700 font-medium"
+                    onClick={handleLinkClick}
                   >
                     {item.icon}
                     {item.name}

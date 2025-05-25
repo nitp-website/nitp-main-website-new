@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faIdCard,
-  faGraduationCap,
-  faEnvelope,
-  faPhone,
-  faEye,
-} from "@fortawesome/free-solid-svg-icons";
+import { Mail, Phone, Globe, FileText, BookOpen, Award } from "lucide-react";
 
 // Department Faculty Page
 
@@ -25,8 +18,6 @@ function FacultyCard({
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
-  // const qualification = "Ph.D.(CSE),M.Tech.(CSE),B.E.(CSE)";
-  // if (qualification == null) qualification = "";
   if (researchInterests == null) researchInterests = "";
 
   const interestsArray = researchInterests.split(", ");
@@ -36,62 +27,93 @@ function FacultyCard({
   interestsArray.sort();
 
   return (
-    <div className="w-[300px] h-[325px] mx-4 my-4">
-      <div className="py-8 pb-10 mb-8 bg-[#f7f5ec] text-center overflow-hidden relative rounded-[20px] group h-full">
-        <div className="inline-block h-[130px] w-[130px] mb-12 z-[1] relative">
-          <div className="absolute w-full h-0 rounded-full bg-[rgb(153,27,27)] bottom-[135%] right-0 left-0 opacity-90 scale-[3] transition-all duration-300 group-hover:h-full"></div>
-          <div className="absolute w-full h-full rounded-full bg-[rgb(153,27,27)] top-0 left-0 -z-[1]"></div>
-          <Image
-            src={image || "/faculty.jpeg"}
+    <div className="w-[575px] md:h-[300px] rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow bg-white">
+      <div className="flex flex-col md:flex-row">
+        {/* Left Panel */}
+        <div className="md:w-1/2 h-[300px] bg-[#F8F0EE] p-4 flex flex-col items-center justify-center">
+          <img
+            src={image || "/placeholder.svg"}
             alt={name}
-            width={130}
-            height={130}
-            className="w-[130px] h-[130px] object-cover rounded-full transform scale-100 transition-all duration-900 ease-in-out group-hover:shadow-[0_0_0_14px_#f7f5ec] group-hover:scale-[0.7]"
+            className="rounded-full w-32 h-32 object-cover border-4 border-white shadow-md"
           />
+          <h3 className="font-bold text-[#5D1A14] mt-3 text-center">{name}</h3>
+          <p className="text-[#8B3A32] text-sm text-center">{designation}</p>
         </div>
-  
-        <div className="px-4">
-          <h3 className="text-md text-black font-bold">{name}</h3>
-          <h4 className="block text-[15px] text-[#4e5052] capitalize">{designation}</h4>
-          {/* <h4 className="block text-[15px] text-[#4e5052] capitalize">{department}</h4> */}
+
+        {/* Right Panel */}
+        <div className="md:w-2/3 w-full h-full md:h-[300px] p-6">
+          {/* Contact Information */}
+          <div className="mb-4">
+            <h4 className="font-semibold text-[#5D1A14] mb-2">Contact Information</h4>
+            <div className="space-y-1 text-sm">
+              <p className="flex items-center gap-2">
+                <Mail size={16} className="text-[#8B3A32]" />
+                <span>{email}</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <Phone size={16} className="text-[#8B3A32]" />
+                {phone && !isNaN(phone) ? (
+                  <span>{phone}</span>
+                ) : (
+                  <></>)
+                }
+              </p>
+              <p className="flex items-center gap-2">
+                <Globe size={16} className="text-[#8B3A32]" />
+                <a
+                  href={profileLink}
+                  className="text-blue-600 hover:underline"
+                  rel="noopener noreferrer"
+                >
+                  Personal Webpage
+                </a>
+              </p>
+            </div>
+          </div>
+
+          {/* Specialization */}
+          {
+            researchInterests && (
+              <div className="mb-4 max-h-[96px] min-h-[96px] overflow-y-auto rounded-md scrollbar-thin">
+                <h4 className="font-semibold text-[#5D1A14] mb-2">Specialization</h4>
+                <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2">
+                    {researchInterests
+                      .split(",")
+                      .map((spec, index) => (
+                        <span
+                          key={index}
+                          className="bg-[#F8F0EE] text-[#8B3A32] px-2 py-1 rounded-md text-xs"
+                        >
+                          {spec.trim()}
+                        </span>
+                      ))}
+                  </div>
+                </div>
+              </div>
+            )
+          }
+
+          {/* Stats */}
+          {/* <div className="flex flex-wrap gap-4 mt-4">
+            <div className="flex items-center gap-1">
+              <FileText size={16} className="text-[#8B3A32]" />
+              <span className="text-sm">{faculty.publications} Publications</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <BookOpen size={16} className="text-[#8B3A32]" />
+              <span className="text-sm">{faculty.projects} Projects</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Award size={16} className="text-[#8B3A32]" />
+              <span className="text-sm">{faculty.awards} Awards</span>
+            </div>
+          </div> */}
         </div>
-  
-        <ul className="w-full flex justify-between p-0 m-0 bg-[rgb(153,27,27)] absolute -bottom-[100px] left-0 transition-all duration-500 ease-in-out group-hover:bottom-0">
-          {phone && (
-            <li className="inline-block">
-              <a
-                href={`tel:${phone}`}
-                className="block px-5 py-2 text-[17px] text-white hover:text-[rgb(153,27,27)] hover:bg-[#f7f5ec] transition-all duration-300"
-              >
-                <FontAwesomeIcon icon={faPhone} className="w-8" />
-              </a>
-            </li>
-          )}
-          {email && (
-            <li className="inline-block">
-              <a
-                href={`mailto:${email}`}
-                className="block px-5 py-2 text-[17px] text-white hover:text-[rgb(153,27,27)] hover:bg-[#f7f5ec] transition-all duration-300"
-              >
-                <FontAwesomeIcon icon={faEnvelope} className="w-8" />
-              </a>
-            </li>
-          )}
-          {profileLink && (
-            <li className="inline-block">
-              <a
-                href={profileLink}
-                className="block px-5 py-2 text-[17px] text-white hover:text-[rgb(153,27,27)] hover:bg-[#f7f5ec] transition-all duration-300"
-              >
-                View Profile
-              </a>
-            </li>
-          )}
-        </ul>
       </div>
     </div>
   );
-  
+
 }
 
 export default FacultyCard;

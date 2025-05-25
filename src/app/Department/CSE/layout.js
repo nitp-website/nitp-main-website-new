@@ -1,31 +1,33 @@
 "use client";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import Sidebar from "./sidebar"
+import Sidebar from "./Sidebar";
 
 export default function Layout({ children }) {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleLinkClick = () => {
-        setIsOpen(false);
-    };
+    const [isMenuOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="flex flex-col md:flex-row px-4 sm:px-8 md:px-12 lg:px-16 mt-6 md:mt-10 w-full mb-8">
+        <div className="flex flex-col md:flex-row w-full mb-8">
             <button
-                className="md:hidden p-2 bg-gray-500 rounded-md mb-4 w-fit"
-                onClick={() => setIsOpen(!isOpen)}
+                className="md:hidden mt-2 ml-2 p-2 bg-gray-500 rounded-md mb-4 w-fit"
+                onClick={() => setIsOpen(!isMenuOpen)}
             >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
             <div
-                className={`w-full md:w-1/4 lg:w-1/5 mb-6 md:mb-0 transition-all duration-300 ${isOpen ? "block" : "hidden md:block"}`}
+                className={`w-full md:w-1/4 lg:w-64 mb-6 h-full md:mb-0 transition-all duration-300 ${isMenuOpen ? "block" : "hidden md:block"}`}
             >
-                <Sidebar onLinkClick={handleLinkClick} />
+                <Sidebar onLinkClick={() => setIsOpen(false)} isMenuOpen={isMenuOpen} />
             </div>
 
             <div className="flex flex-col w-full md:w-3/4 lg:w-4/5">
+                <div className="px-5 pt-10 max-sm:px-0  text-black ">
+                    {/* heading */}
+                    <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 text-center bg-transparent">
+                        COMPUTER SCIENCE AND ENGINEERING
+                    </div>
+                </div>
                 {children}
             </div>
         </div>
