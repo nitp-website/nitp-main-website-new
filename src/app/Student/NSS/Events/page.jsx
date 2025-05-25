@@ -11,6 +11,15 @@ const Event = [
     title: "Independence Day Celebration",
     description: `Sankalp celebrated Independence Day with great enthusiasm, bringing together children for a memorable event. The day was filled with patriotism as the young participants showcased their talents through various activities. The celebration began with an inspiring speech, reflecting on the significance of India's independence. This was followed by vibrant dance performances, where children dressed in colorful attire moved to the tunes of patriotic songs. Their enthusiasm and spirit made the event lively and engaging. The event not only celebrated India's freedom but also encouraged the children to understand the importance of unity and pride in their nation's history.`,
   },
+  {
+    title: "YMUN",
+    description: `A Political Debate Competition was successfully organized on 12th April 2025 by the National Service Scheme (NSS) unit of NIT Patna at Meghnath Hall. The event aimed to foster critical thinking and enhance the oratory skills of students while offering a platform to express their views on pressing political issues.
+    The competition featured participants representing various political parties including Aam Aadmi Party (AAP), Bhartiya Janata Party (BJP), Samajwadi Party (SP), Janta Dal United (JDU), Indian National Congress (INC), and Rashtriya Janata Dal (RJD). Each team passionately presented their party's ideologies, defended their policies, and constructively debated on current national affairs.`,
+  },
+  {
+    title: "Blood Donation Camp",
+    description: `The National Service Scheme (NSS) unit of NIT Patna organized a blood donation camp on November 16, 2024, at the institute's health centre. The initiative aimed to promote the spirit of voluntary blood donation while providing students and faculty members with an opportunity to contribute to this noble cause.`,
+  },
 ];
 
 const NSSEventPage = () => {
@@ -25,7 +34,7 @@ const NSSEventPage = () => {
             <h3 className="text-xl font-semibold text-red-800 mb-2">
               {event.title}
             </h3>
-            <p className="text-gray-700">{event.description}</p>
+            <p className="text-gray-700 whitespace-pre-line">{event.description}</p>
           </div>
         ))}
       </div>

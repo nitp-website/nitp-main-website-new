@@ -5,8 +5,9 @@ import React from "react"
 import Webcard from "../components/Webteam/Webcard"
 import "./wpage.css"
 import Collapsible from "./Collapsible";
+import Link from "next/link";
 
-const currentYear = 20241; // Assuming current year is fixed as 20241
+const currentYear = 2024;
 const oldyears = [ 2023, 2022, 2021];
 const data = [
   {
@@ -32,6 +33,7 @@ const Webteam = () => {
   const [filteredteam, setFilteredteam] = useState([]);
   const [loading, setLoading] = useState(true);
   const [oldData, setOldData] = useState([]);
+  const [certificateNo, setCertificateNo] = useState("");
 
   const webteamUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/webteam`;
 
@@ -59,6 +61,13 @@ const Webteam = () => {
       });
   }, [webteamUrl]);
 
+  const handleCertificateVerification = (e) => {
+    e.preventDefault();
+    if (certificateNo.trim()) {
+      window.location.href = `/Webteam/certificate/${certificateNo.trim()}`;
+    }
+  };
+
   return (
     <div className="webteam-page text-black pr-5 pl-5 pb-5 md:pr-28 md:pl-28 bg-[url('https://i.postimg.cc/fbcBY1cJ/bg.jpg')] bg-center">
       <div className="layoutrow layoutrowmain">
@@ -76,7 +85,7 @@ const Webteam = () => {
               data-aos="zoom-in-right"
               className="text-sm md:text-xl font-semibold"
             >
-              Think coding is challenging? Try mastering web design!” This
+              Think coding is challenging? Try mastering web design!" This
               sentiment truly captures the spirit of the Web Development Cell at
               NIT Patna. 🌐
             </h2>
@@ -103,13 +112,15 @@ const Webteam = () => {
               coding, user experience optimization, and creative layout design. 🚀
               <br />
               <br />
-              At WDC NIT Patna, we’re not just developing a website—we’re
+              At WDC NIT Patna, we're not just developing a website—we're
               shaping the digital identity of our Institute and making a
               significant impact. Join us in this exciting journey of
               innovation and excellence! 💻
             </h2>
           </div>
         </div>
+
+        
 
         <hr />
         <div className="row rowmarl3">
@@ -167,6 +178,34 @@ const Webteam = () => {
         {!loading && (
           <Collapsible title={`Team Lineups Through the Years 🔽`} data={oldData} years={oldyears} />
         )}
+        </div>
+        {/* Certificate Verification Section */}
+        <h2 data-aos="zoom-in" className="text-center text-neutral-900 text-2xl font-bold mb-6 overline mt-10">
+            Certificate Verification
+          </h2>
+        <div className="bg-white/50 rounded-lg shadow-lg p-6 my-8">
+          
+          <div className="max-w-md mx-auto">
+            <form onSubmit={handleCertificateVerification} className="flex flex-col md:flex-row gap-4">
+              <input
+                type="text"
+                value={certificateNo}
+                onChange={(e) => setCertificateNo(e.target.value)}
+                placeholder="Enter Certificate Number (e.g., wdc-2024-001)"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-900"
+                required
+              />
+              <button
+                type="submit"
+                className="bg-red-900 text-white px-6 py-2 rounded-md hover:bg-red-800 transition-colors"
+              >
+                Verify
+              </button>
+            </form>
+            <p className="text-sm text-gray-600 mt-2">
+              Enter your certificate number(like wdc-2024-001) to verify its authenticity and view details.
+            </p>
+          </div>
         </div>
       </div>
     </div>
