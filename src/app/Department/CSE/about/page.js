@@ -44,7 +44,7 @@ const Aboutpage = () => {
           </div>
 
           {/* Counters */}
-          <DepartmentCounter counts={counts} />
+          {/* <DepartmentCounter counts={counts} /> */}
         </div>
       </div>
     </div>

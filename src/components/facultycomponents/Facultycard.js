@@ -53,9 +53,13 @@ function FacultyCard({
               <p className="flex items-center gap-2">
                 <Phone size={16} className="text-[#8B3A32]" />
                 {phone && !isNaN(phone) ? (
-                  <span>{phone}</span>
+                  <>
+                    <span>{phone}</span>
+                  </>
                 ) : (
-                  <></>)
+                  <>
+                    <span>0</span>
+                  </>)
                 }
               </p>
               <p className="flex items-center gap-2">
@@ -74,7 +78,7 @@ function FacultyCard({
           {/* Specialization */}
           {
             researchInterests && (
-              <div className="mb-4 max-h-[96px] min-h-[96px] overflow-y-auto rounded-md scrollbar-thin">
+              <div className="mb-4 max-h-[96px] min-h-[96px] overflow-y-auto rounded-md">
                 <h4 className="font-semibold text-[#5D1A14] mb-2">Specialization</h4>
                 <div className="flex flex-wrap gap-2">
                   <div className="flex flex-wrap gap-2">
