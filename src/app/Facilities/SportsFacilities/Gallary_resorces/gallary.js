@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-// Scroll component
+
 export const Scroll = ({ data }) => {
   const [popupImage, setPopupImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(null);
@@ -17,7 +17,8 @@ export const Scroll = ({ data }) => {
     setCurrentIndex(null);
   };
 
-  const showNextImage = () => {
+  const showNextImage = (e) => {
+    e.stopPropagation();
     if (currentIndex !== null) {
       const nextIndex = (currentIndex + 1) % data.length;
       setPopupImage(data[nextIndex].src);
@@ -25,7 +26,8 @@ export const Scroll = ({ data }) => {
     }
   };
 
-  const showPreviousImage = () => {
+  const showPreviousImage = (e) => {
+    e.stopPropagation();
     if (currentIndex !== null) {
       const prevIndex = (currentIndex - 1 + data.length) % data.length;
       setPopupImage(data[prevIndex].src);
@@ -34,53 +36,64 @@ export const Scroll = ({ data }) => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 p-4">
-      {data.map((item, idx) => (
-        <figure
-          key={idx}
-          className="relative overflow-hidden rounded-lg aspect-square"
-          onClick={() => openPopup(idx)}
-        >
-          <Image
-            src={item.src}
-            alt={item.alt}
-            className="object-cover cursor-pointer"
-            layout="fill"
-          />
-        </figure>
-      ))}
+    <div className="w-full mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        {data.map((item, idx) => (
+          <figure
+            key={idx}
+            className="relative overflow-hidden rounded-xl shadow-md bg-white cursor-pointer transition-transform hover:scale-105 p-0 m-0 flex"
+            onClick={() => openPopup(idx)}
+          >
+            {/* Use plain img for natural size */}
+            <img
+              src={item.src}
+              alt={item.alt}
+              className="rounded-xl object-cover"
+              style={{ display: "block", maxWidth: "100%", height: "auto" }}
+            />
+          </figure>
+        ))}
+      </div>
 
       {popupImage && (
-        <>
+        <div
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          onClick={closePopup}
+        >
           <div
-            className="fixed inset-0 p-1 bg-black bg-opacity-50 flex items-center justify-center z-50"
-            onClick={closePopup}
-          ></div>
-          <div className="fixed top-[20%] md:top-[57%] left-1/2 transform -translate-x-1/2 md:-translate-y-1/2 bg-white p-4 sm:p-4 z-50 max-h-[80%] max-w-full overflow-auto shadow-lg">
-            <div className="relative bg-white p-1 rounded-lg shadow-lg">
-              <button
-                className="absolute top-2 right-2 text-black"
-                onClick={closePopup}
-              >
-                ✖
-              </button>
-              <img src={popupImage} alt="Image" className="max-w-full max-h-[70vh]" />
-
+            className="relative bg-white rounded-2xl shadow-2xl p-4 max-w-2xl w-full flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-2 right-2 text-gray-600 hover:text-red-700 text-2xl"
+              onClick={closePopup}
+              aria-label="Close"
+            >
+              ✖
+            </button>
+            <img
+              src={popupImage}
+              alt="Popup"
+              className="max-w-full max-h-[70vh] rounded-lg shadow"
+            />
+            <div className="flex justify-between w-full mt-4">
               <button
                 onClick={showPreviousImage}
-                className="absolute left-2 bg-red-700 top-1/2 transform -translate-y-1/2 px-1 py-1  rounded-lg"
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow transition"
+                aria-label="Previous"
               >
-                ←
+                ← Prev
               </button>
               <button
                 onClick={showNextImage}
-                className="absolute right-2 bg-red-700 top-1/2 transform -translate-y-1/2 px-1 py-1  rounded-lg"
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow transition"
+                aria-label="Next"
               >
-                →
+                Next →
               </button>
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
@@ -261,19 +274,28 @@ const Student_Activity = {
 
 
 const Gallery = () => {
-  return <>
-       <h2 className="text-1xl p-2 sm:text-2xl font-semibold text-black text-left mb-4 underline decoration-red-500">
-        Inter NIT Medals
-      </h2>
-      <Scroll data={Inter_NIT.images} />
-
-      <h2 className="text-1xl p-2 sm:text-2xl font-semibold mt-4 text-black text-left mb-4 underline decoration-red-500">
-        Student Activity 
-      </h2>
-      <Scroll data={Student_Activity.images} />
-   </>
+  return (
+    <div className="min-h-screen bg-gray-100 py-8 px-2 md:px-8">
+      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-10">
+        <h1 className="text-3xl font-extrabold text-red-700 mb-8 text-center tracking-tight">
+          Sports Gallery
+        </h1>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-l-4 border-red-500 pl-3">
+            Inter NIT Medals
+          </h2>
+          <Scroll data={Inter_NIT.images} />
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-l-4 border-red-500 pl-3 mt-8">
+            Student Activity
+          </h2>
+          <Scroll data={Student_Activity.images} />
+        </section>
+      </div>
+    </div>
+  );
 };
 
 export default Gallery;
-
 
