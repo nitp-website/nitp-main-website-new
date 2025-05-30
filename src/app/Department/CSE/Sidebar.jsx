@@ -150,11 +150,11 @@ const navItems = [
       },
     ],
   },
-  {
-    name: "Syllabus",
-    icon: <GraduationCap size={18} />,
-    url: `/Department/${dept}/syllabus`,
-  },
+  // {
+  //   name: "Syllabus",
+  //   icon: <GraduationCap size={18} />,
+  //   url: `/Department/${dept}/syllabus`,
+  // },
   {
     name: "Time Table",
     icon: <Calendar size={18} />,

@@ -1,29 +1,37 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import DepartmentCounter from "../DeptCounter";
-import {
-  Users,
-  BookOpen,
-  FileText,
-  Award,
-  Briefcase,
-  BarChart2,
-} from "lucide-react";
+import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
+
+import axios from "axios";
 
 const about = `The Department of Computer Science and Engineering offers courses leading to Bachelor of Technology in Computer Science and Engineering. The department has a very good infrastructure and faculty to provide excellent education. The curriculum is updated regularly to keep up with the growing demands and the changing trends of the software industry and research laboratories. The department provides a wide range of courses. The prominent among them includes Data Structures, Design and Analysis of Algorithms, System Programming, Computer Networks, Data Mining and Warehousing, Distributed and Parallel Computing, Mobile and Wireless Computing, Real-time Systems, Cryptography, Genetic Algorithm, Quantum Algorithms and Artificial Intelligence. Apart from these, students are also offered a wide variety of electives.`;
 
-const counts = [
-  { name: "Undergraduate Students", icon: <Users size={40} />, count: "456+" },
-  { name: "Postgraduate Students", icon: <Users size={40} />, count: "123+" },
-  { name: "Ph.D. Students", icon: <Users size={40} />, count: "49+" },
-  { name: "Faculty", icon: <BookOpen size={40} />, count: "25+" },
-  { name: "Journal", icon: <FileText size={40} />, count: "25+" },
-  { name: "Conferences", icon: <Award size={40} />, count: "78+" },
-  { name: "Projects", icon: <Briefcase size={40} />, count: "49+" },
-  { name: "Book", icon: <BookOpen size={40} />, count: "123+" },
-  { name: "Patents", icon: <BarChart2 size={40} />, count: "123+" },
-];
-
 const Aboutpage = () => {
+  const [counts, setCounts] = useState({});
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=cse`);
+        // console.log("Counts Response:", countsResponse.data);
+        setCounts([
+          { label: "Faculty", value: countsResponse.data?.faculty || 30, icon: <UserSquare size={40} /> },
+          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
+          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} /> },
+          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} /> },
+          { label: "Patents", value: countsResponse.data?.patents || 0, icon: <ShieldCheck size={40} /> },
+          { label: "Projects", value: countsResponse.data?.project_supervision || 0, icon: <Briefcase size={40} /> },
+        ]);
+
+
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    getData();
+  }, []);
+
   return (
     <div>
       {/* About the department section */}
@@ -43,8 +51,11 @@ const Aboutpage = () => {
             </div>
           </div>
 
-          {/* Counters */}
-          {/* <DepartmentCounter counts={counts} /> */}
+          {
+            counts.length && (
+              <DepartmentCounter counts={counts} />
+            )
+          }
         </div>
       </div>
     </div>

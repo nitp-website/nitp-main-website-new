@@ -1,11 +1,11 @@
 "use client";
-import axios from "axios";
+import axios, { all } from "axios";
 import { DepartmentNavigationButton } from "../../components/department/DepartmentNavigationButton";
 import DepartmentNotify1 from "../../components/department/DepartmentNotify1";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
-import { Users, BookOpen, FileText, Award, Briefcase, BarChart2 } from "lucide-react";
+import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
 import DepartmentCounter from "./DeptCounter";
 import DeptNotice from "./DeptNotice";
 
@@ -18,15 +18,25 @@ export default function CSE() {
   const [feature, setFeature] = useState(picture[0]);
   const [it, setIt] = useState(0);
   const [Notices, setNotices] = useState([]);
-  const [counts, setCounts] = useState([]);
+  const [counts, setCounts] = useState({});
 
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=cse`);
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=cse`);
-        setCounts(countsResponse.data);
+        // console.log("Counts Response:", countsResponse.data);
         setNotices(response.data);
+        setCounts([
+          { label: "Faculty", value: countsResponse.data?.faculty || 30, icon: <UserSquare size={40} /> },
+          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
+          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} /> },
+          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} /> },
+          { label: "Patents", value: countsResponse.data?.patents || 0, icon: <ShieldCheck size={40} /> },
+          { label: "Projects", value: countsResponse.data?.project_supervision || 0, icon: <Briefcase size={40} /> },
+        ]);
+
+
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -83,8 +93,8 @@ export default function CSE() {
 
       {/* Section two */}
       <div className="px-2 mt-2 max-sm:px-2">
-        <div className="flex flex-col lg:flex-row w-full px-5 xs:px-0 lg:w-full mx-auto">
-          <div className="flex flex-col w-full lg:w-3/4 mb-10 lg:mb-0">
+        <div className="flex flex-col lg:flex-row w-full xs:px-0 lg:w-full mx-auto">
+          <div className="flex flex-col w-full lg:w-full mb-10 lg:mb-0">
             <div className="mx-auto text-2xl max-sm:text-lg font-semibold text-red-950">
               About
             </div>
@@ -99,7 +109,13 @@ export default function CSE() {
             </div>
           </div>
 
-          <DepartmentCounter counts={counts} />
+          <div className="flex flex-col w-full mb-10 lg:mb-0">
+            {
+              counts.length && (
+                <DepartmentCounter counts={counts} />
+              )
+            }
+          </div>
         </div>
       </div>
     </div>

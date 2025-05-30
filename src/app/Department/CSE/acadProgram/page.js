@@ -108,7 +108,7 @@ const CSEAcadProgrampage = () => {
   return (
     <div>
       <div className="py-1 mt-2">
-        <div className="w-full xs:px-0 md:w-[90%] mx-auto">
+        <div className="xs:px-0 w-[90%] mx-auto">
           <div className="w-full">
             <h2 className="text-center text-4xl text-red-700 mt-2">
               Academic Programs
