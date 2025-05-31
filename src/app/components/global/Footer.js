@@ -15,7 +15,7 @@ const Footer = () => {
         `/api/weather_data`
       );
       const data = await response.json();
-      setWeatherData(data.weather);
+      setWeatherData(data?.weather);
     } catch (error) {
       console.error("Error fetching weather data:", error);
     }
@@ -27,7 +27,7 @@ const Footer = () => {
         `/api/weather_data`
       );
       const data = await response.json();
-      setPollutionData(data.pollution);
+      setPollutionData(data?.pollution);
     } catch (error) {
       console.error("Error fetching air pollution data:", error);
     }
