@@ -3,11 +3,11 @@
 import BackDepartment from "../../../components/department/BackDepartment";
 import { useState } from "react"
 export default function Page() {
-    const [ug, setUg] = useState(true);
+    const [ug, setUg] = useState(false);
     const [ug2021, setUg2021] = useState(false);
     const [dualCyber, setDualCyber] = useState(false);
     const [phd, setPhd] = useState(false);
-    const [ug2022, setUg2022] = useState(false);
+    const [ug2022, setUg2022] = useState(true);
     const [dualData, setDualData] = useState(false);
     const [mcad, setmcad] = useState(false);
     const [mcaai, setmcaai] = useState(false);
@@ -33,7 +33,7 @@ export default function Page() {
             <div className="mx-4 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 <div className="mb-10 flex space-x-1 overflow-x-auto ">
                     <div className="min-w-[800px] flex space-x-1 text-sm lg:text-base">
-                        <button onClick={() => {
+                        {/* <button onClick={() => {
                             setUg2021(false);
                             setDualCyber(false);
                             setPhd(false);
@@ -44,7 +44,7 @@ export default function Page() {
                             setmcad(false)
                             setmcaai(false)
                             setUg(true)
-                        }} className={`border border-black rounded ${(ug) ? "text-white bg-red-900" : "text-red-900"} px-2`}>B.Tech (Computer Science and Engineering)</button>
+                        }} className={`border border-black rounded ${(ug) ? "text-white bg-red-900" : "text-red-900"} px-2`}>B.Tech (Computer Science and Engineering)</button> */}
                         <button onClick={() => {
                             setUg2021(false);
                             setDualCyber(false);
@@ -56,8 +56,8 @@ export default function Page() {
                             setmcad(false)
                             setmcaai(false)
                             setUg(false)
-                        }} className={`border border-black rounded ${(ug2022) ? "text-white bg-red-900" : "text-red-900"} px-2`}>UG Courses-2022 Onwards</button>
-                        <button onClick={() => {
+                        }} className={`border border-black rounded ${(ug2022) ? "text-white bg-red-900" : "text-red-900"} px-2`}>B.Tech (Computer Science and Engineering)</button>
+                        {/* <button onClick={() => {
                             setUg2021(true);
                             setPgc(false);
                             setPgd(false);
@@ -68,43 +68,7 @@ export default function Page() {
                             setDualData(false);
                             setUg2022(false);
                             setUg(false)
-                        }} className={`border border-black rounded ${(ug2021) ? "text-white bg-red-900" : "text-red-900"} px-2`}>UG Course-2021</button>
-                        <button onClick={() => {
-                            setUg2021(false);
-                            setPgc(false);
-                            setPgd(true);
-                            setmcad(false)
-                            setmcaai(false)
-                            setDualCyber(false);
-                            setPhd(false);
-                            setDualData(false);
-                            setUg2022(false);
-                            setUg(false);
-                        }} className={`border border-black rounded ${(pgd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech (Data Science and Engineering)</button>
-                        <button onClick={() => {
-                            setUg2021(false);
-                            setPgc(true);
-                            setPgd(false);
-                            setDualCyber(false);
-                            setPhd(false);
-                            setDualData(false);
-                            setUg2022(false);
-                            setUg(false);
-                            setmcad(false)
-                            setmcaai(false)
-                        }} className={`border border-black rounded ${(pgc) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech (Cyber Security)</button>
-                        <button onClick={() => {
-                            setUg2021(false);
-                            setDualCyber(false);
-                            setDualData(false);
-                            setPhd(true);
-                            setPgc(false);
-                            setPgd(false);
-                            setmcad(false)
-                            setmcaai(false)
-                            setUg2022(false);
-                            setUg(false);
-                        }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>PhD Course</button>
+                        }} className={`border border-black rounded ${(ug2021) ? "text-white bg-red-900" : "text-red-900"} px-2`}>UG Course-2021</button> */}
                         <button onClick={() => {
                             setUg2021(false);
                             setDualCyber(true);
@@ -132,6 +96,30 @@ export default function Page() {
                         <button onClick={() => {
                             setUg2021(false);
                             setPgc(false);
+                            setPgd(true);
+                            setmcad(false)
+                            setmcaai(false)
+                            setDualCyber(false);
+                            setPhd(false);
+                            setDualData(false);
+                            setUg2022(false);
+                            setUg(false);
+                        }} className={`border border-black rounded ${(pgd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech (Data Science and Engineering)</button>
+                        <button onClick={() => {
+                            setUg2021(false);
+                            setPgc(true);
+                            setPgd(false);
+                            setDualCyber(false);
+                            setPhd(false);
+                            setDualData(false);
+                            setUg2022(false);
+                            setUg(false);
+                            setmcad(false)
+                            setmcaai(false)
+                        }} className={`border border-black rounded ${(pgc) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech (Cyber Security)</button>
+                        <button onClick={() => {
+                            setUg2021(false);
+                            setPgc(false);
                             setPgd(false);
                             setDualCyber(false);
                             setPhd(false);
@@ -153,6 +141,18 @@ export default function Page() {
                             setmcad(false)
                             setmcaai(true)
                         }} className={`border border-black rounded ${(mcaai) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in Data Science & Informatics</button>
+                        <button onClick={() => {
+                            setUg2021(false);
+                            setDualCyber(false);
+                            setDualData(false);
+                            setPhd(true);
+                            setPgc(false);
+                            setPgd(false);
+                            setmcad(false)
+                            setmcaai(false)
+                            setUg2022(false);
+                            setUg(false);
+                        }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>PhD Course</button>
                     </div>
                 </div>
                 <div className={`mb-10 ${(ug == false) ? "hidden" : ""}`}>
@@ -3177,6 +3177,7 @@ export default function Page() {
                         </div>
                     </div>
                 </div>
+                {/**==================================================================================================== */}
                 <div className={`mb-10 ${(ug2022 == false) ? "hidden" : ""}`}>
                     <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">UG PROGRAM 2022:-</div>
                     <div className=" overflow-x-auto">
@@ -3198,7 +3199,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS14102_Programming in C.docx"
+                                url="https://docs.google.com/document/d/10LKdSo8w-A2EsIh5NIOZFVjy4CtZX-Vq/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3209,7 +3210,7 @@ export default function Page() {
                                 T={"1"}
                                 P={"0"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/MA14102_Engineering Mathematics I.docx"
+                                url="https://drive.google.com/file/d/1vqv7bi5wbPk80c3eIBpxRJBtrIt_IZAs/view?usp=drivesdk"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3220,7 +3221,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CH14101_Engineering Chemistry.docx"
+                                url="https://drive.google.com/file/d/1_849FlFORiBMwbo2vQA_gzetoJDDP-iH/view?usp=drivesdk"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3242,7 +3243,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS14106_Information Technology  Workshop.docx"
+                                url="https://docs.google.com/document/d/1ngT0zmqppXtHzvjIPnn2-9c-_1Sd3RjA/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3264,7 +3265,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS24107_Web Technology.docx"
+                                url="https://docs.google.com/document/d/1FemjSAeB-JtHvH28B6c0YziLut5DqPtc/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3275,7 +3276,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/HS24101_Communicative English.docx"
+                                url="https://docs.google.com/document/d/1j_Nbng2Th95csKOydw4pndfpQ1uNlywh/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3286,7 +3287,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/PH24101_Engineering Physics.docx"
+                                url="https://drive.google.com/file/d/1hL-bynZFDZFWZ5QpUPNjKfemB62lV3W_/view?usp=drivesdk"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3297,7 +3298,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS24108_Computer Organization.docx"
+                                url="https://docs.google.com/document/d/1SnZkEaSWpkA7trG7UcnfN5K58A4Ac2YY/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3330,7 +3331,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS34104_Data Structures.docx"
+                                url="https://docs.google.com/document/d/1OPdWbOD5gF7IUKplhow4if1ICJuToAYX/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3341,7 +3342,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS34105_Object Oriented Programming.docx"
+                                url="https://docs.google.com/document/d/1nrio72JG5cOHG55BxfDMReZIrIZAvwKt/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3352,7 +3353,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS34109_Database Management Systems.docx"
+                                url="https://docs.google.com/document/d/1_q02qMFZyMXMkN7Z7VR-PMwIP0bvh9zJ/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3363,7 +3364,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS34110_Discrete Mathematics and Graph Theory.docx"
+                                url="https://docs.google.com/document/d/10AhQkjov0iSJ1nbZmSoatLJKe2PzKYjR/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3374,7 +3375,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS34111_Operating Systems.docx"
+                                url="https://docs.google.com/document/d/1e3qHzoQGIlWngv4DQ3HFjU3xFa3tC2Wb/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3396,7 +3397,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS44112_Artificial Intelligence.docx"
+                                url="https://docs.google.com/document/d/1lloVmthAUzQq0B6OU4J5Mcdcx9Se0zhI/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3407,7 +3408,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS44113_Computer Networks.docx"
+                                url="https://docs.google.com/document/d/1GBPyaWjitwSdLnkKrqkt62F4rBDiIGbJ/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3418,7 +3419,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS44114_Automata Theory and compiler design.docx"
+                                url="https://docs.google.com/document/d/18BcEz9pVXxCe26EyUnAPHvvVef1CCb1m/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3429,7 +3430,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS44115_Design and Analysis of Algorithms.docx"
+                                url="https://docs.google.com/document/d/1FJKjJt08RINoTXY6ZwR-q70Qbp8sjTBC/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3451,7 +3452,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS54116_Software Enginnering.docx"
+                                url="https://docs.google.com/document/d/1193uRmx_xLvrarJuVlCP8TqJhROzbvvu/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3462,7 +3463,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS54117_Internet of Things.docx"
+                                url="https://docs.google.com/document/d/1RTVFAo4-l4GzjxG1z6M2nBV_qVXgDSM0/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3473,7 +3474,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS54118_Machine Learning.docx"
+                                url="https://docs.google.com/document/d/13iGCnzwpqMLE2CjKmhuZ5SZXVftNTXiD/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3484,7 +3485,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS54119_Information Security.docx"
+                                url="https://docs.google.com/document/d/1QK-nBY6EwGKgGl1zyTS7ZVyJVLFhZtvo/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3499,7 +3500,7 @@ export default function Page() {
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"5"}
+                                sem={"6"}
                                 code={"OP54XXX"}
                                 title={"MOOC"}
                                 L={"X"}
@@ -3517,7 +3518,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS64120_Data Mining.docx"
+                                url="https://docs.google.com/document/d/1_fJjcCSafXjJrcALfcSiE2YHTxLgHMUj/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3528,7 +3529,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS64121_Cloud Computing.docx"
+                                url="https://docs.google.com/document/d/1SKpEJ3ZOzWllK03lUGYizy3qQiLxlEil/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -3567,18 +3568,29 @@ export default function Page() {
                                 dep={"CSUG"}
                                 sem={"7"}
                                 code={"CS74144"}
+                                title={"Applied Cryptography"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url="https://docs.google.com/document/d/1ME1UC4IZFPovdQz9dUTmsrdKCMWMWpsu/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
+                            />
+                            <SyllabusComp
+                                dep={"CSUG"}
+                                sem={"7"}
+                                code={"CS74144"}
                                 title={"Optimization Techniques"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74144_Optimization Techniques.docx"
+                                url="https://docs.google.com/document/d/1G3sQOirIkoFwzYpDssowGS1-xU10VpTq/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
                                 sem={"7"}
                                 code={"CS74XXX"}
-                                title={"Dept. Elective-I"}
+                                title={"Dept. Elective-III(Minor in IOT/AI)"}
                                 L={"X"}
                                 T={"X"}
                                 P={"X"}
@@ -3589,7 +3601,7 @@ export default function Page() {
                                 dep={"CSUG"}
                                 sem={"7"}
                                 code={"CS74XXX"}
-                                title={"Dept. Elective-II"}
+                                title={"Dept. Elective-IV"}
                                 L={"X"}
                                 T={"X"}
                                 P={"X"}
@@ -3612,10 +3624,21 @@ export default function Page() {
                                 sem={"7"}
                                 code={"CS74124"}
                                 title={"Research Project-I"}
+                                L={"0"}
+                                T={"0"}
+                                P={"8"}
+                                cred={"4"}
+                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74124_Research Project-I.docx"
+                            />
+                            <SyllabusComp
+                                dep={"CSUG"}
+                                sem={"7"}
+                                code={"CS74124"}
+                                title={"Industrial Training"}
                                 L={"X"}
                                 T={"X"}
-                                P={"12"}
-                                cred={"6"}
+                                P={"X"}
+                                cred={"2"}
                                 url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74124_Research Project-I.docx"
                             />
                             <SyllabusComp
@@ -3636,806 +3659,818 @@ export default function Page() {
                                 title={"Research Project-II*"}
                                 L={"0"}
                                 T={"0"}
-                                P={"40"}
-                                cred={"20"}
+                                P={"36"}
+                                cred={"18"}
+                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS84126_Research Project-II*.docx"
+                            />
+                            <SyllabusComp
+                                dep={"CSUG"}
+                                sem={"8"}
+                                code={"CS84126"}
+                                title={"Comprehensive Viva-Voce"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"2"}
                                 url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS84126_Research Project-II*.docx"
                             />
 
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4145"}
                                 title={"Distributed Database Systems"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4145_Distributed Database Systems.docx"
+                                url="https://docs.google.com/document/d/1UT831fVhjIyUsZe3l6pWpKCXVemCMzjQ/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4146"}
                                 title={"Operations Research"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4146_Operations Research.docx"
+                                url="https://docs.google.com/document/d/1cNE2-cXbSJl8W0rso0OVIBc6S89gk_sY/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4147"}
                                 title={"Digital Image Processing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4147_Digital Image Processing.docx"
+                                url="https://docs.google.com/document/d/1K_l1l1wrO_DBsyvvyCVk8v2_HgijVnwb/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4148"}
                                 title={"Intrusion Detection"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4148_Intrusion Detection.docx"
+                                url="https://docs.google.com/document/d/1zPPl_dHa130Y6-ckIhBXHyB1zd53LbwI/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4149"}
                                 title={"Real Time Systems"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4149_Real Time Systems.docx"
+                                url="https://docs.google.com/document/d/15UCcuLZ9BKh75prfIZa18-o4IqePTi_b/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4150"}
                                 title={"Computer Vision"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4150_Computer Vision.docx"}
+                                url={"https://docs.google.com/document/d/1oEu1gtW-nXzR3lJaAwf-AegjY3N0VQ9G/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4151"}
                                 title={"Social Networks"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4151_Social Networks.docx"}
+                                url={"https://docs.google.com/document/d/1iEeNbXDwGOkuOk6SQ8vNRBcQIBhc7t_9/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4152"}
                                 title={"Big Data Analytics"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4152_Big Data Analytics.docx"}
+                                url={"https://docs.google.com/document/d/1t3oj_TniTbM771tB-nuXE3EbWZ9c5yom/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4153"}
                                 title={"Network Security"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4153_Network Security.docx"}
+                                url={"https://docs.google.com/document/d/19_1MGDaeU2VYUIjun38xXHaafzgM2pkN/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4154"}
                                 title={"Object Oriented Systems Development"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4154_Object Oriented Systems Development.docx"}
+                                url={"https://docs.google.com/document/d/1ly06huRq_UrYy4jWaP-y8AwmxYwQRo2L/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4155"}
                                 title={"Computer Graphics"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4155_Computer Graphics.docx"}
+                                url={"https://docs.google.com/document/d/1lDTPYrdRtm8p_ijcu4p__Xq0NmVdaspi/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4156"}
                                 title={"Malware Analysis"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4156_Malware Analysis.docx"}
+                                url={"https://docs.google.com/document/d/1T11iSkwOfgEz0wMdz5HABmYqjU654X90/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4157"}
                                 title={"Microprocessor and Microcontrollers"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4157_Microprocesor and Microcontrollers.docx"}
+                                url={"https://docs.google.com/document/d/1KwsxSnwwpEQWJMY9Na12jajzibjIIzky/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4158"}
                                 title={"Distributed Systems"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4158_Distributed Systems.docx"}
+                                url={"https://docs.google.com/document/d/1LiFkNXO8jQTf2KYAZaAlCyv3rNYDfy26/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4159"}
                                 title={"Virtual Reality"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4159_Virtual Reality.docx"}
+                                url={"https://docs.google.com/document/d/1vSnCcEonJL00z3o2-UlPu_NfHq2lLnTz/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4160"}
                                 title={"Intellectual Property Rights"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4160"}
+                                url={"https://drive.google.com/file/d/1L70hxedl6t4xmd9P8zsG_7Ryrb6MevTk/view?usp=drivesdk"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4161"}
                                 title={"Blockchain Technology"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4161_Blockchain Technology.docx"}
+                                url={"https://docs.google.com/document/d/1UyN_bU0DMuVPHvDyr_2UrB8kqDZkxwub/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4162"}
                                 title={"Biometrics"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4162_Biometrics.docx"}
+                                url={"https://docs.google.com/document/d/1ur8vVSqbGwu5RS9YMu6pE3wjnm-HXROA/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4163"}
                                 title={"Recommendation Systems"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4163_Recommendation Systems.docx"}
+                                url={"https://docs.google.com/document/d/105pi7YPY8CkNO1njfBe5KgH3zzrXBUwb/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4164"}
                                 title={"Computer System Parallelism"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4164_Computer System Parallelism.docx"}
+                                url={"https://docs.google.com/document/d/1XqdEK8pepC7wFRpYYIB5GT24GIsBJZTr/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4165"}
                                 title={"Advanced Algorithms"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4165_Advanced Algorithms.docx"}
+                                url={"https://docs.google.com/document/d/1OqWUN2btOoQrBZM8JEaXp1T5nI_lFi7p/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4166"}
                                 title={"File System Forensic"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4166_File System Forensic .docx"}
+                                url={"https://docs.google.com/document/d/1AbqoGx_ahtV9pmrhJIV92f68iPdibwZD/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-1"}
                                 code={"CSX4167"}
                                 title={"Distributed Operating Systems"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4167_Distributed Operating Systems .docx"}
+                                url={"https://docs.google.com/document/d/1PTo6KVDnQ430tEqOwhHdIj9AubCEIHj2/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4171"}
                                 title={"Adversarial ML"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4171_Adversarial ML.docx"}
+                                url={"https://docs.google.com/document/d/1fvWBfhadpvQYblqKpgl9byemBDg4p63a/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4172"}
                                 title={"Digital Signal Processing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={<a target="_blank" rel="noopener noreferrer" href="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4172_Digital Signal Processing  .docx">Digital Signal Processing  </a>}
+                                url={<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1eRVDb2Xk-9xKQ-d-jrhG-RoS2ncqLNHy/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true">Digital Signal Processing  </a>}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4173"}
                                 title={"IOT Systems"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={<a target="_blank" rel="noopener noreferrer" href="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4173_IOT Systems .docx">IOT Systems </a>}
+                                url={<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1FeXhUNTuhy00xR6O7Lb4lT8HujEZ1Xf9/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true">IOT Systems </a>}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4174"}
                                 title={"Nature Inspired Computing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={<a href="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4174_Nature Inspired Computing.docx" target="_blank" rel="noopener noreferrer">Nature Inspired Computing</a>}
+                                url={<a href="https://docs.google.com/document/d/1hh0DxVx7nsPHUENa4KuZtmnv3d6z1l6z/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Nature Inspired Computing</a>}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4175"}
                                 title={"Image Processing Techniques"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={<a href="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4175_Image Processing Techniques.docx" target="_blank" rel="noopener noreferrer">Image Processing Techniques</a>}
+                                url={<a href="https://docs.google.com/document/d/16YSqGw-vLtKtIx_1rNURE1AcqDo5sgoL/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Image Processing Techniques</a>}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4176"}
                                 title={"Bioinformatics"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={<a target="_blank" rel="noopener noreferrer" href="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4176_Bioinformatics.docx">Bioinformatics</a>}
+                                url={<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1xlv-BqAUYBPlIRaFZa62SDlgQrSTOuGY/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true">Bioinformatics</a>}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4177"}
                                 title={"Information Retrieval"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4177_Information Retrieval.docx"
+                                url="https://docs.google.com/document/d/1bj4cu3ovgTJY8cZsC7TwESlHmHdFSpBy/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4178"}
                                 title={"Computer Vision"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4178_Computer Vision.docx"
+                                url="https://docs.google.com/document/d/1jIxJGlHgy0Xd4DsAuikQHkN6GOMF56UH/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4179"}
                                 title={"Reinforcement Learning"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4179_Reinforcement Learning.docx"
+                                url="https://docs.google.com/document/d/1g4rSw94mXuCmF4l1GAYgWrkq53bjNhPM/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4180"}
                                 title={"Social Networks"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4180_Social Networks.docx"
+                                url="https://docs.google.com/document/d/1aDU9S1IGyWe6XIJ4dOMmYJebbMaHAeT5/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4181"}
                                 title={"Recommendation Systems"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4181_Recommendation Systems.docx"
+                                url="https://docs.google.com/document/d/1I3ulbGdcgKDVORx-lcO_svyrVaL9EEJi/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4182"}
                                 title={"Speech Processing"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4182_Speech Processing.docx"
+                                url="https://docs.google.com/document/d/1BkTFsrxDU9jsh55XpJTRzssZasqSkNF8/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4183"}
                                 title={"Malware Analysis"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4183_Malware Analysis.docx"
+                                url="https://docs.google.com/document/d/1LZXyIHNcXeZZnrjn5UzoTsRfYat_TLkt/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4184"}
                                 title={"Network Security"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4184_Network Security .docx"
+                                url="https://docs.google.com/document/d/1kph2cxMA8O4Adv5mHpQnxrn7qF48aKig/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4185"}
                                 title={"Intrusion Detection"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4185_Intrusion Detection .docx"
+                                url="https://docs.google.com/document/d/1j_aWjuSZq2gFh9mjKE6C4_dDANIB4DVy/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4186"}
                                 title={"Time Series Analysis"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4186_Time Series Analysis.docx"
+                                url="https://docs.google.com/document/d/1zUkjkZguY2zFNqkqfShVTEFXYtf-fYMh/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4187"}
                                 title={"Big Data Analytics"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4187_Big Data Analytics.docx"
+                                url="https://docs.google.com/document/d/13yi8DEGBwC5j7DsPxAHQOJSEoMTNlifN/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4188"}
                                 title={"Multimedia Systems"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4188_Multimedia Systems.docx"}
+                                url={"https://docs.google.com/document/d/122rqrtsk0HqkFPQTMbkAMI1LpUKb4Zdw/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4189"}
                                 title={"Biometric Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4189_Biometric Security.docx"
+                                url="https://docs.google.com/document/d/1HTPEOy1xAhLCqPNQsa7OafPBYLoyDqeM/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"CSX4190"}
                                 title={"Federated Learning"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4190_Federated Learning.docx"
-                            />
+                                url="https://docs.google.com/document/d/1X8wmagqNjR9JkjdBUYhwulTHZJ9zbSdW/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
+                            />{/**2 */}
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-2"}
                                 code={"HSXXXXX"}
                                 title={"Intellectual Property Rights"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/HSXXXXX_Intellectual Property Rights.docx"
+                                url="https://drive.google.com/file/d/1L70hxedl6t4xmd9P8zsG_7Ryrb6MevTk/view?usp=drivesdk"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4201"}
                                 title={"Adversarial ML"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4201_Adversarial ML.docx"
+                                url="https://docs.google.com/document/d/1qw8A1ozOk4pA-P-XXkN2y-Rt-rVkvd29/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4202"}
                                 title={"Deep Learning Algorithms"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4202_Deep Learning Algorithms.docx"
+                                url="https://docs.google.com/document/d/1OoM_FihORG_5DdhTXGXIjOEfGxIUB3Z1/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4203"}
                                 title={"Mathematical Foundations for Information Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4203_Mathematical Foundations for Information Security.docx"
+                                url="https://docs.google.com/document/d/1YCa2aWQ1m4dcDCTQmMGk7xS1Ip1KIikq/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4204"}
                                 title={"Information Theory and Coding"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4204_Information Theory and Coding.docx"
+                                url="https://docs.google.com/document/d/1wzHoA3vaNEt2nQxb2bpy73JglkMjPraE/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4205"}
                                 title={"Wireless & Mobile Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4205_Wireless & Mobile Security.docx"
+                                url="https://docs.google.com/document/d/1KrxsgH6-7wSHGfCFikmfGuH2Ae1X4SNM/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4206"}
                                 title={"Image Processing Techniques"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4206_Image Processing Techniques.docx"
+                                url="https://docs.google.com/document/d/1DB9-s0MN8OH7ISsDrBfWV3UUxQsdR9Ha/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4207"}
                                 title={"Cyber Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4207_Cyber Security.docx"
+                                url="https://docs.google.com/document/d/1TRNffZAZ0S5rr4A9Xaza4CwWSmzQYd5Z/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4208"}
                                 title={"Multimedia System"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4208_Multimedia System.docx"}
+                                url={"https://docs.google.com/document/d/1gtNFHqUJI1DwJ_raa9qeMSTcOrhGF63j/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4209"}
                                 title={"Computer Vision"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4209_Computer Vision.docx"}
+                                url={"https://docs.google.com/document/d/1b8O5QYvkLmBZBnbcGDpdPOs-EGg_uHg9/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4210"}
                                 title={"Big Data Analytics"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4210_Big Data Analytics.docx"}
+                                url={"https://docs.google.com/document/d/1DumEmxy35fRho1Tsv3ARwikpGgL6m3pi/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4211"}
                                 title={"Cloud Computing Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4211_Cloud Computing Security.docx"}
+                                url={"https://docs.google.com/document/d/1PrKknHMAn9vyGW5MjbFHAiGkQmTW6B4-/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4212"}
                                 title={"Biometric Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4212_Biometric Security.docx"}
+                                url={"https://docs.google.com/document/d/1FWXJaDdh7a9giVQV3cglTn7fjGrd-55b/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4213"}
                                 title={"Ethical Hacking"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4213_Ethical Hacking.docx"}
+                                url={"https://docs.google.com/document/d/1Rjgzyoy5TwEuCfzveMHK2fqRYWqtwziW/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4214"}
                                 title={"Blockchain Technology"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4214_Blockchain Technology.docx"}
+                                url={"https://docs.google.com/document/d/1KvIa73OND-T1RtDHldxuhOt__DzzBwV9/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4215"}
                                 title={"Cyber laws and rights"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4215_Cyber laws and rights.docx"}
+                                url={"https://docs.google.com/document/d/1iMK09GuiMICZUcotOqSPbGHPbE-FdJK-/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4216"}
                                 title={"Digital Watermarking and Steganography"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4216_Digital Watermarking and Steganography.docx"}
+                                url={"https://docs.google.com/document/d/1CJLXTzXrQ9vvCPH9GyzPbho1ihK9q9QI/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4217"}
                                 title={"Privacy and Security for Online Social Networks"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4217_Privacy and Security for Online Social Networks.docx"}
+                                url={"https://docs.google.com/document/d/1PsU0CQ_iMXU9mI-BnApJxjWUsgybdoXs/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4218"}
                                 title={"Malware Analysis"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4218_Malware Analysis.docx"}
+                                url={"https://docs.google.com/document/d/1EKkRqKWa5CxN4sr4nKxswTsl0RZ3jDkG/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4219"}
                                 title={"Soft Computing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4219_Soft Computing.docx"}
+                                url={"https://docs.google.com/document/d/1ojdWdCBoxCIv7HsuYvLBoXQzk7edK-6G/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4220"}
                                 title={"Ubiquitous Computing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4220_Ubiquitous Computing.docx"}
+                                url={"https://docs.google.com/document/d/1UmaxXOo3hW61h5UVFBGvwxfTkiODVZp_/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4221"}
                                 title={"Embedded System and Hardware Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4221_Embedded System and Hardware Security.docx"}
+                                url={"https://docs.google.com/document/d/122zC40rfbbbO38n09raxh6B8BDGUocJx/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4222"}
                                 title={"Distributed System Design"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4222_Distributed System Design.docx"}
+                                url={"https://docs.google.com/document/d/1oEopeGbsQXEC14BUPcAYL-utLKNXHxuN/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4223"}
                                 title={"Software Defined Networks"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4223_Software Defined Networks.docx"}
+                                url={"https://docs.google.com/document/d/1ZpHH4GDSw1Qe5-81udosax9KOMmpqiSl/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4224"}
                                 title={"Secure Software Systems"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4224_Secure Software Systems.docx"}
+                                url={"https://docs.google.com/document/d/1h7BMZnsPjcH7qLSB-wLcnFpHn_b3z0pD/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4225"}
                                 title={"Pattern Recognition Technique"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4225_Pattern Recognition Technique.docx"}
+                                url={"https://docs.google.com/document/d/1EarYN-13cr-Dwi016WuMBiUXrTDDAIaX/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4226"}
                                 title={"Natural Language Processing Technique"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4226_Natural Language Processing Technique.docx"}
+                                url={"https://docs.google.com/document/d/1-CoaNa5HHaf3DjZLcyAmg3Axk0g1Awlv/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"CSX4227"}
                                 title={"Data Visualization"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CSX4227_Data Visualization.docx"}
+                                url={"https://docs.google.com/document/d/1QaqhoiVuzIQTvIQkdp2Wu-3UhOGDNvdE/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
-                                sem={"EL"}
+                                sem={"EL-3"}
                                 code={"HSXXXXX"}
                                 title={"Intellectual Property Rights"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/HSXXXXX_Intellectual Property Rights.docx"}
+                                url={"https://drive.google.com/file/d/1L70hxedl6t4xmd9P8zsG_7Ryrb6MevTk/view?usp=drivesdk"}
                             />
                         </div>
                     </div>
                 </div>
+                {/**============================================================================================================= */}
                 {/* mtech data science  */}
                 <div className={`mb-10 ${(pgd == false) ? "hidden" : ""}`}>
                     <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">M.tech data Science :-</div>
@@ -5893,7 +5928,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/1cav6BoEE52zqkGXn-94Toky10sCRKqs4/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://localhost:3000"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
