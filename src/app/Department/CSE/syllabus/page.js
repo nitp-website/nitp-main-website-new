@@ -5928,7 +5928,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"https://localhost:3000"}
+                                url={"https://docs.google.com/document/d/10LKdSo8w-A2EsIh5NIOZFVjy4CtZX-Vq/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
