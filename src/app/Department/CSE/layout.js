@@ -9,7 +9,7 @@ export default function Layout({ children }) {
     return (
         <div className="flex flex-col md:flex-row w-full mb-8">
             <button
-                className="md:hidden mt-2 ml-2 p-2 bg-gray-500 rounded-md mb-4 w-fit"
+                className="md:hidden mt-2 ml-8 p-2 bg-gray-500 rounded-md mb-4 w-fit"
                 onClick={() => setIsOpen(!isMenuOpen)}
             >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -21,15 +21,16 @@ export default function Layout({ children }) {
                 <Sidebar onLinkClick={() => setIsOpen(false)} isMenuOpen={isMenuOpen} />
             </div>
 
-            <div className="flex flex-col w-[90%] md:w-3/4 lg:w-4/5">
-                <div className="px-5 pt-10 max-sm:px-0  text-black ">
+            <div className="flex flex-col w-full md:w-3/4 lg:w-4/5 items-center">
+                <div className="px-5 pt-10 max-sm:px-0 text-black">
                     {/* heading */}
                     <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 text-center bg-transparent">
                         COMPUTER SCIENCE AND ENGINEERING
                     </div>
                 </div>
-                {children}
+                <div className="w-[90%]">{children}</div>
             </div>
+
         </div>
     );
 }
