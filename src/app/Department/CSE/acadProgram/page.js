@@ -100,7 +100,7 @@ const programs = [
     description:
       "The Department offers Ph. D in Computer Science and Engineering. Admission to this program is through an Institute Examination conducted by NIT Patna itself. This program is solely research based where students conduct their own work in an area of Computer Science and its applications under the guidance of faculty members.",
     courseStructure: "",
-    syllabus: "",
+    syllabus: "/pg-syllabus.pdf",
   },
 ];
 

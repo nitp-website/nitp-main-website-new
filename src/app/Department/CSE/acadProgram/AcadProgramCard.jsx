@@ -19,19 +19,20 @@ export const AcadProgramCard = ({ program }) => {
           {program.description}
         </p>
       </div>
-      <div className="mt-4 mx-auto w-[90%] sm:w-[60%]">
-        {/* {program.courseStructure && (
+      <div className="mt-4 flex justify-between">
+        {program.courseStructure && (
           <a href={`${program.courseStructure}`}>
             <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer">
-              Course Structure
+              Curriculum
             </button>
           </a>
-        )} */}
+        )}
 
         {program.syllabus && (
-          <a href={`${program.syllabus}`}>
-            <button className="text-red-800 w-full border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer">
-              Curriculum & Syllabus
+          // <a href={`${program.syllabus}`}>
+          <a href='/Department/CSE/syllabus' >
+            <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer">
+              Syllabus
             </button>
           </a>
         )}
