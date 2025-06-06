@@ -4,8 +4,6 @@ import axios from "axios";
 import PhdCandidate from "../../../components/faculty/PhdCandidate";
 
 const CSEReserchStudentspage = () => {
-  const [faculty, setFaculty] = useState(true);
-  const [phd, setPhd] = useState("phd");
   const [loading, setLoading] = useState(true);
   const [phdInfo, setPhdInfo] = useState([]);
   const [selectedYear, setSelectedYear] = useState("");

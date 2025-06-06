@@ -21,14 +21,14 @@ export default function Layout({ children }) {
                 <Sidebar onLinkClick={() => setIsOpen(false)} isMenuOpen={isMenuOpen} />
             </div>
 
-            <div className="flex flex-col w-full md:w-3/4 lg:w-4/5 items-center">
+            <div className="flex flex-col w-full md:w-3/4 lg:w-[85%] items-center">
                 <div className="px-5 pt-10 max-sm:px-0 text-black">
                     {/* heading */}
                     <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 text-center bg-transparent">
                         COMPUTER SCIENCE AND ENGINEERING
                     </div>
                 </div>
-                <div className="w-[90%]">{children}</div>
+                <div className="w-[100%]">{children}</div>
             </div>
 
         </div>
