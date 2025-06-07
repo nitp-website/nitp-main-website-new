@@ -6,8 +6,12 @@ import PhdCandidate from "../../../components/faculty/PhdCandidate";
 const CSEReserchStudentspage = () => {
   const [loading, setLoading] = useState(true);
   const [phdInfo, setPhdInfo] = useState([]);
-  const [selectedYear, setSelectedYear] = useState("");
-  const [selectedFaculty, setSelectedFaculty] = useState("");
+
+  const [selectedCompletedYear, setSelectedCompletedYear] = useState("");
+  const [selectedCompletedFaculty, setSelectedCompletedFaculty] = useState("");
+  const [selectedOngoingYear, setSelectedOngoingYear] = useState("");
+  const [selectedOngoingFaculty, setSelectedOngoingFaculty] = useState("");
+
 
   const fetchPhd = async () => {
     try {
@@ -60,7 +64,31 @@ const CSEReserchStudentspage = () => {
 
   const facultyNames = [
     ...new Set(completedScholars.map((c) => c.supervisor).filter(Boolean)),
+    ...new Set(ongoingScholars.map((c) => c.supervisor).filter(Boolean)),
   ];
+
+  const completedFacultyNames = [
+    ...new Set(
+      completedScholars
+        .filter((c) => c.supervisor)
+        .map((c) => c.supervisor)
+    ),
+  ];
+
+  // sort the faculty names alphabetically
+  completedFacultyNames.sort((a, b) => a.localeCompare(b));
+
+  const ongoingFacultyNames = [
+    ...new Set(
+      ongoingScholars
+        .filter((c) => c.supervisor)
+        .map((c) => c.supervisor)
+    ),
+  ];
+
+  // sort the faculty names alphabetically
+  ongoingFacultyNames.sort((a, b) => a.localeCompare(b));
+
 
   const completionYears = [
     ...new Set(
@@ -70,12 +98,35 @@ const CSEReserchStudentspage = () => {
     ),
   ];
 
+  // sort the completion years in descending order
+  completionYears.sort((a, b) => b - a);
+
+  const ongoingYears = [
+    ...new Set(
+      ongoingScholars
+        .filter((c) => c.registration_year)
+        .map((c) => c.registration_year)
+    ),
+  ];
+
+  // sort the ongoing years in descending order
+  ongoingYears.sort((a, b) => b - a);
+
   const filteredCompletedScholars = completedScholars.filter(
     (c) =>
-      (!selectedFaculty || c.supervisor === selectedFaculty) &&
-      (!selectedYear ||
-        extractYear(c.completion_year) === parseInt(selectedYear))
+      (!selectedCompletedFaculty || c.supervisor === selectedCompletedFaculty) &&
+      (!selectedCompletedYear ||
+        extractYear(c.completion_year) === parseInt(selectedCompletedYear))
   );
+
+
+  const filteredOngoingScholars = ongoingScholars.filter(
+    (c) =>
+      (!selectedOngoingFaculty || c.supervisor === selectedOngoingFaculty) &&
+      (!selectedOngoingYear ||
+        (c.registration_year) === parseInt(selectedOngoingYear))
+  );
+
 
   const hasFaculty = true;
   const hasPhd = phdInfo.length > 0;
@@ -96,13 +147,47 @@ const CSEReserchStudentspage = () => {
                   <p className="text-red-900 text-xl lg:text-2xl font-bold text-center mt-2">
                     Ongoing Research Scholars
                   </p>
+
+                  {/* 🔽 Filters for ongoing scholars */}
+                  <div className="items-center flex flex-col sm:flex-row gap-5 justify-center px-2 my-4">
+                    <select
+                      onChange={(e) => setSelectedOngoingYear(e.target.value)}
+                      value={selectedOngoingYear}
+                      className="border p-2 rounded text-black"
+                    >
+                      <option value="">Select Registration Year</option>
+                      {ongoingYears.map((year) => (
+                        <option key={year} value={year}>
+                          {year}
+                        </option>
+                      ))}
+                    </select>
+
+                    <select
+                      onChange={(e) => setSelectedOngoingFaculty(e.target.value)}
+                      value={selectedOngoingFaculty}
+                      className="border p-2 rounded text-black"
+                    >
+                      <option value="">Select Faculty Supervisor</option>
+                      {ongoingFacultyNames.map((name) => (
+                        <option key={name} value={name}>
+                          {name}
+                        </option>
+                      ))}
+                    </select>
+
+                  </div>
+
+
+                  {/* 🔁 Filtered list for ongoing scholars */}
                   <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
-                    {ongoingScholars.map((item) => (
+                    {filteredOngoingScholars.map((item) => (
                       <PhdCandidate key={item.id} data={item} />
                     ))}
                   </div>
                 </>
               )}
+
 
               {completedScholars.length > 0 && (
                 <>
@@ -111,9 +196,9 @@ const CSEReserchStudentspage = () => {
                   </p>
                   <div className="items-center flex flex-col sm:flex-row gap-5 justify-center px-2 my-4">
                     <select
-                      onChange={(e) => setSelectedYear(e.target.value)}
-                      value={selectedYear}
-                      className="border p-2 rounded"
+                      onChange={(e) => setSelectedCompletedYear(e.target.value)}
+                      value={selectedCompletedYear}
+                      className="border p-2 rounded text-black"
                     >
                       <option value="">Select Completion Year</option>
                       {completionYears.map((year) => (
@@ -124,18 +209,19 @@ const CSEReserchStudentspage = () => {
                     </select>
 
                     <select
-                      onChange={(e) => setSelectedFaculty(e.target.value)}
-                      value={selectedFaculty}
-                      className="border p-2 rounded"
+                      onChange={(e) => setSelectedCompletedFaculty(e.target.value)}
+                      value={selectedCompletedFaculty}
+                      className="border p-2 rounded text-black"
                     >
                       <option value="">Select Faculty Supervisor</option>
-                      {facultyNames.map((name) => (
+                      {completedFacultyNames.map((name) => (
                         <option key={name} value={name}>
                           {name}
                         </option>
                       ))}
                     </select>
                   </div>
+
 
                   <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
                     {filteredCompletedScholars.map((item) => (

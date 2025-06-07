@@ -1,12 +1,20 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { format } from "path";
 
 const CSEProjectsPage = () => {
   const [publications, setPublications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [openYears, setOpenYears] = useState({}); // dropdown open/close tracking
+
+  // format date from YYYY-MM-DD to DD-MM-YYYY
+  function formatDate(dateStr) {
+    // Convert YYYY-MM-DD to DD-MM-YYYY
+    const [year, month, day] = dateStr.split("-");
+    return `${day}-${month}-${year}`;
+  }
 
   const fetchPublications = async () => {
     setIsLoading(true);
@@ -126,7 +134,7 @@ const CSEProjectsPage = () => {
                   onClick={() => toggleYear(year)}
                   className="w-full px-4 py-3 bg-red-100 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-200 transition"
                 >
-                  Projects in {year}
+                  Projects in {year} ({publications[year].length})
                   {openYears[year] ? <ChevronUp /> : <ChevronDown />}
                 </button>
 
@@ -157,8 +165,9 @@ const CSEProjectsPage = () => {
 
                           {/* Duration */}
                           <p className="text-gray-700">
-                            <strong>Duration:</strong> {project.start_date} -{" "}
-                            {project.end_date}
+                            <strong>Duration:</strong> {formatDate(project.start_date)} 
+                            <span className="font-extrabold text-black"> - </span>
+                            {formatDate(project.end_date)}
                           </p>
 
                           {/* Financial Outlay */}
@@ -171,11 +180,10 @@ const CSEProjectsPage = () => {
 
                           {/* Status */}
                           <p
-                            className={`text-lg font-semibold ${
-                              project.status === "Completed"
-                                ? "text-green-800"
-                                : "text-blue-600"
-                            }`}
+                            className={`text-lg font-semibold ${project.status === "Completed"
+                              ? "text-green-800"
+                              : "text-blue-600"
+                              }`}
                           >
                             <strong className="text-black font-normal">
                               Status:

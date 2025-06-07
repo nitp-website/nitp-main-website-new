@@ -8,6 +8,17 @@ const CSEPatentsPage = () => {
   const [error, setError] = useState(null);
   const [openYears, setOpenYears] = useState({}); // dropdown open/close tracking
 
+  // format Date
+  function formatISODate(isoDateStr) {
+    const date = new Date(isoDateStr);
+
+    const day = String(date.getUTCDate()).padStart(2, '0');
+    const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Months are 0-based
+    const year = date.getUTCFullYear();
+
+    return `${day}-${month}-${year}`;
+  }
+
   const fetchPublications = async () => {
     setIsLoading(true);
     try {
@@ -126,7 +137,7 @@ const CSEPatentsPage = () => {
                   onClick={() => toggleYear(year)}
                   className="w-full px-4 py-3 bg-red-100 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-200 transition"
                 >
-                  Patents in {year}
+                  Patents in {year} ({publications[year].length})
                   {openYears[year] ? <ChevronUp /> : <ChevronDown />}
                 </button>
 
@@ -154,14 +165,15 @@ const CSEPatentsPage = () => {
 
                           {patent.registration_date && (
                             <p className="text-gray-600">
-                              Registration Date:
-                              {patent.registration_date}
+                              Registration Date: {" "}
+                              {formatISODate(patent.registration_date)}
                             </p>
                           )}
 
                           {patent.publication_date && (
                             <p className="text-gray-600">
-                              Publication Date: {patent.publication_date}
+                              Publication Date: {" "}
+                              {formatISODate(patent.publication_date)}
                             </p>
                           )}
 
@@ -176,7 +188,8 @@ const CSEPatentsPage = () => {
 
                           {patent.grant_date && (
                             <p className="text-gray-600">
-                              Grant Date: {patent.grant_date}
+                              Grant Date: {" "}
+                              {formatISODate(patent.grant_date)}
                             </p>
                           )}
                         </li>

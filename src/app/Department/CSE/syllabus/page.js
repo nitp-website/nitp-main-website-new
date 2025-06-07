@@ -106,6 +106,7 @@ export default function Page() {
             }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>PhD Course</button>
           </div>
         </div>
+        
         {/* dual degree data science */}
         <div className={`mb-10 ${(dualData == false) ? "hidden" : ""}`}>
           <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">  DUAL DEGREE PROGRAM (DATA SCIENCE):-</div>
@@ -119,6 +120,7 @@ export default function Page() {
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">T</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
+              
               <SyllabusComp
                 dep={"CSE"}
                 sem={"1"}
@@ -129,7 +131,6 @@ export default function Page() {
                 P={"2"}
                 cred={"4"}
                 url={"https://docs.google.com/document/d/1ZS47H6woMm-k1JOrEUaOABv54m_BGPLq/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true "}
-
               />
               <SyllabusComp
                 dep={"CSE"}
@@ -1154,9 +1155,12 @@ export default function Page() {
                 cred={"3"}
                 url={"https://docs.google.com/document/d/1jyFGE46oRuHdJ-0rDEyxmkh3D0DITmZT/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
               />
+
             </div>
           </div>
         </div>
+
+        {/* ug progrm */}
         <div className={`mb-10 ${(ug2022 == false) ? "hidden" : ""}`}>
           <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">UG PROGRAM 2022:-</div>
           <div className=" overflow-x-auto">
@@ -2449,8 +2453,9 @@ export default function Page() {
             </div>
           </div>
         </div>
+
         {/**============================================================================================================= */}
-        {/* mtech data science  */}
+        {/* MTECH data science  */}
         <div className={`mb-10 ${(pgd == false) ? "hidden" : ""}`}>
           <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">M.tech data Science :-</div>
           <div className=" overflow-x-auto">
@@ -2463,6 +2468,7 @@ export default function Page() {
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">T</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
+
               <SyllabusComp
                 dep={"CSE"}
                 sem={"1"}
@@ -3168,10 +3174,12 @@ export default function Page() {
                 cred={"3"}
                 url={"https://docs.google.com/document/d/1jyFGE46oRuHdJ-0rDEyxmkh3D0DITmZT/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
               />
+
             </div>
           </div>
         </div>
-        {/* PG cyber PROGRAM  */}
+
+        {/* MTECH cyber PROGRAM  */}
         <div className={`mb-10 ${(pgc == false) ? "hidden" : ""}`}>
           <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">M.tech Cyber Security :-</div>
           <div className=" overflow-x-auto">
@@ -3184,6 +3192,7 @@ export default function Page() {
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">T</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
+
               <SyllabusComp
                 dep={"CSE"}
                 sem={"1"}
@@ -3414,7 +3423,6 @@ export default function Page() {
                 P={"0"}
                 cred={"3"}
                 url={'https://docs.google.com/document/d/1VgMlWRXpf46S5x2lVZwcxgLYBsnJXKmG/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
-
               />
               <SyllabusComp
                 dep={"Cyber Security"}
@@ -3580,7 +3588,6 @@ export default function Page() {
                 P={"0"}
                 cred={"3"}
                 url={''}
-
               />
               <SyllabusComp
                 dep={"Cyber Security"}
@@ -3791,12 +3798,10 @@ export default function Page() {
                 cred={"3"}
                 url={'https://docs.google.com/document/d/1lEB2LQmA3iZjcxyvPAIpN_QRcc6Udyfg/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
               />
-
-
-
             </div>
           </div>
         </div>
+
         {/* PhD  */}
         <div className={`mb-10 ${(phd == false) ? "hidden" : ""}`}>
           <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">PhD PROGRAM :-</div>
@@ -3810,6 +3815,7 @@ export default function Page() {
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">T</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
+
               <SyllabusComp
                 dep={""}
                 sem={""}
@@ -3885,6 +3891,7 @@ export default function Page() {
             </div>
           </div>
         </div>
+
         {/* Dual cyber PROGRAM  */}
         <div className={`mb-10 ${(dualCyber == false) ? "hidden" : ""}`}>
           <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">DUAL DEGREE PROGRAM (CYBER SECURITY):-</div>
@@ -3898,6 +3905,7 @@ export default function Page() {
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">T</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
+              
               <SyllabusComp
                 dep={"CSE"}
                 sem={"1"}
@@ -4098,7 +4106,6 @@ export default function Page() {
                 cred={"3"}
                 url={""}
               />
-
               <SyllabusComp
                 dep={"CSE"}
                 sem={"4"}
@@ -4209,7 +4216,6 @@ export default function Page() {
                 cred={"3"}
                 url={""}
               />
-
               <SyllabusComp
                 dep={"CSE"}
                 sem={"6"}
@@ -4265,7 +4271,6 @@ export default function Page() {
                 cred={"6"}
                 url={""}
               />
-
               <SyllabusComp
                 dep={"CSE"}
                 sem={"7"}
@@ -4299,7 +4304,6 @@ export default function Page() {
                 cred={"3"}
                 url={"https://docs.google.com/document/d/1WUfdRoj6IEK8VrU1kE86371oKpXomRBD/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
               />
-
               <SyllabusComp
                 dep={"CSE"}
                 sem={"7"}
@@ -4894,11 +4898,10 @@ export default function Page() {
                 cred={"3"}
                 url={"https://docs.google.com/document/d/1EHZkkrk6SRXIf0zwWIG00x9XekoKKEa-/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true "}
               />
-
-
             </div>
           </div>
         </div>
+
         {/* MCA(DS & I) */}
         <div className={`mb-10 ${(mcad == false) ? "hidden" : ""}`}>
           <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA (DS & I):-</div>
@@ -4912,6 +4915,8 @@ export default function Page() {
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">T</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
+
+
               <SyllabusComp
                 dep={"CSE"}
                 sem={"1"}
@@ -5389,11 +5394,10 @@ export default function Page() {
                 cred={"3"}
                 url={"https://docs.google.com/document/d/1hshrZ1axwaf7hsbwT8LYdo6-AIDVDnHN/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
               />
-
             </div>
           </div>
         </div>
-        {/* MCA(DS & I) */}
+        {/* MCA(AI & IT) */}
         <div className={`mb-10 ${(mcaai == false) ? "hidden" : ""}`}>
           <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA (AI & IOT):-</div>
           <div className=" overflow-x-auto">
@@ -5406,6 +5410,8 @@ export default function Page() {
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">T</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
               <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
+
+
               <SyllabusComp
                 dep={"CSE"}
                 sem={"1"}
@@ -5847,6 +5853,7 @@ export default function Page() {
                 cred={"3"}
                 url={"https://docs.google.com/document/d/1WVcCufZiel02dQz9aYydX9ujE9uYvGkK/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
               />
+
             </div>
           </div>
         </div>

@@ -69,7 +69,7 @@ const CSEJournalPage = () => {
                   onClick={() => toggleYear(year)}
                   className="w-full px-4 py-3 bg-red-100 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-200 transition"
                 >
-                  Publications in {year}
+                  Publications in {year} ({publications[year].length})
                   {openYears[year] ? <ChevronUp /> : <ChevronDown />}
                 </button>
 
