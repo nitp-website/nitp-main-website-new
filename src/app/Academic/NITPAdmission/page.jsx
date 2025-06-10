@@ -70,11 +70,12 @@ const admissionData = {
     //   },
     // ],
     notices: [
-      // {
-      //   title: "Phd Seat Allocation",
-      //   date: "2023-07-01",
-      //   content: "First round of seat allocation results will be declared on July 5th."
-      // }
+      {
+        title: "Admission Notice for the PhD Programme for Academic Session 2025–26",
+        date: "2025-06-10",
+        content: "Admission Notice for the PhD Programme for the Academic Session 2025–26",
+        href:"https://drive.google.com/file/d/1AgEe_gQWy0rM_Az5DZil5ERMdUj-fFze/view"
+      }
     ]
   },
 
@@ -232,7 +233,7 @@ function AdmissionsPage() {
             >
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
-                P.hd Admissions
+                PhD Admissions
               </span>
             </li>
 
@@ -304,7 +305,7 @@ function AdmissionsPage() {
             >
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
-                P.hd Admissions
+                PhD Admissions
               </span>
             </li>
 
