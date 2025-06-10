@@ -89,7 +89,7 @@ const programs = [
   },
 ];
 
-const CSEAcadProgrampage = () => {
+const ECEAcadProgrampage = () => {
   return (
     <div>
       <div className="py-1 mt-2">
@@ -110,4 +110,4 @@ const CSEAcadProgrampage = () => {
   );
 };
 
-export default CSEAcadProgrampage;
+export default ECEAcadProgrampage;

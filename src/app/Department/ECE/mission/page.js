@@ -1,48 +1,37 @@
-import BackDepartment from "../../../components/department/BackDepartment";
+import React from "react";
 
-
-export default function Page() {
+const ECEMissionPage = () => {
     return (
-        <div className=" flex flex-col p-10 max-sm:p-2 text-black">
-            <div className="flex flex-col  mb-6">
-                <div>
-                    <p className="text-red-900 text-xl lg:text-2xl font-bold">
-                        MISSION AND VISION
-                    </p>
-                </div>
-                <div className="mt-2">
-                    <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        Electronics And Communication Enginnering
-                    </p>
-                </div>
-                <BackDepartment navigate={"/Department/ECE"} />
-            </div>
-            <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
-                {/* vision */}
-                <div className="mb-10">
-                    <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">VISION :-</div>
-                    <ul className="list-none list-inside ml-5 space-y-4 lg:text-base text-sm text-justify">
-                        <li>To become a centre of excellence to impart up-to-date technical education, which will let our students to attain their maximum technical potential, managerial capability, be competitive in the job market and to emerge as a leading research hub.</li>
+        <div className="bg-white text-black">
+            <div className="py-1 mt-2">
+                <div className="w-full px-5 xs:px-0 md:w-[90%] mx-auto">
+                    <div className="w-full">
+                        <h2 className="text-center text-4xl text-red-700 mt-2">Mission</h2>
+                    </div>
+                    <ul className="list-disc pl-5 space-y-2 mt-2 text-justify">
+                        <li className="ml-4">
+                            To provide globally competitive and high quality human resource by preparing students with broad-based / specialized technical education at UG, PG, and Ph.D. levels.
+                        </li>
+                        <li className="ml-4">
+                            To increase research intensity and become a leading product based innovation centre by significantly contributing towards development of new technologies.
+                        </li>
+                        <li className="ml-4">
+                            To contribute to the country and the society at large by strengthening the interaction between academia and industries for addressing the need of the mankind.
+                        </li>
+                    </ul>
+
+                    <div className="w-full mt-5">
+                        <h2 className="text-center text-4xl text-red-700 mt-2">Vision</h2>
+                    </div>
+                    <ul className="list-disc pl-5 space-y-2 mt-2 text-justify">
+                        <li className="ml-4">
+                            To become a centre of excellence to impart up-to-date technical education, which will let our students to attain their maximum technical potential, managerial capability, be competitive in the job market and to emerge as a leading research hub.
+                        </li>
                     </ul>
                 </div>
-                {/* mission */}
-                <div className="mb-10">
-                    <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">MISSION :-</div>
-                    <ol className="list-decimal list-inside ml-5 space-y-4 text-sm lg:text-base text-justify ">
-                        <li>
-                            To provide globally competitive and high quality human resource by preparing students with broad-based / specialized technical education at UG, PG, and Ph.D. levels
-                        </li>
-                        <li>
-                            To increase research intensity and become a leading product based innovation centre by significantly contributing towards development of new technologies
-                        </li>
-                        <li>
-                            To contribute to the country and the society at large by strengthening the interaction between academia and industries for addressing the need of the mankind
-                        </li>
-                    </ol>
-                </div>
-
-
             </div>
         </div>
-    )
-}
+    );
+};
+
+export default ECEMissionPage;
