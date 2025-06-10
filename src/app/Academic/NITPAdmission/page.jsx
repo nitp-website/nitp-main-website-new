@@ -71,7 +71,7 @@ const admissionData = {
     // ],
     notices: [
       {
-        title: "Admission Notice for the PhD Programme for Academic Session 2025–26",
+        title: "Applications are invited for admission to the Ph.D. programme, AY 2025-26, Odd Sem (Last Date: 14th July, 2025).",
         date: "2025-06-10",
         content: "Admission Notice for the PhD Programme for the Academic Session 2025–26",
         href:"https://drive.google.com/file/d/1AgEe_gQWy0rM_Az5DZil5ERMdUj-fFze/view"
