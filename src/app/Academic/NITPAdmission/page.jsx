@@ -85,7 +85,7 @@ const admissionData = {
         name: "NIMCET",
         image: "https://cdnbbsr.s3waas.gov.in/s33e6260b81898beacda3d16db379ed329/uploads/2025/03/2025031961.png",
         link: "https://nimcet.admissions.nic.in/",
-        description: "Centralized Counselling for M.C.A. Admissions"
+        description: "Centralized Counselling for MCA Admissions"
       },
     ],
     notices: [
@@ -209,7 +209,7 @@ function AdmissionsPage() {
             >
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
-                M.C.A Admissions
+                MCA Admissions
               </span>
             </li>
 
