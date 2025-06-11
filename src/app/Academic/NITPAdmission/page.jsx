@@ -64,14 +64,14 @@ const admissionData = {
   },
 
   phd: {
-    // portals: [
-    //   {
-    //     name: "CCMT",
-    //     image: "https://cdnbbsr.s3waas.gov.in/s301894d6f048493d2cacde3c579c315a3/uploads/2022/02/2022022590.png",
-    //     link: "https://ccmt.admissions.nic.in",
-    //     description: "Centralized Counselling for M.Tech/M.Arch/M.Plan Admissions"
-    //   },
-    // ],
+    portals: [
+      {
+        name: "PhD Admissions NITP Portal",
+        image: "https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
+        link: "https://mis.nitp.ac.in/AdmissionPHD/Default.aspx",
+        // description: "Centralized Counselling for M.Tech/M.Arch/M.Plan Admissions"
+      },
+    ],
     notices: [
       {
         title: "Applications are invited for admission to the Ph.D. programme, AY 2025-26, Odd Sem (Last Date: 14th July, 2025).",
