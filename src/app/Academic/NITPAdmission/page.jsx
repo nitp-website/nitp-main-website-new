@@ -12,7 +12,10 @@ import {
   ChevronUp,
   ExternalLink
 } from 'lucide-react';
-
+ import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 const admissionData = {
   btech: {
     portals: [
@@ -129,6 +132,13 @@ function AdmissionsPage() {
   const [selected, setSelected] = useState("btech");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedNotices, setExpandedNotices] = useState({});
+  const searchParams = useSearchParams();
+  const initialSelected = searchParams.get("type") || "btech";
+  const router = useRouter();
+  const pathname = usePathname();
+  useEffect(()=>{
+    setSelected(initialSelected);
+  },[initialSelected]);
 
   const toggleNotice = (index) => {
     setExpandedNotices(prev => ({
@@ -136,6 +146,13 @@ function AdmissionsPage() {
       [index]: !prev[index]
     }));
   };
+
+function handleClick(type) {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('type', type);
+
+    router.push(`${pathname}?${params.toString()}`);
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-white text-red-900 relative">
@@ -179,6 +196,7 @@ function AdmissionsPage() {
               onClick={() => {
                 setSelected("btech");
                 setMobileMenuOpen(false);
+                handleClick("btech");
               }}
             >
               <span className="flex items-center">
@@ -193,6 +211,7 @@ function AdmissionsPage() {
               onClick={() => {
                 setSelected("mtech");
                 setMobileMenuOpen(false);
+                handleClick("mtech");
               }}
             >
               <span className="flex items-center">
@@ -205,7 +224,7 @@ function AdmissionsPage() {
               className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${
                 selected === "mca" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
               }`}
-              onClick={() => setSelected("mca")}
+              onClick={() => { setSelected("mca"); setMobileMenuOpen(false); handleClick("mca"); }}
             >
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
@@ -217,7 +236,7 @@ function AdmissionsPage() {
               className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${
                 selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
               }`}
-              onClick={() => setSelected("study_in_india")}
+              onClick={() => { setSelected("study_in_india"); setMobileMenuOpen(false);handleClick("study_in_india"); }}
             >
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
@@ -229,7 +248,7 @@ function AdmissionsPage() {
               className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md  hover:text-white ${
                 selected === "phd" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
               }`}
-              onClick={() => setSelected("phd")}
+              onClick={() => { setSelected("phd"); setMobileMenuOpen(false);handleClick("phd"); }}
             >
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
@@ -250,7 +269,7 @@ function AdmissionsPage() {
               className={`cursor-pointer p-3 rounded-lg transition-all duration-300 text-black font-semibold hover:text-white hover:bg-red-600 hover:shadow-md ${
                 selected === "btech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
               }`}
-              onClick={() => setSelected("btech")}
+              onClick={() => { setSelected("btech"); handleClick("btech"); }}
             >
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
@@ -261,7 +280,7 @@ function AdmissionsPage() {
               className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
                 selected === "mtech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
               }`}
-              onClick={() => setSelected("mtech")}
+              onClick={() => { setSelected("mtech"); handleClick("mtech"); }}
             >
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
@@ -273,12 +292,12 @@ function AdmissionsPage() {
               className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
                 selected === "mca" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
               }`}
-              onClick={() => setSelected("mca")}
+              onClick={() => { setSelected("mca"); handleClick("mca"); }}
             >
               <span className="flex items-center">
 
                 <GraduationCap className="w-5 h-5 mr-3" />
-                M.C.A Admissions
+                MCA Admissions
 
               </span>
             </li>
@@ -287,7 +306,7 @@ function AdmissionsPage() {
               className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
                 selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
               }`}
-              onClick={() => setSelected("study_in_india")}
+              onClick={() => { setSelected("study_in_india"); handleClick("study_in_india"); }}
             >
               <span className="flex items-center">
 
@@ -301,7 +320,7 @@ function AdmissionsPage() {
               className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
                 selected === "phd" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
               }`}
-              onClick={() => setSelected("phd")}
+              onClick={() => { setSelected("phd"); handleClick("phd"); }}
             >
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
