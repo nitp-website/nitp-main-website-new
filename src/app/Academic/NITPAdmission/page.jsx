@@ -74,10 +74,16 @@ const admissionData = {
     ],
     notices: [
       {
-        title: "Applications are invited for admission to the Ph.D. programme, AY 2025-26, Odd Sem (Last Date: 14th July, 2025).",
+        title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2025-26 (Odd Semester: July–December 2025). Last date: 14th July 2025",
         date: "2025-06-10",
         content: "Admission Notice for the PhD Programme for the Academic Session 2025–26",
         href:"https://drive.google.com/file/d/1AgEe_gQWy0rM_Az5DZil5ERMdUj-fFze/view"
+      },
+          {
+        title: "SOP for PhD admission Academic Year 2025-26.",
+        date: "2025-06-10",
+        content: "SOP for PhD admission Academic Year 2025-26",
+        href:"https://drive.google.com/file/d/1FGeVnEinF1Fp5pTHTPNcZUbskSfyyj5S/view?usp=sharing"
       }
     ]
   },
