@@ -14,11 +14,11 @@ const page = () => {
         </div>
         <div className="mt-2">
             <p className="text-gray-500 text-sm lg:text-base font-semibold">
-              PHYSICS
+                 PHYSICS
             </p>
         </div>
         <div>
-          <BackDepartment navigate={'/Department/Phy/faculty'}/>
+          <BackDepartment navigate={'/Department/Phy'}/>
         </div>
       </div>  
       <FacultyInfo/>
