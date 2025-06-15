@@ -14,11 +14,11 @@ const page = () => {
         </div>
         <div className="mt-2">
             <p className="text-gray-500 text-sm lg:text-base font-semibold">
-            Humanities & Social Sciences
+                Humanities & Social Sciences
             </p>
         </div>
         <div>
-          <BackDepartment navigate={'/Department/Humanities/faculty'}/>
+          <BackDepartment navigate={'/Department/Humanities'}/>
         </div>
       </div>  
       <FacultyInfo/>
