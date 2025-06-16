@@ -6,7 +6,7 @@ import staffData from "../../staffCse";
 const CSEStaffpage = () => {
   const [staff, setStaff] = useState("staff");
   const hasStaff =
-    staffData.find((dept) => dept.department === "CSE")?.staff.length > 0;
+    staffData.find((dept) => dept.department === "hss")?.staff.length > 0;
 
   return (
     <div>
@@ -18,7 +18,7 @@ const CSEStaffpage = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
               {staffData
-                .find((dept) => dept.department === "CSE")
+                .find((dept) => dept.department === "hss")
                 ?.staff.map((staffMember, index) => (
                   <StaffcardDept key={index} {...staffMember} />
                 ))}

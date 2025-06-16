@@ -13,7 +13,31 @@ const CSEPOPage = () => {
           </div>
 
           <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
+          <li>
+              Engage in requirement analysis, designing, implementation, testing, deployment, and/or maintaining of software systems in the domain of computer science & engineering and allied fields.
+            </li>
             <li>
+              Solve socially relevant challenges using computer science and engineering expertise, and/or pursue higher education and research.
+            </li>
+            <li>
+              Work productively in a team and as an individual in interdisciplinary projects in industry/academia setup.
+            </li>
+            <li>
+              Participate in lifelong learning and career advancement, as well as adapting to changing professional and social requirements.
+            </li>
+
+            
+          </ul>
+
+          {/* Program Educational Objectives Section */}
+          <div className="w-full mt-8">
+            <h2 className="text-center text-4xl text-red-700 mt-2">
+              Program Educational Objectives
+            </h2>
+          </div>
+
+          <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
+              <li>
               Modern tool usage: Create, select and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modelling to complex engineering activities with an understanding of the limitations.
             </li>
             <li>
@@ -36,28 +60,6 @@ const CSEPOPage = () => {
             </li>
             <li>
               Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.
-            </li>
-          </ul>
-
-          {/* Program Educational Objectives Section */}
-          <div className="w-full mt-8">
-            <h2 className="text-center text-4xl text-red-700 mt-2">
-              Program Educational Objectives
-            </h2>
-          </div>
-
-          <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
-            <li>
-              Engage in requirement analysis, designing, implementation, testing, deployment, and/or maintaining of software systems in the domain of computer science & engineering and allied fields.
-            </li>
-            <li>
-              Solve socially relevant challenges using computer science and engineering expertise, and/or pursue higher education and research.
-            </li>
-            <li>
-              Work productively in a team and as an individual in interdisciplinary projects in industry/academia setup.
-            </li>
-            <li>
-              Participate in lifelong learning and career advancement, as well as adapting to changing professional and social requirements.
             </li>
           </ul>
         </div>

@@ -13,11 +13,9 @@ const HumanitiesPOPage = () => {
           </div>
 
           <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
-           <li>To involve entire range of knowledge pertinent to human relationship with society interaction and teaching towards problems solving of the nation.</li>
-                        <li>To develop into well rounded personalities and to propagate knowledge that is utilitarian and aesthetic in its makeup.</li>
-                        <li>To develop good technological skills with the ability to interact with different organs of an organization.</li>
-                        <li>To develop essential skills in critical thinking and writing along with the knowledge of literature,society, economic value, and philosophies of the mind and body.</li>
-                        </ul>
+            <li>Producing Technocrats with all round knowledge and development skills.</li>
+            <li>Developing professional ethics, communication skills and managerial knowledge among students to work in corporate world effectively and efficiently.</li>
+          </ul>
 
           {/* Program Educational Objectives Section */}
           <div className="w-full mt-8">
@@ -27,8 +25,12 @@ const HumanitiesPOPage = () => {
           </div>
 
           <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
-            <li>Producing Technocrats with all round knowledge and development skills.</li>
-                        <li>Developing professional ethics, communication skills and managerial knowledge among students to work in corporate world effectively and efficiently.</li>
+
+
+            <li>To involve entire range of knowledge pertinent to human relationship with society interaction and teaching towards problems solving of the nation.</li>
+            <li>To develop into well rounded personalities and to propagate knowledge that is utilitarian and aesthetic in its makeup.</li>
+            <li>To develop good technological skills with the ability to interact with different organs of an organization.</li>
+            <li>To develop essential skills in critical thinking and writing along with the knowledge of literature,society, economic value, and philosophies of the mind and body.</li>
           </ul>
         </div>
       </div>

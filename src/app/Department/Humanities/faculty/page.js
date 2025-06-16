@@ -14,7 +14,7 @@ const HumanitiesFacultyPage = () => {
       {faculty && hasFaculty && (
         <div className="flex flex-col">
           <p className="text-red-900 text-xl lg:text-3xl font-bold text-center">FACULTY</p>
-          <FacultyList url={"/Department/Humanities/Faculty"} branch={"Humanities"} />
+          <FacultyList url={"/Department/Humanities/faculty"} branch={"hss"} />
         </div>
       )}
     </div>
