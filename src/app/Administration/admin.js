@@ -549,6 +549,13 @@ const ServiceUNIT = [
   designation: "Co PI – EMU; Coordinator - NSS"
 },
 
+  {
+  name: "Dr.Mukesh Kumar",
+  type: "Assistant Professor",
+  designation: "PI Security- Bihta Campus"
+},
+
+
  {
   name: "Dr. Bambam Kumar",
   type: "Assistant Professor",
@@ -558,7 +565,7 @@ const ServiceUNIT = [
   name: "Dr. Amitesh Kumar",
   type: "Assistant Professor",
   designation: "Warden – Kosi Extension, Bagmati; Co PI – EMU"
-},
+}, 
 {
   name: "Dr. Chetan Kumar Hirwani",
   type: "Assistant Professor",
@@ -570,14 +577,9 @@ const ServiceUNIT = [
   designation: " Warden – Brahmaputra Hostel"
 },
 {
-  name: "Dr. Subodh Srivastava",
+  name: "Dr. Bhabani Shankar Das",
   type: "Assistant Professor",
-  designation: "Warden – Aryabhatt Hostel"
-},
-{
-  name: "Dr. Lini Dev K",
-  type: "Assistant Professor",
-  designation: " Warden – Ganga Hostel"
+  designation: " Warden – Brahmaputra Hostel"
 },
 {
   name: "Dr. Ambrish Maurya",
@@ -585,19 +587,25 @@ const ServiceUNIT = [
   designation: " Warden – Kosi Hostel; Asst. EE (ESU)"
 },
 {
+  name: "Dr. Lini Dev K",
+  type: "Assistant Professor",
+  designation: " Warden – Ganga Hostel"
+},
+
+  {
+  name: "Dr. Subodh Srivastava",
+  type: "Assistant Professor",
+  designation: "Warden – Aryabhatt Hostel(Bihta Campus)"
+},
+ {
   name: "Dr. Manpuran Mahto",
   type: "Assistant Professor",
-  designation: "Warden – Kautilya Hostel"
+  designation: "Warden – Kautilya Hostel(Bihta Campus)"
 },
 {
   name: "Dr. Kakali Chatterjee",
   type: "Assistant Professor",
-  designation: "Warden – Kadambini Hostel"
-},
-{
-  name: "Dr. Bhabani Shankar Das",
-  type: "Assistant Professor",
-  designation: " Warden – Brahmaputra Hostel"
+  designation: "Warden – Kadambini Hostel(Bihta Campus)"
 },
 {
   name: "Dr. Satyajit Mondal",
@@ -614,12 +622,7 @@ const ServiceUNIT = [
   type: "Assistant Professor",
   designation: "Assistant Warden – Brahmaputra Hostel"
 },
-{
-  name: "Dr. Supriya Kumari",
-  type: "Assistant Professor",
-  designation: " Assistant Warden – Ganga Hostel"
-},
-{
+  {
   name: "Dr. Sandeep Kumar",
   type: "Assistant Professor",
   designation: "Assistant Warden – Kosi Hostel"
@@ -629,22 +632,36 @@ const ServiceUNIT = [
   type: "Assistant Professor",
   designation: "Assistant Warden – Kosi Extension, Bagmati"
 },
+  {
+  name: "Dr. Supriya Kumari",
+  type: "Assistant Professor",
+  designation: " Assistant Warden – Ganga Hostel"
+},
+{
+  name: "Dr. Mukesh Kumar",
+  type: "Assistant Professor",
+  designation: "Assistant Warden – Aryabhatta Hostel(Bihta Campus)"
+},
 {
   name: "Dr. Ajay Kumar Maurya",
   type: "Assistant Professor",
-  designation: "Assistant Warden – Aryabhatt Hostel"
+  designation: "Assistant Warden – Aryabhatta Hostel(Bihta Campus)"
+},  
+{
+  name: "Dr. Antriksh Goswami",
+  type: "Assistant Professor",
+  designation: "Assistant Warden – Kautilya Hostel (Bihta Campus)"
 },
 {
   name: "Dr. Richa Agrawal",
   type: "Assistant Professor",
-  designation: "Assistant Warden – Kadambini Hostel"
+  designation: "Assistant Warden – Kadambini Hostel(Bihta Campus)"
 },
 {
   name: "Dr. Meena Panchore",
   type: "Assistant Professor",
-  designation: "Assistant Warden – Kadambini Hostel"
+  designation: "Assistant Warden – Kadambini Hostel(Bihta Campus)"
 }
- 
 ]
 
 const Admin = [

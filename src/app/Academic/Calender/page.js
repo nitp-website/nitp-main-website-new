@@ -4,6 +4,10 @@ import { Download } from 'lucide-react';
 const CalenderTable = () => {
   const dataOdd = [
     {
+      link: "https://drive.google.com/file/d/1OUF4fGi960JTlWrM-kflRsiG4fng_0LI/view",
+      para: " Academic Calendar for Odd(Autumn) Semester, Academic Session 2025-26 ",
+    },
+    {
       link: "https://drive.google.com/file/d/1DGBVauEQaQ1zC6iryZ41-nIPv6Gvx9em/view?usp=sharing",
       para: " Academic Calendar for Even(Spring) Semester, Academic Session 2024-25 ",
     },

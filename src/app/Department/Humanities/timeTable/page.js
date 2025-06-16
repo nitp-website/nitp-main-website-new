@@ -3,11 +3,19 @@ import { Download } from 'lucide-react';
 
 
 function Page() {
-    const data = [
-        {
-            name: "Applied Physics Dept Time Table for the Class Jan- June 2025 (Even Semster)",
-            link: "https://drive.google.com/file/d/16mfMhjDhREUaiUn0R9Dxxl5LgW9UTbTF/view"
+      const data = [
+           {
+            name: "Humanities & Social Sciences Dept Time Table for the Class Jan- June 2025 (Even Semster)",
+            link: "https://drive.google.com/file/d/106cCdw6SbsN1GIjM4reh3WY8XzsmkCHO/view?usp=sharing"
         },
+        
+        {
+            name: "Humanities & Social Sciences Dept Time Table for the Class July- December 2024 (odd Semster)",
+            link: "https://drive.google.com/file/d/1c6f2tp-MMqf9SzPudHyerB7NfdDB4ffo/view"
+        },
+     
+
+
     ];
     return (
         <div className="bg-white text-black">
@@ -20,7 +28,7 @@ function Page() {
                         <div className="mx-auto overflow-x-auto rounded-lg">
                             <table className="md:w-[90%] overflow-hidden rounded-lg mx-auto border-collapse bg-white">
                                 <thead>
-                                    <tr className="bg-red-800 text-white">
+                                    <tr className="bg-[#421010] text-white">
                                         <th className="text-left px-6 py-4 font-semibold">Document</th>
                                         <th className="text-center px-6 py-4 font-semibold w-48">Download</th>
                                     </tr>
@@ -41,7 +49,7 @@ function Page() {
                                                                 href={item.link}
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
-                                                                className="inline-flex items-center gap-2 bg-red-800 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium"
+                                                                className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium"
                                                             >
                                                                 <Download className="w-4 h-4" />
                                                                 Download

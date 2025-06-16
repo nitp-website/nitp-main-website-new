@@ -3,7 +3,7 @@ import FacultyList from "../../../../components/facultycomponents/FacultyList";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const PhyFacultyPage = () => {
+const HumanitiesFacultyPage = () => {
   const [faculty, setFaculty] = useState(true);
   const [loading, setLoading] = useState(true);
 
@@ -14,11 +14,11 @@ const PhyFacultyPage = () => {
       {faculty && hasFaculty && (
         <div className="flex flex-col">
           <p className="text-red-900 text-xl lg:text-3xl font-bold text-center">FACULTY</p>
-          <FacultyList url={"/Department/Phy/Faculty"} branch={"phy"} />
+          <FacultyList url={"/Department/Humanities/Faculty"} branch={"Humanities"} />
         </div>
       )}
     </div>
   );
 };
 
-export default PhyFacultyPage;
+export default HumanitiesFacultyPage;
