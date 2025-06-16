@@ -9,7 +9,8 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "./DeptCounter";
 import DeptNotice from "./DeptNotice";
 
-const about = `The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students. The department is dedicated to providing quality education at both undergraduate (UG) and postgraduate levels. Currently, it offers the following programs:`;
+const about = `The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students. The department is dedicated to providing quality education at both undergraduate (UG) and postgraduate levels. 
+All courses are regularly updated by academic and industry experts to meet the needs of today's industry. The undergraduate program is accredited by the National Board of Accreditation (NBA) for six years, from July 2021 to June 2027. The department received a grant of 3.52 Crore from DST under the FIST scheme for upgrading the Antenna Engineering Laboratory. The VLSI Lab has also been upgraded with the support of the SMDP-C2SD project.`;
 
 const picture = ["/ee-feature1.png", "/ee-feature2.png", "/ee-feature3.png"];
 
@@ -35,8 +36,6 @@ export default function ECE() {
           { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} /> },
           { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} /> },
         ]);
-
-
       } catch (error) {
         console.error("Error fetching data:", error);
       }

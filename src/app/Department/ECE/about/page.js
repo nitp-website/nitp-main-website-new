@@ -5,7 +5,58 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 
 import axios from "axios";
 
-const about = `The Department of Physics was established in the year 1924 and since then has been functioning as an important unit of the institute. As of now, the Department has nine faculty members who are actively involved in both teaching and research and three supporting staffs including one Technical Assistant for Labs. The Department of Materials Science and Engineering started in the year 2022. The Department has started a new Dual degree program B.Tech-M.Tech in Material Science and Engineering from the session 2022-23. There are 08 candidates enrolled in dual degree program in the session 2022-23 and 09 candidates enrolled in the session 2023-24 and 10 candidates enrolled in the session 2024-25. In the year of 2024-25 the department has been merged with Physics department and thereafter new department has started and named as “Applied Physics and Materials Engineering”. The Department of Applied Physics and Materials Engineering also offers Ph.D program (Full time and Part time research program) in Engineering to provide a platform for bright graduates and post graduates to conduct research in the diversified area of Applied Physics. The faculty is also involved in producing good number of high quality research publications each year. The new department is an interdisciplinary department which draws attention from all other engineering applications with basic understanding of Materials science. The different laboratories of the  department mainly focuses on the study of the development of new materials and its advanced manufacturing methods and modification of its properties by suitable compositional and heat treatment methods by altering the physical and mechanical behaviour materials for its widespread application.`;
+const aboutContent = (
+  <div className="space-y-4 text-justify text-black">
+    <p>
+      The Department of Electronics and Communication Engineering at the National Institute of
+      Technology Patna began its journey in 1978 with just 10 undergraduate students. The department is
+      dedicated to providing quality education at both undergraduate (UG) and postgraduate levels.
+    </p>
+
+    <p>Currently, it offers the following programs:</p>
+
+    <ol className="list-decimal list-inside space-y-2">
+      <li>
+        <strong>B.Tech</strong> in "Electronics & Communication Engineering" with an intake of 161.
+      </li>
+      <li>
+        <strong>Dual degree (B.Tech + M.Tech)</strong> in "Microelectronics and VLSI System Design" with an intake of 22.
+      </li>
+      <li>
+        <strong>M.Tech in:</strong>
+        <ul className="list-disc list-inside ml-5 space-y-1">
+          <li>"Next Generation Wireless Technologies" with an intake of 15.</li>
+          <li>"Microelectronics and VLSI System Design" with an intake of 15.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Ph.D.</strong> (Full-time and Part-time) in Electronics and Communication Engineering.
+      </li>
+    </ol>
+
+    <p>
+      All courses are regularly updated by academic and industry experts to meet the needs of today&apos;s
+      industry. The undergraduate program is accredited by the National Board of Accreditation (NBA) for
+      six years, from July 2021 to June 2027. The department received a grant of ₹3.52 Crore from DST under the FIST scheme for upgrading the Antenna Engineering Laboratory.
+      The VLSI Lab has also been upgraded with the support of the SMDP-C2SD project.
+    </p>
+
+    <p>The department has a group of young, competent, and dedicated faculty members engaged in quality research in the following areas:</p>
+
+    <ul className="list-disc list-inside ml-5 space-y-2">
+      <li>High Power RF / Microwave Devices, Antennas, Filters, Metamaterials and Metasurfaces, Microwave Imaging, Computational Electromagnetics.</li>
+      <li>Signal Processing, Image Processing, Speech Analysis, Biomedical Signal Processing, Machine Learning, Soft Computing Techniques, Pattern Recognition.</li>
+      <li>Analog, Digital and Mixed Signal IC Design, FPGA-based System Design, Synthesis and characterization of nanomaterials, Nano-electronics.</li>
+      <li>Wireless Communications and Networks, Quantum Cryptographic Algorithms, Physical Layer, Cognitive Radio Network (CRN), Optical Fiber Communication.</li>
+    </ul>
+
+    <p>
+      We continually engage in exploring promising research areas to prepare our students to lead in their
+      respective fields, making impactful contributions in their professional life.
+    </p>
+  </div>
+);
+
 
 const Aboutpage = () => {
   const [counts, setCounts] = useState({});
@@ -43,11 +94,7 @@ const Aboutpage = () => {
             </h2>
 
             <div className="w-full mx-auto px-2 py-5 text-justify text-black">
-              {about.split("\n").map((line, index) => (
-                <p key={index} className="mb-2">
-                  {line}
-                </p>
-              ))}
+              {aboutContent}
             </div>
           </div>
 
