@@ -25,8 +25,7 @@ export default function Layout({ children }) {
                 <div className="px-5 pt-10 max-sm:px-0 text-black">
                     {/* heading */}
                     <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 text-center bg-transparent">
-                        Chemical Science and Technology 
-                        {/* look for correct name */}
+                        CHEMICAL SCIENCE AND TECHNOLOGY
                     </div>
                 </div>
                 <div className="w-[100%]">{children}</div>

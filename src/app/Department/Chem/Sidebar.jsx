@@ -75,7 +75,7 @@ import {
   Menu,
 } from "lucide-react";
 
-const dept = "Chem"; 
+const dept = "Chem"; // Use 'Chem' for folder navigation
 
 const navItems = [
   { name: "Overview", url: `/Department/${dept}`, icon: <BookOpen size={20} /> },

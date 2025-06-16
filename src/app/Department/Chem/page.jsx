@@ -9,11 +9,11 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "./DeptCounter";
 import DeptNotice from "./DeptNotice";
 
-const about = `The Chemistry department was established in 1924, at the same time the institute was founded. The Department has expanded significantly since 2014 and offers several compulsory and elective courses to B.Tech. and B.Arch. students of the Institute {{in 1st, 2nd and 3rd years of the UG and UG-PG dual degree programs. The department has offered a UG-PG 5-year Integrated M.Sc. in Chemistry degree from 2015 where the curriculum offers students an excellent theoretical foundation in both traditional as well as contemporary areas of chemistry along with extensive hands on training in experiments.`;
+const about = `The Department of Computer Science and Engineering offers courses leading to Bachelor of Technology in Computer Science and Engineering. The department has a very good infrastructure and faculty to provide excellent education. The curriculum is updated regularly to keep up with the growing demands and the changing trends of the software industry and research laboratories. The department provides a wide range of courses. The prominent among them includes Data Structures, Design and Analysis of Algorithms, System Programming, Computer Networks, Data Mining and Warehousing, Distributed and Parallel Computing, Mobile and Wireless Computing, Real-time Systems, Cryptography, Genetic Algorithm, Quantum Algorithms and Artificial Intelligence. Apart from these, students are also offered a wide variety of electives.`;
 
 const picture = ["/ee-feature1.png", "/ee-feature2.png", "/ee-feature3.png"];
 
-export default function che() {
+export default function Chem() {
   const router = useRouter();
   const [feature, setFeature] = useState(picture[0]);
   const [it, setIt] = useState(0);
@@ -103,18 +103,9 @@ export default function che() {
                 {about.split("\n").map((line, index) => (
                   <p key={index} className="mb-2">
                     {line}
-                    <button
-                    onClick={() => router.push('/Department/Chem/about')}
-                    className="text-blue-600"
-                    >
-                    more..
-                </button>
-                  </p> 
-
+                  </p>
                 ))}
-
               </div>
-
             </div>
           </div>
 
