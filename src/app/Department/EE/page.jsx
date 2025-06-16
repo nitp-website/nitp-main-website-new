@@ -1,33 +1,28 @@
+
 "use client";
-import axios, { all } from "axios";
-import { DepartmentNavigationButton } from "../../components/department/DepartmentNavigationButton";
-import DepartmentNotify1 from "../../components/department/DepartmentNotify1";
-import Image from "next/image";
-import { useRouter } from 'next/navigation';
+import axios from "axios";
 import { useEffect, useState } from "react";
-import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
+import { useRouter } from 'next/navigation';
+import { Users, FileText, Award, Briefcase, ShieldCheck, UserSquare } from "lucide-react";
+import { DepartmentNavigationButton } from "../../components/department/DepartmentNavigationButton";
 import DepartmentCounter from "./DeptCounter";
 import DeptNotice from "./DeptNotice";
 
-const about = `The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students. The department is dedicated to providing quality education at both undergraduate (UG) and postgraduate levels. 
-All courses are regularly updated by academic and industry experts to meet the needs of today's industry. The undergraduate program is accredited by the National Board of Accreditation (NBA) for six years, from July 2021 to June 2027. The department received a grant of 3.52 Crore from DST under the FIST scheme for upgrading the Antenna Engineering Laboratory. The VLSI Lab has also been upgraded with the support of the SMDP-C2SD project.`;
+const about = `The Department of Electrical Engineering was established in 1945 under Patna University with an intake of 20 students leading to Bachelor of Science (Engineering) degree of four-year duration. The four-year course was later changed to five-year integrated course in 1960 with an intake of 30 students and it continued up to 1972. Again, a four-year course was introduced in 1972 with the same intake capacity of 30 students. The intake was increased from 30 to 40 students in the sessions of 2005-06 and further in 2006-07 the intake capacity was increased to 60 students.
+`;
 
 const picture = ["/ee-feature1.png", "/ee-feature2.png", "/ee-feature3.png"];
 
-export default function ECE() {
+export default function EE() {
   const router = useRouter();
   const [feature, setFeature] = useState(picture[0]);
   const [it, setIt] = useState(0);
-  const [Notices, setNotices] = useState([]);
-  const [counts, setCounts] = useState({});
-
+  const [counts, setCounts] = useState([]);
+  
   useEffect(() => {
-    const getData = async () => {
+    const getCounts = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=ece`);
-        const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=ece`);
-        // console.log("Counts Response:", countsResponse.data);
-        setNotices(response.data);
+        const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=ee`);
         setCounts([
           { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
           { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
@@ -37,16 +32,16 @@ export default function ECE() {
           { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} /> },
         ]);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching EE counts:", error);
       }
     };
-    getData();
+    getCounts();
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIt((prev) => (prev + 1) % picture.length);
-    }, 5000); // 5 seconds
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -66,7 +61,6 @@ export default function ECE() {
               className="h-full w-full object-cover rounded-lg max-sm:rounded-none shadow-lg"
               alt="Department Image"
             />
-
             {/* Navigation Buttons */}
             <button
               onClick={() => setIt((prev) => (prev === 0 ? picture.length - 1 : prev - 1))}
@@ -82,11 +76,9 @@ export default function ECE() {
             </button>
           </div>
         </div>
-
-
         {/* Notice */}
         <div className="md:w-1/2 h-full flex items-center justify-center">
-          <DeptNotice dept="ECE" />
+          <DeptNotice dept="EE" />
         </div>
       </div>
 
@@ -107,13 +99,10 @@ export default function ECE() {
               </div>
             </div>
           </div>
-
           <div className="flex flex-col w-full mb-10 lg:mb-0">
-            {
-              counts.length && (
-                <DepartmentCounter counts={counts} />
-              )
-            }
+            {counts.length > 0 && (
+              <DepartmentCounter counts={counts} />
+            )}
           </div>
         </div>
       </div>
