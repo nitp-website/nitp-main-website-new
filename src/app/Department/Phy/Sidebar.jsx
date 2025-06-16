@@ -111,11 +111,11 @@ const navItems = [
         url: `/Department/${dept}/faculty`,
         icon: <Scroll size={18} />,
       },
-      {
-        name: "Staff",
-        url: `/Department/${dept}/staff`,
-        icon: <FileText size={18} />,
-      },
+      // {
+      //   name: "Staff",
+      //   url: `/Department/${dept}/staff`,
+      //   icon: <FileText size={18} />,
+      // },
       {
         name: "Research Students",
         url: `/Department/${dept}/researchStudents`,
@@ -165,11 +165,11 @@ const navItems = [
     icon: <Award size={18} />,
     url: `/Department/${dept}/acadProgram`,
   },
-  {
-    name: "Labs",
-    icon: <Labs size={18} />,
-    url: `/Department/${dept}/labs`,
-  },
+  // {
+  //   name: "Labs",
+  //   icon: <Labs size={18} />,
+  //   url: `/Department/${dept}/labs`,
+  // },
 ];
 
 const Sidebar = ({ onLinkClick, isMenuOpen }) => {
