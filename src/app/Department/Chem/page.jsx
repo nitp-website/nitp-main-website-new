@@ -62,10 +62,13 @@ export default function Chem() {
         {/* Department Picture */}
         <div className="w-full h-[420px] overflow-hidden flex items-center justify-center relative">
           <div className="relative w-full h-full">
-            <img
+            <Image
               src={feature}
               className="h-full w-full object-cover rounded-lg max-sm:rounded-none shadow-lg"
               alt="Department Image"
+              width={800}
+              height={420}
+              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
             />
 
             {/* Navigation Buttons */}

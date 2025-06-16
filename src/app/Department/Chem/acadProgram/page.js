@@ -21,6 +21,7 @@ const programs = [
       "The Department of Chemical Science and Technology offers the 5-year integrated B. Tech and M. Tech Dual Degree program in Chemical Technology. Admission to the program is granted through prestigious IIT- JEE (Main) examination. The curriculum comprises a blend of core courses along with a selection of electives, allowing students to tailor their studies to specific areas of interest. Following are the course structure and syllabus.",
     syllabus:
       "CST_Syllabus_ DD_BTech+MTech",
+      link: "https://drive.google.com/file/d/16Ooym161sd77HZHEw3bRMd87zsgTfwzy/view?usp=sharing"
   },
 
   {
@@ -30,6 +31,7 @@ const programs = [
     description:
       "The Department offers Ph.D. in Chemistry. Admission to this program is through an Examination and Interview conducted by NIT Patna itself. This program is solely research based where students conduct their own work in an area of Chemistry under the guidance of faculty members.",
     syllabus: "CST_Syllabus_PhD-Chemisty",
+    link: "https://drive.google.com/file/d/165cz5NQOVI-Hkyubmb5BKJgq_dZA5rZF/view?usp=sharing"
   },
 
   {

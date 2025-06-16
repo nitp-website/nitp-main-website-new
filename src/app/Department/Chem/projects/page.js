@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { format } from "path";
 
-const cheProjectsPage = () => {
+const CheProjectsPage = () => {
   const [publications, setPublications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -203,4 +203,4 @@ const cheProjectsPage = () => {
   );
 };
 
-export default cheProjectsPage;
+export default CheProjectsPage;

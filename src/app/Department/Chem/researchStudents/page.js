@@ -1,4 +1,3 @@
-
 // "use client";
 // import React, { useEffect, useState } from "react";
 // import axios from "axios";
@@ -65,6 +64,7 @@
 
 //   const facultyNames = [
 //     ...new Set(completedScholars.map((c) => c.supervisor).filter(Boolean)),
+//     ...new Set(ongoingScholars.map((c) => c.supervisor).filter(Boolean)),
 //   ];
 
 //   const completedFacultyNames = [
@@ -246,7 +246,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PhdCandidate from "../../../components/faculty/PhdCandidate";
 
-const cheReserchStudentspage = () => {
+const CheResearchStudentsPage = () => {
   const [loading, setLoading] = useState(true);
   const [phdInfo, setPhdInfo] = useState([]);
 
@@ -481,4 +481,4 @@ const cheReserchStudentspage = () => {
   );
 };
 
-export default cheReserchStudentspage;
+export default CheResearchStudentsPage;

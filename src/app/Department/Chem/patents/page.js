@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-const chePatentsPage = () => {
+const ChePatentsPage = () => {
   const [publications, setPublications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -205,4 +205,4 @@ const chePatentsPage = () => {
   );
 };
 
-export default chePatentsPage;
+export default ChePatentsPage;

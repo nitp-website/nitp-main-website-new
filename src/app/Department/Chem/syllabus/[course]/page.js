@@ -1,3 +1,6 @@
+export default function Page() {
+  return null;
+}
 // import React from "react";
 
 
@@ -5847,4 +5850,4 @@
 // }
 
 
-//look and add
+//look and add as could not find content for the page

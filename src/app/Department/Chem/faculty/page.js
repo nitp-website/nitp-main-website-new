@@ -238,7 +238,7 @@ import FacultyList from "../../../../components/facultycomponents/FacultyList";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const cheFacultyPage = () => {
+const CheFacultyPage = () => {
   const [faculty, setFaculty] = useState(true);
   const [loading, setLoading] = useState(true);
 
@@ -256,4 +256,4 @@ const cheFacultyPage = () => {
   );
 };
 
-export default cheFacultyPage;
+export default CheFacultyPage;

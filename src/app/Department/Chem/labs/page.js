@@ -1,7 +1,7 @@
 'use client'
 import BackDepartment from "../../../components/department/BackDepartment";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Chemistry Labs Data 
 const labsData = [
@@ -79,7 +79,7 @@ function Carousel({ children: pics, autoSlideInterval = 3000, autoSlide = true }
 		if (!autoSlide) return;
 		const slideInterval = setInterval(next, autoSlideInterval);
 		return () => clearInterval(slideInterval);
-	}, []);
+	}, [autoSlide, autoSlideInterval, next]);
 	return (
 		<div className=' relative overflow-hidden'>
 			<div
