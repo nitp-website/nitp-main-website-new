@@ -5,7 +5,7 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 
 import axios from "axios";
 
-const about = `The Department of Mechanical Engineering was established in 1952 with B. Tech program during the era of Bihar College of Engineering (BCE) which is well-known since 1924 as the sixth oldest Engineering College in India. In 1978, M. Tech Program was started with specializations in &quot;Thermal Turbo Machinery&quot; and &quot;Refrigeration, Air Conditioning and Heat Transfer&quot;. The Bihar College of Engineering was converted to National Institute of Technology Patna in 2004.`;
+const about = `The Department of Mechanical Engineering was established in 1952 with B. Tech program during the era of Bihar College of Engineering (BCE) which is well-known since 1924 as the sixth oldest Engineering College in India. In 1978, M. Tech Program was started with specializations in 'Thermal Turbo Machinery' and 'Refrigeration, Air Conditioning and Heat Transfer'. The Bihar College of Engineering was converted to National Institute of Technology Patna in 2004.`;
 
 const Aboutpage = () => {
   const [counts, setCounts] = useState({});

@@ -51,7 +51,7 @@ const programs = [
       "mtech-me",
   },
   {
-    title: "M.Tech in Mechanical Engineering with specialization Production Engineering",
+    title: "M.Tech in Mechanical Engineering with specialization in Production Engineering",
     degree: "M.Tech",
     duration: "2 Years",
     description:
