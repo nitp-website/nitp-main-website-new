@@ -467,6 +467,11 @@ const navItems = [
         link: "/Academic/BIS",
         iconImage: Bis,
       },
+      {
+        label: "Scholarship",
+        link: "/Student/Scholarship",
+        iconImage: Bis,
+      },
     ],
   },
   {
