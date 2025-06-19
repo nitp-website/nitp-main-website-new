@@ -521,7 +521,8 @@ const navItems = [
       },
       {
         label: "Holidays/Restricted Holidays ",
-        link: "https://drive.google.com/file/d/1qL_eR9y5y4uTz0dR0_woqFSv3sQNUhwD/view?usp=sharing",
+        // link: "https://drive.google.com/file/d/1qL_eR9y5y4uTz0dR0_woqFSv3sQNUhwD/view?usp=sharing",
+        link:"/Academic/Holidays",
         iconImage: International,
       },
     ],
