@@ -18,7 +18,7 @@ const page = () => {
             </p>
         </div>
         <div>
-          <BackDepartment navigate={'/Department/Chem/faculty'}/>
+          <BackDepartment navigate={'/Department/Chem'}/>
         </div>
       </div>  
       <FacultyInfo/>
