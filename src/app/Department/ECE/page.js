@@ -89,7 +89,7 @@ export default function ECE() {
             <br />
             &nbsp;&nbsp;&nbsp;(b) Microelectronics and VLSI System Design" with an intake of 15.
             <br />
-            4.Ph.D. (Full-time and Part-time) in Electronics and Communication Engineering.
+            5.Ph.D. (Full-time and Part-time) in Electronics and Communication Engineering.
             <br />
             <button
               onClick={() => router.push('/Department/ECE/about')}

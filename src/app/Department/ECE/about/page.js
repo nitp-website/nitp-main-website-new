@@ -47,6 +47,28 @@ function Page() {
             </li>
           </ul>
         </div>
+         <br />
+          All courses are regularly updated by academic and industry experts to meet the needs of today's industry. The undergraduate program is accredited by the National Board of Accreditation (NBA) for six years, from July 2021 to June 2027. The department received a grant of 3.52 Crore from DST under the FIST scheme for upgrading the Antenna Engineering Laboratory. The VLSI Lab has also been upgraded with the support of the SMDP-C2SD project.
+          <br />
+          <br />
+          The department has a group of young, competent, and dedicated faculty members engaged in quality research in the following areas:
+          <br />
+          <li>
+              High Power RF / Microwave Devices, Antennas, Filters, Metamaterials and Metasurfaces, Microwave Imaging, Computational Electromagnetics.
+          </li>
+          <br />
+          <li>
+              Signal Processing, Image Processing, Speech Analysis, Biomedical Signal Processing, Machine Learning, Soft Computing Techniques, Pattern Recognition.
+          </li>
+          <br />
+          <li>
+              Analog, Digital and Mixed Signal IC Design, FPGA-based System Design, Synthesis and characterization of nanomaterials, Nano-electronics.
+          </li>
+          <br />
+          <li>
+              Wireless Communications and Networks, Quantum Cryptographic Algorithms, Physical Layer, Cognitive Radio Network (CRN), Optical Fiber Communication.
+          </li>
+          <br />
       </div>
     </div>
   );
