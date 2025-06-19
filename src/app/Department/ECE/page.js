@@ -77,17 +77,19 @@ export default function ECE() {
           <div className="text-justify max-sm:text-[12px]">
             The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students. The department is dedicated to providing quality education at both undergraduate (UG) and postgraduate levels. Currently, it offers the following programs:
             <br />
-            1. B.Tech in "Electronics & Communication Engineering" with an intake of 161.
+            1.B.Tech in "Electronics & Communication Engineering" with an intake of 100.
             <br />
-            2. Dual degree (B.Tech + M.Tech) in "Microelectronics and VLSI System Design" with an intake of 22.
+            2.B.Tech in Electronics Engineering (VLSI Design and Technology) with an intake of 80.
             <br />
-            3. M.Tech in:
+            3.Dual degree (B.Tech + M.Tech) in "Microelectronics and VLSI System Design" with an intake of 22.
             <br />
-            &nbsp;&nbsp;&nbsp;(a) "Next Generation Wireless Technologies" with an intake of 22.
+            4. M.Tech in:
             <br />
-            &nbsp;&nbsp;&nbsp;(b) "Microelectronics and VLSI System Design" with an intake of 22.
+            &nbsp;&nbsp;&nbsp;(a) Next Generation Wireless Technologies" with an intake of 15.
             <br />
-            4. Ph.D. (Full-time and Part-time) in Electronics and Communication Engineering.
+            &nbsp;&nbsp;&nbsp;(b) Microelectronics and VLSI System Design" with an intake of 15.
+            <br />
+            4.Ph.D. (Full-time and Part-time) in Electronics and Communication Engineering.
             <br />
             <button
               onClick={() => router.push('/Department/ECE/about')}
