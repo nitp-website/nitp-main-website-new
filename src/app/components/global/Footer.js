@@ -113,6 +113,7 @@ const Footer = () => {
               <li><Link href="/Others/NewCampus" className="hover:text-gray-300">New Campus</Link></li>
               <li><Link href="/Others/RTI" className="hover:text-gray-300">RTI</Link></li>
               <li><Link href="/Institute/Magazine" className="hover:text-gray-300">Magazine(Vol.4)</Link></li>
+              <li><Link href="/Academic/NITPAdmission?type=study_in_india" className="hover:text-gray-300">Study In India</Link></li>
             </ul>
           </div>
 
