@@ -67,6 +67,11 @@ const Popbuttons = () => {
       <p className="headingp ">Development Fund</p>
       </a>
 
+      <a href="/Academic/NITPAdmission?type=study_in_india" className="card">
+      <FontAwesomeIcon icon={faUserGraduate} size="4x" className="mobileicondiv" color='#BA210E' />
+      <p className="headingp ">Study In India</p>
+      </a>
+
     </div>
     <div className='h-auto text-white containersideright' data-aos="zoom-out-up"></div>
     </div>
