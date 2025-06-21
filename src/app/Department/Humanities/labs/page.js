@@ -32,9 +32,9 @@ function Page() {
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 {/* lab */}
                 <div className=" flex justify-center py-2 h-[300px]">
-                    <Image className={`${(img === 0) ? "flex" : "hidden"} rounded-lg`} height={300} width={300} alt="Loading.." src={"https://web.nitp.ac.in/dept/hss/labs/01.jpg"}></Image>
-                    <Image className={`${(img === 1) ? "flex" : "hidden"} rounded-lg`} height={300} width={300} alt="Loading.." src={"https://web.nitp.ac.in/dept/hss/labs/02.jpg"}></Image>
-                    <Image className={`${(img === 2) ? "flex" : "hidden"} rounded-lg`} height={300} width={300} alt="Loading.." src={"https://web.nitp.ac.in/dept/hss/labs/03.jpg"}></Image>
+                    <Image className={`${(img === 0) ? "flex" : "hidden"} rounded-lg`} height={300} width={300} alt="Loading.." src={"https://i.postimg.cc/BLz7fW7s/pic1.png"}></Image>
+                    <Image className={`${(img === 1) ? "flex" : "hidden"} rounded-lg`} height={300} width={300} alt="Loading.." src={"https://i.postimg.cc/vgT2K8z3/pic2.jpg"}></Image>
+                    <Image className={`${(img === 2) ? "flex" : "hidden"} rounded-lg`} height={300} width={300} alt="Loading.." src={"https://i.postimg.cc/ns0wT9vX/pic3.jpg"}></Image>
                 </div>
                 <div className=" mb-6 flex justify-center space-x-2">
                     <button onClick={() => setImg(0)} className={`${(img === 0) ? "bg-slate-600" : "bg-white"} border border-black rounded-full h-[16px] w-[16px]`}></button>

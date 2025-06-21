@@ -14,80 +14,31 @@ import { AcadProgramCard } from "./AcadProgramCard";
 
 const programs = [
   {
-    title: "B.Tech in Computer Science and Engineering",
+    title: "B.Tech in Humanities and Social Science",
     degree: "B.Tech",
     duration: "4 Years",
     description:
-      "The admission to the 4-year B. Tech. (Computer Science and Engineering) is through prestigious IIT-JEE (Main). The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
-    syllabus:
-      "btech",
+      "The admission to the 4-year B.Tech in Humanities and Social Science is through IIT-JEE (Main). The program integrates core engineering education with interdisciplinary studies in humanities and social sciences, allowing students to develop critical thinking, communication skills, and a broader understanding of societal issues. It includes core and elective courses to help students specialize according to their interests.",
+    syllabus: "btech",
   },
   {
-    title:
-      "B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Cyber Security)",
-    degree: "Integrated B.Tech and M.Tech",
-    duration: "5 Years",
-    description:
-      "The admission to the 5-year B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Cyber Security) is through prestigious IIT-JEE (Main). The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
-    syllabus:
-      "dual-cs",
-  },
-  {
-    title:
-      "B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Data Science)",
-    degree: "Integrated B.Tech and M.Tech",
-    duration: "5 Years",
-    description:
-      "The admission to the 5-year B. Tech and M. Tech Dual Degree (Computer Science and Engineering with Specialization in Data Science) is through prestigious IIT-JEE (Main). The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
-    syllabus:
-      "dual-ds",
-  },
-  {
-    title:
-      "MCA with specialization in Artificial Intelligence and Internet of Thing",
-    degree: "MCA",
-    duration: "3 Years",
-    description:
-      "The admission to the 3-year MCA with specialization in Artificial Intelligence and Internet of Thing is through prestigious NIMCET. The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
-    syllabus:
-      "mca-ai",
-  },
-  {
-    title: "MCA with specialization in Data Science and Informatics",
-    degree: "MCA",
-    duration: "3 Years",
-    description:
-      "The admission to the 3-year MCA with specialization in Data Science and Informatics is through prestigious NIMCET. The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
-    syllabus:
-      "mca-ds",
-  },
-  {
-    title: "M.Tech in Data Science and Engineering",
-    degree: "M.Tech",
+    title: "Phd in Humanities and Social Science",
+    degree: "MCA",  
     duration: "2 Years",
     description:
-      "The admission to the 2-year M. Tech. in Data Science and Engineering is through GATE examination. Although the research/dissertation is the main component of the programme, due emphasis is also given to the course works. Following are the course structure and syllabus.",
-    syllabus:
-      "mtech-ds",
+      "The Department offers a Ph.D. program in Humanities and Social Science, focusing on interdisciplinary research in areas such as philosophy, sociology, psychology, economics, and literature. Admission is based on an institute-level examination and interview process. The program emphasizes original research under the mentorship of experienced faculty members.",
+    syllabus: "mca",
   },
   {
-    title: "M.Tech in Cyber Security",
-    degree: "M.Tech",
-    duration: "2 Years",
-    description:
-      "The admission to the 2-year M. Tech. in Cyber Security is through GATE examination. Although the research/dissertation is the main component of the programme, due emphasis is also given to the course works. Following are the course structure and syllabus.",
-    syllabus:
-      "mtech-cs",
-  },
-  {
-    title: "Ph.D. in Computer Science and Engineering",
-    degree: "Ph.D.",    
+    title: "Ph.D. in Humanities and Social Science",
+    degree: "Ph.D.",
     duration: "",
     description:
-      "The Department offers Ph. D in Computer Science and Engineering. Admission to this program is through an Institute Examination conducted by NIT Patna itself. This program is solely research based where students conduct their own work in an area of Computer Science and its applications under the guidance of faculty members.",
+      "This Ph.D. program in Humanities and Social Science at NIT Patna supports advanced research across diverse disciplines including language studies, cultural studies, economics, history, political science, and more. Students are selected through a rigorous examination and interview process, and are expected to contribute original research under faculty guidance.",
     syllabus: "phd",
   },
 ];
+
 
 const CSEAcadProgrampage = () => {
   return (
