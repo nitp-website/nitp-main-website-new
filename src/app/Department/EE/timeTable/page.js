@@ -15,10 +15,6 @@ function Page() {
                 <div className="w-full px-5 xs:px-0 md:w-[90%] mx-auto">
                     <div className="w-full">
                         <h2 className="text-center text-4xl text-red-700 mt-2">Time Table</h2>
-                        <p className="text-center text-gray-500 text-xl font-semibold mt-2">Electrical Engineering</p>
-                        <div className="flex justify-center mt-2 mb-4">
-                            <BackDepartment navigate={'/Department/EE'} />
-                        </div>
                     </div>
                     <div className="mx-auto px-4 py-8 w-full">
                         <div className="mx-auto overflow-x-auto rounded-lg">

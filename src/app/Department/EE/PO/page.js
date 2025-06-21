@@ -8,20 +8,13 @@ const EEPOPage = () => {
     <div className="bg-white text-black min-h-screen">
       <div className="py-1 mt-2">
         <div className="w-full px-5 xs:px-0 md:w-[90%] mx-auto">
-          <div className="flex flex-col mb-6">
-            <div>
-              <p className="text-red-900 text-3xl font-bold">POs & PEOs</p>
-            </div>
-            <div className="mt-2">
-              <p className="text-gray-500 text-base font-semibold">
-                Electrical Engineering
-              </p>
-            </div>
-            <BackDepartment navigate={"/Department/EE"} />
+          <div className="w-full mb-4">
+            <h2 className="text-center text-4xl text-red-700 mt-2 mb-2">PO & PEO</h2>
           </div>
 
           {/* UG (B.Tech) Section */}
           <div className="mb-10">
+            <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-2">B.Tech: UG</div>
             <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-2">PROGRAM EDUCATIONAL OBJECTIVES (PEO) FOR UG (B.TECH. - EE)</div>
             <ol className="list-decimal ml-6 space-y-2 text-base lg:text-lg mb-6">
               <li>The program is devoted to impart learning and understanding of different segments of Electrical Engineering.</li>
