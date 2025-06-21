@@ -22,7 +22,7 @@ const programs = [
     syllabus: "btech",
   },
   {
-    title: "Phd in Humanities and Social Science",
+    title: "M.C.A in Humanities and Social Science",
     degree: "MCA",  
     duration: "2 Years",
     description:
