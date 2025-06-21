@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -41,10 +42,13 @@ const Gallery = () => {
             className="cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             onClick={() => handleImageClick(image)}
           >
-            <img
+            <Image
               src={image}
               alt={`Gallery image ${index + 1}`}
               className="w-full h-48 object-cover"
+              width={400}
+              height={192}
+              style={{ objectFit: 'cover', width: '100%', height: '12rem' }}
             />
           </div>
         ))}
@@ -68,10 +72,13 @@ const Gallery = () => {
             </button>
             
             <div className="p-4">
-              <img
+              <Image
                 src={selectedImage}
                 alt="Selected gallery image"
                 className="w-full h-auto max-h-[70vh] object-contain mx-auto"
+                width={800}
+                height={600}
+                style={{ objectFit: 'contain', width: '100%', height: 'auto', maxHeight: '70vh' }}
               />
             </div>
 
@@ -86,10 +93,13 @@ const Gallery = () => {
                     }`}
                     onClick={() => setSelectedImage(image)}
                   >
-                    <img
+                    <Image
                       src={image}
                       alt={`Thumbnail ${index + 1}`}
                       className="w-full h-full object-cover"
+                      width={80}
+                      height={80}
+                      style={{ objectFit: 'cover', width: '100%', height: '100%' }}
                     />
                   </div>
                 ))}
@@ -102,4 +112,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery; 
+export default Gallery;

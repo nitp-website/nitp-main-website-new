@@ -10,12 +10,6 @@ const EEMissionPage = () => {
         <div className="w-full px-5 xs:px-0 md:w-[90%] mx-auto">
           <div className="w-full mb-4">
             <h2 className="text-center text-4xl text-red-700 mt-2 mb-2">Vision & Mission</h2>
-            <p className="text-center text-gray-500 text-base font-semibold mb-2">
-              Electrical Engineering
-            </p>
-            <div className="flex justify-center mb-4">
-              <BackDepartment navigate={"/Department/EE"} />
-            </div>
           </div>
 
           {/* Institute Vision */}
