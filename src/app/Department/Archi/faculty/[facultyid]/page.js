@@ -1,7 +1,6 @@
 "use client"
-import BackDepartment from '../../../../components/department/BackDepartment'
+import BackDepartment from "../../../../components/department/BackDepartment"
 import FacultyInfo from '../../../../../components/facultycomponents/FacultyInfo'
-
 import React from 'react'
 const page = () => {
   
@@ -15,11 +14,11 @@ const page = () => {
         </div>
         <div className="mt-2">
             <p className="text-gray-500 text-sm lg:text-base font-semibold">
-            ARCHITECTURE & PLANNING
+                ARCHITECTURE & PLANNING
             </p>
         </div>
         <div>
-          <BackDepartment navigate={'/Department/Archi/faculty'}/>
+          <BackDepartment navigate={'/Department/Archi'}/>
         </div>
       </div>  
       <FacultyInfo/>
