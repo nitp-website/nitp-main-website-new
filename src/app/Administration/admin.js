@@ -3,28 +3,16 @@ import React from "react"
 
 const Deans = [
   {
-   name: "Prof. Sanjeev Sinha",
-   designation: "Dean, Planning & Development",
-   type: "dean.pd@nitp.ac.in",
-   url:"https://www.nitp.ac.in/profile/sanjeev@nitp.ac.in",
-  },
-  {
-   name: "Prof. Ramesh Kumar",
-   designation: "Dean, Research & Consultancy",
-   type: "dean.rc@nitp.ac.in",
-   url:"https://www.nitp.ac.in/Department/EE/faculty/ramesh@nitp.ac.in",
-  },
-  {
-   name: "Prof. Prabhat Kumar",
-   designation: "Dean, Student Welfare",
-   type: "dean.sw@nitp.ac.in",
-   url:"https://www.nitp.ac.in/profile/prabhat@nitp.ac.in",
-  },
-  {
    name: "Prof. Maheshwari Prasad Singh ",
    designation: "Dean, Academic",
    type: "dean.ac@nitp.ac.in",
    url:"https://www.nitp.ac.in/profile/mps@nitp.ac.in",
+  },
+   {
+   name: "Prof. Prabhat Kumar",
+   designation: "Dean, Student Welfare",
+   type: "dean.sw@nitp.ac.in",
+   url:"https://www.nitp.ac.in/profile/prabhat@nitp.ac.in",
   },
   {
    name: "Prof. Prakash Chandra",
@@ -32,7 +20,19 @@ const Deans = [
    type: "dean.fw@nitp.ac.in",
    url:"https://www.nitp.ac.in/profile/prakash@nitp.ac.in",
   },
- ]
+  {
+   name: "Prof. Ramesh Kumar",
+   designation: "Dean, Research & Consultancy",
+   type: "dean.rc@nitp.ac.in",
+   url:"https://www.nitp.ac.in/Department/EE/faculty/ramesh@nitp.ac.in",
+  },
+   {
+   name: "Prof. Sanjeev Sinha",
+   designation: "Dean, Planning & Development",
+   type: "dean.pd@nitp.ac.in",
+   url:"https://www.nitp.ac.in/profile/sanjeev@nitp.ac.in",
+  },
+  ]
  
  const AssDeans = [
 
