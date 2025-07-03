@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React from "react";
 
 export const Scroll = ({ data }) => {
@@ -9,13 +8,13 @@ export const Scroll = ({ data }) => {
         
       {data.map((item, idx) => (
         <figure key={idx} className=" p-2 rounded-lg ">
-          <Image
+          <img
             height={600}
             width={600}
             src={item.src}
             alt={item.alt}
             className="object-cover rounded-lg"
-           
+            loading="lazy"
           />
         </figure>
       ))}

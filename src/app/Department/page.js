@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image";
 import { useRouter } from "next/navigation"
 
 export default function Page() {
@@ -37,7 +36,12 @@ function DepartmentNavigateButton({ department, onClick, icon }) {
             <div className="flex justify-center">
                 <div className="w-[90%] h-[230px] max-sm:w-full py-1 md:py-2 rounded-lg shadow-lg  bg-white border-2 border-re-50 hover:border-red-900 active:text-white text-1xl font-semibold text-red-900 flex flex-col justify-center">
                     <div className="flex justify-center mb-2">
-                        <Image className="" width={100} height={100} alt="" src={`${icon}`} />
+                        <img 
+                            className="w-[100px] h-[100px] object-contain" 
+                            loading="lazy"
+                            alt={department} 
+                            src={`${icon}`} 
+                        />
                     </div>
                     <div>{department}</div>
                 </div>

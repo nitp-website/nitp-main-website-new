@@ -13,7 +13,7 @@ const FacultyHeader = ({ name, image, research, designation, email, linkedin, or
 
       {/* image of professor */}
 
-      <div className='w-full flex justify-center items-center md:w-fit'>{image ? <Image alt='blank' src={image} className='rounded-full h-32 w-32 md:h-44 md:w-52 md:mx-8 md:hover:h-48 md:hover:w-60' width={250} height={250} loading='lazy' /> : <CgProfile className='rounded-full h-32 w-32 md:h-44 md:w-52 md:mx-8'></CgProfile>}</div>
+      <div className='w-full flex justify-center items-center md:w-fit'>{image ? <img alt='blank' src={image} className='rounded-full h-32 w-32 md:h-44 md:w-52 md:mx-8 md:hover:h-48 md:hover:w-60' width={250} height={250} loading='lazy' /> : <CgProfile className='rounded-full h-32 w-32 md:h-44 md:w-52 md:mx-8'></CgProfile>}</div>
       
       <div className='w-full flex flex-col  mt-5 border hover:shadow-3xl hover:bg-[#ac4b3c] shadow-xl rounded-md p-2 md:mt-2 md:mx-4' style={{ boxShadow: "2px 2px 2px 1px black" }}>
         
@@ -31,10 +31,10 @@ const FacultyHeader = ({ name, image, research, designation, email, linkedin, or
           <div className='flex flex-col lg:w-[30%]  mt-2 ml-3'>
             <div className='flex mt-2 '>
             {vidwan?<Link href={`${vidwan}`} className=' w-[30px] h-[30px]  pl-2 bg-blue-400 rounded-full font-semibold mx-2'>V</Link>:<></>}
-            {scopus?<Link href={`${scopus}`} className='w-[30px] h-[30px] mx-2'>< Image src="/scopus.svg"  width={100} height={100} alt='blank' /></Link>:<></>}
-            {linkedin?<Link href={`${linkedin}`} className='w-[30px] h-[30px] mx-2' ><Image src="/linkedin.png"  width={100} height={100} alt='blank'></Image></Link>:<></>}
-            {google_scholar?<Link href={`${google_scholar}`} className='w-[30px] h-[30px] mx-2'>< Image src="/googleScholar.svg"  width={100} height={100} alt='blank' /></Link>:<></>}
-            {orcid?<Link href={`${orcid}`} className='w-[30px] h-[30px] mx-2' ><Image src="/orcid.svg" width={100} height={100} alt='blank'></Image></Link>:<></>}
+            {scopus?<Link href={`${scopus}`} className='w-[30px] h-[30px] mx-2'><img src="/scopus.svg"  width={100} height={100} alt='blank' loading='lazy' /></Link>:<></>}
+            {linkedin?<Link href={`${linkedin}`} className='w-[30px] h-[30px] mx-2' ><img src="/linkedin.png"  width={100} height={100} alt='blank' loading='lazy'></img></Link>:<></>}
+            {google_scholar?<Link href={`${google_scholar}`} className='w-[30px] h-[30px] mx-2'><img src="/googleScholar.svg"  width={100} height={100} alt='blank' loading='lazy' /></Link>:<></>}
+            {orcid?<Link href={`${orcid}`} className='w-[30px] h-[30px] mx-2' ><img src="/orcid.svg" width={100} height={100} alt='blank' loading='lazy'></img></Link>:<></>}
             </div>
             {personal_webpage?<Link href={`${personal_webpage}`} className='  bg-red-700 border p-2 text-sm w-fit rounded-md hover:shadow-2xl  m-3 shadow-xl font-semibold text-white'>Personal Webpage</Link>:<></>}
           </div>

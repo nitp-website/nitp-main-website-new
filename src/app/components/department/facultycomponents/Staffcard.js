@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faIdCard,
@@ -24,12 +23,12 @@ function Staffcard({
             <div
               className="relative h-[100px] w-[100px] transition-all duration-300"
             >
-              <Image
+              <img
                 className="rounded-md"
                 src={image != null ? image : "/faculty.jpeg"}
                 alt={name}
-                layout="fill"
-                objectFit="cover"
+                style={{objectFit: "cover", width: "100px", height: "100px"}}
+                loading="lazy"
               />
             </div>
           </div>
