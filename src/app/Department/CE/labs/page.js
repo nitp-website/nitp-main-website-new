@@ -1,5 +1,4 @@
 import BackDepartment from "../../../components/department/BackDepartment";
-import Image from "next/image"
 
 export default function labs(){
     var labUrl = [
@@ -69,7 +68,7 @@ export default function labs(){
                         </div>
                         {/* <div className=" flex justify-center">
                             <div className="flex flex-col">
-                                <Image src={""} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" />
+                                <img src={image} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" loading="lazy" />
                             </div>
                         </div> */}
                     </div>
@@ -82,7 +81,7 @@ export default function labs(){
                         </div>
                         {/* <div className=" flex justify-center">
                             <div className="flex flex-col">
-                                <Image src={""} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" />
+                                <img src={image} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" loading="lazy" />
                             </div>
                         </div> */}
                     </div>
@@ -91,11 +90,11 @@ export default function labs(){
                     <div className=" grid grid-cols-2 max-md:grid-cols-1">
                         <div>
                             <div className="text-black font-bold text-2xl max-sm:text-lg mb-4">Material Testing Laboratory</div>
-                            <p className="text-lg max-sm:text-sm mb-8 text-justify pr-6">Material testing laboratory has been set up to fulfil the needs of testing and researching on various materials like steel, metals etc. The laboratory works for the courses like Engineering Mechanics, Theory of structures etc. are conducted in this laboratory. It has state of the art equipment like 100 tons universal testing machine along with other equipment like Izod impact testing machine, Brinell’s hardness testing machine, torsion testing machine, Amsler wood testing machine, universal testing machine (30 tons), and loading frame up to 50 tons.</p>
+                            <p className="text-lg max-sm:text-sm mb-8 text-justify pr-6">Material testing laboratory has been set up to fulfil the needs of testing and researching on various materials like steel, metals etc. The laboratory works for the courses like Engineering Mechanics, Theory of structures etc. are conducted in this laboratory. It has state of the art equipment like 100 tons universal testing machine along with other equipment like Izod impact testing machine, Brinell's hardness testing machine, torsion testing machine, Amsler wood testing machine, universal testing machine (30 tons), and loading frame up to 50 tons.</p>
                         </div>
                         {/* <div className=" flex justify-center">
                             <div className="flex flex-col">
-                                <Image src={""} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" />
+                                <img src={image} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" loading="lazy" />
                             </div>
                         </div> */}
                     </div>
@@ -108,7 +107,7 @@ export default function labs(){
                         </div>
                         {/* <div className=" flex justify-center">
                             <div className="flex flex-col">
-                                <Image src={""} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" />
+                                <img src={image} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" loading="lazy" />
                             </div>
                         </div> */}
                     </div>
@@ -121,7 +120,7 @@ export default function labs(){
                         </div>
                         {/* <div className=" flex justify-center">
                             <div className="flex flex-col">
-                                <Image src={""} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" />
+                                <img src={image} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" loading="lazy" />
                             </div>
                         </div> */}
                     </div>
@@ -134,7 +133,7 @@ export default function labs(){
                         </div>
                         {/* <div className=" flex justify-center">
                             <div className="flex flex-col">
-                                <Image src={""} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" />
+                                <img src={image} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" loading="lazy" />
                             </div>
                         </div> */}
                     </div>
@@ -147,7 +146,7 @@ export default function labs(){
                         </div>
                         {/* <div className=" flex justify-center">
                             <div className="flex flex-col">
-                                <Image src={""} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg" />
+                                <img src={image} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg" loading="lazy" />
                             </div>
                         </div> */}
                     </div>
@@ -160,7 +159,7 @@ export default function labs(){
                         </div>
                         {/* <div className=" flex justify-center">
                             <div className="flex flex-col">
-                                <Image src={""} alt="Loading.." className="col-span-1  border rounded-lg " />
+                                <img src={image} alt="Loading.." className="col-span-1  border rounded-lg " loading="lazy" />
                             </div>
                         </div> */}
                     </div>
@@ -190,7 +189,7 @@ function Labcomponent({title, content, image}){
                     </div>
                     <div className=" flex justify-center">
                         <div className="flex flex-col">
-                            <Image src={image} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" />
+                            <img src={image} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg ml-2" loading="lazy" />
                         </div>
                     </div>
                 </div>

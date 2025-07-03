@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const page = () => {
@@ -35,24 +34,20 @@ const page = () => {
       <h2 className="text-2xl font-bold mb-4 text-center text-red-800">
         Management Committee
       </h2>
-      <Image
+      <img
         src="https://i.postimg.cc/y8hgdH7N/administation-Com.png"
         alt="Management Committee"
-        width={0} // This allows it to scale dynamically
-        height={0}
-        sizes="100vw" // Ensures responsive behavior
+        loading="lazy"
         className="w-4/5 md:w-3/5 h-auto mb-4 rounded-md mx-auto"
       />
 
       <h2 className="text-2xl font-bold mb-4 text-center text-red-800">
         Regional Coordination Council
       </h2>
-      <Image
+      <img
         src="https://i.postimg.cc/PqtLvRqQ/RCC.png"
         alt="Regional Coordination Council"
-        width={0} // This allows it to scale dynamically
-        height={0}
-        sizes="100vw" // Ensures responsive behavior
+        loading="lazy"
         className="w-4/5 md:w-3/5 h-auto mb-4 rounded-md mx-auto"
       />
 
@@ -228,6 +223,7 @@ const page = () => {
       <img
         src="https://i.postimg.cc/1tXfJVwg/Associated-Institue.png"
         alt="Associate Institutes"
+        loading="lazy"
         className="w-4/5 md:w-3/5 mb-4 rounded-md mx-auto"
       />
 
@@ -237,6 +233,7 @@ const page = () => {
       <img
         src="https://i.postimg.cc/QtzVPNJf/racisro.png"
         alt="ISRO Page"
+        loading="lazy"
         className="w-4/5 md:w-3/5 mb-4 rounded-md mx-auto"
       />
 

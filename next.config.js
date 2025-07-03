@@ -2,14 +2,7 @@ const withVideos = require('next-videos');
 
 module.exports = withVideos({
   images: {
-    domains: [
-      'via.placeholder.com', 
-      'drive.google.com', 
-      'i.postimg.cc',
-      'lh3.googleusercontent.com',
-      'web.nitp.ac.in'
-    ],
-    
+
     remotePatterns: [
         {
             protocol: 'https',
@@ -22,11 +15,7 @@ module.exports = withVideos({
         {
             protocol: 'https',
             hostname: 'drive.google.com',
-        },
-        {
-            protocol: 'https',
-            hostname: 'i.postimg.cc',
-        },
+        }
       ],
   },
 });

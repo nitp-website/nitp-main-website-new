@@ -1,7 +1,6 @@
 "use client"
 import React,{useState} from 'react'
 import { FaArrowDown } from 'react-icons/fa';
-import Image from 'next/image';
 
 function FacilitiesComp({text,url}) {
     const [isOpen,setIsOpen]=useState(false);
@@ -18,8 +17,8 @@ function FacilitiesComp({text,url}) {
         </div>
         <div className={`transition-all duration-300 ease-in-out transform ${isOpen?'max-h-[800px] opacity-100':'max-h-0 opacity-0 overflow-hidden'}`}>
             <div className="mt-2 lg:w-full p-4 border border-gray-300 rounded-lg bg-gray-100 flex flex-col">
-                    <Image src={url}
-                    width={800} height={600} alt="sorry! no image" className='rounded-lg shadow-md bg-red-200'/>
+                    <img src={url}
+                    width={800} height={600} alt="sorry! no image" className='rounded-lg shadow-md bg-red-200' loading="lazy"/>
             </div>
         </div>
     </div>
