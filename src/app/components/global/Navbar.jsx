@@ -476,7 +476,8 @@ const navItems = [
   },
   {
     label: "Faculty & Staff",
-    link: "/Academic/Faculty&Staff",
+    // link: "/Academic/Faculty&Staff",
+    link:"#",
     children: [
       {
         label: " Faculty Directory",
@@ -530,7 +531,8 @@ const navItems = [
 
   {
     label: "Students",
-    link: "/Student",
+    // link: "/Student",
+    link:"#",
     children: [
       // {
       //   label: "Dean Student Welfare",
@@ -631,7 +633,8 @@ const navItems = [
   },
   {
     label: "Facilities",
-    link: "/Facilities",
+    // link: "/Facilities",
+    link:"#",
     children: [
       // {
       //   label: "Centers",
