@@ -116,6 +116,12 @@ const admissionData = {
       },
     ],
     notices: [
+        {
+        title: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2025-26 at NIT Patna.",
+        date: "2025-06-30",
+        content: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2025-26 at NIT Patna.",
+        href:"https://drive.google.com/file/d/1cPyNk71PmxjLQ1qkgHCuLDv1EvyhYWi5/view?usp=sharing"
+      },
       {
         title: "Schedule for the Admission through Study in India(SII) at NIT Patna for the Academic Year 2025-26",
         date: "2025-05-08",

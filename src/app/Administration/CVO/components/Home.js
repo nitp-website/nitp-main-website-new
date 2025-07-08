@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import cvo_officer_img from "../../../../../public/amitsingh.webp";
 
 const BlinkingNewText = () => {
@@ -115,10 +114,11 @@ const RegistrarPage = () => {
                     </div>
                   </div>
                   <div className="p-5" >
-                    <Image className="rounded-lg" 
+                    <img className="rounded-lg" 
                       height={270}
                       src={cvo_officer_img} 
-
+                      alt="Chief Vigilance Officer"
+                      loading="lazy"
                     />
                   </div>
                 </div>

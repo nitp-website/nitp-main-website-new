@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faIdCard,
@@ -50,12 +49,12 @@ function FacultyCard({
                 isHovered ? "h-[180px] w-[150px]" : "h-[100px] w-[100px]"
               } transition-all duration-300`}
             >
-              <Image
+              <img
                 className="rounded-md"
                 src={image != null ? image : "/faculty.jpeg"}
                 alt={name}
-                layout="fill"
-                objectFit="cover"
+                style={{objectFit: "cover", width: isHovered ? "150px" : "100px", height: isHovered ? "180px" : "100px"}}
+                loading="lazy"
               />
             </div>
           </div>

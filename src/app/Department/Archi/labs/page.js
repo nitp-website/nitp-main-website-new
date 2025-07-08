@@ -1,6 +1,5 @@
 "use client"
 import BackDepartment from '../../../components/department/BackDepartment';
-import Image from 'next/image';
 import {useState,useEffect} from "react";
 
 function Carousel({children:pics,
@@ -89,11 +88,7 @@ function Page(){
                     <div className='w-[300px] sm:w-[400px]  lg:w-1/2 m-auto mt-8 xl:mr-20'>
                     <Carousel autoSlide={true}>
                     {labUrl.map((img,i)=>(
-                        
-                        <Image src={img} alt='image' width={500}
-                        height={500} key={i} className='object-fill'
-                        />
-                        
+                        <img src={img} alt='image' width={500} height={500} key={i} className='object-fill' loading='lazy' />
                     ))}
                     </Carousel>
                     </div>

@@ -125,11 +125,11 @@ const Sidebar = ({ Data }) => {
           <div className="flex justify-center p-2 rounded-md">
             {image ? (
               <div className="relative h-[200px] w-auto max-w-full">
-                <Image
+                <img
                   src={image}
                   alt="Profile Image"
-                  height={200} // Fixed height
-                  width={200} // A default width (will be overridden)
+                  height={200}
+                  width={200}
                   className="mx-auto rounded-3xl w-auto max-w-full"
                   loading="lazy"
                   style={{ objectFit: "cover", height: "200px", width: "auto" }}

@@ -3,7 +3,6 @@ import axios from "axios";
 import BackDepartment from "../../components/department/BackDepartment";
 import { DepartmentNavigationButton } from "../../components/department/DepartmentNavigationButton"
 import DepartmentNotify1 from "../../components/department/DepartmentNotify1";
-import Image from "next/image"
 import {useRouter} from 'next/navigation';
 import { useEffect, useState } from "react";
 
@@ -47,12 +46,11 @@ export default function CSE() {
         <div className="grid grid-cols-6 max-md:grid-cols-1">
           {/* Department Picture */}
           <div className="flex flex-col py-10 col-span-3 mr-4 max-sm:mr-0">
-            <Image
+            <img
               src={`${feature}`}
-              className="h-[420px] rounded-lg max-sm:rounded-none shadow-lg "
-              alt="Logo"
-              width={700}
-              height={1000}
+              className="h-[420px] rounded-lg max-sm:rounded-none shadow-lg object-cover w-full"
+              alt="CSE Department"
+              loading="lazy"
             />
             <div className="flex justify-center relative top-[-40px] space-x-1">
               <button onClick={()=>{setIt(0)}} className={`h-[18px] w-[18px] border ${(it == 0)?"bg-black":"bg-slate-400"} rounded-full`}></button>

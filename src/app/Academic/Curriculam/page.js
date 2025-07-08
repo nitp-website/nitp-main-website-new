@@ -52,7 +52,7 @@ const DocumentsTable = () => {
       },
         {
        link:
-        "https:https://drive.google.com/file/d/1d1qCh0Br7pHcz7nT60VTXrYN6ny0heH7/view?usp=sharing",
+        "https://drive.google.com/file/d/1d1qCh0Br7pHcz7nT60VTXrYN6ny0heH7/view?usp=sharing",
        para: "PhD updated D-1 to D-10 forms",
       },
      ]

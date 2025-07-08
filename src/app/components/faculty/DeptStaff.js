@@ -17,12 +17,13 @@ function DeptStaffcard({
         <div className="w-[300px] h-[325px] mx-4 bg-slate-200 rounded-lg shadow-lg hover:shadow-2xl overflow-hidden">
         <div className="bg-[rgb(153,27,27)] py-4">
           <div className="w-[150px] h-[150px] mx-auto my-4 flex items-center justify-center bg-red-700 rounded-full border-8 border-white">
-            <Image
+            <img
               src={image || "/faculty.jpeg"}
               alt={name}
               width={150}
               height={140}
               className="w-[150px] h-[140px] object-cover rounded-full transform scale-100 transition-all duration-900 ease-in-out group-hover:shadow-[0_0_0_14px_#f7f5ec] group-hover:scale-[0.7]"
+              loading="lazy"
             />
           </div>
         </div>
