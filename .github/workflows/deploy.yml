@@ -22,4 +22,4 @@ jobs:
 
       - name: Run deploy script on EC2
         run: |
-          ssh -i ~/.ssh/id_nitp ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '"sudo /root/latest_nitp_main_deploy.sh"'
+          ssh -i ~/.ssh/id_nitp ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 'sudo bash -c "cd /root && ./latest_nitp_main_deploy.sh "'
