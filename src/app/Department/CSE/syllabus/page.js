@@ -13,6 +13,7 @@ export default function Page() {
     const [mcaai, setmcaai] = useState(false);
     const [pgd, setPgd] = useState(false);
     const [pgc, setPgc] = useState(false);
+    const [ugai_ds, setUgai_ds] = useState(false);
     return (
         <div className=" flex flex-col p-10 max-sm:p-2 text-black">
             <div className="flex flex-col mb-3">
@@ -34,6 +35,7 @@ export default function Page() {
                 <div className="mb-10 flex space-x-1 overflow-x-auto ">
                     <div className="min-w-[800px] flex space-x-1 text-sm lg:text-base">
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setDualCyber(false);
                             setPhd(false);
@@ -46,6 +48,20 @@ export default function Page() {
                             setUg(false)
                         }} className={`border border-black rounded ${(ug2022) ? "text-white bg-red-900" : "text-red-900"} px-2`}>B.Tech (Computer Science and Engineering)</button>
                         <button onClick={() => {
+                            setUgai_ds(true);
+                            setUg2021(false);
+                            setDualCyber(false);
+                            setPhd(false);
+                            setDualData(false);
+                            setUg2022(false);
+                            setPgc(false);
+                            setPgd(false);
+                            setmcad(false)
+                            setmcaai(false)
+                            setUg(false)
+                        }} className={`border border-black rounded ${(ugai_ds) ? "text-white bg-red-900" : "text-red-900"} px-2`}>B.Tech (Artificial Intelligence & Data Science)</button>
+                        <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setDualCyber(true);
                             setPgc(false);
@@ -58,6 +74,7 @@ export default function Page() {
                             setUg(false);
                         }} className={`border border-black rounded ${(dualCyber) ? "text-white bg-red-900" : "text-red-900"} px-2`}> B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Cyber Security)</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setDualCyber(false);
                             setPhd(false);
@@ -70,6 +87,7 @@ export default function Page() {
                             setUg(false);
                         }} className={`border border-black rounded ${(dualData) ? "text-white bg-red-900" : "text-red-900"} px-2`}> B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Data Science)</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setPgc(false);
                             setPgd(true);
@@ -82,6 +100,7 @@ export default function Page() {
                             setUg(false);
                         }} className={`border border-black rounded ${(pgd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech (Data Science and Engineering)</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setPgc(true);
                             setPgd(false);
@@ -94,6 +113,7 @@ export default function Page() {
                             setmcaai(false)
                         }} className={`border border-black rounded ${(pgc) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech (Cyber Security)</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setPgc(false);
                             setPgd(false);
@@ -106,6 +126,7 @@ export default function Page() {
                             setmcaai(false)
                         }} className={`border border-black rounded ${(mcad) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in AI & IoT</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setPgc(false);
                             setPgd(false);
@@ -118,6 +139,7 @@ export default function Page() {
                             setmcaai(true)
                         }} className={`border border-black rounded ${(mcaai) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in Data Science & Informatics</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setDualCyber(false);
                             setDualData(false);
@@ -1182,8 +1204,162 @@ export default function Page() {
                         </div>
                     </div>
                 </div>
+
+             {/**B.Tech (Artificial Intelligence and Data Science) */}
+            
+             <div className={`mb-10 ${(ugai_ds == false) ? "hidden" : ""}`}>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">B.Tech (Artificial Intelligence and Data Science):-</div>
+                    <div className=" overflow-x-auto">
+                        <div className="border grid grid-cols-12 min-w-[1100px]">
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Sem / Electives</div>
+                            <div className="col-span-2 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Course Code</div>
+                            <div className="col-span-4 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Course Title</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">L</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">T</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"1"}
+                                code={"CS010201"}
+                                title={"Programming in C"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"MCT"}
+                                sem={"1"}
+                                code={"MC010201"}
+                                title={"Mathematical Foundation for AI"}
+                                L={"3"}
+                                T={"1"}
+                                P={"0"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"ME"}
+                                sem={"1"}
+                                code={"ME010201"}
+                                title={"Engineering Graphics"}
+                                L={"2"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"ECE"}
+                                sem={"1"}
+                                code={"EC010201"}
+                                title={"Digital Design"}
+                                L={"2"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"HSS"}
+                                sem={"1"}
+                                code={"HS010201"}
+                                title={"Professional Communication and Technical Writing"}
+                                L={"2"}
+                                T={"1"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"-"}
+                                sem={"1"}
+                                code={"EA010201"}
+                                title={"EAA-II Swachha Bharat Mission (SBM)"}
+                                L={"0"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"1"}
+                                url={"#"}
+                            />
+
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS020201"}
+                                title={"Introduction of Data Science"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS020202"}
+                                title={"Software Systems"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"APME"}
+                                sem={"2"}
+                                code={"PH020201"}
+                                title={"Engineering Physics"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS020203"}
+                                title={"Computer Organization"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"MCT"}
+                                sem={"2"}
+                                code={"MC020201"}
+                                title={"Probability and Statistics for AI"}
+                                L={"3"}
+                                T={"1"}
+                                P={"0"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                             <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"EA020201"}
+                                title={"EAA - I Sports/Innovative Project/NCC/NSS"}
+                                L={"0"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"1"}
+                                url={"#"}
+                            />
+
+                        </div>
+                    </div>
+                </div>
+
+            {/**B.Tech (Computer Science and Engineering) */}
                 <div className={`mb-10 ${(ug2022 == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">UG PROGRAM 2022:-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">B.Tech(Computer Science and Engineering):-</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
