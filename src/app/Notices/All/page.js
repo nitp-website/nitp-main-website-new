@@ -5,11 +5,31 @@ import { FiDownload, FiStar } from 'react-icons/fi';
 
 // FormatDate component
 const FormatDate = ({ time }) => {
+  // Validate the time value
+  if (!time || time === null || time === undefined) {
+    return <>Invalid Date</>;
+  }
+
+  // Convert to number if it's a string
+  const timestamp = typeof time === 'string' ? parseInt(time) : time;
+  
+  // Check if the timestamp is valid
+  if (isNaN(timestamp) || timestamp <= 0) {
+    return <>Invalid Date</>;
+  }
+
+  const date = new Date(timestamp);
+  
+  // Check if the date is valid
+  if (isNaN(date.getTime())) {
+    return <>Invalid Date</>;
+  }
+
   const formattedDate = new Intl.DateTimeFormat("en-GB", {
     day: "2-digit",
     month: "short",
     year: "numeric",
-  }).format(new Date(time));
+  }).format(date);
 
   return <>{formattedDate}</>;
 };
