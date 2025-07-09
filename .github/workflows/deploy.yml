@@ -1,0 +1,25 @@
+name: Deploy to EC2 NIT Patna 
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_nitp
+          chmod 600 ~/.ssh/id_nitp
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Run deploy script on EC2
+        run: |
+          ssh -i ~/.ssh/id_nitp ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '"sudo /root/latest_nitp_main_deploy.sh"'
