@@ -34,7 +34,7 @@ const admissionData = {
     ],
     notices: [
       {
-        title: "UG Admission Notice",
+        title: "Physical reporting schedule for admission to UG Programme through JoSAA/CSAB/DASA/SII for the Academic year 2025-26",
         date: "2025-07-10",
         content: "UG Admission",
         href:"https://drive.google.com/file/d/1Evk3oz1InhdbUPRK9isTvncuXhBT7P4I/view"
@@ -57,7 +57,7 @@ const admissionData = {
     ],
     notices: [
      {
-        title: "PG Admission Notice",
+        title: "Physical reporting schedule for admission to PG Programme through CCMT and NIMCET for the Academic year 2025-26",
         date: "2025-07-10",
         content: "PG Admission",
         href:"https://drive.google.com/file/d/1xUpA4rWNtrHlTEzRxI_AEwHPjkyIzN5z/view"
@@ -101,7 +101,7 @@ const admissionData = {
     ],
     notices: [
       {
-        title: "PG Admission Notice",
+        title: "Physical reporting schedule for admission to PG Programme through CCMT and NIMCET for the Academic year 2025-26",
         date: "2025-07-10",
         content: "PG Admission",
         href:"https://drive.google.com/file/d/1xUpA4rWNtrHlTEzRxI_AEwHPjkyIzN5z/view"
