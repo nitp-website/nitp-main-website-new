@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Allhostels = [
   {
@@ -457,5 +457,9 @@ const AllHostelsTab = () => {
     </div>
   );
 };
+
+
+
+
 
 export default AllHostelsTab;

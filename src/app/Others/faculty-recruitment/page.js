@@ -112,7 +112,11 @@ const RecruitmentProcess = () => {
                 <td className="text-center px-6 py-4">
                   <div className="flex flex-col items-center gap-2">
                     <a
-                      href="https://drive.google.com/uc?export=download&id=1kBRuNhxo8gm-Zz-balhXd4ByJjjJETV4"
+                      href="https://drive.google.com/uc?
+
+
+
+export=download&id=1kBRuNhxo8gm-Zz-balhXd4ByJjjJETV4"
                       download
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
                     >

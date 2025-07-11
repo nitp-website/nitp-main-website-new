@@ -9,6 +9,10 @@ import { useEffect, useState } from "react";
 
 
 const picture = ["/ee-feature1.png","/ee-feature2.png","/ee-feature3.png"]
+
+
+
+
 export default function CSE() {
     const router=useRouter();
     const [feature , setFeature] = useState("/ee-feature1.png")

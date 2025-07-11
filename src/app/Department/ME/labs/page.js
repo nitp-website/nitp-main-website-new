@@ -1,5 +1,9 @@
 import BackDepartment from "../../../components/department/BackDepartment";
 
+
+
+
+
 export default function labs() {
     var labUrl = [
         "https://web.nitp.ac.in/dept/ee/labs/DSC_0063.jpg",

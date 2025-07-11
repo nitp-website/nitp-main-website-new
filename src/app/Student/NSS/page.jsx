@@ -1,5 +1,9 @@
 import Head from "next/head";
 
+
+
+
+
 export default function Home() {
   return (
     <div className="mx-auto px-4 md:px-8 pt-8 bg-white bg-opacity-50">

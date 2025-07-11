@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import { AlertTriangle, Megaphone, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Megaphone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Info } from 'lucide-react';
 
 const Movingbar = () => {

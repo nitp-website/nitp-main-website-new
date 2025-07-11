@@ -125,6 +125,10 @@ const FacilitiesResourcesPage = () => {
   );
 };
 
+
+
+
+
 export default FacilitiesResourcesPage;
 
 export async function generateMetadata({ params }) {

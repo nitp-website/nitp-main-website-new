@@ -7,6 +7,10 @@ import { faHome, faGraduationCap, faBullhorn, faHandshake, faUserTie, faPhone, f
 
 import './style.css';
 
+
+
+
+
 export default function InternationalAffairsPage() {
   const searchParams = useSearchParams();
   const pathname = usePathname();

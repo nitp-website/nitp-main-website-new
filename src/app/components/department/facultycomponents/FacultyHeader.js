@@ -1,11 +1,8 @@
 import React from 'react'
-import Image from 'next/image'
 
 import { CgProfile } from "react-icons/cg";
-import { FaPhone } from "react-icons/fa6";
 import { MdOutlineMail } from "react-icons/md";
 import { SiGooglescholar } from "react-icons/si";
-import { SiScopus } from "react-icons/si";
 import Link from 'next/link';
 const FacultyHeader = ({ name, image, research, designation, email, linkedin, orcid, personal_webpage, google_scholar, vidwan, scopus }) => {
   return (

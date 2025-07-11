@@ -17,6 +17,10 @@ import axios from 'axios';
 
 // ]
 
+
+
+
+
 export default function CE() {
   const router = useRouter();
   const [Notices, setNotices] = useState([]);

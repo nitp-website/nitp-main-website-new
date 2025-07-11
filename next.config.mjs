@@ -26,6 +26,17 @@ const nextConfig = {
         });
         return config;
     },
+    // Added experimental configuration to handle revalidate issues
+    experimental: {
+        // Allows more forgiving handling of revalidate values
+        missingSuspenseWithCSRBailout: false,
+        // Improved metadata handling
+        typedRoutes: true,
+        // Enhanced error handling for static generation
+        serverActions: {
+            bodySizeLimit: '2mb',
+        },
+    },
 };
 
 export default withVideos(nextConfig);

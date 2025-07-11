@@ -2,6 +2,10 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 
+
+
+
+
 export default function Page() {
   return (
     <div className="flex flex-col md:flex-row px-6 md:px-16 lg:px-24 mt-10 w-full mb-8">

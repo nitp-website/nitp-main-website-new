@@ -1,11 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import React from "react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
 import Loading from "../../Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone, faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const FacultyCard = ({
   name,

@@ -4,7 +4,6 @@ import FacultyList from "../../../../components/facultycomponents/FacultyList";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import staffData from "../../staffMach";
-import DeptStaffcard from "../../../components/faculty/DeptStaff";
 import PhdCandidate from "../../../components/faculty/PhdCandidate";
 import StaffcardDept from "../../../components/faculty/StaffcardDept";
 
@@ -229,5 +228,9 @@ const Home = () => {
     </div>
   );
 };
+
+
+
+
 
 export default Home;

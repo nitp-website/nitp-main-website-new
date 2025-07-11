@@ -210,6 +210,10 @@ Director NIT Patna
       )
 }
 
+
+
+
+
 export default page
 
 function Work() {

@@ -3,7 +3,6 @@ import BackDepartment from "../../../components/department/BackDepartment"
 import FacultyList from '../../../../components/facultycomponents/FacultyList';
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-import DeptStaffcard from "../../../components/faculty/DeptStaff"
 import PhdCandidate from "../../../components/faculty/PhdCandidate"
 const Home=() =>{
   const [faculty, setfaculty] = useState(true);
@@ -115,4 +114,8 @@ useEffect(() => {
   </>
   )
 }
+
+
+
+
 export default Home;

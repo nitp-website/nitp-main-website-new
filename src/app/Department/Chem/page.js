@@ -16,6 +16,10 @@ const Notices = [
 
 ]
 
+
+
+
+
 export default function Chem() {
   const router = useRouter();
   const [Notices, setNotices] = useState([]);

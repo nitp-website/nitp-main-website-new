@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Title from "./Title";
 import { useParams } from "next/navigation";
 import dynamic from "next/dynamic";
 const FacultyHeader = dynamic(() => import("./FacultyHeader"), {

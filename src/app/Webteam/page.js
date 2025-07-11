@@ -5,7 +5,6 @@ import React from "react"
 import Webcard from "../components/Webteam/Webcard"
 import "./wpage.css"
 import Collapsible from "./Collapsible";
-import Link from "next/link";
 
 const currentYear = 2024;
 const oldyears = [ 2023, 2022, 2021];
@@ -212,4 +211,9 @@ const Webteam = () => {
   );
 };
 
+
+
+
+
+export const dynamic = 'force-dynamic';
 export default Webteam;

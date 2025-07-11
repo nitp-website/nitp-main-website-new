@@ -1,6 +1,10 @@
 import BackDepartment from "../../../components/department/BackDepartment";
 
 
+
+
+
+
 export default function research(){
     return (
         <div className=" flex flex-col p-5 h-screen text-black">  

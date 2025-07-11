@@ -1,6 +1,5 @@
 import React from "react";
 import Admincard from "../AdminCard";
-import Sidebar from "../components/Sidebar";
 import "../style.css";
 
 const Page = () => {
@@ -38,5 +37,9 @@ const Page = () => {
     </div>
   );
 };
+
+
+
+
 
 export default Page;

@@ -165,6 +165,10 @@ function Electure({ title, sno, duration, person }) {
         </>
     )
 }
+
+
+
+
 export default function activities() {
 
     return (

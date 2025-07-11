@@ -1,14 +1,11 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faIdCard,
   faEnvelope,
   faPhone,
-  faGraduationCap,
-  faBriefcase,
   faLightbulb,
 } from "@fortawesome/free-solid-svg-icons";
 

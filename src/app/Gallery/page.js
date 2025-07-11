@@ -1,7 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import './Gpage.css';
 
 const images = [
@@ -154,6 +152,10 @@ const Gallery = () => {
     </div>
   );
 }
+
+
+
+
 
 export default Gallery;
 

@@ -41,6 +41,10 @@ import axios from "axios";
 
 // ]
 
+
+
+
+
 export default function Archi() {
   const router = useRouter();
   const [Notices, setNotices] = useState([]);

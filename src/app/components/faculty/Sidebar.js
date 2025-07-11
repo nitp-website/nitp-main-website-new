@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import QRCode from "qrcode";
 
 import { CgProfile } from "react-icons/cg";
