@@ -40,7 +40,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # ✅ Set correct owner for Next.js cache directory
-RUN mkdir .next && chown nextjs:nodejs .next
+RUN chown -R nextjs:nodejs .next
 
 USER nextjs
 
