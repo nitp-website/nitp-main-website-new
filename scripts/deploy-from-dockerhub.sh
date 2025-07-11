@@ -26,7 +26,26 @@ sudo docker stop $APP_NAME 2>/dev/null || true
 sudo docker rm $APP_NAME 2>/dev/null || true
 
 echo "🚀 Starting new container..."
-sudo docker run -d --restart=always -p $APP_PORT:3002 --name $APP_NAME $IMAGE_NAME
+
+# Load environment variables from .env.local if it exists
+ENV_VARS=""
+if [ -f .env.local ]; then
+  echo "📄 Loading environment variables from .env.local"
+  while IFS= read -r line || [ -n "$line" ]; do
+    # Skip comments and empty lines
+    [[ $line =~ ^#.*$ || -z $line ]] && continue
+    
+    # Get the variable name and value
+    var_name=$(echo "$line" | cut -d= -f1)
+    var_value=$(echo "$line" | cut -d= -f2-)
+    
+    # Add to environment variables string
+    ENV_VARS="$ENV_VARS -e $var_name=$var_value"
+  done < .env.local
+fi
+
+# Run the container with environment variables
+sudo docker run -d --restart=always -p $APP_PORT:3002 $ENV_VARS --name $APP_NAME $IMAGE_NAME
 
 echo "🧹 Cleaning up old images..."
 sudo docker system prune -f

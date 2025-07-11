@@ -42,6 +42,9 @@ fi
 # Check for .env.local file
 if [ -f .env.local ]; then
   echo "✅ .env.local file exists - using your existing credentials"
+  # Load all environment variables from .env.local for docker-compose to use
+  echo "🔄 Loading environment variables from .env.local"
+  export $(grep -v '^#' .env.local | sed 's/\r$//' | xargs)
 else
   echo "⚠️ No .env.local file found."
   echo "⚠️ Using environment variables directly from docker-compose.yml"
