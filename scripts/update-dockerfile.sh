@@ -1,3 +1,19 @@
+#!/bin/bash
+# Script to update Dockerfile with environment variables
+
+echo "🔄 Creating updated Dockerfile with environment variables"
+
+if [ ! -f Dockerfile ]; then
+  echo "❌ Dockerfile not found!"
+  exit 1
+fi
+
+# Create a backup of the original Dockerfile
+cp Dockerfile Dockerfile.backup
+echo "✅ Created backup of original Dockerfile as Dockerfile.backup"
+
+# Create a new Dockerfile with environment variables
+cat > Dockerfile.new << 'EOL'
 # ✅ Base image with Node.js 20
 FROM node:20-alpine AS base
 
@@ -32,6 +48,7 @@ RUN npm run build
 FROM base AS runner
 WORKDIR /app
 
+# Set environment variables for runtime
 ENV NODE_ENV=production
 ENV PORT=3002
 ENV NEXT_TELEMETRY_DISABLED=1
@@ -61,3 +78,13 @@ EXPOSE 3002
 
 # ✅ Start using the Next.js standalone server
 CMD ["node", "server.js"]
+EOL
+
+# Replace the old Dockerfile with the new one
+mv Dockerfile.new Dockerfile
+echo "✅ Updated Dockerfile with environment variables"
+
+echo "📝 Next steps:"
+echo "1. Commit the updated Dockerfile"
+echo "2. Push to GitHub to trigger a new build with environment variables"
+echo "3. Watchtower will automatically deploy the new image"
