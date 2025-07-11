@@ -49,7 +49,7 @@ jobs:
         cache-to: type=gha,mode=max
 
     - name: 🚀 Deploy to Server (optional)
-      if: ${{ secrets.EC2_HOST != '' }}
+      if: ${{ vars.ENABLE_SERVER_DEPLOY == 'true' }}
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.EC2_HOST }}
