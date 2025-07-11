@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import QRCode from "qrcode";
-import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { IoMdCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 

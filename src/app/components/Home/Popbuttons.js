@@ -1,7 +1,7 @@
 "use client"
 import React,{useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserGraduate, faGraduationCap, faSchool, faBookOpen, faBolt, faUsers, faCalendarAlt, faBuilding,faPlaneDeparture, faHandHoldingDollar } from '@fortawesome/free-solid-svg-icons';
+import { faUserGraduate, faGraduationCap, faSchool, faBolt, faBuilding,faPlaneDeparture, faHandHoldingDollar } from '@fortawesome/free-solid-svg-icons';
 import './styles/Popbutton.css';
 import Link from 'next/link';
 import AOS from 'aos';

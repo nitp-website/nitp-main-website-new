@@ -25,4 +25,8 @@ const SenatePage = () => {
   );
 };
 
+
+
+
+
 export default SenatePage;

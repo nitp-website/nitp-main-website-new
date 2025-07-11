@@ -1,6 +1,10 @@
 
 import Head from "next/head";
 import SCSTCell from "../../components/StudentComponents/SCSTCell"
+
+
+
+
 export default function Home() {
   const places = [
     {

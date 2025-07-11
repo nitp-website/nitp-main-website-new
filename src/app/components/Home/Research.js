@@ -2,9 +2,7 @@
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import "./styles/Research.css";
-import Researchm from "../../assets/images/researchm.svg";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 

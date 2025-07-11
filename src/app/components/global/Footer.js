@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import "./styles/Footer.css";
-import { Calendar, MapPin, Download, ExternalLink, CloudIcon, HeartIcon, TwitterIcon, LinkedinIcon, FacebookIcon, GlobeIcon, MailIcon, PhoneIcon } from 'lucide-react';
+import { MapPin, CloudIcon, HeartIcon, TwitterIcon, LinkedinIcon, FacebookIcon, GlobeIcon, MailIcon, PhoneIcon } from 'lucide-react';
 
 const Footer = () => {
   const [weatherData, setWeatherData] = useState(null);

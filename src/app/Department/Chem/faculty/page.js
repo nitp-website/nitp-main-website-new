@@ -3,7 +3,6 @@ import BackDepartment from "../../../components/department/BackDepartment";
 import FacultyList from "../../../../components/facultycomponents/FacultyList";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import DeptStaffcard from "../../../components/faculty/DeptStaff";
 import PhdCandidate from "../../../components/faculty/PhdCandidate";
 import staffData from "../../staffChemical";
 import StaffcardDept from "../../../components/faculty/StaffcardDept";
@@ -227,5 +226,9 @@ const Home = () => {
     </div>
   );
 };
+
+
+
+
 
 export default Home;

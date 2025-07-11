@@ -1,5 +1,9 @@
 import BackDepartment from "../../../components/department/BackDepartment";
 
+
+
+
+
 export default function mission() {
   return (
     <div className=" flex flex-col p-10 max-sm:p-2 text-black">

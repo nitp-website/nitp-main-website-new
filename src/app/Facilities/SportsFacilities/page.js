@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Sidebar from './components/Sidebar'
 import Carousel from './components/Carousel'
 
@@ -14,6 +13,10 @@ function Sports({game,desc}){
     </div>
   )
 }
+
+
+
+
 
 export default function Home() {
   

@@ -1,14 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
-import { RiAdminFill } from "react-icons/ri";
 import { MdEvent } from "react-icons/md";
-import { SiGoogleforms } from "react-icons/si";
 import { IoMdPhotos } from "react-icons/io";
 import { SlCalender } from "react-icons/sl";
 import { RxActivityLog } from "react-icons/rx";
 import { IoIosPeople } from "react-icons/io";
-import { HiMiniUserGroup } from "react-icons/hi2";
 
 const Sidebar = ({ onLinkClick }) => {
   const items = [

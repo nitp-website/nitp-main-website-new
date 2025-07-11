@@ -51,6 +51,10 @@ import { useEffect, useState } from "react";
 //   },
 // ]
 
+
+
+
+
 export default function Humanities() {
   const router = useRouter()
   const [Notices, setNotices] = useState([]);

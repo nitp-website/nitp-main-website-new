@@ -1,6 +1,10 @@
 import BackDepartment from "../../../components/department/BackDepartment"
 import Image from "next/image"
 
+
+
+
+
 export default function labs(){
     return (
         <div className=" flex flex-col p-10 max-sm:p-4 text-black">  

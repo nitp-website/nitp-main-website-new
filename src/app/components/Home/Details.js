@@ -7,7 +7,7 @@ import "./styles/Details.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FiDownload } from 'react-icons/fi';
-import { Calendar, MapPin, Download, ExternalLink, Info, BellRing, AlertOctagon, CircleDot, Star } from 'lucide-react';
+import { Calendar, MapPin, Download, ExternalLink, Star } from 'lucide-react';
 
 
 // FormatDate component

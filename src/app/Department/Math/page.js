@@ -7,6 +7,10 @@ import { useRouter } from 'next/navigation'
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+
+
+
+
 export default function Math() {
   const router = useRouter();
   const [Notices, setNotices] = useState([]);

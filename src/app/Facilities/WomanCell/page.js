@@ -1,5 +1,9 @@
 import Head from "next/head";
 import WomenCell from "../../components/StudentComponents/WomenCell"
+
+
+
+
 export default function Home() {
   const places = [
     {

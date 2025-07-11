@@ -25,4 +25,8 @@ const IDCPage = () => {
   );
 };
 
+
+
+
+
 export default IDCPage;

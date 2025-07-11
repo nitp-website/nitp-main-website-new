@@ -1,10 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faIdCard,
   faEnvelope,
-  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Staffcard({ name, designation, image, email }) {

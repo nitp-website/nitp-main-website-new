@@ -1,9 +1,7 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import "../../components/Home/styles/Details.css";
-import Downloadicon from "../../../../public/downloadicon.png"; 
 
 const Noticecard = ({ detail, time, attachments, imp, link }) => (
   <div className={`notice ${imp ? "important" : ""}`}>
@@ -209,5 +207,9 @@ const Page = () => {
     </div>
   );
 };
+
+
+
+
 
 export default Page;

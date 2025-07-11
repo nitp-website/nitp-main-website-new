@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const NSSGalleryPage = () => {
@@ -47,5 +46,9 @@ const NSSGalleryPage = () => {
     </div>
   );
 };
+
+
+
+
 
 export default NSSGalleryPage;

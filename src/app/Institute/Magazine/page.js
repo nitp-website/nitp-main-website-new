@@ -78,4 +78,8 @@ const MagazinePage = () => {
   );
 };
 
+
+
+
+
 export default MagazinePage;

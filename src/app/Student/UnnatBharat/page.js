@@ -1,5 +1,9 @@
 import Head from "next/head";
 import UnnatBharat from "../../components/StudentComponents/UnnatBharat"
+
+
+
+
 export default function Home() {
   return (
     <div className=" mx-auto p-3 pt-6 bg-white bg-opacity-50 text-black">

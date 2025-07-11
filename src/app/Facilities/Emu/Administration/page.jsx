@@ -3,11 +3,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faIdCard,
-  faGraduationCap,
   faEnvelope,
   faPhone,
-  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Department Faculty Page
@@ -104,6 +101,10 @@ const positions = [
 const Piapi = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=vimlesh.verma@nitp.ac.in`;
 const CoPiapi1 = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=amitesh.ee@nitp.ac.in`;
 const CoPiapi2 = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=gagandeep.ee@nitp.ac.in`;
+
+
+
+
 
 export default function EmuAdministrationPage() {
   const [selectedCategory, setSelectedCategory] = useState(null);

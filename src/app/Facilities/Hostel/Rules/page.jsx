@@ -76,4 +76,8 @@ const RulesTab = () => {
   );
 };
 
+
+
+
+
 export default RulesTab;

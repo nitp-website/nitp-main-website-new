@@ -1,7 +1,6 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import "../../components/Home/styles/Details.css";
 import { Calendar, MapPin, Download, ExternalLink } from 'lucide-react';
 
@@ -317,5 +316,9 @@ const Page = () => {
     </div>
   );
 };
+
+
+
+
 
 export default Page;

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const EmuGalleryPage = () => {
@@ -58,5 +57,9 @@ const EmuGalleryPage = () => {
     </div>
   );
 };
+
+
+
+
 
 export default EmuGalleryPage;
