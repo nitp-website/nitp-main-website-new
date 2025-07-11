@@ -1,18 +1,15 @@
 # Server Deployment Script
 # This script pulls the latest Docker image from Docker Hub and deploys it
 
-# Load environment variables if .env.local exists
-if [ -f .env.local ]; then
-  echo "🔍 Loading environment variables from .env.local..."
-  export $(grep -v '^#' .env.local | xargs)
-fi
-
 # Configuration
 APP_NAME="nitp-website"
 APP_PORT="3002"
-# Use environment variables with fallbacks
-DOCKER_HUB_USERNAME="${DOCKER_HUB_USERNAME:-nitpatnagithub}"
-DOCKER_HUB_TOKEN="${DOCKER_HUB_TOKEN}"
+# Hardcoded Docker Hub username
+DOCKER_HUB_USERNAME="nitpatnagithub"
+# Check if we have a token file
+if [ -f .docker_token ]; then
+  DOCKER_HUB_TOKEN=$(cat .docker_token)
+fi
 IMAGE_NAME="$DOCKER_HUB_USERNAME/nitp-website:latest"
 
 echo "🔄 Pulling latest Docker image..."

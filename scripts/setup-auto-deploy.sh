@@ -67,18 +67,15 @@ case $choice in
   1)
     echo "🔄 Setting up Docker Compose with Watchtower..."
     
-    # Login to Docker Hub if credentials are available
-    if [ -f .env.local ]; then
-      echo "🔑 Logging in to Docker Hub using credentials from .env.local..."
-      export $(grep -v '^#' .env.local | xargs)
-      echo "$DOCKER_HUB_TOKEN" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
-    else
-      echo "⚠️ No .env.local found. Login to Docker Hub manually if needed:"
-      echo "   docker login -u nitpatnagithub"
-      read -s -p "Enter Docker Hub token (hidden): " DOCKER_TOKEN
-      echo ""
-      echo "$DOCKER_TOKEN" | docker login -u nitpatnagithub --password-stdin
-    fi
+    # Login to Docker Hub with hardcoded username
+    echo "🔑 Docker Hub login required..."
+    echo "Username: nitpatnagithub (hardcoded)"
+    read -s -p "Enter your Docker Hub token (hidden, will be pasted): " DOCKER_TOKEN
+    echo ""
+    # Save token to file for future use (secure file with restricted permissions)
+    echo "$DOCKER_TOKEN" > .docker_token
+    chmod 600 .docker_token
+    echo "$DOCKER_TOKEN" | docker login -u nitpatnagithub --password-stdin
     
     docker-compose up -d
     echo "✅ Docker Compose services are running"
@@ -98,18 +95,15 @@ case $choice in
   3)
     echo "🔄 Setting up both methods..."
     
-    # Login to Docker Hub if credentials are available
-    if [ -f .env.local ]; then
-      echo "🔑 Logging in to Docker Hub using credentials from .env.local..."
-      export $(grep -v '^#' .env.local | xargs)
-      echo "$DOCKER_HUB_TOKEN" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
-    else
-      echo "⚠️ No .env.local found. Login to Docker Hub manually if needed:"
-      echo "   docker login -u nitpatnagithub"
-      read -s -p "Enter Docker Hub token (hidden): " DOCKER_TOKEN
-      echo ""
-      echo "$DOCKER_TOKEN" | docker login -u nitpatnagithub --password-stdin
-    fi
+    # Login to Docker Hub with hardcoded username
+    echo "🔑 Docker Hub login required..."
+    echo "Username: nitpatnagithub (hardcoded)"
+    read -s -p "Enter your Docker Hub token (hidden, will be pasted): " DOCKER_TOKEN
+    echo ""
+    # Save token to file for future use (secure file with restricted permissions)
+    echo "$DOCKER_TOKEN" > .docker_token
+    chmod 600 .docker_token
+    echo "$DOCKER_TOKEN" | docker login -u nitpatnagithub --password-stdin
     
     # Setup Docker Compose
     docker-compose up -d
