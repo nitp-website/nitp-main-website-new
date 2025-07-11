@@ -24,7 +24,7 @@ log() {
 
 # Function to check if container exists
 container_exists() {
-    docker ps -a --format '{{.Names}}' | grep -q "^$1$"
+    sudo docker ps -a --format '{{.Names}}' | grep -q "^$1$"
 }
 
 # Function to stop and remove container safely
@@ -32,9 +32,9 @@ cleanup_container() {
     local container_name=$1
     if container_exists $container_name; then
         log "🛑 Stopping container: $container_name"
-        docker stop $container_name || true
+        sudo docker stop $container_name || true
         log "🗑️ Removing container: $container_name"
-        docker rm $container_name || true
+        sudo docker rm $container_name || true
     fi
 }
 
@@ -69,8 +69,8 @@ check_health() {
 # Function to check Node.js version
 check_node_version() {
     local container_name=$1
-    if container_exists $container_name && docker ps | grep -q $container_name; then
-        node_version=$(docker exec $container_name node --version 2>/dev/null || echo "unknown")
+    if container_exists $container_name && sudo docker ps | grep -q $container_name; then
+        node_version=$(sudo docker exec $container_name node --version 2>/dev/null || echo "unknown")
         log "🔍 Node.js version in container: $node_version"
         
         if [[ $node_version == v20* ]]; then
@@ -87,8 +87,8 @@ rollback() {
     log "📅 Rollback Time: $(date)"
     
     # Check if backup exists
-    if [ ! -d "/root/nitp-docker-backup" ]; then
-        log "${RED}❌ No backup found at /root/nitp-docker-backup${NC}"
+    if [ ! -d "/home/ubuntu/nitp-docker-backup" ]; then
+        log "${RED}❌ No backup found at /home/ubuntu/nitp-docker-backup${NC}"
         log "${RED}❌ Cannot proceed with rollback${NC}"
         exit 1
     fi
@@ -98,7 +98,7 @@ rollback() {
     # Check current container status
     if container_exists $APP_NAME; then
         log "📊 Current container status:"
-        docker ps --filter "name=$APP_NAME" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" || true
+        sudo docker ps --filter "name=$APP_NAME" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" || true
         
         # Get current health status
         log "🏥 Current health status:"
@@ -110,24 +110,24 @@ rollback() {
     
     # Restore backup
     log "📁 Restoring from backup..."
-    rm -rf /root/nitp-docker-current
-    cp -r /root/nitp-docker-backup /root/nitp-docker-current
-    cd /root/nitp-docker-current
+    sudo rm -rf /home/ubuntu/nitp-docker-current
+    sudo cp -r /home/ubuntu/nitp-docker-backup /home/ubuntu/nitp-docker-current
+    cd /home/ubuntu/nitp-docker-current
     
     # Build rollback image
     log "🔨 Building rollback image with Node.js 20..."
-    docker build -t $APP_NAME-rollback . || {
+    sudo docker build -t $APP_NAME-rollback . || {
         log "${RED}❌ Failed to build rollback image${NC}"
         exit 1
     }
     
     # Check the Node.js version in the rollback image
     log "🔍 Checking Node.js version in rollback image..."
-    docker run --rm $APP_NAME-rollback node --version || log "Could not check Node.js version"
+    sudo docker run --rm $APP_NAME-rollback node --version || log "Could not check Node.js version"
     
     # Start rollback container
     log "🚀 Starting rollback container..."
-    docker run -d --restart=always -p $LIVE_PORT:3002 --name $APP_NAME $APP_NAME-rollback || {
+    sudo docker run -d --restart=always -p $LIVE_PORT:3002 --name $APP_NAME $APP_NAME-rollback || {
         log "${RED}❌ Failed to start rollback container${NC}"
         exit 1
     }
@@ -147,11 +147,11 @@ rollback() {
         
         # Clean up old images
         log "🧹 Cleaning up old Docker images..."
-        docker image prune -f || true
+        sudo docker image prune -f || true
         
         # Show final status
         log "📊 Final container status:"
-        docker ps --filter "name=$APP_NAME" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+        sudo docker ps --filter "name=$APP_NAME" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
         
         log "${GREEN}🎉 Rollback completed successfully!${NC}"
     else
@@ -160,7 +160,7 @@ rollback() {
         
         # Show container logs for debugging
         log "📋 Container logs for debugging:"
-        docker logs --tail 20 $APP_NAME 2>/dev/null || log "No logs available"
+        sudo docker logs --tail 20 $APP_NAME 2>/dev/null || log "No logs available"
         
         exit 1
     fi
@@ -186,18 +186,18 @@ log "💻 Load: $(uptime | awk -F'load average:' '{print $2}' | xargs)"
 log "🧠 Memory: $(free -h | grep Mem | awk '{print $3 "/" $2}')"
 
 # Show current deployment info
-if [ -d "/root/nitp-docker-current" ]; then
+if [ -d "/home/ubuntu/nitp-docker-current" ]; then
     log "📁 Current deployment directory exists"
-    if [ -f "/root/nitp-docker-current/package.json" ]; then
-        app_version=$(grep '"version"' /root/nitp-docker-current/package.json | cut -d'"' -f4 2>/dev/null || echo "unknown")
+    if [ -f "/home/ubuntu/nitp-docker-current/package.json" ]; then
+        app_version=$(grep '"version"' /home/ubuntu/nitp-docker-current/package.json | cut -d'"' -f4 2>/dev/null || echo "unknown")
         log "📦 Current app version: $app_version"
     fi
 fi
 
-if [ -d "/root/nitp-docker-backup" ]; then
+if [ -d "/home/ubuntu/nitp-docker-backup" ]; then
     log "💾 Backup directory exists"
-    if [ -f "/root/nitp-docker-backup/package.json" ]; then
-        backup_version=$(grep '"version"' /root/nitp-docker-backup/package.json | cut -d'"' -f4 2>/dev/null || echo "unknown")
+    if [ -f "/home/ubuntu/nitp-docker-backup/package.json" ]; then
+        backup_version=$(grep '"version"' /home/ubuntu/nitp-docker-backup/package.json | cut -d'"' -f4 2>/dev/null || echo "unknown")
         log "📦 Backup app version: $backup_version"
     fi
 fi
@@ -219,9 +219,9 @@ rollback
 log "📊 Rollback Summary:"
 log "⏰ Time: $(date)"
 log "🚀 Status: SUCCESS"
-log "🔍 Node.js: $(docker exec $APP_NAME node --version 2>/dev/null || echo 'N/A')"
+log "🔍 Node.js: $(sudo docker exec $APP_NAME node --version 2>/dev/null || echo 'N/A')"
 log "🌐 Application URL: http://localhost:$LIVE_PORT"
 log "🏥 Health check: http://localhost:$LIVE_PORT$HEALTH_ENDPOINT"
-log "📊 Monitor: /root/scripts/monitor.sh"
+log "📊 Monitor: /home/ubuntu/scripts/monitor.sh"
 log ""
 log "${GREEN}🎉 Rollback completed! Your website is now running the previous version.${NC}"

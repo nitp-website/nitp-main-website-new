@@ -38,13 +38,13 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT || 22 }}
         source: "."
-        target: "/root/nitp-main-website-new"
+        target: "/home/ubuntu/nitp-main-website-new"
         rm: true
 
     - name: 🚀 Deploy with Zero Downtime + Auto Rollback
       uses: appleboy/ssh-action@v1.0.3
       with:
-         host: ${{ secrets.EC2_HOST }}
+        host: ${{ secrets.EC2_HOST }}
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT || 22 }}
@@ -77,12 +77,12 @@ jobs:
           
           # Function to check if container exists
           container_exists() {
-            docker ps -a --format '{{.Names}}' | grep -q "^$1$"
+            sudo docker ps -a --format '{{.Names}}' | grep -q "^$1$"
           }
           
           # Function to check if container is running
           container_running() {
-            docker ps --format '{{.Names}}' | grep -q "^$1$"
+            sudo docker ps --format '{{.Names}}' | grep -q "^$1$"
           }
           
           # Function to stop and remove container safely
@@ -90,9 +90,9 @@ jobs:
             local container_name=$1
             if container_exists $container_name; then
               log "🛑 Stopping container: $container_name"
-              docker stop $container_name || true
+              sudo docker stop $container_name || true
               log "🗑️ Removing container: $container_name"
-              docker rm $container_name || true
+              sudo docker rm $container_name || true
             fi
           }
           
@@ -127,15 +127,15 @@ jobs:
             cleanup_container $TEMP_APP_NAME
             
             # Restore backup if it exists
-            if [ -d "/root/nitp-docker-backup" ]; then
+            if [ -d "/home/ubuntu/nitp-docker-backup" ]; then
               log "📁 Restoring from backup..."
-              rm -rf /root/nitp-docker-current
-              cp -r /root/nitp-docker-backup /root/nitp-docker-current
-              cd /root/nitp-docker-current
+              sudo rm -rf /home/ubuntu/nitp-docker-current
+              sudo cp -r /home/ubuntu/nitp-docker-backup /home/ubuntu/nitp-docker-current
+              cd /home/ubuntu/nitp-docker-current
               
               # Build and start old version
               log "🔨 Building rollback image..."
-              docker build -t $APP_NAME-rollback . || {
+              sudo docker build -t $APP_NAME-rollback . || {
                 log "${RED}❌ Failed to build rollback image${NC}"
                 exit 1
               }
@@ -144,7 +144,7 @@ jobs:
               cleanup_container $APP_NAME
               
               log "🚀 Starting rollback container..."
-              docker run -d --restart=always -p $LIVE_PORT:3002 --name $APP_NAME $APP_NAME-rollback || {
+              sudo docker run -d --restart=always -p $LIVE_PORT:3002 --name $APP_NAME $APP_NAME-rollback || {
                 log "${RED}❌ Failed to start rollback container${NC}"
                 exit 1
               }
@@ -166,9 +166,9 @@ jobs:
           main() {
             # Create backup of current version
             log "💾 Creating backup of current version..."
-            rm -rf /root/nitp-docker-backup
-            if [ -d "/root/nitp-docker-current" ]; then
-              cp -r /root/nitp-docker-current /root/nitp-docker-backup || true
+            sudo rm -rf /home/ubuntu/nitp-docker-backup
+            if [ -d "/home/ubuntu/nitp-docker-current" ]; then
+              sudo cp -r /home/ubuntu/nitp-docker-current /home/ubuntu/nitp-docker-backup || true
               log "✅ Backup created successfully"
             else
               log "${YELLOW}⚠️ No current version found to backup${NC}"
@@ -176,13 +176,13 @@ jobs:
             
             # Move new version into place
             log "📁 Moving new version into place..."
-            rm -rf /root/nitp-docker-current
-            mv /root/nitp-main-website-new /root/nitp-docker-current
-            cd /root/nitp-docker-current
+            sudo rm -rf /home/ubuntu/nitp-docker-current
+            sudo mv /home/ubuntu/nitp-main-website-new /home/ubuntu/nitp-docker-current
+            cd /home/ubuntu/nitp-docker-current
             
             # Build new Docker image
             log "🔨 Building new Docker image with Node.js 20..."
-            docker build -t $APP_NAME-new . || {
+            sudo docker build -t $APP_NAME-new . || {
               log "${RED}❌ Docker build failed${NC}"
               rollback
               exit 1
@@ -190,7 +190,7 @@ jobs:
             
             # Verify Node.js version in the new image
             log "🔍 Verifying Node.js version in new image..."
-            node_version=$(docker run --rm $APP_NAME-new node --version 2>/dev/null || echo "unknown")
+            node_version=$(sudo docker run --rm $APP_NAME-new node --version 2>/dev/null || echo "unknown")
             log "📊 Node.js version: $node_version"
             
             if [[ $node_version == v20* ]]; then
@@ -204,7 +204,7 @@ jobs:
             
             # Run temp container for testing
             log "🧪 Starting temporary container on port $TEMP_PORT..."
-            docker run -d -p $TEMP_PORT:3002 --name $TEMP_APP_NAME $APP_NAME-new || {
+            sudo docker run -d -p $TEMP_PORT:3002 --name $TEMP_APP_NAME $APP_NAME-new || {
               log "${RED}❌ Failed to start temporary container${NC}"
               rollback
               exit 1
@@ -224,7 +224,7 @@ jobs:
               
               # Start new container on live port
               log "🚀 Starting new container on live port $LIVE_PORT..."
-              docker run -d --restart=always -p $LIVE_PORT:3002 --name $APP_NAME $APP_NAME-new || {
+              sudo docker run -d --restart=always -p $LIVE_PORT:3002 --name $APP_NAME $APP_NAME-new || {
                 log "${RED}❌ Failed to start new live container${NC}"
                 rollback
                 exit 1
@@ -240,16 +240,16 @@ jobs:
                 log "🧹 Performing enhanced cleanup..."
                 
                 # Remove unused images older than 24 hours (keep recent ones)
-                docker images --filter "dangling=true" -q | xargs -r docker rmi 2>/dev/null || true
+                sudo docker images --filter "dangling=true" -q | xargs -r sudo docker rmi 2>/dev/null || true
                 
                 # Clean up Docker system (safe cleanup)
-                docker system prune -f 2>/dev/null || true
+                sudo docker system prune -f 2>/dev/null || true
                 
                 # Remove old NITP images (keep last 3)
-                old_images=$(docker images --filter "reference=*nitp*" --format "{{.ID}} {{.CreatedAt}}" | \
+                old_images=$(sudo docker images --filter "reference=*nitp*" --format "{{.ID}} {{.CreatedAt}}" | \
                            sort -k2 -r | tail -n +4 | awk '{print $1}')
                 if [ -n "$old_images" ]; then
-                  echo "$old_images" | xargs -r docker rmi 2>/dev/null || true
+                  echo "$old_images" | xargs -r sudo docker rmi 2>/dev/null || true
                   log "🗑️ Removed old NITP images"
                 fi
                 

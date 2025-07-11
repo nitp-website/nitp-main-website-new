@@ -75,12 +75,12 @@ check_health() {
 
 # Function to check container status
 check_container() {
-    if docker ps | grep -q "nitp-main-website"; then
-        local container_status=$(docker ps --filter "name=nitp-main-website" --format "{{.Status}}")
+    if sudo docker ps | grep -q "nitp-main-website"; then
+        local container_status=$(sudo docker ps --filter "name=nitp-main-website" --format "{{.Status}}")
         log "📦 Container status: $container_status"
         
         # Check if container has been running for a reasonable time
-        local uptime=$(docker ps --filter "name=nitp-main-website" --format "{{.Status}}" | grep -o "[0-9]* minutes\|[0-9]* hours\|[0-9]* days")
+        local uptime=$(sudo docker ps --filter "name=nitp-main-website" --format "{{.Status}}" | grep -o "[0-9]* minutes\|[0-9]* hours\|[0-9]* days")
         if [ -n "$uptime" ]; then
             log "⏱️ Container uptime: $uptime"
         fi
@@ -97,9 +97,9 @@ auto_recovery() {
     log "🔄 Attempting automatic recovery..."
     
     # Try to restart the container first
-    if docker ps -a | grep -q "nitp-main-website"; then
+    if sudo docker ps -a | grep -q "nitp-main-website"; then
         log "🔄 Restarting existing container..."
-        docker restart nitp-main-website
+        sudo docker restart nitp-main-website
         sleep 10
         
         if check_health; then
@@ -111,9 +111,9 @@ auto_recovery() {
     
     # If restart fails, try rollback
     log "🔄 Container restart failed, attempting rollback..."
-    if [ -f "/root/scripts/rollback.sh" ]; then
-        cd /root/nitp-docker-current
-        ./scripts/rollback.sh
+    if [ -f "/home/ubuntu/scripts/rollback.sh" ]; then
+        cd /home/ubuntu/nitp-docker-current
+        sudo /home/ubuntu/scripts/rollback.sh
         sleep 15
         
         if check_health; then
@@ -137,7 +137,7 @@ auto_cleanup() {
         log "⚠️ Disk usage high ($disk_usage%), performing cleanup..."
         
         # Run safe Docker cleanup
-        docker system prune -f 2>/dev/null || true
+        sudo docker system prune -f 2>/dev/null || true
         
         # Remove old log entries (keep last 1000 lines)
         if [ -f "$LOG_FILE" ]; then
@@ -194,7 +194,7 @@ mkdir -p $(dirname "$LOG_FILE")
 
 # Check if running as root
 if [ "$EUID" -ne 0 ]; then
-    echo "❌ This script must be run as root"
+    echo "❌ This script must be run as root or with sudo"
     echo "Please run: sudo $0"
     exit 1
 fi
