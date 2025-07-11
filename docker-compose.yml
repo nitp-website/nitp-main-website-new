@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   nitp-website:
-    build: .
+    # Use the image from Docker Hub instead of building locally
+    image: nitpatnagithub/nitp-website:latest
     container_name: nitp-main-website
     ports:
       - "3002:3002"
@@ -16,6 +17,22 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    networks:
+      - nitp-network
+
+  # Watchtower automatically updates containers when their images change
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 300 --cleanup --label-enable
+    environment:
+      - WATCHTOWER_NOTIFICATIONS=shoutrrr
+      - WATCHTOWER_NOTIFICATION_URL=${NOTIFICATION_URL:-}
+    restart: unless-stopped
     networks:
       - nitp-network
 
