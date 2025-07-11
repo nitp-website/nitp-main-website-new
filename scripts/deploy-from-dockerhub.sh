@@ -11,8 +11,8 @@ fi
 APP_NAME="nitp-website"
 APP_PORT="3002"
 # Use environment variables with fallbacks
-DOCKER_HUB_USERNAME="${DOCKER_HUB_USERNAME:-yourusername}"
-DOCKER_HUB_TOKEN="${DOCKER_HUB_TOKEN:-}"
+DOCKER_HUB_USERNAME="${DOCKER_HUB_USERNAME}"
+DOCKER_HUB_TOKEN="${DOCKER_HUB_TOKEN}"
 IMAGE_NAME="$DOCKER_HUB_USERNAME/nitp-website:latest"
 
 echo "🔄 Pulling latest Docker image..."

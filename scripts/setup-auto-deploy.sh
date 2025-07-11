@@ -40,21 +40,12 @@ else
 fi
 
 # Check for .env.local file
-if [ ! -f .env.local ]; then
-  if [ -f .env.local.example ]; then
-    echo "📝 Creating .env.local from example file..."
-    cp .env.local.example .env.local
-    echo "⚠️ Please edit .env.local with your Docker Hub credentials:"
-    echo "   nano .env.local"
-  else
-    echo "⚠️ .env.local.example not found. Creating .env.local with NIT Patna credentials..."
-    echo "# Docker Hub credentials" > .env.local
-    echo "DOCKER_HUB_USERNAME=nitpatnagithub" >> .env.local
-    echo "DOCKER_HUB_TOKEN=dckr_pat_iOTDyUDNVdreAuL4eyYS7DqSUso" >> .env.local
-    echo "✅ Created .env.local with NIT Patna Docker Hub credentials"
-  fi
+if [ -f .env.local ]; then
+  echo "✅ .env.local file exists - using your existing credentials"
 else
-  echo "✅ .env.local file already exists"
+  echo "⚠️ No .env.local file found."
+  echo "⚠️ Using environment variables directly from docker-compose.yml"
+  echo "⚠️ If you need to customize credentials, create a .env.local file manually"
 fi
 
 # Make deployment script executable
@@ -114,6 +105,8 @@ echo ""
 echo "🎉 Auto-deployment setup complete!"
 echo "------------------------------"
 echo "Your website should now automatically update whenever you push to GitHub."
+echo ""
+echo "📝 Note: Using your existing .env.local file for credentials"
 echo ""
 echo "📝 Next steps:"
 echo "1. Check container status: docker ps"
