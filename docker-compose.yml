@@ -2,7 +2,11 @@ version: '3.8'
 
 services:
   nitp-website:
-    # Use the image from Docker Hub instead of building locally
+    # First, try to build locally if the image doesn't exist in Docker Hub yet
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    # Also specify the image name for Watchtower to track
     image: nitpatnagithub/nitp-website:latest
     container_name: nitp-main-website
     ports:
