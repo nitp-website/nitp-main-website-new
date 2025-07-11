@@ -33,9 +33,9 @@ jobs:
     - name: 📤 Upload Code to Server
       uses: appleboy/scp-action@v0.1.7
       with:
-        host: ${{ secrets.SERVER_HOST }}
-        username: root
-        key: ${{ secrets.SERVER_SSH_KEY }}
+        host: ${{ secrets.EC2_HOST }}
+        username: ubuntu
+        key: ${{ secrets.EC2_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT || 22 }}
         source: "."
         target: "/root/nitp-main-website-new"
@@ -44,9 +44,9 @@ jobs:
     - name: 🚀 Deploy with Zero Downtime + Auto Rollback
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: ${{ secrets.SERVER_HOST }}
-        username: root
-        key: ${{ secrets.SERVER_SSH_KEY }}
+         host: ${{ secrets.EC2_HOST }}
+        username: ubuntu
+        key: ${{ secrets.EC2_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT || 22 }}
         script: |
           set -e
