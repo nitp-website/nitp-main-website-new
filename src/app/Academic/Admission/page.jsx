@@ -30,11 +30,12 @@ const admissionData = {
       },
     ],
     notices: [
-      // {
-      //   title: "JoSAA 2023 Counselling Schedule",
-      //   date: "2023-06-15",
-      //   content: "JoSAA counselling will begin on June 19th. All candidates must register by June 25th."
-      // },
+      {
+        title: "Physical reporting schedule for admission to UG Programme through JoSAA/CSAB/DASA/SII for the Academic year 2025-26",
+        date: "2025-07-10",
+        content: "UG Admission",
+        href:"https://drive.google.com/file/d/1Evk3oz1InhdbUPRK9isTvncuXhBT7P4I/view"
+      }
       // {
       //   title: "DASA 2023 Important Dates",
       //   date: "2023-05-20",
@@ -52,11 +53,12 @@ const admissionData = {
       },
     ],
     notices: [
-      // {
-      //   title: "CCMT 2023 Seat Allocation",
-      //   date: "2023-07-01",
-      //   content: "First round of seat allocation results will be declared on July 5th."
-      // }
+     {
+        title: "Physical reporting schedule for admission to PG Programme through CCMT and NIMCET for the Academic year 2025-26",
+        date: "2025-07-10",
+        content: "PG Admission",
+        href:"https://drive.google.com/file/d/1xUpA4rWNtrHlTEzRxI_AEwHPjkyIzN5z/view"
+      }
     ]
   },
 
@@ -95,11 +97,12 @@ const admissionData = {
       },
     ],
     notices: [
-      // {
-      //   title: "CCMT 2023 Seat Allocation",
-      //   date: "2023-07-01",
-      //   content: "First round of seat allocation results will be declared on July 5th."
-      // }
+      {
+        title: "Physical reporting schedule for admission to PG Programme through CCMT and NIMCET for the Academic year 2025-26",
+        date: "2025-07-10",
+        content: "PG Admission",
+        href:"https://drive.google.com/file/d/1xUpA4rWNtrHlTEzRxI_AEwHPjkyIzN5z/view"
+      }
     ]
   },
 
