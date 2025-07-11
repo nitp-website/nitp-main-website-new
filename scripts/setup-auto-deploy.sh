@@ -66,6 +66,20 @@ read -p "Enter your choice (1-3): " choice
 case $choice in
   1)
     echo "🔄 Setting up Docker Compose with Watchtower..."
+    
+    # Login to Docker Hub if credentials are available
+    if [ -f .env.local ]; then
+      echo "🔑 Logging in to Docker Hub using credentials from .env.local..."
+      export $(grep -v '^#' .env.local | xargs)
+      echo "$DOCKER_HUB_TOKEN" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
+    else
+      echo "⚠️ No .env.local found. Login to Docker Hub manually if needed:"
+      echo "   docker login -u nitpatnagithub"
+      read -s -p "Enter Docker Hub token (hidden): " DOCKER_TOKEN
+      echo ""
+      echo "$DOCKER_TOKEN" | docker login -u nitpatnagithub --password-stdin
+    fi
+    
     docker-compose up -d
     echo "✅ Docker Compose services are running"
     ;;
@@ -83,6 +97,20 @@ case $choice in
     ;;
   3)
     echo "🔄 Setting up both methods..."
+    
+    # Login to Docker Hub if credentials are available
+    if [ -f .env.local ]; then
+      echo "🔑 Logging in to Docker Hub using credentials from .env.local..."
+      export $(grep -v '^#' .env.local | xargs)
+      echo "$DOCKER_HUB_TOKEN" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
+    else
+      echo "⚠️ No .env.local found. Login to Docker Hub manually if needed:"
+      echo "   docker login -u nitpatnagithub"
+      read -s -p "Enter Docker Hub token (hidden): " DOCKER_TOKEN
+      echo ""
+      echo "$DOCKER_TOKEN" | docker login -u nitpatnagithub --password-stdin
+    fi
+    
     # Setup Docker Compose
     docker-compose up -d
     echo "✅ Docker Compose services are running"
