@@ -6,9 +6,9 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# ✅ Copy lock files & install only production dependencies
+# ✅ Copy lock files & install all dependencies (including dev for build)
 COPY package.json package-lock.json* ./
-RUN npm ci --only=production
+RUN npm ci
 
 # ✅ Copy app source and build it
 FROM base AS builder
