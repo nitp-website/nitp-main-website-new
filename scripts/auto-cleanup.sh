@@ -33,7 +33,7 @@ check_disk_usage() {
 
 # Function to check Docker space usage
 check_docker_usage() {
-    local docker_size=$(docker system df --format "table {{.Size}}" 2>/dev/null | tail -n +2 | head -1 | awk '{print $1}')
+    local docker_size=$(sudo docker system df --format "table {{.Size}}" 2>/dev/null | tail -n +2 | head -1 | awk '{print $1}')
     if [[ $docker_size =~ ([0-9.]+)GB ]]; then
         echo ${BASH_REMATCH[1]} | cut -d. -f1
     elif [[ $docker_size =~ ([0-9.]+)MB ]]; then
@@ -48,22 +48,22 @@ safe_cleanup() {
     log "🧹 Performing safe cleanup..."
     
     # Remove stopped containers
-    stopped_containers=$(docker ps -a -q --filter "status=exited" 2>/dev/null)
+    stopped_containers=$(sudo docker ps -a -q --filter "status=exited" 2>/dev/null)
     if [ -n "$stopped_containers" ]; then
-        echo "$stopped_containers" | xargs docker rm 2>/dev/null || true
+        echo "$stopped_containers" | xargs sudo docker rm 2>/dev/null || true
         log "✅ Removed stopped containers"
     fi
     
     # Remove dangling images
-    docker image prune -f 2>/dev/null || true
+    sudo docker image prune -f 2>/dev/null || true
     log "✅ Removed dangling images"
     
     # Remove unused volumes (but keep named volumes)
-    docker volume prune -f 2>/dev/null || true
+    sudo docker volume prune -f 2>/dev/null || true
     log "✅ Removed unused volumes"
     
     # Remove unused networks
-    docker network prune -f 2>/dev/null || true
+    sudo docker network prune -f 2>/dev/null || true
     log "✅ Removed unused networks"
 }
 
@@ -75,21 +75,21 @@ aggressive_cleanup() {
     safe_cleanup
     
     # Remove old NITP images (keep last 2)
-    old_nitp_images=$(docker images --filter "reference=*nitp*" --format "{{.ID}} {{.CreatedAt}}" | \
+    old_nitp_images=$(sudo docker images --filter "reference=*nitp*" --format "{{.ID}} {{.CreatedAt}}" | \
                      sort -k2 -r | tail -n +3 | awk '{print $1}')
     if [ -n "$old_nitp_images" ]; then
-        echo "$old_nitp_images" | xargs docker rmi 2>/dev/null || true
+        echo "$old_nitp_images" | xargs sudo docker rmi 2>/dev/null || true
         log "✅ Removed old NITP images"
     fi
     
     # Remove unused images (keep Node.js 20)
-    docker images --filter "dangling=false" --format "{{.ID}} {{.Repository}} {{.Tag}}" | \
+    sudo docker images --filter "dangling=false" --format "{{.ID}} {{.Repository}} {{.Tag}}" | \
     grep -v -E "(nitp|node.*20)" | awk '{print $1}' | head -5 | \
-    xargs -r docker rmi 2>/dev/null || true
+    xargs -r sudo docker rmi 2>/dev/null || true
     log "✅ Removed unused images"
     
     # System-wide cleanup
-    docker system prune -a -f 2>/dev/null || true
+    sudo docker system prune -a -f 2>/dev/null || true
     log "✅ Performed system-wide cleanup"
 }
 
@@ -103,8 +103,8 @@ cleanup_logs() {
     fi
     
     # Clean up Docker logs for NITP containers
-    if docker ps | grep -q "nitp-main-website"; then
-        docker exec nitp-main-website sh -c 'echo "" > /proc/1/fd/1' 2>/dev/null || true
+    if sudo docker ps | grep -q "nitp-main-website"; then
+        sudo docker exec nitp-main-website sh -c 'echo "" > /proc/1/fd/1' 2>/dev/null || true
         log "✅ Cleaned container logs"
     fi
 }
@@ -135,7 +135,7 @@ main() {
         log "✅ Resource usage normal - no cleanup needed"
         
         # Still do minimal maintenance
-        docker system prune -f 2>/dev/null || true
+        sudo docker system prune -f 2>/dev/null || true
     fi
     
     # Show final status
@@ -161,7 +161,7 @@ mkdir -p $(dirname "$LOG_FILE")
 
 # Check if running as root
 if [ "$EUID" -ne 0 ]; then
-    echo "❌ This script must be run as root"
+    echo "❌ This script must be run as root or with sudo"
     echo "Please run: sudo $0"
     exit 1
 fi

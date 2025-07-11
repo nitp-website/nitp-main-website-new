@@ -30,7 +30,7 @@ if command -v docker &> /dev/null; then
     echo -e "${GREEN}✅ Docker installed: $(docker --version | cut -d' ' -f3)${NC}"
     
     # Check if Docker is running
-    if docker info &> /dev/null; then
+    if sudo docker info &> /dev/null; then
         echo -e "${GREEN}✅ Docker daemon running${NC}"
     else
         echo -e "${RED}❌ Docker daemon not running${NC}"
@@ -42,16 +42,16 @@ echo ""
 
 echo "📦 Container Status"
 echo "-------------------"
-if docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep -q nitp; then
-    docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep nitp
+if sudo docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep -q nitp; then
+    sudo docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep nitp
     echo ""
     
     # Check container health
-    if docker ps | grep -q "nitp-main-website"; then
+    if sudo docker ps | grep -q "nitp-main-website"; then
         echo -e "${GREEN}✅ Main container running${NC}"
         
         # Check Node.js version
-        node_version=$(docker exec nitp-main-website node --version 2>/dev/null)
+        node_version=$(sudo docker exec nitp-main-website node --version 2>/dev/null)
         if [[ $node_version == v20* ]]; then
             echo -e "${GREEN}✅ Node.js version: $node_version${NC}"
         else
@@ -138,12 +138,12 @@ df -h / | tail -1 | awk '{print "  Used: " $3 "/" $2 " (" $5 ")"}'
 
 echo ""
 echo "📁 Directory sizes:"
-[ -d "/root/nitp-docker-current" ] && echo "  Current: $(du -sh /root/nitp-docker-current 2>/dev/null | cut -f1)"
-[ -d "/root/nitp-docker-backup" ] && echo "  Backup: $(du -sh /root/nitp-docker-backup 2>/dev/null | cut -f1)"
+[ -d "/home/ubuntu/nitp-docker-current" ] && echo "  Current: $(du -sh /home/ubuntu/nitp-docker-current 2>/dev/null | cut -f1)"
+[ -d "/home/ubuntu/nitp-docker-backup" ] && echo "  Backup: $(du -sh /home/ubuntu/nitp-docker-backup 2>/dev/null | cut -f1)"
 
 echo ""
 echo "💿 Docker disk usage:"
-docker system df 2>/dev/null || echo "Could not get Docker disk usage"
+sudo docker system df 2>/dev/null || echo "Could not get Docker disk usage"
 echo ""
 
 echo "🔄 Docker Images"

@@ -28,7 +28,7 @@ Type=simple
 Restart=always
 RestartSec=10
 User=root
-ExecStart=/root/scripts/auto-monitor.sh
+ExecStart=/home/ubuntu/scripts/auto-monitor.sh
 StandardOutput=journal
 StandardError=journal
 
@@ -46,7 +46,7 @@ Requires=docker.service
 [Service]
 Type=oneshot
 User=root
-ExecStart=/root/scripts/auto-cleanup.sh
+ExecStart=/home/ubuntu/scripts/auto-cleanup.sh
 StandardOutput=journal
 StandardError=journal
 EOF
