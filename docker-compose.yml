@@ -12,6 +12,12 @@ services:
     ports:
       - "3002:3002"
     environment:
+      - NEXT_PUBLIC_BACKEND_API_URL=${NEXT_PUBLIC_BACKEND_API_URL}
+      - NEXT_PUBLIC_YOUR_API_KEY=${NEXT_PUBLIC_YOUR_API_KEY}
+      - NEXT_PUBLIC_CURRENT_URL=${NEXT_PUBLIC_CURRENT_URL}
+      - NEXT_PUBLIC_Home=${NEXT_PUBLIC_Home}
+      - NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=${NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+      - ANALYZE=${ANALYZE}
       - NODE_ENV=production
       - PORT=3002
     restart: unless-stopped
