@@ -26,7 +26,7 @@ const Popbuttons = () => {
           <p className="headingp">STUDENT</p>
         </Link>
       </div> */}
-      <a href ="/Academic/NITPAdmission" className="card">
+      <a href ="/Academic/Admission" className="card">
         <FontAwesomeIcon icon={faSchool} size="4x" className="mobileicondiv" color='#BA210E' />
         <p className="headingp">ADMISSIONS</p>
       </a>
@@ -36,7 +36,7 @@ const Popbuttons = () => {
         <p className="headingp headingp1 headingp1t">TRAINING AND PLACEMENT</p>
       </a>
 
-      <a href="/Academic/NITPAdmission?type=study_in_india" className="card">
+      <a href="/Academic/Admission?type=study_in_india" className="card">
       <FontAwesomeIcon icon={faUserGraduate} size="4x" className="mobileicondiv" color='#BA210E' />
       <p className="headingp ">Study In India</p>
       </a>
