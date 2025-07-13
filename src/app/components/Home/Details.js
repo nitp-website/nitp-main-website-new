@@ -120,15 +120,29 @@ const Eventcard = ({
     }
   };
 
-  // Parse attachments from JSON string
-  const parsedAttachments = typeof attachments === "string"
-    ? safeParseJSON(attachments, [])
-    : [];
+  // Parse attachments - handle both array objects and JSON strings
+  let parsedAttachments = [];
+  if (attachments) {
+    if (Array.isArray(attachments)) {
+      // If attachments is already an array (new format)
+      parsedAttachments = attachments;
+    } else if (typeof attachments === "string") {
+      // If attachments is a JSON string (old format)
+      parsedAttachments = safeParseJSON(attachments, []);
+    }
+  }
 
-  // Parse event_link if it exists
-  const parsedEventLink = event_link
-    ? safeParseJSON(event_link, null)
-    : null;
+  // Parse event_link if it exists - handle both object and JSON string
+  let parsedEventLink = null;
+  if (event_link) {
+    if (typeof event_link === "object" && event_link !== null && !Array.isArray(event_link)) {
+      // If event_link is already an object
+      parsedEventLink = event_link;
+    } else if (typeof event_link === "string" && event_link !== "null") {
+      // If event_link is a JSON string
+      parsedEventLink = safeParseJSON(event_link, null);
+    }
+  }
 
   return (
     <div className="group/item rounded-lg p-3 transition-all hover:bg-purple-50">
@@ -148,13 +162,13 @@ const Eventcard = ({
           {parsedAttachments.map((attachment, index) => (
             <a
               key={index}
-              href={attachment.url}
+              href={attachment.url ? attachment.url.trim() : "#"}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700"
             >
               <Download className="h-4 w-4" />
-              {attachment.caption || "Event Attachment"}
+              {attachment.caption ? attachment.caption.trim() : "Event Attachment"}
             </a>
           ))}
         </div>
@@ -162,7 +176,7 @@ const Eventcard = ({
 
       {/* Display links in flex-col to ensure vertical layout */}
       <div className="flex flex-col gap-2">
-        {doclink && (
+        {doclink && doclink.trim() !== "" && (
           <a
             href={doclink.trim()}
             target="_blank"
@@ -173,7 +187,7 @@ const Eventcard = ({
             Event Registration
           </a>
         )}
-        {parsedEventLink?.url && (
+        {parsedEventLink?.url && parsedEventLink.url.trim() !== "" && (
           <a
             href={parsedEventLink.url.trim()}
             target="_blank"
@@ -181,7 +195,9 @@ const Eventcard = ({
             className="flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700"
           >
             <ExternalLink className="h-4 w-4" />
-            Event Link
+            {parsedEventLink.caption && parsedEventLink.caption.trim() !== "" 
+              ? parsedEventLink.caption.trim() 
+              : "Event Link"}
           </a>
         )}
       </div>

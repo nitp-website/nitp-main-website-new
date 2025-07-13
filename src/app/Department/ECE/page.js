@@ -38,7 +38,7 @@ export default function ECE() {
       <div className="grid grid-cols-6 max-md:grid-cols-1">
         {/* Department Picture */}
         <div className="h-[500px] flex justify-start py-10 col-span-3 mr-4 max-sm:mr-0">
-          <Image
+          <img
             src="https://i.postimg.cc/RhqK6ZWb/ECE-Front-View-1.jpg"
             className="rounded-lg max-sm:rounded-none shadow-lg shadow-slate-600 h-full"
             alt="Logo"

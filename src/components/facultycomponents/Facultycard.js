@@ -18,12 +18,14 @@ function FacultyCard({
   phone,
   profileLink,
   researchLink, // Assuming you have a link for the full research interests
+  academic_responsibility,
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
   // const qualification = "Ph.D.(CSE),M.Tech.(CSE),B.E.(CSE)";
   // if (qualification == null) qualification = "";
   if (researchInterests == null) researchInterests = "";
+  const hasAcademicResponsibility = academic_responsibility && academic_responsibility.trim() !== "";
 
   const interestsArray = researchInterests.split(", ");
   const displayedInterests = interestsArray.slice(0, 3);
@@ -49,6 +51,9 @@ function FacultyCard({
   
         <div className="px-4">
           <h3 className="text-md text-black font-bold">{name}</h3>
+          {hasAcademicResponsibility && (
+            <h4 className="block text-[15px] text-[rgb(153,27,27)] font-medium capitalize">{academic_responsibility}</h4>
+          )}
           <h4 className="block text-[15px] text-[#4e5052] capitalize">{designation}</h4>
           {/* <h4 className="block text-[15px] text-[#4e5052] capitalize">{department}</h4> */}
         </div>

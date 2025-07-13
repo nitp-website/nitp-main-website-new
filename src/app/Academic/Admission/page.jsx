@@ -357,42 +357,66 @@ function handleClick(type) {
               {/* Notices Section */}
               <div className="lg:w-1/2">
                 <div className="bg-white rounded-xl shadow-md p-6 border border-red-100">
-                  <h2 className="text-2xl font-semibold mb-6 text-red-800 flex items-center">
-                    <AlertCircle className="w-6 h-6 mr-2 text-red-600" />
-                    Important Notices
-                  </h2>
-                  <div className="space-y-4">
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-2xl font-semibold text-red-800 flex items-center">
+                      <AlertCircle className="w-6 h-6 mr-2 text-red-600" />
+                      Important Notices
+                    </h2>
+                    <span className="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-1 rounded-full flex items-center">
+                      <span className="animate-pulse h-2 w-2 bg-red-600 rounded-full mr-2"></span>
+                      Latest Updates
+                    </span>
+                  </div>
+                  <div className="space-y-6">
                     {admissionData[selected].notices.length > 0 ? (
                       admissionData[selected].notices.map((notice, index) => (
                         <div 
                           key={index}
-                          className="bg-white rounded-lg shadow-sm overflow-hidden border border-red-100 hover:shadow-md transition-shadow"
+                          className="bg-white rounded-lg shadow-md overflow-hidden border-l-4 border-red-600 hover:shadow-lg transition-all duration-300"
                         >
-                          <div 
-                            className="flex justify-between items-center p-4 cursor-pointer bg-red-50 hover:bg-red-100 transition-colors"
-                            onClick={() => toggleNotice(index)}
-                          >
-                            <div>
-                              <Link className="font-bold text-red-800 hover:underline" href={notice.href?notice.href:"#"} target="_blank">{notice.title}</Link>
-                              {/* <p className="text-sm text-red-600 mt-1">
-                                {new Date(notice.date).toLocaleDateString('en-US', {
-                                  year: 'numeric',
-                                  month: 'long',
-                                  day: 'numeric'
-                                })}
-                              </p> */}
+                          <div className="relative">
+                            {/* Date badge */}
+                            <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-semibold py-1 px-3 rounded-bl-lg">
+                              {new Date(notice.date).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'short',
+                                day: 'numeric'
+                              })}
                             </div>
-                            {/* {expandedNotices[index] ? (
-                              <ChevronUp className="text-red-600" />
-                            ) : (
-                              <ChevronDown className="text-red-600" />
-                            )} */}
+                            
+                            {/* Notice icon */}
+                            <div className="absolute top-4 left-4 bg-red-50 p-2 rounded-full">
+                              <AlertCircle className="w-5 h-5 text-red-600" />
+                            </div>
+                            
+                            {/* Notice content */}
+                            <div 
+                              className="pl-16 pr-4 pt-4 pb-4 cursor-pointer"
+                              onClick={() => toggleNotice(index)}
+                            >
+                              <Link 
+                                className="font-bold text-gray-800 hover:text-red-700 block text-sm md:text-base leading-tight mb-2 transition-colors pt-2" 
+                                href={notice.href ? notice.href : "#"} 
+                                target="_blank"
+                              >
+                                {notice.title}
+                              </Link>
+                              
+                              <div className="flex justify-between items-center">
+                                <p className="text-xs text-gray-600">
+                                  {notice.content}
+                                </p>
+                                <Link 
+                                  href={notice.href ? notice.href : "#"}
+                                  target="_blank"
+                                  className="flex items-center gap-1 text-xs font-medium text-red-600 hover:text-red-800 transition-colors bg-red-50 hover:bg-red-100 py-1 px-3 rounded-full"
+                                >
+                                  <ExternalLink className="w-3 h-3" />
+                                  View
+                                </Link>
+                              </div>
+                            </div>
                           </div>
-                          {/* {expandedNotices[index] && (
-                            <div className="p-4 bg-white border-t border-red-50">
-                              <a className="text-gray-700 hover:text-blue-700" href={notice.href?notice.href:"#"}>{notice.content}</a>
-                            </div>
-                          )} */}
                         </div>
                       ))
                     ) : (
