@@ -1,3 +1,4 @@
+import { url } from "inspector"
 
 
 const Deans = [
@@ -39,28 +40,33 @@ const Deans = [
     name: "Prof. A. R. Quaff",
     designation: "Associate Dean , Exam",
     type: "examoffice@nitp.ac.in",
+    url: "https://www.nitp.ac.in/profile/arquaff@nitp.ac.in",
    },
       {
     name: "Dr. Vimlesh Verma",
     designation: "Associate Dean, Student Welfare",
     type: "",
+    url: "https://www.nitp.ac.in/profile/vimlesh.verma@nitp.ac.in",
    },
      {
     name: "Dr. Om Ji Shukla",
     designation: "Associate Dean, Student Welfare",
     type: "",
+     url: "https://www.nitp.ac.in/profile/omjishukla.me@nitp.ac.in",
    },
 
          {
     name: "Dr. Subodh Srivastava",
     designation: "Associate Dean, Student Welfare",
     type: "",
-   },
+    url: "https://www.nitp.ac.in/profile/subodh@nitp.ac.in",
    
-      {
+   },
+   {
     name: "Dr. Abhimanyu Kumar",
     designation: "Associate Dean, Student Welfare",
     type: "",
+    url: "https://www.nitp.ac.in/profile/abhimanyu.cs@nitp.ac.in",
    },
     
 

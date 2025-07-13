@@ -22,7 +22,7 @@ const FacultyHeader = ({ Data }) => {
     book_chapters,
   } = facultyData || {};
 
-  const { name, email, designation, cv, department, ext_no } = profile || {};
+  const { name, email, designation, cv, department, ext_no, academic_responsibility } = profile || {};
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -92,6 +92,9 @@ const FacultyHeader = ({ Data }) => {
         <div className="flex flex-col min-[475px]:flex-row justify-between bg-white gap-4">
           <div>
             <h1 className="text-2xl font-bold">{name}</h1>
+            {academic_responsibility && (
+              <p className="text-[rgb(153,27,27)] font-medium">{academic_responsibility}</p>
+            )}
             <p className="font-semibold">{designation}</p>
             <p className="font-semibold">{department}</p>
             {email && (

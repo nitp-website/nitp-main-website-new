@@ -102,6 +102,7 @@ const Sidebar = ({ Data }) => {
     orcid,
     google_scholar,
     research_interest,
+    academic_responsibility,
   } = profile || {};
 
   const [aboutMeData, setAboutMeData] = useState(Data.about_me);
@@ -156,6 +157,9 @@ const Sidebar = ({ Data }) => {
           <div className="flex flex-col min-[475px]:flex-row justify-between bg-white gap-4">
             <div>
               <h1 className="text-2xl font-bold">{name}</h1>
+              {academic_responsibility && (
+                <p className="text-[rgb(153,27,27)] font-medium">{academic_responsibility}</p>
+              )}
               <p className="font-semibold">{designation}</p>
               <p className="font-semibold">{department}</p>
               {email && (

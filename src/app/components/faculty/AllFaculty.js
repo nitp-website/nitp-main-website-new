@@ -13,6 +13,7 @@ const FacultyCard = ({
   email,
   phone,
   profileLink,
+  academic_responsibility,
 }) => {
   return (
     <div className="w-[300px] h-[325px] mx-4 my-4">
@@ -32,6 +33,11 @@ const FacultyCard = ({
 
         <div className="px-4">
           <h3 className="text-md text-black font-bold">{name}</h3>
+          {academic_responsibility && (
+            <h4 className="block text-[15px] text-[rgb(153,27,27)] font-medium capitalize">
+              {academic_responsibility}
+            </h4>
+          )}
           <h4 className="block text-[15px] text-[#4e5052] capitalize">
             {designation}
           </h4>
@@ -78,6 +84,13 @@ const FacultyCard = ({
 const AllFaculty = () => {
   const [facultyData, setFacultyData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [organizedFaculty, setOrganizedFaculty] = useState({
+    deans: [],
+    hods: [],
+    professors: [],
+    associateProfessors: [],
+    assistantProfessors: []
+  });
   const excludedDepartments = ["Other Employees", "Officers"];
 
   useEffect(() => {
@@ -94,6 +107,57 @@ const AllFaculty = () => {
           a.name.localeCompare(b.name)
         );
         setFacultyData(sortedData);
+        
+        // Organize faculty into categories
+        const deans = sortedData.filter(faculty => 
+          faculty.academic_responsibility && 
+          faculty.academic_responsibility.toLowerCase().startsWith("dean")
+        );
+        
+        // Get IDs of faculty who are deans
+        const deanIds = new Set(deans.map(faculty => faculty.id));
+        
+        // Filter faculty by designation, excluding those who are already counted as deans
+        const hods = sortedData.filter(faculty => 
+          !deanIds.has(faculty.id) && 
+          [
+            "Professor & HOD",
+            "Associate Professor & HOD",
+            "Professor & HoD",
+            "Associate Professor & HoD",
+            "HoD & Professor",
+            "HoD & Associate Professor",
+            "HoD and Professor",
+          ].includes(faculty.designation)
+        );
+        
+        // Get IDs of faculty who are either deans or HODs
+        const renderedIds = new Set([
+          ...deans.map(faculty => faculty.id),
+          ...hods.map(faculty => faculty.id)
+        ]);
+        
+        // Filter remaining faculty by designation
+        const professors = sortedData.filter(faculty => 
+          !renderedIds.has(faculty.id) && faculty.designation === "Professor"
+        );
+        
+        const associateProfessors = sortedData.filter(faculty => 
+          !renderedIds.has(faculty.id) && faculty.designation === "Associate Professor"
+        );
+        
+        const assistantProfessors = sortedData.filter(faculty => 
+          !renderedIds.has(faculty.id) && faculty.designation === "Assistant Professor"
+        );
+        
+        setOrganizedFaculty({
+          deans,
+          hods,
+          professors,
+          associateProfessors,
+          assistantProfessors
+        });
+        
         setLoading(false);
       } catch (error) {
         console.error("Error fetching faculty data:", error);
@@ -108,24 +172,22 @@ const AllFaculty = () => {
     return <Loading />;
   }
 
-  const renderFacultiesByDesignation = (designations, title) => {
-    const filteredFaculties = facultyData.filter((faculty) =>
-      designations.includes(faculty.designation)
-    );
-
-    if (filteredFaculties.length === 0) return null;
+  // Render a section of faculty
+  const renderFacultySection = (facultyList, title) => {
+    if (!facultyList || facultyList.length === 0) return null;
 
     return (
       <div key={title} className="mb-8">
         <h2 className="text-2xl font-bold text-black">{title}</h2>
         <div className="flex flex-wrap justify-center gap-4 p-4 mt-2">
-          {filteredFaculties.map((faculty) => (
+          {facultyList.map((faculty) => (
             <FacultyCard
               key={faculty.id}
               name={faculty.name}
               image={faculty.image}
-              department= {faculty.department}
+              department={faculty.department}
               designation={faculty.designation}
+              academic_responsibility={faculty.academic_responsibility}
               email={faculty.email}
               phone={faculty.ext_no}
               profileLink={`/profile/${faculty.email}`}
@@ -138,27 +200,11 @@ const AllFaculty = () => {
 
   return (
     <div className="mx-auto px-4 py-8">
-      {renderFacultiesByDesignation(
-        [
-          "Professor & HOD",
-          "Associate Professor & HOD",
-          "Professor & HoD",
-          "Associate Professor & HoD",
-          "HoD & Professor",
-          "HoD & Associate Professor",
-          "HoD and Professor",
-        ],
-        "Head of Department"
-      )}
-      {renderFacultiesByDesignation(["Professor"], "Professor")}
-      {renderFacultiesByDesignation(
-        ["Associate Professor"],
-        "Associate Professor"
-      )}
-      {renderFacultiesByDesignation(
-        ["Assistant Professor"],
-        "Assistant Professor"
-      )}
+      {renderFacultySection(organizedFaculty.deans, "Deans")}
+      {renderFacultySection(organizedFaculty.hods, "Head of Department")}
+      {renderFacultySection(organizedFaculty.professors, "Professor")}
+      {renderFacultySection(organizedFaculty.associateProfessors, "Associate Professor")}
+      {renderFacultySection(organizedFaculty.assistantProfessors, "Assistant Professor")}
     </div>
   );
 };

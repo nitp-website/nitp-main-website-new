@@ -9,7 +9,10 @@ import { useRouter } from "next/navigation"
 export default function Page() {
     const router = useRouter();
     return (
-        <div className="flex justify-center py-10 px-0 text-black bg-[url('https://i.postimg.cc/GtvY6WhY/6402687-3274764.jpg')] bg-cover bg-center ">
+        <div className="flex justify-center py-10 px-0 text-black" style={{
+      background: '#ffd6d6',
+      background: 'linear-gradient(90deg,rgba(255, 191, 191, 1) 0%, rgba(255, 245, 227, 1) 50%, rgba(255, 209, 209, 1) 100%)'
+      }}>
             <div className="flex flex-col w-full bg-transparent">
                 {/* heading */}
                 <div className="font-bold text-3xl text-red-900 flex justify-center">DEPARTMENTS</div>

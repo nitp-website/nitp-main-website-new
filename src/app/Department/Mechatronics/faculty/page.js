@@ -110,26 +110,29 @@ const Home = () => {
       </div>
 
       {/* Render only available tabs */}
-      <div className="mt-2 mb-10 flex space-x-1 w-full justify-center">
-        {tabOptions.map((tab, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setFaculty(tab.key === "faculty");
-              setStaff(tab.key === "staff");
-              setPhd(tab.key === "phd");
-            }}
-            className={`border border-black rounded px-2 ${
-              (faculty && tab.key === "faculty") ||
-              (staff && tab.key === "staff") ||
-              (phd && tab.key === "phd")
-                ? "text-white bg-red-900"
-                : "text-red-900"
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
+      <div className="mt-6 mb-12 flex flex-wrap justify-center">
+        <div className="flex bg-gray-100 p-1 rounded-xl shadow-sm">
+          {tabOptions.map((tab, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setFaculty(tab.key === "faculty");
+                setStaff(tab.key === "staff");
+                setPhd(tab.key === "phd");
+              }}
+              className={`px-6 py-2.5 text-sm font-medium transition-all duration-200 rounded-lg mx-1 
+                ${
+                (faculty && tab.key === "faculty") ||
+                (staff && tab.key === "staff") ||
+                (phd && tab.key === "phd")
+                  ? "bg-red-700 text-white shadow-md transform scale-105"
+                  : "bg-white text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {faculty && hasFaculty && (
