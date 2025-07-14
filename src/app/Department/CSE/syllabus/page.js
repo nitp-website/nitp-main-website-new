@@ -1279,7 +1279,7 @@ export default function Page() {
                                 url={"#"}
                             />
                             <SyllabusComp
-                                dep={"-"}
+                                dep={"CSE"}
                                 sem={"1"}
                                 code={"EA010201"}
                                 title={"EAA-II Swachha Bharat Mission (SBM)"}
@@ -1693,17 +1693,6 @@ export default function Page() {
                                 url={"#"}
                             />
 
-                            <SyllabusComp
-                                dep={"CSE"}
-                                sem={"Elective"}
-                                code={"CS080202"}
-                                title={"Comprehensive Viva Voce"}
-                                L={"-"}
-                                T={"-"}
-                                P={"-"}
-                                cred={"2"}
-                                url={"#"}
-                            />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"Elective"}
