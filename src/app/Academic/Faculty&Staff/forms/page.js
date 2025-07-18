@@ -26,7 +26,7 @@ const categorizedContent = {
       dlink: "https://drive.google.com/file/d/167jo8PmiS5lR5bhe9fGDwbadWr-Lvb28/view?usp=drivesdk"
     }
   ],
-  "Accounts Forms": [
+  "Finance and Account Forms": [
     {
       name: "Advance Form",
       dlink: "https://drive.google.com/file/d/1_C08oxqao4yYfHsQo6q7tA9am99FIbpF/view?usp=drivesdk"
@@ -34,6 +34,10 @@ const categorizedContent = {
     {
       name: "Income Tax declaration form",
       dlink: "https://docs.google.com/spreadsheets/d/1852IWuph_vyjk61hVualmnDSh5Jdnl31/edit?usp=sharing"
+    },
+    {
+      name: "Bill for Direct Payment By Finance & Account Section.",
+      dlink: "https://drive.google.com/file/d/13LB_4cl49dLuZAmo6RrkR5hpQPqB6KUT/view?usp=sharing"
     }
   ],
   "Leave Forms": [
