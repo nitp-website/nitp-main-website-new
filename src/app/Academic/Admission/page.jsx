@@ -73,6 +73,12 @@ const admissionData = {
     ],
     notices: [
       {
+        title: "List of Provisionally Eligible Candidates for Admission Test for PhD Admission(July-Dec 2025 semester)",
+        date: "2025-07-16",
+        content: "List of Provisionally Eligible Candidates for Admission Test for PhD Admission(July-Dec 2025 semester)",
+        href:"https://drive.google.com/file/d/1IyO4eewagzeUitqI-3YXCNjirFwmDedt/view"
+      },
+      {
         title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2025-26 (Odd Semester: July–December 2025). Last date: 14th July 2025",
         date: "2025-06-10",
         content: "Admission Notice for the PhD Programme for the Academic Session 2025–26",

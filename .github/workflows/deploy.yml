@@ -26,14 +26,14 @@ jobs:
     - name: 🔑 Login to Docker Hub
       uses: docker/login-action@v3
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        username: ${{ secrets.DOCKERHUB_USERNAME_Aashish }}
+        password: ${{ secrets.DOCKERHUB_Password_Aashish }}
 
     - name: 📋 Extract metadata for Docker
       id: meta
       uses: docker/metadata-action@v5
       with:
-        images: ${{ secrets.DOCKERHUB_USERNAME }}/nitp-website
+        images: ${{ secrets.DOCKERHUB_USERNAME_Aashish }}/nitp-main-website
         tags: |
           type=raw,value=latest
           type=sha,prefix=
@@ -48,33 +48,14 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
-    - name: 🚀 Deploy to Server (optional)
-      if: ${{ vars.ENABLE_SERVER_DEPLOY == 'true' }}
-      uses: appleboy/ssh-action@v1.0.3
+    - name: 🚀 Deploy to Server
+      uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.EC2_HOST }}
-        username: ubuntu
+        username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT || 22 }}
         script: |
-          set -e
-          
-          # Configuration
-          APP_NAME="nitp-website"
-          APP_PORT="3002"
-          IMAGE_NAME="${{ secrets.DOCKERHUB_USERNAME }}/nitp-website:latest"
-          
-          echo "🔄 Pulling latest Docker image..."
-          sudo docker pull $IMAGE_NAME
-          
-          echo "🛑 Stopping old container if exists..."
-          sudo docker stop $APP_NAME 2>/dev/null || true
-          sudo docker rm $APP_NAME 2>/dev/null || true
-          
-          echo "🚀 Starting new container..."
-          sudo docker run -d --restart=always -p $APP_PORT:3002 --name $APP_NAME $IMAGE_NAME
-          
-          echo "🧹 Cleaning up old images..."
-          sudo docker system prune -f
-          
-          echo "✅ Deployment complete!"
+          echo "Connected to EC2 server"
+          ./run-nitp-main.sh
+          echo "Completed"

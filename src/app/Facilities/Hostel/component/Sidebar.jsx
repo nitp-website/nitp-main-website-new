@@ -25,6 +25,11 @@ const Sidebar = ({ onLinkClick }) => {
       link: "/Contacts",
       icon: <SlCalender size={20} />,
     },
+    {
+      title: "Official Forms",
+      link: "/Official_Forms",
+      icon: <SlCalender size={20} />,
+    }
   ];
 
   return (

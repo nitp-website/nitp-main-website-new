@@ -91,7 +91,7 @@ const AllFaculty = () => {
     associateProfessors: [],
     assistantProfessors: []
   });
-  const excludedDepartments = ["Other Employees", "Officers"];
+  const excludedDepartments = ["Other Employees", "Officers","developer","Developer"];
 
   useEffect(() => {
     const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=all`;
