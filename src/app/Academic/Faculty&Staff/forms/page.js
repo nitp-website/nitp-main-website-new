@@ -24,6 +24,10 @@ const categorizedContent = {
     {
       name: "Security Gate Pass",
       dlink: "https://drive.google.com/file/d/167jo8PmiS5lR5bhe9fGDwbadWr-Lvb28/view?usp=drivesdk"
+    },
+     {
+      name: "Guest House Booking ",
+      dlink: "https://drive.google.com/file/d/1Wu8JtnAgpKUGXHQZ9XXLriiTHqHOZQNm/view?usp=sharing"
     }
   ],
   "Finance and Account Forms": [
