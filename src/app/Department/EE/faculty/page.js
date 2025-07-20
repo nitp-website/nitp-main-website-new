@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DeptStaffcard from "../../../components/faculty/DeptStaff";
 import PhdCandidate from "../../../components/faculty/PhdCandidate";
+import StaffcardDept from "../../../components/faculty/StaffcardDept";
+import staffData from "../../staffEE";
 
 const Home = () => {
   const [faculty, setFaculty] = useState(true);
@@ -14,7 +16,6 @@ const Home = () => {
   const [phdInfo, setPhdInfo] = useState([]);
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedFaculty, setSelectedFaculty] = useState("");
-  const [staffData, setStaffData] = useState([]);
 
   const fetchPhd = async () => {
     try {
@@ -85,8 +86,7 @@ const Home = () => {
 
   // Check if data is available for each section
   const hasFaculty = true; // Faculty is always present
-  const hasStaff =
-    staffData.find((dept) => dept.department === "EE")?.staff.length > 0;
+  const hasStaff = staffData.find((dept) => dept.department === "EE")?.staff.length > 0;
   const hasPhd = phdInfo.length > 0;
 
   // Dynamically create tab options based on available data
@@ -147,7 +147,7 @@ const Home = () => {
             {staffData
               .find((dept) => dept.department === "EE")
               ?.staff.map((staffMember, index) => (
-                <DeptStaffcard key={index} {...staffMember} />
+                <StaffcardDept key={index} {...staffMember} />
               ))}
           </div>
         </div>
