@@ -48,7 +48,7 @@ function StaffCard({
               <h3 className="text-lg font-bold text-gray-800 mb-1 line-clamp-2">{name}</h3>
               <h4 className="text-sm font-medium text-red-800 flex items-center justify-center gap-1 mb-2">
                 <FontAwesomeIcon icon={faIdCard} className="w-3 h-3" />
-                <span className="line-clamp-1">{designation}</span>
+                <span className="text-unwrap">{designation}</span>
               </h4>
             </div>
           </div>
