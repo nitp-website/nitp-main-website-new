@@ -72,6 +72,12 @@ const admissionData = {
       },
     ],
     notices: [
+       {
+        title: "Provisional list of candidates for Interview to PhD Program(July-Dec'2025)",
+        date: "2025-07-21",
+        content: "Provisional list of candidates for Interview to PhD Program(July-Dec'2025)",
+        href:"https://drive.google.com/file/d/1pP42caNC3qgjX19mba9E1hyAWD2boavY/view?usp=sharing"
+      },
       {
         title: "List of Provisionally Eligible Candidates for Admission Test for PhD Admission(July-Dec 2025 semester)",
         date: "2025-07-16",
