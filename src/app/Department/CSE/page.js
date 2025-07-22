@@ -5,7 +5,7 @@ import { DepartmentNavigationButton } from "../../components/department/Departme
 import DepartmentNotify1 from "../../components/department/DepartmentNotify1";
 import {useRouter} from 'next/navigation';
 import { useEffect, useState } from "react";
-
+import timeTableData from '../TimeTable.json';
 
 
 const picture = ["/ee-feature1.png","/ee-feature2.png","/ee-feature3.png"]
@@ -18,6 +18,9 @@ export default function CSE() {
     const [feature , setFeature] = useState("/ee-feature1.png")
     const [it, setIt]= useState(0);
     const [Notices, setNotices] = useState([]);
+    const cseTimeTable = timeTableData.find(
+        (item) => item.name === 'Computer Science and Engineering'
+      );
     useEffect(()=>{
       const getData = async()=>{
         const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=cse`);
@@ -134,9 +137,9 @@ export default function CSE() {
           onClick={() => router.push('/Department/CSE/syllabus')}
           Title={'SYLLABUS'}
         />
-          <DepartmentNavigationButton
-          onClick={() => router.push('/Department/CSE/timeTable')}
-          Title={'TIME TABLE'}
+         <DepartmentNavigationButton
+            onClick={() => window.open(cseTimeTable?.url, '_blank')}
+            Title={'TIME TABLE'}
           />
         <DepartmentNavigationButton
           onClick={() => router.push('/Department/CSE/labs')}

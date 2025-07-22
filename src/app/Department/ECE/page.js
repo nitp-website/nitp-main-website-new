@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
-
+import timeTableData from '../TimeTable.json';
 
 
 
@@ -16,6 +16,9 @@ import axios from 'axios';
 export default function ECE() {
   const router = useRouter()
   const [Notices, setNotices] = useState([]);
+  const eceTimeTable = timeTableData.find(
+    (item) => item.name === 'Electronics and Communication Engineering'
+  );
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=ece`);
@@ -121,7 +124,7 @@ export default function ECE() {
           />
 
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/ECE/timeTable')}
+            onClick={() => window.open(eceTimeTable?.url, '_blank')}
             Title={'TIME TABLE'}
           />
 

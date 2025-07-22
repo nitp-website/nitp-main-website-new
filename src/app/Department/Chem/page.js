@@ -6,15 +6,7 @@ import Image from "next/image"
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-const Notices = [
-  {
-    id: 1,
-    notice: "No any notice for now",
-    link: ""
-  },
-
-]
+import timeTableData from '../TimeTable.json';
 
 
 
@@ -23,6 +15,9 @@ const Notices = [
 export default function Chem() {
   const router = useRouter();
   const [Notices, setNotices] = useState([]);
+  const cheTimeTable = timeTableData.find(
+    (item) => item.name === 'Chemical Science and Technology'
+  );
   useEffect(()=>{
     const getData = async()=>{
       const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=che`);
@@ -124,7 +119,7 @@ export default function Chem() {
           />
 
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/Chem/timeTable')}
+            onClick={() => window.open(cheTimeTable?.url, '_blank')}
             Title={'TIME TABLE'}
           />
 
