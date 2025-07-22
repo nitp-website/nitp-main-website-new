@@ -6,14 +6,14 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-
-
-
+import timeTableData from '../TimeTable.json';
 
 export default function Math() {
   const router = useRouter();
   const [Notices, setNotices] = useState([]);
+  const mathTimeTable = timeTableData.find(
+    (item) => item.name === 'Mathematics and Computing Technology'
+  );
   useEffect(()=>{
     const getData = async()=>{
       const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=maths`);
@@ -109,7 +109,7 @@ export default function Math() {
             Title={'SYLLABUS'}
           />
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/Math/timeTable')}
+            onClick={() => window.open(mathTimeTable?.url, '_blank')}
             Title={'TIME TABLE'}
           />
 
