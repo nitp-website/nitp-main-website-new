@@ -5,6 +5,10 @@ import { Download } from 'lucide-react';
 function Page() {
     const data = [
         {
+            name: "EE Dept Time Table for the Class July- Dec 2025 (Odd Semster)",
+            link: "https://drive.google.com/file/d/1zHEVCFa5SJeR6KMePjJjPiRCIVlX7I3k/view?usp=sharing"
+        },
+        {
             name: "EE Dept Time Table for the Class Jan- June 2025 (Even Semster)",
             link: "https://drive.google.com/file/d/18ixY0wSxktNUZra0mlrrSP8rBOJi25ZQ/view"
         },
