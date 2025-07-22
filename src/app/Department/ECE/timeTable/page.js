@@ -4,8 +4,8 @@ import { Download } from 'lucide-react';
 function Page() {
   const data = [
     {
-      name: "ECE Dept Time Table for the Class Jan- June 2025 (Even Semster)",
-      link: "https://drive.google.com/file/d/1X_eDpLqfacN904yAgOiaYm-H8GlM5YKm/view"
+      name: "Time Table",
+      link: "https://drive.google.com/drive/folders/1ngQXceuabl0NDdicyoUtQPKLPAKbr8wS?usp=sharing"
     },
   ];
   return (
