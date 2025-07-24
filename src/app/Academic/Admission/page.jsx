@@ -53,7 +53,13 @@ const admissionData = {
       },
     ],
     notices: [
-     {
+       {
+        title: "Physical reporting notice for admission to M.Tech/M.Arch/MURP through CCMT 2025 and DRDO Sponsored candidates",
+        date: "2025-07-24",
+        content: "Physical reporting notice for admission to M.Tech/M.Arch/MURP through CCMT 2025 and DRDO Sponsored candidates",
+        href:"https://drive.google.com/file/d/1FctrG7liIhq3rQO7ViRKYFrs6PYeAjFh/view?usp=sharing"
+      },
+        {
         title: "Physical reporting schedule for admission to PG Programme through CCMT and NIMCET for the Academic year 2025-26",
         date: "2025-07-10",
         content: "PG Admission",
@@ -72,6 +78,21 @@ const admissionData = {
       },
     ],
     notices: [
+       {
+        title: "Physical reporting notice for admission to PhD ( July_Dec'2025)",
+        date: "2025-07-24",
+        content: "Physical reporting notice for admission to PhD ( July_Dec'2025)",
+        href:"https://drive.google.com/file/d/1VpDmpYqowP6kqoP1ZVyGd0gBwSqiJ9PO/view?usp=sharing"
+      },
+
+       {
+        title: "List of Eligible Candidates for PhD admission July-Dec'2025",
+        date: "2025-07-24",
+        content: "List of Eligible Candidates for PhD admission July-Dec'2025",
+        href:"https://drive.google.com/file/d/1X8zagb-MA7rEJOlJLpJIuXE5hJNo3J2B/view?usp=sharing"
+      },
+
+      
        {
         title: "Provisional list of candidates for Interview to PhD Program(July-Dec'2025)",
         date: "2025-07-21",
