@@ -31,6 +31,12 @@ const admissionData = {
     ],
     notices: [
       {
+        title: "Physical reporting notice for Admission to B.Tech./B.Arch./Dual Degree (B.Tech+M.Tech) Programmes through JoSAA/CSAB/DASA/Study in India (SII)-2025",
+        date: "2025-07-25",
+        content: "UG Admission",
+        href:"https://drive.google.com/file/d/1Nd4LmG-jk-L-H4SoV9lH2uTzww_pHM21/view?usp=sharing"
+      },
+      {
         title: "Physical reporting schedule for admission to UG Programme through JoSAA/CSAB/DASA/SII for the Academic year 2025-26",
         date: "2025-07-10",
         content: "UG Admission",
@@ -56,7 +62,7 @@ const admissionData = {
        {
         title: "Physical reporting notice for admission to M.Tech/M.Arch/MURP through CCMT 2025 and DRDO Sponsored candidates",
         date: "2025-07-24",
-        content: "Physical reporting notice for admission to M.Tech/M.Arch/MURP through CCMT 2025 and DRDO Sponsored candidates",
+        content: "PG Admission",
         href:"https://drive.google.com/file/d/1FctrG7liIhq3rQO7ViRKYFrs6PYeAjFh/view?usp=sharing"
       },
         {
@@ -81,14 +87,14 @@ const admissionData = {
        {
         title: "Physical reporting notice for admission to PhD ( July_Dec'2025)",
         date: "2025-07-24",
-        content: "Physical reporting notice for admission to PhD ( July_Dec'2025)",
+        content: "PhD Admission",
         href:"https://drive.google.com/file/d/1VpDmpYqowP6kqoP1ZVyGd0gBwSqiJ9PO/view?usp=sharing"
       },
 
        {
         title: "List of Eligible Candidates for PhD admission July-Dec'2025",
         date: "2025-07-24",
-        content: "List of Eligible Candidates for PhD admission July-Dec'2025",
+        content: "PhD Admission",
         href:"https://drive.google.com/file/d/1X8zagb-MA7rEJOlJLpJIuXE5hJNo3J2B/view?usp=sharing"
       },
 
@@ -96,25 +102,25 @@ const admissionData = {
        {
         title: "Provisional list of candidates for Interview to PhD Program(July-Dec'2025)",
         date: "2025-07-21",
-        content: "Provisional list of candidates for Interview to PhD Program(July-Dec'2025)",
+        content: "PhD Admission",
         href:"https://drive.google.com/file/d/1pP42caNC3qgjX19mba9E1hyAWD2boavY/view?usp=sharing"
       },
       {
         title: "List of Provisionally Eligible Candidates for Admission Test for PhD Admission(July-Dec 2025 semester)",
         date: "2025-07-16",
-        content: "List of Provisionally Eligible Candidates for Admission Test for PhD Admission(July-Dec 2025 semester)",
+        content: "PhD Admission",
         href:"https://drive.google.com/file/d/1IyO4eewagzeUitqI-3YXCNjirFwmDedt/view"
       },
       {
         title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2025-26 (Odd Semester: July–December 2025). Last date: 14th July 2025",
         date: "2025-06-10",
-        content: "Admission Notice for the PhD Programme for the Academic Session 2025–26",
+        content: "PhD Admission",
         href:"https://drive.google.com/file/d/1AgEe_gQWy0rM_Az5DZil5ERMdUj-fFze/view"
       },
           {
         title: "SOP for PhD admission Academic Year 2025-26.",
         date: "2025-06-10",
-        content: "SOP for PhD admission Academic Year 2025-26",
+        content: "PhD Admission",
         href:"https://drive.google.com/file/d/1FGeVnEinF1Fp5pTHTPNcZUbskSfyyj5S/view?usp=sharing"
       }
     ]
