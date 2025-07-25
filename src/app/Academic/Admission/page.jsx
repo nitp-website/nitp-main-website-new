@@ -131,6 +131,12 @@ const admissionData = {
     ],
     notices: [
       {
+        title: "Physical reporting notice for admission to MCA through  NIMCET-2025",
+        date: "2025-07-23",
+        content: "Physical reporting notice for admission to MCA through  NIMCET-2025",
+        href:"https://drive.google.com/file/d/1wlBUzmL-ZFq8-_4_uG20qtQFEp0qGUEo/view?usp=sharing"
+      },
+        {
         title: "Physical reporting schedule for admission to PG Programme through CCMT and NIMCET for the Academic year 2025-26",
         date: "2025-07-10",
         content: "PG Admission",
