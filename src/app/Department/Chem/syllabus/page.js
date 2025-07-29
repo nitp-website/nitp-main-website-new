@@ -2,18 +2,42 @@
 
 import BackDepartment from "../../../components/department/BackDepartment"
 import { useState } from "react";
+import { FaDownload } from "react-icons/fa";
 
 function ActComp({ title, content }) {
     return (
         <div className="flex flex-col mt-8 lg:ml-10">
-            <p className="text-xl lg:text-2xl font-semibold mb-4">
-                {title}
-            </p>
+            <div className="flex items-center justify-between mb-4">
+                <p className="text-xl lg:text-2xl font-semibold">
+                    {title}
+                </p>
+                <div className="flex gap-2">
+                    <a
+                        href="https://drive.google.com/file/d/1x-nOKpQYw6kwxfEeSxGJ_SaSni_5ye43/view"
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-red-900 text-white px-4 py-2 rounded hover:bg-red-800 text-sm flex items-center gap-2"
+                    >
+                        <FaDownload />
+                        Curriculum (2025 Onwards)
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/1b3vTSk1rma-S4JAPOtpZWNErhh2_BGk6/view"
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-red-900 text-white px-4 py-2 rounded hover:bg-red-800 text-sm flex items-center gap-2"
+                    >
+                        <FaDownload />
+                        Curriculum (2023 & 2024)
+                    </a>
+                </div>
+            </div>
             <ul>
                 {content.map((points, i) => {
                     return (
-                        <li key={i} className="list-disc ml-4 text-sm lg:text-base
-                        pb-2">
+                        <li key={i} className="list-disc ml-4 text-sm lg:text-base pb-2">
                             {points}
                         </li>
                     )
