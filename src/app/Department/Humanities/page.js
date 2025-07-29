@@ -6,54 +6,15 @@ import DepartmentNotify1 from '../../components/department/DepartmentNotify'
 import Image from 'next/image'
 import {useRouter} from 'next/navigation';
 import { useEffect, useState } from "react";
+import timeTableData from '../TimeTable.json';
 
-// const Notices = [
-//   {
-//     id: 1,
-//     notice: 'Master Time-Table July-Dec.2023',
-//     link: 'https://drive.google.com/file/d/15MN9uSLnkBhyibh4BjxZ7nDun97LrO5v/a',
-//   },
-//   {
-//     id: 2,
-//     notice: 'Communicative English Lab Viva-Vove Schedule (UG & DD.1st Semester) July-Dec 2022',
-//     link: 'https://drive.google.com/file/d/1a9GhlTCxBzWOpvHqLfLjyAWk4_Bw30d2/view',
-//   },
-//   {
-//     id: 3,
-//     notice: 'UG_6th & M.SC 8th Sem OPEN Elective Time-Table_HSS Dept (Jan-June 2023)',
-//     link: 'https://drive.google.com/file/d/1BzW9dupGBPKRVQ6iWvISY8kUgb7U0WLQ/view',
-//   },
-//   {
-//     id: 4,
-//     notice: 'MTech-PhD Time Table_HSS Dept ( JAN -JUNE 2023)',
-//     link: 'https://drive.google.com/file/d/1lgdJlHUIJKrPqxgC2sTS0lJ3m6RqpCXD/view',
-//   },
-//   {
-//     id: 5,
-//     notice: 'Schedule of Comprehensive Viva of Saraswati Keshri, Roll no 215HS008',
-//     link: 'https://drive.google.com/file/d/1bSsERrTDGUKNJqOk9an116lEEqTDyH0d/view',
-//   },
-//   {
-//     id: 6,
-//     notice: 'Schedule of Comprehensive Viva of Sneha Das, Roll no 215HS002',
-//     link: 'https://drive.google.com/file/d/1UNVjS2cHEJeEtBNyxGULjO-EDiDa-bCe/view',
-//   },
-
-//   {
-//     id: 7,
-//     notice: 'Schedule of Open Viva-Voce Examination of Maryam Sabreen, Roll no. 165HS01',
-//     link: 'https://drive.google.com/file/d/1AObYsaKVMew-ZnqWSZ1y4qYbxz1TTOd6/view',
-//   },
-//   {
-//     id: 8,
-//     notice: 'Schedule of End Sem Viva-Voce Examination for UG (AR, CSE, ECE) 2nd Semester.',
-//     link: 'https://drive.google.com/file/d/1KfJqDtLwCvyRgz0SI-tV1mxW44EyUc7y/view',
-//   },
-// ]
 
 export default function Humanities() {
   const router = useRouter()
   const [Notices, setNotices] = useState([]);
+  const hssTimeTable = timeTableData.find(
+    (item) => item.name === 'Humanities and Social Sciences'
+  );
   useEffect(()=>{
     const getData = async()=>{
       const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=hss`);
@@ -145,7 +106,7 @@ export default function Humanities() {
           />
 
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/Humanities/time-table')}
+            onClick={() => window.open(hssTimeTable?.url, '_blank')}
             Title={'Time Table'}
           />
 

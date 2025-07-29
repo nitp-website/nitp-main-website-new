@@ -1,6 +1,10 @@
 import BackDepartment from "../../../components/department/BackDepartment";
 
 
+
+
+
+
 export default function achivments(){
     return (
         <div className=" flex flex-col p-10 max-sm:p-2 h-screen text-black">  

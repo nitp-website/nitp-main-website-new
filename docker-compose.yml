@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  nitp-website:
+    # First, try to build locally if the image doesn't exist in Docker Hub yet
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    # Also specify the image name for Watchtower to track
+    image: nitpatnagithub/nitp-website:latest
+    container_name: nitp-main-website
+    ports:
+      - "3002:3002"
+    environment:
+      - NEXT_PUBLIC_BACKEND_API_URL=https://admin.nitp.ac.in
+      - NEXT_PUBLIC_YOUR_API_KEY=${NEXT_PUBLIC_YOUR_API_KEY}
+      - NEXT_PUBLIC_CURRENT_URL=https://nitp.ac.in
+      - NEXT_PUBLIC_Home=web.nitp.ac.in
+      - NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=${NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+      - ANALYZE=${ANALYZE}
+      - NODE_ENV=production
+      - PORT=3002
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3002/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    networks:
+      - nitp-network
+
+  # Watchtower automatically updates containers when their images change
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 300 --cleanup --label-enable
+    environment:
+      - WATCHTOWER_NOTIFICATIONS=shoutrrr
+      - WATCHTOWER_NOTIFICATION_URL=${NOTIFICATION_URL:-}
+    restart: unless-stopped
+    networks:
+      - nitp-network
+
+networks:
+  nitp-network:
+    driver: bridge

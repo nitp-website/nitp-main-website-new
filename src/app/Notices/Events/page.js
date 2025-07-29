@@ -1,7 +1,6 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import "../../components/Home/styles/Details.css";
 import { Calendar, MapPin, Download, ExternalLink } from 'lucide-react';
 
@@ -105,7 +104,15 @@ const Page = () => {
         
         // Sort events by updatedAt timestamp in descending order (most recent first)
         const sortedEvents = response.data.sort((a, b) => {
-          return new Date(b.updatedAt) - new Date(a.updatedAt);
+          const dateA = new Date(parseInt(a.updatedAt));
+          const dateB = new Date(parseInt(b.updatedAt));
+          
+          // Check if dates are valid
+          if (isNaN(dateA.getTime()) && isNaN(dateB.getTime())) return 0;
+          if (isNaN(dateA.getTime())) return 1;
+          if (isNaN(dateB.getTime())) return -1;
+          
+          return dateB - dateA;
         });
 
         setEvents(sortedEvents);
@@ -273,8 +280,16 @@ const Page = () => {
               <p>No events available.</p>
             ) : (
               events.map((event, index) => {
-                const startDate = new Date(event.eventStartDate);
-                const endDate = new Date(event.eventEndDate);
+                // Safely parse event dates
+                const parseEventDate = (dateValue) => {
+                  if (!dateValue) return new Date();
+                  const timestamp = typeof dateValue === 'string' ? parseInt(dateValue) : dateValue;
+                  const date = new Date(timestamp);
+                  return isNaN(date.getTime()) ? new Date() : date;
+                };
+
+                const startDate = parseEventDate(event.eventStartDate);
+                const endDate = parseEventDate(event.eventEndDate);
                 const dayStart = startDate.getDate();
                 const monthStart = startDate.getMonth() + 1;
                 const yearStart = startDate.getFullYear();
@@ -301,5 +316,9 @@ const Page = () => {
     </div>
   );
 };
+
+
+
+
 
 export default Page;

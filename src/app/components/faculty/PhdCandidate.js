@@ -47,47 +47,70 @@ const PhdCandidate = ({ data }) => {
   const yearsSpent = startYear
     ? endYear
       ? endYear - startYear
-      : "Ongoing"
+      : current_status === "Completed" || current_status === "Awarded"
+        ? "Unknown" // If status is completed but no end year, show "Unknown"
+        : "Ongoing" // Otherwise show "Ongoing"
     : "N/A";
 
   return (
-    <div className="w-[400px] h-[250px] bg-gradient-to-br from-white to-slate-50 border-2 border-[rgb(153,27,27)] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-      <div className="relative">
-        {/* Name and Status Section */}
-        <div className="flex items-center justify-between">
-          <div>
-            <h5 className="text-[rgb(153,27,27)] font-bold text-xl">{name}</h5>
+    <div className="w-full lg:w-1/3 md:w-1/2 sm:w-full px-3 mb-6">
+      <div className="h-full bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
+        {/* Header with status badge */}
+        <div className="relative bg-gradient-to-r from-gray-50 to-white p-4 border-b border-gray-100">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-xl font-bold text-gray-800">{name}</h3>
+            <div
+              className={`px-3 py-1 ${
+                current_status === "Completed" || current_status === "Awarded"
+                  ? "bg-green-600"
+                  : "bg-red-700"
+              } text-white text-xs font-medium rounded-full shadow-sm`}
+            >
+              {current_status}
+            </div>
           </div>
-          <div
-            className={`px-4 py-1.5 ${
-              current_status === "Completed" || current_status === "Awarded"
-                ? "bg-green-900"
-                : "bg-[rgb(153,27,27)]"
-            } text-white text-sm font-medium rounded-full`}
-          >
-            {current_status}
-          </div>
-        </div>
-
-        {/* Decorative Line */}
-        <div className="absolute w-full h-px mt-1 bg-[rgb(153,27,27)]"></div>
-        {/* <p className="text-gray-600 text-md mt-1 italic">{college}</p> */}
-
-        <div className="text-gray-700 text-md mt-1">
-          <span className="font-semibold text-md">{registration_type}</span>{" "}
           
+          {/* Registration type with year info */}
+          <div className="flex items-center text-sm text-gray-600">
+            <span className="font-semibold">{registration_type}</span>
+            {startYear && (
+              <span className="ml-2 px-2 py-0.5 bg-gray-100 rounded-md text-gray-700">
+                {startYear} {endYear ? `- ${endYear}` : "- Present"}
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Details Section */}
-        <div className="mt-2">
-          <p className="text-gray-700 text-md">
-            <span className="font-semibold">Supervisor:</span>{" "}
-            <span className="ml-1">{supervisor}</span>
-          </p>
-        </div>
-        <div className="mt-1 text-gray-700 text-sm">
-          <span className="font-semibold text-md">Research Area:</span>{" "}
-          {research_area}
+        <div className="p-4 space-y-3">
+          {/* Supervisor Section */}
+          <div className="flex flex-col">
+            <div className="flex items-center">
+              <div className="w-1 h-4 bg-red-700 rounded-full mr-2"></div>
+              <p className="text-sm font-semibold text-gray-700">Supervisor</p>
+            </div>
+            <p className="text-sm pl-3 text-gray-600 mt-1">{supervisor}</p>
+          </div>
+          
+          {/* Research Area Section */}
+          <div className="flex flex-col">
+            <div className="flex items-center">
+              <div className="w-1 h-4 bg-red-700 rounded-full mr-2"></div>
+              <p className="text-sm font-semibold text-gray-700">Research Area</p>
+            </div>
+            <p className="text-xs pl-3 text-gray-600 mt-1 line-clamp-3">{research_area}</p>
+          </div>
+          
+          {/* Years spent (if applicable) */}
+          {yearsSpent !== "N/A" && (
+            <div className="flex items-center justify-end mt-2">
+              <span className="text-xs px-2 py-1 bg-gray-100 rounded-full text-gray-600">
+                {yearsSpent === "Unknown" || yearsSpent === "Ongoing" 
+                  ? `Status: ${yearsSpent}` 
+                  : `Duration: ${yearsSpent} ${yearsSpent !== 1 ? "years" : "year"}`}
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </div>

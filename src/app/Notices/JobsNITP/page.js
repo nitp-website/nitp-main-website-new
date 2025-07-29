@@ -18,7 +18,13 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
 
         <div className="flex items-center gap-2 my-3 text-gray-500 text-sm">
           <Calendar className="w-4 h-4" />
-          <span>{new Date(time).toLocaleDateString()}</span>
+          <span>{(() => {
+            if (!time) return "Invalid Date";
+            const timestamp = typeof time === 'string' ? parseInt(time) : time;
+            if (isNaN(timestamp)) return "Invalid Date";
+            const date = new Date(timestamp);
+            return isNaN(date.getTime()) ? "Invalid Date" : date.toLocaleDateString();
+          })()}</span>
         </div>
 
         <div className="space-y-2">
@@ -276,5 +282,9 @@ const Page = () => {
     </div>
   );
 };
+
+
+
+
 
 export default Page;

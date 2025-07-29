@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 
 import "./style.css"
-import Image from 'next/image';
 
 const StaffResources = [
     
@@ -69,13 +68,10 @@ const StudentResourcesPage = () => {
             <div className=" mx-auto my-auto relative bg-white bg-clip-padding p-3 bg-opacity-80 rounded-md border-2 border-red-100 shadow-md transition duration-300 w-11/12 h-32 cardstudent" >
               <div className="relative h-16 w-16 items-center justify-center mx-auto">
                 <img
-                loading='lazy'
+                  loading="lazy"
                   src={resource.image}
                   alt={resource.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg h-11/12 w-11/12"
-                  
+                  className="rounded-lg h-full w-full object-cover"
                 />
               </div>
               <div className="text-center mt-1">
@@ -90,6 +86,10 @@ const StudentResourcesPage = () => {
     </div>
   );
 };
+
+
+
+
 
 export default StudentResourcesPage;
 

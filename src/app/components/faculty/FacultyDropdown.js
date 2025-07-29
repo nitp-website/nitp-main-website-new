@@ -14,7 +14,7 @@ import {
   FaUserGraduate,
   FaUserTie,
 } from "react-icons/fa";
-import { TbCertificate, TbFileCertificate } from "react-icons/tb";
+import { TbFileCertificate } from "react-icons/tb";
 
 // import facultyData from "../data/facultyData";
 import PhdCandidates from "./menuItems/PhdCandidates";

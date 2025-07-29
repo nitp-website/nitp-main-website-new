@@ -1,7 +1,9 @@
 "use client"
 import BackDepartment from "../../../components/department/BackDepartment";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+
+
+
+
 
 
 export default function Page() {

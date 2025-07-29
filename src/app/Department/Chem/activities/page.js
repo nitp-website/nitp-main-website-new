@@ -1,5 +1,4 @@
 import BackDepartment from "../../../components/department/BackDepartment"
-import Image from "next/image"
 
 const ActComp = ({ title, date, venue, speaker, img, head, sno }) => {
     return (
@@ -27,14 +26,7 @@ const ActComp = ({ title, date, venue, speaker, img, head, sno }) => {
                             <span className='text-lg font-medium'>Title:</span> {title}
                         </p>
                     </div>
-                    {img ? <Image
-                        src={img}
-                        width={500}
-                        height={500}
-                        alt="images"
-                        quality={100}
-                        className='mt-4 w-[430px] md:w-[500px] lg:w-[600px] lg:mt-0 rounded-lg bg-red-200'
-                    /> : <div></div>}
+                    {img ? <img src={img} width={500} height={500} alt="images" className='mt-4 w-[430px] md:w-[500px] lg:w-[600px] lg:mt-0 rounded-lg bg-red-200' loading="lazy" /> : <div></div>}
                 </div>
             </div>
         </div>
@@ -128,4 +120,8 @@ function Page() {
 
     )
 }
+
+
+
+
 export default Page

@@ -3,6 +3,10 @@
 import BackDepartment from "../../../components/department/BackDepartment"
 import { useState } from 'react'
 
+
+
+
+
 export default function Page() {
   const [ug, setUg] = useState(true)
   // const [pg, setPg] = useState(false)
@@ -1438,7 +1442,7 @@ export default function Page() {
         </div>
         <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
           <li className="hover:text-blue-800">
-            <a className='' href="https://drive.google.com/file/d/1tv0bgOzuhangYPr2imItc6uMfTB2z2cB/view">
+            <a className='' href="https://drive.google.com/file/d/1MPFriB_DYxQwIA99uRKgBfj-fwGVcU24/view?usp=sharing">
              Mathematics and Computing Technology (5 Years, Bachelor and Master of Technology(Dual Degree))
             </a>
           </li>

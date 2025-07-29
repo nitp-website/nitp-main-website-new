@@ -6,6 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserGraduate, faSchool, faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import './Ipage.css';
 
+
+
+
+
 export default function InstitutePage() {
   const searchParams = useSearchParams();
   const pathname = usePathname();

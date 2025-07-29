@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import QRCode from "qrcode";
 
 import { CgProfile } from "react-icons/cg";
@@ -103,6 +102,7 @@ const Sidebar = ({ Data }) => {
     orcid,
     google_scholar,
     research_interest,
+    academic_responsibility,
   } = profile || {};
 
   const [aboutMeData, setAboutMeData] = useState(Data.about_me);
@@ -125,11 +125,11 @@ const Sidebar = ({ Data }) => {
           <div className="flex justify-center p-2 rounded-md">
             {image ? (
               <div className="relative h-[200px] w-auto max-w-full">
-                <Image
+                <img
                   src={image}
                   alt="Profile Image"
-                  height={200} // Fixed height
-                  width={200} // A default width (will be overridden)
+                  height={200}
+                  width={200}
                   className="mx-auto rounded-3xl w-auto max-w-full"
                   loading="lazy"
                   style={{ objectFit: "cover", height: "200px", width: "auto" }}
@@ -157,6 +157,9 @@ const Sidebar = ({ Data }) => {
           <div className="flex flex-col min-[475px]:flex-row justify-between bg-white gap-4">
             <div>
               <h1 className="text-2xl font-bold">{name}</h1>
+              {academic_responsibility && (
+                <p className="text-[rgb(153,27,27)] font-medium">{academic_responsibility}</p>
+              )}
               <p className="font-semibold">{designation}</p>
               <p className="font-semibold">{department}</p>
               {email && (

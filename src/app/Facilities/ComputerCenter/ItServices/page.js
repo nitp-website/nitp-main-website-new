@@ -1,6 +1,9 @@
-import Head from "next/head";
 import Sidebar from ".././components/Sidebar";
 import Carousel from ".././components/Carousel";
+
+
+
+
 
 export default function Home() {
   const  text = `

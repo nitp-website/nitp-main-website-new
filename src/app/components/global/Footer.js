@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import "./styles/Footer.css";
-import { Calendar, MapPin, Download, ExternalLink, CloudIcon, HeartIcon, TwitterIcon, LinkedinIcon, FacebookIcon, GlobeIcon, MailIcon, PhoneIcon } from 'lucide-react';
+import { MapPin, CloudIcon, HeartIcon, TwitterIcon, LinkedinIcon, FacebookIcon, GlobeIcon, MailIcon, PhoneIcon } from 'lucide-react';
 
 const Footer = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -113,6 +113,7 @@ const Footer = () => {
               <li><Link href="/Others/NewCampus" className="hover:text-gray-300">New Campus</Link></li>
               <li><Link href="/Others/RTI" className="hover:text-gray-300">RTI</Link></li>
               <li><Link href="/Institute/Magazine" className="hover:text-gray-300">Magazine(Vol.4)</Link></li>
+              <li><Link href="/Academic/Admission?type=study_in_india" className="hover:text-gray-300">Study In India</Link></li>
             </ul>
           </div>
 

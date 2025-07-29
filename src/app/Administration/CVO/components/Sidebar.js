@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import { FaHome, FaUserFriends, FaCalendarAlt, FaPhotoVideo } from 'react-icons/fa';
+import { FaHome, FaPhotoVideo } from 'react-icons/fa';
 
 const Sidebar = () => {
   const pathname = usePathname();

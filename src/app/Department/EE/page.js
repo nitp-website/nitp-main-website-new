@@ -6,12 +6,14 @@ import DepartmentNotify1 from '../../components/department/DepartmentNotify1'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import axios from 'axios';
-
-
+import timeTableData from '../TimeTable.json';
 
 export default function EE() {
   const router = useRouter()
   const [Notices, setNotices] = useState([]);
+  const eeTimeTable = timeTableData.find(
+    (item) => item.name === 'Electrical Engineering'
+  );
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=ee`);
@@ -104,7 +106,7 @@ export default function EE() {
           />
 
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/EE/timeTable')}
+            onClick={() => window.open(eeTimeTable?.url, '_blank')}
             Title={'Time Table'}
           />
 

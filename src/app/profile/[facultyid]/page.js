@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React from 'react'
 import FacultyInfo from "../../components/faculty/FacultyInfo";
 const page = () => {
   
@@ -9,5 +9,9 @@ const page = () => {
     </div>
   )
 }
+
+
+
+
 
 export default page

@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 function FacultyCards(props) {
   return (
@@ -8,12 +7,13 @@ function FacultyCards(props) {
          [transform-style:preserve-3d]">
             <div className="absolute flex flex-col items-center w-full h-full
             p-5 bg-amber-50 [backface-visibility:hidden]">
-                <Image
+                <img
                     src={props.img}
                     alt="profile-pic"
                     height="240"
                     width="240"
                     className="mt-2 h-[150px] w-[150px] rounded-lg"
+                    loading="lazy"
                 />
                 <div className="mt-6">
                     <p className="text-red-900 font-semibold text-center">

@@ -29,7 +29,7 @@ const DeansPage = () => {
               name={item.name}
               designation={item.designation}
               type={item.type}
-              
+              url={item.url}
             />
           </div>
         ))}
@@ -37,5 +37,9 @@ const DeansPage = () => {
     </div>
   );
 };
+
+
+
+
 
 export default DeansPage;

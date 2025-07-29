@@ -1,6 +1,8 @@
-
 import BackDepartment from "../../../components/department/BackDepartment"
-import Image from "next/image"
+
+
+
+
 
 export default function activities(){
     return (
@@ -36,7 +38,7 @@ function ACTcomponent({title, content, image}){
                     </div>
                     <div className=" flex justify-center">
                         <div className="flex flex-col">
-                            <Image src={image} width={400} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg bg-rose-200" />
+                            <img src={image} width={400} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg bg-rose-200" loading="lazy" />
                         </div>
                     </div>
                 </div>

@@ -31,8 +31,32 @@ const FacultyList = ({ url, branch }) => {
           "Temporary Faculty"
         ];
 
-        // Sorting the faculty data based on the order of designations
+        // Sorting the faculty data based on the order of designations and academic_responsibility
         const sortedData = data.sort((a, b) => {
+          const aIsHoD = a.designation.includes("HoD");
+          const bIsHoD = b.designation.includes("HoD");
+          
+          // HoD always comes first, regardless of academic responsibility
+          if (aIsHoD && !bIsHoD) {
+            return -1; // a (HoD) comes before b
+          }
+          if (!aIsHoD && bIsHoD) {
+            return 1; // b (HoD) comes before a
+          }
+          
+          // If neither is HoD or both are HoD, then check for Dean
+          const aIsDean = a.academic_responsibility?.startsWith("Dean");
+          const bIsDean = b.academic_responsibility?.startsWith("Dean");
+          
+          // If one is Dean and the other isn't, prioritize the Dean
+          if (aIsDean && !bIsDean) {
+            return -1; // Dean comes before non-Dean
+          }
+          if (!aIsDean && bIsDean) {
+            return 1; // Dean comes before non-Dean
+          }
+          
+          // If both are Deans or neither is Dean, use the regular designation order
           return order.indexOf(a.designation) - order.indexOf(b.designation);
         });
 
@@ -90,6 +114,7 @@ const FacultyList = ({ url, branch }) => {
               designation={faculty.designation}
               department={faculty.department}
               researchInterests={faculty.research_interest}
+              academic_responsibility={faculty.academic_responsibility}
               email={faculty.email}
               phone={faculty.ext_no}
               profileLink={`/profile/${faculty.email}`}
@@ -108,6 +133,7 @@ const FacultyList = ({ url, branch }) => {
                 designation={faculty.designation}
                 department={faculty.department}
                 researchInterests={faculty.research_interest}
+                academic_responsibility={faculty.academic_responsibility}
                 email={faculty.email}
                 phone={faculty.ext_no}
                 profileLink={`${url}/${faculty.email}`}

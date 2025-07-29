@@ -25,6 +25,28 @@ const RecruitmentProcess = () => {
               </tr>
             </thead>
             <tbody>
+  
+    
+          <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
+                <td className="text-left px-6 py-4 text-gray-800">
+                  <p className="leading-relaxed">
+                 List of Candidates Shortlisted for Stage-II Presentation – Assistant Professor (Grade-II), Pay Level-10/AGP 6000, Department of Computer Science & Engineering
+                  </p>
+                </td>
+                <td className="text-center px-6 py-4">
+                  <div className="flex flex-col items-center gap-2">
+                    <a
+                      href="https://drive.google.com/file/d/1zWg5XUD5BlUbdfD5vnEfBDczNhHMJITY/view?usp=sharing"
+                      download
+                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Download
+                    </a>
+                  </div>
+                </td>
+              </tr>
+    
               <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
                 <td className="text-left px-6 py-4 text-gray-800">
                   <p className="leading-relaxed">
@@ -90,7 +112,11 @@ const RecruitmentProcess = () => {
                 <td className="text-center px-6 py-4">
                   <div className="flex flex-col items-center gap-2">
                     <a
-                      href="https://drive.google.com/uc?export=download&id=1kBRuNhxo8gm-Zz-balhXd4ByJjjJETV4"
+                      href="https://drive.google.com/uc?
+
+
+
+export=download&id=1kBRuNhxo8gm-Zz-balhXd4ByJjjJETV4"
                       download
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
                     >

@@ -7,16 +7,36 @@ import "./styles/Details.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FiDownload } from 'react-icons/fi';
-import { Calendar, MapPin, Download, ExternalLink, Info, BellRing, AlertOctagon, CircleDot, Star } from 'lucide-react';
+import { Calendar, MapPin, Download, ExternalLink, Star } from 'lucide-react';
 
 
 // FormatDate component
 const FormatDate = ({ time }) => {
+  // Validate the time value
+  if (!time || time === null || time === undefined) {
+    return <>Invalid Date</>;
+  }
+
+  // Convert to number if it's a string
+  const timestamp = typeof time === 'string' ? parseInt(time) : time;
+  
+  // Check if the timestamp is valid
+  if (isNaN(timestamp) || timestamp <= 0) {
+    return <>Invalid Date</>;
+  }
+
+  const date = new Date(timestamp);
+  
+  // Check if the date is valid
+  if (isNaN(date.getTime())) {
+    return <>Invalid Date</>;
+  }
+
   const formattedDate = new Intl.DateTimeFormat("en-GB", {
     day: "2-digit",
     month: "short",
     year: "numeric",
-  }).format(new Date(time));
+  }).format(date);
 
   return <>{formattedDate}</>;
 };
@@ -100,15 +120,29 @@ const Eventcard = ({
     }
   };
 
-  // Parse attachments from JSON string
-  const parsedAttachments = typeof attachments === "string"
-    ? safeParseJSON(attachments, [])
-    : [];
+  // Parse attachments - handle both array objects and JSON strings
+  let parsedAttachments = [];
+  if (attachments) {
+    if (Array.isArray(attachments)) {
+      // If attachments is already an array (new format)
+      parsedAttachments = attachments;
+    } else if (typeof attachments === "string") {
+      // If attachments is a JSON string (old format)
+      parsedAttachments = safeParseJSON(attachments, []);
+    }
+  }
 
-  // Parse event_link if it exists
-  const parsedEventLink = event_link
-    ? safeParseJSON(event_link, null)
-    : null;
+  // Parse event_link if it exists - handle both object and JSON string
+  let parsedEventLink = null;
+  if (event_link) {
+    if (typeof event_link === "object" && event_link !== null && !Array.isArray(event_link)) {
+      // If event_link is already an object
+      parsedEventLink = event_link;
+    } else if (typeof event_link === "string" && event_link !== "null") {
+      // If event_link is a JSON string
+      parsedEventLink = safeParseJSON(event_link, null);
+    }
+  }
 
   return (
     <div className="group/item rounded-lg p-3 transition-all hover:bg-purple-50">
@@ -128,13 +162,13 @@ const Eventcard = ({
           {parsedAttachments.map((attachment, index) => (
             <a
               key={index}
-              href={attachment.url}
+              href={attachment.url ? attachment.url.trim() : "#"}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700"
             >
               <Download className="h-4 w-4" />
-              {attachment.caption || "Event Attachment"}
+              {attachment.caption ? attachment.caption.trim() : "Event Attachment"}
             </a>
           ))}
         </div>
@@ -142,7 +176,7 @@ const Eventcard = ({
 
       {/* Display links in flex-col to ensure vertical layout */}
       <div className="flex flex-col gap-2">
-        {doclink && (
+        {doclink && doclink.trim() !== "" && (
           <a
             href={doclink.trim()}
             target="_blank"
@@ -153,7 +187,7 @@ const Eventcard = ({
             Event Registration
           </a>
         )}
-        {parsedEventLink?.url && (
+        {parsedEventLink?.url && parsedEventLink.url.trim() !== "" && (
           <a
             href={parsedEventLink.url.trim()}
             target="_blank"
@@ -161,7 +195,9 @@ const Eventcard = ({
             className="flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700"
           >
             <ExternalLink className="h-4 w-4" />
-            Event Link
+            {parsedEventLink.caption && parsedEventLink.caption.trim() !== "" 
+              ? parsedEventLink.caption.trim() 
+              : "Event Link"}
           </a>
         )}
       </div>
@@ -417,11 +453,27 @@ const Details = () => {
               events
                 .sort((a, b) => {
                   // Sort by updatedAt in descending order (most recent first)
-                  return new Date(b.updatedAt) - new Date(a.updatedAt);
+                  const dateA = new Date(parseInt(a.updatedAt));
+                  const dateB = new Date(parseInt(b.updatedAt));
+                  
+                  // Check if dates are valid
+                  if (isNaN(dateA.getTime()) && isNaN(dateB.getTime())) return 0;
+                  if (isNaN(dateA.getTime())) return 1;
+                  if (isNaN(dateB.getTime())) return -1;
+                  
+                  return dateB - dateA;
                 })
                 .map((event, index) => {
-                  const startDate = new Date(event.eventStartDate);
-                  const endDate = new Date(event.eventEndDate);
+                  // Safely parse event dates
+                  const parseEventDate = (dateValue) => {
+                    if (!dateValue) return new Date();
+                    const timestamp = typeof dateValue === 'string' ? parseInt(dateValue) : dateValue;
+                    const date = new Date(timestamp);
+                    return isNaN(date.getTime()) ? new Date() : date;
+                  };
+
+                  const startDate = parseEventDate(event.eventStartDate);
+                  const endDate = parseEventDate(event.eventEndDate);
                   const dayStart = startDate.getDate();
                   const monthStart = startDate.getMonth() + 1;
                   const yearStart = startDate.getFullYear();

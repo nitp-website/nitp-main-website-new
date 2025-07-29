@@ -6,10 +6,14 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import axios from "axios";
 import { useEffect, useState } from "react";
+import timeTableData from '../TimeTable.json';
 
 export default function Humanities() {
   const router = useRouter();
   const [Notices, setNotices] = useState([]);
+  const mechatronicsTimeTable = timeTableData.find(
+    (item) => item.name === 'Mechatronics and Automation Engineering'
+  );
   useEffect(()=>{
     const getData = async()=>{
       const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=mae`);
@@ -22,7 +26,7 @@ export default function Humanities() {
     <div className="p-10 max-sm:px-0 text-black">
       {/* heading */}
       <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 mb-2">
-        Mechatronics and Automation
+        Mechatronics and Automation Engineering
       </div>
       <BackDepartment navigate={"/Department"} />
       {/* Section 1 */}
@@ -104,7 +108,7 @@ export default function Humanities() {
             Title={'SYLLABUS'}
           />
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/Mechatronics/timeTable')}
+            onClick={() => window.open(mechatronicsTimeTable?.url, '_blank')}
             Title={'Time Table'}
           />
           {/* <DepartmentNavigationButton

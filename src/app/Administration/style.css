@@ -1,7 +1,7 @@
 .admincarddiv {
   display: flex;
   padding: 5rem;
-  row-gap: 50px;
+  row-gap: 30px;
   height: auto;
   align-items: flex-start;
   justify-content: space-evenly;
@@ -18,7 +18,7 @@
 @media (max-width: 768px) {
   .admincarddiv {
     margin: 0px;
-    row-gap: 35px;
+    row-gap: 25px;
     padding: 0px;
   }
 }

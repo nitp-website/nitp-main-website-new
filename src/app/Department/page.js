@@ -1,12 +1,18 @@
 "use client"
 
-import Image from "next/image";
 import { useRouter } from "next/navigation"
+
+
+
+
 
 export default function Page() {
     const router = useRouter();
     return (
-        <div className="flex justify-center py-10 px-0 text-black bg-[url('https://i.postimg.cc/GtvY6WhY/6402687-3274764.jpg')] bg-cover bg-center ">
+        <div className="flex justify-center py-10 px-0 text-black" style={{
+      background: '#ffd6d6',
+      background: 'linear-gradient(90deg,rgba(255, 191, 191, 1) 0%, rgba(255, 245, 227, 1) 50%, rgba(255, 209, 209, 1) 100%)'
+      }}>
             <div className="flex flex-col w-full bg-transparent">
                 {/* heading */}
                 <div className="font-bold text-3xl text-red-900 flex justify-center">DEPARTMENTS</div>
@@ -37,7 +43,12 @@ function DepartmentNavigateButton({ department, onClick, icon }) {
             <div className="flex justify-center">
                 <div className="w-[90%] h-[230px] max-sm:w-full py-1 md:py-2 rounded-lg shadow-lg  bg-white border-2 border-re-50 hover:border-red-900 active:text-white text-1xl font-semibold text-red-900 flex flex-col justify-center">
                     <div className="flex justify-center mb-2">
-                        <Image className="" width={100} height={100} alt="" src={`${icon}`} />
+                        <img 
+                            className="w-[100px] h-[100px] object-contain" 
+                            loading="lazy"
+                            alt={department} 
+                            src={`${icon}`} 
+                        />
                     </div>
                     <div>{department}</div>
                 </div>

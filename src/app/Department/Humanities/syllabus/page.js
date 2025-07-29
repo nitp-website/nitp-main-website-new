@@ -4,6 +4,10 @@ import BackDepartment from "../../../components/department/BackDepartment";
 import { useState } from "react"
 
 
+
+
+
+
 export default function Page() {
     const [ug, setUg] = useState(true);
 

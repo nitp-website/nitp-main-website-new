@@ -6,12 +6,19 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
+import timeTableData from '../TimeTable.json';
+
+
+
 
 
 
 export default function ECE() {
   const router = useRouter()
   const [Notices, setNotices] = useState([]);
+  const eceTimeTable = timeTableData.find(
+    (item) => item.name === 'Electronics and Communication Engineering'
+  );
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=ece`);
@@ -34,7 +41,7 @@ export default function ECE() {
       <div className="grid grid-cols-6 max-md:grid-cols-1">
         {/* Department Picture */}
         <div className="h-[500px] flex justify-start py-10 col-span-3 mr-4 max-sm:mr-0">
-          <Image
+          <img
             src="https://i.postimg.cc/RhqK6ZWb/ECE-Front-View-1.jpg"
             className="rounded-lg max-sm:rounded-none shadow-lg shadow-slate-600 h-full"
             alt="Logo"
@@ -77,17 +84,19 @@ export default function ECE() {
           <div className="text-justify max-sm:text-[12px]">
             The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students. The department is dedicated to providing quality education at both undergraduate (UG) and postgraduate levels. Currently, it offers the following programs:
             <br />
-            1. B.Tech in "Electronics & Communication Engineering" with an intake of 161.
+            1.B.Tech in "Electronics & Communication Engineering" with an intake of 100.
             <br />
-            2. Dual degree (B.Tech + M.Tech) in "Microelectronics and VLSI System Design" with an intake of 22.
+            2.B.Tech in Electronics Engineering (VLSI Design and Technology) with an intake of 80.
             <br />
-            3. M.Tech in:
+            3.Dual degree (B.Tech + M.Tech) in "Microelectronics and VLSI System Design" with an intake of 22.
             <br />
-            &nbsp;&nbsp;&nbsp;(a) "Next Generation Wireless Technologies" with an intake of 22.
+            4. M.Tech in:
             <br />
-            &nbsp;&nbsp;&nbsp;(b) "Microelectronics and VLSI System Design" with an intake of 22.
+            &nbsp;&nbsp;&nbsp;(a) Next Generation Wireless Technologies" with an intake of 15.
             <br />
-            4. Ph.D. (Full-time and Part-time) in Electronics and Communication Engineering.
+            &nbsp;&nbsp;&nbsp;(b) Microelectronics and VLSI System Design" with an intake of 15.
+            <br />
+            5.Ph.D. (Full-time and Part-time) in Electronics and Communication Engineering.
             <br />
             <button
               onClick={() => router.push('/Department/ECE/about')}
@@ -115,7 +124,7 @@ export default function ECE() {
           />
 
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/ECE/timeTable')}
+            onClick={() => window.open(eceTimeTable?.url, '_blank')}
             Title={'TIME TABLE'}
           />
 

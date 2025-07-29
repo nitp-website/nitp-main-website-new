@@ -2,6 +2,7 @@
 import PeopleCard from "./PeopleCard";
 import dean_img from "./Dean.png";
 import img1 from "./1.webp";
+import faculty from "./faculty.jpeg";
 
 export default function PeopleList() {
   const Deanery = [
@@ -25,7 +26,7 @@ export default function PeopleList() {
     {
       id: 2,
       name: "Abhishek Baisya",
-      image: "",
+      image: faculty,
       designation: "SAS Assistant",
       email: "ab@nitp.ac.in",
     },
@@ -36,13 +37,13 @@ export default function PeopleList() {
       {
         id: 1,
         name: "Bablu Choudhary",
-        image: "",
+        image: faculty,
         designation: "SAC care taker",
         email: "",
       },{
       id: 2,
       name: "Avinash Kumar",
-      image: "",
+      image: faculty,
       designation: "Mali",
       email: "",
     },

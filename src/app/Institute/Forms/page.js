@@ -149,4 +149,8 @@ const FeeStructureTable = () => {
   );
 };
 
+
+
+
+
 export default FeeStructureTable;

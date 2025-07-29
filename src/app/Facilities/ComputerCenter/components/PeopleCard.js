@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
@@ -17,12 +16,13 @@ export default function PeopleCard({
         <div className="inline-block h-[130px] w-[130px] mb-8 z-[1] relative">
           <div className="absolute w-full h-0 rounded-full bg-[rgb(153,27,27)] bottom-[135%] right-0 left-0 opacity-90 scale-[3] transition-all duration-300 group-hover:h-full"></div>
           <div className="absolute w-full h-full rounded-full bg-[rgb(153,27,27)] top-0 left-0 -z-[1]"></div>
-          <Image
-            src={image || "/faculty.jpeg"}
+          <img
+            src={image}
             alt={name}
             width={130}
             height={130}
             className="w-[130px] h-[130px] object-cover rounded-full transform scale-100 transition-all duration-900 ease-in-out group-hover:shadow-[0_0_0_14px_#f7f5ec] group-hover:scale-[0.7]"
+            loading="lazy"
           />
         </div>
         <div className="px-4">
@@ -53,7 +53,7 @@ export default function PeopleCard({
               </a>
             </li>
           )}
-                    {profileLink && (
+          {profileLink && (
             <li className="inline-block">
               <a
                 href={profileLink}

@@ -2,6 +2,10 @@
 
 import BackDepartment from "../../../components/department/BackDepartment";
 import { useState } from "react"
+
+
+
+
 export default function Page() {
     const [ug, setUg] = useState(false);
     const [ug2021, setUg2021] = useState(false);
@@ -13,6 +17,7 @@ export default function Page() {
     const [mcaai, setmcaai] = useState(false);
     const [pgd, setPgd] = useState(false);
     const [pgc, setPgc] = useState(false);
+    const [ugai_ds, setUgai_ds] = useState(false);
     return (
         <div className=" flex flex-col p-10 max-sm:p-2 text-black">
             <div className="flex flex-col mb-3">
@@ -34,6 +39,7 @@ export default function Page() {
                 <div className="mb-10 flex space-x-1 overflow-x-auto ">
                     <div className="min-w-[800px] flex space-x-1 text-sm lg:text-base">
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setDualCyber(false);
                             setPhd(false);
@@ -46,6 +52,20 @@ export default function Page() {
                             setUg(false)
                         }} className={`border border-black rounded ${(ug2022) ? "text-white bg-red-900" : "text-red-900"} px-2`}>B.Tech (Computer Science and Engineering)</button>
                         <button onClick={() => {
+                            setUgai_ds(true);
+                            setUg2021(false);
+                            setDualCyber(false);
+                            setPhd(false);
+                            setDualData(false);
+                            setUg2022(false);
+                            setPgc(false);
+                            setPgd(false);
+                            setmcad(false)
+                            setmcaai(false)
+                            setUg(false)
+                        }} className={`border border-black rounded ${(ugai_ds) ? "text-white bg-red-900" : "text-red-900"} px-2`}>B.Tech (Artificial Intelligence & Data Science)</button>
+                        <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setDualCyber(true);
                             setPgc(false);
@@ -58,6 +78,7 @@ export default function Page() {
                             setUg(false);
                         }} className={`border border-black rounded ${(dualCyber) ? "text-white bg-red-900" : "text-red-900"} px-2`}> B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Cyber Security)</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setDualCyber(false);
                             setPhd(false);
@@ -70,6 +91,7 @@ export default function Page() {
                             setUg(false);
                         }} className={`border border-black rounded ${(dualData) ? "text-white bg-red-900" : "text-red-900"} px-2`}> B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Data Science)</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setPgc(false);
                             setPgd(true);
@@ -82,6 +104,7 @@ export default function Page() {
                             setUg(false);
                         }} className={`border border-black rounded ${(pgd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech (Data Science and Engineering)</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setPgc(true);
                             setPgd(false);
@@ -94,6 +117,7 @@ export default function Page() {
                             setmcaai(false)
                         }} className={`border border-black rounded ${(pgc) ? "text-white bg-red-900" : "text-red-900"} px-2`}>M.Tech (Cyber Security)</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setPgc(false);
                             setPgd(false);
@@ -106,6 +130,7 @@ export default function Page() {
                             setmcaai(false)
                         }} className={`border border-black rounded ${(mcad) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in AI & IoT</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setPgc(false);
                             setPgd(false);
@@ -118,6 +143,7 @@ export default function Page() {
                             setmcaai(true)
                         }} className={`border border-black rounded ${(mcaai) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in Data Science & Informatics</button>
                         <button onClick={() => {
+                            setUgai_ds(false);
                             setUg2021(false);
                             setDualCyber(false);
                             setDualData(false);
@@ -1182,8 +1208,1050 @@ export default function Page() {
                         </div>
                     </div>
                 </div>
+
+             {/**B.Tech (Artificial Intelligence and Data Science) */}
+            
+             <div className={`mb-10 ${(ugai_ds == false) ? "hidden" : ""}`}>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">B.Tech (Artificial Intelligence and Data Science):-</div>
+                    <div className=" overflow-x-auto">
+                        <div className="border grid grid-cols-12 min-w-[1100px]">
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Sem / Electives</div>
+                            <div className="col-span-2 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Course Code</div>
+                            <div className="col-span-4 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Course Title</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">L</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">T</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"1"}
+                                code={"CS010201"}
+                                title={"Programming in C"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"MCT"}
+                                sem={"1"}
+                                code={"MC010201"}
+                                title={"Mathematical Foundation for AI"}
+                                L={"3"}
+                                T={"1"}
+                                P={"0"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"ME"}
+                                sem={"1"}
+                                code={"ME010201"}
+                                title={"Engineering Graphics"}
+                                L={"2"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"ECE"}
+                                sem={"1"}
+                                code={"EC010201"}
+                                title={"Digital Design"}
+                                L={"2"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"HSS"}
+                                sem={"1"}
+                                code={"HS010201"}
+                                title={"Professional Communication and Technical Writing"}
+                                L={"2"}
+                                T={"1"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"1"}
+                                code={"EA010201"}
+                                title={"EAA-II Swachha Bharat Mission (SBM)"}
+                                L={"0"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"1"}
+                                url={"#"}
+                            />
+
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS020201"}
+                                title={"Introduction of Data Science"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS020202"}
+                                title={"Software Systems"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"APME"}
+                                sem={"2"}
+                                code={"PH020201"}
+                                title={"Engineering Physics"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS020203"}
+                                title={"Computer Organization"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"MCT"}
+                                sem={"2"}
+                                code={"MC020201"}
+                                title={"Probability and Statistics for AI"}
+                                L={"3"}
+                                T={"1"}
+                                P={"0"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                             <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"EA020201"}
+                                title={"EAA - I Sports/Innovative Project/NCC/NSS"}
+                                L={"0"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"1"}
+                                url={"#"}
+                            />
+
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"3"}
+                                code={"CS030201"}
+                                title={"Data Structures"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"3"}
+                                code={"CS030202"}
+                                title={"Python for AI and Data Science"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"3"}
+                                code={"CS030203"}
+                                title={"Database Management Systems"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"3"}
+                                code={"CS030204"}
+                                title={"Discrete Mathematics and Graph Theory"}
+                                L={"3"}
+                                T={"0"}
+                                P={"0"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"3"}
+                                code={"CS030205"}
+                                title={"Operating Systems"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"4"}
+                                code={"CS040201"}
+                                title={"Artificial Intelligence"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"4"}
+                                code={"CS040202"}
+                                title={"Optimization Techniques"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"4"}
+                                code={"CS040203"}
+                                title={"Soft Computing"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"4"}
+                                code={"CS040204"}
+                                title={"Design and Analysis of Algorithms"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"4"}
+                                code={"CS0402XX"}
+                                title={"Deptt. Elective-I"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"4"}
+                                code={"CS040205"}
+                                title={"Professional Ethics and AI"}
+                                L={"3"}
+                                T={"0"}
+                                P={"0"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"5"}
+                                code={"CS050201"}
+                                title={"Computer Networks"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"5"}
+                                code={"CS050202"}
+                                title={"Natural Language Processing"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"5"}
+                                code={"CS050203"}
+                                title={"Machine Learning"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"5"}
+                                code={"CS050204"}
+                                title={"Information Security"}
+                                L={"3"}
+                                T={"0"}
+                                P={"0"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"5"}
+                                code={"OP0502XX"}
+                                title={"Open Elective -I"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"5"}
+                                code={"CS0502XX"}
+                                title={"Dept. Elective - II / MOOC"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"6"}
+                                code={"CS060201"}
+                                title={"Pattern and Visual Recognition"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"6"}
+                                code={"CS060202"}
+                                title={"Deep Learning"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"6"}
+                                code={"CS0602XX"}
+                                title={"Dept. Elective - III"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"6"}
+                                code={"CS0602XX"}
+                                title={"Dept. Elective - IV /MOOC"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"6"}
+                                code={"CS060203"}
+                                title={"Project"}
+                                L={"0"}
+                                T={"0"}
+                                P={"12"}
+                                cred={"6"}
+                                url={"#"}
+                            />
+
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"7"}
+                                code={"CS070201"}
+                                title={"Generative AI"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"7"}
+                                code={"CS070202"}
+                                title={"Reinforcement Learning"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"7"}
+                                code={"CS0702XX"}
+                                title={"Dept Elective -V"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"7"}
+                                code={"CS0702XX"}
+                                title={"Dept Elective -VI/ MOOC"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"7"}
+                                code={"CS070203"}
+                                title={"Industrial Training"}
+                                L={"-"}
+                                T={"-"}
+                                P={"-"}
+                                cred={"2"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"7"}
+                                code={"CS070204"}
+                                title={"Research Project - I"}
+                                L={"0"}
+                                T={"0"}
+                                P={"8"}
+                                cred={"4"}
+                                url={"#"}
+                            />
+
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"8"}
+                                code={"CS080201"}
+                                title={"Research Project - II*"}
+                                L={"0"}
+                                T={"0"}
+                                P={"36"}
+                                cred={"18"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"8"}
+                                code={"CS080202"}
+                                title={"Comprehensive Viva Voce"}
+                                L={"-"}
+                                T={"-"}
+                                P={"-"}
+                                cred={"2"}
+                                url={"#"}
+                            />
+
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0231"}
+                                title={"Statistical Learning Theory"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0232"}
+                                title={"Kernel Methods for ML"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0233"}
+                                title={"Bayesian Data Analysis"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0234"}
+                                title={"Nonlinear Control Techniques"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0235"}
+                                title={"Game Theory and Mechanism Design"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0236"}
+                                title={"Submodular Functions"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0237"}
+                                title={"Explainability in AI"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0238"}
+                                title={"Theory of Learning and Kernel Methods"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0239"}
+                                title={"Probability in Computing"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0240"}
+                                title={"Information Retrieval"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0241"}
+                                title={"Advanced Topics in Natual Language Processing"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0242"}
+                                title={"Time Series Analysis"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0243"}
+                                title={"Video Content Analysis"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0244"}
+                                title={"Digital Image Processing"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0245"}
+                                title={"Fraud Analytics Using Predictive and Social Network Techniques"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0246"}
+                                title={"Data Mining"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0247"}
+                                title={"Text-to-Speech Systems for Indian Languages"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0248"}
+                                title={"Advanced Topics in Machine Learning"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0249"}
+                                title={"Visual Big Data Analytics"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0250"}
+                                title={"Distributed Computing"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0251"}
+                                title={"Sclable Algorithms for data Analysis"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0252"}
+                                title={"Algebro-Geometric Methods in Data Analysis: Theory, Applications and Algorithms"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0253"}
+                                title={"Tensor: Techniques, Algorithms and Applications"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0254"}
+                                title={"Mobile Robotics"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0255"}
+                                title={"Artificial Intelligence in Biomedicine and Healthcare"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0256"}
+                                title={"Machine Learning for Bioinformatics"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0257"}
+                                title={"Statistical Inference Methods in Bioengineering"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0258"}
+                                title={"Autonomous Navigation"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0259"}
+                                title={"Theoritical and Computational Neuroscience"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0260"}
+                                title={"Cyber Security and AI"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0261"}
+                                title={"Information Theory and Coding"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0262"}
+                                title={"Digital Signal Processing"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0263"}
+                                title={"Advanced DSP"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0264"}
+                                title={"Speech Processing"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0265"}
+                                title={"Predictive Analysis"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0266"}
+                                title={"Robotics"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0267"}
+                                title={"Probabilistic Graphical Models"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0268"}
+                                title={"Autonomous MultiAgent Systems"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0269"}
+                                title={"Security Analytics"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0270"}
+                                title={"Computer Graphics"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0271"}
+                                title={"Biomedical Image Processing & Analysis"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0272"}
+                                title={"Affective Computing and Interaction"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0273"}
+                                title={"Multimedia Surveillance Systems"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0274"}
+                                title={"IOT"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0275"}
+                                title={"Design of Conversational Experiences"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0276"}
+                                title={"Edge AI and Federated Learning"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0277"}
+                                title={"MLOps"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0278"}
+                                title={"Big Data Systems"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0279"}
+                                title={"Computer Vision"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"Elective"}
+                                code={"CSXX0280"}
+                                title={"AI Security and Ethics"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={"#"}
+                            />
+
+
+                        </div>
+                    </div>
+                </div>
+
+            {/**B.Tech (Computer Science and Engineering) */}
                 <div className={`mb-10 ${(ug2022 == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">UG PROGRAM 2022:-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">B.Tech(Computer Science and Engineering):-</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>

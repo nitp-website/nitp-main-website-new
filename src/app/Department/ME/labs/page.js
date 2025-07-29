@@ -1,5 +1,8 @@
 import BackDepartment from "../../../components/department/BackDepartment";
-import Image from "next/image"
+
+
+
+
 
 export default function labs() {
     var labUrl = [
@@ -62,20 +65,9 @@ export default function labs() {
                                 <li>Black Smithy Shop</li>
                             </ul>
                         </ol>
-                        {/* <div className=" flex justify-center max-md:hidden">
-                            <div className="flex flex-col justify-center">
-                                <Image src={"https://lh3.googleusercontent.com/d/1Q0TgCyX0bpbtiKhYiqtDBQ0N_7JzwiQI=w320?authuser=0"} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg bg-rose-200" />
-                            </div>
-                        </div> */}
+                        <img src={image} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg bg-rose-200" loading="lazy" />
                     </div>
                 </div>
-                {/* <div className="mb-10">
-                    <div className=" max-md:flex justify-center hidden">
-                        <div className="flex flex-col justify-center">
-                            <Image src={"https://lh3.googleusercontent.com/d/1Q0TgCyX0bpbtiKhYiqtDBQ0N_7JzwiQI=w320?authuser=0"} width={700} height={1000} alt="Loading.." className="col-span-1 h-80 border rounded-lg bg-rose-200" />
-                        </div>
-                    </div>
-                </div> */}
             </div>
         </div>
     )

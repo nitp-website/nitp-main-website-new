@@ -1,14 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faIdCard,
-  faGraduationCap,
   faEnvelope,
-  faPhone,
-  faEye,
 } from "@fortawesome/free-solid-svg-icons";
+
 
 function PeopleCard({
   name,
@@ -28,13 +26,14 @@ function PeopleCard({
               className="relative  md:h-[70px] w-[100px]"
             >
               <Image
-                className={`rounded-md object-cover "h-[100px] w-[100px]"}`}
-                src={image==""?'/faculty.jpeg':image}
-                alt={name}
-                height={300}
-                width={300}
-                loading="lazy"
-              />
+                      className={`rounded-md object-cover h-[100px] w-[100px]`}
+                      src={image}
+                      alt={name}
+                      height={300}
+                      width={300}
+                      loading="lazy"
+                    />
+                  
             </div>
           </div>
           <div className="mt-1 md:ml-8 ml-4 md:w-3/4 md:mt-0 ">

@@ -50,6 +50,10 @@ function Compo({ sno, name, research, publications, phd, patent, project, detail
     )
 }
 
+
+
+
+
 export default function research() {
     return (
         <div className=" flex flex-col p-5  text-black">

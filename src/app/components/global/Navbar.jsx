@@ -17,7 +17,6 @@ import Director from "../../assets/images/director.svg";
 import Person from "../../assets/images/person.svg";
 import President from "../../assets/images/president.svg";
 import Sperson from "../../assets/images/sperson.svg";
-import FirstYear from "../../assets/images/1styear.svg";
 import Admin from "../../assets/images/admin.svg";
 import Admission from "../../assets/images/admission.svg";
 import Bis from "../../assets/images/bis.svg";
@@ -29,31 +28,22 @@ import Digital from "../../assets/images/digital.svg";
 import Document from "../../assets/images/document.svg";
 import Ecell from "../../assets/images/Ecell.svg";
 import Excellence from "../../assets/images/excellence.svg";
-import Faculty from "../../assets/images/faculty.svg";
 import Fee from "../../assets/images/fee.svg";
 import Fest from "../../assets/images/fest.svg";
 import Forms from "../../assets/images/forms.svg";
-import Idcard from "../../assets/images/idcard.svg";
 import International from "../../assets/images/international.svg";
-import Jobs from "../../assets/images/jobs.svg";
-import Mail from "../../assets/images/mail.svg";
 import Notice from "../../assets/images/notice.svg";
 import Bharat from "../../assets/images/bharat.svg";
 import NssNew from "../../assets/images/nssnew.svg";
-import Officers from "../../assets/images/officers.svg";
 import Portal from "../../assets/images/portal.svg";
 import Programs from "../../assets/images/programs.svg";
 import Rules from "../../assets/images/rules.svg";
 import Sac from "../../assets/images/sac.svg";
 import Schlorship from "../../assets/images/schlorship.svg";
 import Sports from "../../assets/images/sports.svg";
-import Staffs from "../../assets/images/staffs.svg";
 import Structure from "../../assets/images/structure.svg";
-import Studentexchange from "../../assets/images/studentexchange.svg";
 import women from "../../assets/images/women.svg";
-import Tequip from "../../assets/images/Tequip.svg";
 import scst from "../../assets/images/scst.svg";
-import security from "../../assets/images/security.svg";
 import Library from "../../assets/images/Library.svg";
 import Hostel from "../../assets/images/hostel.svg";
 import Labs from "../../assets/images/Labs.svg";
@@ -62,7 +52,6 @@ import Hospital from "../../assets/images/Hospital.svg";
 import EMU from "../../assets/images/EMU.svg";
 import ESU from "../../assets/images/ESU.svg";
 import ComputerCentre from "../../assets/images/ComputerCentre.svg";
-import itservice from "../../assets/images/itservice.svg";
 import cse from "../../assets/images/cse.svg";
 import ece from "../../assets/images/ECE.svg";
 import ee from "../../assets/images/ee.svg";
@@ -394,7 +383,7 @@ const navItems = [
       },
       {
         label: "Admission",
-        link: "/Academic/NITPAdmission",
+        link: "/Academic/Admission",
         iconImage: Admission,
       },
 
@@ -467,11 +456,17 @@ const navItems = [
         link: "/Academic/BIS",
         iconImage: Bis,
       },
+      {
+        label: "Scholarship",
+        link: "/Student/Scholarship",
+        iconImage: Bis,
+      },
     ],
   },
   {
     label: "Faculty & Staff",
-    link: "/Academic/Faculty&Staff",
+    // link: "/Academic/Faculty&Staff",
+    link:"#",
     children: [
       {
         label: " Faculty Directory",
@@ -516,7 +511,8 @@ const navItems = [
       },
       {
         label: "Holidays/Restricted Holidays ",
-        link: "https://drive.google.com/file/d/1qL_eR9y5y4uTz0dR0_woqFSv3sQNUhwD/view?usp=sharing",
+        // link: "https://drive.google.com/file/d/1qL_eR9y5y4uTz0dR0_woqFSv3sQNUhwD/view?usp=sharing",
+        link:"/Academic/Holidays",
         iconImage: International,
       },
     ],
@@ -524,7 +520,8 @@ const navItems = [
 
   {
     label: "Students",
-    link: "/Student",
+    // link: "/Student",
+    link:"#",
     children: [
       // {
       //   label: "Dean Student Welfare",
@@ -625,7 +622,8 @@ const navItems = [
   },
   {
     label: "Facilities",
-    link: "/Facilities",
+    // link: "/Facilities",
+    link:"#",
     children: [
       // {
       //   label: "Centers",

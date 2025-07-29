@@ -6,21 +6,15 @@ import Image from "next/image"
 import DepartmentNotify1 from '../../components/department/DepartmentNotify1'
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
-
-
-// const Notices = [
-//   {
-//     id: 1,
-//     notice: "No any notice for now",
-//     link: ""
-//   },
-
-// ]
+import timeTableData from '../TimeTable.json';
 
 export default function CE() {
   const router = useRouter();
   const [Notices, setNotices] = useState([]);
-    useEffect(()=>{
+  const ceTimeTable = timeTableData.find(
+    (item) => item.name === 'Civil Engineering'
+  );
+  useEffect(()=>{
       const getData = async()=>{
         const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=ce`);
         console.log(response.data);
@@ -112,8 +106,9 @@ export default function CE() {
             onClick={() => router.push('/Department/CE/syllabus')}
             Title={'SYLLABUS'}
           />
+         
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/CE/table')}
+            onClick={() => window.open(ceTimeTable?.url, '_blank')}
             Title={'TIME TABLE'}
           />
 

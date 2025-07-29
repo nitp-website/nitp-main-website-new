@@ -6,11 +6,14 @@ import Image from "next/image"
 import { useRouter } from 'next/navigation';
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import timeTableData from '../TimeTable.json';
 
 export default function ME() {
   const router = useRouter();
   const [Notices, setNotices] = useState([]);
+  const phyTimeTable = timeTableData.find(
+    (item) => item.name === 'Applied Physics and Materials Engineering'
+  );
   useEffect(()=>{
     const getData = async()=>{
       const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=phy`);
@@ -113,7 +116,7 @@ export default function ME() {
             Title={'SYLLABUS'}
           />
           <DepartmentNavigationButton
-            onClick={() => router.push('/Department/Phy/timeTable')}
+            onClick={() => window.open(phyTimeTable?.url, '_blank')}
             Title={'TIME TABLE'}
           />
           <DepartmentNavigationButton

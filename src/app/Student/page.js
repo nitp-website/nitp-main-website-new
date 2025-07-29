@@ -113,6 +113,10 @@ const StudentResourcesPage = () => {
   );
 };
 
+
+
+
+
 export default StudentResourcesPage;
 
 export async function generateMetadata({ params }) {

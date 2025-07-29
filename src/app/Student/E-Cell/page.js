@@ -1,5 +1,9 @@
 import Head from "next/head";
 import ECell from "../../components/StudentComponents/ECell"
+
+
+
+
 export default function Home() {
   return (
     <div className="mx-auto p-4 pt-6 bg-opacity-50">

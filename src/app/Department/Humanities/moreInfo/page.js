@@ -199,4 +199,8 @@ function InfoCompo({sn, roll, scholar, suparvisor, status}){
     )
 }
 
+
+
+
+
 export default Page

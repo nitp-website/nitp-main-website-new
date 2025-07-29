@@ -1,12 +1,24 @@
-import React from "react"
+import { url } from "inspector"
 
 
 const Deans = [
   {
-   name: "Prof. Pijush Samui",
-   designation: "Dean, Planning & Development",
-   type: "dean.pd@nitp.ac.in",
-   url:"https://www.nitp.ac.in/Department/CE/faculty/pijush@nitp.ac.in",
+   name: "Prof. Maheshwari Prasad Singh ",
+   designation: "Dean, Academic",
+   type: "dean.ac@nitp.ac.in",
+   url:"https://www.nitp.ac.in/profile/mps@nitp.ac.in",
+  },
+   {
+   name: "Prof. Prabhat Kumar",
+   designation: "Dean, Student Welfare",
+   type: "dean.sw@nitp.ac.in",
+   url:"https://www.nitp.ac.in/profile/prabhat@nitp.ac.in",
+  },
+  {
+   name: "Prof. Prakash Chandra",
+   designation: "Dean, Faculty Welfare",
+   type: "dean.fw@nitp.ac.in",
+   url:"https://www.nitp.ac.in/profile/prakash@nitp.ac.in",
   },
   {
    name: "Prof. Ramesh Kumar",
@@ -14,58 +26,47 @@ const Deans = [
    type: "dean.rc@nitp.ac.in",
    url:"https://www.nitp.ac.in/Department/EE/faculty/ramesh@nitp.ac.in",
   },
-  {
-   name: "Prof. Samrat Mukherjee",
-   designation: "Dean, Student Welfare",
-   type: "dean.sw@nitp.ac.in",
-   url:"https://www.nitp.ac.in/Department/Phy/faculty/samrat@nitp.ac.in",
+   {
+   name: "Prof. Sanjeev Sinha",
+   designation: "Dean, Planning & Development",
+   type: "dean.pd@nitp.ac.in",
+   url:"https://www.nitp.ac.in/profile/sanjeev@nitp.ac.in",
   },
-  {
-   name: "Prof. Vivekanand Singh ",
-   designation: "Dean, Academic",
-   type: "dean.ac@nitp.ac.in",
-   url:"https://www.nitp.ac.in/Department/CE/faculty/vsingh@nitp.ac.in",
-  },
-  {
-   name: "Prof. Manoj Kumar",
-   designation: "Dean, Faculty Welfare",
-   type: "dean.fw@nitp.ac.in",
-   url:"https://www.nitp.ac.in/Department/Archi/faculty/manoj@nitp.ac.in",
-  },
- ]
+  ]
  
  const AssDeans = [
-  {
-    name: "Prof. M. P. Singh",
-    designation: "Associate Dean , Academic",
-    type: "associ.deanac@nitp.ac.in",
-   },
+
    {
     name: "Prof. A. R. Quaff",
     designation: "Associate Dean , Exam",
     type: "examoffice@nitp.ac.in",
+    url: "https://www.nitp.ac.in/profile/arquaff@nitp.ac.in",
    },
       {
     name: "Dr. Vimlesh Verma",
     designation: "Associate Dean, Student Welfare",
     type: "",
+    url: "https://www.nitp.ac.in/profile/vimlesh.verma@nitp.ac.in",
    },
      {
     name: "Dr. Om Ji Shukla",
     designation: "Associate Dean, Student Welfare",
     type: "",
+     url: "https://www.nitp.ac.in/profile/omjishukla.me@nitp.ac.in",
    },
 
          {
     name: "Dr. Subodh Srivastava",
     designation: "Associate Dean, Student Welfare",
     type: "",
-   },
+    url: "https://www.nitp.ac.in/profile/subodh@nitp.ac.in",
    
-      {
+   },
+   {
     name: "Dr. Abhimanyu Kumar",
     designation: "Associate Dean, Student Welfare",
     type: "",
+    url: "https://www.nitp.ac.in/profile/abhimanyu.cs@nitp.ac.in",
    },
     
 

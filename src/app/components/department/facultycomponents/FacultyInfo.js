@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import Title from './Title';
 import { useParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
-import BackDepartment from '../BackDepartment';
 const FacultyHeader = dynamic(() => import("./FacultyHeader"), {
   loading: () => <div className='w-full h-full p-3 m-3 bg-red-200'>loading</div>
 })

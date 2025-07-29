@@ -3,7 +3,6 @@ import BackDepartment from "../../../components/department/BackDepartment"
 import FacultyList from '../../../../components/facultycomponents/FacultyList';
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-import DeptStaffcard from "../../../components/faculty/DeptStaff"
 import PhdCandidate from "../../../components/faculty/PhdCandidate"
 const Home=() =>{
   const [faculty, setfaculty] = useState(true);
@@ -56,19 +55,32 @@ useEffect(() => {
           <BackDepartment navigate={'/Department/Material'} />
         </div>
       </div>
-      <div className="mt-2 mb-10 flex space-x-1 w-full justify-center">
-        <button onClick={() => {
-          setfaculty(true);
-          setphd(false);
-          setstaff(false);
-        }} className={`border border-black rounded ${(faculty) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Faculties</button>
-        <button onClick={() => {
-          setfaculty(false);
-          setphd(true);
-          setstaff(false);
-          // fetchphd()
-        }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>PhD Candidates</button>
-        
+      <div className="mt-6 mb-12 flex flex-wrap justify-center">
+        <div className="flex bg-gray-100 p-1 rounded-xl shadow-sm">
+          <button 
+            onClick={() => {
+              setfaculty(true);
+              setphd(false);
+              setstaff(false);
+            }} 
+            className={`px-6 py-2.5 text-sm font-medium transition-all duration-200 rounded-lg mx-1 
+              ${faculty ? "bg-red-700 text-white shadow-md transform scale-105" : "bg-white text-gray-700 hover:bg-gray-50"}`}
+          >
+            Faculties
+          </button>
+          <button 
+            onClick={() => {
+              setfaculty(false);
+              setphd(true);
+              setstaff(false);
+              // fetchphd()
+            }} 
+            className={`px-6 py-2.5 text-sm font-medium transition-all duration-200 rounded-lg mx-1 
+              ${phd ? "bg-red-700 text-white shadow-md transform scale-105" : "bg-white text-gray-700 hover:bg-gray-50"}`}
+          >
+            PhD Candidates
+          </button>
+        </div>
       </div>
       {faculty &&
         <div className="flex flex-col">
@@ -115,4 +127,8 @@ useEffect(() => {
   </>
   )
 }
+
+
+
+
 export default Home;

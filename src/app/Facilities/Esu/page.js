@@ -1,6 +1,10 @@
         import Head from "next/head";
     
-    export default function Home() {
+    
+
+
+
+export default function Home() {
       const places = [
         {
           image: "https://i.postimg.cc/pdKKtLRL/Fr-Bw-Oz-Ma-MAAz-Ujt.jpg",

@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faIdCard,
-  faGraduationCap,
   faEnvelope,
   faPhone,
-  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Department Faculty Page
@@ -22,12 +18,14 @@ function FacultyCard({
   phone,
   profileLink,
   researchLink, // Assuming you have a link for the full research interests
+  academic_responsibility,
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
   // const qualification = "Ph.D.(CSE),M.Tech.(CSE),B.E.(CSE)";
   // if (qualification == null) qualification = "";
   if (researchInterests == null) researchInterests = "";
+  const hasAcademicResponsibility = academic_responsibility && academic_responsibility.trim() !== "";
 
   const interestsArray = researchInterests.split(", ");
   const displayedInterests = interestsArray.slice(0, 3);
@@ -41,17 +39,21 @@ function FacultyCard({
         <div className="inline-block h-[130px] w-[130px] mb-12 z-[1] relative">
           <div className="absolute w-full h-0 rounded-full bg-[rgb(153,27,27)] bottom-[135%] right-0 left-0 opacity-90 scale-[3] transition-all duration-300 group-hover:h-full"></div>
           <div className="absolute w-full h-full rounded-full bg-[rgb(153,27,27)] top-0 left-0 -z-[1]"></div>
-          <Image
+          <img
             src={image || "/faculty.jpeg"}
             alt={name}
             width={130}
             height={130}
             className="w-[130px] h-[130px] object-cover rounded-full transform scale-100 transition-all duration-900 ease-in-out group-hover:shadow-[0_0_0_14px_#f7f5ec] group-hover:scale-[0.7]"
+            loading="lazy"
           />
         </div>
   
         <div className="px-4">
           <h3 className="text-md text-black font-bold">{name}</h3>
+          {hasAcademicResponsibility && (
+            <h4 className="block text-[15px] text-[rgb(153,27,27)] font-medium capitalize">{academic_responsibility}</h4>
+          )}
           <h4 className="block text-[15px] text-[#4e5052] capitalize">{designation}</h4>
           {/* <h4 className="block text-[15px] text-[#4e5052] capitalize">{department}</h4> */}
         </div>

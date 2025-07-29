@@ -3,6 +3,10 @@ import Image from "next/image"
 import BackDepartment from "../../../components/department/BackDepartment";
 import { useEffect, useState } from "react";
 
+
+
+
+
 export default function Labs(){
     const [feature , setFeature] = useState("/eelab1.jpg")
     const [it, setIt]= useState(0);

@@ -1,13 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faIdCard,
-  faGraduationCap,
   faEnvelope,
   faPhone,
-  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Faculty Card Component
@@ -48,7 +44,7 @@ const FacultyCard = ({ facultyProfile, isLoading, error }) => {
         <div className="inline-block h-[130px] w-[130px] mb-8 z-[1] relative">
           <div className="absolute w-full h-0 rounded-full bg-[rgb(153,27,27)] bottom-[135%] right-0 left-0 opacity-90 scale-[3] transition-all duration-300 group-hover:h-full"></div>
           <div className="absolute w-full h-full rounded-full bg-[rgb(153,27,27)] top-0 left-0 -z-[1]"></div>
-          <Image
+          <img
             src={image || "/faculty.jpeg"}
             alt={name}
             width={130}
@@ -109,7 +105,7 @@ const CoreMemberCard = ({ member }) => {
       <div className="py-6 px-4 bg-[#f7f5ec] text-center overflow-hidden relative rounded-[20px] shadow-md hover:shadow-lg transition-all duration-300 h-full">
         <div className="inline-block h-[125px] w-[125px] mb-4 relative">
           <div className="absolute w-full h-full rounded-full bg-[rgb(153,27,27)] top-0 left-0 -z-[1]"></div>
-          <Image
+          <img
             src={member.img || "/placeholder.jpeg"}
             alt={member.name}
             width={125}
@@ -180,6 +176,11 @@ const FacultyProfileWrapper = ({ email }) => {
 };
 
 // Main Component
+
+
+
+
+export const dynamic = 'force-dynamic';
 export default function AdministrationPage() {
   const [selectedCategory, setSelectedCategory] = useState("core-members");
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);

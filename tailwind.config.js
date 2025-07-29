@@ -23,6 +23,7 @@ module.exports = {
       },
       fontFamily: {
         varila: ['Varela Round'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
     

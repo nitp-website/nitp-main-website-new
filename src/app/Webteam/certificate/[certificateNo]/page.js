@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 import { useParams, usePathname } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
-import Image from "next/image";
 import QRCode from "qrcode";
+
+
+
+
 
 export default function CertificatePage() {
   const params = useParams();

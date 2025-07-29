@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -39,6 +39,9 @@ const Slider = () => {
         {/* <SwiperSlide>
           <img src="/homepage/yoga.jpg" />
         </SwiperSlide> */}
+        <SwiperSlide>
+          <img src="/homepage/collage[1].jpg" />
+        </SwiperSlide>
         <SwiperSlide>
           <img src="/home2.png" />
         </SwiperSlide>

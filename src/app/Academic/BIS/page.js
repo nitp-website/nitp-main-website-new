@@ -223,4 +223,8 @@ const BISpage = () => (
   <BISdashboard url="faculties" title="BIS Dashboard" />
 );
 
+
+
+
+
 export default BISpage;
