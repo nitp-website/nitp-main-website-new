@@ -159,7 +159,7 @@ export default function Page() {
                 </div>
                 {/* dual degree data science */}
                 <div className={`mb-10 ${(dualData == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">  DUAL DEGREE PROGRAM (DATA SCIENCE):-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8"> B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Data Science):-</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
@@ -1212,7 +1212,7 @@ export default function Page() {
              {/**B.Tech (Artificial Intelligence and Data Science) */}
             
              <div className={`mb-10 ${(ugai_ds == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">B.Tech (Artificial Intelligence and Data Science):-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">B.Tech (Artificial Intelligence & Data Science):-</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
@@ -1232,7 +1232,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/13Mm5_MvJ-a0wn1-HSqmg4BhLPUEAe2g7/view?usp=drive_open"}
                             />
                             <SyllabusComp
                                 dep={"MCT"}
@@ -1243,7 +1243,7 @@ export default function Page() {
                                 T={"1"}
                                 P={"0"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1VUsFUlrrmXHypdGGeahvirO0NSJxIMhb/view"}
                             />
                             <SyllabusComp
                                 dep={"ME"}
@@ -1254,7 +1254,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1qnkkblnhVCWdFdIk4mYVWhY3EpgTBRX0/view?usp=drive_open"}
                             />
                             <SyllabusComp
                                 dep={"ECE"}
@@ -1265,7 +1265,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1ExNsVTYlOEAug4fYFVixfMjkJvuuUiGF/view?usp=drive_open"}
                             />
                             <SyllabusComp
                                 dep={"HSS"}
@@ -1276,7 +1276,7 @@ export default function Page() {
                                 T={"1"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1EBtfdou__5PAHZRyUnrD6E16U1DtFQhS/view?usp=drive_open"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1299,7 +1299,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/10p_Dn1D36l7PyFa0ieEAc7myKSL5AS-R/view?usp=drive_open"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1310,7 +1310,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1OFZuEfroQ4vBq5jeQOD2Vx-FeAonQPqZ/view?usp=drive_open"}
                             />
                             <SyllabusComp
                                 dep={"APME"}
@@ -1321,7 +1321,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1BffCTV8iP593uBKtxburfsGrbukVtdLw/view?usp=drive_open"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1332,7 +1332,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1y3MJahUawZsk68XIYI0z0oLXVmSRDd0Q/view?usp=drive_open"}
                             />
                             <SyllabusComp
                                 dep={"MCT"}
@@ -1343,7 +1343,7 @@ export default function Page() {
                                 T={"1"}
                                 P={"0"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1wUtfg4rRTkEn8_egKOlwo_sNZEVxJEon/view?usp=drive_open"}
                             />
                              <SyllabusComp
                                 dep={"CSE"}
@@ -1366,7 +1366,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1khCncJlIsPOku6SCIEi_odxFPq4x4u_j/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1377,7 +1377,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1qvKoFtnnD6XWUPw-R0cF4wBhUTPjNjEE/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1388,7 +1388,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1qDy7YFEhaK2GhoaHtsOAFtIudexbI06C/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1399,7 +1399,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1lPH2omL5rMGZu8Xg4tDLzL7xsdalLOdt/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1410,7 +1410,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/11xFzkgdSlaS7JNkd5Sfm-wCRVjfnOYqW/view"}
                             />
 
                             <SyllabusComp
@@ -1422,7 +1422,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1sc_bhjeEChp6zsfRY6LKXIWi-v4ULyrZ/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1433,7 +1433,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1-uE5oL4sCt0vCu6IFQ7rT30bWvhhQk6o/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1444,7 +1444,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1pQbf__KButeCk94zIAyv_mJuVMaytM2B/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1455,7 +1455,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1-YQP7IyM-LLu_kWVKv4K2AHk6SCY3Kcm/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1477,7 +1477,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1jaUplWDA0sHNQG6kN_Q9zZVK15_7Rc9O/view"}
                             />
 
                             <SyllabusComp
@@ -1489,7 +1489,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/13-axVprOVboJuUwSs4mDdjWtS6zEnGGy/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1500,7 +1500,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1UK7jutsUWYB87byEDROTm6EzxNOdkIPE/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1511,7 +1511,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1Mz49yv4zOVw1i0HeA-nbpals0XUvUtVm/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1522,7 +1522,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1AuBWEe5TQS5Kixh0kTbed8Uqb07NAT2f/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1556,7 +1556,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1zOvjjKtKynRowA_cOxkzJ3r57mSpkFd0/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1567,7 +1567,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1FVi6_82Vt2OTBRxx-3lTWuvGqqV0exxY/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1612,7 +1612,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1NL5-7iCcQMjMS5SqIEkMAAxlISqIZUyI/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1623,7 +1623,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/19DLnaPVfvcoHd1egno540NYq-q3MnEO1/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1702,7 +1702,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1skN-BZcUxd2Qur0CUTZlv36T0Udn37wk/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1713,7 +1713,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1rE3vY0kVedepbTgzO3vOLXZBgof2tqgV/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1724,7 +1724,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1LJXZ8wbdnHxA6t_5WuyZvBbR4qJqgHqk/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1735,7 +1735,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1lFLrF7bqN1-WNTj5U1WSNjR0iV1T7lbD/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1746,7 +1746,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/147VuhEy8pK-JRhsIwzz4aXQMf34cmdWg/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1757,7 +1757,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1JgtIMCuPx1jTI6ntGjE75niYsVNsMBkD/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1768,7 +1768,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1vryf2AYXOPSE0OdQCvSMjJzZ60rKfSGc/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1779,7 +1779,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/13yah0GA4Dk9COuL6ROnm_L8HyvIAM7Ay/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1790,7 +1790,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1vJsIkilCq49iZbXWFPwqRvkijUJXUAEw/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1801,7 +1801,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1ZkGgxM_oRXTN5g50-zMrgVFZOi3UjIlf/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1812,7 +1812,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://drive.google.com/file/d/1B3ayTi_swZ_m_42TSVK1T_ZGFTX6AcKa/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1823,7 +1823,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1HkEw-M6VNImXnEAttiWvU8tJXlFLKI9w/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1834,7 +1834,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1_0ouhINevL_onSMt5PT4DrYcy6QfzbdK/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1845,7 +1845,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1t7rGpyjkYsKgvhHjQCjBIpsly4MF1MXO/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1856,7 +1856,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/16BpLH7bLrLjnfiP40UgDLn32dkZnzktC/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1867,7 +1867,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1JSc_FJErBkbh-4yNy3NceOJKuYRJ3j2h/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1878,7 +1878,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1O8gJApDRqJxeigIXrBpogmknVQSaQMVV/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1889,7 +1889,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1EBe9I34LomVdlTAQ0OiRdolwZfhAwIC4/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1900,7 +1900,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/17m6m_ZBUdSfppKUKEj4RnwhtZMFqfgh0/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1911,7 +1911,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1vK72Cu3NU-ABuB6ndP7FUQgNQMU1-yyK/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1922,7 +1922,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/12mbblq9ZAGlL2xgGxjHBPOIvUJiX3UPu/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1933,7 +1933,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1szGmC1naJro0HOfjL4ldu5aeOuGnq1Mo/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1944,7 +1944,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1zS30DNC5QuuRKnNHlGSWlMv_RmsViW_o/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1955,7 +1955,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/12p7IuxLSoQJ4CI3nwgbxmKXngtsVxSym/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1966,7 +1966,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1f8_rzTcZsBwCgrLvx04NRsDawNAgItl4/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1977,7 +1977,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1gzZG2wuG_737j2TvLfiwtzLlkf66Pgya/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1988,7 +1988,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1YIEre7kkR-Swi7BDcA4EJo_jxqEoTPiF/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -1999,7 +1999,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1SCqKX_z_veqMTmk19rGrB5oBDwpwrnxz/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2010,7 +2010,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1ZVB3Pm7TcLtUDfQahX6rSt2bpIqdWbCS/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2021,7 +2021,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1XOGEe7aKN8aGJuVz6TvkZbMoxCRwUlLw/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2032,7 +2032,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1wxWshnA6C23HGLZyzGVEZGT6GR1WNUNF/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2043,7 +2043,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/13RAOAUycnVuREAoqP67YJtq1YtwMDTkC/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2054,7 +2054,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1kEqAWAI69OLSSRRiccxxJouXU1tTmpvG/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2065,7 +2065,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1i0mF0B1M4_SQX-GKZlVBaSxRT5iRwIRr/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2076,7 +2076,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1JvuJ_tNSRTVevHGf8-3PYduKlNiBf6GQ/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2087,7 +2087,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1P_7LblfzNKA08sm2zmi69jDJ0ZGtv2-G/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2098,7 +2098,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/14loj0HYGX2s2yuK5dsE3eIKwTrlIsY-3/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2109,7 +2109,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1DYD-WD-MJNUAX90KmpTOzXGF-nAlF7MS/edit?rtpof=true"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2120,7 +2120,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1yonNyL6zERcSQLa35LESqyVPArSrqlIY/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2131,7 +2131,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1_d2dIzKjCoGTR9cnOHZqIBLGB3IzvYeu/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2142,7 +2142,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1cku_wT-YrKqcaPFyHgfPHISkWBwTvWO1/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2153,7 +2153,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1TiFcUl483xO9nmR4YITSkJG8_47W_kTy/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2164,7 +2164,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1Luzys3e9j_EIYiyENXtf_YVqvWyorLX3/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2175,7 +2175,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1ulciljqhlkGQjUv7lbs328UZd6frQ2fW/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2186,7 +2186,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1z7RiCvrIsyINXfdeDuRUdZrMMicGbuJv/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2197,7 +2197,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1ed0rtiJPLH8hFsRwgh1K5EvTN4DVTBnL/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2208,7 +2208,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1WBsM-BL6fNY6aHZKJO6gx_y3sJDcsI3c/edit?rtpof=true&tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2219,7 +2219,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1CFCGCCZDwTNevXj3F4VQSfIB7tDBvvUd/view?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2230,7 +2230,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1CDWBI3fHKvX8vs0L3yCJChOpwvWmyslX/view?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -2241,7 +2241,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url={"#"}
+                                url={"https://docs.google.com/document/d/1ThpmwSqen5PZDjOjfdJly_p_5lDfyl7v/view?tab=t.0"}
                             />
 
 
@@ -3545,7 +3545,7 @@ export default function Page() {
                 {/**============================================================================================================= */}
                 {/* mtech data science  */}
                 <div className={`mb-10 ${(pgd == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">M.tech data Science :-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">M.Tech (Data Science and Engineering):-</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
@@ -4266,7 +4266,7 @@ export default function Page() {
                 </div>
                 {/* PG cyber PROGRAM  */}
                 <div className={`mb-10 ${(pgc == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">M.tech Cyber Security :-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">M.Tech (Cyber Security):-</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
@@ -4892,7 +4892,7 @@ export default function Page() {
                 </div>
                 {/* PhD  */}
                 <div className={`mb-10 ${(phd == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">PhD PROGRAM :-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">PhD Course :-</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
@@ -4980,7 +4980,7 @@ export default function Page() {
                 </div>
                 {/* Dual cyber PROGRAM  */}
                 <div className={`mb-10 ${(dualCyber == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">DUAL DEGREE PROGRAM (CYBER SECURITY):-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Cyber Security):-</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
@@ -5994,7 +5994,7 @@ export default function Page() {
                 </div>
                 {/* MCA(DS & I) */}
                 <div className={`mb-10 ${(mcad == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA (DS & I):-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA with specialization in AI & IoT:-</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
@@ -6488,7 +6488,7 @@ export default function Page() {
                 </div>
                 {/* MCA(DS & I) */}
                 <div className={`mb-10 ${(mcaai == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA (AI & IOT):-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA with specialization in Data Science & Informatics:-</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
