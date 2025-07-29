@@ -74,18 +74,6 @@ function Page() {
 
             </div>
             <div className="mx-4 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
-                <ActComp
-                    title={'Chemistry'}
-                    
-                    content={['Engineering Chemistry Course for ALL Engg. Branches(B.Tech NewSyllabus) 2021',
-                        'B. Tech. 1st year (1st and 2nd Semester) General Chemistry course (600 students) Chemical Sciences (1CH101)',
-                        'B. Tech. 1st year (1st and 2nd Semester) General Chemistry Lab (600 students) Chemical Sciences Lab (1CH102)',
-                        'B. Tech. 3rd and 4th Semester UG Course (600 students) Green Technology (CH104)',
-                        'B. Tech. 3rd and 4th Semester UG Course (600 students) Bio-Science',
-                        '5 year Integrated MSc Chemistry (30 students)',
-                        'PhD',
-                    ]}
-                />
                 <div className="mt-6">
                     <div className="mb-10 flex space-x-1 max-sm:text-[13px]">
                         {/* <button onClick={() => {
@@ -105,7 +93,7 @@ function Page() {
                             setPhd(false);
                             setBatch2020(true);
                             setBatch2023(false);
-                        }} className={`border border-black rounded ${(batch2020) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Dual degree in Chemical Technology- For 2025 - 2030 batch</button>
+                        }} className={`border border-black rounded ${(batch2020) ? "text-white bg-red-900" : "text-red-900"} px-2`}>Dual degree in Chemical Technology- For 2025 Onwards.</button>
                              <button onClick={() => {
                             setMsc(false);
                             setPhd(true);
@@ -766,7 +754,7 @@ function Page() {
                             </div>
                         </div>
                     </div>
-                    {/** Dual degree in Chemical Technology- For 2025-2020 batch */}
+                    {/** Dual degree in Chemical Technology- For 2025-2030 batch */}
                      <div className={`mb-10 ${(batch2020 == false) ? "hidden" : ""}`}>
                         <div className=" overflow-x-auto mr-10">
                             <div className="border grid grid-cols-11 min-w-[1100px]">
@@ -871,7 +859,7 @@ function Page() {
                             </div>
                             <div className="my-6 p-6 bg-blue-50 border border-blue-200 rounded-lg">
                                 <p className="text-base text-gray-700">
-                                    Click the link below to view or download the full syllabus for all semesters, including core, foundation, electives, and lab courses.
+                                    Click the link below to view or download curriculum and syllabus.
                                 </p>
                                 <a
                                     href="https://drive.google.com/file/d/1yKjAyWHe9bvevQ37e9z3_Uncatzq1nwj/view"
@@ -989,7 +977,7 @@ function Page() {
                             </div>
                             <div className="my-6 p-6 bg-blue-50 border border-blue-200 rounded-lg">
                                 <p className="text-base text-gray-700">
-                                    Click the link below to view or download the full syllabus for all semesters, including core, foundation, electives, and lab courses.
+                                    Click the link below to view or download curriculum and syllabus.
                                 </p>
                                 <a
                                     href="https://drive.google.com/file/d/11SKrA-hGK-HwsBWxJLeIWFZyGlgH3mF3/view"
@@ -1115,7 +1103,7 @@ function Page() {
                     </div>
                     {/* Phd PROGRAM  */}
                     <div className={`mb-10 ${(phd == false) ? "hidden" : ""}`}>
-                        <div className="text-red-900 font-bold text-3xl max-sm:text-2xl mb-8">PhD PROGRAM :-</div>
+                        {/* <div className="text-red-900 font-bold text-3xl max-sm:text-2xl mb-8">PhD PROGRAM :-</div> */}
                         <div className=" overflow-x-auto">
                             <div className="border grid grid-cols-11 min-w-[1100px]">
                                 <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Sem / Electives</div>
