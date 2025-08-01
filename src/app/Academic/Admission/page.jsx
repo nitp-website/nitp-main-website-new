@@ -31,6 +31,12 @@ const admissionData = {
     ],
     notices: [
       {
+        title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students",
+        date: "2025-08-01",
+        content: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students",
+        href:"https://drive.google.com/file/d/1EJiyU7F16MZaFx2_DIph2nGrEF7EYIxY/view"
+      },
+      {
         title: "Physical reporting notice for Admission to B.Tech./B.Arch./Dual Degree (B.Tech+M.Tech) Programmes through JoSAA/CSAB/DASA/Study in India (SII)-2025",
         date: "2025-07-25",
         content: "UG Admission",
@@ -59,6 +65,12 @@ const admissionData = {
       },
     ],
     notices: [
+      {
+        title: "Notice regarding the schedule of commencement of classes for newly admitted PG/MCA/Ph.D. students",
+        date: "2025-08-01",
+        content: "Notice regarding the schedule of commencement of classes for newly admitted PG/MCA/Ph.D. students",
+        href:"https://drive.google.com/file/d/1rpNmcxqzTfzoonelUydZLel6bMEZ-K_k/view"
+      },
        {
         title: "Physical reporting notice for admission to M.Tech/M.Arch/MURP through CCMT 2025 and DRDO Sponsored candidates",
         date: "2025-07-24",
@@ -136,6 +148,12 @@ const admissionData = {
       },
     ],
     notices: [
+      {
+        title: "Notice regarding the schedule of commencement of classes for newly admitted PG/MCA/Ph.D. students",
+        date: "2025-08-01",
+        content: "Notice regarding the schedule of commencement of classes for newly admitted PG/MCA/Ph.D. students",
+        href:"https://drive.google.com/file/d/1rpNmcxqzTfzoonelUydZLel6bMEZ-K_k/view"
+      },
       {
         title: "Physical reporting notice for admission to MCA through  NIMCET-2025",
         date: "2025-07-23",
