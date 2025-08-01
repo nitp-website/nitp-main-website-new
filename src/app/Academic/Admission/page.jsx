@@ -554,7 +554,7 @@ function handleClick(type) {
                               className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white font-medium rounded-lg hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-sm hover:shadow-md mb-4"
                             >
                               <ExternalLink className="w-4 h-4 mr-2" />
-                              Visit SOP
+                              View SOP
                             </a>
                           </div>
                           )}
