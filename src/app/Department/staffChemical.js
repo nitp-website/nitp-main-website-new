@@ -21,7 +21,7 @@ const staffData = [
                 expertise: "Physical Chemistry",
                 dateOfJoining: "03/07/2024",
                 email: "vishnu.ta@nitp.ac.in",
-                mobile: "N/A",
+                mobile: "Not Available",
                 image: "https://i.postimg.cc/fW25mNxs/image.png",
             },
             {
@@ -31,7 +31,7 @@ const staffData = [
                 education: "MSc",
                 expertise: "Organic Chemistry",
                 email: "debabrata.tech@nitp.ac.in",
-                mobile: "+91-",
+                mobile: "Not Available",
                 image: "/staffChemical.png",
             },
         ],

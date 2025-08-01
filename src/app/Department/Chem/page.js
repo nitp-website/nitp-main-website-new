@@ -83,16 +83,12 @@ export default function Chem() {
             About
           </div>
           <div className="text-justify max-sm:text-[12px]">
-            The Chemistry department was established in 1924, at the same time
-            the institute was founded. The Department has expanded
-            significantly since 2014 and offers several compulsory and
-            elective courses to B.Tech. and B.Arch. students of the Institute
-            in 1st, 2nd and 3rd years of the UG and UG-PG dual degree
-            programs. The department has offered a UG-PG 5-year Integrated
-            M.Sc. in Chemistry degree from 2015 where the curriculum offers
-            students an excellent theoretical foundation in both traditional
-            as well as contemporary areas of chemistry along with extensive
-            hands on training in experiments.{' '}
+            The Department of Chemical Science and Technology at the National Institute of
+            Technology Patna are committed to excellence in education and research, fostering innovation
+            and collaboration across various disciplines. The Department of Chemistry, established in 1924,
+            has significantly expanded its academic and research offerings. The Department has expanded to
+            include the discipline of Chemical Engineering in 2023, to emerge as a leader in field of
+            chemical sciences and engineering education as well as technological advancements.{' '}
             <button
               onClick={() => router.push('/Department/Chem/about')}
               className="text-blue-600"
