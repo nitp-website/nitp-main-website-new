@@ -58,6 +58,12 @@ const admissionData = {
   mtech: {
     portals: [
       {
+        name: "SOP and Admission Form link for the Academic Year 2025 admissions",
+        image:"https://mis.nitp.ac.in/admission/images/Header.jpg",
+        link:"https://mis.nitp.ac.in/admission/Default.aspx",
+        sopLink:"https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
+      },
+      {
         name: "CCMT",
         image: "https://cdnbbsr.s3waas.gov.in/s301894d6f048493d2cacde3c579c315a3/uploads/2022/02/2022022590.png",
         link: "https://ccmt.admissions.nic.in",
@@ -88,6 +94,12 @@ const admissionData = {
 
   phd: {
     portals: [
+      {
+        name: "SOP and Admission Form link for the Academic Year 2025 admissions",
+        image:"https://mis.nitp.ac.in/admission/images/Header.jpg",
+        link:"https://mis.nitp.ac.in/admission/Default.aspx",
+        sopLink:"https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
+      },
       {
         name: "PhD Admissions NITP Portal",
         image: "https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
@@ -140,6 +152,12 @@ const admissionData = {
 
   mca: {
     portals: [
+     {
+        name: "SOP and Admission Form link for the Academic Year 2025 admissions",
+        image:"https://mis.nitp.ac.in/admission/images/Header.jpg",
+        link:"https://mis.nitp.ac.in/admission/Default.aspx",
+        sopLink:"https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
+      },
       {
         name: "NIMCET",
         image: "https://cdnbbsr.s3waas.gov.in/s33e6260b81898beacda3d16db379ed329/uploads/2025/03/2025031961.png",
@@ -179,6 +197,12 @@ const admissionData = {
       },
     ],
     notices: [
+      {
+        title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students",
+        date: "2025-08-01",
+        content: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students",
+        href:"https://drive.google.com/file/d/1EJiyU7F16MZaFx2_DIph2nGrEF7EYIxY/view"
+      },
         {
         title: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2025-26 at NIT Patna.",
         date: "2025-06-30",
@@ -468,7 +492,7 @@ function handleClick(type) {
                               <div className="flex justify-between items-center">
                                 <p className="text-xs text-gray-600">
                                   {notice.content}
-                                </p>
+                                </p>                                 
                                 <Link 
                                   href={notice.href ? notice.href : "#"}
                                   target="_blank"
@@ -520,6 +544,21 @@ function handleClick(type) {
                           </div>
                           <h3 className="text-xl font-bold text-center text-red-800 mb-2">{item.name}</h3>
                           <p className="text-gray-600 text-center mb-4 text-sm">{item.description}</p>
+
+                          {item.sopLink && (
+                            <div className="text-center">
+                            <a
+                              href={item.sopLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white font-medium rounded-lg hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-sm hover:shadow-md mb-4"
+                            >
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Visit SOP
+                            </a>
+                          </div>
+                          )}
+
                           <div className="text-center">
                             <a
                               href={item.link}
