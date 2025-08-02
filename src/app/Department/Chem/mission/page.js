@@ -41,8 +41,8 @@ function Page(){
                         VISION
                     </p>
                     <Comp
-                    content={['To serve the country through this institution by pursuing excellence in scientific and technical education and research',
-                        'To make this department a center of excellence for cutting edge fundamental and applied research.',
+                    content={["To serve the country through this institution by pursuing excellence in scientific and technical education and research.",
+                        "To make this department a center of excellence for cutting edge fundamental and applied research.",
                     ]}
                     />
                 </div>
@@ -52,10 +52,11 @@ function Page(){
                     </p>
                     <Comp
                     content={[
-                        'To develop and promote innovations in Education at all levels, and generate fundamental and applied knowledge by engaging in scientific research by adopting suitable steps.',
-                        'To promote academic growth by offering state-of-the-art education in undergraduate, postgraduate and doctoral programmes.',
+                        'Provide rigorous, comprehensive education that prepares students for leadership roles in the field of Chemical Science and Technology.',
+                        'To promote academic growth by offering state-of-the-art education in undergraduate,postgraduate and doctoral programmes.',
                         'To pursue quality research output by developing necessary and adequate research facilities and undertaking collaborative / sponsored research projects.',
-                        'Maintaining and enhancing the diversity of students, staff, faculty and curricula.',
+                        'Encourage a multidisciplinary approach to problem-solving, integrating knowledge from various fields to address the evolving needs of society and industry.',
+                        "Encourage a multidisciplinary approach to problem-solving, integrating knowledge from various fields to address the evolving needs of society and industry."
                     ]}
                     />
                 </div>
