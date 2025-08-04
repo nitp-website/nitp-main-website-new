@@ -31,10 +31,10 @@ const admissionData = {
     ],
     notices: [
       {
-        title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students",
-        date: "2025-08-01",
-        content: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students",
-        href:"https://drive.google.com/file/d/1EJiyU7F16MZaFx2_DIph2nGrEF7EYIxY/view"
+        title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students.",
+        date: "2025-08-02",
+        content: " UG Admission",
+        href:"https://drive.google.com/file/d/1wUoxMAfqSBmz1-E7j8QvFK_Ywgcb-JoC/view?usp=sharing"
       },
       {
         title: "Physical reporting notice for Admission to B.Tech./B.Arch./Dual Degree (B.Tech+M.Tech) Programmes through JoSAA/CSAB/DASA/Study in India (SII)-2025",
@@ -197,11 +197,11 @@ const admissionData = {
       },
     ],
     notices: [
-      {
-        title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students",
-        date: "2025-08-01",
-        content: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students",
-        href:"https://drive.google.com/file/d/1EJiyU7F16MZaFx2_DIph2nGrEF7EYIxY/view"
+     {
+        title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students.",
+        date: "2025-08-02",
+        content: " UG Admission",
+        href:"https://drive.google.com/file/d/1wUoxMAfqSBmz1-E7j8QvFK_Ywgcb-JoC/view?usp=sharing"
       },
         {
         title: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2025-26 at NIT Patna.",
@@ -554,7 +554,7 @@ function handleClick(type) {
                               className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white font-medium rounded-lg hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-sm hover:shadow-md mb-4"
                             >
                               <ExternalLink className="w-4 h-4 mr-2" />
-                              Visit SOP
+                              View SOP
                             </a>
                           </div>
                           )}
