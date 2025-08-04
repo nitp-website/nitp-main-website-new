@@ -3559,29 +3559,29 @@ export default function Page() {
                             <SyllabusComp
     dep={"CSE"}
     sem={"1"}
-    code={"CS540101"}
+    code={"CS012801"}
     title={"Mathematical Foundations of Data Science"}
     L={"3"}
     T={"0"}
     P={"2"}
     cred={"4"}
-    url={"https://docs.google.com/document/d/1hJ_cQC8PN9ckw3HpPAoMOzUQENv-aSRi/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+    url={"https://docs.google.com/document/d/1RWX-Ybkg1bVGNmHiU4Fu7jQEkn330Zdv/edit"}
 />
 <SyllabusComp
     dep={"CSE"}
     sem={"1"}
-    code={"CS540102"}
+    code={"CS012802"}
     title={"Pattern Recognition"}
     L={"3"}
     T={"0"}
     P={"2"}
     cred={"4"}
-    url={"https://docs.google.com/document/d/18d3oZp03-eG0JzpdytLQs5Ji0QoW9-ZC/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+    url={"https://docs.google.com/document/d/1wAKOh_8w4iWFPIk-U8PQI3nmRJer4GiE/edit"}
 />
 <SyllabusComp
     dep={"CSE"}
     sem={"1"}
-    code={"CS5401XX"}
+    code={"CS0128XX"}
     title={"Elective-I/MOOC"}
     L={"X"}
     T={"X"}
@@ -3592,7 +3592,7 @@ export default function Page() {
 <SyllabusComp
     dep={"CSE"}
     sem={"1"}
-    code={"CS5401XX"}
+    code={"CS0128XX"}
     title={"Elective-II/MOOC"}
     L={"X"}
     T={"X"}
@@ -3603,7 +3603,7 @@ export default function Page() {
 <SyllabusComp
     dep={"CSE"}
     sem={"1"}
-    code={"CS5401XX"}
+    code={"CS0128XX"}
     title={"Elective-III/MOOC"}
     L={"X"}
     T={"X"}
@@ -3614,7 +3614,7 @@ export default function Page() {
 <SyllabusComp
     dep={"CSE"}
     sem={"1"}
-    code={"CS540103"}
+    code={"EA012801"}
     title={"EAA-Sports/Innovative Project"}
     L={"0"}
     T={"0"}
@@ -3625,7 +3625,7 @@ export default function Page() {
 <SyllabusComp
     dep={"CSE"}
     sem={"1"}
-    code={"CS540104"}
+    code={"CS012803"}
     title={"Technical Seminar and Report Writing"}
     L={"0"}
     T={"0"}
@@ -3636,40 +3636,40 @@ export default function Page() {
 <SyllabusComp
     dep={"CSE"}
     sem={"2"}
-    code={"CS540201"}
+    code={"CS022801"}
     title={"Natural Language Processing"}
     L={"3"}
     T={"0"}
     P={"2"}
     cred={"4"}
-    url={"https://docs.google.com/document/d/1ecjcLfro6S6OliRQBv3Dmn5Cc3dBEMWQ/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+    url={"https://docs.google.com/document/d/1Q6HJvULMIIRjBnsvgLssN5fKqmYHJOi0/edit"}
 />
 <SyllabusComp
     dep={"CSE"}
     sem={"2"}
-    code={"CS540202"}
+    code={"CS022802"}
     title={"Deep Learning"}
     L={"3"}
     T={"0"}
     P={"2"}
     cred={"4"}
-    url={"https://docs.google.com/document/d/1D3x4gB-ut09zswb2sZOj2qV2U_fI_f-B/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+    url={"https://docs.google.com/document/d/1_CBseJ1ceYCzRb6g5nr-3gubvGtBZdnR/edit"}
 />
 <SyllabusComp
     dep={"CSE"}
     sem={"2"}
-    code={"CS540203"}
+    code={"CS022803"}
     title={"Data Visualization Techniques"}
     L={"2"}
     T={"0"}
     P={"2"}
     cred={"3"}
-    url={"https://docs.google.com/document/d/1D3x4gB-ut09zswb2sZOj2qV2U_fI_f-B/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+    url={"https://docs.google.com/document/d/1MP7D_6vJuNmOKIacnhCdscC8EiZsSW4_/edit"}
 />
 <SyllabusComp
     dep={"CSE"}
     sem={"2"}
-    code={"CS5402XX"}
+    code={"CS0228XX"}
     title={"Elective-IV/MOOC"}
     L={"X"}
     T={"X"}
@@ -3680,7 +3680,7 @@ export default function Page() {
 <SyllabusComp
     dep={"CSE"}
     sem={"2"}
-    code={"CS5402XX"}
+    code={"CS0228XX"}
     title={"Elective-V/MOOC"}
     L={"X"}
     T={"X"}
@@ -3691,7 +3691,7 @@ export default function Page() {
 <SyllabusComp
     dep={"CSE"}
     sem={"2"}
-    code={"CS5402XX"}
+    code={"CS0228XX"}
     title={"Elective-VI/MOOC"}
     L={"X"}
     T={"X"}
@@ -3702,7 +3702,7 @@ export default function Page() {
 <SyllabusComp
     dep={"CSE"}
     sem={"2"}
-    code={"CS540204"}
+    code={"EA022801"}
     title={"EAA-Swachha Bharat Mission (SBM)"}
     L={"0"}
     T={"0"}
@@ -3713,7 +3713,7 @@ export default function Page() {
 <SyllabusComp
     dep={"CSE"}
     sem={"3"}
-    code={"CS540301"}
+    code={"CS032801"}
     title={"Project/Dissertation (to be continued in 4th Sem)"}
     L={"0"}
     T={"0"}
@@ -3724,10 +3724,10 @@ export default function Page() {
 <SyllabusComp
     dep={"CSE"}
     sem={"4"}
-    code={"CS540401"}
+    code={"CS042801"}
     title={"Project/Dissertation"}
     L={"0"}
-    T={"0"}
+    T={"0"}f
     P={"24"}
     cred={"12"}
     url={""}
@@ -3735,244 +3735,244 @@ export default function Page() {
 <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX05"}
+                                code={"CSXX2805"}
                                 title={"Adversarial ML"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1S5WUgD15RPXt9mmqpZZxLUh1sUGgpKiy/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1K2FjqsA58moz26IlMY9ybZ-pYiQg8WV7/edit#heading=h.2rdji9wpcvjf"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX06"}
+                                code={"CSXX2806"}
                                 title={"Digital Signal Processing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/19x2GJDwjKXUs0hf9l9HHbXHtFgCZRjbe/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1QCux8RrPbSGkhEdr5sr2pBEa1p6fMkod/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX07"}
+                                code={"CSXX2807"}
                                 title={"IOT Systems"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1__FzFOryXPTIgNs8L4mr5iK7wrRD3bim/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/10MO-C68mzoas2QwfnRKdhDzlEKXQIpGV/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX08"}
+                                code={"CSXX2808"}
                                 title={"Nature Inspired Computing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1BRlcFtqQ6MNC2o1VubS-Xui3O3y5u0yd/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1_3n1PXEA4m7_SySmPWgYIn9OA-CvDaD7/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX09"}
+                                code={"CSXX2809"}
                                 title={"Image Processing Techniques"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1ySgtdvdpgZ11yHHZac0xZ7FY8AUQnuVU/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1Tm1St9rTmAn3z35HI8_xWIO1D3ypnlUj/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX10"}
+                                code={"CSXX2810"}
                                 title={"Bioinformatics"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1ATF-z1CqnhcP3WStJ1NF0WHEEDy7SYAl/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1o29mElqcqt9qzJteDJ97euM7O_4__Gxa/view#heading=h.gjdgxs"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX11"}
+                                code={"CSXX2811"}
                                 title={"Information Retrieval"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1MSTQT82DN4Hsz-p0bqmLEhHcJxpQLJzD/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1kHUIpxhK-8eTPEcn7ujInnSJj1A1vHPt/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX12"}
+                                code={"CSXX2812"}
                                 title={"Computer Vision"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1WjKhL9XUkt6ceJxILzAbB_fuZUbf2vAn/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/14nN2sdlZSk1_va4sfVLc2iLsTYthSi15/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX13"}
+                                code={"CSXX2813"}
                                 title={"Reinforcement Learning"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1M0poIMuSnTjzz7qJFTZ2VJPKnFcQFi7w/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1ltFJrwQiFgdlAGb9rN8vL3bpQacYv7rK/edit#heading=h.gjdgxs"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX14"}
+                                code={"CSXX2814"}
                                 title={"Social Networks"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1bjTmo8qFMRoPS6n0ZYMjAR87IhbubWCI/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1Vq6U6O6MhSbG-o0z8vTdoyUVOfmN8JB0/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX15"}
+                                code={"CSXX2815"}
                                 title={"Recommendation Systems"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1Av3k8j7dKXMU-4wzZXG-xC4dtpIC_7dW/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/16bVIDbDhvgvVPxcDcG-ujhrF3s9TBQut/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX16"}
+                                code={"CSXX2816"}
                                 title={"Speech Processing"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1dFyE71zXIe0ACAMpMDuPYV8tH9x8W3HJ/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1j7ifn42mICp6Z1KrgBOF2cCQ-rmWHHxC/edit#heading=h.pfvvzz40m7y4"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX17"}
+                                code={"CSXX2817"}
                                 title={"Malware Analysis"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1GQjE6lBIL4Z-qHK4cEk4PZCiud4jk9kq/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1va4-AfiMjH7uTcl6mR5Y_sczvFt1J3T7/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX18"}
+                                code={"CSXX2818"}
                                 title={"Network Security"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1ily4ehPTWOAgic6r75xiILCHWnrxU2Ug/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/12vQYREqFJ_l8YtBDdbTkW5GtIrbXxv_A/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX19"}
+                                code={"CSXX2819"}
                                 title={"Intrusion Detection"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1aMiXuihrDJTyt2U3dwO9D7Fvo4PFxlsc/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/11dAtO2JyGh6Wg_Pmb48AlEz3PuPCONkf/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX20"}
+                                code={"CSXX2820"}
                                 title={"Time Series Analysis"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1m_bcJswg8MdtzObwx61cgMekndH1X8Cy/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1angVuP8tZtG39sCMAaxeWm_VZBJBpMFx/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX21"}
+                                code={"CSXX2821"}
                                 title={"Big Data Analytics"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1p66-Ihn_FyTdIUmC8TAyOQi_mZPdoM01/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1D3bZDHUBI4mZCfkem3MB5XYzAG_8Q4q4/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX22"}
+                                code={"CSXX2822"}
                                 title={"Multimedia Systems"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1A9wohyFyPddlD2KBKS3662m6R0Y4dV7U/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1haXY5hgOfGh2aJQwG8JaoLDLyVZast60/edit#heading=h.gjdgxs"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX23"}
+                                code={"CSXX2823"}
                                 title={"Biometric Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1FtyV2XWKYNDnAlpa6W61i5Ak60amOqMH/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1EMqYmLHe0XWS2pNY92hmKpSCbzw36oI5/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX0747"}
+                                code={"CSXX2847"}
                                 title={"Federated Learning"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1hWgm8ETwI-pbjRT-WPJiKNl5VdyGOdoU/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1QBk4z5DW_hVXUWrJR0HWEcNeBTEPy_pT/edit#heading=h.gb0x4v4erkkt"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX50"}
+                                code={"CSXX2850"}
                                 title={"Knowledge Representation & Reasoning"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1JQx5ITa2eARL0PB0hFm50-9TYWefUYRk/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1iCxALANTaT-S5KW7vHojo0kE78FOGo5_/edit#heading=h.egijqg7xo7uw"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX46"}
+                                code={"CSXX2846"}
                                 title={"Decision Support Systems"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1UQ2q8JYRcLvWv_Wo0skTrHWTZdUc2NuU/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1S95CSocmeJ2CAZkQNBALIt_rIxabki5B/edit#heading=h.gjdgxs"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -3988,233 +3988,233 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX24"}
+                                code={"CSXX2824"}
                                 title={"Blockchain Technology"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/15qyCDMiYpkF8jkg32aD4lV9F1h7CincF/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1G-X1nNamJ-kFX5lbp5yzaQRLwCUeORUN/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX25"}
+                                code={"CSXX2825"}
                                 title={"Cloud Computing Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1qchKU19UhaUKf933cNYgjWVrtqWmld7k/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1mqQYlu_UHlpHWLlgUTgQ8REOaQ5HrPcI/edit#heading=h.gjdgxs"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX26"}
+                                code={"CSXX2826"}
                                 title={"Cyber laws and rights"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1hMoGZzUWLPRBd8mvcem-rZDLr8ap3rrd/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1dVBLAXstoy6Q3unZaRVX-t7XiNuV0vUS/edit#heading=h.30j0zll"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX27"}
+                                code={"CSXX2827"}
                                 title={"Cyber Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1sv_MRVz7jsX8zbjHcKLvJUeNeHPTv9cV/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1OyWVJDp43SA-ZB6SPLnMNIjsLiC19C_R/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX28"}
+                                code={"CSXX2828"}
                                 title={"Data Visualization"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/14GbqFnR2v9BTZN6PEaFf-a2I6hXrQqdo/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1zidl95GAVMfivtzlEayU8QsYMzDdXStS/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX29"}
+                                code={"CSXX2829"}
                                 title={"Deep Learning Algorithms"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1M8ZcQ7PKrQfcIi1rQNx3z6FYmSE4Vhrl/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/113wuZDem_-izA9qOY19TltPCuw4jf2v0/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX30"}
+                                code={"CSXX2830"}
                                 title={"Digital Watermarking and Steganography"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1P0_HF6hjmrMfDPYxbZqhpa_bMDwjKEun/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1DNNSoHfdiH7l1NBZh7z1RTyK6y7P8nCt/edit#heading=h.mrttpn31y99w"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX31"}
+                                code={"CSXX2831"}
                                 title={"Distributed System Design"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1b11NpjhC_5hKwrxid7QJjeiaGsFHSYWD/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1NFL8JOSJ9XjRwlvTXLNUp7Ryf74nT8rp/edit#heading=h.bp74tdanab02"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX32"}
+                                code={"CSXX2832"}
                                 title={"Embedded System and Hardware Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1i4VeUmDRcPlSdMQmdDpfmf32LiAkdilW/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1rjZa6nF-jAK611FAXD1FlKmDARHykVpB/edit#heading=h.30j0zll"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX33"}
+                                code={"CSXX2833"}
                                 title={"Ethical Hacking"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1s112w4TMnmSLD4D8U3tilPEUwVhv5sxu/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1w5sTWxb7n5DngBNc7tfcLaG0syXWyhzF/view"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX34"}
+                                code={"CSXX2834"}
                                 title={"Information Theory and Coding"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1TUnaAOBCZj9JkO-kd0MBx2L-vtooFOaP/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1f4JVhADGKNguAaDkmeuCeBg674DIimQC/edit#heading=h.gjdgxs"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX35"}
+                                code={"CSXX2835"}
                                 title={"Mathematical Foundations for Information Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1AlRlTB8MOUmluidn8QGZ-rcrLUK-7nVZ/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1h6JertkeUAReZ5hvmFx0l-d0ioSEPjOP/edit#heading=h.fi1txyyyreo3"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX36"}
+                                code={"CSXX2836"}
                                 title={"Natural Language Processing Technique"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1WL-xbB35VRYnVfgS3W6JAtCmXHJiU8kp/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1Md4FHvYxzPGtNQ3IoUpk3WyalwyuGh6d/edit#heading=h.5opljn6ibfvw"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX37"}
+                                code={"CSXX2837"}
                                 title={"Pattern Recognition Technique"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1YXdX9UOHUZfNWTslaHEPSHvHkRWGoGVx/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1-N7ET8yPw955S7ZVyuDJuqJYPEXey8Mo/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX38"}
+                                code={"CSXX2838"}
                                 title={"Privacy and Security for Online Social Networks"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1Oy7PUgBwyDTt9nno3q3pWX3t52jsdnk1/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1awCiYJCrfgVc2oRVeZnRIOyBGl0l00vv/edit#heading=h.gjdgxs"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX39"}
+                                code={"CSXX2839"}
                                 title={"Secure Software Systems"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/187zl26VzGbsiffQnkKHSLJipfubSoT7A/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1AeGH88yeMDGNK6laNeOGAVti_hrKGZy-/edit#heading=h.aofqycvsjzx0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX40"}
+                                code={"CSXX2840"}
                                 title={"Soft Computing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1GiJ9GotxaQSJwCq-uC87Jh9Y4Toy-Qhl/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1XR3w1bhYh9FNSgIFy5kq-884Labqaa1r/edit#heading=h.g8el6hieyxhx"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX41"}
+                                code={"CSXX2841"}
                                 title={"Software Defined Networks"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1qOSIAd5Dy2ENxoRriYABncgGeUct8YG5/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1XFAqsfxhTzvgPilDC7lG_-KAcxvmvEEY/edit#heading=h.ems9xxvatjok"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX42"}
+                                code={"CSXX2842"}
                                 title={"Ubiquitous Computing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/18R8XlqRQ9HFTlSYm6DCYeps4jAN10-me/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1OyWQelWlt4W35ZD7xyXC0lwXVexFssZ7/edit#heading=h.yizkkfahv610"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX43"}
+                                code={"CSXX2843"}
                                 title={"Wireless & Mobile Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1MX9MSv24klzZWdHiwFtPaNI9EH622RLR/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1mYTttrHhuhKfxsYjkD5fxW-JHLGf9cbp/edit#heading=h.c7u7z2pxoiom"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX49"}
+                                code={"CSXX2849"}
                                 title={"Human Computer Interaction"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1lQuJMN-bzM-pxQ9hYNF5NjwjQZ7PVFPr/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1DUuW1XspgnBy6ATTe15QfgUAr7JRQiFO/edit"}
                             />
                             
                             <SyllabusComp
@@ -4231,35 +4231,35 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX51"}
+                                code={"CSXX2851"}
                                 title={"Mobile Applications Development"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1QtpOMOfCg8GIXaqfEVbCF0yNMnc_S7xs/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1UKefye3GSeh9VghVibcO2ga5sQtvDInd/edit#heading=h.dxz220fanfri"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX48"}
+                                code={"CSXX2848"}
                                 title={"Game Theory"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1TH0Rzj4WWrQsurXF1Vq07C5PO9hWQ1GM/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1LSEU1Fg6zs6W1W4clhWZ9VCl54qTPCuW/edit"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"CS54XX45"}
+                                code={"CSXX2845"}
                                 title={"Computational Geometry"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1jyFGE46oRuHdJ-0rDEyxmkh3D0DITmZT/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1bjcmKrjMpnxMu9gA9wAD1UOUkgtAfbUK/edit#heading=h.79ivdx8yy7hz"}
                             />
                         </div>
                     </div>
@@ -4280,18 +4280,29 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"1"}
-                                code={"CS550102"}
+                                code={"CS012701"}
+                                title={"Applied Cryptography"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={'https://docs.google.com/document/d/1xoYfBkzLJ6Q6HcREw-f-elq52qyUJ5Tf/view'}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"1"}
+                                code={"CS012702"}
                                 title={"Network Security System"}
                                 L={"3"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={'https://docs.google.com/document/d/1I0MJ3dr4t58lTLB0eZAIWDXrfkDp_aeJ/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/185ga4rbGbtyV0mWjssFxeviiAHKmvB30/view'}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"1"}
-                                code={"CS5501XX"}
+                                code={"CS0127XX"}
                                 title={"Elective-I/ MOOC"}
                                 L={"X"}
                                 T={"X"}
@@ -4302,7 +4313,7 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"1"}
-                                code={"CS5501XX"}
+                                code={"CS0127XX"}
                                 title={"Elective-II/ MOOC"}
                                 L={"X"}
                                 T={"X"}
@@ -4313,7 +4324,7 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"1"}
-                                code={"CS5501XX"}
+                                code={"CS0127XX"}
                                 title={"Elective-III/ MOOC"}
                                 L={"X"}
                                 T={"X"}
@@ -4324,7 +4335,7 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"1"}
-                                code={"CS550103"}
+                                code={"EA012701"}
                                 title={"EAA-Sports/Innovative Project"}
                                 L={"0"}
                                 T={"0"}
@@ -4335,7 +4346,7 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"1"}
-                                code={"CS550104"}
+                                code={"CS012703"}
                                 title={"Technical Seminar and Report Writing"}
                                 L={"0"}
                                 T={"0"}
@@ -4346,40 +4357,40 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"CS550201"}
+                                code={"CS022701"}
                                 title={"Intrusion Detection and Prevention"}
                                 L={"3"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={'https://docs.google.com/document/d/1A4xRoXiIVqqmZcQPPuDwvoZgCmLeu0Ub/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1PoFjQlcWk9gIUcPXn9UQbB0o-vYL9OYt/view'}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"CS550202"}
+                                code={"CS022702"}
                                 title={"Advanced Internet of Things (IoT)"}
                                 L={"3"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"4"}
-                                url={'https://docs.google.com/document/d/1Zd4qDbCYWT8ocC30DQZ84n3wWsRjnvl_/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1EmeFtIiTgMjHMTMH2_VyqrBBM6_uCC2j/view'}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"CS550203"}
+                                code={"CS022703"}
                                 title={"Cyber Forensics"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/13_BHG_KI4kVn2t6EXlWuyyjVOBx2doBD/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1x59HEiHif7G64kaf30Zysi1Ti_HEDP3M/view#heading=h.9i3tld9eytkt'}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"CS5502XX"}
+                                code={"CS0227XX"}
                                 title={"Elective-IV/ MOOC"}
                                 L={"X"}
                                 T={"X"}
@@ -4390,7 +4401,7 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"CS5502XX"}
+                                code={"CS0227XX"}
                                 title={"Elective-V/ MOOC"}
                                 L={"X"}
                                 T={"X"}
@@ -4401,7 +4412,7 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"CS5502XX"}
+                                code={"CS0227XX"}
                                 title={"Elective-VI/ MOOC"}
                                 L={"X"}
                                 T={"X"}
@@ -4412,7 +4423,7 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"CS550204"}
+                                code={"EA022701"}
                                 title={"EAA-Swachha Bharat Mission (SBM)"}
                                 L={"0"}
                                 T={"0"}
@@ -4423,7 +4434,7 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"3"}
-                                code={"CS550301"}
+                                code={"CS032701"}
                                 title={"Project/Dissertation (to be continued in 4th Sem)"}
                                 L={"0"}
                                 T={"0"}
@@ -4434,7 +4445,7 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"4"}
-                                code={"CS550401"}
+                                code={"CS042701"}
                                 title={"Project/Dissertation"}
                                 L={"0"}
                                 T={"0"}
@@ -4445,24 +4456,24 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX05"}
+                                code={"CSXX2705"}
                                 title={"Adversarial ML"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1EdZu91332hjDrxntIEZp82vRLu9HQBLU/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1VTzzXbuMRtY2TrShOHUyPNAG0DSi5Yat/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX06"}
+                                code={"CSXX2706"}
                                 title={"Deep Learning Algorithms"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1QhwpDinOy1FXeEEHq61OrklcmjL3Pg7l/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1q6A2w43DNciAUfhDoZo6SMELM5vA1ag_/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
@@ -4478,24 +4489,24 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX08"}
+                                code={"CSXX2708"}
                                 title={"Information Theory and Coding"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/134dzdXQIvu9XSYRElOAgVYuJjIc4PHJm/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1QqIe9P-G_VVc06Jf_xgCQXR_8pUSKtL1/edit#heading=h.gjdgxs'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX09"}
+                                code={"CSXX2709"}
                                 title={"Wireless & Mobile Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1Q4NnF1GiID1RU5js9oG34Z95nBZetdpG/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1mlzmUtjP9RbVPEt0-mQ5r3n1laDdevel/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
@@ -4506,30 +4517,41 @@ export default function Page() {
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1VgMlWRXpf46S5x2lVZwcxgLYBsnJXKmG/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/170DssqEl-NX52SybzEl14-tDaSY6zPWG/view'}
 
+                            />
+                             <SyllabusComp
+                                dep={"Cyber Security"}
+                                sem={"EL"}
+                                code={"CSXX2742"}
+                                title={"Social Networks"}
+                                L={"2"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"3"}
+                                url={'https://docs.google.com/document/d/19314gP5WG-uBOa9X8Fh2koQL9ySveNaf/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX11"}
+                                code={"CSXX2711"}
                                 title={"Cyber Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1hYCXWv4BaLJF3Vp_KY9ljZdiWt-6Dg8l/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1_9vZBnst5e-zjhffVlIfJq3j3LITwa1N/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX12"}
+                                code={"CSXX2712"}
                                 title={"Multimedia System"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1HZ7FvqGgPvEwiOevgXRGeKept1YLgCNT/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1fr4pZW8-bF3QgbMh7nEi56CEKz9AtIsE/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
@@ -4540,73 +4562,73 @@ export default function Page() {
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/179_YIy8RV_SXec4uWT_CkvjxiB9p-myJ/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/14ScD-8EYoA079FW0fNTtLFzESBooMitY/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX14"}
+                                code={"CSXX2714"}
                                 title={"Big Data Analytics"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1Zo6XiPBiCR2-2iRXw-DeFpGN6rz1Wphg/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1RMALmnRMjG_KB1rNez9nW-4Bq5nSy0I9/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX15"}
+                                code={"CSXX2715"}
                                 title={"Cloud Computing Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1YaNMFedF6tLzd5mVnHn0MIa-JF-h1jLn/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1e3cOOYMzpT23Eauus4xnAk2Y_Sg7Uog8/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX16"}
+                                code={"CSXX2716"}
                                 title={"Biometric Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/14YGko8K1lu6f5P5ES-MU7q2DKX7jmwOD/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1Mh9gsA6fop1UwiFnBd10mNOH5oo24COd/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX17"}
+                                code={"CSXX2717"}
                                 title={"Ethical Hacking"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1Bzi0SFDJeA5j3BzbZJKD2aXp6G9AKLTV/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1f51Ks7l0vRKtmHdY0MpuHta_Hz2lp1Ke/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX18"}
+                                code={"CSXX2718"}
                                 title={"Blockchain Technology"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1Bzi0SFDJeA5j3BzbZJKD2aXp6G9AKLTV/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1TSguCWrkmt6R-NmvadJBCW_vWNY9DYBw/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX19"}
+                                code={"CSXX2719"}
                                 title={"Cyber laws and rights in the digital age"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/19oAnc1j64lN9IEUkC1Y_6HS9xO5D_Lhl/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1tod5gmqKB3GQYvLgQGMSuhT2I7Kr57TQ/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
@@ -4622,13 +4644,13 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX21"}
+                                code={"CSXX2721"}
                                 title={"Privacy and Security for Online Social Networks"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1Shii64QvMQ2tG__oC1_ljuiNhIQK1PEx/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1o-ENAd_dJwWpGkKSbu0MA5VuS8R-3mBw/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
@@ -4650,18 +4672,18 @@ export default function Page() {
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1Wfz350fPyxDRic-NAdXezKYzEBUP9Vxr/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1Htcgl74Cc_GWgmt_-E-UfXFNwhD3d_BG/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX24"}
+                                code={"CSXX2724"}
                                 title={"Ubiquitous Computing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1C_kCCcEzH-ygzXtuVPVEyncSBQkzQscu/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1Xw4f5urYTablulffjuhKb0-j-quX8qbu/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
@@ -4678,46 +4700,46 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX26"}
+                                code={"CSXX2726"}
                                 title={"Embedded System and Hardware Security"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1hepcq3sdGCn4omShtc_j1vSIypqPreTe/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1R84PnBdvbkX8hXyngMrsPJsDApYh0tDt/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX27"}
+                                code={"CSXX2727"}
                                 title={"Distributed System Design"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1iDIZttuYQlRQDmXECWqDlh6W4aIDJN-w/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1b4ra_Islw0MhNPKlaej1XMB--3z593QR/view#heading=h.30j0zll'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX28"}
+                                code={"CSXX2728"}
                                 title={"Software Defined Networks"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1EoNJaAf4QtmRDgkrzdqmp-V0IJdJkAqi/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1yTXI90txhaU7mUIu1_KaknHLHyThXJ-c/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX29"}
+                                code={"CSXX2729"}
                                 title={"Secure Software Systems"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1bv7myOc9-l6npdehpWwHgooMgUzx1yHo/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1NBOAKvOdiPLLFUEfQTp_0GyiHEEpEK5T/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
@@ -4733,46 +4755,57 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX31"}
+                                code={"CSXX2731"}
                                 title={"Natural Language Processing Technique"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1RHiIFgWrNo0Kd617jm5ajono46s_qqgB/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1AlE5MZtiT-WZMhVyGQuGZ6pw0nh6nSFA/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX32"}
+                                code={"CSXX2749"}
+                                title={"Game Theory"}
+                                L={"3"}
+                                T={"0"}
+                                P={"0"}
+                                cred={"3"}
+                                url={'https://docs.google.com/document/d/1DGFMEZgMyOhNTofndz0dPprQim5E8Mvd/view#heading=h.c5tt0xsvp69d'}
+                            />
+                            <SyllabusComp
+                                dep={"Cyber Security"}
+                                sem={"EL"}
+                                code={"CSXX2732"}
                                 title={"Data Visualization"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1ZiPts7SlqGEbU9w2SAaDSOkVx0LLvpVN/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1J_nN4dYXigaalqKUv7fJI_OedRK2vjR4/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX33"}
+                                code={"CSXX2733"}
                                 title={"Bioinformatics"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1yxwlC1o7kXRbA971tKgIrF84OC_PGLPH/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1mm-dw9OqO07HSuD27GyQZTRmzBlVKY0P/view#heading=h.gjdgxs'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX34"}
+                                code={"CSXX2734"}
                                 title={"Digital Signal Processing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1UiiepA9ueSZyHd2TUNKMhPPQ9HkLAw_E/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1RdWIHSwHrBzT8FEs25Inzm86LqCUjPz6/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
@@ -4783,73 +4816,84 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1lpMGnxoxC7jSZn0DR9k00I0kF2EPjRQG/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/14bRrF_2C0fpxKGxuBcALAf0ld6Qqnho0/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX36"}
+                                code={"CSXX2736"}
                                 title={"Intrusion Detection"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1fNet1b4fy995qCg-eRFFGb0LI7Itwr0K/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1ogBIh96zDG2pBdNZadIBWutBleXEgZMh/edit#heading=h.gogiv5kdobwk'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX37"}
+                                code={"CSXX2737"}
                                 title={"IOT Systems"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1wtgtKKP0ShlMgsI653zIq_Tni7fOgCGy/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1JPgFOgrJDZYDdTfVlcA5yavexFJqdUPy/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX38"}
+                                code={"CSXX2738"}
                                 title={"Nature Inspired Computing"}
                                 L={"3"}
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1Er7O1zr0vfYdzeqA-QktmwhuYG3QSciD/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1nN4UTMDg9WCSbdy4kd050wFtFuhN9VMl/view'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX39"}
+                                code={"CSXX2739"}
                                 title={"Network Security"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1ZblLshtnjq85UZKFRDSAIQZe_r_0TeQ3/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1VrASN214BqRj1BXHdd-Hu6wYEUGqI95y/view#heading=h.x1nmfe73g7t9'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX40"}
+                                code={"CSXX2740"}
                                 title={"Recommendation Systems"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1RW2TqHu63bO7a9XQ28tpdD3B5S_ATE93/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1I74nKZW2icb-jELT3KvNH3IW8sdS7e2z/view#heading=h.tin631xcjne5'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
-                                code={"CS55XX41"}
+                                code={"CSXX2752"}
+                                title={"Mobile Applications Development"}
+                                L={"2"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"3"}
+                                url={'https://docs.google.com/document/d/1IdMxeVi1K8D16DwPuNoSlIWVNCa2h1sI/view'}
+                            />
+                            <SyllabusComp
+                                dep={"Cyber Security"}
+                                sem={"EL"}
+                                code={"CSXX2741"}
                                 title={"Reinforcement Learning"}
                                 L={"2"}
                                 T={"0"}
                                 P={"2"}
                                 cred={"3"}
-                                url={'https://docs.google.com/document/d/1mpau99Nbhntav3lHl_My9FRsc23PMaRN/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
+                                url={'https://docs.google.com/document/d/1MEVaBzK2FRwIyHzL3Ij0UGJ9hr2rlaVI/edit#heading=h.gjdgxs'}
                             />
                             <SyllabusComp
                                 dep={"Cyber Security"}
