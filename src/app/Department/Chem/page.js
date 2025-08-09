@@ -105,6 +105,16 @@ export default function Chem() {
           />
 
           <DepartmentNavigationButton
+            onClick={() => router.push('/Department/Chem/po')}
+            Title={'PO'}
+          />
+
+          <DepartmentNavigationButton
+            onClick={() => router.push('/Department/Chem/peo')}
+            Title={'PEO'}
+          />
+
+          <DepartmentNavigationButton
             onClick={() => router.push('/Department/Chem/faculty')}
             Title={'PEOPLE'}
           />
