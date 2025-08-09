@@ -1,5 +1,5 @@
 import React from "react";
-import { Comp } from "../page";
+import { Comp } from "../../../../../utils/comp";
 
 function page() {
   return (

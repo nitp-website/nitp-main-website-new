@@ -1,5 +1,6 @@
 import React from "react";
-import { Comp } from "../mission/page";
+import {Comp} from "../../../../utils/comp"
+
 function page() {
   return (
     <div className="flex flex-col p-5 text-black">

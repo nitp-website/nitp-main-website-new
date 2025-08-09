@@ -1,6 +1,6 @@
 import BackDepartment from "../../../components/department/BackDepartment"
 
-export function Comp({content}){
+function Comp({content}){
     return(
         <div className="flex flex-col mt-8 lg:ml-10">
             <ul>
@@ -59,9 +59,7 @@ function Page(){
                         "Encourage a multidisciplinary approach to problem-solving, integrating knowledge from various fields to address the evolving needs of society and industry."
                     ]}
                     />
-                </div>
-
-                
+                </div>                
             </div>
         </div>
 

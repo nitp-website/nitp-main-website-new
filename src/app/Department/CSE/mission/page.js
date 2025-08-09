@@ -1,6 +1,6 @@
 import BackDepartment from "../../../components/department/BackDepartment"
 
-export function Comp({content}){
+function Comp({content}){
     return(
         <div className="flex flex-col mt-8 lg:ml-10">
             <ul>
