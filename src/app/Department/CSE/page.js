@@ -129,6 +129,14 @@ export default function CSE() {
           onClick={() => router.push('/Department/CSE/mission')}
           Title={'MISSION AND VISSION'}
         />
+        <DepartmentNavigationButton
+          onClick={() => router.push('/Department/CSE/mission/peo')}
+          Title={'PEO'}
+        />
+        <DepartmentNavigationButton
+          onClick={() => router.push('/Department/CSE/mission/pso')}
+          Title={'Program Specific Outcome'}
+        />
           <DepartmentNavigationButton
           onClick={() => router.push('/Department/CSE/faculty')}
           Title={'PEOPLE'}
