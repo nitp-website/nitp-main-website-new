@@ -128,7 +128,7 @@ export default function Page() {
                             setUg(false);
                             setmcad(true)
                             setmcaai(false)
-                        }} className={`border border-black rounded ${(mcad) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in AI & IoT</button>
+                        }} className={`border border-black rounded ${(mcad) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in Data Science & Informatics</button>
                         <button onClick={() => {
                             setUgai_ds(false);
                             setUg2021(false);
@@ -141,7 +141,7 @@ export default function Page() {
                             setUg(false);
                             setmcad(false)
                             setmcaai(true)
-                        }} className={`border border-black rounded ${(mcaai) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in Data Science & Informatics</button>
+                        }} className={`border border-black rounded ${(mcaai) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in AI & IoT</button>
                         <button onClick={() => {
                             setUgai_ds(false);
                             setUg2021(false);
@@ -6038,7 +6038,7 @@ export default function Page() {
                 </div>
                 {/* MCA(DS & I) */}
                 <div className={`mb-10 ${(mcad == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA with specialization in AI & IoT:-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8"> MCA with specialization in Data Science & Informatics </div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
@@ -6532,7 +6532,7 @@ export default function Page() {
                 </div>
                 {/* MCA(DS & I) */}
                 <div className={`mb-10 ${(mcaai == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA with specialization in Data Science & Informatics:-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA with specialization in AI & IoT</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
