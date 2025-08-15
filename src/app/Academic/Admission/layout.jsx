@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Admissions | National Institute of Technology Patna',
     description: 'Admission information for various programs at NIT Patna',
-    images: ['/MainBuilding.jpg'],
+    images: ['https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainBuilding.webp'],
   },
 };
 
