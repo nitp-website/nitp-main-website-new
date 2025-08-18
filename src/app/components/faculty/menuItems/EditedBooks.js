@@ -14,7 +14,11 @@ const EditedBooks = ({ data }) => {
       {error && <p className="text-red-500">Error: {error.message}</p>}
       <ul className="space-y-6">
         {data.length > 0 ? (
-          data.map((book, index) => (
+          data
+          .sort((a, b) => {
+            return b.year - a.year;
+          })
+          .map((book, index) => (
             <li
               key={index}
               className="p-5 border border-gray-200 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"

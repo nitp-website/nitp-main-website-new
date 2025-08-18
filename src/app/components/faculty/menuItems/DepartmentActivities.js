@@ -12,7 +12,16 @@ const DepartmentActivities = ({ data }) => {
         Department Activities
       </h2>
       <ul className="space-y-4">
-        {sortedActivities.map((activity, index) => (
+        {sortedActivities.sort((a, b) => {
+
+            if (a.end_date === "Continue" && b.end_date !== "Continue") return -1;
+            if (b.end_date === "Continue" && a.end_date !== "Continue") return 1;
+
+            const dateA = new Date(a.end_date);
+            const dateB = new Date(b.end_date);
+
+            return dateB - dateA;
+          }).map((activity, index) => (
           <li
             key={index}
             className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
