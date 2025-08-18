@@ -14,7 +14,7 @@ const IntranetRedirect = () => {
     }, 1000);
 
     const redirect = setTimeout(() => {
-      window.location.href = "http://172.16.55.10:3000"; // Redirect to your intranet site
+      window.location.href = "https://intranet.nitp.ac.in"; // Redirect to your intranet site
     }, 6000); // 6 seconds redirect
 
     return () => {
