@@ -33,18 +33,19 @@ const Slider = () => {
         <SwiperSlide>
           <img src="/independeceDayCelbHomePoster.webp" />
         </SwiperSlide>
+                <SwiperSlide>
+          <img src="https://i.postimg.cc/W38dktZ6/Fall-Festival.webp" alt="Har Ghar Tiranga 2025" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://i.postimg.cc/zvfVS5Sm/Fall-Festival-1.webp" alt="Fall Festival 2025" />
+        </SwiperSlide>
         <SwiperSlide>
           <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainBuilding.webp" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://i.postimg.cc/bvD4Z9wQ/image.png" alt="Har Ghar Tiranga 2025" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/home2.png" />
-        </SwiperSlide>
+
         <SwiperSlide>
           <img src="https://i.postimg.cc/J42hsCPZ/2-scientist.png" />
         </SwiperSlide>

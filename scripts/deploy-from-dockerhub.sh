@@ -47,7 +47,24 @@ fi
 # Run the container with environment variables
 sudo docker run -d --restart=always -p $APP_PORT:3002 $ENV_VARS --name $APP_NAME $IMAGE_NAME
 
-echo "🧹 Cleaning up old images..."
-sudo docker system prune -f
+# Wait for health endpoint before pruning
+echo "⏳ Waiting for service to become healthy on http://localhost:$APP_PORT/api/health ..."
+READY=0
+for i in $(seq 1 30); do
+  if curl -fsS http://localhost:$APP_PORT/api/health >/dev/null 2>&1; then
+    READY=1
+    echo "✅ Service is healthy. Proceeding to prune old artifacts."
+    break
+  fi
+  echo "...retry $i/30"
+  sleep 5
+done
 
-echo "✅ Deployment complete!"
+if [ "$READY" -eq 1 ]; then
+  echo "🧹 Cleaning up old Docker resources (images/volumes/networks/containers not in use)..."
+  sudo docker system prune -a --volumes -f
+else
+  echo "❌ Service did not become healthy in time. Skipping prune to preserve debug context."
+fi
+
+echo "✅ Deployment process finished!"
