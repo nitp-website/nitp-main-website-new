@@ -24,18 +24,39 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="slider-container">
-      <div className="slider mx-auto">
-        <img src={sliderData[currentIndex].image} alt={`Slide ${currentIndex + 1}`} />
-        <div className="text-overlay">
-          <h2 className="text-2xl pt-4 text-red-800 font-extrabold">{sliderData[currentIndex].heading}</h2>
-          <p className="text-sm md:text-lg pt-5 md:pt-8 text-neutral-700">{sliderData[currentIndex].description}</p>
+    <>
+      <div className="clubs-header">
+        <h1 className="clubs-title">Clubs in College</h1>
+        <p className="clubs-subtitle">Explore student‑led communities driving creativity, technology, culture, and leadership at NIT Patna.</p>
+      </div>
+      <div className="slider-container">
+        <div className="slider">
+          <div key={`content-${currentIndex}`} className="content-pane fade-in-up">
+            <h2 className="overlay-title">{sliderData[currentIndex].heading}</h2>
+            <p className="overlay-desc">{sliderData[currentIndex].description}</p>
+          </div>
+          <div
+            key={`image-${currentIndex}`}
+            className="image-pane slide-in"
+            style={{ ['--bg-image']: `url('${sliderData[currentIndex].image}')` }}
+          >
+            <img src={sliderData[currentIndex].image} alt={`Slide ${currentIndex + 1}`} />
+          </div>
+          <button aria-label="Previous slide" className="nav prev" onClick={prevSlide}>❮</button>
+          <button aria-label="Next slide" className="nav next" onClick={nextSlide}>❯</button>
+          <div className="dots">
+            {sliderData.map((_, i) => (
+              <button
+                key={i}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`dot ${i === currentIndex ? 'active' : ''}`}
+                onClick={() => setCurrentIndex(i)}
+              />
+            ))}
+          </div>
         </div>
       </div>
-
-      <button className="prev" onClick={prevSlide}>❮</button>
-      <button className="next" onClick={nextSlide}>❯</button>
-    </div>
+    </>
   );
 };
 
