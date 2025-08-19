@@ -8,16 +8,22 @@ const Noticecard = ({ detail, time, attachments, notice_link }) => {
   // Parse notice_link if it exists
   const parsedNoticeLink = notice_link ? JSON.parse(notice_link) : null;
 
+  // Safely format date using openDate passed as time (milliseconds since epoch)
+  const dateObj = time ? new Date(Number(time)) : null;
+  const formattedDate = dateObj && !isNaN(dateObj.getTime())
+    ? dateObj.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })
+    : '';
+
   return (
     <div className="notice bg-white rounded-lg p-4 mb-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
       <div className="flex items-start gap-3">
         <FileText className="w-5 h-5 text-red-800 mt-1 flex-shrink-0" />
         <div className="flex-1">
           <h3 className="text-gray-800 text-base mb-2 font-medium">{detail}</h3>
-          
+
           <div className="flex items-center gap-2 mb-3 text-gray-500 text-sm">
             <Calendar className="w-4 h-4" />
-            <span>{new Date(time).toLocaleDateString()}</span>
+            <span>{formattedDate || '—'}</span>
           </div>
 
           <div className="space-y-2">
@@ -266,11 +272,11 @@ const Page = () => {
               </div>
             ) : (
               tender.map((notice) => {
-                const { title, timestamp, id, attachments, notice_link } = notice;
+                const { title, openDate, id, attachments, notice_link } = notice;
                 return (
                   <Noticecard
                     detail={title}
-                    time={timestamp}
+                    time={openDate}
                     key={id}
                     attachments={attachments}
                     notice_link={notice_link}
