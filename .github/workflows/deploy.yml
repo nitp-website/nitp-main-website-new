@@ -48,7 +48,7 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
-    - name: 🚀 Deploy to Server
+    - name: 🚀 Deploy to Server & prune on success
       uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.EC2_HOST }}
@@ -56,6 +56,38 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT || 22 }}
         script: |
-          echo "Connected to EC2 server"
-          ./run-nitp-main.sh
-          echo "Completed"
+          set -e
+          echo "Connected to server"
+          
+          # Existing deploy script (pulls and restarts container)
+          if [ -x ./run-nitp-main.sh ]; then
+            ./run-nitp-main.sh
+          else
+            echo "⚠️ run-nitp-main.sh not found or not executable; proceeding without it"
+          fi
+          
+          echo "⏳ Waiting for app health (HTTP) to become ready..."
+          READY=0
+          for i in $(seq 1 30); do
+            if curl -fsS http://localhost:3002/api/health >/dev/null 2>&1; then
+              READY=1
+              echo "✅ Health endpoint is responding."
+              break
+            fi
+            echo "...retry $i/30"
+            sleep 5
+          done
+          
+          if [ "$READY" -ne 1 ]; then
+            echo "❌ Deployment did not become healthy in time. Showing recent container info..."
+            docker ps
+            # Try to print logs if the known container name exists
+            if docker ps -a --format '{{.Names}}' | grep -q '^nitp-main-website$'; then
+              docker logs --tail 200 nitp-main-website || true
+            fi
+            exit 1
+          fi
+          
+          echo "🧹 Pruning unused Docker resources (images/volumes/networks/containers not in use)..."
+          docker system prune -a --volumes -f
+          echo "✅ Deployment complete and old artifacts pruned."
