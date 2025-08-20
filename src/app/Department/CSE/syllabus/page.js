@@ -677,6 +677,28 @@ export default function Page() {
                                 cred={"3"}
                                 url={""}
                             />
+                              <SyllabusComp
+                                dep={"CSE"}
+                                sem={"9"}
+                                code={"CS94133"}
+                                title={"Industrial Training / Project (to be continued in 10th Sem)"}
+                                L={"0"}
+                                T={"0"}
+                                P={"40"}
+                                cred={"20"}
+                                url={""}
+                            />
+                              <SyllabusComp
+                                dep={"CSE"}
+                                sem={"10"}
+                                code={"CS104134"}
+                                title={"Industrial Training / Project"}
+                                L={"0"}
+                                T={"0"}
+                                P={"40"}
+                                cred={"20"}
+                                url={""}
+                            />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
@@ -5503,6 +5525,30 @@ export default function Page() {
                                 cred={"4"}
                                 url={"https://docs.google.com/document/d/14n6eimr8AnBr7L45Hvj-a25SXWqwgYD9/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                             />
+                                <SyllabusComp
+                                dep={"CSE"}
+                                sem={"9"}
+                                code={"CS94141"}
+                                title={"Industrial Training / Project (to be continued in 10th Sem)"}
+                                L={"0"}
+                                T={"0"}
+                                P={"40"}
+                                cred={"20"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"10"}
+                                code={"CS104142"}
+                                title={"Industrial Training / Project"}
+                                L={"0"}
+                                T={"0"}
+                                P={"40"}
+                                cred={"20"}
+                                url={""}
+                            />
+
+                                    
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
