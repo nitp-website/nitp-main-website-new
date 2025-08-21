@@ -41,7 +41,7 @@ const Slider = () => {
           <img src="https://i.postimg.cc/W38dktZ6/Fall-Festival.webp" alt="Har Ghar Tiranga 2025" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://i.postimg.cc/zvfVS5Sm/Fall-Festival-1.webp" alt="Fall Festival 2025" />
+          <img src="https://i.postimg.cc/yd30JWY8/Fall-Festival-2.webp" alt="Fall Festival 2025" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp" />
