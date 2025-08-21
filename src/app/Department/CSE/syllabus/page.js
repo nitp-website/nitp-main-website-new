@@ -128,7 +128,7 @@ export default function Page() {
                             setUg(false);
                             setmcad(true)
                             setmcaai(false)
-                        }} className={`border border-black rounded ${(mcad) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in AI & IoT</button>
+                        }} className={`border border-black rounded ${(mcad) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in Data Science & Informatics</button>
                         <button onClick={() => {
                             setUgai_ds(false);
                             setUg2021(false);
@@ -141,7 +141,7 @@ export default function Page() {
                             setUg(false);
                             setmcad(false)
                             setmcaai(true)
-                        }} className={`border border-black rounded ${(mcaai) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in Data Science & Informatics</button>
+                        }} className={`border border-black rounded ${(mcaai) ? "text-white bg-red-900" : "text-red-900"} px-2`}>MCA with specialization in AI & IoT</button>
                         <button onClick={() => {
                             setUgai_ds(false);
                             setUg2021(false);
@@ -675,6 +675,28 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
+                                url={""}
+                            />
+                              <SyllabusComp
+                                dep={"CSE"}
+                                sem={"9"}
+                                code={"CS94133"}
+                                title={"Industrial Training / Project (to be continued in 10th Sem)"}
+                                L={"0"}
+                                T={"0"}
+                                P={"40"}
+                                cred={"20"}
+                                url={""}
+                            />
+                              <SyllabusComp
+                                dep={"CSE"}
+                                sem={"10"}
+                                code={"CS104134"}
+                                title={"Industrial Training / Project"}
+                                L={"0"}
+                                T={"0"}
+                                P={"40"}
+                                cred={"20"}
                                 url={""}
                             />
                             <SyllabusComp
@@ -5503,6 +5525,30 @@ export default function Page() {
                                 cred={"4"}
                                 url={"https://docs.google.com/document/d/14n6eimr8AnBr7L45Hvj-a25SXWqwgYD9/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                             />
+                                <SyllabusComp
+                                dep={"CSE"}
+                                sem={"9"}
+                                code={"CS94141"}
+                                title={"Industrial Training / Project (to be continued in 10th Sem)"}
+                                L={"0"}
+                                T={"0"}
+                                P={"40"}
+                                cred={"20"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"10"}
+                                code={"CS104142"}
+                                title={"Industrial Training / Project"}
+                                L={"0"}
+                                T={"0"}
+                                P={"40"}
+                                cred={"20"}
+                                url={""}
+                            />
+
+                                    
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
@@ -6038,7 +6084,7 @@ export default function Page() {
                 </div>
                 {/* MCA(DS & I) */}
                 <div className={`mb-10 ${(mcad == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA with specialization in AI & IoT:-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8"> MCA with specialization in Data Science & Informatics </div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>
@@ -6532,7 +6578,7 @@ export default function Page() {
                 </div>
                 {/* MCA(DS & I) */}
                 <div className={`mb-10 ${(mcaai == false) ? "hidden" : ""}`}>
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA with specialization in Data Science & Informatics:-</div>
+                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA with specialization in AI & IoT</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Dept.</div>

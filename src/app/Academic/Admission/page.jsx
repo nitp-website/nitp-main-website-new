@@ -37,6 +37,12 @@ const admissionData = {
     ],
     notices: [
       {
+        title: "Admission link is live (18/08/2025; 3 PM to 23/08/2025) for those who have confirmed their seat during JoSAA-2025 counselling and have not participated in CSAB special Round. Same Admission link will be used for those who have participated in CSAB special round and confirmed their seat during CSAB special round from live from 20/08/2025 to 23/08/2025.",
+        date: "2025-08-18",
+        content: " UG Admission",
+        href:""
+      },
+      {
         title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students.",
         date: "2025-08-02",
         content: " UG Admission",
@@ -209,6 +215,12 @@ const admissionData = {
       },
     ],
     notices: [
+        {
+        title: "Admission link is live (18/08/2025; 3 PM to 23/08/2025) for those who have confirmed their seat during JoSAA-2025 counselling and have not participated in CSAB special Round. Same Admission link will be used for those who have participated in CSAB special round and confirmed their seat during CSAB special round from live from 20/08/2025 to 23/08/2025.",
+        date: "2025-08-18",
+        content: " UG Admission",
+        href:""
+      },
      {
         title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students.",
         date: "2025-08-02",

@@ -34,23 +34,22 @@ const Slider = () => {
           <img src="https://i.postimg.cc/65rq8B9f/2025-SIP-Banner-Website.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/homepage/MainEntrance.jpg" />
+          {/* <img src="/homepage/MainEntrance.jpg" /> */}
+          <img src="/independeceDayCelbHomePoster.webp" />
+        </SwiperSlide>
+                <SwiperSlide>
+          <img src="https://i.postimg.cc/W38dktZ6/Fall-Festival.webp" alt="Har Ghar Tiranga 2025" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/homepage/MainBuilding.jpg" />
-        </SwiperSlide>
-        {/* <SwiperSlide>
-          <img src="/homepage/yoga.jpg" />
-        </SwiperSlide> */}
-        <SwiperSlide>
-          <img src="https://i.postimg.cc/bvD4Z9wQ/image.png" alt="Har Ghar Tiranga 2025" />
+          <img src="https://i.postimg.cc/zvfVS5Sm/Fall-Festival-1.webp" alt="Fall Festival 2025" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/homepage/collage[1].jpg" />
+          <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/home2.png" />
+          <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainBuilding.webp" />
         </SwiperSlide>
+
         <SwiperSlide>
           <img src="https://i.postimg.cc/J42hsCPZ/2-scientist.png" />
         </SwiperSlide>
@@ -63,18 +62,12 @@ const Slider = () => {
         <SwiperSlide>
           <img src="https://i.postimg.cc/02dwnf6F/nit-patna-002.jpg" />
         </SwiperSlide>
-        {/* <SwiperSlide>
-          <img src="https://i.postimg.cc/zX1hTMfT/nit-patna-003.jpg" />
-        </SwiperSlide> */}
         <SwiperSlide>
           <img src="https://i.postimg.cc/h4mxzgKS/nit-patna-004.jpg" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://i.postimg.cc/fyY06783/nit-patna-005.jpg" />
         </SwiperSlide>
-        {/* <SwiperSlide>
-          <img src="https://i.postimg.cc/sgvVmgT5/Screenshot_2024-07-31_154315.png" />
-        </SwiperSlide> */}
       </Swiper>
     </>
   );

@@ -14,7 +14,7 @@ const IntranetRedirect = () => {
     }, 1000);
 
     const redirect = setTimeout(() => {
-      window.location.href = "http://172.16.55.10:3000"; // Redirect to your intranet site
+      window.location.href = "https://intranet.nitp.ac.in"; // Redirect to your intranet site
     }, 6000); // 6 seconds redirect
 
     return () => {
@@ -37,7 +37,7 @@ const IntranetRedirect = () => {
           will be redirected in {seconds} seconds and you will be able to access the Intranet.
         </p>
         <p>If the redirection does not work, click below:</p>
-        <a href="http://172.16.55.10:3000" className="intranet-link">
+        <a href="https://intranet.nitp.ac.in" className="intranet-link">
           Go To NIT Intranet
         </a>
       </div>

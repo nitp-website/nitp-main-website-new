@@ -638,11 +638,11 @@ const navItems = [
       //     },
       //   ],
       // },
-      // {
-      //   label: "Incubation Center",
-      //   link: "https://web.nitp.ac.in/incubation_center/index.html",
-      //   iconImage: Ecell,
-      // },
+      {
+        label: "Incubation Center",
+        link: "/Facilities/IncubationCenter",
+        iconImage: Ecell,
+      },
       {
         label: "Computer Center",
         link: "/Facilities/ComputerCenter",
