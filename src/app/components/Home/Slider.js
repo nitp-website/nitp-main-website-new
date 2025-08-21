@@ -31,6 +31,9 @@ const Slider = () => {
         className="mySwiper w-full h-[30vh] md:h-[530px] flex justify-center items-center "
       >
         <SwiperSlide>
+          <img src="https://i.postimg.cc/65rq8B9f/2025-SIP-Banner-Website.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
           <img src="/homepage/MainEntrance.jpg" />
         </SwiperSlide>
         <SwiperSlide>
