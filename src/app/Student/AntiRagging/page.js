@@ -2,9 +2,11 @@ import React from 'react';
 import { Download } from 'lucide-react';
 
 const scholarships = [
-  {name: "Office Order_Anti Ragging Committee", link: "https://drive.google.com/file/d/1xHhiYd1qPxxMeI_QVQwM7y6L_scU6MjO/view?usp=drivesdk"},
-  {name: "Notification_Anti Ragging Squad", link: "https://drive.google.com/file/d/1S0W5gZLyGZ_8oApw3MtIJCDf-f6DAt5W/view?usp=drivesdk"},
-  {name: "Colleges, University, Institution_Website_Information", link: "https://drive.google.com/file/d/1luRKbPj5R8GI0QksvgXvZav7NwOIazev/view?usp=drivesdk"},
+   {name: "Anti Ragging Squad 2025-26", link: "https://drive.google.com/file/d/1vVsNnWyL002icRKfSoicDpNUr3Z8pbM1/view?usp=sharing"},
+   {name: "National Anti-Ragging Programme", link: "https://www.antiragging.in/"},
+  {name: "Public Notice: Curbing the Menace of Ragging in Higher Educational Institutions (English) ", link: "https://drive.google.com/file/d/15hIrlpnyj7laKukM8Hnq917b7B-kRNIm/view?usp=sharing"},
+  {name: "Public Notice: Curbing the Menace of Ragging in Higher Educational Institutions (Hindi)", link: "https://drive.google.com/file/d/1zVqgl3nAgiyFbY1BKOsH9HmFQus4XqCf/view?usp=sharing"},
+  {name: "UGC Regulations on Curbing the Menace of Ragging in Higher Educational Institutions, 2009", link: "https://drive.google.com/file/d/1SgYOLZhqP3d09nrEUcRzUDiCujAS2nGQ/view?usp=sharing"},
 ];
 
 const ScholarshipTable = () => {
