@@ -39,6 +39,11 @@ import Education from "./menuItems/Education";
 import TalksAndLecture from "./menuItems/TalkAndLecture";
 import ConferenceChairs from "./menuItems/ConferenceChair";
 import InternationalJournalReviewer from "./menuItems/InternationalJournal";
+import MoocCourses from "./menuItems/MoocCourses"
+import EditorialBoards from "./menuItems/Editorial"
+import VisitsAbroad from "./menuItems/VisitAbroad"
+import SpecialLectures from "./menuItems/SpecialLecture"
+import HonoursAwards from "./menuItems/Awards"
 const FacultyDropdown = ({ facultyData }) => {
   //   console.log(facultyData);
 
@@ -65,6 +70,11 @@ const FacultyDropdown = ({ facultyData }) => {
     talks_and_lectures,
     conference_session_chairs,
     international_journal_reviewers,
+    honours_awards,
+    special_lectures,
+    visits_abroad,
+    editorial_boards,
+    mooc_courses
   } = facultyData || {};
 
   const filteredIpr = ipr?.filter((item) => item.grant_date || item.registration_date || item.publication_date) || [];
@@ -243,6 +253,42 @@ const FacultyDropdown = ({ facultyData }) => {
       icon: <FaUniversity />,
       id: 32,
       component: <InternationalJournalReviewer data={international_journal_reviewers} />,
+    },
+
+    {
+      condition: mooc_courses?.length > 0,
+      title: "NPTEL/MOOC Courses",
+      icon: <FaUniversity />,
+      id: 33,
+      component: <MoocCourses data={mooc_courses} />,
+    },
+    {
+      condition: editorial_boards?.length > 0,
+      title: "Editorial Boards",
+      icon: <FaUniversity />,
+      id: 35,
+      component: <EditorialBoards data={editorial_boards} />,
+    },
+    {
+      condition: visits_abroad?.length > 0,
+      title: "Visit Abroad",
+      icon: <FaUniversity />,
+      id: 36,
+      component: <VisitsAbroad data={visits_abroad} />,
+    },
+    {
+      condition: special_lectures?.length > 0,
+      title: "Special Lectures",
+      icon: <FaUniversity />,
+      id: 37,
+      component: <SpecialLectures data={special_lectures} />,
+    },
+    {
+      condition: honours_awards?.length > 0,
+      title: "Honours and Awards",
+      icon: <FaUniversity />,
+      id: 38,
+      component: <HonoursAwards data={honours_awards} />,
     },
   ].filter((item) => item.condition);
 
