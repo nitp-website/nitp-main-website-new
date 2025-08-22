@@ -8,17 +8,24 @@ const InstituteActivities = ({ data }) => {
       </h2>
       <ul className="space-y-4">
         {data
-          .sort((a, b) => {
+        .sort((a, b) => {
+          const isAContinue = a.end_date === "Continue";
+          const isBContinue = b.end_date === "Continue";
 
-            if (a.end_date === "Continue" && b.end_date !== "Continue") return -1;
-            if (b.end_date === "Continue" && a.end_date !== "Continue") return 1;
+          if (isAContinue && !isBContinue) return -1;
+          if (isBContinue && !isAContinue) return 1;
 
-            const dateA = new Date(a.end_date);
-            const dateB = new Date(b.end_date);
-
+          if (isAContinue && isBContinue) {
+            const dateA = new Date(a.start_date);
+            const dateB = new Date(b.start_date);
             return dateB - dateA;
-          })
-          .map((activity, index) => (
+          }
+
+          const dateA = new Date(a.end_date);
+          const dateB = new Date(b.end_date);
+          return dateB - dateA;
+        })
+        .map((activity, index) => (
           <li
             key={index}
             className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
