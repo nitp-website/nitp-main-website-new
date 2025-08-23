@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FiClock, FiDownload, FiStar } from 'react-icons/fi';
 
 function DepartmentNotify1(props) {
+    const timestamp = props.date;
     const link = props.link ? JSON.parse(props.link).url : props.attachments?.[0]?.url || "";
     const color = ["yellow", "red-600"];
     const [textCol, settextCol] = useState("red-600");
@@ -13,7 +14,7 @@ function DepartmentNotify1(props) {
                 flag = flag === 0 ? 1 : 0;
                 settextCol(color[flag]);
             }, 1000);
-            
+
             return () => clearInterval(interval);
         }
     }, [props.important]);
@@ -31,15 +32,23 @@ function DepartmentNotify1(props) {
     };
 
     const formattedDate = formatDate(props.timestamp);
-    
+
     const NoticeContent = () => (
         <div className={`flex items-start ${props.important === 1 ? 'relative' : ''}`}>
             {props.important === 1 && (
-                <div className="absolute -left-6 top-0">
+                <div className="absolute -left-6 top-0 flex">
                     <FiStar className={`text-${textCol} fill-current w-4 h-4`} />
                 </div>
             )}
             <div className="flex-1">
+                <span className="text-sm text-gray-500">
+                    {new Date(Number(timestamp)).toLocaleDateString("en-GB", {
+                        weekday: "long",
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric"
+                    })}
+                </span>
                 <div className="font-medium text-[15px] mb-1">
                     {props.title}
                 </div>
@@ -66,7 +75,7 @@ function DepartmentNotify1(props) {
             </div>
         );
     }
-    
+
     return (
         <div className="mb-3 pl-6 pr-3 py-3 bg-white hover:bg-slate-50 border-l-4 border-gray-300 rounded shadow-sm transition-all duration-200">
             <NoticeContent />
@@ -77,12 +86,12 @@ function DepartmentNotify1(props) {
 function AttachmentsCompo(props) {
     const link = props.link;
     const [textCol, settextCol] = useState("red-600");
-    
+
     return (
         <div className="mb-3 pl-4 pr-3 py-3 bg-white hover:bg-slate-50 border-l-4 border-blue-500 rounded shadow-sm transition-all duration-200">
-            <a 
-                href={link} 
-                className="block" 
+            <a
+                href={link}
+                className="block"
                 target="_blank"
                 rel="noopener noreferrer"
             >

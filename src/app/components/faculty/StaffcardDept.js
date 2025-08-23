@@ -20,7 +20,7 @@ function StaffCard({
   expertise = "Not Available",
 }) {
   return (
-    <div className="w-full lg:w-1/3 md:w-1/2 sm:w-full px-3 mb-6">
+    <div className="w-full lg:w-2/5 md:w-1/2 sm:w-full px-3 mb-6">
       <div className="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300 border border-gray-100 h-full">
         {/* Responsive card: horizontal on all screens, with adaptive height */}
         <div className="flex flex-col md:flex-row h-full">

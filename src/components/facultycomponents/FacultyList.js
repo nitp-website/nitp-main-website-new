@@ -35,7 +35,7 @@ const FacultyList = ({ url, branch }) => {
         const sortedData = data.sort((a, b) => {
           const aIsHoD = a.designation.includes("HoD");
           const bIsHoD = b.designation.includes("HoD");
-          
+
           // HoD always comes first, regardless of academic responsibility
           if (aIsHoD && !bIsHoD) {
             return -1; // a (HoD) comes before b
@@ -43,11 +43,11 @@ const FacultyList = ({ url, branch }) => {
           if (!aIsHoD && bIsHoD) {
             return 1; // b (HoD) comes before a
           }
-          
+
           // If neither is HoD or both are HoD, then check for Dean
           const aIsDean = a.academic_responsibility?.startsWith("Dean");
           const bIsDean = b.academic_responsibility?.startsWith("Dean");
-          
+
           // If one is Dean and the other isn't, prioritize the Dean
           if (aIsDean && !bIsDean) {
             return -1; // Dean comes before non-Dean
@@ -55,7 +55,7 @@ const FacultyList = ({ url, branch }) => {
           if (!aIsDean && bIsDean) {
             return 1; // Dean comes before non-Dean
           }
-          
+
           // If both are Deans or neither is Dean, use the regular designation order
           return order.indexOf(a.designation) - order.indexOf(b.designation);
         });
@@ -72,7 +72,9 @@ const FacultyList = ({ url, branch }) => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="text-center mt-10 text-lg text-gray-600 animate-pulse">
+      Loading Faculties...
+    </div>;
   }
 
   // Filter faculties that are not in the specified order
@@ -117,6 +119,11 @@ const FacultyList = ({ url, branch }) => {
               academic_responsibility={faculty.academic_responsibility}
               email={faculty.email}
               phone={faculty.ext_no}
+              journalPublications={faculty.journal_papers_count}
+              conferencePublications={faculty.conference_papers_count}
+              patents={faculty.ipr_count}
+              projects={faculty.sponsored_projects_count}
+              research_students={faculty.phd_candidates_count}
               profileLink={`/profile/${faculty.email}`}
             />
           ))}
