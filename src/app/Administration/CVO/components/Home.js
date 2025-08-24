@@ -65,7 +65,7 @@ const RegistrarPage = () => {
                     TAKE INTEGRITY ePLEDGE
                   </BlinkingListItem>
                   <BlinkingListItem href="https://cvc.gov.in/vaw.html">
-                    Vigilance Awareness Week 2024
+                    Vigilance Awareness Week 2025
                   </BlinkingListItem>
                   <BlinkingListItem href="https://drive.google.com/file/d/1cGKocBxoYu2yYqBjyNpBeZST5WWZCNms/view?usp=drive_link">
                     Jingles for Vigilance Awareness Week 2024
