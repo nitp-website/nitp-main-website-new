@@ -20,19 +20,9 @@ export default function Page() {
     const [ugai_ds, setUgai_ds] = useState(false);
     return (
         <div className=" flex flex-col p-10 max-sm:p-2 text-black">
-            <div className="flex flex-col mb-3">
-                <div>
-                    <p className="text-red-900 text-xl lg:text-2xl font-bold">
-                        SYLLABUS
-                    </p>
-                </div>
-                <div className="mt-2">
-                    <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        COMPUTER SCIENCE ENGINEERING
-                    </p>
-                </div>
-                <div>
-                    <BackDepartment navigate={'/Department/CSE'} />
+            <div className="max-w-7xl mx-auto px-4 text-center">
+                <div className="text-3xl font-bold text-red-800 mb-6">
+                    SYLLABUS
                 </div>
             </div>
             <div className="mx-4 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
@@ -677,7 +667,7 @@ export default function Page() {
                                 cred={"3"}
                                 url={""}
                             />
-                              <SyllabusComp
+                            <SyllabusComp
                                 dep={"CSE"}
                                 sem={"9"}
                                 code={"CS94133"}
@@ -688,7 +678,7 @@ export default function Page() {
                                 cred={"20"}
                                 url={""}
                             />
-                              <SyllabusComp
+                            <SyllabusComp
                                 dep={"CSE"}
                                 sem={"10"}
                                 code={"CS104134"}
@@ -1231,9 +1221,9 @@ export default function Page() {
                     </div>
                 </div>
 
-             {/**B.Tech (Artificial Intelligence and Data Science) */}
-            
-             <div className={`mb-10 ${(ugai_ds == false) ? "hidden" : ""}`}>
+                {/**B.Tech (Artificial Intelligence and Data Science) */}
+
+                <div className={`mb-10 ${(ugai_ds == false) ? "hidden" : ""}`}>
                     <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">B.Tech (Artificial Intelligence & Data Science):-</div>
                     <div className=" overflow-x-auto">
                         <div className="border grid grid-cols-12 min-w-[1100px]">
@@ -1311,7 +1301,6 @@ export default function Page() {
                                 cred={"1"}
                                 url={"#"}
                             />
-
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
@@ -1367,7 +1356,7 @@ export default function Page() {
                                 cred={"4"}
                                 url={"https://drive.google.com/file/d/1wUtfg4rRTkEn8_egKOlwo_sNZEVxJEon/view?usp=drive_open"}
                             />
-                             <SyllabusComp
+                            <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
                                 code={"EA020201"}
@@ -2265,13 +2254,11 @@ export default function Page() {
                                 cred={"3"}
                                 url={"https://docs.google.com/document/d/1ThpmwSqen5PZDjOjfdJly_p_5lDfyl7v/view?tab=t.0"}
                             />
-
-
                         </div>
                     </div>
                 </div>
 
-            {/**B.Tech (Computer Science and Engineering) */}
+                {/**B.Tech (Computer Science and Engineering) */}
                 <div className={`mb-10 ${(ug2022 == false) ? "hidden" : ""}`}>
                     <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">B.Tech(Computer Science and Engineering):-</div>
                     <div className=" overflow-x-auto">
@@ -2768,7 +2755,6 @@ export default function Page() {
                                 cred={"2"}
                                 url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS84126_Research Project-II*.docx"
                             />
-
                             <SyllabusComp
                                 dep={"CSUG"}
                                 sem={"EL-1"}
@@ -3579,182 +3565,182 @@ export default function Page() {
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
                             <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
                             <SyllabusComp
-    dep={"CSE"}
-    sem={"1"}
-    code={"CS012801"}
-    title={"Mathematical Foundations of Data Science"}
-    L={"3"}
-    T={"0"}
-    P={"2"}
-    cred={"4"}
-    url={"https://docs.google.com/document/d/1RWX-Ybkg1bVGNmHiU4Fu7jQEkn330Zdv/edit"}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"1"}
-    code={"CS012802"}
-    title={"Pattern Recognition"}
-    L={"3"}
-    T={"0"}
-    P={"2"}
-    cred={"4"}
-    url={"https://docs.google.com/document/d/1wAKOh_8w4iWFPIk-U8PQI3nmRJer4GiE/edit"}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"1"}
-    code={"CS0128XX"}
-    title={"Elective-I/MOOC"}
-    L={"X"}
-    T={"X"}
-    P={"X"}
-    cred={"3"}
-    url={""}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"1"}
-    code={"CS0128XX"}
-    title={"Elective-II/MOOC"}
-    L={"X"}
-    T={"X"}
-    P={"X"}
-    cred={"3"}
-    url={""}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"1"}
-    code={"CS0128XX"}
-    title={"Elective-III/MOOC"}
-    L={"X"}
-    T={"X"}
-    P={"X"}
-    cred={"3"}
-    url={""}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"1"}
-    code={"EA012801"}
-    title={"EAA-Sports/Innovative Project"}
-    L={"0"}
-    T={"0"}
-    P={"2"}
-    cred={"1"}
-    url={""}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"1"}
-    code={"CS012803"}
-    title={"Technical Seminar and Report Writing"}
-    L={"0"}
-    T={"0"}
-    P={"2"}
-    cred={"1"}
-    url={""}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"2"}
-    code={"CS022801"}
-    title={"Natural Language Processing"}
-    L={"3"}
-    T={"0"}
-    P={"2"}
-    cred={"4"}
-    url={"https://docs.google.com/document/d/1Q6HJvULMIIRjBnsvgLssN5fKqmYHJOi0/edit"}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"2"}
-    code={"CS022802"}
-    title={"Deep Learning"}
-    L={"3"}
-    T={"0"}
-    P={"2"}
-    cred={"4"}
-    url={"https://docs.google.com/document/d/1_CBseJ1ceYCzRb6g5nr-3gubvGtBZdnR/edit"}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"2"}
-    code={"CS022803"}
-    title={"Data Visualization Techniques"}
-    L={"2"}
-    T={"0"}
-    P={"2"}
-    cred={"3"}
-    url={"https://docs.google.com/document/d/1MP7D_6vJuNmOKIacnhCdscC8EiZsSW4_/edit"}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"2"}
-    code={"CS0228XX"}
-    title={"Elective-IV/MOOC"}
-    L={"X"}
-    T={"X"}
-    P={"X"}
-    cred={"3"}
-    url={""}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"2"}
-    code={"CS0228XX"}
-    title={"Elective-V/MOOC"}
-    L={"X"}
-    T={"X"}
-    P={"X"}
-    cred={"3"}
-    url={""}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"2"}
-    code={"CS0228XX"}
-    title={"Elective-VI/MOOC"}
-    L={"X"}
-    T={"X"}
-    P={"X"}
-    cred={"3"}
-    url={""}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"2"}
-    code={"EA022801"}
-    title={"EAA-Swachha Bharat Mission (SBM)"}
-    L={"0"}
-    T={"0"}
-    P={"2"}
-    cred={"1"}
-    url={""}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"3"}
-    code={"CS032801"}
-    title={"Project/Dissertation (to be continued in 4th Sem)"}
-    L={"0"}
-    T={"0"}
-    P={"20"}
-    cred={"10"}
-    url={""}
-/>
-<SyllabusComp
-    dep={"CSE"}
-    sem={"4"}
-    code={"CS042801"}
-    title={"Project/Dissertation"}
-    L={"0"}
-    T={"0"}f
-    P={"24"}
-    cred={"12"}
-    url={""}
-/>
-<SyllabusComp
+                                dep={"CSE"}
+                                sem={"1"}
+                                code={"CS012801"}
+                                title={"Mathematical Foundations of Data Science"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"https://docs.google.com/document/d/1RWX-Ybkg1bVGNmHiU4Fu7jQEkn330Zdv/edit"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"1"}
+                                code={"CS012802"}
+                                title={"Pattern Recognition"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"https://docs.google.com/document/d/1wAKOh_8w4iWFPIk-U8PQI3nmRJer4GiE/edit"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"1"}
+                                code={"CS0128XX"}
+                                title={"Elective-I/MOOC"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"1"}
+                                code={"CS0128XX"}
+                                title={"Elective-II/MOOC"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"1"}
+                                code={"CS0128XX"}
+                                title={"Elective-III/MOOC"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"1"}
+                                code={"EA012801"}
+                                title={"EAA-Sports/Innovative Project"}
+                                L={"0"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"1"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"1"}
+                                code={"CS012803"}
+                                title={"Technical Seminar and Report Writing"}
+                                L={"0"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"1"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS022801"}
+                                title={"Natural Language Processing"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"https://docs.google.com/document/d/1Q6HJvULMIIRjBnsvgLssN5fKqmYHJOi0/edit"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS022802"}
+                                title={"Deep Learning"}
+                                L={"3"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"4"}
+                                url={"https://docs.google.com/document/d/1_CBseJ1ceYCzRb6g5nr-3gubvGtBZdnR/edit"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS022803"}
+                                title={"Data Visualization Techniques"}
+                                L={"2"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"3"}
+                                url={"https://docs.google.com/document/d/1MP7D_6vJuNmOKIacnhCdscC8EiZsSW4_/edit"}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS0228XX"}
+                                title={"Elective-IV/MOOC"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS0228XX"}
+                                title={"Elective-V/MOOC"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"CS0228XX"}
+                                title={"Elective-VI/MOOC"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"2"}
+                                code={"EA022801"}
+                                title={"EAA-Swachha Bharat Mission (SBM)"}
+                                L={"0"}
+                                T={"0"}
+                                P={"2"}
+                                cred={"1"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"3"}
+                                code={"CS032801"}
+                                title={"Project/Dissertation (to be continued in 4th Sem)"}
+                                L={"0"}
+                                T={"0"}
+                                P={"20"}
+                                cred={"10"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                dep={"CSE"}
+                                sem={"4"}
+                                code={"CS042801"}
+                                title={"Project/Dissertation"}
+                                L={"0"}
+                                T={"0"} f
+                                P={"24"}
+                                cred={"12"}
+                                url={""}
+                            />
+                            <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
                                 code={"CSXX2805"}
@@ -4238,7 +4224,7 @@ export default function Page() {
                                 cred={"3"}
                                 url={"https://docs.google.com/document/d/1DUuW1XspgnBy6ATTe15QfgUAr7JRQiFO/edit"}
                             />
-                            
+
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
@@ -4542,7 +4528,7 @@ export default function Page() {
                                 url={'https://docs.google.com/document/d/170DssqEl-NX52SybzEl14-tDaSY6zPWG/view'}
 
                             />
-                             <SyllabusComp
+                            <SyllabusComp
                                 dep={"Cyber Security"}
                                 sem={"EL"}
                                 code={"CSXX2742"}
@@ -4950,9 +4936,6 @@ export default function Page() {
                                 cred={"3"}
                                 url={'https://docs.google.com/document/d/1lEB2LQmA3iZjcxyvPAIpN_QRcc6Udyfg/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
                             />
-
-
-
                         </div>
                     </div>
                 </div>
@@ -5525,7 +5508,7 @@ export default function Page() {
                                 cred={"4"}
                                 url={"https://docs.google.com/document/d/14n6eimr8AnBr7L45Hvj-a25SXWqwgYD9/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                             />
-                                <SyllabusComp
+                            <SyllabusComp
                                 dep={"CSE"}
                                 sem={"9"}
                                 code={"CS94141"}
@@ -5548,7 +5531,7 @@ export default function Page() {
                                 url={""}
                             />
 
-                                    
+
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
@@ -6077,8 +6060,6 @@ export default function Page() {
                                 cred={"3"}
                                 url={"https://docs.google.com/document/d/1EHZkkrk6SRXIf0zwWIG00x9XekoKKEa-/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true "}
                             />
-
-
                         </div>
                     </div>
                 </div>
@@ -6572,11 +6553,10 @@ export default function Page() {
                                 cred={"3"}
                                 url={"https://docs.google.com/document/d/1hshrZ1axwaf7hsbwT8LYdo6-AIDVDnHN/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                             />
-
                         </div>
                     </div>
                 </div>
-                {/* MCA(DS & I) */}
+                {/* MCA(AI & IOT) */}
                 <div className={`mb-10 ${(mcaai == false) ? "hidden" : ""}`}>
                     <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA with specialization in AI & IoT</div>
                     <div className=" overflow-x-auto">

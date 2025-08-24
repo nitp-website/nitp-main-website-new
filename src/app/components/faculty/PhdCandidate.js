@@ -53,7 +53,7 @@ const PhdCandidate = ({ data }) => {
     : "N/A";
 
   return (
-    <div className="w-full lg:w-1/3 md:w-1/2 sm:w-full px-3 mb-6">
+    <div className="w-full lg:w-2/5 md:w-1/2 sm:w-full px-3 mb-6">
       <div className="h-full bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100">
         {/* Header with status badge */}
         <div className="relative bg-gradient-to-r from-gray-50 to-white p-4 border-b border-gray-100">
