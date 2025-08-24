@@ -1,10 +1,6 @@
 import BackDepartment from "../../../components/department/BackDepartment";
 
 
-
-
-
-
 export default function page() {
     return (
         <div className=" flex flex-col p-10 max-sm:p-2 text-black">
@@ -19,7 +15,7 @@ export default function page() {
                         Mechanical Engineering 
                     </p>
                 </div>
-                <BackDepartment navigate={"/Department/ME"} />
+                <BackDepartment navigate={"/Department/ME/acadProgram"} />
             </div>
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 {/* UG Program */}
