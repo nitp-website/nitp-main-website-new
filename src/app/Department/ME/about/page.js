@@ -49,21 +49,7 @@ const Aboutpage = () => {
                 </p>
               ))}
             </div>
-            <div className="mb-10">
-              <div className="text-red-900 font-bold text-2xl max-sm:text-2xl mb-8">The Department offers the following academic programs:</div>
-                <ol className="list-decimal list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
-                  <li>B. Tech in Mechanical Engineering</li>
-                  <li>M.Tech in Mechanical Engineering with specialization in Design Engineering</li>
-                  <li>M.Tech in Mechanical Engineering with specialization in Thermal Engineering</li>
-                  <li>M.Tech in Mechanical Engineering with specialization in Production Engineering</li>
-                  <li>Dual Degree (B.Tech + M.Tech) in Mechanical Engineering with specialization in Manufacturing and Industrial Engineering</li>
-                  <li>Ph.D.</li>
-                </ol>
-            </div>
-            <p className="text-justify my-4">Initially, B.Tech program was started with intake of 20 which has now become 131. M.Tech program is running with a total intake of around 50 for all specializations and the 5 years Dual Degree (B.Tech + M.Tech) program is executing with an intake of 24, whereas, over 200 students are performing research in various fields of Mechanical Engineering in the Ph.D. program. Some prominent research topics in the department are Materials, solid mechanics, product design, manufacturing processes, thermodynamics, heat transfer, gas dynamics, renewable energy, surface engineering, dynamics and control, fluid power systems and operation management.</p>
-            <p className="text-justify my-4">The Department has an excellent industrial interaction and contributes to the industry by offering consultancy services and sponsored research projects. Continuously growing numbers of patents and publications in various top multidisciplinary journals is indication of the thriving research environment in the department</p>
           </div>
-
           {
             counts.length && (
               <DepartmentCounter counts={counts} />

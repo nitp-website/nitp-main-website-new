@@ -1,10 +1,9 @@
 "use client";
-import BackDepartment from "../../../components/department/BackDepartment";
 import FacultyList from "../../../../components/facultycomponents/FacultyList";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const Home = () => {
+const MEFacultyPage = () => {
   const [faculty, setFaculty] = useState(true);
   const [loading, setLoading] = useState(true);
 
@@ -22,4 +21,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default MEFacultyPage;

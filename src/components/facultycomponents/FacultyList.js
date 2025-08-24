@@ -117,6 +117,11 @@ const FacultyList = ({ url, branch }) => {
               academic_responsibility={faculty.academic_responsibility}
               email={faculty.email}
               phone={faculty.ext_no}
+              journalPublications={faculty.journal_papers_count}
+              conferencePublications={faculty.conference_papers_count}
+              patents={faculty.ipr_count}
+              projects={faculty.sponsored_projects_count}
+              research_students={faculty.phd_candidates_count}
               profileLink={`/profile/${faculty.email}`}
             />
           ))}

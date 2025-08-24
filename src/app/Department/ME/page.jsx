@@ -103,12 +103,6 @@ export default function ME() {
                 {about.split("\n").map((line, index) => (
                   <p key={index} className="mb-2">
                     {line}
-                    <button
-                    onClick={() => router.push('/Department/ME/about')}
-                    className="text-blue-600"
-                    >
-                    more..
-                </button>
                   </p> 
                   
                 ))}
