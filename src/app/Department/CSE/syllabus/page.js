@@ -20,19 +20,9 @@ export default function Page() {
     const [ugai_ds, setUgai_ds] = useState(false);
     return (
         <div className=" flex flex-col p-10 max-sm:p-2 text-black">
-            <div className="flex flex-col mb-3">
-                <div>
-                    <p className="text-red-900 text-xl lg:text-2xl font-bold">
-                        SYLLABUS
-                    </p>
-                </div>
-                <div className="mt-2">
-                    <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        COMPUTER SCIENCE ENGINEERING
-                    </p>
-                </div>
-                <div>
-                    <BackDepartment navigate={'/Department/CSE'} />
+            <div className="max-w-7xl mx-auto px-4 text-center">
+                <div className="text-3xl font-bold text-red-800 mb-6">
+                    SYLLABUS
                 </div>
             </div>
             <div className="mx-4 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
@@ -1311,7 +1301,6 @@ export default function Page() {
                                 cred={"1"}
                                 url={"#"}
                             />
-
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
@@ -2265,8 +2254,6 @@ export default function Page() {
                                 cred={"3"}
                                 url={"https://docs.google.com/document/d/1ThpmwSqen5PZDjOjfdJly_p_5lDfyl7v/view?tab=t.0"}
                             />
-
-
                         </div>
                     </div>
                 </div>
@@ -4949,9 +4936,6 @@ export default function Page() {
                                 cred={"3"}
                                 url={'https://docs.google.com/document/d/1lEB2LQmA3iZjcxyvPAIpN_QRcc6Udyfg/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true'}
                             />
-
-
-
                         </div>
                     </div>
                 </div>
@@ -6076,8 +6060,6 @@ export default function Page() {
                                 cred={"3"}
                                 url={"https://docs.google.com/document/d/1EHZkkrk6SRXIf0zwWIG00x9XekoKKEa-/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true "}
                             />
-
-
                         </div>
                     </div>
                 </div>
@@ -6571,11 +6553,10 @@ export default function Page() {
                                 cred={"3"}
                                 url={"https://docs.google.com/document/d/1hshrZ1axwaf7hsbwT8LYdo6-AIDVDnHN/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                             />
-
                         </div>
                     </div>
                 </div>
-                {/* MCA(DS & I) */}
+                {/* MCA(AI & IOT) */}
                 <div className={`mb-10 ${(mcaai == false) ? "hidden" : ""}`}>
                     <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-8">MCA with specialization in AI & IoT</div>
                     <div className=" overflow-x-auto">

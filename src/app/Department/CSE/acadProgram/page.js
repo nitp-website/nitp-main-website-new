@@ -23,6 +23,15 @@ const programs = [
       "btech",
   },
   {
+    title: "B.Tech in Artificial Intelligence and Data Science",
+    degree: "B.Tech",
+    duration: "4 Years",
+    description:
+      "The admission to the 4-year B. Tech. (Artificial Intelligence and Data Science) is through prestigious IIT-JEE (Main). The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
+    syllabus:
+      "btech-ai-ds",
+  },
+  {
     title:
       "B.Tech and M.Tech Dual Degree (Computer Science and Engineering with Specialization in Cyber Security)",
     degree: "Integrated B.Tech and M.Tech",
