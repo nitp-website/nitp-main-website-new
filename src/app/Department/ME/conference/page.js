@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-const CSEConferencePage = () => {
+const MEConferencePage = () => {
   const [publications, setPublications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -176,4 +176,4 @@ const CSEConferencePage = () => {
   );
 };
 
-export default CSEConferencePage;
+export default MEConferencePage;

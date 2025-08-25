@@ -1,13 +1,10 @@
 "use client";
 import axios, { all } from "axios";
-import { DepartmentNavigationButton } from "../../components/department/DepartmentNavigationButton";
-import DepartmentNotify1 from "../../components/department/DepartmentNotify1";
-import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
-import DepartmentCounter from "./DeptCounter";
-import DeptNotice from "./DeptNotice";
+import DepartmentCounter from "../../components/department/DepartmentCounter.js";
+import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
 const about = `The Department of Mechanical Engineering was established in 1952 with B. Tech program during the era of Bihar College of Engineering (BCE) which is well-known since 1924 as the sixth oldest Engineering College in India. In 1978, M. Tech Program was started with specializations in 'Thermal Turbo Machinery' and 'Refrigeration, Air Conditioning and Heat Transfer'. The Bihar College of Engineering was converted to National Institute of Technology Patna in 2004. `;
 
@@ -87,7 +84,7 @@ export default function ME() {
 
         {/* Notice */}
         <div className="md:w-1/2 h-full flex items-center justify-center">
-          <DeptNotice dept="ME" />
+          <DepartmentNotice dept="ME" />
         </div>
       </div>
 
