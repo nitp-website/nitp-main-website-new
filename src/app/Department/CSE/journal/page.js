@@ -127,23 +127,21 @@ const CSEJournalPage = () => {
                       {publications[year].map((paper, index) => (
                         <li
                           key={index}
-                          className="p-4 border border-gray-200 bg-white rounded-md shadow-sm hover:shadow-md transition-transform duration-200"
+                          className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
                         >
                           <p className="text-gray-800">
                             {paper.authors && (
-                              <span className="font-semibold">
-                                {paper.authors}
-                              </span>
+                              <span className="font-semibold">{paper.authors}</span>
                             )}
                             ,{" "}
                             {paper.title && (
                               <span className="font-semibold text-blue-700">
-                                &quot;{paper.title}&quot;
+                                "{paper.title}"
                               </span>
                             )}
                             ,{" "}
                             {paper.journal_name && (
-                              <span className="text-gray-700 text-lg font-semibold">
+                              <span className="text-gray-700 font-semibold">
                                 {paper.journal_name}
                               </span>
                             )}{" "}
@@ -154,7 +152,7 @@ const CSEJournalPage = () => {
                             )}{" "}
                             {paper.volume && (
                               <span className="text-gray-700">
-                                Volume: {paper.volume}{" "}
+                                Volume: {paper.volume}
                               </span>
                             )}{" "}
                             {paper.publication_year && (
