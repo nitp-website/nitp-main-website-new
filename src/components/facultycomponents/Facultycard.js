@@ -31,7 +31,7 @@ function FacultyCard({
 
   const stats = [
     {
-      label: "Publications", value: journalPublications + conferencePublications || 0, icon: <FileText size={16} className="text-[#8B3A32]" />
+      label: "Publications", value: parseInt(journalPublications) + parseInt(conferencePublications) || 0, icon: <FileText size={16} className="text-[#8B3A32]" />
     }, 
     {
       label: "Projects", value: projects || 0, icon: <Briefcase size={16} className="text-[#8B3A32]" />
