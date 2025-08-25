@@ -134,12 +134,15 @@ const MEConferencePage = () => {
                           className="p-4 border border-gray-200 bg-white rounded-md shadow-sm hover:shadow-md transition-transform duration-200"
                         >
                           <p className="text-gray-800">
-                            <span className="font-semibold">{paper.authors}</span>,{" "}
+                            <span className="font-semibold">
+                              {paper.authors}
+                            </span>,
+                            {" "}
                             <span className="font-semibold text-blue-700">
                               "{paper.title}"
                             </span>
                             ,
-                            <span className="text-gray-700 text-lg font-bold">
+                            <span className="text-gray-700 font-bold">
                               {" "}
                               {paper.conference_name}
                             </span>
@@ -149,7 +152,7 @@ const MEConferencePage = () => {
                             </span>
                             <span className="text-gray-700">
                               {" "}
-                              ({paper.conference_year})
+                              (Year: {paper.conference_year})
                             </span>
                           </p>
                           {paper.doi && (
