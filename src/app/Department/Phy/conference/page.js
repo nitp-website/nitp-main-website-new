@@ -6,19 +6,59 @@ const PhyConferencePage = () => {
   const [publications, setPublications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [openYears, setOpenYears] = useState({}); // dropdown open/close tracking
+  const [openYears, setOpenYears] = useState({});
+
+  // Function to clean text and remove encoding issues
+  const cleanText = (text) => {
+    if (!text) return text;
+    
+    return text
+      .replace(/\?/g, '')
+      .replace(/â€™/g, "'") 
+      .replace(/â€œ/g, '"') 
+      .replace(/â€�/g, '"') 
+      .replace(/â€"/g, '–') 
+      .replace(/â€"/g, '—') 
+      .replace(/Â/g, '')
+      .replace(/[""]/g, '"')
+      .replace(/['']/g, "'")
+      .replace(/[\u2018\u2019]/g, "'") // Smart single quotes
+      .replace(/[\u201C\u201D]/g, '"') // Smart double quotes
+      .replace(/[\u2013\u2014]/g, '-') // En/Em dashes
+      .replace(/[\u00A0]/g, ' ') // Non-breaking spaces
+      .replace(/[^\x20-\x7E\u00A1-\u017F]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  };
 
   const fetchPublications = async () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://admin.nitp.ac.in/api/conference?type=phy`
+        `https://admin.nitp.ac.in/api/conference?type=phy`,
+        {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json; charset=utf-8'
+          }
+        }
       );
       const data = await response.json();
+      console.log("Raw data:", data);
 
-      // Group publications by year
-      const groupedByYear = data.reduce((acc, publication) => {
-        if (!publication.conference_year) return acc; // Skip if year is missing or undefined
+      
+      const cleanedData = data.map(publication => ({
+        ...publication,
+        title: cleanText(publication.title),
+        conference_name: cleanText(publication.conference_name),
+        location: cleanText(publication.location),
+        authors: cleanText(publication.authors)
+      }));
+
+      console.log("Cleaned data:", cleanedData);
+
+      const groupedByYear = cleanedData.reduce((acc, publication) => {
+        if (!publication.conference_year) return acc; 
         const year = publication.conference_year;
         if (!acc[year]) {
           acc[year] = [];
@@ -30,6 +70,7 @@ const PhyConferencePage = () => {
       setPublications(groupedByYear);
       setError(null);
     } catch (error) {
+      console.error("Error fetching publications:", error);
       setError("Failed to fetch publication data");
     } finally {
       setIsLoading(false);
@@ -47,8 +88,6 @@ const PhyConferencePage = () => {
   return (
     <div className="min-h-screen bg-white bg-opacity-50">
       <div className="mx-auto px-4 py-8 max-w-6xl">
-        {" "}
-        {/* Adjust the width here */}
         <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-700 text-center">
           Conference Publications
         </h1>
@@ -136,31 +175,33 @@ const PhyConferencePage = () => {
                           <p className="text-gray-800">
                             <span className="font-semibold">
                               {paper.authors}
-                            </span>,
-                            {" "}
+                            </span>
+                            {", "}
                             <span className="font-semibold text-blue-700">
                               "{paper.title}"
                             </span>
-                            ,
+                            {", "}
                             <span className="text-gray-700 font-bold">
-                              {" "}
                               {paper.conference_name}
                             </span>
-                            <span className="text-gray-800 font-semibold">
-                              {" "}
-                              Location: {paper.location}
-                            </span>
+                            {paper.location && (
+                              <span className="text-gray-800 font-semibold">
+                                {" "}
+                                Location: {paper.location}
+                              </span>
+                            )}
                             <span className="text-gray-700">
                               {" "}
                               (Year: {paper.conference_year})
                             </span>
                           </p>
                           {paper.doi && (
-                            <p className="text-blue-600 underline">
+                            <p className="text-blue-600 underline mt-2">
                               <a
                                 href={paper.doi}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                className="hover:text-blue-800"
                               >
                                 DOI Link
                               </a>
