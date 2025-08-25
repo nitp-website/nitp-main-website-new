@@ -1,137 +1,112 @@
 'use client'
-import BackDepartment from "../../../components/department/BackDepartment";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-// Chemistry Labs Data 
+// Content from the Chemistry file
 const labsData = [
-	{
-		name: "Teaching Lab",
-		description:
-			"The Teaching Lab is equipped for undergraduate and postgraduate practicals in Chemical Science and Technology, supporting core and elective courses with modern instrumentation and safety features.",
-		image: "/tl_01.jpg",
-	},
-	{
-		name: "Instrument Lab",
-		description:
-			"The Instrument Lab houses advanced analytical instruments for research and teaching, including spectrometers, chromatographs, and other essential chemical analysis tools.",
-		image: "/il_01.jpg",
-	},
-	{
-		name: "Research Lab",
-		description:
-			"The Research Lab supports faculty and student research projects in various areas of chemistry, providing facilities for synthesis, analysis, and advanced experimentation.",
-		image: "/rl_01.jpg",
-	},
-	{
-		name: "Applied Chemistry Lab (Dr. Subrata Das)",
-		description:
-			"Focuses on applied aspects of chemistry including industrial and environmental applications.",
-		image: "",
-	},
-	{
-		name: "Bioorganic Lab (Dr. Rima Thakur)",
-		description:
-			"Specializes in bioorganic synthesis and analysis, supporting research in biomolecules and organic chemistry.",
-		image: "",
-	},
-	{
-		name: "Biophysical Chemistry Lab (Dr. Niki Sweta Jha)",
-		description:
-			"Conducts research in the physical principles underlying chemical systems, including spectroscopy and thermodynamics.",
-		image: "",
-	},
-	{
-		name: "Green Synthesis Lab (Dr. Tasneem Parvin)",
-		description:
-			"Dedicated to environmentally friendly chemical synthesis and green chemistry methodologies.",
-		image: "",
-	},
-	{
-		name: "Inorganic Lab (Dr. Mukesh Choudhary)",
-		description:
-			"Focuses on synthesis and characterization of inorganic compounds and materials.",
-		image: "",
-	},
-	{
-		name: "Supramolecular Materials Lab (Dr. Suvankar Dasgupta)",
-		description:
-			"Researches supramolecular assemblies and advanced materials for various applications.",
-		image: "",
-	},
-	{
-		name: "Synthetic Research Lab (Dr. Khursheed Ahmad)",
-		description:
-			"Engaged in the synthesis of novel organic and inorganic compounds for research and teaching.",
-		image: "",
-	},
+    {
+        name: "Teaching Lab",
+        description:
+            "The Teaching Lab is equipped for undergraduate and postgraduate practicals in Chemical Science and Technology, supporting core and elective courses with modern instrumentation and safety features.",
+        image: "/tl_01.jpg",
+    },
+    {
+        name: "Instrument Lab",
+        description:
+            "The Instrument Lab houses advanced analytical instruments for research and teaching, including spectrometers, chromatographs, and other essential chemical analysis tools.",
+        image: "/il_01.jpg",
+    },
+    {
+        name: "Research Lab",
+        description:
+            "The Research Lab supports faculty and student research projects in various areas of chemistry, providing facilities for synthesis, analysis, and advanced experimentation.",
+        image: "/rl_01.jpg",
+    },
+    {
+        name: "Applied Chemistry Lab (Dr. Subrata Das)",
+        description:
+            "Focuses on applied aspects of chemistry including industrial and environmental applications.",
+        image: "",
+    },
+    {
+        name: "Bioorganic Lab (Dr. Rima Thakur)",
+        description:
+            "Specializes in bioorganic synthesis and analysis, supporting research in biomolecules and organic chemistry.",
+        image: "",
+    },
+    {
+        name: "Biophysical Chemistry Lab (Dr. Niki Sweta Jha)",
+        description:
+            "Conducts research in the physical principles underlying chemical systems, including spectroscopy and thermodynamics.",
+        image: "",
+    },
+    {
+        name: "Green Synthesis Lab (Dr. Tasneem Parvin)",
+        description:
+            "Dedicated to environmentally friendly chemical synthesis and green chemistry methodologies.",
+        image: "",
+    },
+    {
+        name: "Inorganic Lab (Dr. Mukesh Choudhary)",
+        description:
+            "Focuses on synthesis and characterization of inorganic compounds and materials.",
+        image: "",
+    },
+    {
+        name: "Supramolecular Materials Lab (Dr. Suvankar Dasgupta)",
+        description:
+            "Researches supramolecular assemblies and advanced materials for various applications.",
+        image: "",
+    },
+    {
+        name: "Synthetic Research Lab (Dr. Khursheed Ahmad)",
+        description:
+            "Engaged in the synthesis of novel organic and inorganic compounds for research and teaching.",
+        image: "",
+    },
 ];
 
-function Carousel({ children: pics, autoSlideInterval = 3000, autoSlide = true }) {
-	const [curr, setCurr] = useState(0);
-	const prev = () => {
-		setCurr((curr) => (curr === 0 ? pics.length - 1 : curr - 1));
-	};
-	const next = () => {
-		setCurr((curr) => (curr === pics.length - 1 ? 0 : curr + 1));
-	};
-	useEffect(() => {
-		if (!autoSlide) return;
-		const slideInterval = setInterval(next, autoSlideInterval);
-		return () => clearInterval(slideInterval);
-	}, [autoSlide, autoSlideInterval, next]);
-	return (
-		<div className=' relative overflow-hidden'>
-			<div
-				className='flex transition-transform ease-out duration-1000'
-				style={{ transform: `translateX(-${curr * 100}%)` }}
-			>
-				{pics}
-			</div>
-		</div>
-	);
-}
-
+// UI from the CSE file
 function Page() {
-		return (
-			<div>
-				<div className="py-1 mt-2">
-					<div className="w-full px-5 xs:px-0 md:w-[90%] mx-auto">
-						<div className="w-full">
-							<h2 className="text-center text-4xl text-red-700 mt-2">LABS</h2>
-						</div>
-						<div className="w-full mt-4">
-							{labsData.map((lab, index) => (
-								<div
-									key={index}
-									className="mb-12 flex flex-col lg:flex-row items-center lg:items-start mx-auto text-center lg:text-left max-w-6xl"
-								>
-									<div className="lg:w-2/3">
-										<p className="text-red-900 font-bold text-2xl mb-4">
-											{lab.name}:
-										</p>
-										<p className="text-gray-700 text-sm leading-relaxed px-6 lg:px-0">
-											{lab.description}
-										</p>
-									</div>
+    return (
+        <div>
+            <div className="py-1 mt-2">
+                <div className="w-full px-5 xs:px-0 md:w-[90%] mx-auto">
+                    <div className="w-full">
+                        <h2 className="text-center text-4xl text-red-700 mt-2">LABS</h2>
+                    </div>
+                    <div className="w-full mt-4">
+                        {labsData.map((lab, index) => (
+                            <div
+                                key={index}
+                                className="mb-12 flex flex-col lg:flex-row items-center lg:items-start mx-auto text-center lg:text-left max-w-6xl"
+                            >
+                                <div className="lg:w-2/3">
+                                    <p className="text-red-900 font-bold text-2xl mb-4">
+                                        {lab.name}:
+                                    </p>
+                                    <p className="text-gray-700 text-sm leading-relaxed px-6 lg:px-0">
+                                        {lab.description}
+                                    </p>
+                                </div>
 
-									{lab.image && (
-										<div className="mt-6 lg:mt-0 lg:ml-8 flex justify-center">
-											<Image
-												src={lab.image}
-												alt={lab.name}
-												width={300}
-												height={300}
-												className="rounded-lg shadow-lg border border-gray-300 bg-rose-100 p-2"
-											/>
-										</div>
-									)}
-								</div>
-							))}
-						</div>
-					</div>
-				</div>
-			</div>
-	);
+                                {lab.image && (
+                                    <div className="mt-6 lg:mt-0 lg:ml-8 flex justify-center">
+                                        <Image
+                                            src={lab.image}
+                                            alt={lab.name}
+                                            width={300}
+                                            height={300}
+                                            className="rounded-lg shadow-lg border border-gray-300 bg-rose-100 p-2"
+                                        />
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
 export default Page;

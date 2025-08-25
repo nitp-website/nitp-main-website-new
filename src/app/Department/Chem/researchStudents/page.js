@@ -1,21 +1,24 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import PhdCandidate from "../../../components/faculty/PhdCandidate";
+import PhdCandidate from "../../../components/faculty/PhdCandidate.js";
 
-const CheResearchStudentsPage = () => {
+const ChemResearchStudentsPage = () => {
   const [loading, setLoading] = useState(true);
   const [phdInfo, setPhdInfo] = useState([]);
+  const [error, setError] = useState(null);
 
   const [selectedCompletedYear, setSelectedCompletedYear] = useState("");
   const [selectedCompletedFaculty, setSelectedCompletedFaculty] = useState("");
   const [selectedOngoingYear, setSelectedOngoingYear] = useState("");
   const [selectedOngoingFaculty, setSelectedOngoingFaculty] = useState("");
 
-
   const fetchPhd = async () => {
     try {
       setLoading(true);
+      setError(null);
+
+  // API endpoint for Chemistry department
   const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=che`;
       const { data } = await axios.get(api);
 
@@ -35,8 +38,9 @@ const CheResearchStudentsPage = () => {
       );
 
       setPhdInfo(phdCandidates.flat());
-    } catch (error) {
-      console.error("Error fetching PhD data:", error);
+    } catch (err) {
+      console.error("Error fetching PhD data:", err);
+      setError("Failed to load research scholars. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -44,7 +48,6 @@ const CheResearchStudentsPage = () => {
 
   useEffect(() => {
     fetchPhd();
-    // console.log(phd);
   }, []);
 
   const completedStatuses = ["Awarded", "Completed"];
@@ -62,21 +65,13 @@ const CheResearchStudentsPage = () => {
     (c) => !completedStatuses.includes(c.current_status)
   );
 
-  const facultyNames = [
-    ...new Set(completedScholars.map((c) => c.supervisor).filter(Boolean)),
-    ...new Set(ongoingScholars.map((c) => c.supervisor).filter(Boolean)),
-  ];
-
   const completedFacultyNames = [
     ...new Set(
       completedScholars
         .filter((c) => c.supervisor)
         .map((c) => c.supervisor)
     ),
-  ];
-
-  // sort the faculty names alphabetically
-  completedFacultyNames.sort((a, b) => a.localeCompare(b));
+  ].sort((a, b) => a.localeCompare(b));
 
   const ongoingFacultyNames = [
     ...new Set(
@@ -84,11 +79,7 @@ const CheResearchStudentsPage = () => {
         .filter((c) => c.supervisor)
         .map((c) => c.supervisor)
     ),
-  ];
-
-  // sort the faculty names alphabetically
-  ongoingFacultyNames.sort((a, b) => a.localeCompare(b));
-
+  ].sort((a, b) => a.localeCompare(b));
 
   const completionYears = [
     ...new Set(
@@ -96,10 +87,7 @@ const CheResearchStudentsPage = () => {
         .filter((c) => c.completion_year)
         .map((c) => extractYear(c.completion_year))
     ),
-  ];
-
-  // sort the completion years in descending order
-  completionYears.sort((a, b) => b - a);
+  ].sort((a, b) => b - a);
 
   const ongoingYears = [
     ...new Set(
@@ -107,10 +95,7 @@ const CheResearchStudentsPage = () => {
         .filter((c) => c.registration_year)
         .map((c) => c.registration_year)
     ),
-  ];
-
-  // sort the ongoing years in descending order
-  ongoingYears.sort((a, b) => b - a);
+  ].sort((a, b) => b - a);
 
   const filteredCompletedScholars = completedScholars.filter(
     (c) =>
@@ -119,26 +104,26 @@ const CheResearchStudentsPage = () => {
         extractYear(c.completion_year) === parseInt(selectedCompletedYear))
   );
 
-
   const filteredOngoingScholars = ongoingScholars.filter(
     (c) =>
       (!selectedOngoingFaculty || c.supervisor === selectedOngoingFaculty) &&
       (!selectedOngoingYear ||
-        (c.registration_year) === parseInt(selectedOngoingYear))
+        c.registration_year === parseInt(selectedOngoingYear))
   );
-
-
-  const hasFaculty = true;
-  const hasPhd = phdInfo.length > 0;
 
   return (
     <div className="mt-4">
       <p className="text-red-900 text-xl lg:text-3xl font-bold text-center mb-2">
         RESEARCH SCHOLARS
       </p>
+
       {loading ? (
         <div className="text-center mt-10 text-lg text-gray-600 animate-pulse">
           Loading Research Scholars...
+        </div>
+      ) : error ? (
+        <div className="text-center mt-10 text-red-600 font-semibold">
+          {error}
         </div>
       ) : phdInfo.length === 0 ? (
         <div className="text-center mt-10 text-gray-600">
@@ -152,6 +137,8 @@ const CheResearchStudentsPage = () => {
               <p className="text-red-900 text-xl lg:text-2xl font-bold text-center mt-2">
                 Ongoing Research Scholars
               </p>
+
+              {/* Filters */}
               <div className="items-center flex flex-col sm:flex-row gap-5 justify-center px-2 my-4">
                 <select
                   onChange={(e) => setSelectedOngoingYear(e.target.value)}
@@ -165,6 +152,7 @@ const CheResearchStudentsPage = () => {
                     </option>
                   ))}
                 </select>
+
                 <select
                   onChange={(e) => setSelectedOngoingFaculty(e.target.value)}
                   value={selectedOngoingFaculty}
@@ -178,6 +166,7 @@ const CheResearchStudentsPage = () => {
                   ))}
                 </select>
               </div>
+
               <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
                 {
                   filteredOngoingScholars.length > 0 ? (
@@ -193,12 +182,15 @@ const CheResearchStudentsPage = () => {
               </div>
             </>
           )}
+
           {/* Completed Scholars */}
           {completedScholars.length > 0 && (
             <>
               <p className="text-red-900 text-xl lg:text-2xl font-bold text-center">
                 Completed Research Scholars
               </p>
+
+              {/* Filters */}
               <div className="items-center flex flex-col sm:flex-row gap-5 justify-center px-2 my-4">
                 <select
                   onChange={(e) => setSelectedCompletedYear(e.target.value)}
@@ -212,6 +204,7 @@ const CheResearchStudentsPage = () => {
                     </option>
                   ))}
                 </select>
+
                 <select
                   onChange={(e) => setSelectedCompletedFaculty(e.target.value)}
                   value={selectedCompletedFaculty}
@@ -225,6 +218,7 @@ const CheResearchStudentsPage = () => {
                   ))}
                 </select>
               </div>
+
               <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
                 {
                   filteredCompletedScholars.length > 0 ? (
@@ -246,4 +240,4 @@ const CheResearchStudentsPage = () => {
   );
 };
 
-export default CheResearchStudentsPage;
+export default ChemResearchStudentsPage;

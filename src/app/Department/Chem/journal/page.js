@@ -11,8 +11,9 @@ const CheJournalPage = () => {
   const fetchPublications = async () => {
     setIsLoading(true);
     try {
+      
       const response = await fetch(
-  `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=che`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=che`
       );
       const data = await response.json();
 
@@ -42,6 +43,7 @@ const CheJournalPage = () => {
   };
 
   return (
+    // UI structure from the CSE file
     <div className="min-h-screen bg-white bg-opacity-50">
       <div className="mx-auto px-4 py-8 max-w-6xl">
         <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-700 text-center">
@@ -50,7 +52,55 @@ const CheJournalPage = () => {
 
         {isLoading ? (
           <div className="flex justify-center items-center">
-            {/* Spinner here */}
+            <svg
+              version="1.1"
+              id="L1"
+              height="150px"
+              width="150px"
+              viewBox="0 0 100 100"
+              enableBackground="new 0 0 100 100"
+            >
+              <circle
+                fill="none"
+                stroke="#f87171"
+                strokeWidth="6"
+                strokeMiterlimit="15"
+                strokeDasharray="14.2472,14.2472"
+                cx="50"
+                cy="50"
+                r="47"
+              >
+                <animateTransform
+                  attributeName="transform"
+                  attributeType="XML"
+                  type="rotate"
+                  dur="5s"
+                  from="0 50 50"
+                  to="360 50 50"
+                  repeatCount="indefinite"
+                />
+              </circle>
+              <circle
+                fill="none"
+                stroke="#f87171"
+                strokeWidth="1"
+                strokeMiterlimit="10"
+                strokeDasharray="10,10"
+                cx="50"
+                cy="50"
+                r="39"
+              >
+                <animateTransform
+                  attributeName="transform"
+                  attributeType="XML"
+                  type="rotate"
+                  dur="5s"
+                  from="0 50 50"
+                  to="-360 50 50"
+                  repeatCount="indefinite"
+                />
+              </circle>
+            </svg>
           </div>
         ) : error ? (
           <div className="text-center text-red-500">
@@ -79,13 +129,11 @@ const CheJournalPage = () => {
                       {publications[year].map((paper, index) => (
                         <li
                           key={index}
-                          className="p-4 border border-gray-200 bg-white rounded-md shadow-sm hover:shadow-md transition-transform duration-200"
+                          className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
                         >
                           <p className="text-gray-800">
                             {paper.authors && (
-                              <span className="font-semibold">
-                                {paper.authors}
-                              </span>
+                              <span className="font-semibold">{paper.authors}</span>
                             )}
                             ,{" "}
                             {paper.title && (
@@ -95,7 +143,7 @@ const CheJournalPage = () => {
                             )}
                             ,{" "}
                             {paper.journal_name && (
-                              <span className="text-gray-700 text-lg font-semibold">
+                              <span className="text-gray-700 font-semibold">
                                 {paper.journal_name}
                               </span>
                             )}{" "}
@@ -106,7 +154,7 @@ const CheJournalPage = () => {
                             )}{" "}
                             {paper.volume && (
                               <span className="text-gray-700">
-                                Volume: {paper.volume}{" "}
+                                Volume: {paper.volume}
                               </span>
                             )}{" "}
                             {paper.publication_year && (

@@ -22,12 +22,11 @@ const ChePatentsPage = () => {
   const fetchPublications = async () => {
     setIsLoading(true);
     try {
+      // API endpoint from the Chemistry file
       const response = await fetch(
-  `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/patent?type=che`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/patent?type=che`
       );
       const data = await response.json();
-
-      // console.log(data);
 
       // Group publications by year
       const groupedByYear = data.reduce((acc, publication) => {
@@ -45,7 +44,6 @@ const ChePatentsPage = () => {
       }, {});
 
       setPublications(groupedByYear);
-      // console.log(groupedByYear);
       setError(null);
     } catch (error) {
       setError("Failed to fetch publication data");

@@ -6,8 +6,8 @@ import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
-import DepartmentCounter from "./DeptCounter";
-import DeptNotice from "./DeptNotice";
+import DepartmentCounter from "../../components/department/DepartmentCounter.js";
+import DepartmentNotice from "../../components/department/DeptartmentNotice.js";
 
 const about = `The Department of Computer Science and Engineering offers courses leading to Bachelor of Technology in Computer Science and Engineering. The department has a very good infrastructure and faculty to provide excellent education. The curriculum is updated regularly to keep up with the growing demands and the changing trends of the software industry and research laboratories. The department provides a wide range of courses. The prominent among them includes Data Structures, Design and Analysis of Algorithms, System Programming, Computer Networks, Data Mining and Warehousing, Distributed and Parallel Computing, Mobile and Wireless Computing, Real-time Systems, Cryptography, Genetic Algorithm, Quantum Algorithms and Artificial Intelligence. Apart from these, students are also offered a wide variety of electives.`;
 
@@ -28,7 +28,7 @@ export default function Chem() {
         // console.log("Counts Response:", countsResponse.data);
         setNotices(response.data);
         setCounts([
-          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
+          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} />, link: "/Department/Chem/faculty" },
           { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
           { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} /> },
           { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} /> },
@@ -90,7 +90,7 @@ export default function Chem() {
 
         {/* Notice */}
         <div className="md:w-1/2 h-full flex items-center justify-center">
-          <DeptNotice dept="Chem" />
+          <DepartmentNotice dept="che" />
         </div>
       </div>
 

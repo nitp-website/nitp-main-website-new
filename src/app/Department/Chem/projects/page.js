@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { format } from "path";
 
 const CheProjectsPage = () => {
   const [publications, setPublications] = useState([]);
@@ -11,7 +10,7 @@ const CheProjectsPage = () => {
 
   // format date from YYYY-MM-DD to DD-MM-YYYY
   function formatDate(dateStr) {
-    // Convert YYYY-MM-DD to DD-MM-YYYY
+    if (!dateStr) return '';
     const [year, month, day] = dateStr.split("-");
     return `${day}-${month}-${year}`;
   }
@@ -20,7 +19,7 @@ const CheProjectsPage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-  `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=che`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=che`
       );
       const data = await response.json();
 
@@ -60,8 +59,6 @@ const CheProjectsPage = () => {
   return (
     <div className="min-h-screen bg-white bg-opacity-50">
       <div className="mx-auto px-4 py-8 max-w-6xl">
-        {" "}
-        {/* Adjust the width here */}
         <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-700 text-center">
           Projects
         </h1>
@@ -146,44 +143,34 @@ const CheProjectsPage = () => {
                           key={index}
                           className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
                         >
-                          {/* Project Title */}
                           <h3 className="text-lg font-semibold text-blue-800">
                             {project.project_title}
                           </h3>
-
-                          {/* Role */}
                           {project.role && (
                             <p className="text-gray-700">
                               <strong>Role:</strong> {project.role}
                             </p>
                           )}
-
-                          {/* Funding Agency */}
                           <p className="text-gray-800">
                             <strong>Sponsor:</strong> {project.funding_agency}
                           </p>
-
-                          {/* Duration */}
                           <p className="text-gray-700">
-                            <strong>Duration:</strong> {formatDate(project.start_date)} 
+                            <strong>Duration:</strong> {formatDate(project.start_date)}
                             <span className="font-extrabold text-black"> - </span>
                             {formatDate(project.end_date)}
                           </p>
-
-                          {/* Financial Outlay */}
                           <p className="text-gray-800">
                             <strong>Project Cost (INR):</strong> ₹
                             {parseFloat(
                               project.financial_outlay
                             ).toLocaleString()}
                           </p>
-
-                          {/* Status */}
                           <p
-                            className={`text-lg font-semibold ${project.status === "Completed"
-                              ? "text-green-800"
-                              : "text-blue-600"
-                              }`}
+                            className={`text-lg font-semibold ${
+                              project.status === "Completed"
+                                ? "text-green-800"
+                                : "text-blue-600"
+                            }`}
                           >
                             <strong className="text-black font-normal">
                               Status:

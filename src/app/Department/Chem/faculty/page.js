@@ -1,5 +1,5 @@
 "use client";
-import FacultyList from "../../../components/department/facultycomponents/FacultyList";
+import FacultyList from "../../../../components/facultycomponents/FacultyList";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 

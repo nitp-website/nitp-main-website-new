@@ -81,7 +81,7 @@ const chePOPage = () => {
                     </li>
                     <li>
                         <b>Life-Long Learning:</b> Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.
-                    </li> 
+                    </li>
                 </ul>
 
                 {/* Program Educational Objectives Section */}
