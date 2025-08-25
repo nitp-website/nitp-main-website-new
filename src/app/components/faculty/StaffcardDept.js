@@ -42,31 +42,35 @@ function StaffCard({
                 </div>
               </div>
             </div>
-            
+
             {/* Name and designation - left aligned on mobile, center on desktop */}
             <div className="w-full text-center">
               <h3 className="text-lg font-bold text-gray-800 mb-1 line-clamp-2">{name}</h3>
-              <h4 className="text-sm font-medium text-red-800 flex items-center justify-center gap-1 mb-2">
-                <FontAwesomeIcon icon={faIdCard} className="w-3 h-3" />
-                <span className="text-unwrap">{designation}</span>
-              </h4>
+              {
+                designation && designation !== "Not Available" && (
+                  <h4 className="text-sm font-medium text-red-800 flex items-center justify-center gap-1 mb-2">
+                    <FontAwesomeIcon icon={faIdCard} className="w-3 h-3" />
+                    <span className="text-unwrap">{designation}</span>
+                  </h4>)
+              }
             </div>
           </div>
-          
+
           {/* Right section with details */}
           <div className="md:w-2/3 p-4 flex flex-col justify-center">
             <div className="space-y-3">
-              {expertise && expertise !== "Not Available" && (
-                <div className="flex items-start text-sm">
-                  <FontAwesomeIcon
-                    icon={faLightbulb}
-                    className="w-4 h-4 mt-0.5 text-amber-500 flex-shrink-0"
-                  />
-                  <span className="ml-3 text-gray-700 break-words">
-                    <span className="font-medium">Expertise:</span> {expertise}
-                  </span>
-                </div>
-              )}
+              {
+                expertise && expertise !== "Not Available" && expertise.trim() !== "" && (
+                  <div className="flex items-start text-sm">
+                    <FontAwesomeIcon
+                      icon={faLightbulb}
+                      className="w-4 h-4 mt-0.5 text-amber-500 flex-shrink-0"
+                    />
+                    <span className="ml-3 text-gray-700 break-words">
+                      <span className="font-medium">Expertise:</span> {expertise}
+                    </span>
+                  </div>
+                )}
 
               {email && email !== "Not Available" && (
                 <div className="flex items-center text-sm">
@@ -92,30 +96,32 @@ function StaffCard({
                   <span className="ml-3 text-gray-700">{mobile}</span>
                 </div>
               )}
-              
-              {experience && experience !== "Not Available" && (
-                <div className="flex items-start text-sm">
-                  <FontAwesomeIcon
-                    icon={faLightbulb}
-                    className="w-4 h-4 mt-0.5 text-purple-500 flex-shrink-0"
-                  />
-                  <span className="ml-3 text-gray-700 break-words">
-                    <span className="font-medium">Experience:</span> {experience}
-                  </span>
-                </div>
-              )}
 
-              {education && education !== "Not Available" && (
-                <div className="flex items-start text-sm">
-                  <FontAwesomeIcon
-                    icon={faLightbulb}
-                    className="w-4 h-4 mt-0.5 text-indigo-500 flex-shrink-0"
-                  />
-                  <span className="ml-3 text-gray-700 break-words">
-                    <span className="font-medium">Education:</span> {education}
-                  </span>
-                </div>
-              )}
+              {
+                experience && experience !== "Not Available" && (
+                  <div className="flex items-start text-sm">
+                    <FontAwesomeIcon
+                      icon={faLightbulb}
+                      className="w-4 h-4 mt-0.5 text-purple-500 flex-shrink-0"
+                    />
+                    <span className="ml-3 text-gray-700 break-words">
+                      <span className="font-medium">Experience:</span> {experience}
+                    </span>
+                  </div>
+                )}
+
+              {
+                education && education !== "Not Available" && (
+                  <div className="flex items-start text-sm">
+                    <FontAwesomeIcon
+                      icon={faLightbulb}
+                      className="w-4 h-4 mt-0.5 text-indigo-500 flex-shrink-0"
+                    />
+                    <span className="ml-3 text-gray-700 break-words">
+                      <span className="font-medium">Education:</span> {education}
+                    </span>
+                  </div>
+                )}
             </div>
           </div>
         </div>
