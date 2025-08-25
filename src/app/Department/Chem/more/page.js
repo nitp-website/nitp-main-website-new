@@ -1,4 +1,5 @@
 import BackDepartment from "../../../components/department/BackDepartment"
+import Image from "next/image"
 
 const ActComp=({scholar,sp,title,curr,year,sno})=>{
     return(
@@ -84,8 +85,4 @@ function Page(){
 
     )
 }
-
-
-
-
 export default Page
