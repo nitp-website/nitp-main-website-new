@@ -6,7 +6,11 @@ import { Download } from 'lucide-react';
 export default function Page() {
     const data = [
         {
-            name: "Applied Physics Department Syllabus",
+            name: "B. Tech and M. Tech Dual Degree (Materials Science and Engineering)",
+            link: "https://drive.google.com/file/d/18KDRtfDx_gUm7PUf3f2bLiQe_ekargSB/view?usp=sharing"
+        },
+        {
+            name: "Ph.D. in Applied Physics and Materials Engineering",
             link: "https://drive.google.com/file/d/18KDRtfDx_gUm7PUf3f2bLiQe_ekargSB/view?usp=sharing"
         },
     ];
