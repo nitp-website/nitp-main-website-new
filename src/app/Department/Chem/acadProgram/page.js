@@ -14,34 +14,35 @@ import { AcadProgramCard } from "./AcadProgramCard";
 //// not sure about degree and course structure
 const programs = [
   {
-    title: "B. Tech and M. Tech Dual Degree in Chemical Technology",
+    title: "Dual Degree in Chemical technology- For 2023-2028/2024-2029 batches",
     degree: "B.Tech And M.Tech Dual Degree",
     duration: "5 Years",
     description:
       "The Department of Chemical Science and Technology offers the 5-year integrated B. Tech and M. Tech Dual Degree program in Chemical Technology. Admission to the program is granted through prestigious IIT- JEE (Main) examination. The curriculum comprises a blend of core courses along with a selection of electives, allowing students to tailor their studies to specific areas of interest. Following are the course structure and syllabus.",
     syllabus:
       "CST_Syllabus_ DD_BTech+MTech",
-      link: "https://drive.google.com/file/d/16Ooym161sd77HZHEw3bRMd87zsgTfwzy/view?usp=sharing"
+      link: "https://drive.google.com/file/d/11SKrA-hGK-HwsBWxJLeIWFZyGlgH3mF3/view"
   },
 
   {
-    title: "Ph.D. in Chemistry",
-    degree: "Ph.D.",    
-    duration: "",
+    title: "Dual degree in Chemical Technology- For 2025 Onwards.",
+    degree: "B.Tech And M.Tech Dual Degree",
+    duration: "5 Years",
     description:
-      "The Department offers Ph.D. in Chemistry. Admission to this program is through an Examination and Interview conducted by NIT Patna itself. This program is solely research based where students conduct their own work in an area of Chemistry under the guidance of faculty members.",
-    syllabus: "CST_Syllabus_PhD-Chemisty",
-    link: "https://drive.google.com/file/d/165cz5NQOVI-Hkyubmb5BKJgq_dZA5rZF/view?usp=sharing"
+      "The Department of Chemical Science and Technology offers the 5-year integrated B. Tech and M. Tech Dual Degree program in Chemical Technology. Admission to the program is granted through prestigious IIT- JEE (Main) examination. The curriculum comprises a blend of core courses along with a selection of electives, allowing students to tailor their studies to specific areas of interest. Following are the course structure and syllabus.",
+    syllabus:
+      "CST_Syllabus_ DD_BTech+MTech",
+      link: "https://drive.google.com/file/d/1yKjAyWHe9bvevQ37e9z3_Uncatzq1nwj/view"
   },
 
   {
-    title: "Ph.D. in Chemical Engineering",
+    title: "PhD Courses",
     degree: "Ph.D.",    
     duration: "",
     description:
-      "The Department offers a Ph.D. program in Chemical Engineering, with admissions based on an entrance examination and interview conducted by NIT Patna. This is a research-intensive program where students carry out independent research in a specialized area of Chemical Engineering under the mentorship of faculty members.",
-    syllabus: "",
-  },
+      "The Department offers a Ph.D. program, with admissions based on an entrance examination and interview conducted by NIT Patna. This is a research-intensive program where students carry out independent research in a specialized area of Chemical Engineering under the mentorship of faculty members.",
+    // syllabus: "",
+  }
 ];
 
 const cheAcadProgrampage = () => {
