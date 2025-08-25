@@ -7,8 +7,6 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
-const about = `The Department of Computer Science and Engineering offers a wide spectrum of academic programs to prepare students for the rapidly evolving digital era. At the undergraduate level, the department offers a four-year B. Tech program in Computer Science and Engineering, and Artificial Intelligence and Data Science. It also provides two five-year Dual Degree programs: B.Tech + M.Tech in Computer Science and Engineering with specialization in Cyber Security, and B.Tech + M.Tech in Computer Science and Engineering with specialization in Data Science. At the postgraduate level, students can opt for a three-year MCA program with specializations in Artificial Intelligence and Internet of Things, and Data Science and Informatics, and a two-year M.Tech program with specializations in Data Science and Engineering, and Cyber Security. The department further offers a Ph.D. program fostering advanced research.`;
-
 const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
 
 export default function CSE() {
@@ -21,7 +19,7 @@ export default function CSE() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=cse`);
+        const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=ece`);
         // console.log("Counts Response:", countsResponse.data);
         setCounts([
           { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
@@ -83,7 +81,7 @@ export default function CSE() {
 
         {/* Notice */}
         <div className="md:w-1/2 h-full flex items-center justify-center">
-          <DepartmentNotice dept="CSE" />
+          <DepartmentNotice dept="ECE" />
         </div>
       </div>
 
@@ -95,12 +93,29 @@ export default function CSE() {
               About
             </div>
             <div className="px-2 flex mx-auto gap-2 flex-1 shrink-0">
-              <div className="w-[100%] mx-auto p-2 text-justify text-black">
-                {about.split("\n").map((line, index) => (
-                  <p key={index} className="mb-2">
-                    {line}
-                  </p>
-                ))}
+              <div className="text-justify max-sm:text-[12px]">
+                The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students. The department is dedicated to providing quality education at both undergraduate (UG) and postgraduate levels. Currently, it offers the following programs:
+                <br />
+                1.B.Tech in "Electronics & Communication Engineering" with an intake of 100.
+                <br />
+                2.B.Tech in Electronics Engineering (VLSI Design and Technology) with an intake of 80.
+                <br />
+                3.Dual degree (B.Tech + M.Tech) in "Microelectronics and VLSI System Design" with an intake of 22.
+                <br />
+                4. M.Tech in:
+                <br />
+                &nbsp;&nbsp;&nbsp;(a) Next Generation Wireless Technologies" with an intake of 15.
+                <br />
+                &nbsp;&nbsp;&nbsp;(b) Microelectronics and VLSI System Design" with an intake of 15.
+                <br />
+                5.Ph.D. (Full-time and Part-time) in Electronics and Communication Engineering.
+                <br />
+                <button
+                  onClick={() => router.push('/Department/ECE/about')}
+                  className="text-blue-600 ml-2"
+                >
+                  more..
+                </button>
               </div>
             </div>
           </div>

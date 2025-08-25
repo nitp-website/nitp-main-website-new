@@ -1,31 +1,35 @@
-"use client";
-
-import { useState } from "react";
+import BackDepartment from "../../../components/department/BackDepartment"
 import { Download } from 'lucide-react';
+import timeTableData from '../../TimeTable.json';
 
-export default function Page() {
+
+function Page() {
+    const eceTimeTable = timeTableData.find(
+        (item) => item.name === 'Electronics and Communication Engineering'
+    );
+    const timeTableLink = eceTimeTable ? eceTimeTable.url : '#';
+
     const data = [
         {
-            name: "B. Tech and M. Tech Dual Degree (Materials Science and Engineering)",
-            link: "https://drive.google.com/file/d/18KDRtfDx_gUm7PUf3f2bLiQe_ekargSB/view?usp=sharing"
-        },
-        {
-            name: "Ph.D. in Applied Physics and Materials Engineering",
-            link: "https://drive.google.com/file/d/18KDRtfDx_gUm7PUf3f2bLiQe_ekargSB/view?usp=sharing"
+            name: eceTimeTable.name,
+            link: eceTimeTable.url, // you can keep 'link' here if your UI expects it
         },
     ];
+
+    console.log(timeTableLink);
+
     return (
         <div className="bg-white text-black">
             <div className="py-1 mt-2">
                 <div className="w-full px-5 xs:px-0 md:w-[90%] mx-auto">
                     <div className="w-full">
-                        <h2 className="text-center text-4xl text-red-700 mt-2">Syllabus</h2>
+                        <h2 className="text-center text-4xl text-red-700 mt-2">Time Table</h2>
                     </div>
                     <div className="mx-auto px-4 py-8 w-full">
                         <div className="mx-auto overflow-x-auto rounded-lg">
                             <table className="md:w-[90%] overflow-hidden rounded-lg mx-auto border-collapse bg-white">
                                 <thead>
-                                    <tr className="bg-red-800 text-white">
+                                    <tr className="bg-[#421010] text-white">
                                         <th className="text-left px-6 py-4 font-semibold">Document</th>
                                         <th className="text-center px-6 py-4 font-semibold w-48">Download</th>
                                     </tr>
@@ -46,7 +50,7 @@ export default function Page() {
                                                                 href={item.link}
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
-                                                                className="inline-flex items-center gap-2 bg-red-800 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium"
+                                                                className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium"
                                                             >
                                                                 <Download className="w-4 h-4" />
                                                                 Download
@@ -72,6 +76,6 @@ export default function Page() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
-
+export default Page
