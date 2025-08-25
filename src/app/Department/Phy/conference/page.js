@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-const PhyConferencePage = () => {
+const CSEConferencePage = () => {
   const [publications, setPublications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const PhyConferencePage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://admin.nitp.ac.in/api/publications?type=all`
+        `https://admin.nitp.ac.in/api/conference?type=phy`
       );
       const data = await response.json();
 
@@ -39,6 +39,10 @@ const PhyConferencePage = () => {
   useEffect(() => {
     fetchPublications();
   }, []);
+
+  const toggleYear = (year) => {
+    setOpenYears((prev) => ({ ...prev, [year]: !prev[year] }));
+  };
 
   return (
     <div className="min-h-screen bg-white bg-opacity-50">
@@ -109,73 +113,61 @@ const PhyConferencePage = () => {
           Object.keys(publications)
             .sort((a, b) => b - a) // Sort years in descending order
             .map((year) => (
-              <div key={year} className="mb-8">
-                <h2 className="text-xl font-bold mb-4 text-red-700">
-                  Publications in {year}
-                </h2>
-                <div className="overflow-hidden rounded-lg shadow-md border border-gray-100">
-                  <div className="overflow-x-auto">
-                    <table className="w-full border-collapse bg-white">
-                      <thead>
-                        <tr className="bg-red-700 text-white">
-                          <th className="text-left px-6 py-4 font-semibold">
-                            Title
-                          </th>
-                          <th className="text-left px-6 py-4 font-semibold">
-                            Authors
-                          </th>
-                          <th className="text-left px-6 py-4 font-semibold">
-                            Conference
-                          </th>
-                          <th className="text-left px-6 py-4 font-semibold">
-                            Location
-                          </th>
-                          <th className="text-left px-6 py-4 font-semibold">
-                            Indexing
-                          </th>
-                          <th className="text-left px-6 py-4 font-semibold">
-                            Student Involved
-                          </th>
-                          <th className="text-left px-6 py-4 font-semibold">
-                            DOI
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {publications[year].map((pub, index) => (
-                          <tr
-                            key={pub.id}
-                            className={`border-b border-gray-100 hover:bg-red-50 transition-colors ${
-                              index % 2 === 0 ? "bg-white" : "bg-gray-50"
-                            }`}
-                          >
-                            <td className="text-left px-6 py-4 text-gray-800">
-                              {pub.title}
-                            </td>
-                            <td className="text-left px-6 py-4 text-gray-800">
-                              {pub.authors}
-                            </td>
-                            <td className="text-left px-6 py-4 text-gray-800">
-                              {pub.conference_name}
-                            </td>
-                            <td className="text-left px-6 py-4 text-gray-800">
-                              {pub.location}
-                            </td>
-                            <td className="text-left px-6 py-4 text-gray-800">
-                              {pub.indexing || "N/A"}
-                            </td>
-                            <td className="text-left px-6 py-4 text-gray-800">
-                              {pub.student_involved || "N/A"}
-                            </td>
-                            <td className="text-left px-6 py-4 text-gray-800">
-                              {pub.doi || "N/A"}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
+              <div
+                key={year}
+                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-white"
+              >
+                <button
+                  onClick={() => toggleYear(year)}
+                  className="w-full px-4 py-3 bg-red-100 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-200 transition"
+                >
+                  Publications in {year} ({publications[year].length})
+                  {openYears[year] ? <ChevronUp /> : <ChevronDown />}
+                </button>
+
+                {openYears[year] && (
+                  <div className="overflow-y-auto max-h-100">
+                    <ul className="p-4 space-y-4">
+                      {publications[year].map((paper, index) => (
+                        <li
+                          key={index}
+                          className="p-4 border border-gray-200 bg-white rounded-md shadow-sm hover:shadow-md transition-transform duration-200"
+                        >
+                          <p className="text-gray-800">
+                            <span className="font-semibold">{paper.authors}</span>,{" "}
+                            <span className="font-semibold text-blue-700">
+                              "{paper.title}"
+                            </span>
+                            ,
+                            <span className="text-gray-700 text-lg font-bold">
+                              {" "}
+                              {paper.conference_name}
+                            </span>
+                            <span className="text-gray-800 font-semibold">
+                              {" "}
+                              Location: {paper.location}
+                            </span>
+                            <span className="text-gray-700">
+                              {" "}
+                              ({paper.conference_year})
+                            </span>
+                          </p>
+                          {paper.doi && (
+                            <p className="text-blue-600 underline">
+                              <a
+                                href={paper.doi}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                DOI Link
+                              </a>
+                            </p>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
+                )}
               </div>
             ))
         )}
@@ -184,4 +176,4 @@ const PhyConferencePage = () => {
   );
 };
 
-export default PhyConferencePage;
+export default CSEConferencePage;

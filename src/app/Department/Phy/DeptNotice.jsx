@@ -6,13 +6,25 @@ import DepartmentNotify1 from "./DepartmentNotify1.js";
 
 const DeptNotice = ({ dept }) => {
   const [Notices, setNotices] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=${dept.toLowerCase()}`
-      );
-      setNotices(response.data);
+      try {
+        if (!process.env.NEXT_PUBLIC_BACKEND_API_URL) {
+          setError("Backend API URL is not defined.");
+          setNotices([]);
+          return;
+        }
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=${dept?.toLowerCase()}`
+        );
+        setNotices(response.data);
+        setError("");
+      } catch (err) {
+        setError("Failed to fetch data.");
+        setNotices([]);
+      }
     };
     getData();
   }, [dept]);
@@ -21,22 +33,29 @@ const DeptNotice = ({ dept }) => {
     <div className="w-full flex flex-col max-sm:mr-0">
       <div className="bg-white rounded-lg shadow-md p-6 py-2 border border-red-200">
         <h2 className="text-2xl font-bold text-[#5D1A14] mb-4">Announcements</h2>
+        {error ? (
+          <div className="text-red-500 font-semibold mb-4">{error}</div>
+        ) : null}
         <ul className="space-y-3 overflow-y-auto max-h-80">
-          {Notices.map((notice, id) => {
-            if (notice.isVisible === 1) {
-              return (
-                <DepartmentNotify1
-                  key={id}
-                  title={notice.title}
-                  attachments={notice.attachments}
-                  important={notice.important}
-                  link={notice.notice_link ? notice.notice_link : ""}
-                  date={notice.updatedAt}
-                />
-              );
-            }
-            return null;
-          })}
+          {Notices.length === 0 ? (
+            <li className="text-gray-500">Data not available</li>
+          ) : (
+            Notices.map((notice, id) => {
+              if (notice.isVisible === 1) {
+                return (
+                  <DepartmentNotify1
+                    key={id}
+                    title={notice.title}
+                    attachments={notice.attachments}
+                    important={notice.important}
+                    link={notice.notice_link ? notice.notice_link : ""}
+                    date={notice.updatedAt}
+                  />
+                );
+              }
+              return null;
+            })
+          )}
         </ul>
         <button
           variant="outline"
