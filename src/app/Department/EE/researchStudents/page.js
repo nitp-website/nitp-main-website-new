@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PhdCandidate from "../../../components/faculty/PhdCandidate.js";
 
-const EEResearchStudentsPage = () => {
+const CSEReserchStudentspage = () => {
   const [loading, setLoading] = useState(true);
   const [phdInfo, setPhdInfo] = useState([]);
   const [error, setError] = useState(null);
@@ -18,7 +18,7 @@ const EEResearchStudentsPage = () => {
       setLoading(true);
       setError(null);
 
-  const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=ee`;
+      const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=cse`;
       const { data } = await axios.get(api);
 
       const phdCandidates = await Promise.all(
@@ -239,4 +239,4 @@ const EEResearchStudentsPage = () => {
   );
 };
 
-export default EEResearchStudentsPage;
+export default CSEReserchStudentspage;
