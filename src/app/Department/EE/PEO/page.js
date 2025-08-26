@@ -1,60 +1,75 @@
-import BackDepartment from "../../../components/department/BackDepartment";
 
+import React from "react";
 
-
-
-
-
-export default function Page() {
+const EEPEOPage = () => {
     return (
-        <div className=" flex flex-col p-10 max-sm:p-2 text-black">
-            <div className="flex flex-col  mb-6">
-                <div>
-                    <p className="text-red-900 text-xl lg:text-2xl font-bold">
-                        P E O
-                    </p>
-                </div>
-                <div className="lg:mt-2">
-                    <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        Electrical Engineering
-                    </p>
-                </div>
-                <BackDepartment navigate={"/Department/EE"} />
-            </div>
-            <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
-                {/* B.tech */}
-                <div className="">
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-2">B.Tech :-</div>
-                    <div className="text-red-900 text-base lg:text-xl font-normal  mb-8">Programme Educational Objectives (PEO) for UG (B.Tech - EE)</div>
-                    <ul className="list-disc list-inside ml-5 space-y-4 lg:text-base text-sm mb-12">
-                        <li>The program is devoted to impart learning and understanding of different segments of Electrical Engineering.</li>
-                        <li>The program aims to provide students with the opportunity to apply advanced techniques and develop skills to explore new problems in Electrical Engineering. It aims to produce graduates, who are employable in Industries and/or can pursue higher studies.</li>
-                        <li>The program is expected to empower students to collaborate with different sectors of the field that shall lead to innovation for solving social, technical, and business challenges in an optimized and environment friendly way.</li>
-                        <li>The program is designed to encourage students to pursue life-long learning and develop professional ethics, communication skills, leadership quality, and teamwork capability through continuing education toward self-improvement.</li>
-                    </ul>
-                </div>
+        <div className="bg-white text-black">
+            <div className="py-1 mt-2">
+                <div className="w-full px-5 xs:px-0 md:w-[90%] mx-auto">
+                    <div className="w-full">
+                        <h2 className="text-center text-4xl text-red-700 mt-2">
+                            Programme Educational Objectives (PEO)
+                        </h2>
+                    </div>
 
-                {/* M.tech */}
-                <div className="mt-10">
-                    <div className="text-red-900 font-semibold text-xl lg:text-2xl mb-2">M.Tech :-</div>
-                    <div className="text-red-900 lg:text-xl text-base mb-8">Programme Educational Objectives (PEO) for PG (M.Tech - EE)</div>
-                    <div className="text-red-900 lg:text-xl text-base mb-8">PG (M. Tech. - Control System)</div>
-                    <ol className="list-decimal ml-5 space-y-4 text-sm lg:text-base mb-12">
-                        <li>To impart learning and understanding towards different segments of Control System Engineering so that Graduates of the program will have successful careers in Instrumentation, automation, and inter-disciplinary fields.</li>
-                        <li>To empower graduates of the program to excel in research, and contribute to technological developments in control and instrumentation.</li>
-                        <li>To prepare the graduates to effectively collaborate with different sectors of the field that shall lead to innovation for solving social, technical, and business challenges in an optimized and environment friendly manner.</li>
-                        <li>To encourage students to pursue lifelong learning and professional development through continuing education and self-improvement.</li>
-                    </ol>
+                    {/* UG Section */}
+                    <div className="w-full mt-8">
+                        <h3 className="text-red-900 text-2xl font-bold mb-2">B.Tech (UG)</h3>
+                        <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
+                            <li>
+                                Impart learning and understanding of different segments of Electrical Engineering.
+                            </li>
+                            <li>
+                                Provide students with opportunities to apply advanced techniques and develop skills to explore new problems in Electrical Engineering, making them employable in industries or able to pursue higher studies.
+                            </li>
+                            <li>
+                                Empower students to collaborate with different sectors, leading to innovation for solving social, technical, and business challenges in an optimized and environment-friendly way.
+                            </li>
+                            <li>
+                                Encourage students to pursue lifelong learning and develop professional ethics, communication skills, leadership quality, and teamwork capability through continuing education toward self-improvement.
+                            </li>
+                        </ul>
+                    </div>
 
-                    <div className="text-red-900 lg:text-xl text-base mb-8">PG (M. Tech. - Power System)</div>
-                    <ol className="list-decimal ml-5 space-y-4 text-sm lg:text-base mb-12">
-                        <li>To impart learning and understanding towards different segments of the Power System; which at present, is one of the important pillars of the modern world, and aims to produce postgraduates in power systems, who are employable in Industries and/or can pursue higher studies.</li>
-                        <li>To provide the students with the opportunity to learn and use the advanced techniques, skills, and modern scientific and engineering tools to explore new problems in the energy sector.</li>
-                        <li>To empower students to effectively collaborate with different sectors of the field that shall lead to innovation for solving social, technical, and business challenges in an optimized and environment friendly manner.</li>
-                        <li>To encourage students to pursue life-long learning and professional development through continuing education and self-improvement.</li>
-                    </ol>
+                    {/* PG Section */}
+                    <div className="w-full mt-10">
+                        <h3 className="text-red-900 text-2xl font-bold mb-2">M.Tech (PG)</h3>
+                        <h4 className="text-red-900 text-xl font-semibold mb-2">Control System</h4>
+                        <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
+                            <li>
+                                Impart learning and understanding towards different segments of Control System Engineering for successful careers in instrumentation, automation, and interdisciplinary fields.
+                            </li>
+                            <li>
+                                Empower graduates to excel in research and contribute to technological developments in control and instrumentation.
+                            </li>
+                            <li>
+                                Prepare graduates to collaborate with different sectors, leading to innovation for solving social, technical, and business challenges in an optimized and environment-friendly manner.
+                            </li>
+                            <li>
+                                Encourage lifelong learning and professional development through continuing education and self-improvement.
+                            </li>
+                        </ul>
+
+                        <h4 className="text-red-900 text-xl font-semibold mb-2 mt-8">Power System</h4>
+                        <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
+                            <li>
+                                Impart learning and understanding towards different segments of Power System, producing postgraduates who are employable in industries or able to pursue higher studies.
+                            </li>
+                            <li>
+                                Provide opportunities to learn and use advanced techniques, skills, and modern scientific and engineering tools to explore new problems in the energy sector.
+                            </li>
+                            <li>
+                                Empower students to collaborate with different sectors, leading to innovation for solving social, technical, and business challenges in an optimized and environment-friendly manner.
+                            </li>
+                            <li>
+                                Encourage lifelong learning and professional development through continuing education and self-improvement.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
+
+export default EEPEOPage;
