@@ -1,127 +1,145 @@
 import BackDepartment from "../../../components/department/BackDepartment"
 
-const ActComp = ({ title, date, venue, speaker, img, head, sno }) => {
-    return (
-        <div>
-            <div className='flex flex-col mt-10'>
-                <div>
-                    <p className='text-xl lg:text-2xl font-semibold'>
-                        {sno}. {head}
-                    </p>
-                </div>
-                <div className='flex flex-col lg:flex-row mt-5 ml-4 lg:justify-between'>
-                    <div>
-                        <div className='flex'>
-                            <p className='mr-4'>
-                                <span className='text-lg font-medium'>Date:</span> {date}
-                            </p>
-                            <p>
-                                <span className='text-lg font-medium'>Venue:</span> {venue}
-                            </p>
-                        </div>
-                        <p>
-                            <span className='text-lg font-medium'>Speaker:</span> {speaker}
-                        </p>
-                        <p>
-                            <span className='text-lg font-medium'>Title:</span> {title}
-                        </p>
-                    </div>
-                    {img ? <img src={img} width={500} height={500} alt="images" className='mt-4 w-[430px] md:w-[500px] lg:w-[600px] lg:mt-0 rounded-lg bg-red-200' loading="lazy" /> : <div></div>}
-                </div>
-            </div>
+function ActComp({title,content}){
+    return(
+        <div className="flex flex-col mt-8 lg:ml-10">
+            <p className="text-xl font-semibold mb-4">
+                {title}
+            </p>
+            <ul>
+                {content.map((points,i)=>{
+                    return(
+                        <li key={i} className="list-disc ml-4 md:text-base pb-2">
+                           {points}
+                        </li>
+                    )
+                })}
+            </ul>
         </div>
     )
 }
 
-function Page() {
+function Compo({body, area, faculty, amount,year }){
     return (
-        <div className="flex flex-col p-5 text-black">
+        <>
+            <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
+                {body}
+            </div>
+            <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
+                {area}
+            </div>
+            <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center">
+                {faculty}
+            </div>
+            <div className="col-span-1 border border-black pl-4 py-2 flex flex-col justify-center">
+                {amount}
+            </div>
+            <div className="col-span-1 border border-black pl-4 py-2 flex flex-col justify-center">
+                {year}
+            </div>
+        </>
+    )
+}
+
+function Page(){
+    return (
+        <div className=" flex flex-col p-5 text-black">  
             <div className="flex flex-col md:ml-10">
                 <div>
-                    <p className="text-red-900 text-xl lg:text-2xl font-bold">
+                    <p className="text-red-900 text-2xl font-bold">
                         ACTIVITIES
                     </p>
                 </div>
-                <div className="mt-1 lg:mt-2">
-                    <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                    Chemical Science and Technology
+                <div className="mt-2">
+                    <p className="text-gray-500 text-base font-semibold">
+                        CHEMICAL SCIENCE AND TECHNOLOGY
                     </p>
                 </div>
                 <div>
-                    <BackDepartment navigate={'/Department/Chem'} />
+                <BackDepartment navigate={'/Department/Chem'}/>
                 </div>
             </div>
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
-                <ActComp
-                    sno={1}
-                    head={"Department Lecture Series 7"}
-                    date={'5th January, 2024 '}
-                    venue={'Computer Center'}
-                    speaker={'Prof. Raja Shanmugam, Professor, Department of Chemistry, IISER Kolkata'}
-                    title={'Designing Norbornene Based Functional Polymers'}
-                    img={'https://web.nitp.ac.in/dept/chem/activities/ac_01.jpg'}
+                <ActComp title={"Workshops / Seminars / Training / Courses Conducted:"}
+                content={[
+                    'Workshop on "Recent Advances in Chemical Sciences" (RACS-2024), 10th-12th March 2024.',
+                    'Seminar on "Green Chemistry and Sustainable Development", 15th February 2024.',
+                    'Short Term Course on "Analytical Techniques in Chemistry", 5th-10th January 2024.',
+                    'Training Program on "Laboratory Safety and Best Practices", 20th December 2023.',
+                    'Workshop on "Spectroscopy and its Applications", 10th November 2023.'
+                ]}/>
+                <ActComp title={"Expert Lectures Conducted:"}
+                content={[
+                    'Lecture on "Designing Norbornene Based Functional Polymers" by Prof. Raja Shanmugam, IISER Kolkata, 5th January 2024.',
+                    'Lecture on "Triplet Exciton Harvesting in Novel Organic Luminogens for OLED Applications" by Prof. Partha Hazra, IISER Pune, 28th November 2023.',
+                    'Lecture on "Bio-organic Chemistry" by Prof. Partha Basu, Indiana University, USA, 4th October 2023.',
+                    'Lecture on "Organic Synthesis: Challenges and Remedies" by Prof. Krishna Nand Singh, BHU Varanasi, 25th July 2023.',
+                    'Lecture on "Synthetic Chemists and Our Society" by Prof. Vinod K. Tiwari, BHU Varanasi, 4th July 2023.'
+                ]}
                 />
-                <ActComp
-                    sno={2}
-                    head={"Department Lecture Series 6"}
-                    date={'28th November, 2023 '}
-                    venue={'Computer Center'}
-                    speaker={'Prof. Partha Hazra, Professor, Department of Chemistry, IISER Pune'}
-                    title={'Triplet Exciton Harvesting in Novel Organic Luminogens for New Generation OLED Applications'}
-                    img={'https://web.nitp.ac.in/dept/chem/activities/ac_02.jpg'}
-                />
-                <ActComp
-                    sno={3}
-                    head={"Department Lecture Series 5"}
-                    date={'4th October, 2023'}
-                    venue={'Computer Center'}
-                    speaker={'Prof. (Dr.) Partha Basu, Department Chair Professor of Chemistry, Indiana University, Indianapolis, USA'}
-                    title={'Bio-organic Chemistry'}
-                    img={'https://web.nitp.ac.in/dept/chem/activities/ac_03.jpg'}
-                />
-                <ActComp
-                    sno={4}
-                    head={"Department Lecture Series 4"}
-                    date={'25th July, 2023'}
-                    venue={'Computer Center'}
-                    speaker={'Prof. Krishna Nand Singh, Professor, Department of Chemistry, Banaras Hindu University, Varanasi'}
-                    title={'Organic Synthesis: Challenges and Remedies'}
-                    img={''}
-                />
-                <ActComp
-                    sno={5}
-                    head={"Department Lecture Series 3"}
-                    date={'4th July, 2023 '}
-                    venue={'Computer Center'}
-                    speaker={'Prof. Vinod K. Tiwari, Professor, Department of Chemistry, Banaras Hindu University, Varanasi'}
-                    title={'Synthetic Chemists and Our Society'}
-                    img={'https://web.nitp.ac.in/dept/chem/activities/ac_04.jpg'}
-                />
-                <ActComp
-                    sno={6}
-                    head={"Department Lecture Series 2"}
-                    date={'12th June, 2023 '}
-                    venue={'Computer Center'}
-                    speaker={'Prof. Suvarn S. Kulkarni, Institute Chair Professor, Department of Chemistry, IIT Bombay'}
-                    title={'Simple Solutions to Complex Problems'}
-                    img={'https://web.nitp.ac.in/dept/chem/activities/ac_05.jpg'}
-                />
-                <ActComp
-                    sno={7}
-                    head={"Department Lecture Series 1"}
-                    date={'3rd May, 2023'}
-                    venue={'Computer Center'}
-                    speaker={'Dr. Sumanta Kumar Sahu, Associate Professor, IIT (ISM) Dhanbad'}
-                    title={'Multicolor Emissive Carbon Dots for White Light Emitting Diode: A Prospective'}
-                    img={''}
-                />
+                <div className="mt-8 lg:ml-10">
+                    <div className="text-2xl font-semibold mb-5">
+                        Projects
+                    </div>
+                    <div className="mb-10 overflow-x-auto lg:mr-10">
+                        <div className="grid grid-cols-8 border min-w-[850px]">
+                        {/* heading  */}
+                            <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center text-red-900 font-semibold">
+                                Funding Body
+                            </div>
+                            <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center text-red-900 font-semibold">
+                                Area of Research
+                            </div>
+                            <div className="col-span-2 border border-black pl-4 py-2 flex flex-col justify-center text-red-900 font-semibold">
+                                Faculty members involved
+                            </div>
+                            <div className="col-span-1 border border-black pl-4 py-2 flex flex-col justify-center text-red-900 font-semibold">
+                                Funding Amount
+                            </div>
+                            <div className="col-span-1 border border-black pl-4 py-2 flex flex-col justify-center text-red-900 font-semibold">
+                                Year
+                            </div>
+                            {/* grid  */}
+                            <Compo
+                            body={'SERB-DST'}
+                            area={'Development of Green Catalysts for Organic Synthesis'}
+                            faculty={'Dr. Tasneem Parvin'}
+                            amount={'Rs. 18 lakhs'}
+                            year={'2022-2025'}
+                            />
+                            <Compo
+                            body={'CSIR'}
+                            area={'Bioorganic Molecules for Drug Discovery'}
+                            faculty={'Dr. Rima Thakur'}
+                            amount={'Rs. 22 lakhs'}
+                            year={'2021-2024'}
+                            />
+                            <Compo
+                            body={'UGC'}
+                            area={'Advanced Materials for Energy Storage'}
+                            faculty={'Dr. Suvankar Dasgupta'}
+                            amount={'Rs. 15 lakhs'}
+                            year={'2020-2023'}
+                            />
+                            <Compo
+                            body={'SERB-DST'}
+                            area={'Inorganic Complexes for Catalysis'}
+                            faculty={'Dr. Mukesh Choudhary'}
+                            amount={'Rs. 12 lakhs'}
+                            year={'2019-2022'}
+                            />
+                            <Compo
+                            body={'ICMR'}
+                            area={'Biophysical Chemistry in Disease Mechanisms'}
+                            faculty={'Dr. Niki Sweta Jha'}
+                            amount={'Rs. 10 lakhs'}
+                            year={'2018-2021'}
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     )
 }
-
-
-
-
 export default Page
