@@ -58,7 +58,7 @@ const staffData = [
                 name: "Mr. Rahul Kumar",
                 designation: "Office Attendant",
                 experience: "",
-                education: "B.Sc. in Mathematics M.Sc. in Mathematics",
+                education: "B.Sc. in Mathematics",
                 expertise: "",
                 email: "rahul.oa@nitp.ac.in",
                 // mobile: "+91-7992405297",
