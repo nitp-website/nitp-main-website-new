@@ -1,46 +1,43 @@
-import BackDepartment from "../../../components/department/BackDepartment";
+import React from "react";
 
-
-
-
-
-
-export default function mission() {
+const CEMissionPage = () => {
     return (
-        <div className=" flex flex-col p-10 max-sm:p-2 text-black">
-            <div className="flex flex-col  mb-6">
-                <div>
-                    <p className="text-red-900 text-3xl max-sm:text-2xl font-bold">
-                        MISSION AND VISION
-                    </p>
-                </div>
-                <div className="mt-2">
-                    <p className="text-gray-500 text-xl font-semibold">
-                        CIVIL ENGINEERING
-                    </p>
-                </div>
-                <BackDepartment navigate={"/Department/CE"} />
-            </div>
-            <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
-                {/* vision */}
-                <div className="mb-10">
-                    <div className="text-red-900 font-bold text-3xl max-sm:text-2xl mb-8">VISION :-</div>
-                    <ul className="list-none list-inside ml-5 space-y-4 text-lg max-sm:text-sm">
-                        <li>To serve the Nation and the world, through excellence education and advanced research in all the streams of Civil Engineering.</li>
+        <div className="bg-white text-black">
+            <div className="py-1 mt-2">
+                <div className="w-full px-5 xs:px-0 md:w-[90%] mx-auto">
+                    <div className="w-full">
+                        <h2 className="text-center text-4xl text-red-700 mt-2">Mission</h2>
+                    </div>
+                    <ul className="list-disc pl-5 space-y-2 mt-2 text-justify">
+                        <li className="ml-4">
+                            To serve by producing excellent engineers, innovators, entrepreneurs and academicians for the growth of the industry and the society.
+                        </li>
+                        <li className="ml-4">
+                            To develop sense of competitiveness, self-confidence, sincerity, punctuality and ethical values among students.
+                        </li>
+                        <li className="ml-4">
+                            To undertake innovative collaborative projects with industries, government agencies and other organisations to cater the needs of society and solve real field problems.
+                        </li>
+                        <li className="ml-4">
+                            To develop research and teaching potential to the fullest extent.
+                        </li>
+                        <li className="ml-4">
+                            To remain a role model in the field of Civil Engineering.
+                        </li>
                     </ul>
-                </div>
-                {/* mission */}
-                <div className="mb-10">
-                    <div className="text-red-900 font-bold text-3xl max-sm:text-2xl mb-8">MISSION :-</div>
-                    <ol className="list-disc list-inside ml-5 space-y-4 text-lg max-sm:text-sm">
-                        <li>To serve by producing excellent engineers, innovators, entrepreneurs and academicians for the growth of the industry and the society.</li>
-                        <li>To develop sense of competitiveness, self-confidence, sincerity, punctuality and ethical values among students.</li>
-                        <li>To undertake innovative collaborative projects with industries, government agencies and other organisations to cater the needs of society and solve real field problems.</li>
-                        <li>To develop research and teaching potential to the fullest extent.</li>
-                        <li>To remain a role model in the field of Civil Engineering.</li>
-                    </ol>
+
+                    <div className="w-full mt-5">
+                        <h2 className="text-center text-4xl text-red-700 mt-2">Vision</h2>
+                    </div>
+                    <ul className="list-disc pl-5 space-y-2 mt-2 text-justify">
+                        <li className="ml-4">
+                            To serve the Nation and the world, through excellence education and advanced research in all the streams of Civil Engineering
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
+
+export default CEMissionPage;
