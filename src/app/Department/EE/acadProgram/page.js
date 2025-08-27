@@ -19,7 +19,7 @@ const programs = [
     duration: "4 Years",
     description:
       "Admission to the 4-year B.Tech (Electrical Engineering) is through IIT-JEE (Main). The program covers core courses in electrical engineering, electives, and practical training in state-of-the-art laboratories.",
-    syllabus: "btech-ee",
+    syllabus: "btech",
   },
   {
     title: "M.Tech in Power Systems Engineering",
@@ -43,7 +43,7 @@ const programs = [
     duration: "",
     description:
       "The Department offers Ph.D. in Electrical Engineering. Admission is through an institute-level examination. The program is research-based, allowing students to work on cutting-edge topics under faculty guidance.",
-    syllabus: "phd-ee",
+    syllabus: "phd",
   },
 ];
 
