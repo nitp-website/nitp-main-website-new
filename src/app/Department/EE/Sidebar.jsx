@@ -96,7 +96,7 @@ const navItems = [
       },
       {
         name: "PO & PEO",
-        url: `/Department/${dept}/PO`,
+        url: `/Department/${dept}/po`,
         icon: <BookOpen size={18} />,
       },
     ],
@@ -111,11 +111,11 @@ const navItems = [
         url: `/Department/${dept}/faculty`,
         icon: <Scroll size={18} />,
       },
-      // {
-      //   name: "Staff",
-      //   url: `/Department/${dept}/staff`,
-      //   icon: <FileText size={18} />,
-      // },
+      {
+        name: "Staff",
+        url: `/Department/${dept}/staff`,
+        icon: <FileText size={18} />,
+      },
       {
         name: "Research Students",
         url: `/Department/${dept}/researchStudents`,
