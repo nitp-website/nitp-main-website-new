@@ -1,28 +1,33 @@
-import BackDepartment from "../../../components/department/BackDepartment";
+"use client";
+import React, { useEffect, useState } from "react";
+import StaffcardDept from "../../../components/faculty/StaffcardDept";
+import staffData from "../../staffData.js";
 
+const CEStaffpage = () => {
+  const [staff, setStaff] = useState("staff");
+  const hasStaff =
+    staffData.find((dept) => dept.department === "Civil")?.staff.length > 0;
 
-
-
-
-
-export default function achivments(){
-    return (
-        <div className=" flex flex-col p-10 max-sm:p-2 h-screen text-black">  
-            <div className="flex flex-col  mb-16">
-                <div>
-                    <p className="text-red-900 text-3xl max-sm:text-2xl font-bold">
-                        LIST OF NON-TEACHING STAFF
-                    </p>
-                </div>
-                <div className="mt-2">
-                    <p className="text-gray-500 text-xl font-semibold">
-                        Civil ENGINEERING
-                    </p>
-                </div>
-                <BackDepartment navigate={"/Department/CE"}/>
+  return (
+    <div>
+      <div className="mt-5">
+        {staff && hasStaff && (
+          <div className="flex flex-col">
+            <p className="text-red-900 text-xl lg:text-3xl font-bold text-center">
+              STAFFS
+            </p>
+            <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
+              {staffData
+                .find((dept) => dept.department === "Civil")
+                ?.staff.map((staffMember, index) => (
+                  <StaffcardDept key={index} {...staffMember} />
+                ))}
             </div>
-            {/* Achivment */}
-            
-        </div>
-    )
-}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default CEStaffpage;

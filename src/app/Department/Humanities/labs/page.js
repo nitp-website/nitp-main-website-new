@@ -13,20 +13,9 @@ function Page() {
         return () => clearInterval(interval);
     }, [img])
     return (
-        <div className=" flex flex-col p-10 max-sm:p-2 h-screen text-black">
-            <div className="flex flex-col  mb-6">
-                <div>
-                    <p className="text-red-900 text-xl lg:text-2xl font-bold">
-                        Lab
-                    </p>
-                </div>
-                <div className="lg:mt-2">
-                    <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        Humanities & Social Sciences
-                    </p>
-                </div>
-                <BackDepartment navigate={"/Department/Humanities"} />
-
+        <div className=" flex flex-col p-10 pt-4 max-sm:p-2 h-screen text-black">
+            <div className="w-full">
+                <h2 className="text-center text-4xl text-red-700 mt-2">LABS</h2>
             </div>
             <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 {/* lab */}
