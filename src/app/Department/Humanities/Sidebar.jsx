@@ -161,9 +161,9 @@ const navItems = [
     url: `/Department/${dept}/timeTable`,
   },
   {
-    name: "Academic Programs",
+    name: "Syllabus",
     icon: <Award size={18} />,
-    url: `/Department/${dept}/acadProgram`,
+    url: `/Department/${dept}/syllabus`,
   },
   {
     name: "Labs",
