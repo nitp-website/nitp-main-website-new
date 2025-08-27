@@ -1,10 +1,10 @@
 import React from "react";
-import Link from "next/link";
-import { FaHome } from "react-icons/fa";
 import { RiAdminFill } from "react-icons/ri";
 import { FaPhone } from "react-icons/fa6";
 import { SiGoogleforms } from "react-icons/si";
 import { IoMdPhotos } from "react-icons/io";
+import { FaHome } from "react-icons/fa";
+import { usePathname, useRouter } from "next/navigation";
 
 const Sidebar = ({ onLinkClick }) => {
   const items = [
@@ -23,26 +23,40 @@ const Sidebar = ({ onLinkClick }) => {
     },
   ];
 
-  return (
-    <div className="text-black">
-      <div className="flex flex-col gap-4">
-        {items.map((item, index) => {
-          const newPath = `/Facilities/Emu${item.link}`;
+  const basePath = "/Facilities/Emu";
+  const pathname = usePathname();
+  const router = useRouter();
 
+  const handleNavigation = (path) => {
+    router.push(path);
+    if (onLinkClick) onLinkClick();
+  };
+
+  return (
+    <aside className="sticky top-4 w-64 bg-white shadow-xl rounded-xl p-6 border border-gray-200 transition-all">
+      <h2 className="text-xl font-extrabold mb-8 tracking-tight text-red-800 flex items-center gap-2">
+        <span className="inline-block w-2 h-6 bg-red-700 rounded-full mr-2"></span>
+        EMU
+      </h2>
+      <ul className="space-y-2">
+        {items.map((i) => {
+          const fullPath = `${basePath}${i.link}`;
+          const isActive = pathname === fullPath;
           return (
-            <Link
-              key={index}
-              href={newPath}
-              className="flex items-center gap-2 text-lg hover:text-red-800"
-              onClick={onLinkClick}
+            <li
+              key={i.title}
+              className={`flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors ${
+                isActive ? "bg-red-100 text-red-800 font-bold" : "hover:bg-gray-100"
+              }`}
+              onClick={() => handleNavigation(fullPath)}
             >
-              {item.icon}
-              {item.title}
-            </Link>
+              {i.icon}
+              <span>{i.title}</span>
+            </li>
           );
         })}
-      </div>
-    </div>
+      </ul>
+    </aside>
   );
 };
 
