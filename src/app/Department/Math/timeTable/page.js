@@ -4,15 +4,15 @@ import timeTableData from '../../TimeTable.json';
 
 
 function Page() {
-    const MechatronicsTimeTable = timeTableData.find(
-        (item) => item.name === 'Mechatronics and Automation Engineering'
+    const mathsTimeTable = timeTableData.find(
+        (item) => item.name === 'Mathematics and Computing Technology'
     );
-    const timeTableLink = MechatronicsTimeTable ? MechatronicsTimeTable.url : '#';
+    const timeTableLink = mathsTimeTable ? mathsTimeTable.url : '#';
 
     const data = [
         {
-            name: MechatronicsTimeTable.name,
-            link: MechatronicsTimeTable.url, // you can keep 'link' here if your UI expects it
+            name: mathsTimeTable.name,
+            link: mathsTimeTable.url, // you can keep 'link' here if your UI expects it
         },
     ];
 

@@ -20,9 +20,9 @@ const DepartmentCounter = ({ counts }) => {
   return (
     <div className="text-lg text-black justify-evenly items-start text-justify py-5 flex gap-5 lg:gap-3 flex-wrap">
       {
-        counts && counts.map((item, index) => (
-          <CounterCard key={index} item={item} />
-        ))
+        counts && counts.map((item, index) =>
+          item.value > 0 ? <CounterCard key={index} item={item} /> : null
+        )
       }
     </div>
   );
