@@ -1,48 +1,84 @@
+"use client";
 import React from "react";
-import Link from "next/link";
-import { FaHome } from "react-icons/fa";
-import { RiAdminFill } from "react-icons/ri";
-import { FaPhone } from "react-icons/fa6";
-import { SiGoogleforms } from "react-icons/si";
-import { IoMdPhotos } from "react-icons/io";
+import { FaUserGraduate, FaLaptopCode, FaBook, FaGlobeAsia, FaFlask } from "react-icons/fa";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const Sidebar = ({ onLinkClick }) => {
-  const items = [
-    { title: "Home", link: "", icon: <FaHome size={20} /> },
+export const SidebarItem = ({ icon, text, isActive, onClick }) => (
+  <li
+    className={`flex items-center px-4 py-3 rounded-lg cursor-pointer transition-all font-medium text-base ${
+      isActive
+        ? "bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg"
+        : "hover:bg-red-100 text-red-900"
+    }`}
+    onClick={onClick}
+  >
+    <span className="mr-3">{icon}</span>
+    <span>{text}</span>
+  </li>
+);
+
+const Sidebar = () => {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const admissionItems = [
     {
-      title: "Administration",
-      link: "/Administration",
-      icon: <RiAdminFill size={20} />,
+      title: "B.Tech Admissions",
+      link: "/Academic/Admission?type=btech",
+      icon: <FaUserGraduate size={20} className="text-blue-700" />,
+      type: "btech",
     },
-    { title: "Helpline", link: "/Helpline", icon: <FaPhone size={20} /> },
-    { title: "Gallery", link: "/Gallery", icon: <IoMdPhotos size={20} /> },
     {
-      title: "Complaint Form",
-      link: "/Complaint",
-      icon: <SiGoogleforms size={20} />,
+      title: "M.Tech Admissions",
+      link: "/Academic/Admission?type=mtech",
+      icon: <FaLaptopCode size={20} className="text-green-700" />,
+      type: "mtech",
+    },
+    {
+      title: "MCA Admissions",
+      link: "/Academic/Admission?type=mca",
+      icon: <FaBook size={20} className="text-purple-700" />,
+      type: "mca",
+    },
+    {
+      title: "Study in India",
+      link: "/Academic/Admission?type=study_in_india",
+      icon: <FaGlobeAsia size={20} className="text-orange-700" />,
+      type: "study_in_india",
+    },
+    {
+      title: "PhD Admissions",
+      link: "/Academic/Admission?type=phd",
+      icon: <FaFlask size={20} className="text-red-700" />,
+      type: "phd",
     },
   ];
 
-  return (
-    <div className="text-black">
-      <div className="flex flex-col gap-4">
-        {items.map((item, index) => {
-          const newPath = `/Facilities/Emu${item.link}`;
+  const currentType = searchParams.get("type"); // ✅ read query param
 
-          return (
-            <Link
-              key={index}
-              href={newPath}
-              className="flex items-center gap-2 text-lg hover:text-red-800"
-              onClick={onLinkClick}
-            >
-              {item.icon}
-              {item.title}
-            </Link>
-          );
-        })}
-      </div>
-    </div>
+  const handleNavigation = (path) => {
+    router.push(path);
+  };
+
+  return (
+    <aside className="sticky top-4 w-64 bg-white shadow-xl rounded-xl p-6 border border-gray-200 transition-all">
+      <h2 className="text-xl font-extrabold mb-8 tracking-tight text-red-800 flex items-center gap-2">
+        <span className="inline-block w-2 h-6 bg-red-700 rounded-full mr-2"></span>
+        Admissions
+      </h2>
+      <ul className="space-y-2">
+        {admissionItems.map((item) => (
+          <SidebarItem
+            key={item.title}
+            icon={item.icon}
+            text={item.title}
+            isActive={pathname === "/Academic/Admission" && currentType === item.type} // ✅ proper active check
+            onClick={() => handleNavigation(item.link)}
+          />
+        ))}
+      </ul>
+    </aside>
   );
 };
 
