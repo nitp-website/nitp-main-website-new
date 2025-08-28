@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import Link from "next/link";
+import AdmissionsSidebar from "./Sidebar"
 import { 
   GraduationCap, 
   Settings,
@@ -384,77 +385,7 @@ function handleClick(type) {
       </aside>
 
       <div className="flex flex-col xl:flex-row">
-        {/* Desktop sidebar */}
-        <aside className="hidden xl:block w-72 px-6 py-8 text-white sticky top-0 h-screen">
-          <h2 className="text-2xl font-bold mb-8 pb-4 border-b border-red-400 text-red-600">Admissions Portal</h2>
-          <ul className="space-y-4">
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 text-black font-semibold hover:text-white hover:bg-red-600 hover:shadow-md ${
-                selected === "btech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-              }`}
-              onClick={() => { setSelected("btech"); handleClick("btech"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                B.Tech Admissions
-              </span>
-            </li>
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
-                selected === "mtech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-              }`}
-              onClick={() => { setSelected("mtech"); handleClick("mtech"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                M.Tech Admissions
-              </span>
-            </li>
-
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
-                selected === "mca" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-              }`}
-              onClick={() => { setSelected("mca"); handleClick("mca"); }}
-            >
-              <span className="flex items-center">
-
-                <GraduationCap className="w-5 h-5 mr-3" />
-                MCA Admissions
-
-              </span>
-            </li>
-
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
-                selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-              }`}
-              onClick={() => { setSelected("study_in_india"); handleClick("study_in_india"); }}
-            >
-              <span className="flex items-center">
-
-                <GraduationCap className="w-5 h-5 mr-3" />
-                Study in india
-
-              </span>
-            </li>
-
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md text-black font-semibold hover:text-white ${
-                selected === "phd" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-              }`}
-              onClick={() => { setSelected("phd"); handleClick("phd"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                PhD Admissions
-              </span>
-            </li>
-
-            
-
-          </ul>
-        </aside>
+      <AdmissionsSidebar />
 
         {/* Main content */}
         <main className="flex-1 p-4 md:p-8 xl:ml-6">
