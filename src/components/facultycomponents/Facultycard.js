@@ -14,6 +14,7 @@ function FacultyCard({
   email,
   phone,
   profileLink,
+  academic_responsibility,
   researchLink,
   patents,
   journalPublications,
@@ -32,7 +33,7 @@ function FacultyCard({
   const stats = [
     {
       label: "Publications", value: parseInt(journalPublications) + parseInt(conferencePublications) || 0, icon: <FileText size={16} className="text-[#8B3A32]" />
-    }, 
+    },
     {
       label: "Projects", value: projects || 0, icon: <Briefcase size={16} className="text-[#8B3A32]" />
     },
@@ -48,8 +49,14 @@ function FacultyCard({
 
   interestsArray.sort();
 
+  function visitProfile() {
+    if (profileLink) {
+      window.open(profileLink, '_blank');
+    }
+  }
+
   return (
-    <div className="w-[575px] md:h-[325px] rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow bg-white">
+    <div onClick={visitProfile} className="cursor-pointer w-[575px] md:h-[325px] text-black rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow bg-white">
       <div className="flex flex-col md:flex-row">
         {/* Left Panel */}
         <div className="md:w-[45%] h-[325px] bg-[#F8F0EE] p-2 flex flex-col items-center justify-center">
@@ -59,6 +66,7 @@ function FacultyCard({
             className="rounded-full w-32 h-32 object-cover border-4 border-white shadow-md"
           />
           <h3 className="font-bold text-[#5D1A14] mt-3 text-center">{name}</h3>
+          <p className="text-[#8B3A32] text-sm font-semibold text-center">{academic_responsibility}</p>
           <p className="text-[#8B3A32] text-sm text-center">{designation}</p>
         </div>
 
@@ -66,34 +74,37 @@ function FacultyCard({
         <div className="md:w-2/3 w-full h-full md:h-[300px] px-4 py-3">
           {/* Contact Information */}
           <div className="mb-4">
-            <h4 className="font-semibold text-[#5D1A14] mb-2">Contact Information</h4>
+            {/* <h4 className="font-semibold text-[#5D1A14] mb-2">Contact Information</h4> */}
             <div className="space-y-1 text-sm">
-              <p className="flex items-center gap-2">
-                <Mail size={16} className="text-[#8B3A32]" />
-                <span>{email}</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <Phone size={16} className="text-[#8B3A32]" />
-                {phone && !isNaN(phone) ? (
-                  <>
-                    <span>{phone}</span>
-                  </>
-                ) : (
-                  <>
-                    <span>0</span>
-                  </>)
-                }
-              </p>
-              <p className="flex items-center gap-2">
-                <Globe size={16} className="text-[#8B3A32]" />
-                <a
-                  href={profileLink}
-                  className="text-blue-600 hover:underline"
-                  rel="noopener noreferrer"
-                >
-                  Personal Webpage
-                </a>
-              </p>
+              {
+                !!email && (
+                  <p className="flex items-center gap-2">
+                    <Mail size={16} className="text-[#8B3A32]" />
+                    <span>{email}</span>
+                  </p>
+                )
+              }
+              {!!phone && phone !== "0" && phone !== 0 && !isNaN(phone) && (
+                <p className="flex items-center gap-2">
+                  <Phone size={16} className="text-[#8B3A32]" />
+                  <span>{phone}</span>
+                </p>
+              )}
+              {
+                !!profileLink && (
+                  <p className="flex items-center gap-2">
+                    <Globe size={16} className="text-[#8B3A32]" />
+                    <a
+                      href={profileLink}
+                      target="_blank"
+                      className="text-blue-600 hover:underline"
+                      rel="noopener noreferrer"
+                    >
+                      Personal Webpage
+                    </a>
+                  </p>
+                )
+              }
             </div>
           </div>
 
