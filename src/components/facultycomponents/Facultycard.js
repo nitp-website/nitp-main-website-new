@@ -56,7 +56,7 @@ function FacultyCard({
   }
 
   return (
-    <div onClick={visitProfile} className="w-[575px] md:h-[325px] text-black rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow bg-white">
+    <div onClick={visitProfile} className="cursor-pointer w-[575px] md:h-[325px] text-black rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow bg-white">
       <div className="flex flex-col md:flex-row">
         {/* Left Panel */}
         <div className="md:w-[45%] h-[325px] bg-[#F8F0EE] p-2 flex flex-col items-center justify-center">
@@ -96,6 +96,7 @@ function FacultyCard({
                     <Globe size={16} className="text-[#8B3A32]" />
                     <a
                       href={profileLink}
+                      target="_blank"
                       className="text-blue-600 hover:underline"
                       rel="noopener noreferrer"
                     >
