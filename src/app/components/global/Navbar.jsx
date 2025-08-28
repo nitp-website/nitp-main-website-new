@@ -738,6 +738,23 @@ useEffect(() => {
     };
   }, []);
 
+  useEffect(() => {
+    const fixHindiInstituteName = () => {
+      const incorrect = 'राष्ट्रीय संस्थान संस्थान पटना';
+      const correct = 'राष्ट्रीय प्रौद्योगिकी संस्थान पटना';
+      document.querySelectorAll('*').forEach(node => {
+        if (node.childNodes && node.childNodes.length) {
+          node.childNodes.forEach(child => {
+            if (child.nodeType === 3 && child.nodeValue.includes(incorrect)) {
+              child.nodeValue = child.nodeValue.replaceAll(incorrect, correct);
+            }
+          });
+        }
+      });
+    };
+    fixHindiInstituteName();
+  }, []);
+
   return (
     <>
       <div className="bg-black h-11 my-auto">
@@ -842,7 +859,7 @@ useEffect(() => {
               </Link>
             </div>
             <div className="flex flex-col items-center flex-1 text-center">
-              <div className="text-[0.65rem] font-semibold text-black">
+              <div className="text-[0.65rem] font-semibold text-black" id="excludeMe" translate="no">
                 राष्ट्रीय प्रौद्योगिकी संस्थान पटना
               </div>
               <div className="text-[0.6rem] text-black">
@@ -856,7 +873,7 @@ useEffect(() => {
 
           {/* Desktop Header Layout */}
           <div className="right-content hidden md:block">
-            <div className="font-bold textmob text-black">
+            <div className="font-bold textmob text-black" id="excludeMe" translate="no">
               राष्ट्रीय प्रौद्योगिकी संस्थान पटना
             </div>
             <div className="text-sm textmob text-black">
