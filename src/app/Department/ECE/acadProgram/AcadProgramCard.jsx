@@ -36,7 +36,7 @@ export const AcadProgramCard = ({ program }) => {
           )
         }
       </div>
-      <div className="mt-4 mx-auto">
+      <div className="mt-4 mx-auto flex gap-4 justify-between items-center flex-wrap">
         {program.syllabus && (
           <a target="_blank" href={`${program.syllabus}`} >
             <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer">
@@ -52,6 +52,16 @@ export const AcadProgramCard = ({ program }) => {
             </button>
           </a>
         )}
+
+        {
+          program.from && program.from.map((item, index) => (
+            <a key={index} target="_blank" href={`${item.courseStructure}`} >
+              <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer mt-2">
+                Curriculum {item.time}
+              </button>
+            </a>
+          ))
+        }
       </div>
     </div>
   );

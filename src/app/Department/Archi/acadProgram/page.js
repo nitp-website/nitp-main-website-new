@@ -24,7 +24,7 @@ const programs = [
   {
     title:
       "M.Arch (Sustainable Architecture)",
-    degree: "Integrated B.Tech and M.Tech",
+    degree: "M.Arch",
     duration: "2 Years",
     description:
       "The admission to the 2-year M.Arch (Sustainable Architecture) is through GATE examination. Although the research/dissertation is the main component of the programme, due emphasis is also given to the course works. Following are the course structure and syllabus.",
