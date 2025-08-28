@@ -50,7 +50,6 @@ export default function Aboutus() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div 
             className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
-            data-aos="fade-right"
           >
             <div className="p-6">
               <div className="flex items-center mb-6">
@@ -102,7 +101,6 @@ export default function Aboutus() {
 
           <div 
             className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
-            data-aos="fade-up"
           >
             <div className="p-6 flex flex-col items-center text-center">
               <div className="relative mb-6 group">
@@ -154,7 +152,6 @@ export default function Aboutus() {
 
           <div 
             className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300"
-            data-aos="fade-left"
           >
             <div className="p-6">
               <div className="flex items-center mb-6">
