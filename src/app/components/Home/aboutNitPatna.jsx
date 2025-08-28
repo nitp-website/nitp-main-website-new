@@ -17,13 +17,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 export default function Aboutus() {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: false,
-      offset: 50,
-    })
-  }, [])
 
   return (
     <div className="relative bg-gray-50">
@@ -35,7 +28,7 @@ export default function Aboutus() {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center px-4" data-aos="fade-up">
+          <div className="text-center px-4">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               About <span className="text-red-300">NIT Patna</span>
             </h1>
