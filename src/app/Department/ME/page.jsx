@@ -1,14 +1,15 @@
 "use client";
 import axios, { all } from "axios";
+import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
-const about = `The Department of Mechanical Engineering was established in 1952 with B. Tech program during the era of Bihar College of Engineering (BCE) which is well-known since 1924 as the sixth oldest Engineering College in India. In 1978, M. Tech Program was started with specializations in 'Thermal Turbo Machinery' and 'Refrigeration, Air Conditioning and Heat Transfer'. The Bihar College of Engineering was converted to National Institute of Technology Patna in 2004. `;
+const about = `The Department of Mechanical Engineering was established in 1952 with B. Tech program during the era of Bihar College of Engineering (BCE) which is well-known since 1924 as the sixth oldest Engineering College in India. In 1978, M. Tech Program was started with specializations in 'Thermal Turbo Machinery' and 'Refrigeration, Air Conditioning and Heat Transfer'. The Bihar College of Engineering was converted to National Institute of Technology Patna in 2004.`;
 
-const picture = ["/nit-patna-003.jpg"];
+const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
 
 export default function ME() {
   const router = useRouter();
@@ -20,10 +21,8 @@ export default function ME() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=me`);
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=me`);
         // console.log("Counts Response:", countsResponse.data);
-        setNotices(response.data);
         setCounts([
           { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
           { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
@@ -67,13 +66,13 @@ export default function ME() {
 
             {/* Navigation Buttons */}
             <button
-              onClick={() => setIt((prev) => (prev === 0 ? picture.length - 1 : prev - 1))}
+              onClick={() => setIt((prev) => (prev === 0 ? picture.length - 1 : (picture.length + prev - 1) % picture.length))}
               className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-black bg-opacity-50 hover:bg-opacity-70 px-3 py-1 rounded-full z-10"
             >
               &#8249;
             </button>
             <button
-              onClick={() => setIt((prev) => (prev === picture.length - 1 ? 0 : prev + 1))}
+              onClick={() => setIt((prev) => (prev === picture.length - 1 ? 0 : (prev + 1) % picture.length))}
               className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-black bg-opacity-50 hover:bg-opacity-70 px-3 py-1 rounded-full z-10"
             >
               &#8250;
@@ -100,12 +99,9 @@ export default function ME() {
                 {about.split("\n").map((line, index) => (
                   <p key={index} className="mb-2">
                     {line}
-                  </p> 
-                  
+                  </p>
                 ))}
-                
               </div>
-                
             </div>
           </div>
 
