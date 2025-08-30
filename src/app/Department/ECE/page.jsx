@@ -7,9 +7,11 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
+const about = `The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students and is dedicated to providing quality education at both undergraduate (UG) and postgraduate (PG) levels. Currently, the department offers a B.Tech. program in Electronics and Communication Engineering with an intake of 161, a Dual Degree (B.Tech. + M.Tech.) in Microelectronics and VLSI System Design with an intake of 22, M.Tech. programs in Next Generation Wireless Technologies and in Microelectronics and VLSI System Design with an intake of 15 each, and Ph.D. programs (both full-time and part-time) in Electronics and Communication Engineering. All courses are regularly updated by academic and industry experts to align with the evolving needs of today’s industry. The undergraduate program has been accredited by the National Board of Accreditation (NBA) for six years, from July 2021 to June 2027. The department has also received significant funding, including a grant of ₹3.52 Crore from DST`;
+
 const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
 
-export default function CSE() {
+export default function ECE() {
   const router = useRouter();
   const [feature, setFeature] = useState(picture[0]);
   const [it, setIt] = useState(0);
@@ -93,29 +95,20 @@ export default function CSE() {
               About
             </div>
             <div className="px-2 flex mx-auto gap-2 flex-1 shrink-0">
-              <div className="text-justify max-sm:text-[12px]">
-                The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students. The department is dedicated to providing quality education at both undergraduate (UG) and postgraduate levels. Currently, it offers the following programs:
-                <br />
-                1.B.Tech in "Electronics & Communication Engineering" with an intake of 100.
-                <br />
-                2.B.Tech in Electronics Engineering (VLSI Design and Technology) with an intake of 80.
-                <br />
-                3.Dual degree (B.Tech + M.Tech) in "Microelectronics and VLSI System Design" with an intake of 22.
-                <br />
-                4. M.Tech in:
-                <br />
-                &nbsp;&nbsp;&nbsp;(a) Next Generation Wireless Technologies" with an intake of 15.
-                <br />
-                &nbsp;&nbsp;&nbsp;(b) Microelectronics and VLSI System Design" with an intake of 15.
-                <br />
-                5.Ph.D. (Full-time and Part-time) in Electronics and Communication Engineering.
-                <br />
-                <button
-                  onClick={() => router.push('/Department/ECE/about')}
-                  className="text-blue-600 ml-2"
-                >
-                  more..
-                </button>
+              <div className="w-[100%] mx-auto p-2 text-justify text-black">
+                {about.split("\n").map((line, index, arr) => (
+                  <p key={index} className="mb-2">
+                    {line}
+                    {index === arr.length - 1 && (
+                      <button
+                        onClick={() => router.push('/Department/ECE/about')}
+                        className="text-blue-600 ml-2"
+                      >
+                        more..
+                      </button>
+                    )}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
