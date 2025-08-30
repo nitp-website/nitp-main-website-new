@@ -5,6 +5,7 @@ import Loading from "../../Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import FacultyCard from "../../../components/facultycomponents/Facultycard";
+import FacultyFilterBar from "./FacultyFilterBar.js";
 
 // const FacultyCard = ({
 //   name,
@@ -83,16 +84,25 @@ import FacultyCard from "../../../components/facultycomponents/Facultycard";
 // };
 
 const AllFaculty = () => {
+  // Search/filter state
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedDepartment, setSelectedDepartment] = useState("");
+  const [selectedPosition, setSelectedPosition] = useState("");
   const [facultyData, setFacultyData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [organizedFaculty, setOrganizedFaculty] = useState({
-    deans: [],
-    hods: [],
-    professors: [],
-    associateProfessors: [],
-    assistantProfessors: []
-  });
+  // Remove organizedFaculty state, will organize dynamically below
+  // Get unique departments and positions for filters
+  const departmentOptions = Array.from(new Set(facultyData.map(f => f.department))).filter(Boolean);
+  const positionOptions = Array.from(new Set(facultyData.map(f => f.designation))).filter(Boolean);
   const excludedDepartments = ["Other Employees", "Officers", "developer", "Developer"];
+
+  // Filter facultyData based on search and filters
+  const filteredFacultyData = facultyData.filter(faculty => {
+    const matchesSearch = searchTerm.trim() === "" || (faculty.name && faculty.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    const matchesDepartment = selectedDepartment ? faculty.department === selectedDepartment : true;
+    const matchesPosition = selectedPosition ? faculty.designation === selectedPosition : true;
+    return matchesSearch && matchesDepartment && matchesPosition;
+  });
 
   useEffect(() => {
     const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=all`;
@@ -109,57 +119,7 @@ const AllFaculty = () => {
         );
         setFacultyData(sortedData);
 
-        // Organize faculty into categories
-        const deans = sortedData.filter(faculty =>
-          faculty.academic_responsibility &&
-          faculty.academic_responsibility.toLowerCase().startsWith("dean")
-        );
-
-        // Get IDs of faculty who are deans
-        const deanIds = new Set(deans.map(faculty => faculty.id));
-
-        // Filter faculty by designation, excluding those who are already counted as deans
-        const hods = sortedData.filter(faculty =>
-          !deanIds.has(faculty.id) &&
-          [
-            "Professor & HOD",
-            "Associate Professor & HOD",
-            "Professor & HoD",
-            "Associate Professor & HoD",
-            "HoD & Professor",
-            "HoD & Associate Professor",
-            "HoD and Professor",
-          ].includes(faculty.designation)
-        );
-
-        // Get IDs of faculty who are either deans or HODs
-        const renderedIds = new Set([
-          ...deans.map(faculty => faculty.id),
-          ...hods.map(faculty => faculty.id)
-        ]);
-
-        // Filter remaining faculty by designation
-        const professors = sortedData.filter(faculty =>
-          !renderedIds.has(faculty.id) && faculty.designation === "Professor"
-        );
-
-        const associateProfessors = sortedData.filter(faculty =>
-          !renderedIds.has(faculty.id) && faculty.designation === "Associate Professor"
-        );
-
-        const assistantProfessors = sortedData.filter(faculty =>
-          !renderedIds.has(faculty.id) && faculty.designation === "Assistant Professor"
-        );
-
-        setOrganizedFaculty({
-          deans,
-          hods,
-          professors,
-          associateProfessors,
-          assistantProfessors
-        });
-
-        setLoading(false);
+  setLoading(false);
       } catch (error) {
         console.error("Error fetching faculty data:", error);
         setLoading(false);
@@ -173,37 +133,64 @@ const AllFaculty = () => {
     return <Loading />;
   }
 
+  // Organize filtered faculty into categories dynamically
+  const deans = filteredFacultyData.filter(faculty =>
+    faculty.academic_responsibility &&
+    faculty.academic_responsibility.toLowerCase().startsWith("dean")
+  );
+  const deanIds = new Set(deans.map(faculty => faculty.id));
+  const hods = filteredFacultyData.filter(faculty =>
+    !deanIds.has(faculty.id) &&
+    [
+      "Professor & HOD",
+      "Associate Professor & HOD",
+      "Professor & HoD",
+      "Associate Professor & HoD",
+      "HoD & Professor",
+      "HoD & Associate Professor",
+      "HoD and Professor",
+    ].includes(faculty.designation)
+  );
+  const renderedIds = new Set([
+    ...deans.map(faculty => faculty.id),
+    ...hods.map(faculty => faculty.id)
+  ]);
+  const professors = filteredFacultyData.filter(faculty =>
+    !renderedIds.has(faculty.id) && faculty.designation === "Professor"
+  );
+  const associateProfessors = filteredFacultyData.filter(faculty =>
+    !renderedIds.has(faculty.id) && faculty.designation === "Associate Professor"
+  );
+  const assistantProfessors = filteredFacultyData.filter(faculty =>
+    !renderedIds.has(faculty.id) && faculty.designation === "Assistant Professor"
+  );
+
   // Render a section of faculty
   const renderFacultySection = (facultyList, title) => {
     if (!facultyList || facultyList.length === 0) return null;
-
     return (
       <div key={title} className="mb-8">
         <h2 className="text-2xl font-bold text-black">{title}</h2>
         <div className="flex flex-wrap justify-center gap-4 p-4 mt-2">
-          {
-            facultyList.map((faculty) => {
-              // console.log(faculty);
-              return (
-                <FacultyCard
-                  key={faculty.id}
-                  name={faculty.name}
-                  image={faculty.image}
-                  designation={faculty.designation}
-                  department={faculty.department}
-                  researchInterests={faculty.research_interest}
-                  academic_responsibility={faculty.academic_responsibility}
-                  email={faculty.email}
-                  phone={faculty.ext_no}
-                  journalPublications={faculty.journal_papers_count}
-                  conferencePublications={faculty.conference_papers_count}
-                  patents={faculty.ipr_count}
-                  projects={faculty.sponsored_projects_count}
-                  research_students={faculty.phd_candidates_count}
-                  profileLink={`/profile/${faculty.email}`}
-                />
-              )
-            })}
+          {facultyList.map((faculty) => (
+            <FacultyCard
+              key={faculty.id}
+              name={faculty.name}
+              image={faculty.image}
+              designation={faculty.designation}
+              department={faculty.department}
+              researchInterests={faculty.research_interest}
+              academic_responsibility={faculty.academic_responsibility}
+              email={faculty.email}
+              phone={faculty.ext_no}
+              journalPublications={faculty.journal_papers_count}
+              conferencePublications={faculty.conference_papers_count}
+              patents={faculty.ipr_count}
+              projects={faculty.sponsored_projects_count}
+              research_students={faculty.phd_candidates_count}
+              profileLink={`/profile/${faculty.email}`}
+            />
+          ))}
         </div>
       </div>
     );
@@ -211,11 +198,22 @@ const AllFaculty = () => {
 
   return (
     <div className="mx-auto px-4 py-8">
-      {renderFacultySection(organizedFaculty.deans, "Deans")}
-      {renderFacultySection(organizedFaculty.hods, "Head of Department")}
-      {renderFacultySection(organizedFaculty.professors, "Professor")}
-      {renderFacultySection(organizedFaculty.associateProfessors, "Associate Professor")}
-      {renderFacultySection(organizedFaculty.assistantProfessors, "Assistant Professor")}
+      {/* Search and Filter Section using FacultyFilterBar */}
+      <FacultyFilterBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        departmentOptions={departmentOptions}
+        selectedDepartment={selectedDepartment}
+        setSelectedDepartment={setSelectedDepartment}
+        positionOptions={positionOptions}
+        selectedPosition={selectedPosition}
+        setSelectedPosition={setSelectedPosition}
+      />
+      {renderFacultySection(deans, "Deans")}
+      {renderFacultySection(hods, "Head of Department")}
+      {renderFacultySection(professors, "Professor")}
+      {renderFacultySection(associateProfessors, "Associate Professor")}
+      {renderFacultySection(assistantProfessors, "Assistant Professor")}
     </div>
   );
 };
