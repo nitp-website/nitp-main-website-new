@@ -20,14 +20,16 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/app/Pagerefresh.js"  ],
+    "**/*.tsx",
+    "src/app/Pagerefresh.js"
+  ],
   "exclude": [
     "node_modules"
   ]
