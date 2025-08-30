@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Loading from "../../Loading";
 
 const FacultyCard = dynamic(
-  () => import("../../components/faculty/Facultycard"),
+  () => import("../../../components/facultycomponents/Facultycard.js"),
   {
     loading: () => (
       <div className="w-[100%] h-[100%] m-4 p-4 bg-[grey]">

@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import Loading from "./Loading";
 import ErrorBoundary from './components/ErrorBoundary';
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
-
+import Script from "next/script";
 
 
 
@@ -30,6 +30,10 @@ export default function RootLayout({ children }) {
       </ErrorBoundary>
       <Imagefooter/>
       <Footer/>
+       <Script
+        type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&id=2e4d7f2c6a1b935fc09da64e8c71f2c8e4b9a55d7c3f08b61a2de8f47d5b7c6a"
+      ></Script>
       </body>
     </html>
   );

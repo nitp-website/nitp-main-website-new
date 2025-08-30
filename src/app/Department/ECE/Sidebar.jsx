@@ -78,6 +78,7 @@ import {
 const dept = "ECE"; // Replace with the actual department name or variable
 
 const navItems = [
+  { name: "Electronics and Communication Engineering" },
   { name: "Overview", url: `/Department/${dept}`, icon: <BookOpen size={20} /> },
   {
     name: "About",

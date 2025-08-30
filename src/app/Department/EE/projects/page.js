@@ -1,29 +1,42 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { format } from "path";
 
-const CSEConferencePage = () => {
+const EEProjectsPage = () => {
   const [publications, setPublications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [openYears, setOpenYears] = useState({}); // dropdown open/close tracking
 
+  // format date from YYYY-MM-DD to DD-MM-YYYY
+  function formatDate(dateStr) {
+    // Convert YYYY-MM-DD to DD-MM-YYYY
+    const [year, month, day] = dateStr.split("-");
+    return `${day}-${month}-${year}`;
+  }
+
   const fetchPublications = async () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://admin.nitp.ac.in/api/conference?type=cse`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=ee`
       );
       const data = await response.json();
 
       // Group publications by year
       const groupedByYear = data.reduce((acc, publication) => {
-        if (!publication.conference_year) return acc; // Skip if year is missing or undefined
-        const year = publication.conference_year;
+        if (!publication.end_date) return acc; // Skip if project_date is missing
+
+        const year = new Date(publication.end_date).getFullYear();
+
+        if (isNaN(year)) return acc; // Skip if year is NaN (invalid date)
+
         if (!acc[year]) {
           acc[year] = [];
         }
         acc[year].push(publication);
+
         return acc;
       }, {});
 
@@ -47,9 +60,10 @@ const CSEConferencePage = () => {
   return (
     <div className="min-h-screen bg-white bg-opacity-50">
       <div className="mx-auto px-4 py-8 max-w-6xl">
+        {" "}
         {/* Adjust the width here */}
         <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-700 text-center">
-          Conference Publications
+          EE Projects
         </h1>
         {isLoading ? (
           <div className="flex justify-center items-center">
@@ -114,54 +128,68 @@ const CSEConferencePage = () => {
             .map((year) => (
               <div
                 key={year}
-                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-blue-100"
+                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-white"
               >
                 <button
                   onClick={() => toggleYear(year)}
-                  className="w-full px-4 py-3 bg-red-200 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-300 transition"
+                  className="w-full px-4 py-3 bg-red-100 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-200 transition"
                 >
-                  Publications in {year} ({publications[year].length})
+                  Projects in {year} ({publications[year].length})
                   {openYears[year] ? <ChevronUp /> : <ChevronDown />}
                 </button>
 
                 {openYears[year] && (
                   <div className="overflow-y-auto max-h-100">
                     <ul className="p-4 space-y-4">
-                      {publications[year].map((paper, index) => (
+                      {publications[year].map((project, index) => (
                         <li
                           key={index}
                           className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
                         >
-                          <p className="text-gray-800">
-                            <span className="font-semibold">{paper.authors}</span>,{" "}
-                            <span className="font-semibold text-blue-700">
-                              "{paper.title}"
-                            </span>
-                            ,
-                            <span className="text-gray-700 text-lg font-bold">
-                              {" "}
-                              {paper.conference_name}
-                            </span>
-                            <span className="text-gray-800 font-semibold">
-                              {" "}
-                              Location: {paper.location}
-                            </span>
-                            <span className="text-gray-700">
-                              {" "}
-                              ({paper.conference_year})
-                            </span>
-                          </p>
-                          {paper.doi && (
-                            <p className="text-blue-600 underline">
-                              <a
-                                href={paper.doi}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                DOI Link
-                              </a>
+                          {/* Project Title */}
+                          <h3 className="text-lg font-semibold text-blue-800">
+                            {project.project_title}
+                          </h3>
+
+                          {/* Role */}
+                          {project.role && (
+                            <p className="text-gray-700">
+                              <strong>Role:</strong> {project.role}
                             </p>
                           )}
+
+                          {/* Funding Agency */}
+                          <p className="text-gray-800">
+                            <strong>Sponsor:</strong> {project.funding_agency}
+                          </p>
+
+                          {/* Duration */}
+                          <p className="text-gray-700">
+                            <strong>Duration:</strong> {formatDate(project.start_date)} 
+                            <span className="font-extrabold text-black"> - </span>
+                            {formatDate(project.end_date)}
+                          </p>
+
+                          {/* Financial Outlay */}
+                          <p className="text-gray-800">
+                            <strong>Project Cost (INR):</strong> ₹
+                            {parseFloat(
+                              project.financial_outlay
+                            ).toLocaleString()}
+                          </p>
+
+                          {/* Status */}
+                          <p
+                            className={`text-lg font-semibold ${project.status === "Completed"
+                              ? "text-green-800"
+                              : "text-blue-600"
+                              }`}
+                          >
+                            <strong className="text-black font-normal">
+                              Status:
+                            </strong>{" "}
+                            {project.status}
+                          </p>
                         </li>
                       ))}
                     </ul>
@@ -175,4 +203,4 @@ const CSEConferencePage = () => {
   );
 };
 
-export default CSEConferencePage;
+export default EEProjectsPage;

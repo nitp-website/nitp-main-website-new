@@ -7,11 +7,11 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
-const about = `The Department of Mechanical Engineering was established in 1952 with B. Tech program during the era of Bihar College of Engineering (BCE) which is well-known since 1924 as the sixth oldest Engineering College in India. In 1978, M. Tech Program was started with specializations in 'Thermal Turbo Machinery' and 'Refrigeration, Air Conditioning and Heat Transfer'. The Bihar College of Engineering was converted to National Institute of Technology Patna in 2004.`;
+const about = ` The Department of Electrical Engineering was established in 1945 under Patna University with an intake of 20 students leading to Bachelor of Science (Engineering) degree of four-year duration. The four-year course was later changed to five-year integrated course in 1960 with an intake of 30 students and it continued up to 1972. Again, a four-year course was introduced in 1972 with the same intake capacity of 30 students. The intake was increased from 30 to 40 students in the sessions of 2005-06 and further in 2006-07 the intake capacity was increased to 60 students.`;
 
 const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
 
-export default function ME() {
+export default function EE() {
   const router = useRouter();
   const [feature, setFeature] = useState(picture[0]);
   const [it, setIt] = useState(0);
@@ -21,7 +21,7 @@ export default function ME() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=me`);
+        const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=ee`);
         // console.log("Counts Response:", countsResponse.data);
         setCounts([
           { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
@@ -83,7 +83,7 @@ export default function ME() {
 
         {/* Notice */}
         <div className="md:w-1/2 h-full flex items-center justify-center">
-          <DepartmentNotice dept="ME" />
+          <DepartmentNotice dept="EE" />
         </div>
       </div>
 

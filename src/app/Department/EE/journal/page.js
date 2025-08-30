@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-const CSEConferencePage = () => {
-  const [publications, setPublications] = useState([]);
+const EEJournalPage = () => {
+  const [publications, setPublications] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [openYears, setOpenYears] = useState({}); // dropdown open/close tracking
@@ -12,17 +12,14 @@ const CSEConferencePage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://admin.nitp.ac.in/api/conference?type=cse`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=ee`
       );
       const data = await response.json();
 
-      // Group publications by year
       const groupedByYear = data.reduce((acc, publication) => {
-        if (!publication.conference_year) return acc; // Skip if year is missing or undefined
-        const year = publication.conference_year;
-        if (!acc[year]) {
-          acc[year] = [];
-        }
+        if (!publication.publication_year) return acc;
+        const year = publication.publication_year;
+        if (!acc[year]) acc[year] = [];
         acc[year].push(publication);
         return acc;
       }, {});
@@ -47,10 +44,10 @@ const CSEConferencePage = () => {
   return (
     <div className="min-h-screen bg-white bg-opacity-50">
       <div className="mx-auto px-4 py-8 max-w-6xl">
-        {/* Adjust the width here */}
         <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-700 text-center">
-          Conference Publications
+          EE Journal Publications
         </h1>
+
         {isLoading ? (
           <div className="flex justify-center items-center">
             <svg
@@ -110,15 +107,15 @@ const CSEConferencePage = () => {
           </div>
         ) : (
           Object.keys(publications)
-            .sort((a, b) => b - a) // Sort years in descending order
+            .sort((a, b) => b - a)
             .map((year) => (
               <div
                 key={year}
-                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-blue-100"
+                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-white"
               >
                 <button
                   onClick={() => toggleYear(year)}
-                  className="w-full px-4 py-3 bg-red-200 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-300 transition"
+                  className="w-full px-4 py-3 bg-red-100 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-200 transition"
                 >
                   Publications in {year} ({publications[year].length})
                   {openYears[year] ? <ChevronUp /> : <ChevronDown />}
@@ -133,28 +130,41 @@ const CSEConferencePage = () => {
                           className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
                         >
                           <p className="text-gray-800">
-                            <span className="font-semibold">{paper.authors}</span>,{" "}
-                            <span className="font-semibold text-blue-700">
-                              "{paper.title}"
-                            </span>
-                            ,
-                            <span className="text-gray-700 text-lg font-bold">
-                              {" "}
-                              {paper.conference_name}
-                            </span>
-                            <span className="text-gray-800 font-semibold">
-                              {" "}
-                              Location: {paper.location}
-                            </span>
-                            <span className="text-gray-700">
-                              {" "}
-                              ({paper.conference_year})
-                            </span>
+                            {paper.authors && (
+                              <span className="font-semibold">{paper.authors}</span>
+                            )}
+                            ,{" "}
+                            {paper.title && (
+                              <span className="font-semibold text-blue-700">
+                                "{paper.title}"
+                              </span>
+                            )}
+                            ,{" "}
+                            {paper.journal_name && (
+                              <span className="text-gray-700 font-semibold">
+                                {paper.journal_name}
+                              </span>
+                            )}{" "}
+                            {paper.journal_quartile && (
+                              <span className="text-gray-700">
+                                ({paper.journal_quartile})
+                              </span>
+                            )}{" "}
+                            {paper.volume && (
+                              <span className="text-gray-700">
+                                Volume: {paper.volume}
+                              </span>
+                            )}{" "}
+                            {paper.publication_year && (
+                              <span className="text-gray-700">
+                                Year: {paper.publication_year}
+                              </span>
+                            )}
                           </p>
-                          {paper.doi && (
+                          {paper.doi_url && (
                             <p className="text-blue-600 underline">
                               <a
-                                href={paper.doi}
+                                href={paper.doi_url}
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
@@ -175,4 +185,4 @@ const CSEConferencePage = () => {
   );
 };
 
-export default CSEConferencePage;
+export default EEJournalPage;

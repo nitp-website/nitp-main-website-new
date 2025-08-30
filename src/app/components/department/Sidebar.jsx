@@ -75,104 +75,7 @@ import {
   Menu,
 } from "lucide-react";
 
-const dept = "ME"; // Replace with the actual department name or variable
-
-const navItems = [
-  { name: "Overview", url: `/Department/${dept}`, icon: <BookOpen size={20} /> },
-  {
-    name: "About",
-    icon: <BookOpen size={18} />,
-    url: "#",
-    dropdown: [
-      {
-        name: "About Your Department",
-        url: `/Department/${dept}/about`,
-        icon: <BookOpen size={18} />,
-      },
-      {
-        name: "Mission & Vision",
-        url: `/Department/${dept}/mission`,
-        icon: <FileText size={18} />,
-      },
-      {
-        name: "PO & PEO",
-        url: `/Department/${dept}/po`,
-        icon: <BookOpen size={18} />,
-      },
-    ],
-  },
-  {
-    name: "People",
-    icon: <Users size={18} />,
-    url: "#",
-    dropdown: [
-      {
-        name: "Faculty",
-        url: `/Department/${dept}/faculty`,
-        icon: <Scroll size={18} />,
-      },
-      // {
-      //   name: "Staff",
-      //   url: `/Department/${dept}/staff`,
-      //   icon: <FileText size={18} />,
-      // },
-      {
-        name: "Research Students",
-        url: `/Department/${dept}/researchStudents`,
-        icon: <Building size={18} />,
-      },
-    ],
-  },
-  {
-    name: "Research",
-    icon: <FileText size={18} />,
-    url: "#",
-    dropdown: [
-      {
-        name: "Journal",
-        url: `/Department/${dept}/journal`,
-        icon: <Scroll size={18} />,
-      },
-      {
-        name: "Conference",
-        url: `/Department/${dept}/conference`,
-        icon: <FileText size={18} />,
-      },
-      {
-        name: "Patents",
-        url: `/Department/${dept}/patents`,
-        icon: <Building size={18} />,
-      },
-      {
-        name: "Projects",
-        url: `/Department/${dept}/projects`,
-        icon: <Building size={18} />,
-      },
-    ],
-  },
-  // {
-  //   name: "Syllabus",
-  //   icon: <GraduationCap size={18} />,
-  //   url: `/Department/${dept}/syllabus`,
-  // },
-  {
-    name: "Time Table",
-    icon: <Calendar size={18} />,
-    url: `/Department/${dept}/timeTable`,
-  },
-  {
-    name: "Academic Programs",
-    icon: <Award size={18} />,
-    url: `/Department/${dept}/acadProgram`,
-  },
-  {
-    name: "Labs",
-    icon: <Labs size={18} />,
-    url: `/Department/${dept}/labs`,
-  },
-];
-
-const Sidebar = ({ onLinkClick, isMenuOpen }) => {
+const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const menuButtonRef = useRef(null);
@@ -207,6 +110,7 @@ const Sidebar = ({ onLinkClick, isMenuOpen }) => {
             {navItems.map((item) => (
               <li key={item.name}>
                 {item.dropdown ? (
+                  // Dropdown menu
                   <div>
                     <button
                       onClick={() => toggleSubmenu(item.name)}
@@ -222,26 +126,32 @@ const Sidebar = ({ onLinkClick, isMenuOpen }) => {
                         <ChevronRight size={16} />
                       )}
                     </button>
+
                     <ul
-                      className={`ml-6 mt-1 space-y-2 overflow-hidden transition-all duration-200 ${openSubmenu === item.name
-                        ? "max-h-40 overflow-y-auto"
-                        : "max-h-0"
+                      className={`ml-6 mt-1 space-y-2 overflow-hidden transition-all duration-200 ${openSubmenu === item.name ? "max-h-40 overflow-y-auto" : "max-h-0"
                         }`}
                     >
                       {item.dropdown.map((subitem) => (
                         <li key={subitem.name}>
-                          <Link
-                            href={subitem.url}
-                            className="block p-2 rounded-md hover:bg-[#E8D0CB] text-[#8B3A32]"
-                            onClick={closeSidebar}
-                          >
-                            {subitem.name}
-                          </Link>
+                          {!!subitem.url ? (
+                            <Link
+                              href={subitem.url}
+                              className="block p-2 rounded-md hover:bg-[#E8D0CB] text-[#8B3A32]"
+                              onClick={closeSidebar}
+                            >
+                              {subitem.name}
+                            </Link>
+                          ) : (
+                            <span className="block p-2 text-[#8B3A32] font-medium">
+                              {subitem.name}
+                            </span>
+                          )}
                         </li>
                       ))}
                     </ul>
                   </div>
-                ) : (
+                ) : !!item.url ? (
+                  // Normal item with url
                   <Link
                     href={item.url}
                     className="flex items-center gap-2 p-2 rounded-md hover:bg-[#E8D0CB] text-red-700 font-medium"
@@ -250,9 +160,17 @@ const Sidebar = ({ onLinkClick, isMenuOpen }) => {
                     {item.icon}
                     {item.name}
                   </Link>
+                ) : (
+                  // No url → render as plain text (e.g., department title)
+                  <span className="flex items-center gap-2 p-2 text-red-700 font-bold">
+                    {item.icon}
+                    {item.name}
+                  </span>
                 )}
               </li>
             ))}
+
+
           </ul>
         </nav>
       </div>
@@ -287,26 +205,39 @@ const Sidebar = ({ onLinkClick, isMenuOpen }) => {
                     >
                       {item.dropdown.map((subitem) => (
                         <li key={subitem.name}>
-                          <Link
-                            href={subitem.url}
-                            className="block p-2 rounded-md hover:bg-[#E8D0CB] text-[#8B3A32]"
-                            onClick={handleLinkClick}
-                          >
-                            {subitem.name}
-                          </Link>
+                          {!!subitem.url ? (
+                            <Link
+                              href={subitem.url}
+                              className="block p-2 rounded-md hover:bg-[#E8D0CB] text-[#8B3A32]"
+                              onClick={closeSidebar}
+                            >
+                              {subitem.name}
+                            </Link>
+                          ) : (
+                            <span className="block p-2 text-[#8B3A32] font-medium">
+                              {subitem.name}
+                            </span>
+                          )}
                         </li>
                       ))}
                     </ul>
                   </div>
                 ) : (
-                  <Link
-                    href={item.url}
-                    className="flex items-center gap-2 p-2 rounded-md hover:bg-[#E8D0CB] text-red-700 font-medium"
-                    onClick={handleLinkClick}
-                  >
-                    {item.icon}
-                    {item.name}
-                  </Link>
+                  !!item.url ? (
+                    <Link
+                      href={item.url}
+                      className="flex items-center gap-2 p-2 rounded-md hover:bg-[#E8D0CB] text-red-700 font-medium"
+                      onClick={handleLinkClick}
+                    >
+                      {item.icon}
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <span className="flex items-center gap-2 p-2 text-red-700 font-bold">
+                      {item.icon}
+                      {item.name}
+                    </span>
+                  )
                 )}
               </li>
             ))}

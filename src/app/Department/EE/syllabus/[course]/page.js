@@ -1,17 +1,8 @@
+import React from "react";
 
-"use client";
-import React, { useState } from "react";
-import BackDepartment from "../../../components/department/BackDepartment";
 
-const tabs = [
-    { name: "UG PROGRAM", key: "ug" },
-    { name: "Dual Degree PROGRAM", key: "dual" },
-    { name: "PG PROGRAM", key: "pg" },
-    { name: "PhD PROGRAM", key: "phd" },
-];
-
-const syllabusData = {
-    ug: [
+const BTechSyllabus = () => {
+    const courses = [
         {
             course: "B.Tech Course Structure (2021)",
             link: "https://drive.google.com/file/d/1A0l-C3vXUjL3qrV6dZutObFlQKiVhOuJ/view",
@@ -36,8 +27,21 @@ const syllabusData = {
             course: "B.Tech Syllabus (2023) onwards",
             link: "https://drive.google.com/file/d/131yWvyK8E7ZIju7abxcT76D3NfYXHvqR/view",
         },
-    ],
-    dual: [
+    ];
+
+    return (
+        <>
+            <div className="max-w-3xl mx-auto border rounded-lg shadow-md overflow-hidden">
+                {courses.map((item, index) => (
+                    <SyllabusComp key={index} course={item.course} link={item.link} />
+                ))}
+            </div>
+        </>
+    );
+}
+
+const MTechPowerDSSyllabus = () => {
+    const courses = [
         {
             course: "Dual Degree (B.Tech + M.Tech (PSE)) Course Structure (2022)",
             link: "https://drive.google.com/file/d/1R24uKKW9fxbtv6TlWzCfgIuqTydIN5ND/view",
@@ -54,8 +58,21 @@ const syllabusData = {
             course: "Dual Degree (B.Tech + M.Tech (PSE)) Syllabus (2023) onwards",
             link: "https://drive.google.com/file/d/1LJHJqsRSC8-V_P3zkAxu6wn5mdyWfu7m/view",
         },
-    ],
-    pg: [
+    ];
+
+    return (
+        <>
+            <div className="max-w-3xl mx-auto border rounded-lg shadow-md overflow-hidden">
+                {courses.map((item, index) => (
+                    <SyllabusComp key={index} course={item.course} link={item.link} />
+                ))}
+            </div>
+        </>
+    );
+}
+
+const MTechCSESyllabus = () => {
+    const courses = [
         {
             course: "M.Tech (Intelligent Transport Systems) Course structure and Syllabus",
             link: "https://drive.google.com/file/d/1pES5tBVykgQJWu2TFNKkR-0BwrF5wtrW/view?usp=sharing",
@@ -68,14 +85,39 @@ const syllabusData = {
             course: "M.Tech- Control System Engg and Power System Engg) Syllabus",
             link: "https://drive.google.com/file/d/1xnaep1qftT-n8RMVEyTYXk-ASqBFcLAK/view",
         },
-    ],
-    phd: [
+    ];
+
+    return (
+        <>
+            <div className="max-w-3xl mx-auto border rounded-lg shadow-md overflow-hidden">
+                {courses.map((item, index) => (
+                    <SyllabusComp key={index} course={item.course} link={item.link} />
+                ))}
+            </div>
+        </>
+    );
+}
+
+const PhDSyllabus = () => {
+    const courses = [
         {
             course: "Ph.D. in Electrical Engineering",
             link: "https://drive.google.com/file/d/1KdqphtQwIuWrC_gdYxjuAcG9TaxaUVf-/view",
         },
-    ],
-};
+    ];
+
+    return (
+        <>
+            <div className="max-w-3xl mx-auto border rounded-lg shadow-md overflow-hidden">
+                {courses.map((item, index) => (
+                    <SyllabusComp key={index} course={item.course} link={item.link} />
+                ))}
+            </div>
+        </>
+    );
+}
+
+
 
 const SyllabusComp = ({ course, link }) => (
     <div className="flex flex-row items-center justify-between border-b py-2 px-2">
@@ -91,40 +133,38 @@ const SyllabusComp = ({ course, link }) => (
     </div>
 );
 
-export default function EESyllabusPage() {
-    const [activeTab, setActiveTab] = useState("ug");
+
+const syllabusMap = {
+    "btech": {
+        title: "B.Tech in Electrical Engineering",
+        content: <BTechSyllabus />,
+    },
+    "mtech-power": {
+        title: "M.Tech in Power Systems Engineering",
+        content: <MTechPowerDSSyllabus />,
+    },
+    "mtech-control": {
+        title: "M.Tech in Control Systems Engineering",
+        content: <MTechCSESyllabus />,
+    },
+    "phd": {
+        title: "Ph.D. in Electrical Engineering",
+        content: <PhDSyllabus />,
+    },
+};
+
+export default function SyllabusPage({ params }) {
+    const { course } = params;
+    const syllabus = syllabusMap[course];
+
     return (
-        <div className="flex flex-col p-10 max-sm:p-2 text-black">
-                    <div className="flex flex-col mb-6 items-center">
-                        <div>
-                            <p className="text-red-900 text-3xl max-sm:text-2xl font-bold text-center">SYLLABUS</p>
-                        </div>
-                        <div className="mt-2">
-                            <p className="text-gray-500 text-base font-semibold text-center">ELECTRICAL ENGINEERING</p>
-                        </div>
-                    </div>
-            <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
-                <div className="flex justify-center mb-8 flex-wrap gap-2">
-                    {tabs.map((tab) => (
-                        <button
-                            key={tab.key}
-                            className={`px-4 py-2 rounded-md font-semibold transition-colors duration-200 focus:outline-none text-base max-sm:text-sm shadow ${
-                                activeTab === tab.key
-                                    ? "bg-red-900 text-white"
-                                    : "bg-gray-200 text-gray-700 hover:bg-red-100"
-                            }`}
-                            onClick={() => setActiveTab(tab.key)}
-                        >
-                            {tab.name}
-                        </button>
-                    ))}
-                </div>
-                <div className="bg-white rounded-md shadow p-2">
-                    {syllabusData[activeTab].map((item, idx) => (
-                        <SyllabusComp key={idx} course={item.course} link={item.link} />
-                    ))}
-                </div>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 mt-10 text-center">
+            <h1 className="text-3xl font-bold text-red-800 mb-6">
+                {syllabus.title} – Syllabus
+            </h1>
+            {syllabus.content && (
+                syllabus.content
+            )}
         </div>
     );
 }

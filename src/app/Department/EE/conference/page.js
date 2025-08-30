@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-const CSEConferencePage = () => {
+const EEConferencePage = () => {
   const [publications, setPublications] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const CSEConferencePage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://admin.nitp.ac.in/api/conference?type=cse`
+        `https://admin.nitp.ac.in/api/conference?type=ee`
       );
       const data = await response.json();
 
@@ -47,9 +47,10 @@ const CSEConferencePage = () => {
   return (
     <div className="min-h-screen bg-white bg-opacity-50">
       <div className="mx-auto px-4 py-8 max-w-6xl">
+        {" "}
         {/* Adjust the width here */}
         <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-700 text-center">
-          Conference Publications
+          EE Conference Publications
         </h1>
         {isLoading ? (
           <div className="flex justify-center items-center">
@@ -114,11 +115,11 @@ const CSEConferencePage = () => {
             .map((year) => (
               <div
                 key={year}
-                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-blue-100"
+                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-white"
               >
                 <button
                   onClick={() => toggleYear(year)}
-                  className="w-full px-4 py-3 bg-red-200 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-300 transition"
+                  className="w-full px-4 py-3 bg-red-100 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-200 transition"
                 >
                   Publications in {year} ({publications[year].length})
                   {openYears[year] ? <ChevronUp /> : <ChevronDown />}
@@ -130,15 +131,18 @@ const CSEConferencePage = () => {
                       {publications[year].map((paper, index) => (
                         <li
                           key={index}
-                          className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
+                          className="p-4 border border-gray-200 bg-white rounded-md shadow-sm hover:shadow-md transition-transform duration-200"
                         >
                           <p className="text-gray-800">
-                            <span className="font-semibold">{paper.authors}</span>,{" "}
+                            <span className="font-semibold">
+                              {paper.authors}
+                            </span>,
+                            {" "}
                             <span className="font-semibold text-blue-700">
                               "{paper.title}"
                             </span>
                             ,
-                            <span className="text-gray-700 text-lg font-bold">
+                            <span className="text-gray-700 font-bold">
                               {" "}
                               {paper.conference_name}
                             </span>
@@ -148,7 +152,7 @@ const CSEConferencePage = () => {
                             </span>
                             <span className="text-gray-700">
                               {" "}
-                              ({paper.conference_year})
+                              (Year: {paper.conference_year})
                             </span>
                           </p>
                           {paper.doi && (
@@ -175,4 +179,4 @@ const CSEConferencePage = () => {
   );
 };
 
-export default CSEConferencePage;
+export default EEConferencePage;
