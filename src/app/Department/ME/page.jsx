@@ -7,7 +7,7 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
-const about = `The Department of Mechanical Engineering was established in 1952 with B. Tech program during the era of Bihar College of Engineering (BCE) which is well-known since 1924 as the sixth oldest Engineering College in India. In 1978, M. Tech Program was started with specializations in 'Thermal Turbo Machinery' and 'Refrigeration, Air Conditioning and Heat Transfer'. The Bihar College of Engineering was converted to National Institute of Technology Patna in 2004.`;
+const about = `The Department of Mechanical Engineering was established in 1952 with the B.Tech. program during the era of Bihar College of Engineering (BCE), which has been well known since 1924 as the sixth oldest engineering college in India. In 1978, the M.Tech. program was introduced with specializations in Thermal Turbo Machinery and Refrigeration, Air Conditioning, and Heat Transfer. Later, in 2004, Bihar College of Engineering was converted into the National Institute of Technology Patna. At present, the Department offers B.Tech. in Mechanical Engineering, M.Tech. programs with specializations in Design Engineering, Thermal Engineering, and Production Engineering, a Dual Degree (B.Tech. + M.Tech.) program in Mechanical Engineering with specialization in Manufacturing and Industrial Engineering, and Ph.D. programs. The B.Tech. program, which initially started with an intake of 20 students, now admits 120 students.`;
 
 const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
 
@@ -96,9 +96,17 @@ export default function ME() {
             </div>
             <div className="px-2 flex mx-auto gap-2 flex-1 shrink-0">
               <div className="w-[100%] mx-auto p-2 text-justify text-black">
-                {about.split("\n").map((line, index) => (
+                {about.split("\n").map((line, index, arr) => (
                   <p key={index} className="mb-2">
                     {line}
+                    {index === arr.length - 1 && (
+                      <button
+                        onClick={() => router.push('/Department/ME/about')}
+                        className="text-blue-600 ml-2"
+                      >
+                        more..
+                      </button>
+                    )}
                   </p>
                 ))}
               </div>

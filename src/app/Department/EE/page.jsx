@@ -7,7 +7,9 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
-const about = ` The Department of Electrical Engineering was established in 1945 under Patna University with an intake of 20 students leading to Bachelor of Science (Engineering) degree of four-year duration. The four-year course was later changed to five-year integrated course in 1960 with an intake of 30 students and it continued up to 1972. Again, a four-year course was introduced in 1972 with the same intake capacity of 30 students. The intake was increased from 30 to 40 students in the sessions of 2005-06 and further in 2006-07 the intake capacity was increased to 60 students.`;
+const about = ` The Department of Electrical Engineering was established in 1945 under Patna University with an intake of 20 students leading to Bachelor of Science (Engineering) degree of four-year duration. The four-year course was later changed to five-year integrated course in 1960 with an intake of 30 students and it continued up to 1972. Again, a four-year course was introduced in 1972 with the same intake capacity of 30 students. The intake was increased from 30 to 40 students in the sessions of 2005-06 and further in 2006-07 the intake capacity was increased to 60 students.
+
+Earlier in 1978, AICTE approved a Post Graduate (PG) course in the department leading to M. Tech. Degree in two specializations: Power System Engineering and Control System Engineering with an intake capacity of 10 in each specialization. The intake in the PG program was`;
 
 const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
 
@@ -96,9 +98,17 @@ export default function EE() {
             </div>
             <div className="px-2 flex mx-auto gap-2 flex-1 shrink-0">
               <div className="w-[100%] mx-auto p-2 text-justify text-black">
-                {about.split("\n").map((line, index) => (
+                {about.split("\n").map((line, index, arr) => (
                   <p key={index} className="mb-2">
                     {line}
+                    {index === arr.length - 1 && (
+                      <button
+                        onClick={() => router.push('/Department/EE/about')}
+                        className="text-blue-600 ml-2"
+                      >
+                        more..
+                      </button>
+                    )}
                   </p>
                 ))}
               </div>

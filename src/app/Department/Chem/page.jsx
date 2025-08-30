@@ -7,7 +7,9 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
-const about = `The Department of Chemical Science and Technology at the National Institute of Technology Patna are committed to excellence in education and research, fostering innovation and collaboration across various disciplines. The Department of Chemistry, established in 1924, has significantly expanded its academic and research offerings. The Department has expanded to include the discipline of Chemical Engineering in 2023, to emerge as a leader in field of chemical sciences and engineering education as well as technological advancements.`;
+const about = `The Department of Chemical Science and Technology at the National Institute of Technology Patna are committed to excellence in education and research, fostering innovation and collaboration across various disciplines. The Department of Chemistry, established in 1924, has significantly expanded its academic and research offerings. The Department has expanded to include the discipline of Chemical Engineering in 2023, to emerge as a leader in field of chemical sciences and engineering education as well as technological advancements.
+
+The department offers a five-year UG-PG B. Tech. - M. Tech dual degree program in Chemical Technology to bridge the gap between chemistry and technological applications, preparing students for careers in both academia and industry.`;
 
 const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
 
@@ -96,9 +98,17 @@ export default function Che() {
             </div>
             <div className="px-2 flex mx-auto gap-2 flex-1 shrink-0">
               <div className="w-[100%] mx-auto p-2 text-justify text-black">
-                {about.split("\n").map((line, index) => (
+                {about.split("\n").map((line, index, arr) => (
                   <p key={index} className="mb-2">
                     {line}
+                    {index === arr.length - 1 && (
+                      <button
+                        onClick={() => router.push('/Department/Chem/about')}
+                        className="text-blue-600 ml-2"
+                      >
+                        more..
+                      </button>
+                    )}
                   </p>
                 ))}
               </div>
