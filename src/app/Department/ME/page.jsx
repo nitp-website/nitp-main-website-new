@@ -7,6 +7,8 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
+const dept = "ME";
+
 const about = `The Department of Mechanical Engineering was established in 1952 with the B.Tech. program during the era of Bihar College of Engineering (BCE), which has been well known since 1924 as the sixth oldest engineering college in India. In 1978, the M.Tech. program was introduced with specializations in Thermal Turbo Machinery and Refrigeration, Air Conditioning, and Heat Transfer. Later, in 2004, Bihar College of Engineering was converted into the National Institute of Technology Patna. At present, the Department offers B.Tech. in Mechanical Engineering, M.Tech. programs with specializations in Design Engineering, Thermal Engineering, and Production Engineering, a Dual Degree (B.Tech. + M.Tech.) program in Mechanical Engineering with specialization in Manufacturing and Industrial Engineering, and Ph.D. programs. The B.Tech. program, which initially started with an intake of 20 students, now admits 120 students.`;
 
 const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
@@ -24,15 +26,13 @@ export default function ME() {
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=me`);
         // console.log("Counts Response:", countsResponse.data);
         setCounts([
-          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
-          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
-          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} /> },
-          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} /> },
-          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} /> },
-          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} /> },
+          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} />, link: '/faculty' },
+          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} />, link: '/researchStudents' },
+          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} />, link: '/journal' },
+          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} />, link: '/conference' },
+          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} />, link: '/patents' },
+          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} />, link: '/projects' },
         ]);
-
-
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -116,7 +116,7 @@ export default function ME() {
           <div className="flex flex-col w-full mb-10 lg:mb-0">
             {
               counts.length && (
-                <DepartmentCounter counts={counts} />
+                <DepartmentCounter counts={counts} dept={dept} />
               )
             }
           </div>

@@ -1,10 +1,23 @@
 import Image from "next/image";
 import React from "react";
+import { useRouter } from "next/navigation";
 
-export const CounterCard = ({ item }) => {
+export const CounterCard = ({ item, dept }) => {
+  const router = useRouter();
+  const url = item.link || '';
+
+  const handleOnClick = () => {
+    if (url) {
+      router.push(`/Department/${dept}/${url}`);
+    }
+  };
+
   return (
     <div
-      className={`bg-white w-40 h-40 rounded-lg shadow-lg p-6 flex flex-col items-center text-center transition-transform hover:scale-105`}
+      onClick={handleOnClick}
+      className={`
+        ${url? "cursor-pointer": ""} bg-white w-40 h-40 rounded-lg shadow-lg
+         p-6 flex flex-col items-center text-center transition-transform hover:scale-105`}
     >
       <div className="text-[#8B3A32] overflow-hidden shrink-0 flex items-center justify-center">
         {item.icon}
@@ -15,13 +28,13 @@ export const CounterCard = ({ item }) => {
   );
 };
 
-const DepartmentCounter = ({ counts }) => {
+const DepartmentCounter = ({ counts, dept }) => {
   // console.log("DepartmentCounter counts:", counts);
   return (
     <div className="text-lg text-black justify-evenly items-start text-justify py-5 flex gap-5 lg:gap-3 flex-wrap">
       {
         counts && counts.map((item, index) =>
-          item.value > 0 ? <CounterCard key={index} item={item} /> : null
+          item.value > 0 ? <CounterCard key={index} item={item} dept={dept} /> : null
         )
       }
     </div>
