@@ -9,9 +9,7 @@ import DepartmentNotice from "./../../components/department/DeptartmentNotice.js
 
 const dept = "EE";
 
-const about = ` The Department of Electrical Engineering was established in 1945 under Patna University with an intake of 20 students leading to Bachelor of Science (Engineering) degree of four-year duration. The four-year course was later changed to five-year integrated course in 1960 with an intake of 30 students and it continued up to 1972. Again, a four-year course was introduced in 1972 with the same intake capacity of 30 students. The intake was increased from 30 to 40 students in the sessions of 2005-06 and further in 2006-07 the intake capacity was increased to 60 students.
-
-Earlier in 1978, AICTE approved a Post Graduate (PG) course in the department leading to M. Tech. Degree in two specializations: Power System Engineering and Control System Engineering with an intake capacity of 10 in each specialization. The intake in the PG program was`;
+const about = `The Department of Electrical Engineering at NIT Patna stands as one of the pioneering centers of technical education in the country, tracing its origins back to 1945 when it was established under Patna University with a modest intake of just 20 students. Over the decades, the department has steadily expanded in scale, scope, and stature—transforming itself into a hub of academic excellence, cutting-edge research, and industry-driven innovation. From its early years of offering a four-year B.Sc. (Engineering) program, it evolved into a five-year integrated course in 1960, before reverting to a four-year format in 1972. Adapting to the changing needs of society and industry, the department has consistently grown in strength, increasing its intake from 30 students in the early years to 116 at present in the B.Tech. program. Alongside undergraduate education,`;
 
 const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
 
