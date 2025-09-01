@@ -41,10 +41,18 @@ const InstituteActivities = ({ data }) => {
                   : ""}
               </span>{" "}
               <span>
-                from- {new Date(activity.start_date).toLocaleDateString()} to{" "}
+                from- {new Date(activity.start_date).toLocaleDateString("en-US", {
+                          day: "numeric",
+                          month: "long",
+                          year: "numeric"
+                        })} to{" "}
                 {activity.end_date === "Continue"
                   ? "Ongoing"
-                  : new Date(activity.end_date).toLocaleDateString()}
+                  : new Date(activity.end_date).toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric"
+                    })}
               </span>
             </h3>
           </li>

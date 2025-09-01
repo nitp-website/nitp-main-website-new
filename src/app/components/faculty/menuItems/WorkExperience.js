@@ -1,5 +1,6 @@
 import React from "react";
 import { FaChalkboardTeacher, FaCalendarAlt, FaUniversity } from "react-icons/fa";
+import formatDate from "../../../../utils/formatDate"
 
 const WorkExperience = ({ data }) => {
   // Sort experiences by start date (latest first)
@@ -36,7 +37,7 @@ const WorkExperience = ({ data }) => {
                 {/* Start & End Dates with Calendar Icon */}
                 <p className="text-gray-800 flex items-center">
                   <FaCalendarAlt className="w-4 h-4 mr-2 text-gray-600" />
-                  {startDate} – {endDate}
+                  {formatDate(startDate,endDate)}
                 </p>
               </div>
             </li>
