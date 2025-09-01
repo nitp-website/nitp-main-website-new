@@ -26,7 +26,7 @@ const TalksAndLecture = ({ data }) => {
           >
             <h3 className="text-black">
               <span className="text-lg font-semibold text-purple-700">
-                Invited Talks
+               Special Lectures
               </span>{" "}
               in{" "}
               <span className="text-lg font-semibold text-gray-700">
@@ -34,11 +34,11 @@ const TalksAndLecture = ({ data }) => {
               </span>{" "}
               on{" "}
               <span className="text-lg font-semibold text-gray-900">
-                {new Date(lecture.date).toLocaleDateString("en-GB", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "2-digit",
-                })}
+              {new Date(lecture.start_date).toLocaleDateString("en-GB", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+              })}
               </span>{" "}
               in{" "}
               <span className="italic text-black">
