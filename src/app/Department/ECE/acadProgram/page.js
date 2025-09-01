@@ -100,7 +100,7 @@ const programs = [
       ]
   },
   {
-    title: "Minor courses Minor courses floated by ECE",
+    title: "Minor courses floated by ECE",
     courseStructure: "https://drive.google.com/file/d/1hji7sUoM8GiUIpOfDxXs6xWWPr0N205R/view"
   }
 ];

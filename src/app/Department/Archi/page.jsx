@@ -20,21 +20,14 @@ export default function Archi() {
   const [feature, setFeature] = useState(picture[0]);
   const [it, setIt] = useState(0);
   const [Notices, setNotices] = useState([]);
-  const [counts, setCounts] = useState({});
+  const [data, setData] = useState({});
 
   useEffect(() => {
     const getData = async () => {
       try {
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=arch`);
         // console.log("Counts Response:", countsResponse.data);
-        setCounts([
-          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} />, link: '/faculty' },
-          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} />, link: '/researchStudents' },
-          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} />, link: '/journal' },
-          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} />, link: '/conference' },
-          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} />, link: '/patents' },
-          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} />, link: '/projects' },
-        ]);
+        setData(countsResponse.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -117,8 +110,8 @@ export default function Archi() {
 
           <div className="flex flex-col w-full mb-10 lg:mb-0">
             {
-              counts.length && (
-                <DepartmentCounter counts={counts} dept={dept} />
+              data && (
+                <DepartmentCounter data={data} dept={dept} />
               )
             }
           </div>
