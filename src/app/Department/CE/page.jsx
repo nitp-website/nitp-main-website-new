@@ -13,30 +13,21 @@ const about = ` The Department of Civil Engineering is the oldest and vibrant de
 
 The Department of Civil Engineering is committed to provide quality teaching and research opportunities toits undergraduate, postgraduate and doctoral students. Apart from UG programme, the department also offers M. Tech and Doctoralprogrammes in the areas of Structural Engineering,`;
 
-const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
+const picture = ["https://i.postimg.cc/hGFcVRpp/IMG-20250825-WA0016.jpg", "https://i.postimg.cc/9FW4qZrr/IMG-20250825-WA0018.jpg","https://i.postimg.cc/2yXf6s1d/IMG-20250825-WA0019.jpg", "https://i.postimg.cc/5NFrLYTW/IMG-20250825-WA0017.jpg"];
 
 export default function CE() {
   const router = useRouter();
   const [feature, setFeature] = useState(picture[0]);
   const [it, setIt] = useState(0);
   const [Notices, setNotices] = useState([]);
-  const [counts, setCounts] = useState({});
+  const [data, setData] = useState({});
 
   useEffect(() => {
     const getData = async () => {
       try {
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=ce`);
         // console.log("Counts Response:", countsResponse.data);
-        setCounts([
-          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} />, link: '/faculty' },
-          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} />, link: '/researchStudents' },
-          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} />, link: '/journal' },
-          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} />, link: '/conference' },
-          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} />, link: '/patents' },
-          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} />, link: '/projects' },
-        ]);
-
-
+        setData(countsResponse.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -119,8 +110,8 @@ export default function CE() {
 
           <div className="flex flex-col w-full mb-10 lg:mb-0">
             {
-              counts.length && (
-                <DepartmentCounter counts={counts} dept={dept} />
+              data && (
+                <DepartmentCounter data={data} dept={dept} />
               )
             }
           </div>

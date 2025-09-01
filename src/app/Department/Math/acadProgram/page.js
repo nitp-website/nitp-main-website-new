@@ -14,12 +14,13 @@ import { AcadProgramCard } from "./AcadProgramCard";
 
 const programs = [
   {
-    title: "IMSc",
-    degree: "",
-    duration: "",
+    title:
+      "Integrated B.Tech and M.Tech Dual Degree",
+    degree: "Integrated B.Tech and M.Tech",
+    duration: "5 Years",
     description:
-      "The Department offers IMSc (Integrated M.Sc.) in Computer Science and Engineering. Admission to this program is through an Institute Examination conducted by NIT Patna itself. This program is solely research based where students conduct their own work in an area of Computer Science and its applications under the guidance of faculty members.",
-    syllabus: "imsc",
+      "The Department of Mathematics and Computing Technology offers the 5-year integrated B.Tech and M.Tech Dual Degree program in Mathematics and Computing Technology. Admission to the program is granted through the prestigious JEE (Main) examination. The program is designed in accordance to NEP, 2020 of India with a blend of both courses and research. The curriculum comprises a number of core courses along with a selection of electives, allowing students to tailor their studies to specific areas of interest as per their choice.",
+    syllabus: "https://drive.google.com/file/d/1MPFriB_DYxQwIA99uRKgBfj-fwGVcU24/view",
   },
   {
     title:
@@ -27,17 +28,8 @@ const programs = [
     degree: "Ph.D.",
     duration: "",
     description:
-      "The Department offers Ph. D in Computer Science and Engineering. Admission to this program is through an Institute Examination conducted by NIT Patna itself. This program is solely research based where students conduct their own work in an area of Computer Science and its applications under the guidance of faculty members.",
+      "Admissions to the Ph.D.  program is based on an entrance examination and interview conducted by the NIT Patna based on their valid GATE score. Students having JRF form other funding agencies (CSIR/ NBHM/ UGC/ INSPIRE etc.) are also allowed to get admission through personal interview. This is a research-intesive program where students carry out independent research in a specialized area of Mathematics under the mentorship of faculty members.",
     // syllabus: "phd",
-  },
-  {
-    title:
-      "Integrated B.Tech and M.Tech Dual Degree",
-    degree: "Integrated B.Tech and M.Tech",
-    duration: "5 Years",
-    description:
-      "The Department offers B.Tech and M.Tech Dual Degree in Computer Science and Engineering. Admission to this program is through JEE (Main) examination. This program is solely research based where students conduct their own work in an area of Computer Science and its applications under the guidance of faculty members.",
-    syllabus: "https://drive.google.com/file/d/1MPFriB_DYxQwIA99uRKgBfj-fwGVcU24/view",
   },
 ];
 
