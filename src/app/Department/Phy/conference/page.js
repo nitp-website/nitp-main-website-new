@@ -11,14 +11,14 @@ const PhyConferencePage = () => {
   // Function to clean text and remove encoding issues
   const cleanText = (text) => {
     if (!text) return text;
-    
+
     return text
       .replace(/\?/g, '')
-      .replace(/â€™/g, "'") 
-      .replace(/â€œ/g, '"') 
-      .replace(/â€�/g, '"') 
-      .replace(/â€"/g, '–') 
-      .replace(/â€"/g, '—') 
+      .replace(/â€™/g, "'")
+      .replace(/â€œ/g, '"')
+      .replace(/â€�/g, '"')
+      .replace(/â€"/g, '–')
+      .replace(/â€"/g, '—')
       .replace(/Â/g, '')
       .replace(/[""]/g, '"')
       .replace(/['']/g, "'")
@@ -46,7 +46,7 @@ const PhyConferencePage = () => {
       const data = await response.json();
       console.log("Raw data:", data);
 
-      
+
       const cleanedData = data.map(publication => ({
         ...publication,
         title: cleanText(publication.title),
@@ -58,7 +58,7 @@ const PhyConferencePage = () => {
       console.log("Cleaned data:", cleanedData);
 
       const groupedByYear = cleanedData.reduce((acc, publication) => {
-        if (!publication.conference_year) return acc; 
+        if (!publication.conference_year) return acc;
         const year = publication.conference_year;
         if (!acc[year]) {
           acc[year] = [];
@@ -154,11 +154,11 @@ const PhyConferencePage = () => {
             .map((year) => (
               <div
                 key={year}
-                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-white"
+                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-blue-100"
               >
                 <button
                   onClick={() => toggleYear(year)}
-                  className="w-full px-4 py-3 bg-red-100 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-200 transition"
+                  className="w-full px-4 py-3 bg-red-200 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-300 transition"
                 >
                   Publications in {year} ({publications[year].length})
                   {openYears[year] ? <ChevronUp /> : <ChevronDown />}
@@ -170,38 +170,33 @@ const PhyConferencePage = () => {
                       {publications[year].map((paper, index) => (
                         <li
                           key={index}
-                          className="p-4 border border-gray-200 bg-white rounded-md shadow-sm hover:shadow-md transition-transform duration-200"
+                          className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
                         >
                           <p className="text-gray-800">
-                            <span className="font-semibold">
-                              {paper.authors}
-                            </span>
-                            {", "}
+                            <span className="font-semibold">{paper.authors}</span>,{" "}
                             <span className="font-semibold text-blue-700">
                               "{paper.title}"
                             </span>
-                            {", "}
-                            <span className="text-gray-700 font-bold">
+                            ,
+                            <span className="text-gray-700 text-lg font-bold">
+                              {" "}
                               {paper.conference_name}
                             </span>
-                            {paper.location && (
-                              <span className="text-gray-800 font-semibold">
-                                {" "}
-                                Location: {paper.location}
-                              </span>
-                            )}
+                            <span className="text-gray-800 font-semibold">
+                              {" "}
+                              Location: {paper.location}
+                            </span>
                             <span className="text-gray-700">
                               {" "}
-                              (Year: {paper.conference_year})
+                              ({paper.conference_year})
                             </span>
                           </p>
                           {paper.doi && (
-                            <p className="text-blue-600 underline mt-2">
+                            <p className="text-blue-600 underline">
                               <a
                                 href={paper.doi}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:text-blue-800"
                               >
                                 DOI Link
                               </a>
