@@ -687,11 +687,11 @@ const navItems = [
         link: "/Facilities/Esu",
         iconImage: ESU,
       },
-      {
-        label: "Laboratories",
-        link: "/Facilities/Laboratories",
-        iconImage: Labs,
-      },
+      // {
+      //   label: "Laboratories",
+      //   link: "/Facilities/Laboratories",
+      //   iconImage: Labs,
+      // },
     ],
   },
 ];
