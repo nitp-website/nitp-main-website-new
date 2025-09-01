@@ -7,6 +7,8 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
+const dept = "ECE";
+
 const about = `The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students and is dedicated to providing quality education at both undergraduate (UG) and postgraduate (PG) levels. Currently, the department offers a B.Tech. program in Electronics and Communication Engineering with an intake of 161, a Dual Degree (B.Tech. + M.Tech.) in Microelectronics and VLSI System Design with an intake of 22, M.Tech. programs in Next Generation Wireless Technologies and in Microelectronics and VLSI System Design with an intake of 15 each, and Ph.D. programs (both full-time and part-time) in Electronics and Communication Engineering. All courses are regularly updated by academic and industry experts to align with the evolving needs of today’s industry. The undergraduate program has been accredited by the National Board of Accreditation (NBA) for six years, from July 2021 to June 2027. The department has also received significant funding, including a grant of ₹3.52 Crore from DST`;
 
 const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
@@ -24,15 +26,13 @@ export default function ECE() {
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=ece`);
         // console.log("Counts Response:", countsResponse.data);
         setCounts([
-          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
-          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
-          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} /> },
-          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} /> },
-          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} /> },
-          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} /> },
+          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} />, link: '/faculty' },
+          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} />, link: '/researchStudents' },
+          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} />, link: '/journal' },
+          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} />, link: '/conference' },
+          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} />, link: '/patents' },
+          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} />, link: '/projects' },
         ]);
-
-
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -116,7 +116,7 @@ export default function ECE() {
           <div className="flex flex-col w-full mb-10 lg:mb-0">
             {
               counts.length && (
-                <DepartmentCounter counts={counts} />
+                <DepartmentCounter counts={counts} dept={dept} />
               )
             }
           </div>

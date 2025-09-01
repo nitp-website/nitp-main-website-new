@@ -7,6 +7,8 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
+const dept = "Mechatronics";
+
 const about = `Welcome to the Department of Mechatronics and Automation Engineering at the National Institute of Technology Patna. Established in 2024, the Department of Mechatronics and Automation Engineering at NIT Patna is one of the institution's newest departments, committed to delivering a premier educational experience aimed at preparing students to be industry-ready through its four-year full-time B.Tech. program. The Mechatronics and Automation Programme is committed to prepare the graduates to synergistically integrate mechanical engineering, electronics, and intelligent computer control systems seamlessly in the design and manufacturing of industrial products and processes. The department is dedicated to preparing graduates with strong team skills to solve multi-disciplinary problems using the Mechatronics approach. Graduates of this program will have the opportunity to work in a variety of sectors,`;
 
 const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
@@ -24,15 +26,13 @@ export default function Mechatronics() {
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=mae`);
         // console.log("Counts Response:", countsResponse.data);
         setCounts([
-          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
-          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
-          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} /> },
-          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} /> },
-          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} /> },
-          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} /> },
+          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} />, link: '/faculty' },
+          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} />, link: '/researchStudents' },
+          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} />, link: '/journal' },
+          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} />, link: '/conference' },
+          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} />, link: '/patents' },
+          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} />, link: '/projects' },
         ]);
-
-
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -116,7 +116,7 @@ export default function Mechatronics() {
           <div className="flex flex-col w-full mb-10 lg:mb-0">
             {
               counts.length && (
-                <DepartmentCounter counts={counts} />
+                <DepartmentCounter counts={counts} dept={dept} />
               )
             }
           </div>

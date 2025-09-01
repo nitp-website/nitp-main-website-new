@@ -54,16 +54,6 @@ const staffData = [
                 mobile: "+91-9308503163",
                 image: "/staffCse5.jpg",
             },
-            {
-                name: "Mr. Rahul Kumar",
-                designation: "Office Attendant",
-                experience: "",
-                education: "B.Sc. in Mathematics",
-                expertise: "",
-                email: "rahul.oa@nitp.ac.in",
-                // mobile: "+91-7992405297",
-                image: "/staffCse6.png",
-            },
         ],
     },
 ];

@@ -7,9 +7,9 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
-const about = ` The Department of Electrical Engineering was established in 1945 under Patna University with an intake of 20 students leading to Bachelor of Science (Engineering) degree of four-year duration. The four-year course was later changed to five-year integrated course in 1960 with an intake of 30 students and it continued up to 1972. Again, a four-year course was introduced in 1972 with the same intake capacity of 30 students. The intake was increased from 30 to 40 students in the sessions of 2005-06 and further in 2006-07 the intake capacity was increased to 60 students.
+const dept = "EE";
 
-Earlier in 1978, AICTE approved a Post Graduate (PG) course in the department leading to M. Tech. Degree in two specializations: Power System Engineering and Control System Engineering with an intake capacity of 10 in each specialization. The intake in the PG program was`;
+const about = `The Department of Electrical Engineering at NIT Patna stands as one of the pioneering centers of technical education in the country, tracing its origins back to 1945 when it was established under Patna University with a modest intake of just 20 students. Over the decades, the department has steadily expanded in scale, scope, and stature—transforming itself into a hub of academic excellence, cutting-edge research, and industry-driven innovation. From its early years of offering a four-year B.Sc. (Engineering) program, it evolved into a five-year integrated course in 1960, before reverting to a four-year format in 1972. Adapting to the changing needs of society and industry, the department has consistently grown in strength, increasing its intake from 30 students in the early years to 116 at present in the B.Tech. program. Alongside undergraduate education,`;
 
 const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
 
@@ -26,15 +26,13 @@ export default function EE() {
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=ee`);
         // console.log("Counts Response:", countsResponse.data);
         setCounts([
-          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
-          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
-          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} /> },
-          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} /> },
-          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} /> },
-          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} /> },
+          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} />, link: '/faculty' },
+          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} />, link: '/researchStudents' },
+          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} />, link: '/journal' },
+          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} />, link: '/conference' },
+          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} />, link: '/patents' },
+          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} />, link: '/projects' },
         ]);
-
-
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -118,7 +116,7 @@ export default function EE() {
           <div className="flex flex-col w-full mb-10 lg:mb-0">
             {
               counts.length && (
-                <DepartmentCounter counts={counts} />
+                <DepartmentCounter counts={counts} dept={dept} />
               )
             }
           </div>

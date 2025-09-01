@@ -7,6 +7,8 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
+const dept = "CE";
+
 const about = ` The Department of Civil Engineering is the oldest and vibrant department of the institute, which was established along with the inception of the Institute in the year 1924. The Institute was formerly known as the Bihar College of Engineering Patna, a constituent engineering college under Patna University, until 27thJan 2004. It was rechristened to National Institute of Technology Patna on 28th Jan 2004 as an Autonomous Institute under MHRD, Govt. of India.
 
 The Department of Civil Engineering is committed to provide quality teaching and research opportunities toits undergraduate, postgraduate and doctoral students. Apart from UG programme, the department also offers M. Tech and Doctoralprogrammes in the areas of Structural Engineering,`;
@@ -26,12 +28,12 @@ export default function CE() {
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=ce`);
         // console.log("Counts Response:", countsResponse.data);
         setCounts([
-          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
-          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
-          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} /> },
-          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} /> },
-          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} /> },
-          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} /> },
+          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} />, link: '/faculty' },
+          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} />, link: '/researchStudents' },
+          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} />, link: '/journal' },
+          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} />, link: '/conference' },
+          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} />, link: '/patents' },
+          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} />, link: '/projects' },
         ]);
 
 
@@ -98,7 +100,7 @@ export default function CE() {
             </div>
             <div className="px-2 flex mx-auto gap-2 flex-1 shrink-0">
               <div className="w-[100%] mx-auto p-2 text-justify text-black">
-                 {about.split("\n").map((line, index, arr) => (
+                {about.split("\n").map((line, index, arr) => (
                   <p key={index} className="mb-2">
                     {line}
                     {index === arr.length - 1 && (
@@ -118,7 +120,7 @@ export default function CE() {
           <div className="flex flex-col w-full mb-10 lg:mb-0">
             {
               counts.length && (
-                <DepartmentCounter counts={counts} />
+                <DepartmentCounter counts={counts} dept={dept} />
               )
             }
           </div>

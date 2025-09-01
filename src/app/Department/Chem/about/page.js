@@ -5,6 +5,8 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 
 import axios from "axios";
 
+const dept = "Chem"
+
 const aboutContent = (
   <div className="space-y-4 text-justify text-black">
     <p>
@@ -14,7 +16,7 @@ const aboutContent = (
       The department offers a five-year UG-PG B. Tech. - M. Tech dual degree program in Chemical Technology to bridge the gap between chemistry and technological applications, preparing students for careers in both academia and industry. The curriculum covers core subjects such as material and energy balance, thermodynamics, heat and mass transfer, fluid mechanics, chemical reaction engineering, process control, and computational systems. By integrating traditional chemical engineering principles with emerging specializations, the program aims to produce industry-ready professionals capable of addressing complex engineering challenges. The Department offers several compulsory and elective courses to B.Tech. and B.Arch. students of the Institute in 1st, 2nd and 3rd years of the UG and UG-PG dual degree programs. The department has been and will remain committed to quality teaching and research with a conscious effort to achieve excellence.
     </p>
     <p>
-      The department has an active Ph.D. program since 2010 where the number of research scholars have been steadily rising with new admission every semester. Currently, the department has 26 full-time Ph.D. students and 19 part-time Ph.D. students. With the increase in motivated researchers, the research output in terms of both quality and quantity has escalated in the recent years. The department has 14 regular faculty members who are PIs of independent research groups and focus on different areas of chemistry like synthetic glycochemistry, supramolecular chemistry, graphene chemistry, heterocycles, nanomaterials, spectroscopy, co-ordination complexes. 
+      The department has an active Ph.D. program since 2010 where the number of research scholars have been steadily rising with new admission every semester. Currently, the department has 26 full-time Ph.D. students and 19 part-time Ph.D. students. With the increase in motivated researchers, the research output in terms of both quality and quantity has escalated in the recent years. The department has 14 regular faculty members who are PIs of independent research groups and focus on different areas of chemistry like synthetic glycochemistry, supramolecular chemistry, graphene chemistry, heterocycles, nanomaterials, spectroscopy, co-ordination complexes.
     </p>
     <p>
       To promote the ongoing and future research activities, DST has recently granted research funds under FIST programme with a total grant amount of Rs. 220 Lakhs for the period of 2023 – 2028. Capital fund received from Institute, TEQIP and externally funded projects have facilitated in installation of advanced small equipment necessary to execute day to day research work. The research groups are also collaborating within the department as well as with other Institutions to encourage inter-disciplinary work. Collaborative work with faculty/scientists in IIT Patna, CSIR-NML, IIT Gandhinagar, CSIR-CSIO, NIPER Hajipur, IACS Kolkata, NIT Rourkela, Algappa University Karaikudi is currently under way to carry out characterization work, theoretical study, and extend the application of synthesized products. The research facilities in the department are frequently extended to students from Civil Engg., Mechanical Engg., Physics departments to enable their UG and PG thesis works. Further, UG and PG students from nearby Universities/Institutions like Mahatma Gandhi Central University Motihari, Central University South Bihar Gaya, NIPER Hajipur, Patna University have visited our department for carrying out research work mandatory in their curricula.
@@ -31,12 +33,12 @@ const Aboutpage = () => {
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=che`);
         // console.log("Counts Response:", countsResponse.data);
         setCounts([
-          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
-          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
-          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} /> },
-          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} /> },
-          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} /> },
-          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} /> },
+          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} />, link: '/faculty' },
+          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} />, link: '/researchStudents' },
+          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} />, link: '/journal' },
+          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} />, link: '/conference' },
+          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} />, link: '/patents' },
+          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} />, link: '/projects' },
         ]);
 
 
@@ -64,7 +66,7 @@ const Aboutpage = () => {
 
           {
             counts.length && (
-              <DepartmentCounter counts={counts} />
+              <DepartmentCounter counts={counts} dept={dept} />
             )
           }
         </div>
