@@ -28,7 +28,7 @@ const CEProjectsPage = () => {
       const groupedByYear = data.reduce((acc, publication) => {
         if (!publication.end_date) return acc; // Skip if project_date is missing
 
-        const year = new Date(publication.end_date).getFullYear();
+        const year = new Date(publication.start_date).getFullYear();
 
         if (isNaN(year)) return acc; // Skip if year is NaN (invalid date)
 
