@@ -6572,227 +6572,191 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"1"}
-                                code={"MC470101"}
+                                code={"CS012001"}
                                 title={"Problem Solving through C"}
                                 L={"3"} T={"0"} P={"2"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/1FV1oOQYuIZ2V_mIjTy03sGI_61pjReHe/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1LhWnWlwZVAQLcBJJLq8kJpDshK34opF1/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"1"}
-                                code={"MC470102"}
+                                code={"CS012002"}
                                 title={"Mathematical Foundations of Computer Applications"}
                                 L={"3"} T={"1"} P={"0"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/1rvOt5qrTRMpMIRI43RNWsy55SG7UcUDL/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1tp7jk5UyRUdysL4HS1b72aJ-pvGLl2TU/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"1"}
-                                code={"MC470103"}
+                                code={"CS012003"}
                                 title={"Computer Networks"}
                                 L={"3"} T={"0"} P={"2"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/16tnFG5QhraUox3TYYvCBr1_kXRqk7359/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1WDyPjVWotH30sNCbB_4CQZI0qii20WqW/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"1"}
-                                code={"MC470104"}
-                                title={"Technical Communication"}
-                                L={"2"} T={"0"} P={"2"}
-                                cred={"3"}
-                                url={"https://docs.google.com/document/d/1r0Auj-Z9BUN91NphxqNjnrvrbLC2HLZf/edit?usp=drivesdk&ouid=105912413414551043045&rtpof=true&sd=true"}
-                            />
-                            <SyllabusComp
-                                dep={"CSE"}
-                                sem={"1"}
-                                code={"MC470105"}
+                                code={"CS012004"}
                                 title={"Computer Organization and Architecture"}
                                 L={"3"} T={"1"} P={"0"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/1yC4wpsK1jzKUHQg_YxmtfVYj89oLO0KB/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
-                            />
-                            <SyllabusComp
-                                dep={"CSE"}
-                                sem={"1"}
-                                code={"MC470106"}
-                                title={"EAA -II Swachha Bharat Mission (SBM)"}
-                                L={"0"} T={"0"} P={"2"}
-                                cred={"1"}
-                                url={""}
+                                url={"https://docs.google.com/document/d/1PZE_p2fCcMfm1B2VuREgPKgR_afe8oSb/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"MC470201"}
+                                code={"CS022001"}
                                 title={"Data Structures"}
                                 L={"3"} T={"0"} P={"2"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/16k64wYC83vzOdqnKdahUw-E0UARnsapf/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1SC43e_opccJEzNARYZGq9l7cgaw0Drh7/edit?tab=t.0#heading=h.gjdgxs"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"MC470202"}
+                                code={"CS022002"}
                                 title={"Computing with Python"}
                                 L={"3"} T={"0"} P={"2"}
-                                cred={"4"}
-                                url={"https://docs.google.com/document/d/1mttudLuSXrWk3uZI9xiuUa6jxzPxarTu/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                cred={"3"}
+                                url={"https://docs.google.com/document/d/1tTZ_x5EEYMaIULXV6wafUOIWr32W62Tm/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"MC470203"}
+                                code={"CS022003"}
                                 title={"Database Management Systems"}
                                 L={"3"} T={"0"} P={"2"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/1yYLYR_Z8tP5F0FcC5QebQfryfzA_e3Hn/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1UR9wgSv2CLchSrp4ierSpjKSacSw_5Oo/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"MC470204"}
+                                code={"CS022004"}
                                 title={"Operating Systems"}
                                 L={"3"} T={"0"} P={"2"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/1tcrTuUCCSBgTh6SqwemI50Fq7YH6GzEc/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1_TIPMo3kXcnIJiKj0-PxPeeEgUTA-giI/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"2"}
-                                code={"MC470205"}
+                                code={"CS02200"}
                                 title={"Ad-hoc & Sensor Networks"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1NtNu0-gRLUb1kYO_EDI_mtEti9alODsA/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
-                            />
-                            <SyllabusComp
-                                dep={"CSE"}
-                                sem={"2"}
-                                code={"MC470206"}
-                                title={"EAA - I Sports/Innovative Project/NCC/NSS"}
-                                L={"0"} T={"0"} P={"2"}
-                                cred={"1"}
-                                url={""}
+                                url={"https://docs.google.com/document/d/1qwFWCazP1WtuVvafRwkLQMCtBdiVXlY_/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"3"}
-                                code={"MC470301"}
+                                code={"CS032001"}
                                 title={"Design and Analysis of Algorithms"}
                                 L={"3"} T={"0"} P={"2"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/1EORwBA86cVS6RvzaJbWxdyAEUQnCSp37/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1e3Ub35huRI3NNr4jd1SHmzFWFShMifZv/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"3"}
-                                code={"MC470302"}
+                                code={"CS032002"}
                                 title={"Artificial Intelligence"}
                                 L={"3"} T={"0"} P={"2"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/1Cxb6ytGbaPPsGSd1ic2SHscNQmwXNO6y/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1YMzUyTNyN3Jwq-UfMTqJWXqGVYt03yEb/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"3"}
-                                code={"MC470303"}
+                                code={"CS032003"}
                                 title={"Object Oriented Programming using JAVA"}
                                 L={"2"} T={"0"} P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1KY0yEMR3BY5UM7CPpceYUDLS02FO-SqO/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1Ia65cUdw2rWhCu8QfHJ5INfYi7IHe4BF/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"3"}
-                                code={"MC470304"}
+                                code={"CS032004"}
                                 title={"Internet of Things"}
                                 L={"3"} T={"0"} P={"2"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/1f2a1dNGuy-xiPSKGS4C3YBjdkoqY6ZpM/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1W-crTcEOa0LnVeVmEruZTK93mUpMG0Cz/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"3"}
-                                code={"MC470305"}
+                                code={"CS032005"}
                                 title={"Machine Learning"}
                                 L={"3"} T={"0"} P={"2"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/16x1uez62ptwFn-3KuGEPukDnuB8ubNix/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1d5dZLdqwUI3QwiuFcQZZtcp2H4E3nccb/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"4"}
-                                code={"MC470401"}
+                                code={"CS042001"}
                                 title={"Deep Learning"}
                                 L={"3"} T={"0"} P={"2"}
                                 cred={"4"}
-                                url={"https://docs.google.com/document/d/1zAGN8fR3J-7QX17-1iKpWIL2_QKNU3zh/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1HsVYTyO_ejk0pJjJ__KNh4TWhhYjeLzx/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"4"}
-                                code={"MC470402"}
+                                code={"CS042002"}
                                 title={"Artificial Intelligence of Things"}
-                                L={"2"} T={"0"} P={"2"}
-                                cred={"3"}
-                                url={"https://docs.google.com/document/d/1YxrOLNDayJ6_C5E9BIeMINHBdV2DHoFM/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                L={"3"} T={"0"} P={"2"}
+                                cred={"4"}
+                                url={"https://docs.google.com/document/d/1PvTkXJM5_yqacLE1U0uRMaYt11u_tFBT/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"4"}
-                                code={"MC470403"}
+                                code={"CS042003"}
                                 title={"Data Visualization"}
                                 L={"2"} T={"0"} P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1X8mv-lKL_Y8B_S7Cj06eomkyvDNrkPmQ/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1c1saYLal0qyp_nY-HiPNnzSIL6lTSghB/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"4"}
-                                code={"MC470404"}
+                                code={"CS042004"}
                                 title={"Web Programming"}
                                 L={"2"} T={"0"} P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1pTSzQauz4zjtRhgeDfHWmnad6a4iOtqg/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1UuwJqTDucbJlo06xuv0i3Mz2L6985-4d/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"4"}
-                                code={"MC470405"}
+                                code={"CS042005"}
                                 title={"Natural Language Processing"}
                                 L={"3"} T={"0"} P={"2"}
                                 cred={"4"}
-                                url={""}
+                                url={"https://docs.google.com/document/d/1x_OjgI6XexvQzXYl8EQAR9-cvjb0JgOp/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"4"}
-                                code={"MC470406"}
+                                code={"CS042006"}
                                 title={"Mobile Applications Development"}
                                 L={"2"} T={"0"} P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1EYUscj_LWiWNFhwLaBUNl2nNSMWKqpc_/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
-                            />
-                            <SyllabusComp
-                                dep={"CSE"}
-                                sem={"4"}
-                                code={"MC470407"}
-                                title={"Seminar & Presentation"}
-                                L={"0"} T={"0"} P={"2"}
-                                cred={"1"}
-                                url={""}
+                                url={"https://docs.google.com/document/d/1WE683GSifbSVlpDCmq-ppVuDyVNPNnqv/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"5"}
-                                code={"MC470501"}
+                                code={"CS052001"}
                                 title={"Information Security"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1eYDBWHnOAXUOX0e6dF21HHNhTTvBUlzA/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1NrHBCiDE5nZzpeH_ZvnqeF8a4GDSwfV7/edit?tab=t.0#heading=h.yiqhst5uozxp"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
@@ -6833,182 +6797,182 @@ export default function Page() {
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX10"}
+                                code={"CSXX2008"}
                                 title={"Generative Deep Models"}
                                 L={"2"} T={"0"} P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1XD5scsobfqtqq-MrAZX7_Qabh8H0L8Md/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1tWUhCgRk3hPUWTYJdN2OClp25Bh6Fk6l/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX11"}
+                                code={"CSXX2009"}
                                 title={"Explainable AI"}
                                 L={"2"} T={"0"} P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/10RXR8pYih1_oQGNgLJBC2H4wbg8ZBPWg/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/135nc5i8COlByVSQifUZyzqq6MvDoFBNs/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX12"}
+                                code={"CSXX2010"}
                                 title={"Information Retrieval"}
                                 L={"2"} T={"0"} P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/18qaM83QmYyQAoY6IIqAMHovAq3iwuMjO/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1w5t0O_VSv2rbDaA2Mkk5fUCqOhfqgnue/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX13"}
+                                code={"CSXX2011"}
                                 title={"Game Theory"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1MDFOhtE_LVjfpxN5QBW6M1OlPn-RY_Cq/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1DcC91YFnFv-o079LvXBAPJC_XRtZKScY/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX14"}
+                                code={"CSXX2012"}
                                 title={"Augmented Reality (AR) and Virtual Reality (VR)"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1P5FhovipLcJyDojRgX6ohOK42ZwAUfJJ/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1FGOrUc3v8ejEPVbhqqjl_NjgJriHHNnq/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX15"}
+                                code={"CSXX2013"}
                                 title={"Intrusion Detection"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1Hn0Nxik3PU0iwrNq4umiBnbC9Nn2cHkH/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1urkrAIY7bL5Hv3F09wLOOWxl6lx-w0KW/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX16"}
+                                code={"CSXX2014"}
                                 title={"Malware Analysis"}
                                 L={"2"} T={"0"} P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1bi_OU13XYC9yG496WrWb0A6lYrhNXylO/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1_d7Lxx1Ijrzt4EEJofgTaf2AV55tOMja/edit?tab=t.0#heading=h.gjdgxs"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX17"}
+                                code={"CSXX2015"}
                                 title={"Digital Forensic"}
                                 L={"2"} T={"0"} P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/18OsoyNsgrirX5NHddVpLBvWUKffLCz0j/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1ziDWDQMQHL2tpSfDx-vrU6YIQJ1gsXMt/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX18"}
+                                code={"CSXX2016"}
                                 title={"Text Analytics"}
                                 L={"2"} T={"0"} P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1gXNxUGZREP4i3NaIVLxzVHhdM-9O3a3J/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1jr7en8oVkpYgncYJkoKSDcOnQpOZEz2V/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX19"}
+                                code={"CSXX2017"}
                                 title={"Computer Vision"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1EHskGa1oJyDm0FGbCqU-r6VQzbM_064x/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1y5KnICRtifB0yHM2tZqadBrg-IGBrnUY/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX20"}
+                                code={"CSXX2018"}
                                 title={"Reinforcement Learning"}
                                 L={"2"} T={"0"} P={"2"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1gczkVV2yA5bDvtrRafSmbe1n4BJSpXC9/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1saSYUj36tHqg5Ny6vco8e_BfVndw3Dxw/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX21"}
+                                code={"CSXX2019"}
                                 title={"Blockchain Technology"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1uhjjBoaKjmd7BiJVsJEdPbBGgA_OAp8R/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1dbN3EfajYU94i8tpXeoubH-UXIEBsmuh/edit?tab=t.0#heading=h.gjdgxs"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX22"}
+                                code={"CSXX2020"}
                                 title={"Data Mining and Warehousing"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1juciqJ33CwhcD7QKynIax_OXik5uSxOs/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1nicAbuUCIrgkGn8g-sTcARTc8T91GhwR/edit?tab=t.0#heading=h.gjdgxs"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX23"}
+                                code={"CSXX2021"}
                                 title={"Recommendation Systems"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1O-x-b_Wzu_PdSIimQg0sjavP4fqXLXSs/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1d3XcYtuouI0dFJ1E42771ByW1SDitN6B/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX24"}
+                                code={"CSXX2022"}
                                 title={"Cloud Computing"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1oiciDT_511AjsYdPFlW1VVN6VhQfNVUN/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/18kV1e-ax3qalWwp7k2xrVh1NEiuomRrC/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX25"}
+                                code={"CSXX2023"}
                                 title={"Image Processing Techniques"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/19xR8HraOPVy7p1cH5xgLNKm7267w5k7J/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/12u2vCiWMdBRROi__aGn6Etrv58NBnMP2/edit?tab=t.0#heading=h.vybwgpun7gww"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX26"}
+                                code={"CSXX2024"}
                                 title={"Computer System and Security"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1DkP_kXBUycqU7G0ubITXrE0OjNg5do7P/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1Vsx6sSePw0bXbx9wFcG8FYg7FwkVnVT_/edit?tab=t.0"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX27"}
+                                code={"CSXX2025"}
                                 title={"Smart Agriculture"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1i776pUS1_glxH83qVWTmGcEHgeYogSSi/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1mBIfgbp4U61OVABDL3cKFvXOLFokYFvH/edit?tab=t.0#heading=h.a0fq7ir1bgdw"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX28"}
+                                code={"CSXX2026"}
                                 title={"Human Computer Interaction"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1LcP5ZRTCoVwaHmCOXXDIx1HaxN51aIBL/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/1u1tesPLpcwEBF3S_zsFxfccu5XGo-p0G/edit?tab=t.0#heading=h.sbzqc89vnwxb"}
                             />
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"EL"}
-                                code={"MC47XX29"}
+                                code={"CSXX2027"}
                                 title={"Social IoT"}
                                 L={"3"} T={"0"} P={"0"}
                                 cred={"3"}
-                                url={"https://docs.google.com/document/d/1WVcCufZiel02dQz9aYydX9ujE9uYvGkK/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
+                                url={"https://docs.google.com/document/d/13ixkMOyDmFBfffhtSnqww_mOztWbASjr/edit?tab=t.0#heading=h.e6qcbmdthx5k"}
                             />
                         </div>
                     </div>
