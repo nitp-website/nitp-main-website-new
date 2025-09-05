@@ -62,11 +62,10 @@ import hss from "../../assets/images/hss.svg";
 import math from "../../assets/images/math.svg";
 import mech from "../../assets/images/mech.svg";
 import physics from "../../assets/images/physics.svg";
-
 import useNavigationEvent from "./useNavigationEvent";
 import { FiMenu } from "react-icons/fi";
-import { AiOutlineClose } from "react-icons/ai";
-
+import { AiOutlineClose ,AiOutlineMenu,AiOutlineOpen} from "react-icons/ai";
+import Script from "next/script";
 //List of all nav items
 
 const navItems = [
@@ -688,11 +687,11 @@ const navItems = [
         link: "/Facilities/Esu",
         iconImage: ESU,
       },
-      {
-        label: "Laboratories",
-        link: "/Facilities/Laboratories",
-        iconImage: Labs,
-      },
+      // {
+      //   label: "Laboratories",
+      //   link: "/Facilities/Laboratories",
+      //   iconImage: Labs,
+      // },
     ],
   },
 ];
@@ -718,10 +717,52 @@ export default function Navbar() {
     };
   }, []);
 
+useEffect(() => {
+    if (window.google && window.google.translate) {
+      return;
+    }
+    window.googleTranslateElementInit = function () {
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,hi",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: true,
+        },
+        "2e4d7f2c6a1b935fc09da64e8c71f2c8e4b9a55d7c3f08b61a2de8f47d5b7c6a"
+      );
+    };
+
+    return () => {
+      delete window.googleTranslateElementInit;
+    };
+  }, []);
+
+  useEffect(() => {
+    const fixHindiInstituteName = () => {
+      const incorrect = 'राष्ट्रीय संस्थान संस्थान पटना';
+      const correct = 'राष्ट्रीय प्रौद्योगिकी संस्थान पटना';
+      document.querySelectorAll('*').forEach(node => {
+        if (node.childNodes && node.childNodes.length) {
+          node.childNodes.forEach(child => {
+            if (child.nodeType === 3 && child.nodeValue.includes(incorrect)) {
+              child.nodeValue = child.nodeValue.replaceAll(incorrect, correct);
+            }
+          });
+        }
+      });
+    };
+    fixHindiInstituteName();
+  }, []);
+
   return (
     <>
-      <div className="bg-black h-6">
-        <div className="flex justify-between items-center px-4 py-1 text-white text-xs md:text-sm">
+      <div className="bg-black h-11 my-auto">
+        <div className="flex justify-between items-center px-4 py-1 text-white text-xs md:text-sm my-auto">
+          <div className="flex flex-row items-center justify-start text-black z-[1000000]">
+              <div id="2e4d7f2c6a1b935fc09da64e8c71f2c8e4b9a55d7c3f08b61a2de8f47d5b7c6a"></div>
+              <div className="border border-b-0  p-2.5 box-border text-white">National Institute of Technology Patna</div>
+          </div>
           <div className="flex space-x-2 text-xs md:text-sm">
             <a
               href="/Notices/JobsNITP"
@@ -818,7 +859,7 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="flex flex-col items-center flex-1 text-center">
-              <div className="text-[0.65rem] font-semibold text-black">
+              <div className="text-[0.65rem] font-semibold text-black" id="excludeMe" translate="no">
                 राष्ट्रीय प्रौद्योगिकी संस्थान पटना
               </div>
               <div className="text-[0.6rem] text-black">
@@ -832,7 +873,7 @@ export default function Navbar() {
 
           {/* Desktop Header Layout */}
           <div className="right-content hidden md:block">
-            <div className="font-bold textmob text-black">
+            <div className="font-bold textmob text-black" id="excludeMe" translate="no">
               राष्ट्रीय प्रौद्योगिकी संस्थान पटना
             </div>
             <div className="text-sm textmob text-black">
@@ -1051,6 +1092,11 @@ function SubSidemenu({ item, closeSideMenu }) {
           ))}
         </div>
       )}
+      <Script
+        type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+      ></Script>
     </div>
+    
   );
 }

@@ -40,19 +40,31 @@ const IPR = ({ data }) => {
               {ipr.registration_date && (
                 <p className="text-gray-800">
                   <strong>Registration Date:</strong>{" "}
-                  {new Date(ipr.registration_date).toLocaleDateString()}
+                  {new Date(ipr.registration_date).toLocaleDateString("en-US", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                  })}
                 </p>
               )}
               {ipr.publication_date && (
                 <p className="text-gray-800">
                   <strong>Publication Date:</strong>{" "}
-                  {new Date(ipr.publication_date).toLocaleDateString()}
+                  {new Date(ipr.publication_date).toLocaleDateString("en-US", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                  })}
                 </p>
               )}
               {ipr.grant_date && (
                 <p className="text-gray-800">
                   <strong>Grant Date:</strong>{" "}
-                  {new Date(ipr.grant_date).toLocaleDateString()}
+                  {new Date(ipr.grant_date).toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric"
+                    })}
                 </p>
               )}
             </li>

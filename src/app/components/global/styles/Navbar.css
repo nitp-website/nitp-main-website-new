@@ -264,3 +264,39 @@
 .group1:hover .absolute1 {
   display: flex;
 }
+
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget-simple img {
+  display: none !important;
+}
+
+body {
+  top: 5 !important;
+}
+
+#google_translate_elementD {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#google_translate_elementD .goog-te-gadget {
+  font-size: 0 !important;
+}
+
+#google_translate_elementD select {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}

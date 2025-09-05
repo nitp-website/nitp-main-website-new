@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCalendarAlt } from "react-icons/fa";
+import formatDate from "../../../../utils/formatDate";
 
 const Memberships = ({ data }) => {
 
@@ -40,7 +41,7 @@ const Memberships = ({ data }) => {
               </h3>
               <p className="text-gray-800 flex items-center">
                 <FaCalendarAlt className="w-4 h-4 mr-2 text-gray-600" />
-                {startDate} – {endDate}
+                {formatDate(startDate,endDate)}
               </p>
             </li>
           );

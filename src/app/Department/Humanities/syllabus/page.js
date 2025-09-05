@@ -12,23 +12,13 @@ export default function Page() {
     const [ug, setUg] = useState(true);
 
     const [pg, setPg] = useState(false);
- 
+
     const [phd, setphd] = useState(false);
     return (
-        <div className=" flex flex-col p-10 max-sm:p-2 text-black">
-            <div className="flex flex-col mb-2">
-                <div>
-                    <p className="text-red-900 text-xl lg:text-2xl font-bold">
-                        SYLLABUS
-                    </p>
-                </div>
-                <div className=" lg:mt-2">
-                    <p className="text-gray-500 lg:text-base font-semibold">
-                        Humanities & Social Sciences
-                    </p>
-                </div>
-                <BackDepartment navigate={"/Department/Humanities"} />
-            </div>
+        <div className="flex flex-col p-10 max-sm:p-2 text-black">
+            <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-700 text-center">
+                Syllabus
+            </h1>
             <div className="mx-4 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
                 <div className="mt-2 mb-10 flex space-x-1">
                     <button onClick={() => {
@@ -36,22 +26,22 @@ export default function Page() {
                         setPg(false);
                         setphd(false);
                     }} className={`border border-black rounded ${(ug) ? "text-white bg-red-900" : "text-red-900"} px-2`}>UG & DD Course</button>
-            
+
                     <button onClick={() => {
                         setUg(false);
-                       
+
                         setPg(true);
-                      
+
                         setphd(false);
                     }} className={`border border-black rounded ${(pg) ? "text-white bg-red-900" : "text-red-900"} px-2`}>PG Course</button>
                     <button onClick={() => {
                         setUg(false);
-                       
+
                         setPg(false);
-                     
+
                         setphd(true);
                     }} className={`border border-black rounded ${(phd) ? "text-white bg-red-900" : "text-red-900"} px-2`}>PhD Course</button>
-                    
+
                 </div>
                 {/* UG PROGRAM */}
                 <div className={`mb-10 ${(ug == false) ? "hidden" : ""}`}>
@@ -271,61 +261,61 @@ export default function Page() {
 
                     </div>
                     <div className={`mb-10 mt-3`}>
-                    <div className="text-gray-500 font-semibold lg:text-xl text-xs mb-5 ml-3">List of Open Elective-I & II</div>
-                    <div className="border grid grid-cols-11">
-                        <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Sr no.</div>
-                        <div className="col-span-2 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Course Code</div>
-                        <div className="col-span-4 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Course Title</div>
-                        <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">L</div>
-                        <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">T</div>
-                        <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
-                        <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
-                        <SyllabusComp
-                            srno={"1"}
-                            code={"OEHSXXX"}
-                            title={"Industrial Economics and Financial Management"}
-                            L={"3"} T={"0"} P={"0"}
-                            cred={"3"}
-                            url={""}
-                        />
-                        <SyllabusComp
-                            srno={"2"}
-                            code={"OEHSXXX"}
-                            title={"Organisational Behaviour & Industrial Psychology"}
-                            L={"3"} T={"0"} P={"0"}
-                            cred={"3"}
-                            url={""}
-                        />
-                        <SyllabusComp
-                            srno={"3"}
-                            code={""}
-                            title={"History of Science & Technology"}
-                            L={""} T={""} P={""}
-                            cred={""}
-                            url={""}
-                        />
-                        <SyllabusComp
-                            srno={"4"}
-                            code={""}
-                            title={"Introduction to Intellectual Property Rights"}
-                            L={""} T={""} P={""}
-                            cred={""}
-                            url={""}
-                        />
-                        <SyllabusComp
-                            srno={"5"}
-                            code={""}
-                            title={"Business Environment & Indian Economy"}
-                            L={""} T={""} P={""}
-                            cred={""}
-                            url={""}
-                        />
+                        <div className="text-gray-500 font-semibold lg:text-xl text-xs mb-5 ml-3">List of Open Elective-I & II</div>
+                        <div className="border grid grid-cols-11">
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Sr no.</div>
+                            <div className="col-span-2 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Course Code</div>
+                            <div className="col-span-4 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Course Title</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">L</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">T</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">P</div>
+                            <div className="col-span-1 border border-black flex flex-col justify-center text-red-900 font-semibold pl-4 py-2">Credits</div>
+                            <SyllabusComp
+                                srno={"1"}
+                                code={"OEHSXXX"}
+                                title={"Industrial Economics and Financial Management"}
+                                L={"3"} T={"0"} P={"0"}
+                                cred={"3"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                srno={"2"}
+                                code={"OEHSXXX"}
+                                title={"Organisational Behaviour & Industrial Psychology"}
+                                L={"3"} T={"0"} P={"0"}
+                                cred={"3"}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                srno={"3"}
+                                code={""}
+                                title={"History of Science & Technology"}
+                                L={""} T={""} P={""}
+                                cred={""}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                srno={"4"}
+                                code={""}
+                                title={"Introduction to Intellectual Property Rights"}
+                                L={""} T={""} P={""}
+                                cred={""}
+                                url={""}
+                            />
+                            <SyllabusComp
+                                srno={"5"}
+                                code={""}
+                                title={"Business Environment & Indian Economy"}
+                                L={""} T={""} P={""}
+                                cred={""}
+                                url={""}
+                            />
 
+                        </div>
                     </div>
                 </div>
-                </div>
-              
-      
+
+
                 <div className={`mb-10 ${(pg == false) ? "hidden" : ""}`}>
                     <div className="text-red-900 font-semibold lg:text-2xl text-xl mb-8">PG PROGRAM :-</div>
                     <div className="border grid grid-cols-12">
@@ -538,7 +528,7 @@ export default function Page() {
 
                     </div>
                 </div>
-       
+
             </div>
         </div>
     )

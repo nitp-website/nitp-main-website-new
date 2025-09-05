@@ -111,11 +111,11 @@ const MEJournalPage = () => {
             .map((year) => (
               <div
                 key={year}
-                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-white"
+                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-blue-100"
               >
                 <button
                   onClick={() => toggleYear(year)}
-                  className="w-full px-4 py-3 bg-red-100 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-200 transition"
+                  className="w-full px-4 py-3 bg-red-200 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-300 transition"
                 >
                   Publications in {year} ({publications[year].length})
                   {openYears[year] ? <ChevronUp /> : <ChevronDown />}
@@ -127,18 +127,16 @@ const MEJournalPage = () => {
                       {publications[year].map((paper, index) => (
                         <li
                           key={index}
-                          className="p-4 border border-gray-200 bg-white rounded-md shadow-sm hover:shadow-md transition-transform duration-200"
+                          className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
                         >
                           <p className="text-gray-800">
                             {paper.authors && (
-                              <span className="font-semibold">
-                                {paper.authors}
-                              </span>
+                              <span className="font-semibold">{paper.authors}</span>
                             )}
                             ,{" "}
                             {paper.title && (
                               <span className="font-semibold text-blue-700">
-                                &quot;{paper.title}&quot;
+                                "{paper.title}"
                               </span>
                             )}
                             ,{" "}
@@ -154,7 +152,7 @@ const MEJournalPage = () => {
                             )}{" "}
                             {paper.volume && (
                               <span className="text-gray-700">
-                                Volume: {paper.volume}{" "}
+                                Volume: {paper.volume}
                               </span>
                             )}{" "}
                             {paper.publication_year && (

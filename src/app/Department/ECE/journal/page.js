@@ -111,11 +111,11 @@ const ECEJournalPage = () => {
             .map((year) => (
               <div
                 key={year}
-                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-white"
+                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-blue-100"
               >
                 <button
                   onClick={() => toggleYear(year)}
-                  className="w-full px-4 py-3 bg-red-100 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-200 transition"
+                  className="w-full px-4 py-3 bg-red-200 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-300 transition"
                 >
                   Publications in {year} ({publications[year].length})
                   {openYears[year] ? <ChevronUp /> : <ChevronDown />}
@@ -141,7 +141,7 @@ const ECEJournalPage = () => {
                             )}
                             ,{" "}
                             {paper.journal_name && (
-                              <span className="text-gray-700 font-semibold">
+                              <span className="text-gray-700 text-lg font-semibold">
                                 {paper.journal_name}
                               </span>
                             )}{" "}

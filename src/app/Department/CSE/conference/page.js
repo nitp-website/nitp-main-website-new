@@ -47,7 +47,6 @@ const CSEConferencePage = () => {
   return (
     <div className="min-h-screen bg-white bg-opacity-50">
       <div className="mx-auto px-4 py-8 max-w-6xl">
-        {" "}
         {/* Adjust the width here */}
         <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-700 text-center">
           Conference Publications
@@ -115,11 +114,11 @@ const CSEConferencePage = () => {
             .map((year) => (
               <div
                 key={year}
-                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-white"
+                className="mb-6 border border-gray-300 rounded-lg shadow-md bg-blue-100"
               >
                 <button
                   onClick={() => toggleYear(year)}
-                  className="w-full px-4 py-3 bg-red-100 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-200 transition"
+                  className="w-full px-4 py-3 bg-red-200 text-left text-lg font-bold text-red-700 flex justify-between items-center hover:bg-red-300 transition"
                 >
                   Publications in {year} ({publications[year].length})
                   {openYears[year] ? <ChevronUp /> : <ChevronDown />}
@@ -131,18 +130,15 @@ const CSEConferencePage = () => {
                       {publications[year].map((paper, index) => (
                         <li
                           key={index}
-                          className="p-4 border border-gray-200 bg-white rounded-md shadow-sm hover:shadow-md transition-transform duration-200"
+                          className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
                         >
                           <p className="text-gray-800">
-                            <span className="font-semibold">
-                              {paper.authors}
-                            </span>,
-                            {" "}
+                            <span className="font-semibold">{paper.authors}</span>,{" "}
                             <span className="font-semibold text-blue-700">
                               "{paper.title}"
                             </span>
                             ,
-                            <span className="text-gray-700 font-bold">
+                            <span className="text-gray-700 text-lg font-bold">
                               {" "}
                               {paper.conference_name}
                             </span>
@@ -152,7 +148,7 @@ const CSEConferencePage = () => {
                             </span>
                             <span className="text-gray-700">
                               {" "}
-                              (Year: {paper.conference_year})
+                              ({paper.conference_year})
                             </span>
                           </p>
                           {paper.doi && (

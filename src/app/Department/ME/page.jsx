@@ -1,39 +1,31 @@
 "use client";
 import axios, { all } from "axios";
+import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
-const about = `The Department of Mechanical Engineering was established in 1952 with B. Tech program during the era of Bihar College of Engineering (BCE) which is well-known since 1924 as the sixth oldest Engineering College in India. In 1978, M. Tech Program was started with specializations in 'Thermal Turbo Machinery' and 'Refrigeration, Air Conditioning and Heat Transfer'. The Bihar College of Engineering was converted to National Institute of Technology Patna in 2004. `;
+const dept = "ME";
 
-const picture = ["/nit-patna-003.jpg"];
+const about = `The Department of Mechanical Engineering was established in 1952 with the B.Tech. program during the era of Bihar College of Engineering (BCE), which has been well known since 1924 as the sixth oldest engineering college in India. In 1978, the M.Tech. program was introduced with specializations in Thermal Turbo Machinery and Refrigeration, Air Conditioning, and Heat Transfer. Later, in 2004, Bihar College of Engineering was converted into the National Institute of Technology Patna. At present, the Department offers B.Tech. in Mechanical Engineering, M.Tech. programs with specializations in Design Engineering, Thermal Engineering, and Production Engineering, a Dual Degree (B.Tech. + M.Tech.) program in Mechanical Engineering with specialization in Manufacturing and Industrial Engineering, and Ph.D. programs. The B.Tech. program, which initially started with an intake of 20 students, now admits 120 students.`;
+
+const picture = ["https://i.postimg.cc/hGFcVRpp/IMG-20250825-WA0016.jpg", "https://i.postimg.cc/9FW4qZrr/IMG-20250825-WA0018.jpg","https://i.postimg.cc/2yXf6s1d/IMG-20250825-WA0019.jpg", "https://i.postimg.cc/5NFrLYTW/IMG-20250825-WA0017.jpg"];
 
 export default function ME() {
   const router = useRouter();
   const [feature, setFeature] = useState(picture[0]);
   const [it, setIt] = useState(0);
   const [Notices, setNotices] = useState([]);
-  const [counts, setCounts] = useState({});
+  const [data, setData] = useState({});
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=me`);
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=me`);
         // console.log("Counts Response:", countsResponse.data);
-        setNotices(response.data);
-        setCounts([
-          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
-          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
-          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} /> },
-          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} /> },
-          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} /> },
-          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} /> },
-        ]);
-
-
+        setData(countsResponse.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -67,13 +59,13 @@ export default function ME() {
 
             {/* Navigation Buttons */}
             <button
-              onClick={() => setIt((prev) => (prev === 0 ? picture.length - 1 : prev - 1))}
+              onClick={() => setIt((prev) => (prev === 0 ? picture.length - 1 : (picture.length + prev - 1) % picture.length))}
               className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-black bg-opacity-50 hover:bg-opacity-70 px-3 py-1 rounded-full z-10"
             >
               &#8249;
             </button>
             <button
-              onClick={() => setIt((prev) => (prev === picture.length - 1 ? 0 : prev + 1))}
+              onClick={() => setIt((prev) => (prev === picture.length - 1 ? 0 : (prev + 1) % picture.length))}
               className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-black bg-opacity-50 hover:bg-opacity-70 px-3 py-1 rounded-full z-10"
             >
               &#8250;
@@ -97,22 +89,27 @@ export default function ME() {
             </div>
             <div className="px-2 flex mx-auto gap-2 flex-1 shrink-0">
               <div className="w-[100%] mx-auto p-2 text-justify text-black">
-                {about.split("\n").map((line, index) => (
+                {about.split("\n").map((line, index, arr) => (
                   <p key={index} className="mb-2">
                     {line}
-                  </p> 
-                  
+                    {index === arr.length - 1 && (
+                      <button
+                        onClick={() => router.push('/Department/ME/about')}
+                        className="text-blue-600 ml-2"
+                      >
+                        more..
+                      </button>
+                    )}
+                  </p>
                 ))}
-                
               </div>
-                
             </div>
           </div>
 
           <div className="flex flex-col w-full mb-10 lg:mb-0">
             {
-              counts.length && (
-                <DepartmentCounter counts={counts} />
+              data && (
+                <DepartmentCounter data={data} dept={dept} />
               )
             }
           </div>

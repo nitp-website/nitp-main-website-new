@@ -1,43 +1,75 @@
-import BackDepartment from "../../../components/department/BackDepartment"
+"use client";
+import React, { useState, useEffect } from "react";
+import DepartmentCounter from "../../../components/department/DepartmentCounter.js";
+import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
 
+import axios from "axios";
 
-function page() {
-    return (
-        <div className=" flex flex-col p-10 max-sm:p-2 text-black">
-            <div className="flex flex-col  mb-16">
-                <div>
-                    <p className="text-red-900 text-3xl max-sm:text-2xl font-bold">
-                        ABOUT
-                    </p>
-                </div>
-                <div className="mt-2">
-                    <p className="text-gray-500 text-xl font-semibold">
-                        ELECTRICAL ENGINEERING
-                    </p>
-                </div>
-                <BackDepartment navigate={"/Department/EE"} />
+const dept = "EE";
+
+const aboutContent = (
+  <div className="space-y-4 text-justify text-black">
+    <p>
+      The Department of Electrical Engineering at NIT Patna stands as one of the pioneering centers of technical education in the country, tracing its origins back to 1945 when it was established under Patna University with a modest intake of just 20 students. Over the decades, the department has steadily expanded in scale, scope, and stature—transforming itself into a hub of academic excellence, cutting-edge research, and industry-driven innovation. From its early years of offering a four-year B.Sc. (Engineering) program, it evolved into a five-year integrated course in 1960, before reverting to a four-year format in 1972. Adapting to the changing needs of society and industry, the department has consistently grown in strength, increasing its intake from 30 students in the early years to 116 at present in the B.Tech. program. Alongside undergraduate education, postgraduate programs in Power Systems and Control Systems Engineering were introduced in 1978 with AICTE approval, paving the way for advanced specialization and research. Today, the department offers a comprehensive academic portfolio that includes B.Tech. in Electrical Engineering (Intake: 116), Dual Degree (B.Tech. in Electrical Engineering + M.Tech. in Power Systems) with an intake of 23, M.Tech. programs in Power System Engineering, Control System Engineering, and Intelligent Transport Systems (Intake: 10 each), as well as a Ph.D. program in Electrical Engineering across all allied domains.
+    </p>
+    <p>
+      The department is equipped with 13 state-of-the-art laboratories that cover the full spectrum of electrical engineering education and research. From foundational facilities such as the Elements of Electrical Engineering Lab and Electrical Machines Lab to advanced setups like the SCADA Lab, High Voltage Lab, and Advanced Instrumentation Lab, these laboratories provide students with invaluable hands-on experience, enabling them to connect theoretical knowledge with practical applications.
+    </p>
+    <p>
+      It is powered by 26 distinguished faculty members whose expertise spans across diverse specializations. Their collective efforts have nurtured a vibrant research ecosystem, organized into eight thematic research groups: Power & Energy Systems, Electrical Machines & Drives, Control Theory & Practices, Power Electronics & Applications, Electric Vehicles & Energy Storage Systems, Instrumentation & Signal Processing, Semiconductor Devices & Circuit Systems, and Robotics & Automation. This collaborative framework supports pioneering work that addresses both fundamental challenges and emerging technologies in the field.
+    </p>
+    <p>
+      The department has consistently contributed impactful research to the global knowledge base. To date, it has produced over 330 publications in SCI/SCIE-indexed journals, filed 23 patents (15 of which were granted in AY 2024–25), and executed 15 externally sponsored research projects that bridge academia and industry. In addition, it organized 19 Faculty Development Programs (FDPs) in AY 2024–25, underlining its commitment to knowledge dissemination and capacity building. Beyond statistics, these achievements reflect a deeply ingrained culture of excellence, innovation, and societal relevance.
+    </p>
+    <p>
+      It has also successfully guided 33 Ph.D. scholars to completion, with several more currently pursuing their research journeys. Through rigorous training, expert mentorship, and exposure to real-world challenges, these scholars are contributing to the next wave of innovation and leadership in electrical engineering.
+    </p>
+    <p>
+      With a legacy spanning nearly eight decades, the Department of Electrical Engineering at NIT Patna has firmly established itself as a beacon of knowledge and innovation. By blending strong academic foundations with future-ready research and active industry engagement, the department continues to play a pivotal role in powering national progress and contributing to global technological advancement.
+    </p>
+  </div>
+);
+
+const Aboutpage = () => {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=ee`);
+        // console.log("Counts Response:", countsResponse.data);
+        setData(countsResponse.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    getData();
+  }, []);
+
+  return (
+    <div>
+      {/* About the department section */}
+      <div className="py-1 mt-2">
+        <div className="w-full px-5 xs:px-0 md:w-[90%] mx-auto">
+          <div className="w-full">
+            <h2 className="text-center text-4xl text-[#e30f0f] mt-2">
+              About The Department
+            </h2>
+
+            <div className="w-full mx-auto px-2 py-5 text-justify text-black">
+              {aboutContent}
             </div>
-            {/* section 1 */}
-            <div className="mb-5">
-                <p className="text-justify">The Department of Electrical Engineering was established in 1945 under Patna University with an intake of 20 students leading to Bachelor of Science (Engineering) degree of four-year duration. The four-year course was later changed to five-year integrated course in 1960 with an intake of 30 students and it continued up to 1972. Again, a four-year course was introduced in 1972 with the same intake capacity of 30 students. The intake was increased from 30 to 40 students in the sessions of 2005-06 and further in 2006-07 the intake capacity was increased to 60 students.</p>
-            </div>
-            <div className="mb-5">
-                <p>Earlier in 1978, AICTE approved a Post Graduate (PG) course in the department leading to M. Tech. Degree in two specializations:</p>
-                <ol className="list-decimal list-inside ml-5 text-md">
-                    <li>Power System Engineering and</li>
-                    <li>Control System Engineering with an intake capacity of 10 in each specialization. The intake in the PG program was further increased to 18 students per specialization in 2004-05. The intake has been revised at the UG level in 2019-20 session to 110 and for PG, M. Tech. (Control Systems) – 22, and M. Tech. (Power Systems)- 23 making a total of 45.</li>
-                </ol>
-            </div>
-            <div className="mb-5">
-                <p className="text-justify my-4">
-                    Department owns 13 different laboratories, namely Elements of Electrical Engg. Lab., Electrical M/C Lab, Power System Protection Lab, Power Electronics Lab, Computer Lab, Microprocessor and Microcontroller Lab, Network theory Lab, Control System Lab, Measurement Lab, High Voltage Lab, SCADA Lab, Industrial Drives and Control Lab, and Advanced Instrumentation Lab. The Electrical Engineering Department, NIT Patna is one of the established departments of academic excellence of NIT Patna, known for its research and technological innovation in its domain. At present, the Electrical Engineering Department, comprising 26 dedicated members, has established itself as a formidable force in the realm of electrical engineering education and research. Their collective expertise spans a diverse array of specialties, reflecting the department's commitment to both breadth and depth in its academic offerings. One of the hallmarks of the department is its robust research ecosystem, characterized by eight broad research groups. These groups delve into areas of critical importance such as Power and Energy Systems, Electrical Machine & Drives, Control Theory & Practices, Power Electronics & its Application, Electric Vehicles & Energy Storage System, Instrumentation & Signal Processing, Semiconductor Devices & Circuit System and Robotics & Automation. Through their pioneering research endeavours, faculty members have amassed an impressive track record, boasting more than 330 publications in SCI/SCIE indexed Journals and securing 23 patents to date. Beyond the realm of pure research, the department actively engages with industry partners through 15 externally sponsored projects, which serve as conduits for translating theoretical knowledge into practical applications. These projects, whether ongoing or completed, represent the department's commitment to bridging the gap between academia and industry, fostering innovation that resonates beyond the confines of the university campus. Moreover, the department's influence resonates worldwide as it mentored 33 Ph.D scholars who have attained their degrees, with many more in pipeline, embodying the forefront of future innovation in electrical engineering. Through rigorous academic training and personalized guidance, these scholars are equipped with the tools and knowledge necessary to address the pressing challenges of the 21st century. In essence, the Electrical Engineering Department, NIT Patna serves as a beacon of excellence, driving forward the frontiers of knowledge and innovation in the field of electrical engineering. Through its multifaceted approach to education, research, and industry collaboration, the department continues to make profound contributions to both academia and society at large.
-                </p>
-            </div>
+          </div>
+
+          {
+            data && (
+              <DepartmentCounter data={data} dept={dept} />
+            )
+          }
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-
-
-
-export default page
+export default Aboutpage;
