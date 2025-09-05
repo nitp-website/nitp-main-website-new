@@ -129,7 +129,7 @@ const Sidebar = () => {
   );
 };
 
-const SidebarItem = ({ icon, text, isActive, onClick }) => {
+export const SidebarItem = ({ icon, text, isActive, onClick }) => {
   return (
     <li
       className={`flex items-center px-4 py-3 rounded-lg cursor-pointer transition-all font-medium text-base ${
