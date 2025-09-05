@@ -14,7 +14,7 @@ const ArchiFacultyPage = () => {
       {faculty && hasFaculty && (
         <div className="flex flex-col">
           <p className="text-red-900 text-xl lg:text-3xl font-bold text-center">FACULTY</p>
-          <FacultyList url={"/Department/Archi/Faculty"} branch={"arch"} />
+          <FacultyList url={"/Department/Archi/faculty"} branch={"arch"} />
         </div>
       )}
     </div>
