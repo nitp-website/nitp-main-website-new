@@ -14,7 +14,7 @@ const PhyFacultyPage = () => {
       {faculty && hasFaculty && (
         <div className="flex flex-col w-full">
           <p className="text-red-900 w-full text-xl lg:text-3xl font-bold text-center">FACULTY</p>
-          <FacultyList url={"/Department/Phy/Faculty"} branch={"phy"} />
+          <FacultyList url={"/Department/Phy/faculty"} branch={"phy"} />
         </div>
       )}
     </div>
