@@ -31,7 +31,10 @@ const Slider = () => {
         className="mySwiper w-full h-[30vh] md:h-[530px] flex justify-center items-center "
       >
         <SwiperSlide>
-          <img src="https://i.postimg.cc/65rq8B9f/2025-SIP-Banner-Website.jpg" />
+          <img src="https://i.postimg.cc/1t0G3hCk/image.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://i.postimg.cc/FHQKvKyk/image.png" />
         </SwiperSlide>
         <SwiperSlide>
           {/* <img src="/homepage/MainEntrance.jpg" /> */}
@@ -49,18 +52,11 @@ const Slider = () => {
         <SwiperSlide>
           <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainBuilding.webp" />
         </SwiperSlide>
-
-        <SwiperSlide>
-          <img src="https://i.postimg.cc/J42hsCPZ/2-scientist.png" />
-        </SwiperSlide>
         <SwiperSlide>
           <img src="https://i.postimg.cc/vZgyyTkp/image.png" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://i.postimg.cc/0jDVqSGQ/Image-1-00001.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://i.postimg.cc/02dwnf6F/nit-patna-002.jpg" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://i.postimg.cc/h4mxzgKS/nit-patna-004.jpg" />

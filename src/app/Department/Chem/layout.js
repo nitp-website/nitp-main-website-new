@@ -117,7 +117,7 @@ export default function Layout({ children }) {
     const [isMenuOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="flex flex-col md:flex-row w-full mb-8">
+        <div className="flex flex-col md:flex-row w-full mb-8 relative">
             <button
                 className="md:hidden mt-2 ml-8 p-2 bg-gray-500 rounded-md mb-4 w-fit"
                 onClick={() => setIsOpen(!isMenuOpen)}
@@ -126,9 +126,15 @@ export default function Layout({ children }) {
             </button>
 
             <div
-                className={`w-full md:w-1/4 lg:w-64 mb-6 h-full md:mb-0 transition-all duration-300 ${isMenuOpen ? "block" : "hidden md:block"}`}
+                className={`w-full md:w-1/4 lg:w-64 mb-6 h-full md:mb-0 transition-all duration-300 
+  ${isMenuOpen ? "block" : "hidden md:block"} md:sticky md:top-[64px] md:self-start`}
             >
-                <Sidebar onLinkClick={() => setIsOpen(false)} isMenuOpen={isMenuOpen} dept={dept} navItems={navItems} />
+                <Sidebar
+                    onLinkClick={() => setIsOpen(false)}
+                    isMenuOpen={isMenuOpen}
+                    dept={dept}
+                    navItems={navItems}
+                />
             </div>
 
             <div className="flex flex-col w-full md:w-3/4 lg:w-[85%] items-center">

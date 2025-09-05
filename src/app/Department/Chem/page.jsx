@@ -7,32 +7,27 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
-const about = `The Department of Chemical Science and Technology at the National Institute of Technology Patna are committed to excellence in education and research, fostering innovation and collaboration across various disciplines. The Department of Chemistry, established in 1924, has significantly expanded its academic and research offerings. The Department has expanded to include the discipline of Chemical Engineering in 2023, to emerge as a leader in field of chemical sciences and engineering education as well as technological advancements.`;
+const dept = "Chem";
 
-const picture = ["https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"];
+const about = `The Department of Chemical Science and Technology at the National Institute of Technology Patna are committed to excellence in education and research, fostering innovation and collaboration across various disciplines. The Department of Chemistry, established in 1924, has significantly expanded its academic and research offerings. The Department has expanded to include the discipline of Chemical Engineering in 2023, to emerge as a leader in field of chemical sciences and engineering education as well as technological advancements.
+
+The department offers a five-year UG-PG B. Tech. - M. Tech dual degree program in Chemical Technology to bridge the gap between chemistry and technological applications, preparing students for careers in both academia and industry.`;
+
+const picture = ["https://i.postimg.cc/hGFcVRpp/IMG-20250825-WA0016.jpg", "https://i.postimg.cc/9FW4qZrr/IMG-20250825-WA0018.jpg","https://i.postimg.cc/2yXf6s1d/IMG-20250825-WA0019.jpg", "https://i.postimg.cc/5NFrLYTW/IMG-20250825-WA0017.jpg"];
 
 export default function Che() {
   const router = useRouter();
   const [feature, setFeature] = useState(picture[0]);
   const [it, setIt] = useState(0);
   const [Notices, setNotices] = useState([]);
-  const [counts, setCounts] = useState({});
+  const [data, setData] = useState({});
 
   useEffect(() => {
     const getData = async () => {
       try {
         const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=che`);
         // console.log("Counts Response:", countsResponse.data);
-        setCounts([
-          { label: "Faculty", value: countsResponse.data?.user, icon: <UserSquare size={40} /> },
-          { label: "Research Scholars", value: countsResponse.data?.phd_candidates || 0, icon: <Users size={40} /> },
-          { label: "Journal Papers", value: countsResponse.data?.journal_papers || 0, icon: <FileText size={40} /> },
-          { label: "Conference Papers", value: countsResponse.data?.conference_papers || 0, icon: <Award size={40} /> },
-          { label: "Patents", value: countsResponse.data?.ipr || 0, icon: <ShieldCheck size={40} /> },
-          { label: "Projects", value: countsResponse.data?.sponsored_projects || 0, icon: <Briefcase size={40} /> },
-        ]);
-
-
+        setData(countsResponse.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -96,9 +91,17 @@ export default function Che() {
             </div>
             <div className="px-2 flex mx-auto gap-2 flex-1 shrink-0">
               <div className="w-[100%] mx-auto p-2 text-justify text-black">
-                {about.split("\n").map((line, index) => (
+                {about.split("\n").map((line, index, arr) => (
                   <p key={index} className="mb-2">
                     {line}
+                    {index === arr.length - 1 && (
+                      <button
+                        onClick={() => router.push('/Department/Chem/about')}
+                        className="text-blue-600 ml-2"
+                      >
+                        more..
+                      </button>
+                    )}
                   </p>
                 ))}
               </div>
@@ -107,8 +110,8 @@ export default function Che() {
 
           <div className="flex flex-col w-full mb-10 lg:mb-0">
             {
-              counts.length && (
-                <DepartmentCounter counts={counts} />
+              data && (
+                <DepartmentCounter data={data} dept={dept} />
               )
             }
           </div>

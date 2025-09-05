@@ -34,7 +34,7 @@ const FacultyList = ({ url, branch }) => {
           "Temporary Faculty"
         ];
 
-        // Sorting the faculty data based on the order of designations and academic_responsibility
+        // Sorting the faculty data based on the order of designations, academic_responsibility, and then by name
         const sortedData = data.sort((a, b) => {
           const aIsHoD = a.designation.includes("HoD");
           const bIsHoD = b.designation.includes("HoD");
@@ -60,7 +60,14 @@ const FacultyList = ({ url, branch }) => {
           }
 
           // If both are Deans or neither is Dean, use the regular designation order
-          return order.indexOf(a.designation) - order.indexOf(b.designation);
+          const designationComparison = order.indexOf(a.designation) - order.indexOf(b.designation);
+          
+          // If designations are the same, sort by name alphabetically
+          if (designationComparison === 0) {
+            return a.name.localeCompare(b.name);
+          }
+          
+          return designationComparison;
         });
 
         setFacultyData(sortedData);
@@ -88,7 +95,8 @@ const FacultyList = ({ url, branch }) => {
     ].includes(faculty.designation)
   );
 
-  // build ordered list used in original render
+  // build ordered list used in o
+riginal render
   const prioritizedDesignations = [
     "HoD & Professor",
     "HoD & Associate Professor",
@@ -158,6 +166,10 @@ const FacultyList = ({ url, branch }) => {
     );
   }
 
+  // Sort "others" by name alphabetically
+  const sortedOthers = others.sort((a, b) => a.name.localeCompare(b.name));
+
+
   return (
     <div className="flex flex-col p-2">
       {/*  Added a wrapper and the position dropdown */}
@@ -204,9 +216,33 @@ const FacultyList = ({ url, branch }) => {
               research_students={faculty.phd_candidates_count}
               profileLink={`${url}/${faculty.email}`}
             />
+
           ))
         ) : (
           <div className="text-center text-gray-600">No results found.</div>
+
+          ))}
+
+        {/* Render other faculties not in the order list */}
+        {sortedOthers.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-4 p-4 mt-8">
+            <h6 className="font-bold">Others</h6>
+            {sortedOthers.map((faculty) => (
+              <FacultyCard
+                key={faculty.id}
+                name={faculty.name}
+                image={faculty.image}
+                designation={faculty.designation}
+                department={faculty.department}
+                researchInterests={faculty.research_interest}
+                academic_responsibility={faculty.academic_responsibility}
+                email={faculty.email}
+                phone={faculty.ext_no}
+                profileLink={`${url}/${faculty.email}`}
+              />
+            ))}
+          </div>
+
         )}
       </div>
     </div>
@@ -214,4 +250,3 @@ const FacultyList = ({ url, branch }) => {
 };
 
 export default FacultyList;
-
