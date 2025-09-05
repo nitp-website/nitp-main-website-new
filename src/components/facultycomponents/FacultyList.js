@@ -95,8 +95,7 @@ const FacultyList = ({ url, branch }) => {
     ].includes(faculty.designation)
   );
 
-  // build ordered list used in o
-riginal render
+    // build ordered list used in original render
   const prioritizedDesignations = [
     "HoD & Professor",
     "HoD & Associate Professor",
@@ -218,10 +217,9 @@ riginal render
             />
 
           ))
-        ) : (
-          <div className="text-center text-gray-600">No results found.</div>
-
-          ))}
+          ) : (
+            <div className="text-center text-gray-600">No results found.</div>
+          )}
 
         {/* Render other faculties not in the order list */}
         {sortedOthers.length > 0 && (

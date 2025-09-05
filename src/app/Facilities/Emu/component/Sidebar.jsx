@@ -2,38 +2,21 @@
 import React from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { FaHome } from 'react-icons/fa';
-
 import { RiAdminFill } from "react-icons/ri";
 import { FaPhone } from "react-icons/fa6";
 import { IoMdPhotos } from "react-icons/io";
-
-import { FaHome } from "react-icons/fa";
-import { usePathname, useRouter } from "next/navigation";
-
 import { SiGoogleforms } from "react-icons/si";
 
 const Sidebar = () => {
   const pathname = usePathname();
   const router = useRouter();
-
+  const basePath = '/Facilities/Emu';
+  const baseRoute = pathname.replace(basePath, '');
 
   const handleNavigation = (path) => {
     if (pathname !== path) {
       router.push(path);
     }
-  };
-
-  const basePath = '/Facilities/Emu';
-  const baseRoute = pathname.replace(basePath, '');
-
-
-  const basePath = "/Facilities/Emu";
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const handleNavigation = (path) => {
-    router.push(path);
-    if (onLinkClick) onLinkClick();
   };
 
   return (
