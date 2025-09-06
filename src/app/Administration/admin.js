@@ -156,37 +156,58 @@ const BWC = [
 
 const IDC = [
  {
-  name: "Prof. Samrat Mukherjee",
-  designation: "Dean(Student Welfare)",
-  type: "Chairman",
+  name: "Prof. Prabhat Kumar",
+  designation: "Dean (Student Welfare)",
+  type: "Ex-Officio Chairman",
  },
  {
-  name: "Prof. Prakash Chandra",
-  designation: "Director's Nominee",
+  name: "Dr. Bhabani S. Das",
+  designation: "Director's Nominee (SC/ST) representative",
   type: "Member",
  },
  {
-  name: "Dr. Bambam Kumar",
-  designation: "Asst. Chairman Hostel Management Committee",
+  name: "Dr. Sangeeta Singh",
+  designation: "Senate Chairman's Nominee (Female nominee)",
   type: "Member",
  },
  {
   name: "",
   designation:
-   "Warden of the Hostel of Residence of which the student concerned is a boarder",
-  type: "Member",
+   "Chief Proctor or his nominee from the Proctorial Board",
+  type: "Ex-Officio Member",
  },
- {
-  name: "Dr. Mala De",
-  designation: "One faculty nominated by the Senate",
-  type: "Member",
- },
- 
  {
   name: "Dr. Asit Narayan",
-  designation: "Registrar, NIT Patna",
-  type: "Member Secretary",
+  designation: "Registrar",
+  type: "Ex-Officio Member",
  },
+ {
+  name: "",
+  designation: "Associate Deans (SW) of the concerned campus",
+  type: "Ex-Officio Member",
+ },
+ {
+  name: "Dr. Bambam Kumar",
+  designation: "Chairman, Hostel Management Committee",
+  type: "Ex-Officio Member",
+ },
+ {
+  name: "",
+  designation: "HOD's of Concerned Department",
+  type: "Ex-Officio Member",
+ },
+ {
+  name: "",
+  designation: "Warden of the Hostel of Residence of which the student concerned is a boarder (if applicable)",
+  type: "Ex-Officio Member",
+ },
+ {
+  name: "Shri Jay Prakash Sharma",
+  designation: "Assistant Registrar (General Admin)",
+  type: "Ex-Officio Member Secretary",
+ },
+
+
 ]
 const FC = [
  {
