@@ -413,7 +413,7 @@ const ArticlesList = () => {
                     Previous
                   </button>
                   
-                  <div className="px-4 py-2 bg-white border border-gray-300 rounded-md flex items-center">
+                  <div className="px-4 py-2 text-black bg-white border border-gray-300 rounded-md flex items-center">
                     Page {currentPage} of {totalPages}
                   </div>
                   
