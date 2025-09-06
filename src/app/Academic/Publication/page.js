@@ -18,7 +18,7 @@ const ArticlesList = () => {
     const year = now.getFullYear();
     const month = now.getMonth();
     
-    if (month >= 6) { // July to December
+    if (month >= 6) { // July to December 
       return `${year}-${year + 1}`;
     } else { // January to June
       return `${year - 1}-${year}`;
