@@ -2,8 +2,12 @@ import React from "react";
 import Link from "next/link";
 
 export const AcadProgramCard = ({ program }) => {
-  const isMCAAIorDS =
-    program.syllabus === "mca-ai" || program.syllabus === "mca-ds";
+  const hasDifferentVersions =
+    program.syllabus === "mca-ai" || 
+    program.syllabus === "mca-ds" ||
+    program.syllabus === "btech" ||
+    program.syllabus === "dual-cs" ||
+    program.syllabus === "dual-ds";
 
   return (
     <div className="w-full mx-auto md:w-[48%] bg-white border-2 border-red-800 rounded-xl shadow transition-shadow p-2 md:p-6 flex flex-col justify-between mb-4 hover:shadow-lg shadow-gray-200">
@@ -33,16 +37,16 @@ export const AcadProgramCard = ({ program }) => {
       </div>
       <div className="mt-4 mx-auto flex gap-2">
         {program.syllabus &&
-          (isMCAAIorDS ? (
+          (hasDifferentVersions ? (
             <>
               <a href={`/Department/CSE/syllabus/${program.syllabus}-old`}>
                 <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md transition hover:bg-red-800 hover:text-white cursor-pointer">
-                  Curriculum 2024 onwards
+                  Curriculum and Syllabus 2024 onwards
                 </button>
               </a>
               <a href={`/Department/CSE/syllabus/${program.syllabus}`}>
                 <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md transition hover:bg-red-800 hover:text-white cursor-pointer">
-                  Curriculum 2025 onwards
+                  Curriculum and Syllabus 2025 onwards
                 </button>
               </a>
             </>
