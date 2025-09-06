@@ -1,4 +1,5 @@
 # Dependencies
+#useful for Node.js projects
 node_modules
 npm-debug.log*
 yarn-debug.log*
