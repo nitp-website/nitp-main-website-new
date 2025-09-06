@@ -73,7 +73,7 @@ const RegistrarPage = () => {
                 </ul>
               </div>
 
-              <div className="border-2 rounded-xl pl-4 mt-4 pb-2">
+              {/* <div className="border-2 rounded-xl pl-4 mt-4 pb-2">
                 <div className="grid md:grid-cols-2 p-3  md:gap-20">
                   <div>
                     <span className="text-red-800 text-xl font-bold mt-4">
@@ -122,7 +122,7 @@ const RegistrarPage = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
