@@ -75,7 +75,7 @@ const RecruitmentProcess = () => {
                 </td>
               </tr>
 
-              <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
+              {/* <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
                 <td className="text-left px-6 py-4 text-gray-800">
                   <p className="leading-relaxed">
                  SOP Faculty Recruitment (Online Application form and Related Annexures)
@@ -101,7 +101,7 @@ const RecruitmentProcess = () => {
                     </Link>
                   </div>
                 </td>
-              </tr>
+              </tr> */}
 
               <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
                 <td className="text-left px-6 py-4 text-gray-800">
