@@ -159,16 +159,19 @@ const IDC = [
   name: "Prof. Prabhat Kumar",
   designation: "Dean (Student Welfare)",
   type: "Ex-Officio Chairman",
+  url:"https://www.nitp.ac.in/profile/prabhat@nitp.ac.in"
  },
  {
   name: "Dr. Bhabani S. Das",
   designation: "Director's Nominee (SC/ST) representative",
   type: "Member",
+  url:"https://www.nitp.ac.in/profile/bsd.ce@nitp.ac.in"
  },
  {
   name: "Dr. Sangeeta Singh",
   designation: "Senate Chairman's Nominee (Female nominee)",
   type: "Member",
+  url:"https://www.nitp.ac.in/profile/sangeeta.singh@nitp.ac.in"
  },
  {
   name: "",
@@ -190,6 +193,7 @@ const IDC = [
   name: "Dr. Bambam Kumar",
   designation: "Chairman, Hostel Management Committee",
   type: "Ex-Officio Member",
+  url:"https://www.nitp.ac.in/profile/bambam.ec@nitp.ac.in"
  },
  {
   name: "",

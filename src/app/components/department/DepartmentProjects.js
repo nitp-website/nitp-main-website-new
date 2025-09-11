@@ -53,6 +53,8 @@ export const DepartmentProjects = ({ data }) => {
                         key={index}
                         className="p-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform duration-300"
                       >
+                        {/* Project Name (if exists) */}
+                        
                         {/* Project Title */}
                         <h3 className="text-lg font-semibold text-blue-800">
                           {project.project_title}
@@ -62,6 +64,13 @@ export const DepartmentProjects = ({ data }) => {
                         {project.role && (
                           <p className="text-gray-700">
                             <strong>Role:</strong> {project.role}
+                          </p>
+                        )}
+
+                        {/* Investigators */}
+                        {project.investigators && project.investigators !== "NA" && (
+                          <p className="text-gray-700">
+                            <strong>Investigators:</strong> {project.investigators}
                           </p>
                         )}
 
