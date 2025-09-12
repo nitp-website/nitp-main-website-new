@@ -41,7 +41,7 @@ export const AcadProgramCard = ({ program }) => {
             <>
               <a href={`/Department/CSE/syllabus/${program.syllabus}-old`}>
                 <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md transition hover:bg-red-800 hover:text-white cursor-pointer">
-                  Curriculum and Syllabus 2024 onwards
+                  Curriculum and Syllabus 2022 onwards
                 </button>
               </a>
               <a href={`/Department/CSE/syllabus/${program.syllabus}`}>
