@@ -36,28 +36,31 @@ export const AcadProgramCard = ({ program }) => {
         )}
       </div>
       <div className="mt-4 mx-auto flex gap-2">
-        {program.syllabus &&
-          (hasDifferentVersions ? (
-            <>
-              <a href={`/Department/CSE/syllabus/${program.syllabus}-old`}>
-                <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md transition hover:bg-red-800 hover:text-white cursor-pointer">
-                  Curriculum and Syllabus 2022 onwards
-                </button>
-              </a>
-              <a href={`/Department/CSE/syllabus/${program.syllabus}`}>
-                <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md transition hover:bg-red-800 hover:text-white cursor-pointer">
-                  Curriculum and Syllabus 2025 onwards
-                </button>
-              </a>
-            </>
-          ) : (
-            <a href={`/Department/CSE/syllabus/${program.syllabus}`}>
-              <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer">
-                Curriculum / Syllabus
-              </button>
-            </a>
-          ))}
-      </div>
+  {program.syllabus &&
+    (hasDifferentVersions ? (
+      <>
+        <a href={`/Department/CSE/syllabus/${program.syllabus}-old`}>
+          <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md transition hover:bg-red-800 hover:text-white cursor-pointer">
+            Curriculum and Syllabus{" "}
+            {(program.syllabus === "mca-ai" || program.syllabus === "mca-ds")
+              ? "2024 onwards"
+              : "2022 onwards"}
+          </button>
+        </a>
+        <a href={`/Department/CSE/syllabus/${program.syllabus}`}>
+          <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md transition hover:bg-red-800 hover:text-white cursor-pointer">
+            Curriculum and Syllabus 2025 onwards
+          </button>
+        </a>
+      </>
+    ) : (
+      <a href={`/Department/CSE/syllabus/${program.syllabus}`}>
+        <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer">
+          Curriculum / Syllabus
+        </button>
+      </a>
+    ))}
+    </div>
     </div>
   );
 };

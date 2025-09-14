@@ -73,10 +73,10 @@ const MTechPowerDSSyllabus = () => {
 
 const MTechCSESyllabus = () => {
     const courses = [
-        {
-            course: "M.Tech (Intelligent Transport Systems) Course structure and Syllabus",
-            link: "https://drive.google.com/file/d/1pES5tBVykgQJWu2TFNKkR-0BwrF5wtrW/view?usp=sharing",
-        },
+        // {
+        //     course: "M.Tech (Intelligent Transport Systems) Course structure and Syllabus",
+        //     link: "https://drive.google.com/file/d/1pES5tBVykgQJWu2TFNKkR-0BwrF5wtrW/view?usp=sharing",
+        // },
         {
             course: "M.Tech (Control System Engg and Power System Engg) Course structure",
             link: "https://drive.google.com/file/d/1HOzQYLI-96kpv4gT9NDoKqLItHsALVzS/view",
