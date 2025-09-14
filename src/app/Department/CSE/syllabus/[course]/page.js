@@ -38,7 +38,6 @@ const BTechSyllabusold = () => {
                     <div className="col-span-1 border border-black flex items-center justify-center py-2">P</div>
                     <div className="col-span-1 border border-black flex items-center justify-center py-2">Credits</div>
                 </div>
-
                 {/* Table Rows */}
                 <SyllabusComp
                     dep={"CSUG"}
@@ -285,8 +284,8 @@ const BTechSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"4"}
-                    code={"OP44XXX"}
-                    title={"Open Electives-1"}
+                    code={"CS44XXX"}
+                    title={"Dept Elective - 1"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -340,8 +339,8 @@ const BTechSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"5"}
-                    code={"CS54XXX"}
-                    title={"Dept Elective - I"}
+                    code={"OP54XXX"}
+                    title={"Open Elective - 1"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -351,7 +350,7 @@ const BTechSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"6"}
-                    code={"OP54XXX"}
+                    code={"OP64XXX"}
                     title={"MOOC"}
                     L={"X"}
                     T={"X"}
@@ -440,7 +439,7 @@ const BTechSyllabusold = () => {
                     dep={"CSUG"}
                     sem={"7"}
                     code={"CS74XXX"}
-                    title={"Dept. Elective-III(Minor in IOT/AI)"}
+                    title={"Dept. Elective-III (Minor in IOT/AI)"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -461,8 +460,8 @@ const BTechSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"OP74XXX"}
-                    title={"MOOC"}
+                    code={"CS74XXX/OP74XXX"}
+                    title={"Dept. Elective-5 / MOOC"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -491,7 +490,7 @@ const BTechSyllabusold = () => {
                     cred={"2"}
                     url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74124_Research Project-I.docx"
                 />
-                <SyllabusComp
+                {/* <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
                     code={"CS74125"}
@@ -501,7 +500,7 @@ const BTechSyllabusold = () => {
                     P={"4"}
                     cred={"2"}
                     url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74125_Research Seminar.docx"
-                />
+                /> */}
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"8"}
@@ -1316,6 +1315,16 @@ const BTechSyllabusold = () => {
                     cred={"3"}
                     url={"https://drive.google.com/file/d/1L70hxedl6t4xmd9P8zsG_7Ryrb6MevTk/view?usp=drivesdk"}
                 />
+            </div>
+            <div className="mt-4 text-gray-700 text-sm px-2">
+                <p>
+                    Note:
+1. Dept Elective-1 and Dept Elective -2 need to be chosen from Elective List-1. <br></br>
+2. 6th semester's MOOC courses can be completed during 3rd to 6th semesters. However, 
+registration of these MOOC courses will be done in sixth semester only. <br></br>
+3. Dept. Elective – 3, Dept. Elective -4 & Dept. Elective 5 need to be chosen from Elective list - 2 
+and Elective list -3.
+                </p>
             </div>
         </div>
     );
@@ -3932,6 +3941,17 @@ const DualCSyllabusold = () => {
                 />
                 <SyllabusComp
                     dep={"CSE"}
+                    sem={"4"}
+                    code={"CS44XXX"}
+                    title={"Dept Elective - 1"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />
+                <SyllabusComp
+                    dep={"CSE"}
                     sem={"5"}
                     code={"CS54116"}
                     title={"Software Engineering"}
@@ -3977,15 +3997,15 @@ const DualCSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
-                    code={"CS54XXX"}
-                    title={"Dept Elective - I"}
+                    code={"OP54XXX"}
+                    title={"Open Elective - I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
                     url={""}
                 />
-                <SyllabusComp
+                {/* <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
                     code={"OP54XXX"}
@@ -3995,7 +4015,7 @@ const DualCSyllabusold = () => {
                     P={"X"}
                     cred={"3"}
                     url={""}
-                />
+                /> */}
 
                 <SyllabusComp
                     dep={"CSE"}
@@ -4024,6 +4044,17 @@ const DualCSyllabusold = () => {
                     sem={"6"}
                     code={"CS641XX"}
                     title={"Dept. Elective - II"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />
+                <SyllabusComp
+                    dep={"CSE"}
+                    sem={"6"}
+                    code={"OP64XXX"}
+                    title={"MOOC"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4078,8 +4109,8 @@ const DualCSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"7"}
-                    code={"CS74XXX"}
-                    title={"Dept. Elective-I"}
+                    code={"CS74XXX3"}
+                    title={"Dept. Elective - 3"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4090,8 +4121,8 @@ const DualCSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"7"}
-                    code={"CS74XXX"}
-                    title={"Dept. Elective-II"}
+                    code={"CS74XXX3"}
+                    title={"Dept. Elective - 4"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4101,8 +4132,8 @@ const DualCSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"7"}
-                    code={"OP74XXX"}
-                    title={"MOOC"}
+                    code={"CS74XXX3/OP74XXX"}
+                    title={"Dept. Elective - 5 / MOOC"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4152,6 +4183,39 @@ const DualCSyllabusold = () => {
                     P={"2"}
                     cred={"4"}
                     url={"https://docs.google.com/document/d/14n6eimr8AnBr7L45Hvj-a25SXWqwgYD9/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
+                />
+                <SyllabusComp
+                    dep={"CSE"}
+                    sem={"8"}
+                    code={"CS84XXX3"}
+                    title={"Dept. Elective-6"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />
+                <SyllabusComp
+                    dep={"CSE"}
+                    sem={"8"}
+                    code={"CS84XXX3"}
+                    title={"Dept. Elective-7"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />
+                <SyllabusComp
+                    dep={"CSE"}
+                    sem={"8"}
+                    code={"OP84XXX"}
+                    title={"Open Elective-2"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
                 />
                 <SyllabusComp
                     dep={"CSE"}
@@ -4705,6 +4769,11 @@ const DualCSyllabusold = () => {
                     cred={"3"}
                     url={"https://docs.google.com/document/d/1EHZkkrk6SRXIf0zwWIG00x9XekoKKEa-/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true "}
                 />
+            </div>
+            <div className="mt-4 text-gray-700 text-sm px-2">
+                <p>
+                    Note:Dept. Electives - 3, 4, 5, 6 and 7 need to be chosen from Elective list - 3.
+                </p>
             </div>
         </div>
     );
@@ -6013,8 +6082,8 @@ const DualDSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"4"}
-                    code={"OP44XXX"}
-                    title={"Open Electives-1"}
+                    code={"CS44XXX"}
+                    title={"Dept Elective - 1"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6068,8 +6137,8 @@ const DualDSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
-                    code={"CS54XXX"}
-                    title={"Dept Elective - I"}
+                    code={"OP54XXX"}
+                    title={"Open Elective - I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6134,6 +6203,17 @@ const DualDSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"6"}
+                    code={"OP64XXX"}
+                    title={"MOOC"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />
+                <SyllabusComp
+                    dep={"CSE"}
+                    sem={"6"}
                     code={"CS64123"}
                     title={"Project"}
                     L={"0"}
@@ -6167,8 +6247,8 @@ const DualDSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"7"}
-                    code={"CS74XXX"}
-                    title={"Dept. Elective-I"}
+                    code={"CS74XXX3"}
+                    title={"Dept. Elective - 3"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6178,8 +6258,8 @@ const DualDSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"7"}
-                    code={"CS74XXX"}
-                    title={"Dept. Elective-II"}
+                    code={"CS74XXX3"}
+                    title={"Dept. Elective - 4"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6189,8 +6269,8 @@ const DualDSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"7"}
-                    code={"CS74XXX"}
-                    title={"MOOC"}
+                    code={"CS74XXX/OP74XXX"}
+                    title={"Dept. Elective - 5 / MOOC"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6244,8 +6324,8 @@ const DualDSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"8"}
-                    code={"CS84XXX"}
-                    title={"Dept. Elective-III"}
+                    code={"CS84XXX3"}
+                    title={"Dept. Elective - 6"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6255,8 +6335,8 @@ const DualDSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"8"}
-                    code={"CS84XXX"}
-                    title={"Dept Elective-IV"}
+                    code={"CS84XXX3"}
+                    title={"Dept Elective - 7"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6266,8 +6346,8 @@ const DualDSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"8"}
-                    code={"CS84XXX"}
-                    title={"MOOC"}
+                    code={"OP84XXX"}
+                    title={"Open Elective - 2"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6824,6 +6904,11 @@ const DualDSyllabusold = () => {
                     cred={"3"}
                     url={"https://docs.google.com/document/d/1jyFGE46oRuHdJ-0rDEyxmkh3D0DITmZT/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
                 />
+            </div>
+            <div className="mt-4 text-gray-700 text-sm px-2">
+                <p>
+                    Note:Dept. Electives - 3, 4, 5, 6 and 7 need to be chosen from Elective list - 2.
+                </p>
             </div>
         </div>
     );
