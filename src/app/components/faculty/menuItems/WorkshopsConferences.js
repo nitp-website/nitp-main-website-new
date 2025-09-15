@@ -45,12 +45,12 @@ const WorkshopsConferences = ({ data }) => {
               to{" "}
               <span className="text-gray-900 font-medium">
                 {formatDate(event.end_date)}
-              </span>
-              , with{" "}
+              </span>.
+              {/* , with{" "}
               <span className="text-gray-900 font-semibold">
                 {event.participants_count}
               </span>{" "}
-              participants.
+              participants. */}
             </p>
           </li>
         ))}
