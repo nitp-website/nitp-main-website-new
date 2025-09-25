@@ -1,272 +1,116 @@
 "use client"
 
-import { useRouter } from "next/navigation";
-
-
-
-
-
+import { useRouter } from "next/navigation"
+import * as LucideIcons from "lucide-react"
 
 export default function Page() {
-    const router = useRouter();
-    return (
-        <div>
-            <div className="my-10 mx-2 flex space-x-1 overflow-x-auto ">
-                <div className="min-w-[800px] flex space-x-1 text-sm lg:text-base">
-                    <div class=" items-center justify-center ml-auto">
-                        <h1 class="text-4xl font-bold text-center">All Courses</h1>
-                    </div>
-                    {/* <button onClick={() => {
-                        router.push("/Course")
-                    }} className={`border border-black rounded text-white bg-red-900 px-2`}>ALL Courses</button> */}
+  const router = useRouter();
+  
+  const departments = [
+    { 
+      name: "Applied Physics and Materials Engineering", 
+      path: "/Department/Phy", 
+      icon: "Atom"
+    },
+    { 
+      name: "Architecture & Planning", 
+      path: "/Department/Archi", 
+      icon: "Building2"
+    },
+    { 
+      name: "Chemical Science and Technology", 
+      path: "/Department/Chem", 
+      icon: "FlaskConical"
+    },
+    { 
+      name: "Civil Engineering", 
+      path: "/Department/CE", 
+      icon: "Construction"
+    },
+    { 
+      name: "Computer Science and Engineering", 
+      path: "/Department/CSE", 
+      icon: "Cpu"
+    },
+    { 
+      name: "Electrical Engineering", 
+      path: "/Department/EE", 
+      icon: "Zap"
+    },
+    { 
+      name: "Electronics And Communication Engineering", 
+      path: "/Department/ECE", 
+      icon: "Satellite"
+    },
+    { 
+      name: "Humanities & Social Sciences", 
+      path: "/Department/Humanities/syllabus", 
+      icon: "BookOpen"
+    },
+    { 
+      name: "Mathematics and Computing Technology", 
+      path: "/Department/Math", 
+      icon: "Calculator"
+    },
+    { 
+      name: "Mechanical Engineering", 
+      path: "/Department/ME", 
+      icon: "Cogs"
+    },
+    { 
+      name: "Mechatronics & Automation Engineering", 
+      path: "/Department/Mechatronics", 
+      icon: "CircuitBoard"
+    }
+  ];
 
-                    {/* <button onClick={() => {
-                        router.push("/Course/Ug")
-                    }} className={`border border-black rounded  text-red-900 px-2`}>UG Courses</button>
-                    
-                    <button onClick={() => {
-                        router.push("/Course/Pg")
-                    }} className={`border border-black rounded text-red-900 px-2`}>PG (M.tech/MURP) Course</button>
-                    
-                    <button onClick={() => {
-                        router.push("/Course/MTech")
-                    }} className={`border border-black rounded text-red-900 px-2`}>M.tech/MURP-PHD (DD)</button>
-                    
-                    <button onClick={() => {
-                        router.push("/Course/MSc")
-                    }} className={`border border-black rounded text-red-900 px-2`}>Integrated M.sc</button>
-                    
-                    <button onClick={() => {
-                        router.push("/Course/MCA")
-                    }} className={`border border-black rounded text-red-900 px-2`}>MCA program</button> */}
-                </div>
-            </div>
-            <div className="max-sm:mx-6 max-md:mx-8 mx-20 border p-4 rounded-md shadow-lg shadow-slate-400 backdrop-blur-md">
-                {/* LINKS */}
-                <div className="mb-10 text-black overflow-x-auto">
-                    <div className="w-[1250px]">
+  const renderIcon = (iconName) => {
+    const IconComponent = LucideIcons[iconName];
+    return IconComponent ? <IconComponent size={48} className="text-red-800" /> : <LucideIcons.GraduationCap size={48} className="text-red-800" />;
+  };
 
-                        <div className=" grid grid-cols-12  border border-black">
-                            <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-r border-black font-bold">S.no.</div>
-                            <div className="px-2 h-10 flex flex-col justify-center col-span-4 border-r border-black font-bold">Degree/Program</div>
-                            <div className="px-2 h-10 flex flex-col justify-center col-span-6 border-r border-black font-bold">Branch of specialization</div>
-                            <div className="px-2 h-10 flex flex-col justify-center col-span-1  font-bold">Duration</div>
-                        </div>
-                        {/* Under Graduate Programmes  */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="px-2 h-10 flex flex-col justify-center col-span-12">Under Graduate Programmes</div>
-                        </div>
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-r border-black">1</div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">Bachelor of Architecture</div>
-                            <div className="px-2 h-10 flex flex-col justify-center col-span-6 border-r border-black">Architecture</div>
-                            <div className="px-2 h-10 flex flex-col justify-center col-span-1 ">5 years</div>
-                        </div>
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">2</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">3</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">4</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">5</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">6</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">7</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">Bachelor of Technology</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Civil Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Computer Scince & Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Electrical Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Electronics & Communication Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Information Technology</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">Mechanical Engineering</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1 ">4 years</div>
-                        </div>
-
-                        {/* Post Graduate Programmes  */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="px-2 h-10 flex flex-col justify-center col-span-12">Post Graduate Programmes</div>
-                        </div>
-                        {/* Master of Technology (Civil Engineering) */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">1</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">2</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">3</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">4</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">5</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">Master of Technology (Civil Engineering)</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Water Resources Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Transportation Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Structural Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Environmental Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">Geotechnical Engineering</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1 ">2 years</div>
-                        </div>
-                        {/* Master of Technology (Electrical Engineering) */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">6</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">7</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">Master of Technology (Electrical Engineering)</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Control System Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">Power System Engineering</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1 ">2 years</div>
-                        </div>
-                        {/* Master of Technology (Electrical Engineering) */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">8</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">9</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">10</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">11</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">12</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">Master of Technology (Mechanical Engineering)</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Thermal Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Production Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Design Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Automobile Engineering</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">Renewable Energy Technology</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1 ">2 years</div>
-                        </div>
-                        {/* Master of Technology (Electrical Engineering) */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">13</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">14</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">Master of Technology (Computer Science & Engineering)</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Information Technology</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">Computer Science & Engineering</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1 ">2 years</div>
-                        </div>
-                        {/* Master of Technology (Electrical Engineering) */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">15</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">16</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">Master of Technology (Electronics & Communication Engineering)</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-b border-black">Communication Systems</div>
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">VLSI System Design and Microelectronics</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1 ">2 years</div>
-                        </div>
-
-                        {/* Master of Technology (Electrical Engineering) */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">17</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">Master in Urban & Regional Planning(MURP)</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">Urban and Regional Planning</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1 ">2 years</div>
-                        </div>
-                        {/* Master of Technology (Electrical Engineering) */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">18</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">M. Tech (Computational Mathematics)</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">Computational Mathematics</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1 ">2 years</div>
-                        </div>
-
-                        {/* Master of Technology (Electrical Engineering) */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">19</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">M. Tech (Nanoscience and Technology)</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">Nanoscience and Technology</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1 ">2 years</div>
-                        </div>
-
-                        {/* Five Years Integrated Programs */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="px-2 h-10 flex flex-col justify-center col-span-12">Five Years Integrated Programs</div>
-                        </div>
-                        {/* M. Sc.(Chemistry) */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r  border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">1</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r  border-black">M. Sc.(Chemistry)</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r  border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">Integrated M. Sc. in Chemistry</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1  border-black">5 years</div>
-                        </div>
-                        {/* M. Sc.(Mathematics) */}
-                        <div className=" grid grid-cols-12 border-b  border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r  border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">2</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r  border-black">M. Sc.(Mathematics)</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r  border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">Integrated M. Sc. in Mathematics</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1  border-black">5 years</div>
-                        </div>
-                        {/* M. Sc.(Physics) */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r  border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">3</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r  border-black">M. Sc.(Physics)</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r  border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">Integrated M. Sc. in Physics</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1  border-black">5 years</div>
-                        </div>
-
-                        {/* MCA program */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="px-2 h-10 flex flex-col justify-center col-span-12">MCA program</div>
-                        </div>
-                        {/* Master of Computer Applications */}
-                        <div className=" grid grid-cols-12  border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">1</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">Master of Computer Applications</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">specialization in AI & IoT</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1 border-black">3 years</div>
-                        </div>
-                        {/* Master of Computer Applications */}
-                        <div className=" grid grid-cols-12 border-b border-l border-r border-black">
-                            <div className="flex flex-col justify-center col-span-1 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1">2</div>
-                            </div>
-                            <div className="px-2  flex flex-col justify-center col-span-4 border-r border-black">Master of Computer Applications</div>
-                            <div className=" flex flex-col justify-center col-span-6 border-r border-black">
-                                <div className="px-2 h-10 flex flex-col justify-center col-span-1 border-black">specialization in Data Science & Informatics</div>
-                            </div>
-                            <div className="px-2 flex flex-col justify-center col-span-1 border-black">3 years</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="min-h-screen py-10 px-4" >
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <LucideIcons.GraduationCap size={48} className="text-red-900" />
+          </div>
+          <h1 className="text-4xl font-bold text-red-900 mb-2">Curriculum Offered by NIT Patna</h1>
+        
         </div>
-    )
+
+        {/* Departments Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {departments.map((dept, index) => (
+            <div 
+              key={index}
+              onClick={() => {
+                if (dept.name === "Humanities & Social Sciences") {
+                  router.push(dept.path);
+                } else {
+                  router.push(`${dept.path}/acadProgram`);
+                }
+              }}
+              className="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg border border-red-100 group"
+            >
+              <div className="p-6 flex flex-col items-center text-center h-full">
+                <div className="mb-4 p-3 rounded-full bg-red-50 group-hover:bg-red-100 transition-colors">
+                  {renderIcon(dept.icon)}
+                </div>
+                <h3 className="font-semibold text-red-900 text-lg mb-2 group-hover:text-red-700 transition-colors">
+                  {dept.name}
+                </h3>
+                <p className="text-red-600 text-sm mt-auto">
+                 View Curriculum &rarr;
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  )
 }

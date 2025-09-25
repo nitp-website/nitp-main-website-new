@@ -213,7 +213,7 @@ const FacultyList = ({ url, branch }) => {
               patents={faculty.ipr_count}
               projects={faculty.sponsored_projects_count}
               research_students={faculty.phd_candidates_count}
-              profileLink={`${url}/${faculty.email}`}
+              profileLink={`/profile/${faculty.email}`}
             />
 
           ))
@@ -236,7 +236,7 @@ const FacultyList = ({ url, branch }) => {
                 academic_responsibility={faculty.academic_responsibility}
                 email={faculty.email}
                 phone={faculty.ext_no}
-                profileLink={`${url}/${faculty.email}`}
+                profileLink={`/profile/${faculty.email}`}
               />
             ))}
           </div>
