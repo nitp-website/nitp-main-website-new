@@ -34,6 +34,9 @@ const Slider = () => {
           <img src="https://i.postimg.cc/0N1Yfkhc/NIRF.png" />
         </SwiperSlide>
         <SwiperSlide>
+          <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/Top+2%25+final.webp" />
+        </SwiperSlide>
+        <SwiperSlide>
           <img src="https://i.postimg.cc/FHQKvKyk/image.png" />
         </SwiperSlide>
         <SwiperSlide>
