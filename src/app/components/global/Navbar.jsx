@@ -887,7 +887,7 @@ useEffect(() => {
           </div>
           <div className="institute-info pt-4 hidden text-center items-center justify-center md:block text-black">
             <div>
-              An Institute of National Importance under Ministry of Education
+              An Institution of National Importance under Ministry of Education
             </div>
             <div>(Shiksha Mantralaya), Government of India</div>
           </div>
