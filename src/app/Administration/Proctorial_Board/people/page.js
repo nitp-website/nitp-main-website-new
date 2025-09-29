@@ -24,12 +24,12 @@ const Page = () => {
     //   type: "Dy. Chief Proctor",
     //   url: "https://www.nitp.ac.in/Department/Archi/faculty/arajay@nitp.ac.in",
     // },
-    {
-      name: "Dr. Shailesh Mani Pandey ",
-      designation: "Assistant Professor, Mechanical Engineering Dept.",
-      type: "Proctor",
-      url: "https://www.nitp.ac.in/Department/ME/faculty/smp.me@nitp.ac.in",
-    },
+    // {
+    //   name: "Dr. Shailesh Mani Pandey ",
+    //   designation: "Assistant Professor, Mechanical Engineering Dept.",
+    //   type: "Proctor",
+    //   url: "https://www.nitp.ac.in/Department/ME/faculty/smp.me@nitp.ac.in",
+    // },
     {
       name: "Dr. Gagandeep Meena ",
       designation: "Assistant Professor, Electrical Engineering Dept.",

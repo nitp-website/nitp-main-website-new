@@ -32,6 +32,12 @@ const Deans = [
    type: "dean.pd@nitp.ac.in",
    url:"https://www.nitp.ac.in/profile/sanjeev@nitp.ac.in",
   },
+   {
+   name: "Dr. Sanjay Kumar",
+   designation: "Dean Outreach & Alumni Affairs",
+  //  type: "dean.pd@nitp.ac.in",
+   url:"https://www.nitp.ac.in/profile/sanjay@nitp.ac.in",
+  }
   ]
  
  const AssDeans = [
@@ -84,8 +90,8 @@ const BOG = [
  },
  
  {
-  name: "Ms. Saumya Gupta",
-  type: "Joint Secretary Department of Higher Education, Ministry of Education, Govt. of India",
+  name: "Ms Garima Sharma",
+  type: "Dy. Secretary, Department of Higher Education,Ministry of Education, Govt. of India",
   designation: "Member",
  },
  {
@@ -100,13 +106,13 @@ const BOG = [
   designation: "Member",
  },
  {
-  name: "Prof. Fulena Rajak",
-  type: "Professor, Dept. of Architecture & Planning, NIT Patna",
+  name: "Prof. Ramesh Kumar",
+  type: "Professor, Dept. of Electrical Engineering & Dean (R&C), NIT Patna",
   designation: "Member",
  },
  {
-  name: "Dr. Reena Singh",
-  type: "Assistant Professor, Dept. of Civil Engineering, NIT Patna",
+  name: "Dr. Madhava Nand Pandey",
+  type: "Associate Professor, Dept. of Mechanical Engineering, NIT Patna",
   designation: "Member",
  },
  {
@@ -555,7 +561,7 @@ const ServiceUNIT = [
 
   
 {
-  name: "Dr. Shailesh Mani Pandey",
+  name: "Dr. Chetan Kumar Hirwani",
   type: "Assistant Professor",
   designation: " T & P Officer"
 },

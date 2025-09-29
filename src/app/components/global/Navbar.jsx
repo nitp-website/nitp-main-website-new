@@ -152,7 +152,7 @@ const navItems = [
         iconImage: President,
       },
       {
-        label: " NITs Councils",
+        label: " NITs Council",
         link: "/Administration/CONIT",
         iconImage: Person,
       },
