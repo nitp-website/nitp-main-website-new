@@ -94,7 +94,7 @@ Ghat is associated with the immersion of the ashes of the Father of the Nation,
 Mahatma Gandhi, in the river Ganges. The campus has a picturesque river view with
 historic buildings presenting a spectacle of architectural delight and natural beauty.</p>
 
-          <p className="text-muted-foreground">National Institute of Technology Patna has been declared an Institute of
+          <p className="text-muted-foreground">National Institute of Technology Patna has been declared an Institution  of
 National Importance, as given in the NIT Act, and has been granted fully
 autonomous status by the MoE (previously MHRD), Government of India. The
 institute has also been declared a Centre of Excellence for imparting high-level

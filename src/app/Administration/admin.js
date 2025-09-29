@@ -320,75 +320,10 @@ const Senate = [
     type: "Member"
   },
   {
-    name: "Prof. Sunita Kumari",
-    designation: "Professor, Civil Engineering Dept.",
-    type: "Member"
-  },
-  {
     name: "Prof. Pijush Samui",
     designation: "Professor, Civil Engineering Dept.",
     type: "Member"
   },
-  //===============================
- {
-    name: "Prof. Amit Kumar Singh",
-    designation: "Professor, Computer Science and Engineering Dept.",
-    type: "Member"
-  },
-  {
-    name: "Prof. Anil Kumar Das",
-    designation: "Professor, Mechanical Engineering Dept.",
-    type: "Member"
-  },
-  {
-    name: "Prof. Deepak Kumar Behera",
-    designation: "Professor, Humanities & Social Sciences Dept.",
-    type: "Member"
-  },
-  {
-    name: "Prof. Jayanta Ghosh",
-    designation: "Professor, Electronics and Communication Engineering.",
-    type: "Member"
-  },
-
-   {
-    name: "Prof. Rishi Kumar Jha",
-    designation: "Professor, Mathematics and Computing Technology Dept.",
-    type: "Member"
-  },
-  {
-    name: "Prof. Shailendra K. Mandal",
-    designation: "Professor, Architecture Dept.",
-    type: "Member"
-  },
-  {
-    name: "Prof. Shivendra Kumar Jaiswal",
-    designation: "Professor, Applied Physics and Material Engineering Dept.",
-    type: "Member"
-  },
-  {
-    name: "Prof.  Tasneem Parvin",
-    designation: "Professor, Chemical Science and Technology Dept.",
-    type: "Member"
-  },
-    {
-    name: "Prof. Vimlesh Verma",
-    designation: "Professor, Electrical Engineering Dept.",
-    type: "Member"
-  },
-  {
-    name: "Prof. Amit Kumar",
-    designation: "Professor, Mechatronics and Automation Engineering Dept.",
-    type: "Member"
-  },
-  {
-    name: "Prof. Sunita Kumari",
-    designation: "Professor, Civil Engineering Dept.",
-    type: "Member"
-  },
-
-
-  //////////////////////////////////
   {
     name: "Prof. M.P. Singh",
     designation: "Professor, Computer Science and Engineering Dept.",
@@ -424,52 +359,71 @@ const Senate = [
     designation: "Professor, Mechanical Engineering Dept.",
     type: "Member"
   },
-  {
-    name: "Prof. Amit Kumar",
-    designation: "Professor, Mechanical Engineering Dept.",
-    type: "Member"
-  },
-  //===============================
-  {
+    {
     name: "Prof. Samrat Mukherjee",
     designation: "Professor, Applied Physics and Materials Engg. Dept.",
     type: "Member"
   },
+  //===============================
   {
-    name: "Dr. Subrata Das",
-    designation: "Associate Professor & Head, Chemical Science and Technology",
+    name: "Prof. Sunita Kumari",
+    designation: "Professor & HoD, Civil Engineering Dept.",
     type: "Member"
   },
-  {
-    name: "Dr. D.K. Mahato",
-    designation: "Associate Professor & Head, Applied Physics and Materials Engg. Dept.",
-    type: "Member"
-  },
-  {
-    name: "Dr. R.K. Jha",
-    designation: "Associate Professor & Head, Mathematics and Computing Technology",
-    type: "Member"
-  },
-  {
-    name: "Dr. R.K. Mandal",
-    designation: "Associate Professor & Head, Electrical Engineering Dept.",
-    type: "Member"
-  },
-  {
-    name: "Dr. Jayanta Ghosh",
-    designation: "Associate Professor & Head, Electronics and Communication Engg. Dept.",
-    type: "Member"
-  },
-  {
+    {
     name: "Prof. Amit Kumar",
-    designation: "Professor & Head, Mechatronics and Automation Engg.",
+    designation: "Professor & HoD, Mechatronics and Automation Engineering Dept.",
+    type: "Member"
+  },
+ {
+    name: "Dr. Amit Kumar Singh",
+    designation: "Associate Professor & HoD, Computer Science and Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Dr. Anil Kumar Das",
+    designation: "Associate Professor & HoD, Mechanical Engineering Dept.",
     type: "Member"
   },
   {
     name: "Dr. Deepak Kumar Behera",
-    designation: "Associate Professor & Head, HSS Dept.",
+    designation: "Associate Professor & HoD, Humanities & Social Sciences Dept.",
     type: "Member"
   },
+  {
+    name: "Dr. Jayanta Ghosh",
+    designation: "Associate Professor & HoD, Electronics and Communication Engineering.",
+    type: "Member"
+  },
+
+   {
+    name: "Dr. Rishi Kumar Jha",
+    designation: "Associate Professor & HoD, Mathematics and Computing Technology Dept.",
+    type: "Member"
+  },
+  {
+    name: "Dr. Shailendra K. Mandal",
+    designation: "Associate Professor & HoD, Architecture Dept.",
+    type: "Member"
+  },
+  {
+    name: "Dr. Shivendra Kumar Jaiswal",
+    designation: "Associate Professor & HoD, Applied Physics and Material Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Dr.  Tasneem Parvin",
+    designation: "Associate Professor & HoD, Chemical Science and Technology Dept.",
+    type: "Member"
+  },
+    {
+    name: "Dr. Vimlesh Verma",
+    designation: "Associate Professor & HoD, Electrical Engineering Dept.",
+    type: "Member"
+  },
+  //////////////////////////////////
+  
+  //===============================
   {
     name: "Dr. J.P. Singh",
     designation: "Associate Professor & PI (MIS)",
