@@ -866,7 +866,7 @@ useEffect(() => {
                 NATIONAL INSTITUTE OF TECHNOLOGY PATNA
               </div>
               <div className="text-[0.5rem] text-black mt-1 hidden">
-                An Institute of National Importance
+                An Institution of National Importance
               </div>
             </div>
           </div>
