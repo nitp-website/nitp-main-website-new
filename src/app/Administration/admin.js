@@ -329,6 +329,66 @@ const Senate = [
     designation: "Professor, Civil Engineering Dept.",
     type: "Member"
   },
+  //===============================
+ {
+    name: "Prof. Amit Kumar Singh",
+    designation: "Professor, Computer Science and Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Anil Kumar Das",
+    designation: "Professor, Mechanical Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Deepak Kumar Behera",
+    designation: "Professor, Humanities & Social Sciences Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Jayanta Ghosh",
+    designation: "Professor, Electronics and Communication Engineering.",
+    type: "Member"
+  },
+
+   {
+    name: "Prof. Rishi Kumar Jha",
+    designation: "Professor, Mathematics and Computing Technology Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Shailendra K. Mandal",
+    designation: "Professor, Architecture Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Shivendra Kumar Jaiswal",
+    designation: "Professor, Applied Physics and Material Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof.  Tasneem Parvin",
+    designation: "Professor, Chemical Science and Technology Dept.",
+    type: "Member"
+  },
+    {
+    name: "Prof. Vimlesh Verma",
+    designation: "Professor, Electrical Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Amit Kumar",
+    designation: "Professor, Mechatronics and Automation Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Sunita Kumari",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+
+
+  //////////////////////////////////
   {
     name: "Prof. M.P. Singh",
     designation: "Professor, Computer Science and Engineering Dept.",
@@ -369,6 +429,7 @@ const Senate = [
     designation: "Professor, Mechanical Engineering Dept.",
     type: "Member"
   },
+  //===============================
   {
     name: "Prof. Samrat Mukherjee",
     designation: "Professor, Applied Physics and Materials Engg. Dept.",
