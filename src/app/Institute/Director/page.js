@@ -131,7 +131,7 @@ const page = () => {
                     Between 1892 and 1902, a functional building which is at present the main administrative building of NIT Patna, was built with Rs. 100,000/- donation from Nawab Lulf Ali Khan of Patna City. The balance amount of Rs. 38,000/- came from the Prince of Wales reception fund. Prof. C. R. Walford was the Principal of this college from 1900 to 1926.
                   </p>
                   <p className="text-gray-700 leading-relaxed text-justify italic mt-3">
-                    In 1924, the engineering school upgraded to Bihar College of Engineering under Patna University. In 2004, MHRD, Government of India upgraded Bihar College of Engineering to National Institute of Technology Patna and in 2007 it came under the act 'NIT Act 2007'and declared Institute of National Importance.
+                    In 1924, the engineering school upgraded to Bihar College of Engineering under Patna University. In 2004, MHRD, Government of India upgraded Bihar College of Engineering to National Institute of Technology Patna and in 2007 it came under the act 'NIT Act 2007'and declared Institution of National Importance.
                   </p>
                   <p className="text-gray-700 leading-relaxed text-justify italic mt-3">
                     At present NIT Patna is offering undergraduate programs (B. Tech & B. Arch) and Post graduate program (M. Tech & MRUP) along with Ph.D. Programs. Total number of students is nearly 3000. The institute has state-of-art laboratories, in each department.
