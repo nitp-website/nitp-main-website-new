@@ -32,6 +32,12 @@ const Deans = [
    type: "dean.pd@nitp.ac.in",
    url:"https://www.nitp.ac.in/profile/sanjeev@nitp.ac.in",
   },
+   {
+   name: "Dr. Sanjay Kumar",
+   designation: "Dean Outreach & Alumni Affairs",
+  //  type: "dean.pd@nitp.ac.in",
+   url:"https://www.nitp.ac.in/profile/sanjay@nitp.ac.in",
+  }
   ]
  
  const AssDeans = [
@@ -84,8 +90,8 @@ const BOG = [
  },
  
  {
-  name: "Ms. Saumya Gupta",
-  type: "Joint Secretary Department of Higher Education, Ministry of Education, Govt. of India",
+  name: "Ms Garima Sharma",
+  type: "Dy. Secretary, Department of Higher Education,Ministry of Education, Govt. of India",
   designation: "Member",
  },
  {
@@ -100,13 +106,13 @@ const BOG = [
   designation: "Member",
  },
  {
-  name: "Prof. Fulena Rajak",
-  type: "Professor, Dept. of Architecture & Planning, NIT Patna",
+  name: "Prof. Ramesh Kumar",
+  type: "Professor, Dept. of Electrical Engineering & Dean (R&C), NIT Patna",
   designation: "Member",
  },
  {
-  name: "Dr. Reena Singh",
-  type: "Assistant Professor, Dept. of Civil Engineering, NIT Patna",
+  name: "Dr. Madhava Nand Pandey",
+  type: "Associate Professor, Dept. of Mechanical Engineering, NIT Patna",
   designation: "Member",
  },
  {
@@ -323,6 +329,66 @@ const Senate = [
     designation: "Professor, Civil Engineering Dept.",
     type: "Member"
   },
+  //===============================
+ {
+    name: "Prof. Amit Kumar Singh",
+    designation: "Professor, Computer Science and Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Anil Kumar Das",
+    designation: "Professor, Mechanical Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Deepak Kumar Behera",
+    designation: "Professor, Humanities & Social Sciences Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Jayanta Ghosh",
+    designation: "Professor, Electronics and Communication Engineering.",
+    type: "Member"
+  },
+
+   {
+    name: "Prof. Rishi Kumar Jha",
+    designation: "Professor, Mathematics and Computing Technology Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Shailendra K. Mandal",
+    designation: "Professor, Architecture Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Shivendra Kumar Jaiswal",
+    designation: "Professor, Applied Physics and Material Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof.  Tasneem Parvin",
+    designation: "Professor, Chemical Science and Technology Dept.",
+    type: "Member"
+  },
+    {
+    name: "Prof. Vimlesh Verma",
+    designation: "Professor, Electrical Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Amit Kumar",
+    designation: "Professor, Mechatronics and Automation Engineering Dept.",
+    type: "Member"
+  },
+  {
+    name: "Prof. Sunita Kumari",
+    designation: "Professor, Civil Engineering Dept.",
+    type: "Member"
+  },
+
+
+  //////////////////////////////////
   {
     name: "Prof. M.P. Singh",
     designation: "Professor, Computer Science and Engineering Dept.",
@@ -363,6 +429,7 @@ const Senate = [
     designation: "Professor, Mechanical Engineering Dept.",
     type: "Member"
   },
+  //===============================
   {
     name: "Prof. Samrat Mukherjee",
     designation: "Professor, Applied Physics and Materials Engg. Dept.",
@@ -555,7 +622,7 @@ const ServiceUNIT = [
 
   
 {
-  name: "Dr. Shailesh Mani Pandey",
+  name: "Dr. Chetan Kumar Hirwani",
   type: "Assistant Professor",
   designation: " T & P Officer"
 },

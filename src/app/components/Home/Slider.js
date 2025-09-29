@@ -56,12 +56,6 @@ const Slider = () => {
           <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainBuilding.webp" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://i.postimg.cc/vZgyyTkp/image.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://i.postimg.cc/0jDVqSGQ/Image-1-00001.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
           <img src="https://i.postimg.cc/h4mxzgKS/nit-patna-004.jpg" />
         </SwiperSlide>
         <SwiperSlide>

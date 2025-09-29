@@ -80,12 +80,50 @@ export default function InstitutePage() {
         {activeSection === 'about' && (
           <section className=" text-black mx-2 p-2 md:p-10 md:ml-28 md:mr-28 pb-0 mt-10 md:mt-20 justify-center items-center space-y-4 border-2 backdrop-blur-sm rounded-lg">
           <h1 className='font-extrabold text-3xl text-red-800 mx-auto text-center pd-3 md:pb-10' >About us </h1>
-          <p className="text-muted-foreground">National Institute of Technology Patna is the 18th National Institute of Technology created by the Ministry of H.R.D. Government of India after rechristening the erstwhile Bihar College of Engineering Patna on 28. 01. 2004. NIT Patna marked its humble beginning in 1886 with the establishment of pleaders survey training school which was subsequently promoted of Bihar College of Engineering Patna in 1924. This made this institute the 6th Oldest Engineering Institute of India. The graduate level curriculum was later elevated to the post graduate level in 1978. The institute is situated on the south bank of holy river Ganges behind Gandhi Ghat, one of the most important and reverential place of Patna. The Gandhi Ghat is associated with the immersion of ashes of father of the Nation Mahatma Gandhi in the river Ganges. The campus has a picturesque river view with historic building presenting a spectacle of architectural delight and natural beauty.</p>
-          <p className="text-muted-foreground">National Institute of Technology Patna has been declared as an Institute of National Importance and has been granted a fully Autonomous Status by MHRD, Government of India. The Institute has also been declared as a Centre of Excellence of impart high level education training , research and development in science, engineering technology and humanities. It is imparting high quality education & values at UG (B.Tech), PG (M.Tech) & Ph .D programmes through its experienced faculty well versed in their respective field of engineering an technology with well equipped laboratories . At present the Institute has seven disciplines viz. Architecture, Civil Engineering, Compute Science & Engg., Electrical Engg., Electronics & Communication Engg., Information Technology and Mechanical Engg., and well established departments of physics, Mathematics and Humanities and Social Science.</p>
+          <p className="text-muted-foreground">National Institute of Technology Patna is the 18th National Institute of
+Technology created by the Ministry of Human Resource Development, Government
+of India, after rechristening the erstwhile Bihar College of Engineering, Patna, on
+28.01.2004. NIT Patna traces its humble beginnings back to 1886 with the
+establishment of the Pleaders’ Survey Training School, which was subsequently
+upgraded to the Bihar College of Engineering, Patna, in 1924. This made the
+institute the sixth oldest engineering institute in India. The graduate-level curriculum
+was later elevated to the postgraduate level in 1978.</p>
+          <p className="text-muted-foreground">The institute is situated on the southern bank of the holy river Ganges, behind
+Gandhi Ghat, one of the most important and reverential places in Patna. Gandhi
+Ghat is associated with the immersion of the ashes of the Father of the Nation,
+Mahatma Gandhi, in the river Ganges. The campus has a picturesque river view with
+historic buildings presenting a spectacle of architectural delight and natural beauty.</p>
 
-          <p className="text-muted-foreground">National Institute of Technology Patna aims at setting out very high education standards and holds long record of academic excellence. The pedagogical aspects have been formulated to suit not only the needs of the contemporary industrial requirements but also to develop human potential to its fullest extent in a range of professions. Extra curricular activities are planed through games and sports, cultural programmes and NSS activities. Cultural activities provide a platform to know about the culture of various states and regions of the country and opportunity for national integration.</p>
+          <p className="text-muted-foreground">National Institute of Technology Patna has been declared an Institute of
+National Importance, as given in the NIT Act, and has been granted fully
+autonomous status by the MoE (previously MHRD), Government of India. The
+institute has also been declared a Centre of Excellence for imparting high-level
+education, training, research, and development in science, engineering, technology,
+and humanities. It imparts high-quality education and values at UG (B.Tech), PG
+(M.Tech), and Ph.D. programmes through its experienced faculty, well versed in their
+respective fields of engineering and technology, with well-equipped laboratories.</p>
 
-          <p className="text-muted-foreground">Ever since its rechristening, NIT Patna has been on the fast track of development and has undergone numerous facelifts because of which placement records have witnessed unprecedented growth and is touching new heights as the graph of placement is increasing remarkably.</p>
+          <p className="text-muted-foreground">At present NIT Patna has ten Engineering Departments, viz., Applied Physics
+&amp; Materials Engineering, Architecture &amp; Planning, Chemical Science &amp; Technology,
+Civil Engineering, Computer Science &amp; Engineering, Electrical Engineering,
+Electronics &amp; Communication Engineering, Mathematics &amp; Computing Technology,
+Mechanical Engineering and Mechatronics &amp; Automation Engineering along with
+Humanities &amp; Social Sciences Department. </p>
+
+          <p className="text-muted-foreground">The National Institute of Technology Patna aims to set very high educational
+standards and holds a long record of academic excellence. The pedagogical
+framework has been designed not only to meet contemporary industrial requirements
+but also to develop human potential to its fullest in a wide range of professions.
+Extracurricular activities are organized through games and sports, cultural
+programmes, and NSS activities. Cultural events provide a platform to learn about
+the diverse cultures of various states and regions of the country and serve as
+opportunities for national integration.</p>
+
+          <p className="text-muted-foreground">Since its rechristening, NIT Patna has been on the fast track of development
+and has undergone numerous transformations, resulting in remarkable growth in
+placements. The placement record has been witnessing unprecedented progress
+and is reaching new heights as the graph continues to rise significantly. </p>
+
         </section>
         )}
         {activeSection === 'mission' && (
