@@ -58,6 +58,26 @@ export default function Aboutus() {
         </div>
       </div>
       
+      <div className="sm:w-1/4 mt-4 sm:mt-0 intdiv" data-aos="fade-up">
+        <div className="p-4 bg-white shadow rounded-lg">
+          <h2 className="text-xl font-bold text-center mb-4 text-red-800">CAMPUS LIFE</h2>
+          <div className="relative">
+            <video 
+              className="w-full h-auto rounded-lg shadow-md" 
+              controls 
+              poster="/homepage/campus-preview.jpg"
+              preload="metadata"
+            >
+              <source src="https://files.catbox.moe/s2hv8f.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="text-sm mt-3 text-center text-gray-600">
+            Experience the vibrant campus life at NIT Patna
+          </p>
+        </div>
+      </div>
+      
       <div className="sm:w-1/3 mt-4 sm:mt-0 md:ml-7 intdiv" data-aos="zoom-in-up">
         <div className="p-4 bg-white shadow rounded-lg">
           <h2 className="text-2xl font-bold text-center mb-4 text-red-800">KNOW US</h2>

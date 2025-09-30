@@ -17,6 +17,10 @@ const images = [
 'https://i.postimg.cc/TwLbcvmJ/nit-patna-007.jpg',
 'https://i.postimg.cc/pTwFGcJb/nit-patna-008.jpg',
 'https://i.postimg.cc/LssLn187/nit-patna-009.jpg',
+'https://i.postimg.cc/TwLbcvmJ/nit-patna-007.jpg',
+'https://i.postimg.cc/pTwFGcJb/nit-patna-008.jpg',
+'https://i.postimg.cc/LssLn187/nit-patna-009.jpg',
+
 ];
 
 export function Gallery() {
@@ -64,42 +68,88 @@ export function Gallery() {
     document.body.appendChild(script);
   }, []);
 
+  // Define different sizes for masonry layout
+  const getImageClass = (index) => {
+    const patterns = [
+      'row-span-2 col-span-2', // Large image
+      'row-span-1 col-span-1', // Small image
+      'row-span-2 col-span-1', // Tall image
+      'row-span-1 col-span-2', // Wide image
+      'row-span-1 col-span-1', // Small image
+      'row-span-2 col-span-1', // Tall image
+      'row-span-1 col-span-2', // Wide image
+      'row-span-1 col-span-1', // Small image
+      'row-span-2 col-span-2', // Large image
+    ];
+    return patterns[index % patterns.length];
+  };
+
   return (
-    <div className="flex flex-col md:flex-row gap-6 p-5 md:p-20 h-full gdiv">
-      <div className="w-full md:w-2/5 bg-white p-4 border border-gray-200 rounded-md h-full dark:border-gray-800 social-media">
-        <h2 className="text-xl font-bold mb-4 text-center">View our Social Media</h2>
-        <a className="twitter-timeline" data-lang="en" data-height="350" href="https://twitter.com/NITPatna1?ref_src=twsrc%5Etfw">Tweets by NIT Patna</a>
-        <a className="twitter-timeline" data-lang="en" data-height="350" href="https://twitter.com/EduMinOfIndia?ref_src=twsrc%5Etfw">Tweets by Education Ministry Of India</a>
-      </div>
-      <div className="imagediv1">
-        <h2 className="text-xl font-bold mb-4 text-center">Glimpse of NIT Patna</h2>
-        <div className="image-grid grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 md:p-6">
+    <div className="p-5 md:p-20 h-full gdiv bg-gradient-to-br from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-800 to-red-600 bg-clip-text text-transparent mb-4">
+            Glimpse of NIT Patna
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Explore the beautiful campus, state-of-the-art facilities, and vibrant student life at one of India's premier technical institutions.
+          </p>
+          <div className="mt-6 w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto rounded-full"></div>
+        </div>
+        
+        <div className="image-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 grid-rows-4 gap-4 p-4 md:p-6 auto-rows-fr">
           {images.map((image, index) => (
-            <div key={index} className={`relative overflow-hidden rounded-lg group aspect-[4/3] image-item ${index >= 4 ? 'hidden-on-mobile' : ''}`} data-aos="zoom-out-up">
+            <div 
+              key={index} 
+              className={`relative overflow-hidden rounded-xl group shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 image-item ${getImageClass(index)} ${index >= 6 ? 'hidden md:block' : ''}`} 
+              data-aos="zoom-out-up"
+              data-aos-delay={index * 100}
+            >
               <img
                 src={image}
                 alt={`Gallery Image ${index + 1}`}
-                className="object-cover w-full h-full transition-all duration-300 group-hover:scale-105"
+                className="object-cover w-full h-full transition-all duration-500 group-hover:scale-110 group-hover:brightness-75"
               />
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button onClick={() => openPopup(index)} className="text-white font-medium">
-                  View Image
-                </button>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-white font-bold text-lg mb-2">Campus View {index + 1}</h3>
+                  <button 
+                    onClick={() => openPopup(index)} 
+                    className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <svg className="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    View Full Size
+                  </button>
+                </div>
+              </div>
+              
+              {/* Image number badge */}
+              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-red-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
+                {index + 1}
               </div>
             </div>
           ))}
-          <div className="col-span-full flex justify-center mt-4">
-            <Link
-              href="/Gallery"
-              className="inline-flex items-center px-6 py-2 text-white bg-[#421010] rounded hover:bg-[#8b1d1d] transition-colors duration-300"
-              prefetch={false}
-            >
-              <GalleryThumbnailsIcon className="w-5 h-5 mr-2" />
-              View All Images
-            </Link>
-          </div>
+        </div>
+        
+        <div className="text-center mt-12">
+          <Link
+            href="/Gallery"
+            className="inline-flex items-center px-8 py-4 text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+            prefetch={false}
+          >
+            <GalleryThumbnailsIcon className="w-6 h-6 mr-3" />
+            View Complete Gallery
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
+          <p className="text-gray-500 mt-4">Discover more beautiful moments from our campus</p>
         </div>
       </div>
+      
       {popupImage && (
         <>
           <div className="fixed inset-0 bg-black/80 z-[60000]" onClick={closePopup}></div>
