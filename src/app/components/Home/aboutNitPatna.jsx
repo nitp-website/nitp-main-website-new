@@ -1,5 +1,5 @@
 "use client"
-import { React, useEffect } from 'react'
+import { React, useEffect, useRef } from 'react'
 import { Button } from "../../../components/ui/button";
 import { 
   Landmark, 
@@ -11,12 +11,46 @@ import {
   School, 
   MessageSquareQuote,
   Calendar,
-  GraduationCap
+  GraduationCap,
+  Play,
+  Video
 } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 export default function Aboutus() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Video is in view, start playing
+            video.play().catch((error) => {
+              console.log("Auto-play prevented:", error);
+            });
+          } else {
+            // Video is out of view, pause it
+            video.pause();
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the video is visible
+        rootMargin: '0px 0px -50px 0px' // Add some margin for better UX
+      }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div className="relative bg-gray-50">
@@ -195,6 +229,63 @@ export default function Aboutus() {
                   <BookOpen className="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
                 </a>
               </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Campus Life Video Section */}
+        <div className="mt-12">
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 mx-auto max-w-4xl">
+            <div className="p-6">
+              <div className="flex items-center justify-center mb-6">
+                <div className="bg-red-100 p-3 rounded-lg mr-4">
+                  <Video className="w-8 h-8 text-red-600" />
+                </div>
+                <h2 className="text-3xl font-bold text-red-800">History and Campus Life</h2>
+              </div>
+              
+              <div className="relative rounded-xl overflow-hidden shadow-lg bg-gray-900">
+                <video 
+                  ref={videoRef}
+                  className="w-full h-auto" 
+                  controls 
+                  muted
+                  loop
+                  poster="/homepage/campus-preview.jpg"
+                  preload="metadata"
+                  style={{ maxHeight: '400px' }}
+                >
+                  <source src="https://files.catbox.moe/s2hv8f.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+              </div>
+              
+              <div className="mt-6 text-center">
+                <div className="flex items-center justify-center mb-3">
+                  <Play className="w-5 h-5 text-red-500 mr-2" />
+                  <p className="text-lg font-semibold text-gray-800">Experience NIT Patna</p>
+                </div>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Discover the vibrant campus life, world-class facilities, and the spirit of innovation that defines our community. 
+                  From state-of-the-art laboratories to recreational activities, witness what makes NIT Patna a premier institution.
+                </p>
+              </div>
+
+              <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="text-center p-4 bg-red-50 rounded-lg border border-red-100">
+                  <School className="w-6 h-6 text-red-600 mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-gray-800">Academic Excellence</p>
+                </div>
+                <div className="text-center p-4 bg-red-50 rounded-lg border border-red-100">
+                  <GraduationCap className="w-6 h-6 text-red-600 mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-gray-800">Research Innovation</p>
+                </div>
+                <div className="text-center p-4 bg-red-50 rounded-lg border border-red-100">
+                  <Landmark className="w-6 h-6 text-red-600 mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-gray-800">Campus Culture</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
