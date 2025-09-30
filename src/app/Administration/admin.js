@@ -90,13 +90,13 @@ const BOG = [
  },
  
  {
-  name: "Ms Garima Sharma",
-  type: "Dy. Secretary, Department of Higher Education,Ministry of Education, Govt. of India",
+  name: "Member 1",
+  type: "The Joint Secretary or His Nominee,Ministry of Education, Govt. of India",
   designation: "Member",
  },
  {
-  name: "Sri Narayan Singh Bisht",
-  type: "Dy. Secretary (IFD) Department of Higher Education, Ministry of Education, Govt. of India",
+  name: "Member 2",
+  type: "The Joint Secretary or His Nominee,Ministry of Education, Govt. of India",
   designation: "Member",
  },
 
