@@ -2,6 +2,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Search, Filter, Calendar, User, Building2, DollarSign, Clock, ChevronLeft, ChevronRight, ExternalLink, BookOpen, Loader2, X } from 'lucide-react';
 import axios from 'axios';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const ProjectsPage = () => {
   const [projects, setProjects] = useState([]);
@@ -14,6 +15,9 @@ const ProjectsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedProject, setSelectedProject] = useState(null);
   const projectsPerPage = 20;
+
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -32,6 +36,32 @@ const ProjectsPage = () => {
 
     fetchProjects();
   }, []);
+
+  useEffect(() => {
+    const academicYear = searchParams.get('academic_year');
+    if (academicYear) {
+      setYearFilter(academicYear);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
+    const params = new URLSearchParams();
+    
+    if (yearFilter !== 'all') {
+      params.set('academic_year', yearFilter);
+    }
+    
+    if (searchTerm) {
+      params.set('search', searchTerm);
+    }
+    
+    if (statusFilter !== 'all') {
+      params.set('status', statusFilter);
+    }
+
+    const newUrl = params.toString() ? `?${params.toString()}` : '';
+    window.history.replaceState(null, '', newUrl);
+  }, [yearFilter, searchTerm, statusFilter]);
 
   const getAcademicYear = (dateString) => {
     if (!dateString) return 'N/A';
@@ -123,6 +153,19 @@ const ProjectsPage = () => {
     return grouped;
   }, [currentProjects]);
 
+  const handleYearFilterChange = (value) => {
+    setYearFilter(value);
+  };
+
+  const clearFilters = () => {
+    setYearFilter('all');
+    setSearchTerm('');
+    setStatusFilter('all');
+    setCurrentPage(1);
+  };
+
+  const isFilterActive = yearFilter !== 'all' || searchTerm || statusFilter !== 'all';
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center p-4">
@@ -159,7 +202,37 @@ const ProjectsPage = () => {
 
       {/* Search and Filters */}
       <div className=" mx-auto px-4 py-6">
-        <div className=" rounded-xl p-4 mb-6">
+        <div className="rounded-xl p-4 mb-6">
+          {isFilterActive && (
+            <div className="mb-4 flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <span className="text-sm text-gray-600">Active filters:</span>
+                {yearFilter !== 'all' && (
+                  <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium">
+                    Academic Year: {yearFilter}
+                  </span>
+                )}
+                {searchTerm && (
+                  <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                    Search: "{searchTerm}"
+                  </span>
+                )}
+                {statusFilter !== 'all' && (
+                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
+                    Status: {statusFilter}
+                  </span>
+                )}
+              </div>
+              <button
+                onClick={clearFilters}
+                className="text-red-600 hover:text-red-700 text-sm font-medium flex items-center"
+              >
+                <X className="w-4 h-4 mr-1" />
+                Clear all
+              </button>
+            </div>
+          )}
+
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
             {/* Search Bar */}
             <div className="lg:col-span-2">
@@ -181,7 +254,7 @@ const ProjectsPage = () => {
                 <Calendar className="absolute left-2 top-1/2 transform -translate-y-1/2 text-red-400 w-4 h-4" />
                 <select
                   value={yearFilter}
-                  onChange={(e) => setYearFilter(e.target.value)}
+                  onChange={(e) => handleYearFilterChange(e.target.value)}
                   className="w-full pl-8 pr-3 py-2 text-sm border border-red-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-transparent appearance-none bg-white text-gray-500"
                 >
                   <option value="all">All Academic Years</option>
@@ -228,6 +301,11 @@ const ProjectsPage = () => {
                 Showing {indexOfFirstProject + 1}-{Math.min(indexOfLastProject, filteredProjects.length)} of{' '}
                 {filteredProjects.length} projects
               </p>
+              {isFilterActive && (
+                <p className="text-gray-500 text-sm">
+                  Filtered view • <button onClick={clearFilters} className="text-red-600 hover:text-red-700">Show all</button>
+                </p>
+              )}
             </div>
 
             {/* Projects by Academic Year */}
