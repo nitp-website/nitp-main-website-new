@@ -451,6 +451,11 @@ const navItems = [
         iconImage: Bis,
       },
       {
+        label: "Projects",
+        link: "/Academic/Projects",
+        iconImage: Bis,
+      },
+      {
         label: "BIS Dashboard",
         link: "/Academic/BIS",
         iconImage: Bis,
