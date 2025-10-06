@@ -510,7 +510,7 @@ const ServiceUNIT = [
  {
   name: "Prof. M P Singh",
   type: "Chief Investigator",
-  designation: " E&ICT Academy Phase II, Associate Dean Academic",
+  designation: " E&ICT Academy Phase II",
  },
 
  {
@@ -567,19 +567,19 @@ const ServiceUNIT = [
   type: "Associate Professor",
   designation: "PI – International Affairs; Chief Vigilance Officer, NIT Patna"
 },
-
-{
-  name: "Dr. S K Tripathy",
-  type: "Assistant Professor",
-  designation: " Asst. PI (T&P)"
-},
-
   
 {
   name: "Dr. Chetan Kumar Hirwani",
   type: "Assistant Professor",
   designation: " T & P Officer"
 },
+{
+  name: "Dr. S K Tripathy",
+  type: "Assistant Professor",
+  designation: " Asst. PI (T&P)"
+},
+
+
 {
   name: "Dr. B. Balaji Naik",
   type: "Assistant Professor",
@@ -608,107 +608,9 @@ const ServiceUNIT = [
   type: "Assistant Professor",
   designation: " Chairman, Hostel Management Committee; Asst. EE (ESU)"
 },
-{
-  name: "Dr. Amitesh Kumar",
-  type: "Assistant Professor",
-  designation: "Warden – Kosi Extension, Bagmati; Co PI – EMU"
-}, 
-{
-  name: "Dr. Chetan Kumar Hirwani",
-  type: "Assistant Professor",
-  designation: "Warden – Sone Hostel; Asst. EE (ESU)"
-},
-{
-  name: "Dr. Yogesh Kumar",
-  type: "Assistant Professor",
-  designation: " Warden – Brahmaputra Hostel"
-},
-{
-  name: "Dr. Bhabani Shankar Das",
-  type: "Assistant Professor",
-  designation: " Warden – Brahmaputra Hostel"
-},
-{
-  name: "Dr. Ambrish Maurya",
-  type: "Assistant Professor",
-  designation: " Warden – Kosi Hostel; Asst. EE (ESU)"
-},
-{
-  name: "Dr. Lini Dev K",
-  type: "Assistant Professor",
-  designation: " Warden – Ganga Hostel"
-},
 
-  {
-  name: "Dr. Subodh Srivastava",
-  type: "Assistant Professor",
-  designation: "Warden – Aryabhatt Hostel(Bihta Campus)"
-},
- {
-  name: "Dr. Manpuran Mahto",
-  type: "Assistant Professor",
-  designation: "Warden – Kautilya Hostel(Bihta Campus)"
-},
-{
-  name: "Dr. Kakali Chatterjee",
-  type: "Assistant Professor",
-  designation: "Warden – Kadambini Hostel(Bihta Campus)"
-},
-{
-  name: "Dr. Satyajit Mondal",
-  type: "Assistant Professor",
-  designation: "Assistant Warden – Sone Hostel"
-},
-{
-  name: "Dr. Rajan Agrahari",
-  type: "Assistant Professor",
-  designation: "Assistant Warden – Brahmaputra Hostel"
-},
-{
-  name: "Dr. Shubham Meena",
-  type: "Assistant Professor",
-  designation: "Assistant Warden – Brahmaputra Hostel"
-},
-  {
-  name: "Dr. Sandeep Kumar",
-  type: "Assistant Professor",
-  designation: "Assistant Warden – Kosi Hostel"
-},
-{
-  name: "Dr. Anil Kumar Sharma",
-  type: "Assistant Professor",
-  designation: "Assistant Warden – Kosi Extension, Bagmati"
-},
-  {
-  name: "Dr. Supriya Kumari",
-  type: "Assistant Professor",
-  designation: " Assistant Warden – Ganga Hostel"
-},
-{
-  name: "Dr. Mukesh Kumar",
-  type: "Assistant Professor",
-  designation: "Assistant Warden – Aryabhatta Hostel(Bihta Campus)"
-},
-{
-  name: "Dr. Ajay Kumar Maurya",
-  type: "Assistant Professor",
-  designation: "Assistant Warden – Aryabhatta Hostel(Bihta Campus)"
-},  
-{
-  name: "Dr. Antriksh Goswami",
-  type: "Assistant Professor",
-  designation: "Assistant Warden – Kautilya Hostel (Bihta Campus)"
-},
-{
-  name: "Dr. Richa Agrawal",
-  type: "Assistant Professor",
-  designation: "Assistant Warden – Kadambini Hostel(Bihta Campus)"
-},
-{
-  name: "Dr. Meena Panchore",
-  type: "Assistant Professor",
-  designation: "Assistant Warden – Kadambini Hostel(Bihta Campus)"
-}
+
+
 ]
 
 const Admin = [
