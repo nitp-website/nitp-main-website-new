@@ -53,13 +53,12 @@ export const AcadProgramCard = ({ program }) => {
         )}
 
         {program.syllabusbtn && (
-          <a target="_blank" href={`${program.syllabus}`} >
+          <a target="_blank" href={`${program.syllabusbtn}`} >
             <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer">
               Curriculum / Syllabus
             </button>
           </a>
         )}
-
 
         {
           program.from && program.from.map((item, index) => (
