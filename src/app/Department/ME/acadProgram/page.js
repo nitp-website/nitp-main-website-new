@@ -90,7 +90,7 @@ const programs = [
     duration: "",
     description:
       "The Department offers Ph. D in Mechanical Engineering. Admission to this program is through an Institute Examination conducted by NIT Patna itself. This program is solely research based where students conduct their own work in an area of Mechanical Engineering and its applications under the guidance of faculty members.",
-    syllabus: "phd",
+    syllabus: "https://drive.google.com/file/d/17AU1_ZRrrKfa7zCAgS0St2EZTTlHHRj_/view",
   },
 ];
 
