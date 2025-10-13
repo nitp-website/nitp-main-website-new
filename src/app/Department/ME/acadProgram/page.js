@@ -19,7 +19,7 @@ const programs = [
     duration: "4 Years",
     description:
       "The admission to the 4-year B. Tech. (Mechanical Engineering) is through prestigious IIT-JEE (Main). The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
-    syllabus:
+    syllabusbtn:
       "/Department/ME/syllabus/btech",
   },
   {
@@ -29,7 +29,7 @@ const programs = [
     duration: "5 Years",
     description:
       "The admission to the 5-year B.Tech and M.Tech Dual Degree (Mechanical Engineering with Specialization in Manufacturing and Industrial Engineering) is through prestigious IIT-JEE (Main). The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
-    syllabus:
+    syllabusbtn:
       "/Department/ME/syllabus/dual",
   },
   {
@@ -90,7 +90,7 @@ const programs = [
     duration: "",
     description:
       "The Department offers Ph. D in Mechanical Engineering. Admission to this program is through an Institute Examination conducted by NIT Patna itself. This program is solely research based where students conduct their own work in an area of Mechanical Engineering and its applications under the guidance of faculty members.",
-    syllabus: "https://drive.google.com/file/d/17AU1_ZRrrKfa7zCAgS0St2EZTTlHHRj_/view",
+    syllabusbtn: "https://drive.google.com/file/d/17AU1_ZRrrKfa7zCAgS0St2EZTTlHHRj_/view",
   },
 ];
 
