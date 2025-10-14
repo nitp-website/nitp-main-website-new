@@ -2,36 +2,30 @@ import React from 'react';
 import { Download } from 'lucide-react';
 
 const FeeStructureTable = () => {
-  const phdmca = [
-    { name: 'PhD: Fee Structure', 
+  const PhD = [
+    { name: 'PhD: Fee Structure 2023-24 Onwords', 
       link: 'https://drive.google.com/file/d/1b6bsHkVHfPa0gsG3Z9vhUKrsrGb3Sw4h/view' },
-    { name: 'Fee structure for MCA programme (3 years) Regular.',
+     ];
+   const MCA = [
+     { name: 'Fee Structure for MCA  Regular 2023-24 Onwords.',
       link: 'https://drive.google.com/file/d/1lqdJOpCSKd3qby9H91XhE8vefpIr4hBs/view?usp=drivesdk' },
-    { name: 'Fee structure for MCA programme (3 years)  Self-financed.',
+    { name: 'Fee Structure for MCA  Self-financed 2023-24 Onwords.',
       link: 'https://drive.google.com/file/d/1lqWSLl3w1NNDKf9TtrIA5MZH4OohReY-/view?usp=drivesdk' },
   ];
 
   const ug = [
     { name: 'Fee Structure  2024-25 onwords',
       link: 'https://drive.google.com/file/d/1MhS_UIYkOF2G3h0ms_kk8ZRjidr0IvGZ/view?usp=sharing' },
-    { name: 'fee structure effective from session 2023-24 and onwards',
+    { name: 'Fee Structure  2023-24 onwards',
       link: 'https://drive.google.com/file/d/10zxZd3mxCp-ypZhgAY1ShcagD_NweXbe/view?usp=drivesdk' },
-    { name: 'Fee refund policy notification', 
-      link: 'https://web.nitp.ac.in//uploads23/UG%20Refund%20Policy%20Notification.pdf' },
-    { name: 'Fee Structure (2018-19)', 
-      link: 'http://web.nitp.ac.in/uploads/Fee_Structure_All.pdf' },
-    { name: 'UG/PG Dual Degree: Fee notification for B.Tech and M.Tech Dual Degree',
-      link: 'http://web.nitp.ac.in/uploads22/FeeNotification_Dual.pdf' },
-  ];
+    { name: 'Fee Structure  2022-23 onwards', 
+      link: 'https://drive.google.com/file/d/1aZ94pqSk07oeizq9tMZU5kf3Y9MigU0X/view?usp=sharing' },
+    ];
 
   const pg = [
-    { name: 'Fee Structure',
+    { name: 'Fee Structure 2024-25 onwords',
       link: 'https://drive.google.com/file/d/1qSQMYVRWFoWXad4Z765LtsPMXBofYKzK/view' },
-    { name: 'Revised fee component for M.Tech./M.Arch/MURP Programme from the Academic Session 2021-22 onwards', 
-      link: 'http://web.nitp.ac.in/uploads20/Fee%20Notification%2026.04.2021-26.04.2021.pdf' },
-    { name: 'Fee Structure for M.Tech./M.Arch/MURP for (Jan-June\'2021)', 
-      link: 'http://web.nitp.ac.in/uploads20/Notification.pdf' },
-  ];
+     ];
 
   const TableComponent = ({ data, title }) => (
     <>
@@ -83,7 +77,8 @@ const FeeStructureTable = () => {
         
         <TableComponent data={ug} title="UG" />
         <TableComponent data={pg} title="PG" />
-        <TableComponent data={phdmca} title="PhD & MCA" />
+        <TableComponent data={MCA} title="MCA" />
+        <TableComponent data={PhD} title="PhD" />
       </div>
     </div>
   );
