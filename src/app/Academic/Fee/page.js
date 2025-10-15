@@ -3,18 +3,18 @@ import { Download } from 'lucide-react';
 
 const FeeStructureTable = () => {
   const PhD = [
-    { name: 'PhD: Fee Structure 2023-24 Onwords', 
+    { name: 'Fee Structure 2023-24 Onwords', 
       link: 'https://drive.google.com/file/d/1b6bsHkVHfPa0gsG3Z9vhUKrsrGb3Sw4h/view' },
      ];
    const MCA = [
-     { name: 'Fee Structure for MCA  Regular 2023-24 Onwords.',
+     { name: 'Fee Structure for MCA  Regular 2023-24 onwards.',
       link: 'https://drive.google.com/file/d/1lqdJOpCSKd3qby9H91XhE8vefpIr4hBs/view?usp=drivesdk' },
-    { name: 'Fee Structure for MCA  Self-financed 2023-24 Onwords.',
+    { name: 'Fee Structure for MCA  Self-financed 2023-24 onwards.',
       link: 'https://drive.google.com/file/d/1lqWSLl3w1NNDKf9TtrIA5MZH4OohReY-/view?usp=drivesdk' },
   ];
 
   const ug = [
-    { name: 'Fee Structure  2024-25 onwords',
+    { name: 'Fee Structure  2024-25 onwards',
       link: 'https://drive.google.com/file/d/1MhS_UIYkOF2G3h0ms_kk8ZRjidr0IvGZ/view?usp=sharing' },
     { name: 'Fee Structure  2023-24 onwards',
       link: 'https://drive.google.com/file/d/10zxZd3mxCp-ypZhgAY1ShcagD_NweXbe/view?usp=drivesdk' },
@@ -23,7 +23,7 @@ const FeeStructureTable = () => {
     ];
 
   const pg = [
-    { name: 'Fee Structure 2024-25 onwords',
+    { name: 'Fee Structure 2024-25 onwards',
       link: 'https://drive.google.com/file/d/1qSQMYVRWFoWXad4Z765LtsPMXBofYKzK/view' },
      ];
 
