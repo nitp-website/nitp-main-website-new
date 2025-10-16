@@ -33,8 +33,9 @@ const Slider = () => {
         <SwiperSlide>
           <img src="https://i.postimg.cc/0N1Yfkhc/NIRF.png" />
         </SwiperSlide>
+        {/** top 2% scientist */}
         <SwiperSlide>
-          <img src="https://i.postimg.cc/Jh8Ffb9h/image.png" />
+          <img src="https://i.postimg.cc/fTH5mybK/image.png" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://i.postimg.cc/FHQKvKyk/image.png" />
