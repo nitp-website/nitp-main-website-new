@@ -67,8 +67,8 @@ const RegistrarPage = () => {
                   <BlinkingListItem href="https://cvc.gov.in/vaw.html">
                     Vigilance Awareness Week 2025
                   </BlinkingListItem>
-                  <BlinkingListItem href="https://drive.google.com/file/d/1cGKocBxoYu2yYqBjyNpBeZST5WWZCNms/view?usp=drive_link">
-                    Jingles for Vigilance Awareness Week 2024
+                  <BlinkingListItem href="https://drive.google.com/file/d/1LxWcdP-2g5W_U6g1qD960dLyIQsy8Fw1/view?usp=sharing">
+                    Jingles for Vigilance Awareness Week 2025
                   </BlinkingListItem>
                 </ul>
               </div>
