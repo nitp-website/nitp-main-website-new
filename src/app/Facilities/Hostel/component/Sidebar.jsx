@@ -63,9 +63,11 @@ import React from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { FaHome } from "react-icons/fa";
 import { MdEvent } from "react-icons/md";
-import { SlCalender } from "react-icons/sl";
 import { RxActivityLog } from "react-icons/rx";
 import { IoIosPeople } from "react-icons/io";
+import { IoDocumentText } from "react-icons/io5";
+import { TiContacts } from "react-icons/ti";
+import { SiGoogleforms } from "react-icons/si";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -90,11 +92,10 @@ const Sidebar = () => {
         <ul className="space-y-2">
           <li>
             <button
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${
-                baseRoute === ''
-                  ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
-                  : 'hover:bg-red-100 text-red-900'
-              }`}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${baseRoute === ''
+                ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
+                : 'hover:bg-red-100 text-red-900'
+                }`}
               onClick={() => handleNavigation(basePath)}
             >
               <FaHome className="text-lg" />
@@ -103,11 +104,10 @@ const Sidebar = () => {
           </li>
           <li>
             <button
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${
-                baseRoute === '/ItServices'
-                  ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
-                  : 'hover:bg-red-100 text-red-900'
-              }`}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${baseRoute === '/ItServices'
+                ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
+                : 'hover:bg-red-100 text-red-900'
+                }`}
               onClick={() => handleNavigation(`${basePath}/Hostels`)}
             >
               <RxActivityLog className="text-lg" />
@@ -116,11 +116,10 @@ const Sidebar = () => {
           </li>
           <li>
             <button
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${
-                baseRoute === '/people'
-                  ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
-                  : 'hover:bg-red-100 text-red-900'
-              }`}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${baseRoute === '/people'
+                ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
+                : 'hover:bg-red-100 text-red-900'
+                }`}
               onClick={() => handleNavigation(`${basePath}/Rules`)}
             >
               <IoIosPeople className="text-lg" />
@@ -129,41 +128,50 @@ const Sidebar = () => {
           </li>
           <li>
             <button
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${
-                baseRoute === '/notice'
-                  ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
-                  : 'hover:bg-red-100 text-red-900'
-              }`}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${baseRoute === '/notice'
+                ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
+                : 'hover:bg-red-100 text-red-900'
+                }`}
               onClick={() => handleNavigation(`${basePath}/Facilities`)}
             >
               <MdEvent className="text-lg" />
               Facilities
             </button>
           </li>
-            <li>
+          <li>
             <button
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${
-                baseRoute === '/people'
-                  ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
-                  : 'hover:bg-red-100 text-red-900'
-              }`}
-              onClick={() => handleNavigation(`${basePath}/Contacts`)}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${baseRoute === '/people'
+                ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
+                : 'hover:bg-red-100 text-red-900'
+                }`}
+              onClick={() => handleNavigation(`${basePath}/Office_Orders`)}
             >
-              <SlCalender className="text-lg" />
-              Contacts
+              <IoDocumentText className="text-lg" />
+              Office Order
             </button>
           </li>
           <li>
             <button
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${
-                baseRoute === '/people'
-                  ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
-                  : 'hover:bg-red-100 text-red-900'
-              }`}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${baseRoute === '/people'
+                ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
+                : 'hover:bg-red-100 text-red-900'
+                }`}
               onClick={() => handleNavigation(`${basePath}/Official_Forms`)}
             >
-              <SlCalender className="text-lg" />
+              <SiGoogleforms className="text-lg" />
               Official Forms
+            </button>
+          </li>
+          <li>
+            <button
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${baseRoute === '/people'
+                ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
+                : 'hover:bg-red-100 text-red-900'
+                }`}
+              onClick={() => handleNavigation(`${basePath}/Contacts`)}
+            >
+              <TiContacts className="text-lg" />
+              Contacts
             </button>
           </li>
         </ul>

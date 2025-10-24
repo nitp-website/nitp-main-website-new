@@ -1,9 +1,5 @@
 "use client";
 
-
-
-
-
 const AboutHMC = `NIT Patna is a fully residential institute that provides comprehensive accommodation facilities for its students. Each hostel is equipped with essential amenities, including a common room, indoor recreation area, lounge, and a spacious dining hall with a mess facility. The hostel system is overseen by the Chairman of the Hostel Management Committee (HMC), who serves as the head of the hostel administration. Assisting the Chairman are the Wardens, who are responsible for the day-to-day management of individual hostels, supported further by Assistant Wardens.`;
 
 
