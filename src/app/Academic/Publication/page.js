@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState, useMemo } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const ArticlesList = () => {
   const [publications, setPublications] = useState([]);
@@ -12,6 +13,8 @@ const ArticlesList = () => {
   const [activeTab, setActiveTab] = useState("current");
   const [activeType, setActiveType] = useState("all");
   const [academicYear, setAcademicYear] = useState(getCurrentAcademicYear());
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
   function getCurrentAcademicYear() {
     const now = new Date();
@@ -44,6 +47,27 @@ const ArticlesList = () => {
   useEffect(() => {
     fetchPublications();
   }, []);
+
+  useEffect(() => {
+    try {
+      const t = searchParams?.get("type") || "all";
+      setActiveType(t);
+      setCurrentPage(1);
+    } catch (e) {
+      console.log(e)
+    }
+  }, [searchParams]);
+
+  const updateTypeParam = (type) => {
+    const params = new URLSearchParams(searchParams ? searchParams.toString() : "");
+    if (!type || type === "all") {
+      params.delete("type");
+    } else {
+      params.set("type", type);
+    }
+    const qs = params.toString();
+    router.replace(`${window.location.pathname}${qs ? `?${qs}` : ""}`);
+  };
 
   const getFilteredPublications = useMemo(() => {
     if (!publications || publications.length === 0) return [];
@@ -135,8 +159,7 @@ const ArticlesList = () => {
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
                 onClick={() => {
-                  setActiveType("all");
-                  setCurrentPage(1);
+                  updateTypeParam("all");
                 }}
               >
                 All Publications
@@ -148,8 +171,7 @@ const ArticlesList = () => {
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
                 onClick={() => {
-                  setActiveType("journal");
-                  setCurrentPage(1);
+                  updateTypeParam("journal");
                 }}
               >
                 Journal Articles
@@ -161,8 +183,7 @@ const ArticlesList = () => {
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
                 onClick={() => {
-                  setActiveType("conference");
-                  setCurrentPage(1);
+                  updateTypeParam("conference");
                 }}
               >
                 Conference Papers
