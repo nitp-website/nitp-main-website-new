@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState, useMemo } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const ArticlesList = () => {
   const [publications, setPublications] = useState([]);
@@ -12,6 +13,8 @@ const ArticlesList = () => {
   const [activeTab, setActiveTab] = useState("current");
   const [activeType, setActiveType] = useState("all");
   const [academicYear, setAcademicYear] = useState(getCurrentAcademicYear());
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
   function getCurrentAcademicYear() {
     const now = new Date();
@@ -45,20 +48,43 @@ const ArticlesList = () => {
     fetchPublications();
   }, []);
 
+  useEffect(() => {
+    try {
+      const t = searchParams?.get("type") || "all";
+      setActiveType(t);
+      setCurrentPage(1);
+    } catch (e) {
+      console.log(e)
+    }
+  }, [searchParams]);
+
+  const updateTypeParam = (type) => {
+    const params = new URLSearchParams(searchParams ? searchParams.toString() : "");
+    if (!type || type === "all") {
+      params.delete("type");
+    } else {
+      params.set("type", type);
+    }
+    const qs = params.toString();
+    router.replace(`${window.location.pathname}${qs ? `?${qs}` : ""}`);
+  };
+
   const getFilteredPublications = useMemo(() => {
     if (!publications || publications.length === 0) return [];
 
     let filtered = [...publications];
     
+    const getYear = (pub) => parseInt(pub.conference_year || pub.publication_year || pub.year || 0);
+
     if (activeTab === "current") {
       filtered = filtered.filter((pub) => {
-        const year = parseInt(pub.conference_year || pub.publication_year);
+        const year = getYear(pub);
         return year >= 2025 && year <= 2026;
       });
     } else if (activeTab === "academic") {
       const [startYear, endYear] = academicYear.split("-").map(Number);
       filtered = filtered.filter((pub) => {
-        const year = parseInt(pub.conference_year || pub.publication_year);
+        const year = getYear(pub);
         return year >= startYear && year <= endYear;
       });
     }
@@ -67,6 +93,10 @@ const ArticlesList = () => {
       filtered = filtered.filter(pub => pub.journal_name);
     } else if (activeType === "conference") {
       filtered = filtered.filter(pub => pub.conference_name);
+    } else if (activeType === "book_chapters") {
+      filtered = filtered.filter(pub => (
+        pub.chapter_title || pub.book_title || (pub.title && pub.publisher) || pub.publisher
+      ));
     }
     
     if (searchTerm) {
@@ -76,13 +106,17 @@ const ArticlesList = () => {
         pub.title?.toLowerCase().includes(term) ||
         (pub.journal_name && pub.journal_name.toLowerCase().includes(term)) ||
         (pub.conference_name && pub.conference_name.toLowerCase().includes(term)) ||
-        pub.email?.toLowerCase().includes(term)
+        pub.email?.toLowerCase().includes(term) ||
+        pub.chapter_title?.toLowerCase().includes(term) ||
+        pub.book_title?.toLowerCase().includes(term) ||
+        pub.publisher?.toLowerCase().includes(term) ||
+        pub.isbn?.toLowerCase().includes(term)
       );
     }
     
     return filtered.sort((a, b) => {
-      const yearA = parseInt(a.conference_year || a.publication_year);
-      const yearB = parseInt(b.conference_year || b.publication_year);
+      const yearA = parseInt(a.conference_year || a.publication_year || a.year || 0);
+      const yearB = parseInt(b.conference_year || b.publication_year || b.year || 0);
       return yearB - yearA;
     });
   }, [publications, activeTab, academicYear, activeType, searchTerm]);
@@ -107,15 +141,15 @@ const ArticlesList = () => {
 
   const groupPublicationsByYear = (items) => {
     const grouped = {};
-    
+
     items.forEach(item => {
-      const year = item.conference_year || item.publication_year;
+      const year = item.conference_year || item.publication_year || item.year || "Unknown";
       if (!grouped[year]) {
         grouped[year] = [];
       }
       grouped[year].push(item);
     });
-    
+
     return grouped;
   };
 
@@ -135,8 +169,7 @@ const ArticlesList = () => {
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
                 onClick={() => {
-                  setActiveType("all");
-                  setCurrentPage(1);
+                  updateTypeParam("all");
                 }}
               >
                 All Publications
@@ -148,8 +181,7 @@ const ArticlesList = () => {
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
                 onClick={() => {
-                  setActiveType("journal");
-                  setCurrentPage(1);
+                  updateTypeParam("journal");
                 }}
               >
                 Journal Articles
@@ -161,11 +193,22 @@ const ArticlesList = () => {
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
                 onClick={() => {
-                  setActiveType("conference");
-                  setCurrentPage(1);
+                  updateTypeParam("conference");
                 }}
               >
                 Conference Papers
+              </button>
+              <button
+                className={`w-full text-left px-3 py-2 rounded-md ${
+                  activeType === "book_chapters"
+                    ? "bg-red-800 text-white"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                }`}
+                onClick={() => {
+                  updateTypeParam("book_chapters");
+                }}
+              >
+                Book Chapters
               </button>
             </div>
           </div>
@@ -173,11 +216,13 @@ const ArticlesList = () => {
 
         {/* Main content */}
         <div className="w-full md:w-4/5">
-          <h1 className="text-2xl md:text-3xl font-bold mb-6 text-red-950 text-center">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4 text-red-950 text-center">
             {activeType === "journal" ? "Journal Publications" : 
              activeType === "conference" ? "Conference Publications" : 
+             activeType === "book_chapters" ? "Book Chapters" :
              "All Publications"}
           </h1>
+          {activeType === "book_chapters"}
 
           {/* Search bar */}
           <div className="mb-6">
@@ -340,55 +385,106 @@ const ArticlesList = () => {
                               </p>
                             )}
                           </p>
-                        ) : (
+                            ) : pub.journal_name ? (
                           <p className="text-gray-800">
-                            {pub.authors && (
-                              <span className="font-semibold">{pub.authors}</span>
-                            )}
-                            {pub.title && (
-                              <>
-                                ,{" "}
-                                <span className="font-semibold text-blue-700">
-                                  "{pub.title}"
-                                </span>
-                              </>
-                            )}
-                            {pub.journal_name && (
-                              <>
-                                ,{" "}
-                                <span className="text-gray-700 text-lg font-semibold">
-                                  {pub.journal_name}
-                                </span>
-                              </>
-                            )}
-                            {pub.journal_quartile && (
-                              <span className="text-gray-700">
-                                {" "}({pub.journal_quartile})
-                              </span>
-                            )}
-                            {pub.volume && (
-                              <span className="text-gray-700">
-                                {" "}Volume: {pub.volume}
-                              </span>
-                            )}
-                            {pub.publication_year && (
-                              <span className="text-gray-700">
-                                {" "}Year: {pub.publication_year}
-                              </span>
-                            )}
-                            {(pub.doi_url || pub.doi) && (
-                              <p className="text-blue-600 underline mt-2">
-                                <a
-                                  href={pub.doi_url || pub.doi || `https://doi.org/${pub.doi}`}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  DOI Link
-                                </a>
+                                {pub.authors && (
+                                  <span className="font-semibold">{pub.authors}</span>
+                                )}
+                                {pub.title && (
+                                  <>
+                                    ,{" "}
+                                    <span className="font-semibold text-blue-700">
+                                      "{pub.title}"
+                                    </span>
+                                  </>
+                                )}
+                                {pub.journal_name && (
+                                  <>
+                                    ,{" "}
+                                    <span className="text-gray-700 text-lg font-semibold">
+                                      {pub.journal_name}
+                                    </span>
+                                  </>
+                                )}
+                                {pub.journal_quartile && (
+                                  <span className="text-gray-700">
+                                    {" "}({pub.journal_quartile})
+                                  </span>
+                                )}
+                                {pub.volume && (
+                                  <span className="text-gray-700">
+                                    {" "}Volume: {pub.volume}
+                                  </span>
+                                )}
+                                {pub.publication_year && (
+                                  <span className="text-gray-700">
+                                    {" "}Year: {pub.publication_year}
+                                  </span>
+                                )}
+                                {(pub.doi_url || pub.doi) && (
+                                  <p className="text-blue-600 underline mt-2">
+                                    <a
+                                      href={pub.doi_url || pub.doi || `https://doi.org/${pub.doi}`}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      DOI Link
+                                    </a>
+                                  </p>
+                                )}
+                              </p>
+                            ) : (
+                              // Book chapters 
+                              <p className="text-gray-800">
+                                {pub.authors && (
+                                  <span className="font-semibold">{pub.authors}</span>
+                                )}
+                                {pub.chapter_title && (
+                                  <>
+                                    ,{" "}
+                                    <span className="font-semibold text-blue-700">
+                                      "{pub.chapter_title}"
+                                    </span>
+                                  </>
+                                )}
+                                {pub.book_title && (
+                                  <>
+                                    ,{" "}
+                                    <span className="text-gray-700 text-lg font-semibold">
+                                      {pub.book_title}
+                                    </span>
+                                  </>
+                                )}
+                                {pub.title && !pub.chapter_title && (
+                                  <>
+                                    ,{" "}
+                                    <span className="font-semibold text-blue-700">
+                                      "{pub.title}"
+                                    </span>
+                                  </>
+                                )}
+                                {pub.publisher && (
+                                  <span className="text-gray-700"> {" "}Publisher: {pub.publisher}</span>
+                                )}
+                                {pub.pages && (
+                                  <span className="text-gray-700"> {" "}Pages: {pub.pages}</span>
+                                )}
+                                {pub.year && (
+                                  <span className="text-gray-700"> {" "}({pub.year})</span>
+                                )}
+                                {(pub.doi_url || pub.doi) && (
+                                  <p className="text-blue-600 underline mt-2">
+                                    <a
+                                      href={pub.doi_url || pub.doi || `https://doi.org/${pub.doi}`}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      DOI Link
+                                    </a>
+                                  </p>
+                                )}
                               </p>
                             )}
-                          </p>
-                        )}
                       </li>
                     ))}
                   </ul>
