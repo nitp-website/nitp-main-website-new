@@ -80,10 +80,33 @@ const EEPOPage = () => {
               </ul>
             </div>
 
+            {/* DD Section */}
+            <div className="w-full mt-8">
+              <h3 className="text-red-900 text-2xl font-bold mb-2">DD B.Tech & M.Tech. (Integrated PG)</h3>
+              <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
+                <li>
+                  Comprehensive Technical Expertise - Graduates will acquire a strong foundation in Electrical Engineering and advanced specialization in Power Systems to excel in industry, utilities, research, and academia.
+                </li>
+                <li>
+                  Innovation & Research Orientation - Graduates will pursue research, innovation, and product development in emerging areas of power and energy systems, addressing challenges with technically sound and sustainable solutions.
+                </li>
+                <li>
+                  Professional Growth & Lifelong Learning - Graduates will engage in continuous learning, advanced studies, and professional certifications to adapt to evolving technologies and global practices in power systems.
+                </li>
+                <li>
+                  Leadership & Collaboration - Graduates will demonstrate leadership, teamwork, communication, and project management skills while collaborating across multidisciplinary domains for societal and industrial benefit.
+                </li>
+                <li>
+                  Ethics, Sustainability & Social Responsibility - Graduates will practice engineering with ethics, integrity, and environmental consciousness, contributing to sustainable development and addressing societal needs.
+                </li>
+              </ul>
+            </div>
+
             {/* PG Section */}
             <div className="w-full mt-10">
               <h3 className="text-red-900 text-2xl font-bold mb-2">M.Tech (PG)</h3>
-              <h4 className="text-red-900 text-xl font-semibold mb-2">Control System</h4>
+              
+              <h4 className="text-red-900 text-xl font-semibold mb-2">Control System Engineering</h4>
               <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
                 <li>
                   Impart learning and understanding towards different segments of Control System Engineering for successful careers in instrumentation, automation, and interdisciplinary fields.
@@ -99,7 +122,7 @@ const EEPOPage = () => {
                 </li>
               </ul>
 
-              <h4 className="text-red-900 text-xl font-semibold mb-2 mt-8">Power System</h4>
+              <h4 className="text-red-900 text-xl font-semibold mb-2 mt-8">Power System Engineering</h4>
               <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
                 <li>
                   Impart learning and understanding towards different segments of Power System, producing postgraduates who are employable in industries or able to pursue higher studies.
@@ -112,6 +135,22 @@ const EEPOPage = () => {
                 </li>
                 <li>
                   Encourage lifelong learning and professional development through continuing education and self-improvement.
+                </li>
+              </ul>
+
+              <h4 className="text-red-900 text-xl font-semibold mb-2 mt-8">Intelligent Transport System</h4>
+              <ul className="list-disc pl-5 space-y-2 text-justify mt-2 text-black">
+                <li>
+                  Advanced Knowledge & Technical Expertise: Equip graduates with in-depth knowledge of electric mobility, battery technologies, hybrid powertrains, and energy storage systems to address challenges in sustainable transportation and power sectors.
+                </li>
+                <li>
+                  Research, Innovation & Problem-Solving: Foster the ability to conduct advanced research, design innovative solutions, and develop cutting-edge technologies in EV systems, energy storage, charging infrastructure, and renewable energy integration.
+                </li>
+                <li>
+                  Professional Competence & Leadership: Prepare graduates to excel in industry, academia, and research organizations by demonstrating professional ethics, leadership skills, project management, and the ability to work in multidisciplinary teams.
+                </li>
+                <li>
+                  Sustainability & Lifelong Learning: Instill a commitment to sustainable practices, environmental responsibility, and continuous learning to adapt to evolving technologies in electric mobility and energy storage domains.
                 </li>
               </ul>
             </div>
