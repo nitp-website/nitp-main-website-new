@@ -43,20 +43,20 @@ const BTechSyllabus = () => {
 const MTechPowerDSSyllabus = () => {
     const courses = [
         {
-            course: "Dual Degree (B.Tech + M.Tech (PSE)) Course Structure (2022)",
-            link: "https://drive.google.com/file/d/1R24uKKW9fxbtv6TlWzCfgIuqTydIN5ND/view",
-        },
-        {
-            course: "Dual Degree (B.Tech + M.Tech (PSE)) Syllabus (2022)",
-            link: "https://drive.google.com/file/d/1PlIaW0QziCXjOoMyy425vZocUJn9geuO/view",
-        },
-        {
             course: "Dual Degree (B.Tech + M.Tech (PSE)) Course Structure (2023) onwards",
             link: "https://drive.google.com/file/d/1D-JX5uoJ3Vf7tENlyq0Z3AEQKAAinfBo/view",
         },
         {
             course: "Dual Degree (B.Tech + M.Tech (PSE)) Syllabus (2023) onwards",
             link: "https://drive.google.com/file/d/1LJHJqsRSC8-V_P3zkAxu6wn5mdyWfu7m/view",
+        },
+        {
+            course: "Dual Degree (B.Tech + M.Tech (PSE)) Course Structure (2022)",
+            link: "https://drive.google.com/file/d/1R24uKKW9fxbtv6TlWzCfgIuqTydIN5ND/view",
+        },
+        {
+            course: "Dual Degree (B.Tech + M.Tech (PSE)) Syllabus (2022)",
+            link: "https://drive.google.com/file/d/1PlIaW0QziCXjOoMyy425vZocUJn9geuO/view",
         },
     ];
 
@@ -140,7 +140,7 @@ const syllabusMap = {
         content: <BTechSyllabus />,
     },
     "mtech-power": {
-        title: "M.Tech in Power Systems Engineering",
+        title: "Dual Degree Programme in B.Tech (Electrical Engineering) and  M.Tech. (Power Systems Engineering)",
         content: <MTechPowerDSSyllabus />,
     },
     "mtech-control": {
