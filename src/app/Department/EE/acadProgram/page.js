@@ -22,8 +22,8 @@ const programs = [
     syllabus: "btech",
   },
   {
-    title: "M.Tech in Power Systems Engineering",
-    degree: "M.Tech",
+    title: "Dual Degree Programme in B.Tech (Electrical Engineering) and  M.Tech. (Power Systems Engineering)",
+    degree: "Integrated B.Tech and M.Tech",
     duration: "2 Years",
     description:
       "Admission to the 2-year M.Tech (Power Systems Engineering) is through GATE. The program focuses on advanced topics in power systems, including generation, transmission, distribution, and protection, with research and project work.",

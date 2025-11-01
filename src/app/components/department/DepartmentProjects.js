@@ -56,9 +56,15 @@ export const DepartmentProjects = ({ data }) => {
                         {/* Project Name (if exists) */}
                         
                         {/* Project Title */}
-                        <h3 className="text-lg font-semibold text-blue-800">
+                        <div className="flex flex-col md:flex-row justify-start gap-5 items-center">
+                           <h3 className="text-lg font-semibold text-blue-800">
                           {project.project_title}
                         </h3>
+                        <h3 className="text-xs font-semibold text-blue-800">
+                          {project.name ? `(${project.name})` : ""}
+                        </h3>
+                        </div>
+                       
 
                         {/* Role */}
                         {project.role && (
