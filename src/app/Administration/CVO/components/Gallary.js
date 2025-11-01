@@ -16,6 +16,7 @@ export const Scroll = ({ data, videos }) => {
           />
         </figure>
       ))}
+
       {videos && videos.length > 0 && (
         <div className="p-2">
           <h2 className="text-1xl p-2 sm:text-2xl font-semibold text-black text-left mb-4 underline decoration-red-500">
@@ -24,12 +25,17 @@ export const Scroll = ({ data, videos }) => {
           {videos.map((video, idx) => (
             <div key={idx} className="hidden md:block mt-3">
               <iframe
-                src={video}
+                src={video.src}
                 width="600"
                 height="400"
                 className="rounded-lg object-cover"
                 allow="autoplay"
               ></iframe>
+              {video.title && (
+                <p className="text-center text-sm text-gray-700 mt-2">
+                  {video.title}
+                </p>
+              )}
             </div>
           ))}
         </div>
@@ -53,9 +59,18 @@ const GalleryData2024 = {
     { src: "/bihta2.jpg", alt: "Image 4076" },
   ],
   videos: [
-    "https://drive.google.com/file/d/1RysHorbHB0f2Ot0z1caKD0-ThWO64bUl/preview",
-    "https://drive.google.com/file/d/171_ZsnICJZZjOpdXNXXx8-h5s7FpNr46/preview",
-    "https://drive.google.com/file/d/13-jZ4mjRrBFZMtmH3dG6qw9X3DaGrdY2/preview",
+    {
+      src: "https://drive.google.com/file/d/1RysHorbHB0f2Ot0z1caKD0-ThWO64bUl/preview",
+      title: "Vigilance Awareness Week 2024 – Part 1",
+    },
+    {
+      src: "https://drive.google.com/file/d/171_ZsnICJZZjOpdXNXXx8-h5s7FpNr46/preview",
+      title: "Vigilance Awareness Week 2024 – Part 2",
+    },
+    {
+      src: "https://drive.google.com/file/d/13-jZ4mjRrBFZMtmH3dG6qw9X3DaGrdY2/preview",
+      title: "Vigilance Awareness Week 2024 – Part 3",
+    },
   ],
 };
 
@@ -73,13 +88,18 @@ const GalleryData2025 = {
     { src: "https://i.postimg.cc/zXNxxZWq/image.png", alt: "Image 9" },
   ],
   videos: [
-    "https://drive.google.com/file/d/17PxAWYk9Rni8y-YzU2gIjsnILushw96a/preview",
+    {
+      src: "https://drive.google.com/file/d/17PxAWYk9Rni8y-YzU2gIjsnILushw96a/preview",
+      title:
+        "Jingles prepared and performed by the SAPTAK-The Music Club of our Institute for the Vigilance Awareness Week 2025",
+    },
   ],
 };
 
 const Gallery = () => {
   const [activeYear, setActiveYear] = useState("2025");
   const currentData = activeYear === "2024" ? GalleryData2024 : GalleryData2025;
+
   return (
     <div className="p-4">
       <div className="flex gap-4 mb-4">
