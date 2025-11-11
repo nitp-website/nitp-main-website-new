@@ -3,13 +3,17 @@ import { Download } from 'lucide-react';
 
 const HolidayTable = () => {
   const dataOdd = [
+       {
+      link: "https://drive.google.com/file/d/1E_hBgIOEVq84kusPBeQRv_2XTAiY6o0_/view?usp=sharing",
+      para: "List of Holidays and Restricted Holidays for the Year 2026",
+    },
     {
       link: "https://drive.google.com/file/d/1jAeFoM7KYYFohwLsDZcz6a-ifB5Mp_2F/view",
-      para: "List of Holidays and Restricted Holidays for the Year 2025-2026",
+      para: "List of Holidays and Restricted Holidays for the Year 2025",
     },
     {
       link: "https://drive.google.com/file/d/1qL_eR9y5y4uTz0dR0_woqFSv3sQNUhwD/view",
-      para: "List of Holidays and Restricted Holidays for the Year 2024-2025",
+      para: "List of Holidays and Restricted Holidays for the Year 2024",
     },
   ];
 
