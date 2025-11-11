@@ -11,7 +11,7 @@ const dept = "CSE";
 
 const about = `The Department of Computer Science and Engineering offers a wide spectrum of academic programs to prepare students for the rapidly evolving digital era. At the undergraduate level, the department offers a four-year B. Tech program in Computer Science and Engineering, and Artificial Intelligence and Data Science. It also provides two five-year Dual Degree programs: B.Tech + M.Tech in Computer Science and Engineering with specialization in Cyber Security, and B.Tech + M.Tech in Computer Science and Engineering with specialization in Data Science. At the postgraduate level, students can opt for a three-year MCA program with specializations in Artificial Intelligence and Internet of Things, and Data Science and Informatics, and a two-year M.Tech program with specializations in Data Science and Engineering, and Cyber Security. The department further offers a Ph.D. program fostering advanced research.`;
 
-const picture = ["https://i.postimg.cc/hGFcVRpp/IMG-20250825-WA0016.jpg", "https://i.postimg.cc/9FW4qZrr/IMG-20250825-WA0018.jpg","https://i.postimg.cc/2yXf6s1d/IMG-20250825-WA0019.jpg", "https://i.postimg.cc/5NFrLYTW/IMG-20250825-WA0017.jpg"];
+const picture = ["https://i.postimg.cc/C1RDwd3r/image.png","https://i.postimg.cc/hGFcVRpp/IMG-20250825-WA0016.jpg", "https://i.postimg.cc/9FW4qZrr/IMG-20250825-WA0018.jpg","https://i.postimg.cc/2yXf6s1d/IMG-20250825-WA0019.jpg", "https://i.postimg.cc/5NFrLYTW/IMG-20250825-WA0017.jpg"];
 
 export default function CSE() {
   const router = useRouter();
