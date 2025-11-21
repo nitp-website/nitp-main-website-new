@@ -121,45 +121,45 @@ const admissionData = {
       },
     ],
     notices: [
-       {
-        title: "Physical reporting notice for admission to PhD ( July_Dec'2025)",
-        date: "2025-07-24",
-        content: "PhD Admission",
-        href:"https://drive.google.com/file/d/1VpDmpYqowP6kqoP1ZVyGd0gBwSqiJ9PO/view?usp=sharing"
-      },
+      //  {
+      //   title: "Physical reporting notice for admission to PhD ( July_Dec'2025)",
+      //   date: "2025-07-24",
+      //   content: "PhD Admission",
+      //   href:"https://drive.google.com/file/d/1VpDmpYqowP6kqoP1ZVyGd0gBwSqiJ9PO/view?usp=sharing"
+      // },
 
-       {
-        title: "List of Eligible Candidates for PhD admission July-Dec'2025",
-        date: "2025-07-24",
-        content: "PhD Admission",
-        href:"https://drive.google.com/file/d/1X8zagb-MA7rEJOlJLpJIuXE5hJNo3J2B/view?usp=sharing"
-      },
+      //  {
+      //   title: "List of Eligible Candidates for PhD admission July-Dec'2025",
+      //   date: "2025-07-24",
+      //   content: "PhD Admission",
+      //   href:"https://drive.google.com/file/d/1X8zagb-MA7rEJOlJLpJIuXE5hJNo3J2B/view?usp=sharing"
+      // },
 
       
-       {
-        title: "Provisional list of candidates for Interview to PhD Program(July-Dec'2025)",
-        date: "2025-07-21",
-        content: "PhD Admission",
-        href:"https://drive.google.com/file/d/1pP42caNC3qgjX19mba9E1hyAWD2boavY/view?usp=sharing"
-      },
+      //  {
+      //   title: "Provisional list of candidates for Interview to PhD Program(July-Dec'2025)",
+      //   date: "2025-07-21",
+      //   content: "PhD Admission",
+      //   href:"https://drive.google.com/file/d/1pP42caNC3qgjX19mba9E1hyAWD2boavY/view?usp=sharing"
+      // },
+      // {
+      //   title: "List of Provisionally Eligible Candidates for Admission Test for PhD Admission(July-Dec 2025 semester)",
+      //   date: "2025-07-16",
+      //   content: "PhD Admission",
+      //   href:"https://drive.google.com/file/d/1IyO4eewagzeUitqI-3YXCNjirFwmDedt/view"
+      // },
       {
-        title: "List of Provisionally Eligible Candidates for Admission Test for PhD Admission(July-Dec 2025 semester)",
-        date: "2025-07-16",
+        title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2025-26 (Even Semester: Jan–June 2026). Last date: 30th December 2025",
+        date: "2025-11-21",
         content: "PhD Admission",
-        href:"https://drive.google.com/file/d/1IyO4eewagzeUitqI-3YXCNjirFwmDedt/view"
-      },
-      {
-        title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2025-26 (Odd Semester: July–December 2025). Last date: 14th July 2025",
-        date: "2025-06-10",
-        content: "PhD Admission",
-        href:"https://drive.google.com/file/d/1AgEe_gQWy0rM_Az5DZil5ERMdUj-fFze/view"
-      },
-          {
-        title: "SOP for PhD admission Academic Year 2025-26.",
-        date: "2025-06-10",
-        content: "PhD Admission",
-        href:"https://drive.google.com/file/d/1FGeVnEinF1Fp5pTHTPNcZUbskSfyyj5S/view?usp=sharing"
+        href:"https://drive.google.com/file/d/1LF_8jQygx-Xp4xFP51m0KCYDfHmNlMW8/view?usp=sharing"
       }
+      //     {
+      //   title: "SOP for PhD admission Academic Year 2025-26.",
+      //   date: "2025-06-10",
+      //   content: "PhD Admission",
+      //   href:"https://drive.google.com/file/d/1FGeVnEinF1Fp5pTHTPNcZUbskSfyyj5S/view?usp=sharing"
+      // }
     ]
   },
 
