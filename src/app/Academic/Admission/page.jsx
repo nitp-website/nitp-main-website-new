@@ -108,17 +108,17 @@ const admissionData = {
   phd: {
     portals: [
       {
-        name: "SOP and Admission Form link for the Academic Year 2025-26 admissions",
+        name: "PhD Admissions NITP Portal",
         image:"https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
         link:"https://mis.nitp.ac.in/admissionphd/",
         sopLink:"https://drive.google.com/file/d/1n3zmrKoDoDEcxAAKWA0kZIONNJmdoxtU/view?usp=sharing"
       },
-      {
-        name: "PhD Admissions NITP Portal",
-        image: "https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
-        link: "https://mis.nitp.ac.in/admissionphd/",
-        // description: "Centralized Counselling for M.Tech/M.Arch/M.Plan Admissions"
-      },
+      // {
+      //   name: "PhD Admissions NITP Portal",
+      //   image: "https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
+      //   link: "https://mis.nitp.ac.in/admissionphd/",
+      //   // description: "Centralized Counselling for M.Tech/M.Arch/M.Plan Admissions"
+      // },
     ],
     notices: [
       //  {
