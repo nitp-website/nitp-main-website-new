@@ -109,7 +109,7 @@ const admissionData = {
     portals: [
       {
         name: "SOP and Admission Form link for the Academic Year 2025-26 admissions",
-        image:"https://mis.nitp.ac.in/admission/images/Header.jpg",
+        image:"https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
         link:"https://mis.nitp.ac.in/admissionphd/",
         sopLink:"https://drive.google.com/file/d/1n3zmrKoDoDEcxAAKWA0kZIONNJmdoxtU/view?usp=sharing"
       },
