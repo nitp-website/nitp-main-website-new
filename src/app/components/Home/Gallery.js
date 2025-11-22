@@ -1,49 +1,50 @@
 "use client";
 import { useEffect, useState } from 'react';
-
-import './styles/Gallery.css';
-
 import Link from 'next/link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const images = [
   'https://i.postimg.cc/bwy2BtkJ/nit-patna-001.jpg',
-'https://i.postimg.cc/02dwnf6F/nit-patna-002.jpg',
-'https://i.postimg.cc/zX1hTMfT/nit-patna-003.jpg',
-'https://i.postimg.cc/h4mxzgKS/nit-patna-004.jpg',
-'https://i.postimg.cc/fyY06783/nit-patna-005.jpg',
-'https://i.postimg.cc/HLP55kJL/nit-patna-006.jpg',
-'https://i.postimg.cc/TwLbcvmJ/nit-patna-007.jpg',
-'https://i.postimg.cc/pTwFGcJb/nit-patna-008.jpg',
-'https://i.postimg.cc/LssLn187/nit-patna-009.jpg',
-'https://i.postimg.cc/TwLbcvmJ/nit-patna-007.jpg',
-'https://i.postimg.cc/pTwFGcJb/nit-patna-008.jpg',
-'https://i.postimg.cc/LssLn187/nit-patna-009.jpg',
-
+  'https://i.postimg.cc/02dwnf6F/nit-patna-002.jpg',
+  'https://i.postimg.cc/zX1hTMfT/nit-patna-003.jpg',
+  'https://i.postimg.cc/h4mxzgKS/nit-patna-004.jpg',
+  'https://i.postimg.cc/fyY06783/nit-patna-005.jpg',
+  'https://i.postimg.cc/HLP55kJL/nit-patna-006.jpg',
+  'https://i.postimg.cc/TwLbcvmJ/nit-patna-007.jpg',
+  'https://i.postimg.cc/pTwFGcJb/nit-patna-008.jpg',
+  'https://i.postimg.cc/LssLn187/nit-patna-009.jpg',
+  'https://i.postimg.cc/TwLbcvmJ/nit-patna-007.jpg',
+  'https://i.postimg.cc/pTwFGcJb/nit-patna-008.jpg',
+  'https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp'
 ];
 
 export function Gallery() {
   const [popupImage, setPopupImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(null);
+
   useEffect(() => {
     AOS.init({
-         duration: 800,
-         once: false,
-         offset: 50,
-       })
- }, [])
+      duration: 800,
+      once: true,
+      offset: 50,
+    });
+  }, []);
+
   const openPopup = (index) => {
     setPopupImage(images[index]);
     setCurrentIndex(index);
+    document.body.style.overflow = 'hidden';
   };
 
   const closePopup = () => {
     setPopupImage(null);
     setCurrentIndex(null);
+    document.body.style.overflow = 'auto';
   };
 
-  const showNextImage = () => {
+  const showNextImage = (e) => {
+    e?.stopPropagation();
     if (currentIndex !== null) {
       const nextIndex = (currentIndex + 1) % images.length;
       setPopupImage(images[nextIndex]);
@@ -51,7 +52,8 @@ export function Gallery() {
     }
   };
 
-  const showPreviousImage = () => {
+  const showPreviousImage = (e) => {
+    e?.stopPropagation();
     if (currentIndex !== null) {
       const prevIndex = (currentIndex - 1 + images.length) % images.length;
       setPopupImage(images[prevIndex]);
@@ -59,177 +61,140 @@ export function Gallery() {
     }
   };
 
-  useEffect(() => {
-    // Load Twitter widget script
-    const script = document.createElement('script');
-    script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
-    script.setAttribute('async', 'true');
-    script.setAttribute('charset', 'utf-8');
-    document.body.appendChild(script);
-  }, []);
+  // --- PERFECT TILING LOGIC ---
+  // This maps specific indices to spans that sum up to exactly 4 columns.
+  const getBentoClass = (index) => {
+    const layoutMap = {
+      // ROW 1 & 2 (Mix of Big, Tall, Std)
+      0: 'md:col-span-2 md:row-span-2 col-span-2 row-span-2', // Big Square (Top Left)
+      1: 'md:col-span-1 md:row-span-2 col-span-1 row-span-2', // Tall Vertical (Middle)
+      2: 'md:col-span-1 md:row-span-1 col-span-1 row-span-1', // Small (Top Right)
+      3: 'md:col-span-1 md:row-span-1 col-span-1 row-span-1', // Small (Bottom Right - fills gap under 2)
 
-  // Define different sizes for masonry layout
-  const getImageClass = (index) => {
-    const patterns = [
-      'row-span-2 col-span-2', // Large image
-      'row-span-1 col-span-1', // Small image
-      'row-span-2 col-span-1', // Tall image
-      'row-span-1 col-span-2', // Wide image
-      'row-span-1 col-span-1', // Small image
-      'row-span-2 col-span-1', // Tall image
-      'row-span-1 col-span-2', // Wide image
-      'row-span-1 col-span-1', // Small image
-      'row-span-2 col-span-2', // Large image
-    ];
-    return patterns[index % patterns.length];
+      // ROW 3 (Two Wide items)
+      4: 'md:col-span-2 md:row-span-1 col-span-2 row-span-1', // Wide
+      5: 'md:col-span-2 md:row-span-1 col-span-2 row-span-1', // Wide
+
+      // ROW 4 & 5 (Mirrored Big layout)
+      6: 'md:col-span-1 md:row-span-1 col-span-1 row-span-1', // Small
+      7: 'md:col-span-1 md:row-span-1 col-span-1 row-span-1', // Small
+      8: 'md:col-span-2 md:row-span-2 col-span-2 row-span-2', // Big Square (Right side)
+      9: 'md:col-span-1 md:row-span-1 col-span-1 row-span-1', // Small (Bottom Left)
+      10: 'md:col-span-1 md:row-span-1 col-span-1 row-span-1', // Small (Bottom Middle)
+
+      // ROW 6 (Full Width Footer)
+      11: 'md:col-span-4 md:row-span-1 col-span-2 row-span-1', // Panoramic
+    };
+
+    return layoutMap[index] || 'col-span-1 row-span-1';
   };
 
   return (
-    <div className="p-5 md:p-20 h-full gdiv bg-gradient-to-br from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-800 to-red-600 bg-clip-text text-transparent mb-4">
-            Glimpse of NIT Patna
+    <section className="py-16 bg-gradient-to-b from-white via-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="text-center mb-12" data-aos="fade-down">
+          <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-900 via-red-700 to-red-900 tracking-tight mb-3">
+            Campus Chronicles
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Explore the beautiful campus, state-of-the-art facilities, and vibrant student life at one of India's premier technical institutions.
+          <p className="text-gray-500 max-w-xl mx-auto">
+            A glimpse into the vibrant life and architecture of NIT Patna.
           </p>
-          <div className="mt-6 w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto rounded-full"></div>
         </div>
         
-        <div className="image-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 grid-rows-4 gap-4 p-4 md:p-6 auto-rows-fr">
+        {/* --- GRID CONTAINER --- */}
+        {/* grid-flow-dense is crucial: it fills tiny gaps automatically */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[150px] md:auto-rows-[220px] grid-flow-dense">
           {images.map((image, index) => (
             <div 
               key={index} 
-              className={`relative overflow-hidden rounded-xl group shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 image-item ${getImageClass(index)} ${index >= 6 ? 'hidden md:block' : ''}`} 
-              data-aos="zoom-out-up"
-              data-aos-delay={index * 100}
+              className={`relative group rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-500 ${getBentoClass(index)}`}
+              onClick={() => openPopup(index)}
+              data-aos="fade-up"
+              data-aos-delay={index * 50}
             >
               <img
                 src={image}
-                alt={`Gallery Image ${index + 1}`}
-                className="object-cover w-full h-full transition-all duration-500 group-hover:scale-110 group-hover:brightness-75"
+                alt={`Gallery View ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-white font-bold text-lg mb-2">Campus View {index + 1}</h3>
-                  <button 
-                    onClick={() => openPopup(index)} 
-                    className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
-                  >
-                    <svg className="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                    View Full Size
-                  </button>
-                </div>
-              </div>
               
-              {/* Image number badge */}
-              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-red-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
-                {index + 1}
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-lg">
+                   <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                   </svg>
+                </div>
               </div>
             </div>
           ))}
         </div>
         
+        {/* Footer Link */}
         <div className="text-center mt-12">
           <Link
             href="/Gallery"
-            className="inline-flex items-center px-8 py-4 text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
-            prefetch={false}
+            className="inline-flex items-center gap-2 px-8 py-3 bg-white border border-gray-200 hover:border-red-600 text-gray-800 hover:text-red-600 font-semibold rounded-full shadow-sm hover:shadow-md transition-all duration-300"
           >
-            <GalleryThumbnailsIcon className="w-6 h-6 mr-3" />
             View Complete Gallery
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
+            <i className="ri-arrow-right-line"></i>
           </Link>
-          <p className="text-gray-500 mt-4">Discover more beautiful moments from our campus</p>
         </div>
       </div>
       
+      {/* --- POPUP LIGHTBOX --- */}
       {popupImage && (
-        <>
-          <div className="fixed inset-0 bg-black/80 z-[60000]" onClick={closePopup}></div>
-          <div className="fixed inset-0 z-[70000] flex items-center justify-center p-4 md:p-6">
-            <div className="relative bg-white rounded-lg shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] flex flex-col">
-              <button 
-                className="absolute right-4 top-4 text-gray-600 hover:text-gray-800 z-[80] bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-all hover:shadow-xl"
-                onClick={closePopup}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+          <div 
+            className="absolute inset-0 bg-black/95 backdrop-blur-sm transition-opacity animate-fadeIn" 
+            onClick={closePopup}
+          ></div>
+          
+          <div className="relative w-full max-w-5xl h-[85vh] flex flex-col z-10 animate-scaleIn">
+            {/* Close X */}
+            <button 
+              className="absolute -top-10 right-0 md:-right-10 text-white hover:text-red-500 transition-colors"
+              onClick={closePopup}
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+
+            {/* Image Area */}
+            <div className="flex-1 relative flex items-center justify-center bg-black/20 rounded-lg overflow-hidden">
+               <img 
+                src={popupImage} 
+                alt="Popup" 
+                className="max-w-full max-h-full object-contain shadow-2xl"
+              />
+              
+              {/* Arrows */}
+              <button onClick={showPreviousImage} className="absolute left-2 md:left-4 p-2 bg-black/50 hover:bg-red-600 text-white rounded-full transition-colors backdrop-blur-md">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
               </button>
-              <div className="relative flex-1 min-h-0 flex items-center justify-center p-4">
-                <img 
-                  src={popupImage} 
-                  alt="Popup Image" 
-                  className="max-w-full max-h-[70vh] object-contain"
-                />
-                <button 
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-gray-800 rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all hover:shadow-xl"
-                  onClick={showPreviousImage}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <button 
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-gray-800 rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all hover:shadow-xl"
-                  onClick={showNextImage}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-              <div className="bg-gray-100 p-4 rounded-b-lg">
-                <div className="flex gap-2 overflow-x-auto py-2 px-2">
-                  {images.map((thumb, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => {
-                        setPopupImage(images[idx]);
-                        setCurrentIndex(idx);
-                      }}
-                      className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden transition-all hover:opacity-90 ${
-                        currentIndex === idx ? 'ring-2 ring-[#421010] ring-offset-2' : ''
-                      }`}
-                    >
-                      <img
-                        src={thumb}
-                        alt={`Thumbnail ${idx + 1}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </button>
-                  ))}
-                </div>
-              </div>
+              <button onClick={showNextImage} className="absolute right-2 md:right-4 p-2 bg-black/50 hover:bg-red-600 text-white rounded-full transition-colors backdrop-blur-md">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+              </button>
+            </div>
+
+            {/* Thumbnails */}
+            <div className="mt-4 h-16 flex justify-center gap-2 overflow-x-auto py-1 px-2 no-scrollbar">
+               {images.map((img, idx) => (
+                 <div 
+                   key={idx}
+                   onClick={(e) => {e.stopPropagation(); openPopup(idx);}}
+                   className={`relative w-14 h-14 rounded-md overflow-hidden cursor-pointer border-2 transition-all ${currentIndex === idx ? 'border-red-500 opacity-100' : 'border-transparent opacity-50 hover:opacity-100'}`}
+                 >
+                   <img src={img} className="w-full h-full object-cover" alt="thumb" />
+                 </div>
+               ))}
             </div>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </section>
   );
 }
 
 export default Gallery;
-
-function GalleryThumbnailsIcon(props) {
-  return (
-    <svg 
-      {...props}
-      viewBox="0 0 24 24" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path 
-        d="M4 4H20V16H4V4ZM2 4C2 2.89543 2.89543 2 4 2H20C21.1046 2 22 2.89543 22 4V16C22 17.1046 21.1046 18 20 18H4C2.89543 18 2 17.1046 2 16V4ZM4 20H20V22H4V20Z" 
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
