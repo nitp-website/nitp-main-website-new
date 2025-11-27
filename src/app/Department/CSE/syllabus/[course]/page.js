@@ -5099,7 +5099,7 @@ const DualCSyllabus = () => {
                     dep={"CSE"}
                     sem={"5"}
                     code={"OP0507XX"}
-                    title={"Dept Elective - I"}
+                    title={"Open Elective - I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6262,7 +6262,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"CS64123"}
-                    title={"Project"}
+                    title={"Minor Project"}
                     L={"0"}
                     T={"0"}
                     P={"12"}
@@ -6295,7 +6295,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS74XXX3"}
-                    title={"Dept. Elective - 3"}
+                    title={"Dept. Elective - III"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6306,7 +6306,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS74XXX3"}
-                    title={"Dept. Elective - 4"}
+                    title={"Dept. Elective - IV"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6317,7 +6317,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS74XXX/OP74XXX"}
-                    title={"Dept. Elective - 5 / MOOC"}
+                    title={"Dept. Elective - V / MOOC"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6383,7 +6383,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"8"}
                     code={"CS84XXX3"}
-                    title={"Dept. Elective - 6"}
+                    title={"Dept. Elective - VI"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6394,7 +6394,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"8"}
                     code={"CS84XXX3"}
-                    title={"Dept Elective - 7"}
+                    title={"Dept Elective - VII"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6405,7 +6405,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"8"}
                     code={"OP84XXX"}
-                    title={"Open Elective - 2"}
+                    title={"Open Elective - II"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -7289,8 +7289,8 @@ const DualDSyllabus = () => {
                  <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
-                    code={"OP44XXX"}
-                    title={"OP0508XX"}
+                    code={"OP0508XX"}
+                    title={"Open Elective I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
