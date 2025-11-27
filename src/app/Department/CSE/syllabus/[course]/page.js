@@ -4054,7 +4054,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"OP64XXX"}
-                    title={"MOOC"}
+                    title={"MOOC-I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4065,7 +4065,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"OP64XXX"}
-                    title={"MOOC"}
+                    title={"MOOC-II"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4153,6 +4153,17 @@ const DualCSyllabusold = () => {
                 />
                 <SyllabusComp
                     dep={"CSE"}
+                    sem={"7"}
+                    code={"CS74138"}
+                    title={"Industrial Training"}
+                    L={""}
+                    T={""}
+                    P={""}
+                    cred={"2"}
+                    url={""}
+                />
+                <SyllabusComp
+                    dep={"CSE"}
                     sem={"8"}
                     code={"CS84138"}
                     title={"Intrusion Detection and Prevention"}
@@ -4221,7 +4232,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"9"}
                     code={"CS94141"}
-                    title={"Industrial Training / Project (to be continued in 10th Sem)"}
+                    title={"Research Project (to be continued in 10th Sem)/Internship"}
                     L={"0"}
                     T={"0"}
                     P={"40"}
@@ -4232,7 +4243,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"10"}
                     code={"CS104142"}
-                    title={"Industrial Training / Project"}
+                    title={"Research Project/Internship"}
                     L={"0"}
                     T={"0"}
                     P={"40"}
@@ -6145,17 +6156,7 @@ const DualDSyllabusold = () => {
                     cred={"3"}
                     url={""}
                 />
-                <SyllabusComp
-                    dep={"CSE"}
-                    sem={"5"}
-                    code={"OP54XXX"}
-                    title={"MOOC"}
-                    L={"X"}
-                    T={"X"}
-                    P={"X"}
-                    cred={"3"}
-                    url={""}
-                />
+         
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"6"}
@@ -6193,7 +6194,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"OP64XXX"}
-                    title={"MOOC"}
+                    title={"MOOC-I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6204,7 +6205,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"OP64XXX"}
-                    title={"MOOC"}
+                    title={"MOOC-II"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6358,7 +6359,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"9"}
                     code={"CS94133"}
-                    title={"Industrial Training / Project (to be continued in 10th Sem)"}
+                    title={"Research Project (to be continued in 10th Sem)/Internship "}
                     L={"0"}
                     T={"0"}
                     P={"40"}
@@ -6369,7 +6370,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"10"}
                     code={"CS104134"}
-                    title={"Industrial Training / Project"}
+                    title={"Research Project /Internship"}
                     L={"0"}
                     T={"0"}
                     P={"40"}
