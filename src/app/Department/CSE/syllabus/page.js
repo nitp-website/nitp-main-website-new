@@ -601,6 +601,18 @@ export default function Page() {
                                 cred={"2"}
                                 url={""}
                             />
+                                <SyllabusComp
+                                dep={"CSE"}
+                                sem={"7"}
+                                code={"CS74130"}
+                                title={"Industrial Training"}
+                                L={""}
+                                T={""}
+                                P={""}
+                                cred={"2"}
+                                url={""}
+                            />
+                                    
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"8"}
@@ -5469,6 +5481,17 @@ export default function Page() {
                                 sem={"7"}
                                 code={"CS74137"}
                                 title={"Technical Seminar and Report Writing"}
+                                L={"0"}
+                                T={"0"}
+                                P={"4"}
+                                cred={"2"}
+                                url={""}
+                            />
+                                <SyllabusComp
+                                dep={"CSE"}
+                                sem={"7"}
+                                code={"CS74138"}
+                                title={"Industrial Training"}
                                 L={"0"}
                                 T={"0"}
                                 P={"4"}
