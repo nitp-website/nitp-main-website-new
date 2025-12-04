@@ -40,6 +40,7 @@ const Slider = () => {
         <SwiperSlide>
           {/* <img src="/homepage/MainEntrance.jpg" /> */}
           <img src="/independeceDayCelbHomePoster.webp" />
+        </SwiperSlide>
         <SwiperSlide>
           <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp" />
         </SwiperSlide>
