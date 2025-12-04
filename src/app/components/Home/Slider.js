@@ -35,20 +35,11 @@ const Slider = () => {
         </SwiperSlide>
         {/** top 2% scientist */}
         <SwiperSlide>
-          <img src="https://i.postimg.cc/fTH5mybK/image.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://i.postimg.cc/FHQKvKyk/image.png" />
+          <img src="https://i.postimg.cc/5tjkwcXG/image.png" />
         </SwiperSlide>
         <SwiperSlide>
           {/* <img src="/homepage/MainEntrance.jpg" /> */}
           <img src="/independeceDayCelbHomePoster.webp" />
-        </SwiperSlide>
-                <SwiperSlide>
-          <img src="https://i.postimg.cc/W38dktZ6/Fall-Festival.webp" alt="Har Ghar Tiranga 2025" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://i.postimg.cc/yd30JWY8/Fall-Festival-2.webp" alt="Fall Festival 2025" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp" />
