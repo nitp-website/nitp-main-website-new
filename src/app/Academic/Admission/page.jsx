@@ -110,7 +110,7 @@ const admissionData = {
       {
         name: "PhD Admissions NITP Portal",
         image:"https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
-        link:"https://mis.nitp.ac.in/admissionphd/",
+     //   link:"https://mis.nitp.ac.in/admissionphd/",
         sopLink:"https://drive.google.com/file/d/1n3zmrKoDoDEcxAAKWA0kZIONNJmdoxtU/view?usp=sharing"
       },
       // {
@@ -142,12 +142,12 @@ const admissionData = {
       //   content: "PhD Admission",
       //   href:"https://drive.google.com/file/d/1pP42caNC3qgjX19mba9E1hyAWD2boavY/view?usp=sharing"
       // },
-      // {
-      //   title: "List of Provisionally Eligible Candidates for Admission Test for PhD Admission(July-Dec 2025 semester)",
-      //   date: "2025-07-16",
-      //   content: "PhD Admission",
-      //   href:"https://drive.google.com/file/d/1IyO4eewagzeUitqI-3YXCNjirFwmDedt/view"
-      // },
+      {
+         title: "Ph.D. Admission Link Disabled Due to Technical Issues",
+        date: "2025-12-06",
+        content: "PhD Admission",
+      //  href:"https://drive.google.com/file/d/1IyO4eewagzeUitqI-3YXCNjirFwmDedt/view"
+      },
       {
         title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2025-26 (Even Semester: Jan–June 2026). Last date: 30th December 2025",
         date: "2025-11-21",
