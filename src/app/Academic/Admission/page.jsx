@@ -110,7 +110,7 @@ const admissionData = {
       {
         name: "PhD Admissions NITP Portal",
         image:"https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
-     //   link:"https://mis.nitp.ac.in/admissionphd/",
+       link:"",
         sopLink:"https://drive.google.com/file/d/1n3zmrKoDoDEcxAAKWA0kZIONNJmdoxtU/view?usp=sharing"
       },
       // {
@@ -146,7 +146,7 @@ const admissionData = {
          title: "Ph.D. Admission Link Disabled Due to Technical Issues",
         date: "2025-12-06",
         content: "PhD Admission",
-      //  href:"https://drive.google.com/file/d/1IyO4eewagzeUitqI-3YXCNjirFwmDedt/view"
+       href:""
       },
       {
         title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2025-26 (Even Semester: Jan–June 2026). Last date: 30th December 2025",
