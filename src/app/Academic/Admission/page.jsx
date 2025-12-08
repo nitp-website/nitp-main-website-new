@@ -143,7 +143,7 @@ const admissionData = {
       //   href:"https://drive.google.com/file/d/1pP42caNC3qgjX19mba9E1hyAWD2boavY/view?usp=sharing"
       // },
       {
-         title: "Ph.D. Admission Link Disabled Due to Technical Issues",
+         title: "Ph.D. admission link is currently disabled due to technical issues. It will be activated soon.",
         date: "2025-12-06",
         content: "PhD Admission",
        href:""
