@@ -2,7 +2,7 @@
 
 import BackDepartment from "../../../components/department/BackDepartment";
 import { useState } from "react"
-import normalizeGoogleDriveUrl from "@/utils/normalizeUrl";
+import normalizeGoogleDriveUrl from "../../../../utils/normalizeUrl";
 
 
 
