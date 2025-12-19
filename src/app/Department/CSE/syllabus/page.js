@@ -2,7 +2,7 @@
 
 import BackDepartment from "../../../components/department/BackDepartment";
 import { useState } from "react"
-
+import normalizeGoogleDriveUrl from "@/utils/normalizeUrl";
 
 
 
@@ -7009,12 +7009,13 @@ export default function Page() {
 
 
 function SyllabusComp({ dep, sem, code, title, L, T, P, cred, url }) {
+    const safeUrl = normalizeGoogleDriveUrl(url);
     return (
         <>
             <div className="col-span-1 border border-black flex flex-col justify-center pl-4 py-2 overflow-auto ">{dep}</div>
             <div className="col-span-1 border border-black flex flex-col justify-center pl-4 py-2 ">{sem}</div>
             <div className="col-span-2 border border-black flex flex-col justify-center pl-4 py-2 ">{code}</div>
-            <a href={url} target="_blank" className="col-span-4 border border-black flex flex-col justify-center pl-4 py-2 cursor-pointer">{title}</a>
+            <a href={safeUrl || '#'} target="_blank" rel="noopener noreferrer" className="col-span-4 border border-black flex flex-col justify-center pl-4 py-2 cursor-pointer">{title}</a>
             <div className="col-span-1 border border-black flex flex-col justify-center pl-4 py-2 ">{L}</div>
             <div className="col-span-1 border border-black flex flex-col justify-center pl-4 py-2 ">{T}</div>
             <div className="col-span-1 border border-black flex flex-col justify-center pl-4 py-2 ">{P}</div>
