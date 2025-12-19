@@ -1,14 +1,16 @@
 import React from "react";
+import normalizeGoogleDriveUrl from "../../../../../utils/normalizeUrl";
 
 
 function SyllabusComp({ dep, sem, code, title, L, T, P, cred, url }) {
+    const safeUrl = normalizeGoogleDriveUrl(url);
     return (
         <div className="grid grid-cols-12 w-full text-black">
             <div className="col-span-1 border border-black flex items-center px-2 py-2">{dep}</div>
             <div className="col-span-1 border border-black flex items-center px-2 py-2">{sem}</div>
             <div className="col-span-2 border border-black flex items-center px-2 py-2">{code}</div>
             <a
-                href={url}
+                href={safeUrl || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="col-span-4 border border-black flex items-center text-left text-sm px-2 py-2 hover:underline hover:cursor-pointer"
