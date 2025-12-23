@@ -1685,7 +1685,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"6"}
-                    code={"CS641XX"}
+                    code={"CS0606XX"}
                     title={"Dept. Elective - II"}
                     L={"X"}
                     T={"X"}
