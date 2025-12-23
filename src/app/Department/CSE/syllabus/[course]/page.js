@@ -1326,6 +1326,8 @@ const BTechSyllabusold = () => {
 registration of these MOOC courses will be done in sixth semester only. <br></br>
 3. Dept. Elective – 3, Dept. Elective -4 & Dept. Elective 5 need to be chosen from Elective list - 2 
 and Elective list -3.
+<br></br>
+    * - To be conducted in the industry; if not available, then in Research Institutes.
                 </p>
             </div>
         </div>
@@ -2636,6 +2638,11 @@ const BTechSyllabus = () => {
                     url={"https://drive.google.com/file/d/1L70hxedl6t4xmd9P8zsG_7Ryrb6MevTk/view?usp=drivesdk"}
                 />
             </div>
+<div className="mt-4 text-gray-700 text-sm px-2">
+                <p>
+ * - To be conducted in the industry; if not available, then in Research Institutes.
+                </p>
+            </div>
         </div>
     );
 };
@@ -3675,6 +3682,11 @@ const BTechAIDSSyllabus = () => {
                     cred={"3"}
                     url={"https://docs.google.com/document/d/1ThpmwSqen5PZDjOjfdJly_p_5lDfyl7v/view?tab=t.0"}
                 />
+            </div>
+<div className="mt-4 text-gray-700 text-sm px-2">
+                <p>
+* - To be conducted in the industry; if not available, then in Research Institutes.
+                </p>
             </div>
         </div>
     );
