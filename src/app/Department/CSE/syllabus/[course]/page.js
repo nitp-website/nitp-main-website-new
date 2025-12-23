@@ -1597,7 +1597,7 @@ const BTechSyllabus = () => {
                     dep={"CSUG"}
                     sem={"4"}
                     code={"CS0406XX"}
-                    title={"Open Electives-1"}
+                    title={"Dept Electives-1"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
