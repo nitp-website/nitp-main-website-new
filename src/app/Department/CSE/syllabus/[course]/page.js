@@ -1364,7 +1364,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"1"}
-                    code={"MA14102"}
+                    code={"MC010601"}
                     title={"Engineering Mathematics I"}
                     L={"3"}
                     T={"1"}
@@ -1375,7 +1375,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"1"}
-                    code={"CH14101"}
+                    code={"CT010601"}
                     title={"Engineering Chemistry"}
                     L={"3"}
                     T={"0"}
@@ -1386,7 +1386,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"1"}
-                    code={"EC14102"}
+                    code={"EC010601"}
                     title={"Digital Design"}
                     L={"2"}
                     T={"0"}
@@ -1408,7 +1408,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"1"}
-                    code={"EAA14102"}
+                    code={"EA010601"}
                     title={"EAA -II Swachha Bharat Mission (SBM)"}
                     L={"0"}
                     T={"0"}
@@ -1430,7 +1430,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"2"}
-                    code={"HS24101"}
+                    code={"HS020601"}
                     title={"Communicative English"}
                     L={"3"}
                     T={"0"}
@@ -1441,7 +1441,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"2"}
-                    code={"PH24101"}
+                    code={"AP020601"}
                     title={"Engineering Physics"}
                     L={"3"}
                     T={"0"}
@@ -1463,7 +1463,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"2"}
-                    code={"MA24102"}
+                    code={"MC020601"}
                     title={"Engineering Mathematics II"}
                     L={"3"}
                     T={"0"}
@@ -1474,7 +1474,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"2"}
-                    code={"EAA24101"}
+                    code={"EA020601"}
                     title={"EAA - I Sports/Innovative Project/NCC/NSS"}
                     L={"0"}
                     T={"0"}
@@ -1540,7 +1540,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"3"}
-                    code={"HS34151"}
+                    code={"HS030601"}
                     title={"Social and Professional Ethics"}
                     L={"3"}
                     T={"0"}
@@ -1548,17 +1548,7 @@ const BTechSyllabus = () => {
                     cred={"3"}
                     url=""
                 />
-                <SyllabusComp
-                    dep={"CSUG"}
-                    sem={"4"}
-                    code={"CS34143"}
-                    title={"Introduction to Programming Using Python"}
-                    L={"3"}
-                    T={"0"}
-                    P={"0"}
-                    cred={"2"}
-                    url="https://docs.google.com/document/d/13Tpy0e3qmhqh_9Chrpq1Yxpcz1c6Vtpj/edit?tab=t.0"
-                />
+        
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"4"}
@@ -1606,7 +1596,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"4"}
-                    code={"OP44XXX"}
+                    code={"CS0406XX"}
                     title={"Open Electives-1"}
                     L={"X"}
                     T={"X"}
@@ -1661,25 +1651,15 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"5"}
-                    code={"CS54XXX"}
-                    title={"Dept Elective - I"}
+                    code={"OP0506XX"}
+                    title={"Open Elective - I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
                     url=""
                 />
-                <SyllabusComp
-                    dep={"CSUG"}
-                    sem={"6"}
-                    code={"OP54XXX"}
-                    title={"MOOC"}
-                    L={"X"}
-                    T={"X"}
-                    P={"X"}
-                    cred={"3"}
-                    url=""
-                />
+          
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"6"}
@@ -1716,7 +1696,18 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"6"}
-                    code={"OP64XXX"}
+                    code={"OP0606XX"}
+                    title={"MOOC"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url=""
+                />
+                      <SyllabusComp
+                    dep={"CSUG"}
+                    sem={"6"}
+                    code={"OP0606XX"}
                     title={"MOOC"}
                     L={"X"}
                     T={"X"}
@@ -1727,7 +1718,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"6"}
-                    code={"CS64123"}
+                    code={"CS060603"}
                     title={"Project"}
                     L={"0"}
                     T={"0"}
@@ -1738,7 +1729,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS74135"}
+                    code={"CS070601"}
                     title={"Applied Cryptography"}
                     L={"3"}
                     T={"0"}
@@ -1749,7 +1740,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS070601"}
+                    code={"CS070602"}
                     title={"Optimization Techniques"}
                     L={"3"}
                     T={"0"}
@@ -1760,7 +1751,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS74XXX"}
+                    code={"CS0706XX"}
                     title={"Dept. Elective-III(Minor in IOT/AI)"}
                     L={"X"}
                     T={"X"}
@@ -1771,7 +1762,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS74XXX"}
+                    code={"CS0706XX"}
                     title={"Dept. Elective-IV"}
                     L={"X"}
                     T={"X"}
@@ -1782,29 +1773,19 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"OP74XXX"}
-                    title={"MOOC"}
+                    code={"CS0706XX"}
+                    title={"Dept. Elective-5 "}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
                     url=""
                 />
+         
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS74124"}
-                    title={"Research Project-I"}
-                    L={"0"}
-                    T={"0"}
-                    P={"8"}
-                    cred={"4"}
-                    url=""
-                />
-                <SyllabusComp
-                    dep={"CSUG"}
-                    sem={"7"}
-                    code={"CS74124"}
+                    code={"CS070603"}
                     title={"Industrial Training"}
                     L={"X"}
                     T={"X"}
@@ -1812,21 +1793,22 @@ const BTechSyllabus = () => {
                     cred={"2"}
                     url=""
                 />
-                <SyllabusComp
+                       <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS74125"}
-                    title={"Research Seminar"}
-                    L={"X"}
-                    T={"X"}
-                    P={"4"}
-                    cred={"2"}
+                    code={"CS070604"}
+                    title={"Research Project-I"}
+                    L={"0"}
+                    T={"0"}
+                    P={"8"}
+                    cred={"4"}
                     url=""
                 />
+            
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"8"}
-                    code={"CS84126"}
+                    code={"CS080601"}
                     title={"Research Project-II*"}
                     L={"0"}
                     T={"0"}
@@ -1837,7 +1819,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"8"}
-                    code={"CS84126"}
+                    code={"CS080602"}
                     title={"Comprehensive Viva-Voce"}
                     L={"X"}
                     T={"X"}
