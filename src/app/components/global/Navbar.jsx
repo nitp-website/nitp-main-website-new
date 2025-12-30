@@ -561,7 +561,7 @@ const navItems = [
       },
       {
         label: "Fee Payment",
-        link: "https://mis.nitp.ac.in/Miscellaneous.aspx",
+        link: "https://mis.nitp.ac.in/Student/UGPG/UGPGRegistrationForm.aspx",
         iconImage: Fee,
       },
 
@@ -777,7 +777,7 @@ useEffect(() => {
             </a>
             <span className="text-[0.5rem] md:text-sm">|</span>
             <a
-              href="https://mis.nitp.ac.in/Miscellaneous.aspx"
+              href="https://mis.nitp.ac.in/Student/UGPG/UGPGRegistrationForm.aspx"
               className="hover:underline text-[0.6rem] md:text-sm"
             >
               Fee Payment
