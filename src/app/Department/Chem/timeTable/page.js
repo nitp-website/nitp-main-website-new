@@ -7,7 +7,7 @@ function Page() {
         {
             name: "Chemical Science and Technology Time Table",
             
-            link: "https://www.dropbox.com/scl/fo/kmdu6u1erwn18lwo0qe4p/h?rlkey=rl1xo6nzihg0j5yc9zvfidfr0&dl=0"
+            link: "https://drive.google.com/drive/folders/1PyPBcpbmBBQb609WRapZJLWkRRnQ4Ar2"
         },
     ];
     return (
