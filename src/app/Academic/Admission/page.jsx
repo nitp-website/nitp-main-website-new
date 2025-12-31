@@ -135,7 +135,12 @@ const admissionData = {
       //   href:"https://drive.google.com/file/d/1X8zagb-MA7rEJOlJLpJIuXE5hJNo3J2B/view?usp=sharing"
       // },
 
-      
+        {
+         title: "Notice with the List of Eligible candidates for Written Test for PhD Admission Test for Jan-June'2026",
+        date: "2025-12-31",
+        content: "PhD Admission",
+       href:"https://drive.google.com/file/d/1tYn2c5qeRFkMc0q-lKApWaXFZoFvQ42i/view?usp=sharing"
+      },
 
       {
          title: "Corrigendum for Ph.D. Admission – December 2025",
