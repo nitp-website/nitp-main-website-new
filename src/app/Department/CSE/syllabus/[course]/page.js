@@ -1,14 +1,16 @@
 import React from "react";
+import normalizeGoogleDriveUrl from "../../../../../utils/normalizeUrl";
 
 
 function SyllabusComp({ dep, sem, code, title, L, T, P, cred, url }) {
+    const safeUrl = normalizeGoogleDriveUrl(url);
     return (
         <div className="grid grid-cols-12 w-full text-black">
             <div className="col-span-1 border border-black flex items-center px-2 py-2">{dep}</div>
             <div className="col-span-1 border border-black flex items-center px-2 py-2">{sem}</div>
             <div className="col-span-2 border border-black flex items-center px-2 py-2">{code}</div>
             <a
-                href={url}
+                href={safeUrl || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="col-span-4 border border-black flex items-center text-left text-sm px-2 py-2 hover:underline hover:cursor-pointer"
@@ -81,7 +83,7 @@ const BTechSyllabusold = () => {
                     T={"0"}
                     P={"2"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/EC14102_Digital Design.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -103,7 +105,7 @@ const BTechSyllabusold = () => {
                     T={"0"}
                     P={"2"}
                     cred={"1"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/EAA14102_EAA -II Swachha Bharat Mission (SBM).docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -158,7 +160,7 @@ const BTechSyllabusold = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/MA24102_Engineering Mathematics II.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -169,7 +171,7 @@ const BTechSyllabusold = () => {
                     T={"0"}
                     P={"2"}
                     cred={"1"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/EAA24101_EAA - I Sports/Innovative Project/NCC/NSS.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -235,7 +237,7 @@ const BTechSyllabusold = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/HS34151_Social and Professional Ethics.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -290,7 +292,7 @@ const BTechSyllabusold = () => {
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP44XXX_Open Electives - I.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -345,7 +347,7 @@ const BTechSyllabusold = () => {
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS54XXX_Dept Elective - I.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -356,7 +358,7 @@ const BTechSyllabusold = () => {
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP54XXX_MOOC.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -389,7 +391,7 @@ const BTechSyllabusold = () => {
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS641XX_Dept. Elective - II.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -400,7 +402,7 @@ const BTechSyllabusold = () => {
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP64XXX_MOOC.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -411,7 +413,7 @@ const BTechSyllabusold = () => {
                     T={"0"}
                     P={"12"}
                     cred={"6"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS64123_Project.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -444,7 +446,7 @@ const BTechSyllabusold = () => {
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74XXX_Dept. Elective-I.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -455,7 +457,7 @@ const BTechSyllabusold = () => {
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74XXX_Dept. Elective-II.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -466,7 +468,7 @@ const BTechSyllabusold = () => {
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP74XXX_MOOC.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -477,7 +479,7 @@ const BTechSyllabusold = () => {
                     T={"0"}
                     P={"8"}
                     cred={"4"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74124_Research Project-I.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -488,7 +490,7 @@ const BTechSyllabusold = () => {
                     T={"X"}
                     P={"X"}
                     cred={"2"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74124_Research Project-I.docx"
+                    url=""
                 />
                 {/* <SyllabusComp
                     dep={"CSUG"}
@@ -499,7 +501,7 @@ const BTechSyllabusold = () => {
                     T={"X"}
                     P={"4"}
                     cred={"2"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74125_Research Seminar.docx"
+                    url=""
                 /> */}
                 <SyllabusComp
                     dep={"CSUG"}
@@ -510,7 +512,7 @@ const BTechSyllabusold = () => {
                     T={"0"}
                     P={"36"}
                     cred={"18"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS84126_Research Project-II*.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -521,7 +523,7 @@ const BTechSyllabusold = () => {
                     T={"X"}
                     P={"X"}
                     cred={"2"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS84126_Research Project-II*.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -1324,6 +1326,8 @@ const BTechSyllabusold = () => {
 registration of these MOOC courses will be done in sixth semester only. <br></br>
 3. Dept. Elective – 3, Dept. Elective -4 & Dept. Elective 5 need to be chosen from Elective list - 2 
 and Elective list -3.
+<br></br>
+    * - To be conducted in the industry; if not available, then in Research Institutes.
                 </p>
             </div>
         </div>
@@ -1360,7 +1364,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"1"}
-                    code={"MA14102"}
+                    code={"MC010601"}
                     title={"Engineering Mathematics I"}
                     L={"3"}
                     T={"1"}
@@ -1371,7 +1375,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"1"}
-                    code={"CH14101"}
+                    code={"CT010601"}
                     title={"Engineering Chemistry"}
                     L={"3"}
                     T={"0"}
@@ -1382,13 +1386,13 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"1"}
-                    code={"EC14102"}
+                    code={"EC010601"}
                     title={"Digital Design"}
                     L={"2"}
                     T={"0"}
                     P={"2"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/EC14102_Digital Design.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -1404,13 +1408,13 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"1"}
-                    code={"EAA14102"}
+                    code={"EA010601"}
                     title={"EAA -II Swachha Bharat Mission (SBM)"}
                     L={"0"}
                     T={"0"}
                     P={"2"}
                     cred={"1"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/EAA14102_EAA -II Swachha Bharat Mission (SBM).docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -1426,7 +1430,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"2"}
-                    code={"HS24101"}
+                    code={"HS020601"}
                     title={"Communicative English"}
                     L={"3"}
                     T={"0"}
@@ -1437,7 +1441,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"2"}
-                    code={"PH24101"}
+                    code={"AP020601"}
                     title={"Engineering Physics"}
                     L={"3"}
                     T={"0"}
@@ -1459,24 +1463,24 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"2"}
-                    code={"MA24102"}
+                    code={"MC020601"}
                     title={"Engineering Mathematics II"}
                     L={"3"}
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/MA24102_Engineering Mathematics II.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"2"}
-                    code={"EAA24101"}
+                    code={"EA020601"}
                     title={"EAA - I Sports/Innovative Project/NCC/NSS"}
                     L={"0"}
                     T={"0"}
                     P={"2"}
                     cred={"1"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/EAA24101_EAA - I Sports/Innovative Project/NCC/NSS.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -1536,25 +1540,15 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"3"}
-                    code={"HS34151"}
+                    code={"HS030601"}
                     title={"Social and Professional Ethics"}
                     L={"3"}
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/HS34151_Social and Professional Ethics.docx"
+                    url=""
                 />
-                <SyllabusComp
-                    dep={"CSUG"}
-                    sem={"4"}
-                    code={"CS34143"}
-                    title={"Introduction to Programming Using Python"}
-                    L={"3"}
-                    T={"0"}
-                    P={"0"}
-                    cred={"2"}
-                    url="https://docs.google.com/document/d/13Tpy0e3qmhqh_9Chrpq1Yxpcz1c6Vtpj/edit?tab=t.0"
-                />
+        
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"4"}
@@ -1602,13 +1596,13 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"4"}
-                    code={"OP44XXX"}
-                    title={"Open Electives-1"}
+                    code={"CS0406XX"}
+                    title={"Dept Electives-1"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP44XXX_Open Electives - I.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -1657,25 +1651,15 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"5"}
-                    code={"CS54XXX"}
-                    title={"Dept Elective - I"}
+                    code={"OP0506XX"}
+                    title={"Open Elective - I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS54XXX_Dept Elective - I.docx"
+                    url=""
                 />
-                <SyllabusComp
-                    dep={"CSUG"}
-                    sem={"6"}
-                    code={"OP54XXX"}
-                    title={"MOOC"}
-                    L={"X"}
-                    T={"X"}
-                    P={"X"}
-                    cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP54XXX_MOOC.docx"
-                />
+          
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"6"}
@@ -1701,40 +1685,51 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"6"}
-                    code={"CS641XX"}
+                    code={"CS0606XX"}
                     title={"Dept. Elective - II"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS641XX_Dept. Elective - II.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"6"}
-                    code={"OP64XXX"}
+                    code={"OP0606XX"}
                     title={"MOOC"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP64XXX_MOOC.docx"
+                    url=""
+                />
+                      <SyllabusComp
+                    dep={"CSUG"}
+                    sem={"6"}
+                    code={"OP0606XX"}
+                    title={"MOOC"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"6"}
-                    code={"CS64123"}
+                    code={"CS060603"}
                     title={"Project"}
                     L={"0"}
                     T={"0"}
                     P={"12"}
                     cred={"6"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS64123_Project.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS74135"}
+                    code={"CS070601"}
                     title={"Applied Cryptography"}
                     L={"3"}
                     T={"0"}
@@ -1745,7 +1740,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS070601"}
+                    code={"CS070602"}
                     title={"Optimization Techniques"}
                     L={"3"}
                     T={"0"}
@@ -1756,90 +1751,81 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS74XXX"}
+                    code={"CS0706XX"}
                     title={"Dept. Elective-III(Minor in IOT/AI)"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74XXX_Dept. Elective-I.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS74XXX"}
+                    code={"CS0706XX"}
                     title={"Dept. Elective-IV"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74XXX_Dept. Elective-II.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"OP74XXX"}
-                    title={"MOOC"}
+                    code={"CS0706XX"}
+                    title={"Dept. Elective-5 "}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP74XXX_MOOC.docx"
+                    url=""
                 />
+         
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS74124"}
-                    title={"Research Project-I"}
-                    L={"0"}
-                    T={"0"}
-                    P={"8"}
-                    cred={"4"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74124_Research Project-I.docx"
-                />
-                <SyllabusComp
-                    dep={"CSUG"}
-                    sem={"7"}
-                    code={"CS74124"}
+                    code={"CS070603"}
                     title={"Industrial Training"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"2"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74124_Research Project-I.docx"
+                    url=""
                 />
-                <SyllabusComp
+                       <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS74125"}
-                    title={"Research Seminar"}
-                    L={"X"}
-                    T={"X"}
-                    P={"4"}
-                    cred={"2"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74125_Research Seminar.docx"
+                    code={"CS070604"}
+                    title={"Research Project-I"}
+                    L={"0"}
+                    T={"0"}
+                    P={"8"}
+                    cred={"4"}
+                    url=""
                 />
+            
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"8"}
-                    code={"CS84126"}
+                    code={"CS080601"}
                     title={"Research Project-II*"}
                     L={"0"}
                     T={"0"}
                     P={"36"}
                     cred={"18"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS84126_Research Project-II*.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"8"}
-                    code={"CS84126"}
+                    code={"CS080602"}
                     title={"Comprehensive Viva-Voce"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"2"}
-                    url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS84126_Research Project-II*.docx"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -2633,6 +2619,11 @@ const BTechSyllabus = () => {
                     cred={"3"}
                     url={"https://drive.google.com/file/d/1L70hxedl6t4xmd9P8zsG_7Ryrb6MevTk/view?usp=drivesdk"}
                 />
+            </div>
+<div className="mt-4 text-gray-700 text-sm px-2">
+                <p>
+ * - To be conducted in the industry; if not available, then in Research Institutes.
+                </p>
             </div>
         </div>
     );
@@ -3674,6 +3665,11 @@ const BTechAIDSSyllabus = () => {
                     url={"https://docs.google.com/document/d/1ThpmwSqen5PZDjOjfdJly_p_5lDfyl7v/view?tab=t.0"}
                 />
             </div>
+<div className="mt-4 text-gray-700 text-sm px-2">
+                <p>
+* - To be conducted in the industry; if not available, then in Research Institutes.
+                </p>
+            </div>
         </div>
     );
 };
@@ -4005,18 +4001,7 @@ const DualCSyllabusold = () => {
                     cred={"3"}
                     url={""}
                 />
-                {/* <SyllabusComp
-                    dep={"CSE"}
-                    sem={"5"}
-                    code={"OP54XXX"}
-                    title={"MOOC"}
-                    L={"X"}
-                    T={"X"}
-                    P={"X"}
-                    cred={"3"}
-                    url={""}
-                /> */}
-
+         
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"6"}
@@ -4054,7 +4039,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"OP64XXX"}
-                    title={"MOOC"}
+                    title={"MOOC-I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4065,7 +4050,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"OP64XXX"}
-                    title={"MOOC"}
+                    title={"MOOC-II"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4076,7 +4061,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"CS64123"}
-                    title={"Project"}
+                    title={"Minor Project"}
                     L={"0"}
                     T={"0"}
                     P={"12"}
@@ -4110,7 +4095,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS74XXX3"}
-                    title={"Dept. Elective - 3"}
+                    title={"Dept. Elective - III"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4122,7 +4107,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS74XXX3"}
-                    title={"Dept. Elective - 4"}
+                    title={"Dept. Elective - IV"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4133,7 +4118,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS74XXX3/OP74XXX"}
-                    title={"Dept. Elective - 5 / MOOC"}
+                    title={"Dept. Elective - V / MOOC"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4148,6 +4133,17 @@ const DualCSyllabusold = () => {
                     L={"0"}
                     T={"0"}
                     P={"4"}
+                    cred={"2"}
+                    url={""}
+                />
+                <SyllabusComp
+                    dep={"CSE"}
+                    sem={"7"}
+                    code={"CS74138"}
+                    title={"Industrial Training"}
+                    L={""}
+                    T={""}
+                    P={""}
                     cred={"2"}
                     url={""}
                 />
@@ -4188,7 +4184,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"8"}
                     code={"CS84XXX3"}
-                    title={"Dept. Elective-6"}
+                    title={"Dept. Elective-VI"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4199,7 +4195,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"8"}
                     code={"CS84XXX3"}
-                    title={"Dept. Elective-7"}
+                    title={"Dept. Elective-VII"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4210,7 +4206,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"8"}
                     code={"OP84XXX"}
-                    title={"Open Elective-2"}
+                    title={"Open Elective-II"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -4221,7 +4217,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"9"}
                     code={"CS94141"}
-                    title={"Industrial Training / Project (to be continued in 10th Sem)"}
+                    title={"Research Project (to be continued in 10th Sem)/Internship"}
                     L={"0"}
                     T={"0"}
                     P={"40"}
@@ -4232,7 +4228,7 @@ const DualCSyllabusold = () => {
                     dep={"CSE"}
                     sem={"10"}
                     code={"CS104142"}
-                    title={"Industrial Training / Project"}
+                    title={"Research Project/Internship"}
                     L={"0"}
                     T={"0"}
                     P={"40"}
@@ -5040,6 +5036,17 @@ const DualCSyllabus = () => {
                     cred={"4"}
                     url={"https://docs.google.com/document/d/1pUbN0A7mL6-mKapxhwo3mMwfVKTngGsY/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                 />
+                  <SyllabusComp
+                    dep={"CSE"}
+                    sem={"4"}
+                    code={"CS0407XX"}
+                    title={"Dept Elective I"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />      
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
@@ -5087,25 +5094,15 @@ const DualCSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
-                    code={"CS0407XX"}
-                    title={"Dept Elective - I"}
-                    L={"X"}
-                    T={"X"}
-                    P={"X"}
-                    cred={"3"}
-                    url={""}
-                />
-                <SyllabusComp
-                    dep={"CSE"}
-                    sem={"5"}
                     code={"OP0507XX"}
-                    title={"MOOC"}
+                    title={"Open Elective - I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
                     url={""}
                 />
+     
 
                 <SyllabusComp
                     dep={"CSE"}
@@ -5144,7 +5141,19 @@ const DualCSyllabus = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"OP0607XX"}
-                    title={"MOOC"}
+                    title={"MOOC-I"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />
+
+                           <SyllabusComp
+                    dep={"CSE"}
+                    sem={"6"}
+                    code={"OP0607XX"}
+                    title={"MOOC-II"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -5155,7 +5164,7 @@ const DualCSyllabus = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"OP0607XX"}
-                    title={"Project"}
+                    title={"Minor Project"}
                     L={"0"}
                     T={"0"}
                     P={"12"}
@@ -5189,19 +5198,19 @@ const DualCSyllabus = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS0707XX"}
-                    title={"Dept. Elective-I"}
+                    title={"Dept. Elective-III"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1WUfdRoj6IEK8VrU1kE86371oKpXomRBD/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
+                    url={""}
                 />
 
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS0707XX"}
-                    title={"Dept. Elective-II"}
+                    title={"Dept. Elective-IV"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -5212,7 +5221,7 @@ const DualCSyllabus = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS0707XX / OP0707XX"}
-                    title={"MOOC"}
+                    title={"Dept Elective- 5/ MOOC"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -5230,6 +5239,17 @@ const DualCSyllabus = () => {
                     cred={"2"}
                     url={""}
                 />
+                  <SyllabusComp
+                    dep={"CSE"}
+                    sem={"7"}
+                    code={"CS070704"}
+                    title={"Industrial Training"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"2"}
+                    url={""}
+                />      
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"8"}
@@ -5263,11 +5283,44 @@ const DualCSyllabus = () => {
                     cred={"4"}
                     url={"https://docs.google.com/document/d/14n6eimr8AnBr7L45Hvj-a25SXWqwgYD9/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"}
                 />
+                  <SyllabusComp
+                    dep={"CSE"}
+                    sem={"8"}
+                    code={"CS0807XX"}
+                    title={"Dept. Elective-VI"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />  
+                      <SyllabusComp
+                    dep={"CSE"}
+                    sem={"8"}
+                    code={"CS0807XX"}
+                    title={"Dept. Elective-VII"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />   
+                            <SyllabusComp
+                    dep={"CSE"}
+                    sem={"8"}
+                    code={"OP0807XX"}
+                    title={"Open. Elective-II"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />  
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"9"}
                     code={"CS090701"}
-                    title={"Industrial Training / Project (to be continued in 10th Sem)"}
+                    title={"Research Project (to be continued in 10th Sem)/Internship"}
                     L={"0"}
                     T={"0"}
                     P={"40"}
@@ -5278,7 +5331,7 @@ const DualCSyllabus = () => {
                     dep={"CSE"}
                     sem={"10"}
                     code={"CS100701"}
-                    title={"Industrial Training / Project"}
+                    title={"Research Project/ Internship"}
                     L={"0"}
                     T={"0"}
                     P={"40"}
@@ -6145,17 +6198,7 @@ const DualDSyllabusold = () => {
                     cred={"3"}
                     url={""}
                 />
-                <SyllabusComp
-                    dep={"CSE"}
-                    sem={"5"}
-                    code={"OP54XXX"}
-                    title={"MOOC"}
-                    L={"X"}
-                    T={"X"}
-                    P={"X"}
-                    cred={"3"}
-                    url={""}
-                />
+         
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"6"}
@@ -6193,7 +6236,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"OP64XXX"}
-                    title={"MOOC"}
+                    title={"MOOC-I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6204,7 +6247,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"OP64XXX"}
-                    title={"MOOC"}
+                    title={"MOOC-II"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6215,7 +6258,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"CS64123"}
-                    title={"Project"}
+                    title={"Minor Project"}
                     L={"0"}
                     T={"0"}
                     P={"12"}
@@ -6248,7 +6291,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS74XXX3"}
-                    title={"Dept. Elective - 3"}
+                    title={"Dept. Elective - III"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6259,7 +6302,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS74XXX3"}
-                    title={"Dept. Elective - 4"}
+                    title={"Dept. Elective - IV"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6270,7 +6313,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS74XXX/OP74XXX"}
-                    title={"Dept. Elective - 5 / MOOC"}
+                    title={"Dept. Elective - V / MOOC"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6285,6 +6328,17 @@ const DualDSyllabusold = () => {
                     L={"0"}
                     T={"0"}
                     P={"4"}
+                    cred={"2"}
+                    url={""}
+                />
+                 <SyllabusComp
+                    dep={"CSE"}
+                    sem={"7"}
+                    code={"CS74130"}
+                    title={"Industrial Training"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
                     cred={"2"}
                     url={""}
                 />
@@ -6325,7 +6379,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"8"}
                     code={"CS84XXX3"}
-                    title={"Dept. Elective - 6"}
+                    title={"Dept. Elective - VI"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6336,7 +6390,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"8"}
                     code={"CS84XXX3"}
-                    title={"Dept Elective - 7"}
+                    title={"Dept Elective - VII"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6347,7 +6401,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"8"}
                     code={"OP84XXX"}
-                    title={"Open Elective - 2"}
+                    title={"Open Elective - II"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -6358,7 +6412,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"9"}
                     code={"CS94133"}
-                    title={"Industrial Training / Project (to be continued in 10th Sem)"}
+                    title={"Research Project (to be continued in 10th Sem)/Internship "}
                     L={"0"}
                     T={"0"}
                     P={"40"}
@@ -6369,7 +6423,7 @@ const DualDSyllabusold = () => {
                     dep={"CSE"}
                     sem={"10"}
                     code={"CS104134"}
-                    title={"Industrial Training / Project"}
+                    title={"Research Project /Internship"}
                     L={"0"}
                     T={"0"}
                     P={"40"}
@@ -7231,8 +7285,8 @@ const DualDSyllabus = () => {
                  <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
-                    code={"OP44XXX"}
-                    title={"OP0508XX"}
+                    code={"OP0508XX"}
+                    title={"Open Elective I"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -7240,17 +7294,7 @@ const DualDSyllabus = () => {
                     url={""}
                 />
                
-                <SyllabusComp
-                    dep={"CSE"}
-                    sem={"5"}
-                    code={"OP54XXX"}
-                    title={"MOOC"}
-                    L={"X"}
-                    T={"X"}
-                    P={"X"}
-                    cred={"3"}
-                    url={""}
-                />
+         
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"6"}
@@ -7288,7 +7332,18 @@ const DualDSyllabus = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"OP0608XX"}
-                    title={"MOOC"}
+                    title={"MOOC-I"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />
+                             <SyllabusComp
+                    dep={"CSE"}
+                    sem={"6"}
+                    code={"OP0608XX"}
+                    title={"MOOC-II"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -7299,7 +7354,7 @@ const DualDSyllabus = () => {
                     dep={"CSE"}
                     sem={"6"}
                     code={"CS060803"}
-                    title={"Project"}
+                    title={"Minor Project"}
                     L={"0"}
                     T={"0"}
                     P={"12"}
@@ -7333,7 +7388,18 @@ const DualDSyllabus = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS0608XX"}
-                    title={"Dept. Elective-II"}
+                    title={"Dept. Elective-III"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
+                    cred={"3"}
+                    url={""}
+                />
+                             <SyllabusComp
+                    dep={"CSE"}
+                    sem={"7"}
+                    code={"CS0608XX"}
+                    title={"Dept. Elective-IV"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -7343,8 +7409,8 @@ const DualDSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"7"}
-                    code={"CS74XXX"}
-                    title={"MOOC"}
+                    code={"CS0708XX/OP0708XX"}
+                    title={"Dept Elective V/ MOOC"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -7355,10 +7421,21 @@ const DualDSyllabus = () => {
                     dep={"CSE"}
                     sem={"7"}
                     code={"CS070803"}
-                    title={"Technical Seminar and Report Writing"}
+                    title={"Seminar and Technical Report Writing"}
                     L={"0"}
                     T={"0"}
                     P={"4"}
+                    cred={"2"}
+                    url={""}
+                />
+              <SyllabusComp
+                    dep={"CSE"}
+                    sem={"7"}
+                    code={"CS070804"}
+                    title={"Industrial Training"}
+                    L={"X"}
+                    T={"X"}
+                    P={"X"}
                     cred={"2"}
                     url={""}
                 />
@@ -7399,7 +7476,7 @@ const DualDSyllabus = () => {
                     dep={"CSE"}
                     sem={"8"}
                     code={"CS84XXX"}
-                    title={"Dept. Elective-III"}
+                    title={"Dept. Elective-VI"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -7410,7 +7487,7 @@ const DualDSyllabus = () => {
                     dep={"CSE"}
                     sem={"8"}
                     code={"CS84XXX"}
-                    title={"Dept Elective-IV"}
+                    title={"Dept Elective-VII"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -7420,8 +7497,8 @@ const DualDSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"8"}
-                    code={"CS84XXX"}
-                    title={"MOOC"}
+                    code={"OP0808XX"}
+                    title={"Open Elective II"}
                     L={"X"}
                     T={"X"}
                     P={"X"}
@@ -7432,7 +7509,7 @@ const DualDSyllabus = () => {
                     dep={"CSE"}
                     sem={"9"}
                     code={"CS090801"}
-                    title={"Industrial Training / Project (to be continued in 10th Sem)"}
+                    title={"Research Project (to be continued in 10th Sem)/Internship"}
                     L={"0"}
                     T={"0"}
                     P={"40"}
@@ -7443,7 +7520,7 @@ const DualDSyllabus = () => {
                     dep={"CSE"}
                     sem={"10"}
                     code={"CS100801"}
-                    title={"Industrial Training / Project"}
+                    title={"Research Project/ Internship"}
                     L={"0"}
                     T={"0"}
                     P={"40"}

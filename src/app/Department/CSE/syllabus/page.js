@@ -2,7 +2,7 @@
 
 import BackDepartment from "../../../components/department/BackDepartment";
 import { useState } from "react"
-
+import normalizeGoogleDriveUrl from "../../../../utils/normalizeUrl";
 
 
 
@@ -469,17 +469,7 @@ export default function Page() {
                                 cred={"3"}
                                 url={""}
                             />
-                            <SyllabusComp
-                                dep={"CSE"}
-                                sem={"5"}
-                                code={"OP54XXX"}
-                                title={"MOOC"}
-                                L={"X"}
-                                T={"X"}
-                                P={"X"}
-                                cred={"3"}
-                                url={""}
-                            />
+                
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"6"}
@@ -517,7 +507,18 @@ export default function Page() {
                                 dep={"CSE"}
                                 sem={"6"}
                                 code={"OP64XXX"}
-                                title={"MOOC"}
+                                title={"MOOC-I"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={""}
+                            />
+                              <SyllabusComp
+                                dep={"CSE"}
+                                sem={"6"}
+                                code={"OP64XXX"}
+                                title={"MOOC-II"}
                                 L={"X"}
                                 T={"X"}
                                 P={"X"}
@@ -601,6 +602,18 @@ export default function Page() {
                                 cred={"2"}
                                 url={""}
                             />
+                                <SyllabusComp
+                                dep={"CSE"}
+                                sem={"7"}
+                                code={"CS74130"}
+                                title={"Industrial Training"}
+                                L={""}
+                                T={""}
+                                P={""}
+                                cred={"2"}
+                                url={""}
+                            />
+                                    
                             <SyllabusComp
                                 dep={"CSE"}
                                 sem={"8"}
@@ -671,7 +684,7 @@ export default function Page() {
                                 dep={"CSE"}
                                 sem={"9"}
                                 code={"CS94133"}
-                                title={"Industrial Training / Project (to be continued in 10th Sem)"}
+                                title={" Research Project (to be continued in 10th Sem) /Internship  "}
                                 L={"0"}
                                 T={"0"}
                                 P={"40"}
@@ -682,7 +695,7 @@ export default function Page() {
                                 dep={"CSE"}
                                 sem={"10"}
                                 code={"CS104134"}
-                                title={"Industrial Training / Project"}
+                                title={"Research Project (to be continued in 10th Sem) /Internship"}
                                 L={"0"}
                                 T={"0"}
                                 P={"40"}
@@ -2390,7 +2403,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/MA24102_Engineering Mathematics II.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2401,7 +2414,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"2"}
                                 cred={"1"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/EAA24101_EAA - I Sports/Innovative Project/NCC/NSS.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2467,7 +2480,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"0"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/HS34151_Social and Professional Ethics.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2522,7 +2535,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP44XXX_Open Electives - I.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2577,7 +2590,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS54XXX_Dept Elective - I.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2588,7 +2601,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP54XXX_MOOC.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2621,7 +2634,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS641XX_Dept. Elective - II.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2632,7 +2645,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP64XXX_MOOC.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2643,7 +2656,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"12"}
                                 cred={"6"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS64123_Project.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2676,7 +2689,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74XXX_Dept. Elective-I.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2687,7 +2700,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74XXX_Dept. Elective-II.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2698,7 +2711,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"3"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/OP74XXX_MOOC.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2709,7 +2722,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"8"}
                                 cred={"4"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74124_Research Project-I.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2720,7 +2733,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"2"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74124_Research Project-I.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2731,7 +2744,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"4"}
                                 cred={"2"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS74125_Research Seminar.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2742,7 +2755,7 @@ export default function Page() {
                                 T={"0"}
                                 P={"36"}
                                 cred={"18"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS84126_Research Project-II*.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -2753,7 +2766,7 @@ export default function Page() {
                                 T={"X"}
                                 P={"X"}
                                 cred={"2"}
-                                url="https://web.nitp.ac.in/dept/cse/syllabus/syllabus_btech_2021_onwards/CS84126_Research Project-II*.docx"
+                                url=""
                             />
                             <SyllabusComp
                                 dep={"CSUG"}
@@ -5340,17 +5353,7 @@ export default function Page() {
                                 cred={"3"}
                                 url={""}
                             />
-                            <SyllabusComp
-                                dep={"CSE"}
-                                sem={"5"}
-                                code={"OP54XXX"}
-                                title={"MOOC"}
-                                L={"X"}
-                                T={"X"}
-                                P={"X"}
-                                cred={"3"}
-                                url={""}
-                            />
+                     
 
                             <SyllabusComp
                                 dep={"CSE"}
@@ -5389,7 +5392,18 @@ export default function Page() {
                                 dep={"CSE"}
                                 sem={"6"}
                                 code={"OP64XXX"}
-                                title={"MOOC"}
+                                title={"MOOC-I"}
+                                L={"X"}
+                                T={"X"}
+                                P={"X"}
+                                cred={"3"}
+                                url={""}
+                            />
+                                       <SyllabusComp
+                                dep={"CSE"}
+                                sem={"6"}
+                                code={"OP64XXX"}
+                                title={"MOOC-II"}
                                 L={"X"}
                                 T={"X"}
                                 P={"X"}
@@ -5469,6 +5483,17 @@ export default function Page() {
                                 sem={"7"}
                                 code={"CS74137"}
                                 title={"Technical Seminar and Report Writing"}
+                                L={"0"}
+                                T={"0"}
+                                P={"4"}
+                                cred={"2"}
+                                url={""}
+                            />
+                                <SyllabusComp
+                                dep={"CSE"}
+                                sem={"7"}
+                                code={"CS74138"}
+                                title={"Industrial Training"}
                                 L={"0"}
                                 T={"0"}
                                 P={"4"}
@@ -6984,12 +7009,13 @@ export default function Page() {
 
 
 function SyllabusComp({ dep, sem, code, title, L, T, P, cred, url }) {
+    const safeUrl = normalizeGoogleDriveUrl(url);
     return (
         <>
             <div className="col-span-1 border border-black flex flex-col justify-center pl-4 py-2 overflow-auto ">{dep}</div>
             <div className="col-span-1 border border-black flex flex-col justify-center pl-4 py-2 ">{sem}</div>
             <div className="col-span-2 border border-black flex flex-col justify-center pl-4 py-2 ">{code}</div>
-            <a href={url} target="_blank" className="col-span-4 border border-black flex flex-col justify-center pl-4 py-2 cursor-pointer">{title}</a>
+            <a href={safeUrl || '#'} target="_blank" rel="noopener noreferrer" className="col-span-4 border border-black flex flex-col justify-center pl-4 py-2 cursor-pointer">{title}</a>
             <div className="col-span-1 border border-black flex flex-col justify-center pl-4 py-2 ">{L}</div>
             <div className="col-span-1 border border-black flex flex-col justify-center pl-4 py-2 ">{T}</div>
             <div className="col-span-1 border border-black flex flex-col justify-center pl-4 py-2 ">{P}</div>
