@@ -16,20 +16,64 @@ import CompanyCarousel from "./components/Home/CompanyCarousel";
 
 export const metadata = {
   title: "NIT PATNA | National Institute of Technology Patna",
-  description: "Official website of National Institute of Technology Patna",
+  description: "Official website of National Institute of Technology Patna. Premier technical institution offering B.Tech, M.Tech, MBA, MCA programs. Excellence in engineering education and research.",
+  keywords: "NIT Patna, National Institute of Technology, Engineering College, Technical Education, Bihar, India, B.Tech, M.Tech, MBA, MCA, Research, Innovation, TechScript, Ashish Kumar",
+  authors: [
+    { name: "NIT Patna Web Team" },
+    { name: "TechScript", url: "https://www.techscript.in/" },
+    { name: "Ashish Kumar", url: "https://www.ashishk.online/" }
+  ],
+  creator: "NIT Patna",
+  publisher: "National Institute of Technology Patna",
   verification: {
     google: "5gbX6CeIgXNqZ2CuUrXtlfpdcPg-v8n4l_mx3CXfnwU",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://www.nitp.ac.in",
+    siteName: "NIT Patna",
+    title: "NIT PATNA | National Institute of Technology Patna",
+    description: "Official website of National Institute of Technology Patna. Premier technical institution offering B.Tech, M.Tech, MBA, MCA programs.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NIT Patna Campus"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NIT PATNA | National Institute of Technology Patna",
+    description: "Official website of National Institute of Technology Patna",
+    images: ["/og-image.jpg"]
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.nitp.ac.in"
+  }
 };
 export default function Home() {
   return (
     <>
-    <Slider/>
-    <Movingbar/>
-    <Popbuttons/>
-    <Details/>
-    <Aboutus/>
-    <section className="py-12 md:py-20 bg-red-950/5 dark:bg-red-950/10">
+      <Slider />
+      <Movingbar />
+      <Popbuttons />
+      <Details />
+      <Aboutus />
+      <section className="py-12 md:py-20 bg-red-950/5 dark:bg-red-950/10">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Recent Placements</h2>
@@ -40,10 +84,10 @@ export default function Home() {
           <CompanyCarousel />
         </div>
       </section>
-    <Research/>
-    <Gallery/>
-    
+      <Research />
+      <Gallery />
+
     </>
-    
+
   );
 }
