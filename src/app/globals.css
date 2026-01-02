@@ -90,3 +90,64 @@ body {
 .translated-ltr body {
   top: 0% !important;
 }
+
+/* ========================================
+   SEO Backlinks - Hidden from Frontend
+   ======================================== */
+
+/* Method 1: Display none - Simple and effective */
+.seo-backlinks {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.seo-footer-links {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.seo-sidebar-links {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Ensure links inside are also hidden */
+.seo-backlinks a,
+.seo-footer-links a,
+.seo-sidebar-links a {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Additional safety to prevent any visibility */
+.seo-backlinks *,
+.seo-footer-links *,
+.seo-sidebar-links * {
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+}
+
+/* ========================================
+   End SEO Backlinks Styles
+   ======================================== */
