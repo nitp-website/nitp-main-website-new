@@ -5,7 +5,7 @@ import { Download } from 'lucide-react';
 function Page() {
     const data = [
         {
-            name: "Applied Physics Dept Time Table for the Class Jan- June 2025 (Even Semster)",
+            name: "Applied Physics and Materials Engineering Time Table ",
             link: "https://drive.google.com/file/d/16mfMhjDhREUaiUn0R9Dxxl5LgW9UTbTF/view"
         },
     ];
