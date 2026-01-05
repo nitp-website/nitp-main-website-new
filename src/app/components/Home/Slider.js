@@ -30,6 +30,10 @@ const Slider = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper w-full h-[30vh] md:h-[530px] flex justify-center items-center "
       >
+        {/** convocation image*/}
+        <SwiperSlide>
+          <img src="https://i.postimg.cc/pdVbvKBJ/Website-2-(1).webp" />
+        </SwiperSlide>
         <SwiperSlide>
           <img src="https://i.postimg.cc/0N1Yfkhc/NIRF.png" />
         </SwiperSlide>
