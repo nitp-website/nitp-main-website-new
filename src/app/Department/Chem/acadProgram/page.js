@@ -21,7 +21,7 @@ const programs = [
       "The Department of Chemical Science and Technology offers the 5-year integrated B. Tech and M. Tech Dual Degree program in Chemical Technology. Admission to the program is granted through prestigious IIT- JEE (Main) examination. The curriculum comprises a blend of core courses along with a selection of electives, allowing students to tailor their studies to specific areas of interest. Following are the course structure and syllabus.",
     syllabus:
       "CST_Syllabus_ DD_BTech+MTech",
-      link: "https://drive.google.com/file/d/11SKrA-hGK-HwsBWxJLeIWFZyGlgH3mF3/view"
+      link: "https://drive.google.com/file/d/1rVXDNibkoMZ2LA53pWxF6ONLq_cDIrP6/view?usp=sharing"
   },
 
   {
@@ -32,7 +32,7 @@ const programs = [
       "The Department of Chemical Science and Technology offers the 5-year integrated B. Tech and M. Tech Dual Degree program in Chemical Technology. Admission to the program is granted through prestigious IIT- JEE (Main) examination. The curriculum comprises a blend of core courses along with a selection of electives, allowing students to tailor their studies to specific areas of interest. Following are the course structure and syllabus.",
     syllabus:
       "CST_Syllabus_ DD_BTech+MTech",
-      link: "https://drive.google.com/file/d/1yKjAyWHe9bvevQ37e9z3_Uncatzq1nwj/view"
+      link: "https://drive.google.com/file/d/1UxEymB3Bis7rhaIMpp7vSydJ5JppLzGs/view?usp=sharing"
   },
 
   {
