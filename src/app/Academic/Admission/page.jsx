@@ -134,7 +134,12 @@ const admissionData = {
       //   content: "PhD Admission",
       //   href:"https://drive.google.com/file/d/1X8zagb-MA7rEJOlJLpJIuXE5hJNo3J2B/view?usp=sharing"
       // },
-
+    {
+         title: "Interview Notice for eligible candidates after written test for PhD admission(Jan-June'2026)",
+        date: "2026-01-05",
+        content: "PhD Admission",
+       href:"https://drive.google.com/file/d/1WMsfIVytaz1RbSi8QSwmI_3ax64GvaSX/view?usp=sharing"
+      },
         {
          title: "Notice with the List of Eligible candidates for Written Test for PhD Admission Test for Jan-June'2026",
         date: "2025-12-31",

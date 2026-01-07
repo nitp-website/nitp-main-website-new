@@ -5,12 +5,8 @@ import { Download } from 'lucide-react';
 function Page() {
     const data = [
         {
-            name: "Mechanical Deptartment Time Table for the Class july - dec 2025 (Odd Semster)",
+            name: "Mechanical Deptartment Time Table ",
             link: "https://drive.google.com/drive/folders/1xmzjiMCca2Fzt0X3mpaGQgpg_7WZr4dQ"
-        },
-        {
-            name: "Mechanical Deptartment Time Table for the Class Jan - June 2025 (Even Semster)",
-            link: "https://drive.google.com/file/d/1m8ICMWNLR5QsNc-isckAnmVW7zulZxly/view"
         }
     ];
     return (
