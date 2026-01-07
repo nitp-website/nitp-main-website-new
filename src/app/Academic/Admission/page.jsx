@@ -128,12 +128,12 @@ const admissionData = {
       //   href:"https://drive.google.com/file/d/1VpDmpYqowP6kqoP1ZVyGd0gBwSqiJ9PO/view?usp=sharing"
       // },
 
-      //  {
-      //   title: "List of Eligible Candidates for PhD admission July-Dec'2025",
-      //   date: "2025-07-24",
-      //   content: "PhD Admission",
-      //   href:"https://drive.google.com/file/d/1X8zagb-MA7rEJOlJLpJIuXE5hJNo3J2B/view?usp=sharing"
-      // },
+      {
+         title: "Provisionally Selected for PhD Programme (January–June 2026)",
+       date: "2026-01-07",
+       content: "PhD Admission",
+        href:"https://drive.google.com/file/d/1tJ_UyxVt01n-rZFWnQDaFFUz3LjWGRah/view?usp=sharing"
+       },
     {
          title: "Interview Notice for eligible candidates after written test for PhD admission(Jan-June'2026)",
         date: "2026-01-05",
