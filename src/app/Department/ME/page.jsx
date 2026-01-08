@@ -11,7 +11,7 @@ const dept = "ME";
 
 const about = `The Department of Mechanical Engineering was established in 1952 with the B.Tech. program during the era of Bihar College of Engineering (BCE), which has been well known since 1924 as the sixth oldest engineering college in India. In 1978, the M.Tech. program was introduced with specializations in Thermal Turbo Machinery and Refrigeration, Air Conditioning, and Heat Transfer. Later, in 2004, Bihar College of Engineering was converted into the National Institute of Technology Patna. At present, the Department offers B.Tech. in Mechanical Engineering, M.Tech. programs with specializations in Design Engineering, Thermal Engineering, and Production Engineering, a Dual Degree (B.Tech. + M.Tech.) program in Mechanical Engineering with specialization in Manufacturing and Industrial Engineering, and Ph.D. programs. The B.Tech. program, which initially started with an intake of 20 students, now admits 120 students.`;
 
-const picture = ["https://i.postimg.cc/hGFcVRpp/IMG-20250825-WA0016.jpg", "https://i.postimg.cc/9FW4qZrr/IMG-20250825-WA0018.jpg","https://i.postimg.cc/2yXf6s1d/IMG-20250825-WA0019.jpg", "https://i.postimg.cc/5NFrLYTW/IMG-20250825-WA0017.jpg"];
+const picture = ["https://i.postimg.cc/fyY06783/nit-patna-005.jpg"];
 
 export default function ME() {
   const router = useRouter();

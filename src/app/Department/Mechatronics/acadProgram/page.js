@@ -23,6 +23,16 @@ const programs = [
       "https://drive.google.com/file/d/1IQFqpo9jTHIBNgS8o2zeyv5xIZYWcQ7p/view",
     courseStructure: "https://drive.google.com/file/d/107lkKUTm9Yoilr_RiP2BpnkAy_VU1soJ/view",
   },
+  {
+    title: "Ph.D. in Mechatronics and Automation Engineering",
+    degree: "Ph.D.",
+    // duration: "4 Years",
+    description:
+      "The Department offers a Ph.D. in Mechatronics and Automation Engineering. Admission to this program is through an institute-level examination conducted by NIT Patna, followed by an interview as per institute norms. This is a purely research-oriented program, designed to promote advanced interdisciplinary research integrating mechanical systems, electronics, control engineering, robotics, sensors and actuators, embedded systems, artificial intelligence, and industrial automation. Scholars undertake independent and original research in emerging and application-driven areas of mechatronics and automation under the guidance of experienced faculty members. The program aims to develop researchers capable of contributing to advanced manufacturing, robotics, smart systems, Industry 4.0, autonomous systems, and intelligent automation, with outcomes relevant to academia, research organizations, and high-end industrial applications.",
+    // syllabus:
+    //   "https://drive.google.com/file/d/1IQFqpo9jTHIBNgS8o2zeyv5xIZYWcQ7p/view",
+    // courseStructure: "https://drive.google.com/file/d/107lkKUTm9Yoilr_RiP2BpnkAy_VU1soJ/view",
+  },
 ];
 
 const CSEAcadProgrampage = () => {
