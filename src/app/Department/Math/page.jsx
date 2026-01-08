@@ -11,7 +11,7 @@ const dept = "Math";
 
 const about = `The Department of Mathematics came into existence in 1924 as one of the primary departments of Bihar College of Engineering, and later became part of NIT Patna in 2004 to cater to undergraduate teaching. In 2024, it was renamed as the Department of Mathematics and Computing Technology. Over the years, the department has been evolving steadily and making significant contributions in producing well-trained mathematicians. At present, it is served by a team of seven dynamic and dedicated faculty members who, apart from offering a wide range of undergraduate and postgraduate courses, are actively engaged in interdisciplinary and core research across various domains of mathematics. Since the academic year 2022–2023, the department has been offering a Dual Degree program (B.Tech. + M.Tech.)`;
 
-const picture = ["https://i.postimg.cc/hGFcVRpp/IMG-20250825-WA0016.jpg", "https://i.postimg.cc/9FW4qZrr/IMG-20250825-WA0018.jpg","https://i.postimg.cc/2yXf6s1d/IMG-20250825-WA0019.jpg", "https://i.postimg.cc/5NFrLYTW/IMG-20250825-WA0017.jpg"];
+const picture = ["https://i.postimg.cc/fyY06783/nit-patna-005.jpg"];
 
 export default function Math() {
   const router = useRouter();

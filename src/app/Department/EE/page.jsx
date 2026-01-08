@@ -11,7 +11,7 @@ const dept = "EE";
 
 const about = `The Department of Electrical Engineering at NIT Patna stands as one of the pioneering centers of technical education in the country, tracing its origins back to 1945 when it was established under Patna University with a modest intake of just 20 students. Over the decades, the department has steadily expanded in scale, scope, and stature—transforming itself into a hub of academic excellence, cutting-edge research, and industry-driven innovation. From its early years of offering a four-year B.Sc. (Engineering) program, it evolved into a five-year integrated course in 1960, before reverting to a four-year format in 1972. Adapting to the changing needs of society and industry, the department has consistently grown in strength, increasing its intake from 30 students in the early years to 116 at present in the B.Tech. program. Alongside undergraduate education,`;
 
-const picture = ["https://i.postimg.cc/hGFcVRpp/IMG-20250825-WA0016.jpg", "https://i.postimg.cc/9FW4qZrr/IMG-20250825-WA0018.jpg","https://i.postimg.cc/2yXf6s1d/IMG-20250825-WA0019.jpg", "https://i.postimg.cc/5NFrLYTW/IMG-20250825-WA0017.jpg"];
+const picture = ["https://i.postimg.cc/fyY06783/nit-patna-005.jpg"];
 
 export default function EE() {
   const router = useRouter();
