@@ -59,27 +59,13 @@ const DocumentsTable = () => {
       para: "6-Format of Application to Dean(Academic)",
 
       link:
-        "https://drive.google.com/file/d/19ZBDsaDluGRBJO-LgBtdKYqo_8CQrbmx/view?usp=sharing",
+        "https://drive.google.com/file/d/1TyrXyy6cw88c5umnns6a0oPwY42_Y7xY/view?usp=sharing",
     },
+
     {
-
-      para: "7-Format of Application for Demand Letter",
-
+      para: "7-Format of Application for Cancellation of Admission",
       link:
-        "https://drive.google.com/file/d/18F1po6Nxh7ashYBG4C4A9exOaaB5-Jy2/view?usp=sharing",
-    },
-    {
-
-      para:
-        "8-Format of Application for Fee Receipt for Bank Loan and DRCC Adjustment Only",
-
-      link:
-        "https://drive.google.com/file/d/1XHKMmDhheGwL67m-q42FqPMAU-a4X0Hu/view?usp=sharing",
-    },
-    {
-      para: "9-Format of Application for Cancellation of Admission",
-      link:
-        "https://drive.google.com/file/d/1p60py5fKWJ_iWn9s17NCtStlhfOTRqea/view?usp=sharing",
+        "https://drive.google.com/file/d/1pVYvELBxmqBQvO6NpM_Rhx6AFzvB45u1/view?usp=sharing",
     },
 
   ]
