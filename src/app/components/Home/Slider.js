@@ -32,6 +32,9 @@ const Slider = () => {
       >
         {/** convocation image*/}
         <SwiperSlide>
+          <img src="https://i.postimg.cc/zB1X6mrF/image.png" />
+        </SwiperSlide>
+        <SwiperSlide>
           <img src="https://i.postimg.cc/pdVbvKBJ/Website-2-(1).webp" />
         </SwiperSlide>
         <SwiperSlide>
