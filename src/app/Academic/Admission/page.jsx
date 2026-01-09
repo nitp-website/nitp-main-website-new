@@ -110,8 +110,8 @@ const admissionData = {
       {
         name: "PhD Admissions NITP Portal",
         image:"https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
-       link:"https://mis.nitp.ac.in/admissionphd/",
-        sopLink:"https://drive.google.com/file/d/1n3zmrKoDoDEcxAAKWA0kZIONNJmdoxtU/view?usp=sharing"
+       link:"https://mis.nitp.ac.in/Admission/Default.aspx ",
+     //   sopLink:"https://drive.google.com/file/d/1n3zmrKoDoDEcxAAKWA0kZIONNJmdoxtU/view?usp=sharing"
       },
       // {
       //   name: "PhD Admissions NITP Portal",
@@ -128,6 +128,20 @@ const admissionData = {
       //   href:"https://drive.google.com/file/d/1VpDmpYqowP6kqoP1ZVyGd0gBwSqiJ9PO/view?usp=sharing"
       // },
 
+           {
+         title: "Physical Verification of Documents for PhD Admissions (January–June 2026 Semester)",
+       date: "2026-01-09",
+       content: "PhD Admission",
+        href:"https://drive.google.com/file/d/1sWvgbFCfJVRuqjrUovKGMcP_kXRlm_j1/view?usp=sharing"
+       },
+           {
+         title: "Annexure for PhD Admission",
+       date: "2026-01-09",
+       content: "PhD Admission",
+        href:"https://drive.google.com/file/d/1v6MjrIq0Io0pDHDyuBHHcVp1tk8raWTp/view?usp=sharing"
+       },
+       
+      
       {
          title: "Provisionally Selected for PhD Programme (January–June 2026)",
        date: "2026-01-07",
