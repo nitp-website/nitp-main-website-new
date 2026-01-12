@@ -418,7 +418,7 @@ const BTechSyllabusold = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"7"}
-                    code={"CS74144"}
+                    code={"CS74135"}
                     title={"Applied Cryptography"}
                     L={"3"}
                     T={"0"}
