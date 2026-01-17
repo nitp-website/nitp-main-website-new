@@ -1,7 +1,6 @@
 import React from "react";
 
 const HonoursAwards = ({ data }) => {
-
   const sortedAwards = [...data].sort((a, b) => {
     const isAContinue = a.end_date === "Continue";
     const isBContinue = b.end_date === "Continue";
@@ -19,6 +18,7 @@ const HonoursAwards = ({ data }) => {
       <h2 className="text-xl font-bold text-purple-800 border-b-2 border-purple-500 pb-2 mb-4">
         Honours & Awards
       </h2>
+      {/** */}
       <ul className="space-y-4">
         {sortedAwards.map((award, index) => (
           <li
@@ -28,11 +28,25 @@ const HonoursAwards = ({ data }) => {
             <p className="text-black">
               <span className="text-lg font-semibold text-purple-700">
                 {award.honour_award}
-              </span>{" "}. <br />
-              Started on {new Date(award.start_date).toLocaleDateString()} and{" "}
+              </span>{" "}
+              . <br />
+              Started on{" "}
+              {new Date(award.start_date).toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}{" "}
+              and{" "}
               {award.end_date === "Continue"
                 ? "is currently ongoing."
-                : `ended on ${new Date(award.end_date).toLocaleDateString()}.`}
+                : `ended on ${new Date(award.end_date).toLocaleDateString(
+                    "en-US",
+                    {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    },
+                  )}.`}
             </p>
           </li>
         ))}
