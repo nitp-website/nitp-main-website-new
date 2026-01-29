@@ -40,7 +40,7 @@ const programs = [
     degree: "Ph.D.",    
     duration: "",
     description:
-      "The Department offers a Ph.D. program, with admissions based on an entrance examination and interview conducted by NIT Patna. This is a research-intensive program where students carry out independent research in a specialized area of Chemical Engineering under the mentorship of faculty members.",
+      "The Department offers a Ph.D. program, with admissions based on an entrance examination and interview conducted by NIT Patna. This is a research-intensive program where students carry out independent research in a specialized area of Chemical Science and Technology under the mentorship of faculty members.",
     // syllabus: "",
   }
 ];
