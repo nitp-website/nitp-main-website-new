@@ -10,16 +10,22 @@ const cheMissionPage = () => {
           </div>
           <ul className="list-disc pl-5 space-y-2 mt-2 text-justify">
             <li className="ml-4">
-              Provide rigorous, comprehensive education that prepares students for leadership roles in the field of Chemical Science and Technology.
+              Provide rigorous, comprehensive education that prepares students
+              for leadership roles in the field of Chemical Science and
+              Technology.
             </li>
             <li className="ml-4">
-              To promote academic growth by offering state-of-the-art education in undergraduate, postgraduate and doctoral programmes.
+              To promote academic growth by offering state-of-the-art education
+              in dual degree and doctoral programmes.
             </li>
             <li className="ml-4">
-              Encourage a multidisciplinary approach to problem-solving, integrating knowledge from various fields to address the evolving needs of society and industry.
+              Encourage a multidisciplinary approach to problem-solving,
+              integrating knowledge from various fields to address the evolving
+              needs of society and industry.
             </li>
             <li className="ml-4">
-              Encourage a multidisciplinary approach to problem-solving, integrating knowledge from various fields to address the evolving needs of society and industry.
+              To achieve excellence in chemical sciences and technology through
+              teaching, research, and industry collaboration.
             </li>
           </ul>
 
@@ -28,10 +34,17 @@ const cheMissionPage = () => {
           </div>
           <ul className="list-disc pl-5 space-y-2 mt-2 text-justify">
             <li className="ml-4">
-              To serve the country through this institution by pursuing excellence in scientific and technical education and research.
+              To serve the country through this institution by pursuing
+              excellence in scientific and technical education and research.
             </li>
             <li className="ml-4">
-              To make this department a center of excellence for cutting edge fundamental and applied research.
+              To make this department a centre of excellence for cutting edge
+              fundamental and applied research.
+            </li>
+            <li className="ml-4">
+              To establish leadership in chemical sciences and technology
+              through innovation, research excellence, and sustainable
+              practices.
             </li>
           </ul>
         </div>

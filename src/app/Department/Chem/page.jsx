@@ -1,17 +1,31 @@
 "use client";
 import axios, { all } from "axios";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
+import {
+  Users,
+  BookOpen,
+  FileText,
+  Award,
+  Briefcase,
+  BarChart2,
+  ShieldCheck,
+  UserSquare,
+} from "lucide-react";
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
 
 const dept = "Chem";
 
-const about = `The Department of Chemical Science and Technology at the National Institute of Technology Patna are committed to excellence in education and research, fostering innovation and collaboration across various disciplines. The Department of Chemistry, established in 1924, has significantly expanded its academic and research offerings. The Department has expanded to include the discipline of Chemical Engineering in 2023, to emerge as a leader in field of chemical sciences and engineering education as well as technological advancements.
+const about = `The Department of Chemical Science and Technology at the National Institute of Technology Patna is committed to excellence in education and research, fostering innovation and collaboration across various disciplines. The Department of Chemistry, established in 1924,has significantly expanded its academic and research offerings. The Department expanded its academic scope in 2023 by incorporating the discipline of Chemical Technology. In 2024, it evolved into the Department of Chemical Science and Technology, with a vision to lead in chemical sciences education and technological innovation.
 
-The department offers a five-year UG-PG B. Tech. - M. Tech dual degree program in Chemical Technology to bridge the gap between chemistry and technological applications, preparing students for careers in both academia and industry.`;
+The department offers a five-year UG-PG B. Tech. - M. Tech dual degree program in Chemical Technology to bridge the gap between chemistry and technological applications, preparing students for careers in both academia and industry. The curriculum encompasses core subjects, including material and energy balance, thermodynamics, heat and mass transfer, fluid mechanics, chemical reaction engineering, process control, and computational systems. By integrating traditional chemical technology principles with emerging specialisations, the program aims to produce industry-ready professionals capable of addressing complex technology challenges. The Department offers several compulsory and elective courses to B.Tech. and B.Arch. students of the Institute in 1st, 2nd and 3rd years of the UG and UG-PG dual degree programs. The department has been and will remain committed to quality teaching and research with a conscious effort to achieve excellence.
+
+The department has an active PhD program since 2010 where the number of research scholars have been steadily rising with new admissions every semester. Currently, the department has full-time PhD students and part-time PhD students. With the increase in motivated researchers, the research output in terms of both quality and quantity has escalated in recent years. The department has 13 regular faculty members who are PIs of independent research groups and focus on different areas of chemistry and chemical engineering like, supramolecular chemistry, graphene chemistry, heterocycles, nanomaterials, spectroscopy, co-ordination complexes, fuel cell, Nanofluids, Colloids, Catalysis, Rheology, and Energy storage devices.
+
+To promote the ongoing and future research activities, DST has recently granted research funds under the FIST programme with a total grant amount of Rs. 220 Lakhs for the period of 2023 – 2028. Capital fund received from the Institute, TEQIP and externally funded projects have facilitated the installation of advanced small equipment necessary to execute day-to-day research work. The research groups are also collaborating within the department as well as with other Institutions to encourage interdisciplinary work. Collaborative work with faculty/scientists in IIT Patna, CSIR-NML, IIT Gandhinagar, CSIR-CSIO, NIPER Hajipur, IACS Kolkata, NIT Rourkela, Algappa University Karaikudi is currently underway to carry out characterisation work, theoretical study, and extend the application of synthesised products. The research facilities in the department are frequently extended to students from Civil Engg., Mechanical Engg., and Physics departments to enable their UG and PG thesis works. Further, UG and PG students from nearby Universities/Institutions like Mahatma Gandhi Central University, Motihari, Central University South Bihar, Gaya, NIPER Hajipur, Patna University have visited our department to carry out research work mandatory in their curricula.
+`;
 
 const picture = ["https://i.postimg.cc/fyY06783/nit-patna-005.jpg"];
 
@@ -25,7 +39,9 @@ export default function Che() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=che`);
+        const countsResponse = await axios.get(
+          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=che`,
+        );
         // console.log("Counts Response:", countsResponse.data);
         setData(countsResponse.data);
       } catch (error) {
@@ -61,20 +77,29 @@ export default function Che() {
 
             {/* Navigation Buttons */}
             <button
-              onClick={() => setIt((prev) => (prev === 0 ? picture.length - 1 : (picture.length + prev - 1) % picture.length))}
+              onClick={() =>
+                setIt((prev) =>
+                  prev === 0
+                    ? picture.length - 1
+                    : (picture.length + prev - 1) % picture.length,
+                )
+              }
               className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-black bg-opacity-50 hover:bg-opacity-70 px-3 py-1 rounded-full z-10"
             >
               &#8249;
             </button>
             <button
-              onClick={() => setIt((prev) => (prev === picture.length - 1 ? 0 : (prev + 1) % picture.length))}
+              onClick={() =>
+                setIt((prev) =>
+                  prev === picture.length - 1 ? 0 : (prev + 1) % picture.length,
+                )
+              }
               className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-black bg-opacity-50 hover:bg-opacity-70 px-3 py-1 rounded-full z-10"
             >
               &#8250;
             </button>
           </div>
         </div>
-
 
         {/* Notice */}
         <div className="md:w-1/2 h-full flex items-center justify-center">
@@ -96,7 +121,7 @@ export default function Che() {
                     {line}
                     {index === arr.length - 1 && (
                       <button
-                        onClick={() => router.push('/Department/Chem/about')}
+                        onClick={() => router.push("/Department/Chem/about")}
                         className="text-blue-600 ml-2"
                       >
                         more..
@@ -109,11 +134,7 @@ export default function Che() {
           </div>
 
           <div className="flex flex-col w-full mb-10 lg:mb-0">
-            {
-              data && (
-                <DepartmentCounter data={data} dept={dept} />
-              )
-            }
+            {data && <DepartmentCounter data={data} dept={dept} />}
           </div>
         </div>
       </div>

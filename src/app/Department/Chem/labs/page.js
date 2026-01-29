@@ -9,6 +9,12 @@ const labsData = [
         description:
             "The Teaching Lab is equipped for undergraduate and postgraduate practicals in Chemical Science and Technology, supporting core and elective courses with modern instrumentation and safety features.",
         image: "/tl_01.jpg",
+        content:[
+            "Lab 9, B.Tech Lab (Engineering Chemistry Lab)",
+            "Lab 8, Chemical Technology Lab (Dual Degree) and PhD teaching Lab (Synthesis and Purification)",
+            "Instrument Lab",
+            "Heat Transfer Lab and Fluid Flow Operation Lab"
+        ]
     },
     {
         name: "Instrument Lab",
@@ -21,6 +27,14 @@ const labsData = [
         description:
             "The Research Lab supports faculty and student research projects in various areas of chemistry, providing facilities for synthesis, analysis, and advanced experimentation.",
         image: "/rl_01.jpg",
+        content:[
+            "Green Synthesis Lab (Dr. Tasneem Parvin)",
+            "Applied Chemistry Lab (Dr. Subrata Das)",
+            "Biophysical Chemistry Lab (Dr. Niki Sweta Jha)",
+            "Inorganic Lab (Dr. Mukesh Choudhary)",
+            "Supramolecular Materials Lab (Dr. Suvankar Dasgupta)",
+            "Synthetic Research Lab (Dr. Khursheed Ahmad)"
+        ]
     },
     {
         name: "Applied Chemistry Lab (Dr. Subrata Das)",
@@ -88,6 +102,16 @@ function Page() {
                                     <p className="text-gray-700 text-sm leading-relaxed px-6 lg:px-0">
                                         {lab.description}
                                     </p>
+
+                                    {lab.content && (
+                                    <ul className="list-disc pl-6 mt-3 text-gray-700 text-sm">
+                                        {lab.content.map((value, idx) => (
+                                        <li key={idx} className="mb-1">
+                                            {value}
+                                        </li>
+                                        ))}
+                                    </ul>
+                                    )}
                                 </div>
 
                                 {lab.image && (
