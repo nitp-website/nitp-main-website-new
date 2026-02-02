@@ -16,8 +16,8 @@ The Institute has appointed a Liaison Officer who can be contacted in the event 
 
 Liaison Officer
 
-Prof. Fulena Rajak
-Professor, Department of Architecture & Planning
+Dr. B C Sahana 
+Associate Professor, Department of ECE
 Email: sc.st.cell@nitp.ac.in
 
 For reporting any grievance related to SC / ST community of NIT Patna, kindly use this email ID:
