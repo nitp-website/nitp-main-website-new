@@ -8743,6 +8743,15 @@ const MCAITSyllabus = () => {
                     cred={"4"}
                     url={"https://docs.google.com/document/d/1WDyPjVWotH30sNCbB_4CQZI0qii20WqW/edit?tab=t.0"}
                 />
+                  <SyllabusComp
+                    dep={"CSE"}
+                    sem={"1"}
+                    code={"HS012001"}
+                    title={"Technical Communication Writing"}
+                    L={"2"} T={"0"} P={"2"}
+                    cred={"3"}
+                    url={""}
+                />
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"1"}
@@ -8752,6 +8761,16 @@ const MCAITSyllabus = () => {
                     cred={"4"}
                     url={"https://docs.google.com/document/d/1PZE_p2fCcMfm1B2VuREgPKgR_afe8oSb/edit?tab=t.0"}
                 />
+               <SyllabusComp
+                    dep={"CSE"}
+                    sem={"1"}
+                    code={"EA012001"}
+                    title={"EAA -II Swachha Bharat Mission (SBM)"}
+                    L={"0"} T={"0"} P={"2"}
+                    cred={"1"}
+                    url={""}
+                />
+                        
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"2"}
@@ -8792,11 +8811,21 @@ const MCAITSyllabus = () => {
                     dep={"CSE"}
                     sem={"2"}
                     code={"CS02200"}
-                    title={"Ad-hoc & Sensor Networks"}
+                    title={"Ad-hoc and Sensor Networks"}
                     L={"3"} T={"0"} P={"0"}
                     cred={"3"}
                     url={"https://docs.google.com/document/d/1qwFWCazP1WtuVvafRwkLQMCtBdiVXlY_/edit?tab=t.0"}
                 />
+                 <SyllabusComp
+                    dep={"CSE"}
+                    sem={"2"}
+                    code={"EA022001"}
+                    title={"EAA-I Sports/Innovative Project/NCC/NSS"}
+                    L={"0"} T={"0"} P={"2"}
+                    cred={"1"}
+                    url={""}
+                />
+                        
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"3"}
@@ -8898,6 +8927,17 @@ const MCAITSyllabus = () => {
                 />
                 <SyllabusComp
                     dep={"CSE"}
+                    sem={"4"}
+                    code={"CS042007"}
+                    title={"Seminar and Presentation"}
+                    L={"0"} T={"0"} P={"2"}
+                    cred={"1"}
+                    url={""}
+                />
+                        
+                        
+                <SyllabusComp
+                    dep={"CSE"}
                     sem={"5"}
                     code={"CS052001"}
                     title={"Information Security"}
@@ -8908,7 +8948,7 @@ const MCAITSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
-                    code={"MC470502"}
+                    code={"CS052002"}
                     title={"Minor Project"}
                     L={"0"} T={"0"} P={"22"}
                     cred={"11"}
@@ -8917,25 +8957,25 @@ const MCAITSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
-                    code={"MC4705XX"}
+                    code={"CS0520XX"}
                     title={"Elective-I/MOOC"}
-                    L={"0"} T={"0"} P={"0"}
+                    L={"X"} T={"X"} P={"X"}
                     cred={"3"}
                     url={""}
                 />
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
-                    code={"MC4705XX"}
+                    code={"CS0520XX"}
                     title={"Elective-II/MOOC"}
-                    L={"0"} T={"0"} P={"0"}
+                    L={"X"} T={"X"} P={"X"}
                     cred={"3"}
                     url={""}
                 />
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"6"}
-                    code={"MCXX0601"}
+                    code={"CS062001"}
                     title={"Project / Industrial Training"}
                     L={"0"} T={"0"} P={"40"}
                     cred={"20"}
@@ -9682,7 +9722,7 @@ const MCADSSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"1"}
-                    code={"MC460104"}
+                    code={"HS011901"}
                     title={"Technical Communication"}
                     L={"2"} T={"0"} P={"2"}
                     cred={"3"}
@@ -9700,7 +9740,7 @@ const MCADSSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"1"}
-                    code={"MC460106"}
+                    code={"EA011901"}
                     title={"EAA-II Swachha Bharat Mission (SBM)"}
                     L={"0"} T={"0"} P={"2"}
                     cred={"1"}
@@ -9754,7 +9794,7 @@ const MCADSSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"2"}
-                    code={"MC460206"}
+                    code={"EA021901"}
                     title={"EAA-I Sports/Innovative Project/NCC/NSS"}
                     L={"0"} T={"0"} P={"2"}
                     cred={"1"}
@@ -9853,7 +9893,7 @@ const MCADSSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"4"}
-                    code={"MC460406"}
+                    code={"CS041906"}
                     title={"Seminar & Presentation"}
                     L={"0"} T={"0"} P={"2"}
                     cred={"1"}
@@ -9871,8 +9911,8 @@ const MCADSSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
-                    code={"MC460502"}
-                    title={"Minor Project I"}
+                    code={"CS051902"}
+                    title={"Minor Project"}
                     L={"0"} T={"0"} P={"22"}
                     cred={"11"}
                     url={""}
@@ -9880,7 +9920,7 @@ const MCADSSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
-                    code={"MC4605XX"}
+                    code={"CS0519XX"}
                     title={"Elective – I/MOOC"}
                     L={"0"} T={"0"} P={"0"}
                     cred={"3"}
@@ -9889,7 +9929,7 @@ const MCADSSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"5"}
-                    code={"MC4605XX"}
+                    code={"CS0519XX"}
                     title={"Elective – II/MOOC"}
                     L={"0"} T={"0"} P={"0"}
                     cred={"3"}
@@ -9898,8 +9938,8 @@ const MCADSSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"6"}
-                    code={"MC460601"}
-                    title={"Major Project/Internship"}
+                    code={"CS061901"}
+                    title={"Project/Industrial Training"}
                     L={"0"} T={"0"} P={"40"}
                     cred={"20"}
                     url={""}
@@ -10051,7 +10091,7 @@ const MCADSSyllabus = () => {
                 <SyllabusComp
                     dep={"CSE"}
                     sem={"EL"}
-                    code={"MCSXX1923"}
+                    code={"CSXX1923"}
                     title={"Soft Computing"}
                     L={"3"} T={"0"} P={"0"}
                     cred={"3"}
