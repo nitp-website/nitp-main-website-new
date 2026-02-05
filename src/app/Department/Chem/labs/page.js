@@ -16,12 +16,12 @@ const labsData = [
             "Heat Transfer Lab and Fluid Flow Operation Lab"
         ]
     },
-    {
-        name: "Instrument Lab",
-        description:
-            "The Instrument Lab houses advanced analytical instruments for research and teaching, including spectrometers, chromatographs, and other essential chemical analysis tools.",
-        image: "/il_01.jpg",
-    },
+    // {
+    //     name: "Instrument Lab",
+    //     description:
+    //         "The Instrument Lab houses advanced analytical instruments for research and teaching, including spectrometers, chromatographs, and other essential chemical analysis tools.",
+    //     image: "/il_01.jpg",
+    // },
     {
         name: "Research Lab",
         description:
@@ -36,48 +36,48 @@ const labsData = [
             "Synthetic Research Lab (Dr. Khursheed Ahmad)"
         ]
     },
-    {
-        name: "Applied Chemistry Lab (Dr. Subrata Das)",
-        description:
-            "Focuses on applied aspects of chemistry including industrial and environmental applications.",
-        image: "",
-    },
-    {
-        name: "Bioorganic Lab (Dr. Rima Thakur)",
-        description:
-            "Specializes in bioorganic synthesis and analysis, supporting research in biomolecules and organic chemistry.",
-        image: "",
-    },
-    {
-        name: "Biophysical Chemistry Lab (Dr. Niki Sweta Jha)",
-        description:
-            "Conducts research in the physical principles underlying chemical systems, including spectroscopy and thermodynamics.",
-        image: "",
-    },
-    {
-        name: "Green Synthesis Lab (Dr. Tasneem Parvin)",
-        description:
-            "Dedicated to environmentally friendly chemical synthesis and green chemistry methodologies.",
-        image: "",
-    },
-    {
-        name: "Inorganic Lab (Dr. Mukesh Choudhary)",
-        description:
-            "Focuses on synthesis and characterization of inorganic compounds and materials.",
-        image: "",
-    },
-    {
-        name: "Supramolecular Materials Lab (Dr. Suvankar Dasgupta)",
-        description:
-            "Researches supramolecular assemblies and advanced materials for various applications.",
-        image: "",
-    },
-    {
-        name: "Synthetic Research Lab (Dr. Khursheed Ahmad)",
-        description:
-            "Engaged in the synthesis of novel organic and inorganic compounds for research and teaching.",
-        image: "",
-    },
+    // {
+    //     name: "Applied Chemistry Lab (Dr. Subrata Das)",
+    //     description:
+    //         "Focuses on applied aspects of chemistry including industrial and environmental applications.",
+    //     image: "",
+    // },
+    // {
+    //     name: "Bioorganic Lab (Dr. Rima Thakur)",
+    //     description:
+    //         "Specializes in bioorganic synthesis and analysis, supporting research in biomolecules and organic chemistry.",
+    //     image: "",
+    // },
+    // {
+    //     name: "Biophysical Chemistry Lab (Dr. Niki Sweta Jha)",
+    //     description:
+    //         "Conducts research in the physical principles underlying chemical systems, including spectroscopy and thermodynamics.",
+    //     image: "",
+    // },
+    // {
+    //     name: "Green Synthesis Lab (Dr. Tasneem Parvin)",
+    //     description:
+    //         "Dedicated to environmentally friendly chemical synthesis and green chemistry methodologies.",
+    //     image: "",
+    // },
+    // {
+    //     name: "Inorganic Lab (Dr. Mukesh Choudhary)",
+    //     description:
+    //         "Focuses on synthesis and characterization of inorganic compounds and materials.",
+    //     image: "",
+    // },
+    // {
+    //     name: "Supramolecular Materials Lab (Dr. Suvankar Dasgupta)",
+    //     description:
+    //         "Researches supramolecular assemblies and advanced materials for various applications.",
+    //     image: "",
+    // },
+    // {
+    //     name: "Synthetic Research Lab (Dr. Khursheed Ahmad)",
+    //     description:
+    //         "Engaged in the synthesis of novel organic and inorganic compounds for research and teaching.",
+    //     image: "",
+    // },
 ];
 
 // UI from the CSE file

@@ -1,14 +1,9 @@
-
 import Head from "next/head";
-import SCSTCell from "../../components/StudentComponents/SCSTCell"
-
-
-
+import SCSTCell from "../../components/StudentComponents/SCSTCell";
 
 export default function Home() {
   const places = [
     {
-    
       subheading: "SC/ST Cell",
       text: `The Institute is committed to maintain a work environment wherein faculty members, staff and students from different communities can work in a coherent environment. It is the Institute's endeavor to ensure that no discrimination takes place at the workplace or inside the Institute campus.
 
@@ -16,16 +11,13 @@ The Institute has appointed a Liaison Officer who can be contacted in the event 
 
 Liaison Officer
 
-Prof. Fulena Rajak
+Dr. Bikash Chandra Sahana
 Professor, Department of Architecture & Planning
 Email: sc.st.cell@nitp.ac.in
 
 For reporting any grievance related to SC / ST community of NIT Patna, kindly use this email ID:
 sc.st.cell@nitp.ac.in`,
     },
-    
-    
-    
   ];
 
   return (
@@ -34,15 +26,15 @@ sc.st.cell@nitp.ac.in`,
         <title>SC/ST Cell</title>
       </Head>
       <h1 className="text-3xl font-bold text-center mb-2 text-red-800">
-      SC/ST Cell , NIT Patna
+        SC/ST Cell , NIT Patna
       </h1>
-      <SCSTCell/>
+      <SCSTCell />
     </div>
   );
 }
 
 export async function generateMetadata({ params }) {
-    return {
-      title: 'SC/ST Cell | NIT Patna',
-    }
-  }
+  return {
+    title: "SC/ST Cell | NIT Patna",
+  };
+}
