@@ -44,12 +44,12 @@ const SCSTCell = () => {
 
   const committeeMembers = [
     {
-      name: "Prof. Fulena Rajak",
-      position: "Professor",
-      department: "Department of Architecture & Planning",
+      name: "Dr. Bikash Chandra Sahana",
+      position: "Associate Professor",
+      department: "Electronics and Communication Engineering",
       memberType: "Liaison Officer",
       email: "sc.st.cell@nitp.ac.in",
-      profileUrl: "https://www.nitp.ac.in/profile/fulenarajak@nitp.ac.in",
+      profileUrl: "https://www.nitp.ac.in/profile/sahana@nitp.ac.in",
     },
   ];
 
@@ -85,7 +85,7 @@ const SCSTCell = () => {
                 <br />
                 The Institute has appointed a Liaison Officer who can be contacted in the event of
                 any incident of discrimination. Particulars of Liaison Officer are as under:{" "}
-                <span className="font-bold text-red-800">Prof. Fulena Rajak</span>.
+                <span className="font-bold text-red-800">Dr. Bikash Chandra Sahana</span>.
                 <div className="mt-4">
                   For reporting any grievance related to SC/ST community of NIT Patna, kindly use
                   this email ID:{" "}
@@ -159,7 +159,7 @@ const SCSTCell = () => {
                 the workplace or inside the Institute campus. The Institute has appointed a Liaison
                 Officer who can be contacted in the event of any incident of discrimination.
                 Particulars of Liaison Officer are as under:{" "}
-                <span className="font-bold text-red-800">Prof. Fulena Rajak</span>.
+                <span className="font-bold text-red-800">Dr. Bikash Chandra Sahana</span>.
                 <div className="mt-4">
                   For reporting any grievance related to SC/ST community of NIT Patna, kindly use
                   this email ID:{" "}

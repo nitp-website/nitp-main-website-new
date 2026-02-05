@@ -50,11 +50,11 @@ const navItems = [
                 url: `/Department/${dept}/faculty`,
                 icon: <Scroll size={18} />,
             },
-            // {
-            //   name: "Staff",
-            //   url: `/Department/${dept}/staff`,
-            //   icon: <FileText size={18} />,
-            // },
+            {
+              name: "Staff",
+              url: `/Department/${dept}/staff`,
+              icon: <FileText size={18} />,
+            },
             {
                 name: "Research Students",
                 url: `/Department/${dept}/researchStudents`,

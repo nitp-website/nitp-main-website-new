@@ -56,6 +56,32 @@ const staffData = [
             },
         ],
     },
+    {
+        department: "Phy",
+        staff: [
+                  {
+                name: "Hanshnath Maurya",
+                designation: "Office  Attend SG-II",
+                // experience: "Technical Assistant (CSE) in NIT Patna from 11.07.2024 Till now.",
+                // education: "Diploma in Electronics Engineering,",
+                // expertise: "Routing, Switching, Cisco Wireless, Cisco ISE, Palo Alto, Fortinet and Cisco ASA, FTD Firewall.Cisco Certified - CCIE-S, CCNP, CCSA, CCNA, MCP",
+                // email: "ranjeet.ta@nitp.ac.in",
+                mobile: "N/A",
+                image: "https://i.postimg.cc/tRLRYj3K/image.png",
+            },
+            
+            {
+                name: "JAYANTA JANA",
+                designation: "TECHNICAL ASSISTANT",
+                experience: "16 Year",
+                education: "M.Sc in Physics University of Calcutta",
+                // expertise: "Computer Networking",
+                email: " jayanta.ta@nitp.ac.in",
+                mobile: "N/A",
+                image: "https://i.postimg.cc/PJv7B0Nz/image.png",
+            }
+        ],
+    },
 ];
 
 export default staffData;
