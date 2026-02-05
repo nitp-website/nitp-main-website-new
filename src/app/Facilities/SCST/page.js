@@ -11,8 +11,8 @@ The Institute has appointed a Liaison Officer who can be contacted in the event 
 
 Liaison Officer
 
-Dr. Bikash Chandra Sahana
-Professor, Department of Architecture & Planning
+Dr. B C Sahana 
+Associate Professor, Department of ECE
 Email: sc.st.cell@nitp.ac.in
 
 For reporting any grievance related to SC / ST community of NIT Patna, kindly use this email ID:
@@ -34,7 +34,7 @@ sc.st.cell@nitp.ac.in`,
 }
 
 export async function generateMetadata({ params }) {
-  return {
-    title: "SC/ST Cell | NIT Patna",
-  };
-}
+    return {
+      title: 'SC/ST Cell | NIT Patna',
+    }
+  }
