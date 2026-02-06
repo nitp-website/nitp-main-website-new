@@ -9,7 +9,7 @@ function SyllabusComp({ dep, sem, code, title, L, T, P, cred, url }) {
             <div className="col-span-1 border border-black flex items-center px-2 py-2">{dep}</div>
             <div className="col-span-1 border border-black flex items-center px-2 py-2">{sem}</div>
             <div className="col-span-2 border border-black flex items-center px-2 py-2">{code}</div>
-            <aFV
+            <a
                 href={safeUrl || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
