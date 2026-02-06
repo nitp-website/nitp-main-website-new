@@ -8786,7 +8786,7 @@ const MCAITSyllabus = () => {
                     code={"CS022002"}
                     title={"Computing with Python"}
                     L={"3"} T={"0"} P={"2"}
-                    cred={"3"}
+                    cred={"2"}
                     url={"https://docs.google.com/document/d/1tTZ_x5EEYMaIULXV6wafUOIWr32W62Tm/edit?tab=t.0"}
                 />
                 <SyllabusComp
