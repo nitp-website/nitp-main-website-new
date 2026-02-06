@@ -9,7 +9,7 @@ function SyllabusComp({ dep, sem, code, title, L, T, P, cred, url }) {
             <div className="col-span-1 border border-black flex items-center px-2 py-2">{dep}</div>
             <div className="col-span-1 border border-black flex items-center px-2 py-2">{sem}</div>
             <div className="col-span-2 border border-black flex items-center px-2 py-2">{code}</div>
-            <a
+            <aFV
                 href={safeUrl || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -8786,7 +8786,7 @@ const MCAITSyllabus = () => {
                     code={"CS022002"}
                     title={"Computing with Python"}
                     L={"3"} T={"0"} P={"2"}
-                    cred={"2"}
+                    cred={"4"}
                     url={"https://docs.google.com/document/d/1tTZ_x5EEYMaIULXV6wafUOIWr32W62Tm/edit?tab=t.0"}
                 />
                 <SyllabusComp
