@@ -1836,8 +1836,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url="https://docs.google.com/document/d/1UT831fVhjIyUsZe3l6pWpKCXVemCMzjQ/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
-                />
+                url={"https://docs.google.com/document/d/1QLewuouKAjvx1wKvj0XcIC9fhUr3c3qa/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1847,8 +1847,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url="https://docs.google.com/document/d/1cNE2-cXbSJl8W0rso0OVIBc6S89gk_sY/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
-                />
+               url={"https://docs.google.com/document/d/1UESaue-1ech9d8xrxXqnEA3_aL1gCnGm/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                   />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1858,8 +1858,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url="https://docs.google.com/document/d/1K_l1l1wrO_DBsyvvyCVk8v2_HgijVnwb/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
-                />
+                url={"https://docs.google.com/document/d/1kwZwgqR9SqIA-9-b-Ln650lmN3D2XAnV/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1869,8 +1869,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"2"}
                     cred={"3"}
-                    url="https://docs.google.com/document/d/1zPPl_dHa130Y6-ckIhBXHyB1zd53LbwI/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
-                />
+               url={"https://docs.google.com/document/d/1Kjw3cNgMSPDdYBoOae5iqBXvnIZ49wNK/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                   />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1880,8 +1880,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url="https://docs.google.com/document/d/15UCcuLZ9BKh75prfIZa18-o4IqePTi_b/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
-                />
+                url={"https://docs.google.com/document/d/1kHCgLCcKMDlk7Zk5Yu1Exbsm-z6nxCpO/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1891,8 +1891,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1oEu1gtW-nXzR3lJaAwf-AegjY3N0VQ9G/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+               url={"https://docs.google.com/document/d/1M7kAYOCFTqom8rbquasiO8cOh6pucTVW/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                   />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1902,8 +1902,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1iEeNbXDwGOkuOk6SQ8vNRBcQIBhc7t_9/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+                  url={"https://docs.google.com/document/d/1tULTT_hTY5qBJtB6lIqTdBxDPzC31NFm/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1913,8 +1913,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"2"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1t3oj_TniTbM771tB-nuXE3EbWZ9c5yom/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+                url={"https://docs.google.com/document/d/137ZXGDJXlHhsFNqGKHqUOrSOYip6LQC-/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                    />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1924,8 +1924,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"2"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/19_1MGDaeU2VYUIjun38xXHaafzgM2pkN/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+               url={"https://docs.google.com/document/d/1wotDJDwdtE888tgvdzh0UGie6AWvNkSZ/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1935,8 +1935,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1ly06huRq_UrYy4jWaP-y8AwmxYwQRo2L/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+               url={"https://docs.google.com/document/d/1C2iXLq2FtAsDzc9vEAR2GDYgUnOUomBC/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1946,8 +1946,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1lDTPYrdRtm8p_ijcu4p__Xq0NmVdaspi/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+              url={"https://docs.google.com/document/d/1tF8--hv3XfrUcsPHnpmYom6toExtbhYx/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                  />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1957,8 +1957,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"2"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1T11iSkwOfgEz0wMdz5HABmYqjU654X90/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+               url={"https://docs.google.com/document/d/1hXKDS6tJ0O0bwSsaCYEupUBoYvzFEj2Y/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1968,8 +1968,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1KwsxSnwwpEQWJMY9Na12jajzibjIIzky/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+               url={"https://docs.google.com/document/d/1gmHWdCgme3tF2xqXAHFywn3ut823x3R6/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                   />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1979,8 +1979,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1LiFkNXO8jQTf2KYAZaAlCyv3rNYDfy26/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+               url={"https://docs.google.com/document/d/1FOpoBLuna0XS5u2YabyRBUhWQm2bfO34/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -1990,8 +1990,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1vSnCcEonJL00z3o2-UlPu_NfHq2lLnTz/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+                 url={"https://docs.google.com/document/d/1CwUFp00OubgS47uH-4JezmzvjdtB5LZv/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -2001,8 +2001,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://drive.google.com/file/d/1L70hxedl6t4xmd9P8zsG_7Ryrb6MevTk/view?usp=drivesdk"}
-                />
+                 url={"https://drive.google.com/file/d/16uiNTND48FA1VFVJs0ut3ARGAfJUUZFl/view?usp=sharing"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -2012,8 +2012,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1UyN_bU0DMuVPHvDyr_2UrB8kqDZkxwub/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+                  url={"https://docs.google.com/document/d/1OrdEuUN1Un9lWIVxNj7mET6l2TNErpwq/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -2023,8 +2023,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1ur8vVSqbGwu5RS9YMu6pE3wjnm-HXROA/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+                 url={"https://docs.google.com/document/d/1FBbSR4FsmV9nAAgD0j2FgfIBDnf3ME9n/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -2034,8 +2034,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/105pi7YPY8CkNO1njfBe5KgH3zzrXBUwb/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+                  url={"https://docs.google.com/document/d/1yo7ZTRkRDu3LDMUmGa1XU2ZZhht5BbPX/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -2045,8 +2045,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1XqdEK8pepC7wFRpYYIB5GT24GIsBJZTr/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+                  url={"https://docs.google.com/document/d/1bJ6BohRHu5kdN-NJswRjSAL_skCdMXv5/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                      />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -2056,8 +2056,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1OqWUN2btOoQrBZM8JEaXp1T5nI_lFi7p/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+                    url={"https://docs.google.com/document/d/1tEvstLsiFIbTsm2B2wZt6EqddsOHfhTp/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -2067,8 +2067,8 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"2"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1AbqoGx_ahtV9pmrhJIV92f68iPdibwZD/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
-                />
+                    url={"https://docs.google.com/document/d/1SP8hoijvFMa0Rbndqv5KJdC9dwo8GWJh/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                        />
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
@@ -2078,7 +2078,7 @@ const BTechSyllabus = () => {
                     T={"0"}
                     P={"0"}
                     cred={"3"}
-                    url={"https://docs.google.com/document/d/1lySvFKOJxLmZf0Ub_VQSho_zOaBM-rFG/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
+                    url={"https://docs.google.com/document/d/1oXi1jXGfUheH8fcxDfjrGkkkJwjghDji/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
                 />
                 <SyllabusComp
                     dep={"CSUG"}
