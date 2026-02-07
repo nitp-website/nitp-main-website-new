@@ -1431,12 +1431,12 @@ const BTechSyllabus = () => {
                     dep={"CSUG"}
                     sem={"2"}
                     code={"HS020601"}
-                    title={"Communicative English"}
+                    title={"Professional Communication and Technical Writing"}
                     L={"3"}
                     T={"0"}
                     P={"2"}
                     cred={"4"}
-                    url="https://docs.google.com/document/d/1j_Nbng2Th95csKOydw4pndfpQ1uNlywh/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
+                    url=""
                 />
                 <SyllabusComp
                     dep={"CSUG"}
@@ -1830,7 +1830,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4145"}
+                    code={"CSXX0611"}
                     title={"Distributed Database Systems"}
                     L={"3"}
                     T={"0"}
@@ -1841,7 +1841,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4146"}
+                    code={"CSXX0612"}
                     title={"Operations Research"}
                     L={"3"}
                     T={"0"}
@@ -1852,7 +1852,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4147"}
+                    code={"CSXX0613"}
                     title={"Digital Image Processing"}
                     L={"3"}
                     T={"0"}
@@ -1863,7 +1863,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4148"}
+                    code={"CSXX0614"}
                     title={"Intrusion Detection"}
                     L={"2"}
                     T={"0"}
@@ -1874,7 +1874,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4149"}
+                    code={"CSXX0615"}
                     title={"Real Time Systems"}
                     L={"3"}
                     T={"0"}
@@ -1885,7 +1885,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4150"}
+                    code={"CSXX0616"}
                     title={"Computer Vision"}
                     L={"3"}
                     T={"0"}
@@ -1896,7 +1896,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4151"}
+                    code={"CSXX0617"}
                     title={"Social Networks"}
                     L={"3"}
                     T={"0"}
@@ -1907,7 +1907,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4152"}
+                    code={"CSXX0618"}
                     title={"Big Data Analytics"}
                     L={"2"}
                     T={"0"}
@@ -1918,7 +1918,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4153"}
+                    code={"CSXX0619"}
                     title={"Network Security"}
                     L={"2"}
                     T={"0"}
@@ -1929,7 +1929,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4154"}
+                    code={"CSXX0620"}
                     title={"Object Oriented Systems Development"}
                     L={"3"}
                     T={"0"}
@@ -1940,7 +1940,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4155"}
+                    code={"CSXX0621"}
                     title={"Computer Graphics"}
                     L={"3"}
                     T={"0"}
@@ -1951,7 +1951,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4156"}
+                    code={"CSXX0622"}
                     title={"Malware Analysis"}
                     L={"2"}
                     T={"0"}
@@ -1962,7 +1962,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4157"}
+                    code={"CSXX0623"}
                     title={"Microprocessor and Microcontrollers"}
                     L={"3"}
                     T={"0"}
@@ -1973,7 +1973,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4158"}
+                    code={"CSXX0624"}
                     title={"Distributed Systems"}
                     L={"3"}
                     T={"0"}
@@ -1984,7 +1984,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4159"}
+                    code={"CSXX0625"}
                     title={"Virtual Reality"}
                     L={"3"}
                     T={"0"}
@@ -1995,7 +1995,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4160"}
+                    code={"HSXX0626"}
                     title={"Intellectual Property Rights"}
                     L={"3"}
                     T={"0"}
@@ -2006,7 +2006,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4161"}
+                    code={"CSXX0627"}
                     title={"Blockchain Technology"}
                     L={"3"}
                     T={"0"}
@@ -2017,7 +2017,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4162"}
+                    code={"CSXX0628"}
                     title={"Biometrics"}
                     L={"3"}
                     T={"0"}
@@ -2028,7 +2028,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4163"}
+                    code={"CSXX0629"}
                     title={"Recommendation Systems"}
                     L={"3"}
                     T={"0"}
@@ -2039,7 +2039,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4164"}
+                    code={"CSXX0630"}
                     title={"Computer System Parallelism"}
                     L={"3"}
                     T={"0"}
@@ -2050,7 +2050,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4165"}
+                    code={"CSXX0631"}
                     title={"Advanced Algorithms"}
                     L={"3"}
                     T={"0"}
@@ -2061,7 +2061,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4166"}
+                    code={"CSXX0632"}
                     title={"File System Forensic"}
                     L={"2"}
                     T={"0"}
@@ -2072,7 +2072,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-1"}
-                    code={"CSX4167"}
+                    code={"CSXX0633"}
                     title={"Distributed Operating Systems"}
                     L={"3"}
                     T={"0"}
@@ -2083,7 +2083,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-2"}
-                    code={"CSX4171"}
+                    code={"CSXX0641"}
                     title={"Adversarial ML"}
                     L={"3"}
                     T={"0"}
@@ -2094,7 +2094,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-2"}
-                    code={"CSX4172"}
+                    code={"CSXX0642"}
                     title={"Digital Signal Processing"}
                     L={"3"}
                     T={"0"}
@@ -2611,7 +2611,7 @@ const BTechSyllabus = () => {
                 <SyllabusComp
                     dep={"CSUG"}
                     sem={"EL-3"}
-                    code={"HSXXXXX"}
+                    code={"HSXX0666"}
                     title={"Intellectual Property Rights"}
                     L={"3"}
                     T={"0"}
