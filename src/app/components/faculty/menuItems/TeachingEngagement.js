@@ -5,7 +5,7 @@ const TeachingEngagement = ({ data }) => {
   const uniqueCoursesMap = new Map();
 
   data.forEach((course) => {
-    const key = `${course.course_number.trim()}-${course.course_title.trim()}`;
+    const key = `${course.course_number.trim()}-${course.course_title.trim()}-${course.years_offered}-${course.semester}`;
     if (!uniqueCoursesMap.has(key)) {
       uniqueCoursesMap.set(key, course);
     }
