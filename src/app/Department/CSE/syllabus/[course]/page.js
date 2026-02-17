@@ -8165,7 +8165,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1Nimc9bPDBU0gomM2M72bKqULo1_W2FJg/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1NGViJxOS9-gByjphOTKQQ3M_w6qmWr4V/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8254,7 +8254,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1dyKiZlE7mv5cm57Jt0ywCtS5t0YWCl4M/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1WwqKwavQx_Bp5F6z_Q-AtluQgFbMtGHf/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
