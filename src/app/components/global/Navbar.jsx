@@ -7,6 +7,7 @@ import { IoIosArrowDown, IoIosArrowDropright } from "react-icons/io";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import "./styles/Navbar.css";
 import logo from "../../assets/images/logo.png";
+import LanguageSelector from "./LanguageSelector";
 import About from "../../assets/images/about.svg";
 import Value from "../../assets/images/value.svg";
 import Mission from "../../assets/images/mission.svg";
@@ -722,27 +723,6 @@ export default function Navbar() {
     };
   }, []);
 
-useEffect(() => {
-    if (window.google && window.google.translate) {
-      return;
-    }
-    window.googleTranslateElementInit = function () {
-      new window.google.translate.TranslateElement(
-        {
-          pageLanguage: "en",
-          includedLanguages: "en,hi",
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: true,
-        },
-        "2e4d7f2c6a1b935fc09da64e8c71f2c8e4b9a55d7c3f08b61a2de8f47d5b7c6a"
-      );
-    };
-
-    return () => {
-      delete window.googleTranslateElementInit;
-    };
-  }, []);
-
   useEffect(() => {
     const fixHindiInstituteName = () => {
       const incorrect = 'राष्ट्रीय संस्थान संस्थान पटना';
@@ -765,10 +745,9 @@ useEffect(() => {
       <div className="bg-black h-11 my-auto">
         <div className="flex justify-between items-center px-4 py-1 text-white text-xs md:text-sm my-auto">
           <div className="flex flex-row items-center justify-start text-black z-[1000000]">
-              <div id="2e4d7f2c6a1b935fc09da64e8c71f2c8e4b9a55d7c3f08b61a2de8f47d5b7c6a"></div>
-              <div className="border border-b-0  p-2.5 box-border text-white">National Institute of Technology Patna</div>
+            <LanguageSelector />
           </div>
-          <div className="flex space-x-2 text-xs md:text-sm">
+          <div className="hidden md:flex space-x-2 text-xs md:text-sm">
             <a
               href="/Notices/JobsNITP"
               className="hover:underline text-[0.6rem] md:text-sm"
@@ -874,6 +853,10 @@ useEffect(() => {
                 An Institution of National Importance
               </div>
             </div>
+            <FiMenu
+              onClick={() => setSideMenuOpen(true)}
+              className="cursor-pointer text-3xl text-black flex-shrink-0"
+            />
           </div>
 
           {/* Desktop Header Layout */}
@@ -898,16 +881,12 @@ useEffect(() => {
           </div>
         </div>
 
-        <div className={` mx-auto flex w-full px-4 py-2 text-sm bg-white/40 md:py-1 md:bg-[#811919] backdrop-blur-lg justify-center items-center shadow-lg ${isSticky?"max-w-7xl rounded-2xl ":""} transition-all ease-in-out duration-300`}>
+        <div className={`hidden md:flex mx-auto w-full px-4 py-2 text-sm md:py-1 md:bg-[#811919] backdrop-blur-lg justify-center items-center shadow-lg ${isSticky?"max-w-7xl rounded-2xl ":""} transition-all ease-in-out duration-300`}>
           <section className="nav-items hidden md:flex">
             {navItems.map((item, index) => (
               <NavItem key={index} item={item} />
             ))}
           </section>
-          <FiMenu
-            onClick={() => setSideMenuOpen(true)}
-            className="cursor-pointer text-3xl md:hidden text-black ml-auto"
-          />
         </div>
 
         {isSideMenuOpen && (

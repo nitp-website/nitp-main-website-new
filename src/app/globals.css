@@ -79,17 +79,70 @@ body {
   }
 }
 
+/* ========================================
+   Google Translate - Hide Default UI
+   ======================================== */
+
+/* Hide the entire Google Translate widget */
+.goog-te-gadget,
+.goog-te-gadget-simple,
 .VIpgJd-ZVi9od-xl07Ob-lTBxed,
-.goog-te-gadget-simple {
-  display: flex !important;
+.skiptranslate,
+#google_translate_element,
+.goog-te-gadget-icon {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
+
+/* Hide the Google Translate loading spinner */
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO,
+.VIpgJd-ZVi9od-aZ2wEe {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Hide the Google Translate banner frame */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Prevent body from being pushed down by translate toolbar */
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+.translated-ltr body,
+.translated-rtl body {
+  top: 0px !important;
+  position: static !important;
+}
+
+/* Hide any dropdown or popup from Google Translate */
 .VIpgJd-ZVi9od-ORHb,
 .VIpgJd-ZVi9od-ORHb-OEVmcd {
   display: none !important;
 }
-.translated-ltr body {
-  top: 0% !important;
+
+/* Hide the iframe that Google Translate creates */
+iframe.skiptranslate,
+iframe.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
 }
+
+/* ========================================
+   End Google Translate Styles
+   ======================================== */
 
 /* ========================================
    SEO Backlinks - Hidden from Frontend
