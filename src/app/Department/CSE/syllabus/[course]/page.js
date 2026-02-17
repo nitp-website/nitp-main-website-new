@@ -8025,7 +8025,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1ZS47H6woMm-k1JOrEUaOABv54m_BGPLq/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true "
+            "https://docs.google.com/document/d/1OnUJ9HWDYzCWD9xuN02yTcnjJSeA23Nr/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8037,7 +8037,7 @@ const   DualDSyllabus = () => {
           T={"1"}
           P={"0"}
           cred={"4"}
-          url={" "}
+          url={"https://docs.google.com/document/d/1WXlaQBIojk2OE8l8OYoNJouOYEe_AmsW/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -8071,7 +8071,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1ojZ3t_rDHdECjIm1Na_aslGvAlAptpTU/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true "
+            "https://docs.google.com/document/d/1--j_sds1kWXBI8sqlOmBfYSQXrY5qkr_/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8095,7 +8095,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1J_5es_851r7JOhAAS0pEgpVFteKLWzXn/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true "
+            "https://docs.google.com/document/d/17f_svLlWtIiuwjILxktEekAhNhf40C3X/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8130,7 +8130,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1LXRXv4u0CMRuuAv5L64GrtVZgJOoGqKM/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1Gufy1_IUlNXrXPHXD7zbyTb1lOdNMJZk/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8142,7 +8142,7 @@ const   DualDSyllabus = () => {
           T={"0"}
           P={"0"}
           cred={"3"}
-          url={"https://docs.google.com/document/d/1Z-EKo__cwNilBPnHp0hAVarUyH3Kwd9i/edit?usp=drive_link&ouid=107956080350583320778&rtpof=true&sd=true  "}
+          url={"https://docs.google.com/document/d/1Z-EKo__cwNilBPnHp0hAVarUyH3Kwd9i/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -8165,7 +8165,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1LXRXv4u0CMRuuAv5L64GrtVZgJOoGqKM/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1Nimc9bPDBU0gomM2M72bKqULo1_W2FJg/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8178,7 +8178,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"3"}
           url={
-            "https://docs.google.com/document/d/1c0pdJlSw_ypGh0fHVwUBiiKoxI0LmUlZ/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1vC-p2A-6-rHEJdy_AVfssrh1-4Sfgg3_/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8191,7 +8191,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/13elSM7_bC9GFkz4Te1wdG5-5eG4_wirA/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1TnPshWp7f3vn8azGDg_1y3k0vbrgrLIP/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8204,7 +8204,7 @@ const   DualDSyllabus = () => {
           P={"0"}
           cred={"3"}
           url={
-            "https://docs.google.com/document/d/17edpg_Yt6zAInqarjIV9k7clML-EtE1_/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1-wx92o4mmCk9T_F3nu2wAc3jg_P0-D5Y/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8217,7 +8217,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1c-VT3p4o0I14s1edOGz2KcWqQdfYKJbO/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1V7959Hk4KCjKHEHNq4NWSX7kgwfSWOG8/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8241,7 +8241,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1fAl7I8oNnBK3NRAtE97a337190aTN24h/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/18r6g-wsizIIckDywi_k0Bapf1GQa7FWD/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8267,7 +8267,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1d2WR7LWgxMX_AUw-9_AwkzuV9JtzWxAB/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1COzKgOhLgQdGlnS7ShLwCIW2zV4GBwW1/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8280,7 +8280,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1F8V6YysmHaZJ9nGO3YiZpdQoP5bWgYok/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1icVuT42ny30eobTlwJT5B6zYHPPcfZgY/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8304,7 +8304,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1ZFgtyFYH-cWB8ee5zMS9c7HLbKsJcz6i/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1ZMxQvDsVozzhJ98fp8a5kViptRONKIv3/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8317,7 +8317,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1nTN1X_BRkzfYSMd8-pYlXopjRJ6GV1Bu/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1rC_OGLaeSkzWA5Sa7b_XyKmfpycBpW3-/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8330,7 +8330,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1bZTv5mdaUHOwJcCngeBMUzEMRZK2sAIk/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/19M3QktwGVJMYZxixpC8DvESibJQsUScJ/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8343,7 +8343,7 @@ const   DualDSyllabus = () => {
           P={"0"}
           cred={"3"}
           url={
-            "https://docs.google.com/document/d/1uhPTb9_qLPpQRmH_WzBR1nul2B0qr3lj/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1DYEMRtnM-sf0hDvAa_UQb_yR-TWrtwv5/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8368,7 +8368,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1IpW_8tqNdXz5CYLyryu29ZIhzdLQgdXx/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1Nimc9bPDBU0gomM2M72bKqULo1_W2FJg/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8381,7 +8381,7 @@ const   DualDSyllabus = () => {
           P={"0"}
           cred={"3"}
           url={
-            "https://docs.google.com/document/d/1bAoGGN-hqz1XyjgLS7Kg5wOWEIcM4raX/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1uOabjJ5xNHP1KQLhT0yaKZ5dt9thUsWs/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8438,7 +8438,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1ffY6ipYoUIFfQnH1XcD49hhciavdxBd-/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1rOGbb068pfgqAYX5E_T5ovYtRa1frFJT/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8451,7 +8451,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1Z_h0Bczt1SZQlVBBlH5Z7sbIOf4ntOlg/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1lsaVG1OtbrsEPP5wFM_VGzVwDKHkMTtD/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
 
@@ -8520,7 +8520,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1qUq1I1rlyoUZkE9mTXXEqF_2CtOJ_yxf/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1xa-P8_MotqQhluGannlMcczz5Mk7oYdl/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8533,7 +8533,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1HFoTHostekgf1NZIQo4EFXn3eRYNg9t3/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1mYAyxKC4XeXI8DviS9xRNNBavkaC2THs/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -8546,7 +8546,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1atHOqXBV3MnR7DOIOUa_8Crcs1rJ94dR/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1CkR0jVAVkvN4D3-yEZ71XgUCPVdW_ST8/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
