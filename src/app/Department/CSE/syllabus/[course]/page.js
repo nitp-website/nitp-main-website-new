@@ -5378,7 +5378,7 @@ const DualCSyllabus = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1RbLIyCp71KOuDtNYisYeCgXFssOhlGBB/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://drive.google.com/file/d/1wrKkj56A9bunKwvEFdzSJ6cf2KW9QQCB/view?usp=sharing"
           }
         />
         <SyllabusComp
@@ -8048,7 +8048,7 @@ const   DualDSyllabus = () => {
           T={"0"}
           P={"2"}
           cred={"4"}
-          url={" "}
+          url={"https://drive.google.com/file/d/1cvLW0AqR5cd-E1Ogn4Xqf9NpEnkVP_Xe/view?usp=sharing"}
         />
         <SyllabusComp
           dep={"CSE"}
