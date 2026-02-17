@@ -1,148 +1,70 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   ChevronDown,
-  Home,
-  Briefcase,
-  Settings,
-  User,
-  Code,
-  Phone,
-  Laptop,
-  Smartphone,
-  Brain,
-  Info,
-  Users,
-  Building2 as Hostel,
-  GraduationCap as Scholarship,
-  Users as Clubs,
-  ShieldAlert as Notice,
-  CreditCard as Fee,
-  Landmark as Bank,
-  Library,
-  HeartPulse as Hospital,
-  Dumbbell as Sports,
-  ShieldCheck as Women,
-  BadgeCheck as SCST,
-  Activity as Sac,
-  Rocket as Fest,
-  Handshake as NSS,
-  Lightbulb as Ecell,
-  Globe as Bharat,
-  Network as Chankaya,
-  Monitor as ComputerCentre,
-  Microscope as Labs,
-  Train as EMU,
-  Atom as ESU,
-  UserCheck,
-  UserCircle,
-  Shield,
-  FileText,
-  Calendar,
-  Landmark,
-  BookOpen,
-  Building,
-  Scroll,
-  FilePlus,
-  Newspaper,
-  Atom,
-  FlaskConical,
-  HardHat,
-  Zap,
-  Radio,
-  Globe,
-  Sigma,
-  Cpu,
-  Network,
-  Server,
-  CalendarDays,
-  ClipboardList,
-  DollarSign,
-  File,
-  Bell,
-  Award,
-  PackageSearch,
   ChevronRight,
-  ChevronUp,
-  ShieldCheck,
-  BarChart3,
-  Gavel,
-  ListChecks,
-  BarChart,
-  GraduationCap,
-  Activity,
-  ActivityIcon,
   Menu,
 } from "lucide-react";
 
 const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const menuButtonRef = useRef(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleSubmenu = (title) => {
     setOpenSubmenu(openSubmenu === title ? null : title);
   };
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeSidebar = () => {
-    if (window.innerWidth < 768) {
-      setIsOpen(false);
-    }
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const handleLinkClick = () => {
-    if (window.innerWidth < 768) {
-      onLinkClick();
-    }
+    setIsMobileMenuOpen(false);
+    setOpenSubmenu(null);
+    if (onLinkClick) onLinkClick();
   };
+
   return (
-    <div className="text-black h-full">
-      <div
-        className={`fixed top-0 h-full z-40 transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
-          } md:relative md:translate-x-0 md:h-auto md:block`}
-      >
-        <nav className="p-2 overflow-y-auto h-[calc(100vh-64px)] md:h-auto">
+    <>
+      {/* Desktop Sidebar - Always visible on md+ screens */}
+      <div className="hidden md:block sticky top-20">
+        <nav className="bg-white rounded-lg shadow-md p-4">
           <ul className="space-y-1">
-            {navItems.map((item) => (
-              <li key={item.name}>
+            {navItems.map((item, index) => (
+              <li key={item.name + index}>
                 {item.dropdown ? (
-                  // Dropdown menu
                   <div>
                     <button
                       onClick={() => toggleSubmenu(item.name)}
-                      className="flex items-center justify-between w-full p-2 rounded-md hover:bg-[#E8D0CB] text-red-700 font-medium"
+                      className="flex items-center justify-between w-full p-3 rounded-md hover:bg-red-50 text-red-800 font-medium transition-colors"
                     >
-                      <span className="flex items-center gap-2">
+                      <span className="flex items-center gap-3">
                         {item.icon}
-                        {item.name}
+                        <span className="text-sm">{item.name}</span>
                       </span>
                       {openSubmenu === item.name ? (
-                        <ChevronDown size={16} />
+                        <ChevronDown size={18} className="text-red-600" />
                       ) : (
-                        <ChevronRight size={16} />
+                        <ChevronRight size={18} className="text-red-600" />
                       )}
                     </button>
-
                     <ul
-                      className={`ml-6 mt-1 space-y-2 overflow-hidden transition-all duration-200 ${openSubmenu === item.name ? "max-h-40 overflow-y-auto" : "max-h-0"
-                        }`}
+                      className={`ml-8 mt-1 space-y-1 overflow-hidden transition-all duration-300 ${
+                        openSubmenu === item.name ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      }`}
                     >
-                      {item.dropdown.map((subitem) => (
-                        <li key={subitem.name}>
+                      {item.dropdown.map((subitem, subIndex) => (
+                        <li key={subitem.name + subIndex}>
                           {!!subitem.url ? (
                             <Link
                               href={subitem.url}
-                              className="block p-2 rounded-md hover:bg-[#E8D0CB] text-[#8B3A32]"
-                              onClick={closeSidebar}
+                              className="block p-2 pl-4 rounded-md hover:bg-red-50 text-gray-700 text-sm transition-colors border-l-2 border-transparent hover:border-red-600"
+                              onClick={handleLinkClick}
                             >
                               {subitem.name}
                             </Link>
                           ) : (
-                            <span className="block p-2 text-[#8B3A32] font-medium">
+                            <span className="block p-2 pl-4 text-gray-600 font-medium text-sm">
                               {subitem.name}
                             </span>
                           )}
@@ -151,100 +73,120 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
                     </ul>
                   </div>
                 ) : !!item.url ? (
-                  // Normal item with url
                   <Link
                     href={item.url}
-                    className="flex items-center gap-2 p-2 rounded-md hover:bg-[#E8D0CB] text-red-700 font-medium"
-                    onClick={closeSidebar}
+                    className="flex items-center gap-3 p-3 rounded-md hover:bg-red-50 text-red-800 font-medium transition-colors"
+                    onClick={handleLinkClick}
                   >
                     {item.icon}
-                    {item.name}
+                    <span className="text-sm">{item.name}</span>
                   </Link>
                 ) : (
-                  // No url → render as plain text (e.g., department title)
-                  <span className="flex items-center gap-2 p-2 text-red-700 font-bold">
+                  <div className="flex items-center gap-3 p-3 text-red-900 font-bold text-base border-b-2 border-red-100 mb-2">
                     {item.icon}
-                    {item.name}
-                  </span>
+                    <span>{item.name}</span>
+                  </div>
                 )}
               </li>
             ))}
-
-
           </ul>
         </nav>
       </div>
 
-      {/* for small screen */}
-      <div className="md:hidden w-fit h-fit z-50 flex items-center justify-between px-4">
-        <nav className="p-2 overflow-y-auto h-fit md:h-auto">
-          <ul className="space-y-1">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                {item.dropdown ? (
-                  <div>
-                    <button
-                      onClick={() => toggleSubmenu(item.name)}
-                      className="flex items-center justify-between w-full p-2 rounded-md hover:bg-[#E8D0CB] text-red-700 font-medium"
-                    >
-                      <span className="flex items-center gap-2">
-                        {item.icon}
-                        {item.name}
-                      </span>
-                      {openSubmenu === item.name ? (
-                        <ChevronUp size={16} />
-                      ) : (
-                        <ChevronDown size={16} />
-                      )}
-                    </button>
-                    <ul
-                      className={`ml-6 mt-1 space-y-2 overflow-hidden transition-all duration-200 ${openSubmenu === item.name
-                        ? "max-h-40 overflow-y-auto"
-                        : "max-h-0"
+      {/* Mobile: Dropdown Menu */}
+      <div className="md:hidden w-full px-4 mb-6">
+        {/* Dropdown Button */}
+        <button
+          onClick={toggleMobileMenu}
+          className="w-[80%] mx-auto flex items-center justify-between p-4 bg-white border-2 border-red-200 rounded-lg shadow-md hover:shadow-lg transition-all"
+        >
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-red-800 rounded-md flex items-center justify-center">
+              <Menu size={20} className="text-white" />
+            </div>
+            <span className="text-red-900 font-semibold text-base">Department Menu</span>
+          </div>
+          <ChevronDown
+            size={22}
+            className={`text-red-800 transition-transform duration-300 ${
+              isMobileMenuOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+        {/* Dropdown Content */}
+        <div
+          className={`w-[80%] mx-auto mt-2 bg-white border-2 border-red-100 rounded-lg shadow-lg overflow-hidden transition-all duration-300 ${
+            isMobileMenuOpen ? "max-h-[70vh] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <nav className="overflow-y-auto max-h-[70vh] p-3">
+            <ul className="space-y-1">
+              {navItems.map((item, index) => (
+                <li key={item.name + index}>
+                  {item.dropdown ? (
+                    <div className="border-b border-gray-100 pb-2 mb-2">
+                      <button
+                        onClick={() => toggleSubmenu(item.name)}
+                        className="flex items-center justify-between w-full p-3 rounded-lg hover:bg-red-50 text-red-800 font-semibold transition-all"
+                      >
+                        <span className="flex items-center gap-3">
+                          <span className="text-red-600">{item.icon}</span>
+                          <span className="text-sm">{item.name}</span>
+                        </span>
+                        <ChevronDown
+                          size={18}
+                          className={`text-red-600 transition-transform duration-200 ${
+                            openSubmenu === item.name ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      <ul
+                        className={`ml-6 mt-1 space-y-1 overflow-hidden transition-all duration-300 ${
+                          openSubmenu === item.name ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                         }`}
-                    >
-                      {item.dropdown.map((subitem) => (
-                        <li key={subitem.name}>
-                          {!!subitem.url ? (
-                            <Link
-                              href={subitem.url}
-                              className="block p-2 rounded-md hover:bg-[#E8D0CB] text-[#8B3A32]"
-                              onClick={closeSidebar}
-                            >
-                              {subitem.name}
-                            </Link>
-                          ) : (
-                            <span className="block p-2 text-[#8B3A32] font-medium">
-                              {subitem.name}
-                            </span>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : (
-                  !!item.url ? (
+                      >
+                        {item.dropdown.map((subitem, subIndex) => (
+                          <li key={subitem.name + subIndex}>
+                            {!!subitem.url ? (
+                              <Link
+                                href={subitem.url}
+                                className="block p-2 pl-4 rounded-lg hover:bg-red-50 text-gray-700 text-sm transition-all border-l-2 border-transparent hover:border-red-500"
+                                onClick={handleLinkClick}
+                              >
+                                {subitem.name}
+                              </Link>
+                            ) : (
+                              <span className="block p-2 pl-4 text-gray-600 font-medium text-sm">
+                                {subitem.name}
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : !!item.url ? (
                     <Link
                       href={item.url}
-                      className="flex items-center gap-2 p-2 rounded-md hover:bg-[#E8D0CB] text-red-700 font-medium"
+                      className="flex items-center gap-3 p-3 rounded-lg hover:bg-red-50 text-red-800 font-semibold transition-all"
                       onClick={handleLinkClick}
                     >
-                      {item.icon}
-                      {item.name}
+                      <span className="text-red-600">{item.icon}</span>
+                      <span className="text-sm">{item.name}</span>
                     </Link>
                   ) : (
-                    <span className="flex items-center gap-2 p-2 text-red-700 font-bold">
-                      {item.icon}
-                      {item.name}
-                    </span>
-                  )
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
+                    <div className="flex items-center gap-3 p-3 text-red-900 font-bold text-base bg-gradient-to-r from-red-50 to-white rounded-lg mb-2">
+                      <span className="text-red-700">{item.icon}</span>
+                      <span className="text-sm">{item.name}</span>
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
