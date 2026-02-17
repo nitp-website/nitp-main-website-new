@@ -2630,7 +2630,7 @@ const BTechSyllabus = () => {
           P={"0"}
           cred={"3"}
           url={
-            "https://drive.google.com/file/d/1OJb9Za49hdEr3gejHql4xPV3lkOkRfks/view?usp=sharing"
+            "https://drive.google.com/file/d/1fr7xHVADmj4rjozeOxpQeIicY_JED6JT/view?usp=sharing"
           }
         />
         <SyllabusComp
@@ -6479,7 +6479,7 @@ const DualCSyllabus = () => {
           T={"0"}
           P={"0"}
           cred={"3"}
-          url={"https://drive.google.com/file/d/15aOeQMV0dcEF_O08FmhVzwN3knNxrE_K/view?usp=drive_link"}
+          url={"https://drive.google.com/file/d/1LqFpBa6PdT6R3RvlGtMlTN-qW5eyD8h3/view?usp=sharing"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -9286,7 +9286,7 @@ const   DualDSyllabus = () => {
           P={"0"}
           cred={"3"}
           url={
-            "https://drive.google.com/file/d/1Gt8-cE0oy7y_W5Poq-iLCwAPPq1YnuJN/view?usp=drive_link"
+            "https://drive.google.com/file/d/1PplsWig9lqw8IfAOIxSlLU502My6qm3Y/view?usp=sharing"
           }
         />
 
