@@ -148,7 +148,7 @@ const page = () => {
                   </div>
                 </div>
               </div>
-              <div className="space-y-4 border border-gray-200 p-6 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+              {/* <div className="space-y-4 border border-gray-200 p-6 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
                 <h2 className="text-2xl font-bold text-red-800 border-b border-red-100 pb-2">Past Administrative Responsibilities</h2>
                 <ul className="space-y-3 text-gray-700 mt-4">
                 <li>
@@ -297,7 +297,7 @@ const page = () => {
 </li>
 
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
