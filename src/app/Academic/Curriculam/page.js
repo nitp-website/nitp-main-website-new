@@ -4,12 +4,7 @@ import { Download } from 'lucide-react';
 const DocumentsTable = () => {
 
      const dataUG= [
-      {
-        link:
-         "https://drive.google.com/file/d/1NLUkqhhwj_ytZL1Rq4T2pASMcKok2nEt/view?usp=sharing",
-        para:
-         "Notification regarding Multiple Exit option,UG.",
-       },
+ 
       {
        link:
         "https://drive.google.com/file/d/1Jobn8OBYPUf1ekffjTS0ZIzXuzfQ8CNa/view?usp=sharing",

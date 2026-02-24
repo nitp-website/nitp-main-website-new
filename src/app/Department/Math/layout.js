@@ -117,17 +117,8 @@ export default function Layout({ children }) {
 
   return (
     <div className="flex flex-col md:flex-row w-full mb-8 relative">
-      <button
-        className="md:hidden mt-2 ml-8 p-2 bg-gray-500 rounded-md mb-4 w-fit"
-        onClick={() => setIsOpen(!isMenuOpen)}
-      >
-        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-
-      <div
-        className={`w-full md:w-1/4 lg:w-64 mb-6 h-full md:mb-0 transition-all duration-300 
-  ${isMenuOpen ? "block" : "hidden md:block"} md:sticky md:top-[64px] md:self-start`}
-      >
+      {/* Desktop Sidebar */}
+      <div className="hidden md:block w-full md:w-1/4 lg:w-64 mb-6 h-full md:mb-0">
         <Sidebar
           onLinkClick={() => setIsOpen(false)}
           isMenuOpen={isMenuOpen}
@@ -137,15 +128,26 @@ export default function Layout({ children }) {
       </div>
 
       <div className="flex flex-col w-full md:w-3/4 lg:w-[85%] items-center">
-        <div className="px-5 pt-10 max-sm:px-0 text-black">
-          {/* heading */}
+        {/* Department Name */}
+        <div className="px-5 pt-10 max-sm:pt-6 max-sm:px-0 text-black w-full">
           <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 text-center bg-transparent">
             Mathematics and Computing Technology
           </div>
         </div>
+
+        {/* Mobile Menu - Below Department Name */}
+        <div className="md:hidden w-full mt-6">
+          <Sidebar
+            onLinkClick={() => setIsOpen(false)}
+            isMenuOpen={isMenuOpen}
+            dept={dept}
+            navItems={navItems}
+          />
+        </div>
+
+        {/* Content */}
         <div className="w-[100%]">{children}</div>
       </div>
-
     </div>
   );
 }
