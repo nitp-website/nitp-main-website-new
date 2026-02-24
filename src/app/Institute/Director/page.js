@@ -105,16 +105,15 @@ const page = () => {
               <div className="space-y-4 border border-gray-200 p-6 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
                 <h2 className="text-2xl font-bold text-red-800 border-b border-red-100 pb-2">About</h2>
                 <p className="text-gray-700 leading-relaxed text-justify">
-                Prof. Pradip K. Jain joined as a Lecturer of Electronics Engineering at Institute of Technology, Banaras Hindu University in 1981, and became Professor in the Year 2001. He has made significant contribution in the areas of analysis, modeling and development of high power microwave tubes and gyrotron devices. Currently, He is Director of National Institute of Technology, Patna.
+                Professor Pradip Kumar Jain is the Director of National Institute of Technology Patna, since November 2017. A professor of Electronics and Communication Engineering at IIT(BHU) Varanasi. Prof. Jain has held various administrative positions at IIT(BHU) Varanasi including Dean research and Development, Head Electronics Engineering Department, Coordinator, Centre of Research in Microwave Tubes, and Center of Advanced Study, etc. 
                 </p>
                 <p className="text-gray-700 leading-relaxed text-justify mt-3">
-                He also served as Dean, Research and Development of Indian Institute of Technology (BHU), Varanasi, Coordinator of the Centre of Research in Microwave Tubes, Coordinator, Center of Advanced Study, and Head of Department of Electronics Engineering, IIT (BHU) besides acting as Chairman of the various Institute level committees over the years.
+                Prof. Jain is a well-known name in the field of high-power RF and Microwave devices and circuits. He has extensively engaged in collaborative R&D activities with various national laboratories of CSIR, DRDO, DAE and executed a number of research projects worth ~ ₹ 5 Crores of DRDO, DST, MEITY, etc. He has supervised one D Sc., more than 35 Ph. D and 75 M. Tech students. He has over 250 publications in international journals of repute and 13 patents to his credit.
                 </p>
                 <p className="text-gray-700 leading-relaxed text-justify mt-3">
-                Prof. Jain is actively and extensively engaged in collaborative research and development activities with other national laboratories in this area, like, CEERI (CSIR, Pilani), Various DRDO Laboratories, IPR (DAE, Gandhinagar) and successfully executed a number of sponsored research projects. His current research interests include high power microwave devices and circuits. 
-                </p>
+               Prof. Jain also served as a Visiting Scientist at Pennsylvania State University US and Massachusetts Institute of Technology, Cambridge, US and at the, in the years 2007 and 2008, respectively. He held an additional responsibility as the Director, IIIT Bhagalpur, Bihar, from July 2023 to till June 2025.
                 <p className="text-gray-700 leading-relaxed text-justify mt-3">
-                Prof. Jain was a Visiting Scientist at Massachusetts Institute of Technology, Cambridge, US and at the Pennsylvania State University, US in the years 2008 and 2007, respectively. He has so far guided 20 doctoral theses, published more than 100 research papers in SCI journals and 200 in the conference proceedings beside a patent and authoring six book/monograph chapters. Dr. Jain is a senior member of IEEE, fellow of Institution of Electronics and Telecommunications Engineers of India, Fellow of Institution of Engineers of India and also a fellow of Vacuum Electron Devices and Application Society.
+                Prof. Jain is a senior member of IEEE, and fellow of IE, ISTE, VEDS, and IETE. He is also chairman/member of various key national level committees of different Government, academic and R&D Institutions.
                 </p>
               </div>
               <div className="space-y-4 border border-gray-200 p-6 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
