@@ -133,7 +133,7 @@ export default function Aboutus() {
               <div className="relative mb-6 group">
                 <div className="absolute inset-0 bg-red-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 <img 
-                  src="https://i.postimg.cc/6pWBW8Dg/PKJ-Desk-Photo-1.jpg" 
+                  src="https://i.postimg.cc/J4NP3M0H/image.png" 
                   alt="Prof. P.K. Jain"
                   className="w-48 h-48 object-cover rounded-full border-4 border-red-100 shadow-md"
                 />

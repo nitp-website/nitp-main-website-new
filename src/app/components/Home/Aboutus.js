@@ -42,7 +42,7 @@ export default function Aboutus() {
       </div>
       <div className="sm:w-1/4 mt-4 sm:mt-0 intdiv" data-aos="zoom-in-up">
         <div className="p-4 bg-white shadow rounded-lg text-center">
-          <img src="https://i.postimg.cc/6pWBW8Dg/PKJ-Desk-Photo-1.jpg" alt="P.K Jain" className="mx-auto mb-2 w-70% h-70% mainimg" />
+          <img src="https://i.postimg.cc/J4NP3M0H/image.png" alt="P.K Jain" className="mx-auto mb-2 w-70% h-70% mainimg" />
           <h3 className="text-2xl font-bold mb-2 text-red-800">Pradip K. Jain</h3>
           <p className="text-sm mb-2">Director, NIT PATNA</p>
           <p className="text-sm mb-4">director@nitp.ac.in</p>

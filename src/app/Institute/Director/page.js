@@ -20,8 +20,9 @@ const page = () => {
               <div className="relative">
                 <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-red-100 shadow-lg relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-red-800/20 z-10"></div>
+                  {/* https://i.postimg.cc/6pWBW8Dg/PKJ-Desk-Photo-1.jpg */}
                   <img 
-                    src="https://i.postimg.cc/6pWBW8Dg/PKJ-Desk-Photo-1.jpg" 
+                    src="https://i.postimg.cc/J4NP3M0H/image.png" 
                     width={224} 
                     height={224} 
                     alt="Prof. Pradip K. Jain" 
@@ -111,7 +112,7 @@ const page = () => {
                 Prof. Jain is a well-known name in the field of high-power RF and Microwave devices and circuits. He has extensively engaged in collaborative R&D activities with various national laboratories of CSIR, DRDO, DAE and executed a number of research projects worth ~ ₹ 5 Crores of DRDO, DST, MEITY, etc. He has supervised one D Sc., more than 35 Ph. D and 75 M. Tech students. He has over 250 publications in international journals of repute and 13 patents to his credit.
                 </p>
                 <p className="text-gray-700 leading-relaxed text-justify mt-3">
-               Prof. Jain also served as a Visiting Scientist at Pennsylvania State University US and Massachusetts Institute of Technology, Cambridge, US and at the, in the years 2007 and 2008, respectively. He held an additional responsibility as the Director, IIIT Bhagalpur, Bihar, from July 2023 to till June 2025.
+               Prof. Jain also served as a Visiting Scientist at Pennsylvania State University US and Massachusetts Institute of Technology, Cambridge, US and at the, in the years 2007 and 2008, respectively. He held an additional responsibility as the Director, IIIT Bhagalpur, Bihar, from July 2023 to till June 2025.</p>
                 <p className="text-gray-700 leading-relaxed text-justify mt-3">
                 Prof. Jain is a senior member of IEEE, and fellow of IE, ISTE, VEDS, and IETE. He is also chairman/member of various key national level committees of different Government, academic and R&D Institutions.
                 </p>
