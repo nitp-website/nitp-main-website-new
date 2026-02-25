@@ -22,7 +22,7 @@ const page = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-red-800/20 z-10"></div>
                   {/* https://i.postimg.cc/6pWBW8Dg/PKJ-Desk-Photo-1.jpg */}
                   <img 
-                    src="https://i.postimg.cc/J4NP3M0H/image.png" 
+                    src="https://i.postimg.cc/6pWBW8Dg/PKJ-Desk-Photo-1.jpg" 
                     width={224} 
                     height={224} 
                     alt="Prof. Pradip K. Jain" 
