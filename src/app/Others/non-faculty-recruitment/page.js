@@ -13,7 +13,7 @@ const NonFacultyRecruitmentProcess = () => {
     <div className="bg-white bg-opacity-50">
       <div className="mx-auto px-4 py-8 max-w-7xl">
         <h1 className="text-2xl md:text-3xl font-bold mb-4 text-red-950 text-center">
-          Advertisement For Non Faculty Positions March 2025
+          Advertisement For Non Teaching Cadre Officer / Staff Recruitment 2026
         </h1>
 
         <div className="overflow-x-auto rounded-lg shadow-md border border-gray-100 mb-8">
