@@ -37,7 +37,7 @@ const NonFacultyRecruitmentProcess = () => {
                 <td className="text-center px-6 py-4">
                   <div className="flex flex-col items-center gap-2">
                     <a
-                      href="https://drive.google.com/file/d/1NfgcG9jWYnjfAuEldBYhmm4PRZkkqw2r/view"
+                      href="https://drive.google.com/file/d/1-VrNJExa8VEedIH1ftFL9zpZ9pV7WM0p/view?usp=sharing"
                       download
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
                     >
@@ -77,7 +77,7 @@ const NonFacultyRecruitmentProcess = () => {
                 <td className="text-center px-6 py-4">
                   <div className="flex flex-col items-center gap-2">
                     <a
-                      href="https://drive.google.com/file/d/1KyOpvfYhpk5jYqj7erbznqSUrKDXp_gh/view"
+                      href="https://drive.google.com/file/d/1kiGqV_SM6kxcosG8PmCNsehBZ8smvQCO/view?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
@@ -98,7 +98,7 @@ const NonFacultyRecruitmentProcess = () => {
                 <td className="text-center px-6 py-4">
                   <div className="flex flex-col items-center gap-2">
                     <a
-                      href="https://drive.google.com/file/d/1UA95b1kIa8QPLKRtg_EmBNVmG52CkTFw/view"
+                      href="https://drive.google.com/file/d/1VmZ6LZlUgZwuIFVXkI6WeQrBVusuf1-i/view?usp=sharing"
                       download
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
                     >
@@ -119,7 +119,7 @@ const NonFacultyRecruitmentProcess = () => {
                 <td className="text-center px-6 py-4">
                   <div className="flex flex-col items-center gap-2">
                     <a
-                      href="https://drive.google.com/file/d/1f5fKcPGXGBj9QYHYG8DzJSOdrrE67ElB/view"
+                      href="https://drive.google.com/file/d/1EZhZHZiSxMMfLlPXGZflv737lDxTaKXP/view?usp=sharing"
                       download
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
                     >
@@ -139,7 +139,7 @@ const NonFacultyRecruitmentProcess = () => {
                 <td className="text-center px-6 py-4">
                   <div className="flex flex-col items-center gap-2">
                     <a
-                      href="https://drive.google.com/file/d/1oy25XTRRV0NyS2rzuTdFJhAejikd3NSk/view"
+                      href="https://drive.google.com/file/d/1s2me-tY47tCns8yAm3Vf_GDiBIETUNdU/view?usp=sharing"
                       download
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
                     >
@@ -159,7 +159,7 @@ const NonFacultyRecruitmentProcess = () => {
                 <td className="text-center px-6 py-4">
                   <div className="flex flex-col items-center gap-2">
                     <a
-                      href="https://drive.google.com/file/d/1bvl_igs1MPJ2UJ6BsNw_MWyKWv7AnGgv/view"
+                      href="https://drive.google.com/file/d/1HQ33cE31UfC-mBRRERsk97HcE3nSOiCt/view?usp=sharing"
                       download
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
                     >
