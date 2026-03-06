@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { FaUserGraduate, FaLaptopCode, FaBook, FaGlobeAsia, FaFlask } from "react-icons/fa";
+import { PiStudentBold } from "react-icons/pi";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export const SidebarItem = ({ icon, text, isActive, onClick }) => (
@@ -46,6 +47,12 @@ const Sidebar = () => {
       link: "/Academic/Admission?type=study_in_india",
       icon: <FaGlobeAsia size={20} className="text-orange-700" />,
       type: "study_in_india",
+    },
+    {
+      title: "QIP Admissions",
+      link: "/Academic/Admission?type=qip",
+      icon: <PiStudentBold size={20} className="text-purple-700" />,
+      type: "qip",
     },
     {
       title: "PhD Admissions",
