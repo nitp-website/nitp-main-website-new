@@ -2,15 +2,15 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import AdmissionsSidebar from "./Sidebar"
-import { 
-  GraduationCap, 
+import {
+  GraduationCap,
   Settings,
   Frown,
   BookOpen,
   AlertCircle,
   ExternalLink
 } from 'lucide-react';
- import { useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -19,9 +19,9 @@ const admissionData = {
     portals: [
       {
         name: "SOP and Admission Form link for the Academic Year 2025 admissions",
-        image:"https://mis.nitp.ac.in/admission/images/Header.jpg",
-        link:"https://mis.nitp.ac.in/admission/Default.aspx",
-        sopLink:"https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
+        image: "https://mis.nitp.ac.in/admission/images/Header.jpg",
+        link: "https://mis.nitp.ac.in/admission/Default.aspx",
+        sopLink: "https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
       },
       {
         name: "JoSAA",
@@ -41,25 +41,25 @@ const admissionData = {
         title: "Admission link is live (18/08/2025; 3 PM to 23/08/2025) for those who have confirmed their seat during JoSAA-2025 counselling and have not participated in CSAB special Round. Same Admission link will be used for those who have participated in CSAB special round and confirmed their seat during CSAB special round from live from 20/08/2025 to 23/08/2025.",
         date: "2025-08-18",
         content: " UG Admission",
-        href:""
+        href: ""
       },
       {
         title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students.",
         date: "2025-08-02",
         content: " UG Admission",
-        href:"https://drive.google.com/file/d/1wUoxMAfqSBmz1-E7j8QvFK_Ywgcb-JoC/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1wUoxMAfqSBmz1-E7j8QvFK_Ywgcb-JoC/view?usp=sharing"
       },
       {
         title: "Physical reporting notice for Admission to B.Tech./B.Arch./Dual Degree (B.Tech+M.Tech) Programmes through JoSAA/CSAB/DASA/Study in India (SII)-2025",
         date: "2025-07-25",
         content: "UG Admission",
-        href:"https://drive.google.com/file/d/1Nd4LmG-jk-L-H4SoV9lH2uTzww_pHM21/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1Nd4LmG-jk-L-H4SoV9lH2uTzww_pHM21/view?usp=sharing"
       },
       {
         title: "Physical reporting schedule for admission to UG Programme through JoSAA/CSAB/DASA/SII for the Academic year 2025-26",
         date: "2025-07-10",
         content: "UG Admission",
-        href:"https://drive.google.com/file/d/1Evk3oz1InhdbUPRK9isTvncuXhBT7P4I/view"
+        href: "https://drive.google.com/file/d/1Evk3oz1InhdbUPRK9isTvncuXhBT7P4I/view"
       }
       // {
       //   title: "DASA 2023 Important Dates",
@@ -72,9 +72,9 @@ const admissionData = {
     portals: [
       {
         name: "SOP and Admission Form link for the Academic Year 2025 admissions",
-        image:"https://mis.nitp.ac.in/admission/images/Header.jpg",
-        link:"https://mis.nitp.ac.in/admission/Default.aspx",
-        sopLink:"https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
+        image: "https://mis.nitp.ac.in/admission/images/Header.jpg",
+        link: "https://mis.nitp.ac.in/admission/Default.aspx",
+        sopLink: "https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
       },
       {
         name: "CCMT",
@@ -88,19 +88,19 @@ const admissionData = {
         title: "Notice regarding the schedule of commencement of classes for newly admitted PG/MCA/Ph.D. students",
         date: "2025-08-01",
         content: "Notice regarding the schedule of commencement of classes for newly admitted PG/MCA/Ph.D. students",
-        href:"https://drive.google.com/file/d/1rpNmcxqzTfzoonelUydZLel6bMEZ-K_k/view"
+        href: "https://drive.google.com/file/d/1rpNmcxqzTfzoonelUydZLel6bMEZ-K_k/view"
       },
-       {
+      {
         title: "Physical reporting notice for admission to M.Tech/M.Arch/MURP through CCMT 2025 and DRDO Sponsored candidates",
         date: "2025-07-24",
         content: "PG Admission",
-        href:"https://drive.google.com/file/d/1FctrG7liIhq3rQO7ViRKYFrs6PYeAjFh/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1FctrG7liIhq3rQO7ViRKYFrs6PYeAjFh/view?usp=sharing"
       },
-        {
+      {
         title: "Physical reporting schedule for admission to PG Programme through CCMT and NIMCET for the Academic year 2025-26",
         date: "2025-07-10",
         content: "PG Admission",
-        href:"https://drive.google.com/file/d/1xUpA4rWNtrHlTEzRxI_AEwHPjkyIzN5z/view"
+        href: "https://drive.google.com/file/d/1xUpA4rWNtrHlTEzRxI_AEwHPjkyIzN5z/view"
       }
     ]
   },
@@ -109,9 +109,9 @@ const admissionData = {
     portals: [
       {
         name: "PhD Admissions NITP Portal",
-        image:"https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
-       link:"https://mis.nitp.ac.in/Admission/Default.aspx ",
-     //   sopLink:"https://drive.google.com/file/d/1n3zmrKoDoDEcxAAKWA0kZIONNJmdoxtU/view?usp=sharing"
+        image: "https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
+        link: "https://mis.nitp.ac.in/Admission/Default.aspx ",
+        //   sopLink:"https://drive.google.com/file/d/1n3zmrKoDoDEcxAAKWA0kZIONNJmdoxtU/view?usp=sharing"
       },
       // {
       //   name: "PhD Admissions NITP Portal",
@@ -128,56 +128,56 @@ const admissionData = {
       //   href:"https://drive.google.com/file/d/1VpDmpYqowP6kqoP1ZVyGd0gBwSqiJ9PO/view?usp=sharing"
       // },
 
-           {
-         title: "Physical Verification of Documents for PhD Admissions (January–June 2026 Semester)",
-       date: "2026-01-09",
-       content: "PhD Admission",
-        href:"https://drive.google.com/file/d/1sWvgbFCfJVRuqjrUovKGMcP_kXRlm_j1/view?usp=sharing"
-       },
-           {
-         title: "Annexure for PhD Admission",
-       date: "2026-01-09",
-       content: "PhD Admission",
-        href:"https://drive.google.com/file/d/1v6MjrIq0Io0pDHDyuBHHcVp1tk8raWTp/view?usp=sharing"
-       },
-       
-      
       {
-         title: "Provisionally Selected for PhD Programme (January–June 2026)",
-       date: "2026-01-07",
-       content: "PhD Admission",
-        href:"https://drive.google.com/file/d/1tJ_UyxVt01n-rZFWnQDaFFUz3LjWGRah/view?usp=sharing"
-       },
-    {
-         title: "Interview Notice for eligible candidates after written test for PhD admission(Jan-June'2026)",
+        title: "Physical Verification of Documents for PhD Admissions (January–June 2026 Semester)",
+        date: "2026-01-09",
+        content: "PhD Admission",
+        href: "https://drive.google.com/file/d/1sWvgbFCfJVRuqjrUovKGMcP_kXRlm_j1/view?usp=sharing"
+      },
+      {
+        title: "Annexure for PhD Admission",
+        date: "2026-01-09",
+        content: "PhD Admission",
+        href: "https://drive.google.com/file/d/1v6MjrIq0Io0pDHDyuBHHcVp1tk8raWTp/view?usp=sharing"
+      },
+
+
+      {
+        title: "Provisionally Selected for PhD Programme (January–June 2026)",
+        date: "2026-01-07",
+        content: "PhD Admission",
+        href: "https://drive.google.com/file/d/1tJ_UyxVt01n-rZFWnQDaFFUz3LjWGRah/view?usp=sharing"
+      },
+      {
+        title: "Interview Notice for eligible candidates after written test for PhD admission(Jan-June'2026)",
         date: "2026-01-05",
         content: "PhD Admission",
-       href:"https://drive.google.com/file/d/1WMsfIVytaz1RbSi8QSwmI_3ax64GvaSX/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1WMsfIVytaz1RbSi8QSwmI_3ax64GvaSX/view?usp=sharing"
       },
-        {
-         title: "Notice with the List of Eligible candidates for Written Test for PhD Admission Test for Jan-June'2026",
+      {
+        title: "Notice with the List of Eligible candidates for Written Test for PhD Admission Test for Jan-June'2026",
         date: "2025-12-31",
         content: "PhD Admission",
-       href:"https://drive.google.com/file/d/1tYn2c5qeRFkMc0q-lKApWaXFZoFvQ42i/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1tYn2c5qeRFkMc0q-lKApWaXFZoFvQ42i/view?usp=sharing"
       },
 
       {
-         title: "Corrigendum for Ph.D. Admission – December 2025",
+        title: "Corrigendum for Ph.D. Admission – December 2025",
         date: "2025-12-08",
         content: "PhD Admission",
-       href:"https://drive.google.com/file/d/1mfqkQHcFoqQ7YxUceCsWt2ToSFeKszJ6/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1mfqkQHcFoqQ7YxUceCsWt2ToSFeKszJ6/view?usp=sharing"
       },
       {
-         title: "Google Form link for refund as per the above corrigendum dated 8th Dec 2025. ",
-         date: "2025-12-08",
-         content: "PhD Admission",
-         href:"https://forms.gle/RNPJ1sgieMcaVRag6"
-       },
+        title: "Google Form link for refund as per the above corrigendum dated 8th Dec 2025. ",
+        date: "2025-12-08",
+        content: "PhD Admission",
+        href: "https://forms.gle/RNPJ1sgieMcaVRag6"
+      },
       {
         title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2025-26 (Even Semester: Jan–June 2026). Last date: 30th December 2025",
         date: "2025-11-21",
         content: "PhD Admission",
-        href:"https://drive.google.com/file/d/1LF_8jQygx-Xp4xFP51m0KCYDfHmNlMW8/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1LF_8jQygx-Xp4xFP51m0KCYDfHmNlMW8/view?usp=sharing"
       }
       //     {
       //   title: "SOP for PhD admission Academic Year 2025-26.",
@@ -190,11 +190,11 @@ const admissionData = {
 
   mca: {
     portals: [
-     {
+      {
         name: "SOP and Admission Form link for the Academic Year 2025 admissions",
-        image:"https://mis.nitp.ac.in/admission/images/Header.jpg",
-        link:"https://mis.nitp.ac.in/admission/Default.aspx",
-        sopLink:"https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
+        image: "https://mis.nitp.ac.in/admission/images/Header.jpg",
+        link: "https://mis.nitp.ac.in/admission/Default.aspx",
+        sopLink: "https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
       },
       {
         name: "NIMCET",
@@ -208,19 +208,19 @@ const admissionData = {
         title: "Notice regarding the schedule of commencement of classes for newly admitted PG/MCA/Ph.D. students",
         date: "2025-08-01",
         content: "Notice regarding the schedule of commencement of classes for newly admitted PG/MCA/Ph.D. students",
-        href:"https://drive.google.com/file/d/1rpNmcxqzTfzoonelUydZLel6bMEZ-K_k/view"
+        href: "https://drive.google.com/file/d/1rpNmcxqzTfzoonelUydZLel6bMEZ-K_k/view"
       },
       {
         title: "Physical reporting notice for admission to MCA through  NIMCET-2025",
         date: "2025-07-23",
         content: "Physical reporting notice for admission to MCA through  NIMCET-2025",
-        href:"https://drive.google.com/file/d/1wlBUzmL-ZFq8-_4_uG20qtQFEp0qGUEo/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1wlBUzmL-ZFq8-_4_uG20qtQFEp0qGUEo/view?usp=sharing"
       },
-        {
+      {
         title: "Physical reporting schedule for admission to PG Programme through CCMT and NIMCET for the Academic year 2025-26",
         date: "2025-07-10",
         content: "PG Admission",
-        href:"https://drive.google.com/file/d/1xUpA4rWNtrHlTEzRxI_AEwHPjkyIzN5z/view"
+        href: "https://drive.google.com/file/d/1xUpA4rWNtrHlTEzRxI_AEwHPjkyIzN5z/view"
       }
     ]
   },
@@ -229,9 +229,9 @@ const admissionData = {
     portals: [
       {
         name: "SOP and Admission Form link for the Academic Year 2025 admissions",
-        image:"https://mis.nitp.ac.in/admission/images/Header.jpg",
-        link:"https://mis.nitp.ac.in/admission/Default.aspx",
-        sopLink:"https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
+        image: "https://mis.nitp.ac.in/admission/images/Header.jpg",
+        link: "https://mis.nitp.ac.in/admission/Default.aspx",
+        sopLink: "https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
       },
       {
         name: "Study in India",
@@ -241,29 +241,48 @@ const admissionData = {
       },
     ],
     notices: [
-        {
+      {
         title: "Admission link is live (18/08/2025; 3 PM to 23/08/2025) for those who have confirmed their seat during JoSAA-2025 counselling and have not participated in CSAB special Round. Same Admission link will be used for those who have participated in CSAB special round and confirmed their seat during CSAB special round from live from 20/08/2025 to 23/08/2025.",
         date: "2025-08-18",
         content: " UG Admission",
-        href:""
+        href: ""
       },
-     {
+      {
         title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students.",
         date: "2025-08-02",
         content: " UG Admission",
-        href:"https://drive.google.com/file/d/1wUoxMAfqSBmz1-E7j8QvFK_Ywgcb-JoC/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1wUoxMAfqSBmz1-E7j8QvFK_Ywgcb-JoC/view?usp=sharing"
       },
-        {
+      {
         title: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2025-26 at NIT Patna.",
         date: "2025-06-30",
         content: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2025-26 at NIT Patna.",
-        href:"https://drive.google.com/file/d/1cPyNk71PmxjLQ1qkgHCuLDv1EvyhYWi5/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1cPyNk71PmxjLQ1qkgHCuLDv1EvyhYWi5/view?usp=sharing"
       },
       {
         title: "Schedule for the Admission through Study in India(SII) at NIT Patna for the Academic Year 2025-26",
         date: "2025-05-08",
         content: "Schedule for the Admission of the Academic Year 2025-26",
-        href:"https://drive.google.com/file/d/12zbdMzfMwcjLybK3PNZV6R8Zyi6tfAJb/view"
+        href: "https://drive.google.com/file/d/12zbdMzfMwcjLybK3PNZV6R8Zyi6tfAJb/view"
+      }
+    ]
+  },
+
+  qip: {
+    portals: [
+      {
+        name: "QIP Admissions Portal",
+        image: "https://qip.aicte.gov.in/assets/images/logoLogin.png",
+        link: "https://qip.aicte.gov.in/",
+        // description: "Study in India"
+      },
+    ],
+    notices: [
+      {
+        "title": "Quality Improvement Programme (QIP) Admission 2026-27",
+        "date": "2026-03-06",
+        "content": "The Quality Improvement Programme (QIP) offers admission for sponsored, full-time regular faculty from AICTE-approved institutions to pursue Master’s and Ph.D. degrees.",
+        "href": "https://drive.google.com/file/d/17OkvWximJ5fkKRqM3rWIMyz6gc22u_VY/view"
       }
     ]
   }
@@ -274,7 +293,8 @@ const degreeMap = {
   mtech: "Master of Technology",
   mca: "Master of Computer Application",
   phd: "PhD",
-  study_in_india: "Study in India"
+  study_in_india: "Study in India",
+  qip: "Quality Improvement Programme"
 };
 
 function AdmissionsPage() {
@@ -285,9 +305,9 @@ function AdmissionsPage() {
   const initialSelected = searchParams.get("type") || "btech";
   const router = useRouter();
   const pathname = usePathname();
-  useEffect(()=>{
+  useEffect(() => {
     setSelected(initialSelected);
-  },[initialSelected]);
+  }, [initialSelected]);
 
   const toggleNotice = (index) => {
     setExpandedNotices(prev => ({
@@ -296,7 +316,7 @@ function AdmissionsPage() {
     }));
   };
 
-function handleClick(type) {
+  function handleClick(type) {
     const params = new URLSearchParams(searchParams.toString());
     params.set('type', type);
 
@@ -331,17 +351,15 @@ function handleClick(type) {
 
       {/* Mobile sidebar */}
       <aside
-        className={`xl:hidden fixed inset-0 z-[1001000] backdrop-blur-sm transition-all duration-300 ease-in-out ${
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`xl:hidden fixed inset-0 z-[1001000] backdrop-blur-sm transition-all duration-300 ease-in-out ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <div className="w-80 h-full bg-gradient-to-b from-red-800 to-red-700 shadow-2xl px-6 py-8 text-white overflow-y-auto">
           <h2 className="text-2xl font-bold mb-8 pb-4 border-b border-red-400">Admissions Portal</h2>
           <ul className="space-y-4">
             <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md ${
-                selected === "btech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-              }`}
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md ${selected === "btech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+                }`}
               onClick={() => {
                 setSelected("btech");
                 setMobileMenuOpen(false);
@@ -354,9 +372,8 @@ function handleClick(type) {
               </span>
             </li>
             <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md ${
-                selected === "mtech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-              }`}
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md ${selected === "mtech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+                }`}
               onClick={() => {
                 setSelected("mtech");
                 setMobileMenuOpen(false);
@@ -370,9 +387,8 @@ function handleClick(type) {
             </li>
 
             <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${
-                selected === "mca" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-              }`}
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${selected === "mca" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+                }`}
               onClick={() => { setSelected("mca"); setMobileMenuOpen(false); handleClick("mca"); }}
             >
               <span className="flex items-center">
@@ -382,10 +398,9 @@ function handleClick(type) {
             </li>
 
             <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${
-                selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-              }`}
-              onClick={() => { setSelected("study_in_india"); setMobileMenuOpen(false);handleClick("study_in_india"); }}
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+                }`}
+              onClick={() => { setSelected("study_in_india"); setMobileMenuOpen(false); handleClick("study_in_india"); }}
             >
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
@@ -394,10 +409,21 @@ function handleClick(type) {
             </li>
 
             <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md  hover:text-white ${
-                selected === "phd" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-              }`}
-              onClick={() => { setSelected("phd"); setMobileMenuOpen(false);handleClick("phd"); }}
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md  hover:text-white ${selected === "qip" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+                }`}
+              onClick={() => { setSelected("qip"); setMobileMenuOpen(false); handleClick("qip"); }}
+            >
+              <span className="flex items-center">
+                <GraduationCap className="w-5 h-5 mr-3" />
+                QIP Admissions
+              </span>
+            </li>
+
+
+            <li
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md  hover:text-white ${selected === "phd" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+                }`}
+              onClick={() => { setSelected("phd"); setMobileMenuOpen(false); handleClick("phd"); }}
             >
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
@@ -410,7 +436,7 @@ function handleClick(type) {
       </aside>
 
       <div className="flex flex-col xl:flex-row">
-      <AdmissionsSidebar />
+        <AdmissionsSidebar />
 
         {/* Main content */}
         <main className="flex-1 p-4 md:p-8 xl:ml-6">
@@ -419,7 +445,7 @@ function handleClick(type) {
               {degreeMap[selected] || ""} Admissions
               <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-red-400 to-red-600 rounded-full"></span>
             </h1>
-            
+
             <div className="flex flex-col lg:flex-row gap-8">
               {/* Notices Section */}
               <div className="lg:w-1/2">
@@ -437,7 +463,7 @@ function handleClick(type) {
                   <div className="space-y-6">
                     {admissionData[selected].notices.length > 0 ? (
                       admissionData[selected].notices.map((notice, index) => (
-                        <div 
+                        <div
                           key={index}
                           className="bg-white rounded-lg shadow-md overflow-hidden border-l-4 border-red-600 hover:shadow-lg transition-all duration-300"
                         >
@@ -450,30 +476,30 @@ function handleClick(type) {
                                 day: 'numeric'
                               })}
                             </div>
-                            
+
                             {/* Notice icon */}
                             <div className="absolute top-4 left-4 bg-red-50 p-2 rounded-full">
                               <AlertCircle className="w-5 h-5 text-red-600" />
                             </div>
-                            
+
                             {/* Notice content */}
-                            <div 
+                            <div
                               className="pl-16 pr-4 pt-4 pb-4 cursor-pointer"
                               onClick={() => toggleNotice(index)}
                             >
-                              <Link 
-                                className="font-bold text-gray-800 hover:text-red-700 block text-sm md:text-base leading-tight mb-2 transition-colors pt-2" 
-                                href={notice.href ? notice.href : "#"} 
+                              <Link
+                                className="font-bold text-gray-800 hover:text-red-700 block text-sm md:text-base leading-tight mb-2 transition-colors pt-2"
+                                href={notice.href ? notice.href : "#"}
                                 target="_blank"
                               >
                                 {notice.title}
                               </Link>
-                              
+
                               <div className="flex justify-between items-center">
                                 <p className="text-xs text-gray-600">
                                   {notice.content}
-                                </p>                                 
-                                <Link 
+                                </p>
+                                <Link
                                   href={notice.href ? notice.href : "#"}
                                   target="_blank"
                                   className="flex items-center gap-1 text-xs font-medium text-red-600 hover:text-red-800 transition-colors bg-red-50 hover:bg-red-100 py-1 px-3 rounded-full"
@@ -527,16 +553,16 @@ function handleClick(type) {
 
                           {item.sopLink && (
                             <div className="text-center">
-                            <a
-                              href={item.sopLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white font-medium rounded-lg hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-sm hover:shadow-md mb-4"
-                            >
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              View SOP
-                            </a>
-                          </div>
+                              <a
+                                href={item.sopLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white font-medium rounded-lg hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-sm hover:shadow-md mb-4"
+                              >
+                                <ExternalLink className="w-4 h-4 mr-2" />
+                                View SOP
+                              </a>
+                            </div>
                           )}
 
                           <div className="text-center">
