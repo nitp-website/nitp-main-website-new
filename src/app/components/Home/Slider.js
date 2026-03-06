@@ -30,30 +30,27 @@ const Slider = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper w-full h-[30vh] md:h-[530px] flex justify-center items-center "
       >
-        {/** convocation image*/}
-        <SwiperSlide>
-          <img src="https://i.postimg.cc/zB1X6mrF/image.png" />
-        </SwiperSlide>
+        {/* Convocation Image */}
         <SwiperSlide>
           <img src="https://i.postimg.cc/pdVbvKBJ/Website-2-(1).webp" />
         </SwiperSlide>
+        {/* NIRF Image */}
         <SwiperSlide>
           <img src="https://i.postimg.cc/0N1Yfkhc/NIRF.png" />
-        </SwiperSlide>
-        {/** top 2% scientist */}
-        <SwiperSlide>
-          <img src="https://i.postimg.cc/5tjkwcXG/image.png" />
         </SwiperSlide>
         <SwiperSlide>
           {/* <img src="/homepage/MainEntrance.jpg" /> */}
           <img src="/independeceDayCelbHomePoster.webp" />
         </SwiperSlide>
+        {/* Main Entrance */}
         <SwiperSlide>
           <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp" />
         </SwiperSlide>
+        {/* Main Building Bihta Campus */}
         <SwiperSlide>
           <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainBuilding.webp" />
         </SwiperSlide>
+        {/* SAC NITP Image */}
         <SwiperSlide>
           <img src="https://i.postimg.cc/h4mxzgKS/nit-patna-004.jpg" />
         </SwiperSlide>
