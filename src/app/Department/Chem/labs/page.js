@@ -14,7 +14,13 @@ const labsData = [
             "Lab 8, Chemical Technology Lab (Dual Degree) and PhD teaching Lab (Synthesis and Purification)",
             "Instrument Lab",
             "Heat Transfer Lab and Fluid Flow Operation Lab"
-        ]
+        ],
+        content_with_links:{
+            "Lab 9, B.Tech Lab (Engineering Chemistry Lab)":"https://drive.google.com/file/d/1Tb1fNyNJ_DNd9cJYRoE77HV9Bts5qvaR/view",
+            "Lab 8, Chemical Technology Lab (Dual Degree) and PhD teaching Lab (Synthesis and Purification)":"https://drive.google.com/file/d/1yLx8nOVxGXfhkKhNn636zLqmeBBr6n4_/view",
+            "Instrument Lab":"https://drive.google.com/file/d/19DqlVtOl0YDSTjUlP-yAMNfNwnN76Vce/view",
+            "Heat Transfer Lab and Fluid Flow Operation Lab":"https://drive.google.com/file/d/1T_2uCQDx-ciKFVNf76NUrax45sW-dQ_0/view"
+        }
     },
     // {
     //     name: "Instrument Lab",
@@ -103,7 +109,19 @@ function Page() {
                                         {lab.description}
                                     </p>
 
-                                    {lab.content && (
+                                    {lab.content_with_links? 
+                                    (
+                                        <ul className="list-disc pl-6 mt-3 text-gray-700 text-sm">
+                                            {Object.entries(lab.content_with_links).map(([key, value], idx) => (
+                                            <li key={idx} className="mb-1">
+                                                <a href={value} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                                    {key}
+                                                </a>
+                                            </li>
+                                            ))}
+                                        </ul>
+                                    )                                    
+                                    : lab.content && (
                                     <ul className="list-disc pl-6 mt-3 text-gray-700 text-sm">
                                         {lab.content.map((value, idx) => (
                                         <li key={idx} className="mb-1">
