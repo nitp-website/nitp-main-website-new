@@ -227,14 +227,20 @@ export default function Research() {
           `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=all`
         );
         const projects = await response.json();
-        const sorted = projects.sort((a, b) => {
+        const filtered = projects.filter(
+          (project) => Number(project.financial_outlay) >= 1000000
+        );
+
+        const sorted = filtered.sort((a, b) => {
           return new Date(b.start_date) - new Date(a.start_date);
         });
+
         setRecentProjects(sorted);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
     };
+
     fetchProjects();
   }, []);
 
@@ -320,7 +326,7 @@ export default function Research() {
                      <AutoScrollContainer height="600px" speed={0.8}>
                         {/* DUPLICATED DATA FOR SEAMLESS LOOP */}
                         <div className="pb-2">
-                            {[...recentProjects.slice(0, 30), ...recentProjects.slice(0, 30)].map((project, idx) => (
+                            {recentProjects.map((project, idx) => (
                               <ProjectCard
                                 key={`${project.id}-${idx}`}
                                 project_title={project.project_title}
