@@ -556,6 +556,11 @@ const navItems = [
         iconImage: Clubs,
       },
       {
+        label: "Annual Sports Fest",
+        link: "https://tatva.nitp.ac.in/",
+        iconImage: Clubs,
+      },
+      {
         label: "Anti Ragging",
         link: "/Student/AntiRagging",
         iconImage: Notice,
