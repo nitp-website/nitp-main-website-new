@@ -21,7 +21,7 @@ const officer = [
     id: 1,
     name: "Dr. Santosh Kumar",
     image: "",
-    designation: "Scientific Officer",
+    designation: "Senior Scientific Officer",
     email: "",
     profileLink: "", // No profile if no email
   },
