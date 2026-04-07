@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import DepartmentCounter from "../../../components/department/DepartmentCounter.js";
 import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
 
-const dept = "Archi";
+const dept = "appi Archi";
 
 import axios from "axios";
 
@@ -46,7 +46,6 @@ const Aboutpage = () => {
                         <h2 className="text-center text-4xl text-[#e30f0f] mt-2">
                             About The Department
                         </h2>
-
                         <div className="w-full mx-auto px-2 py-5 text-justify text-black">
                             {aboutContent}
                         </div>

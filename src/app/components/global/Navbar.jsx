@@ -1,6 +1,12 @@
 /** @format */
 "use client";
+// import { useEffect, useState } from "react";
+// import Link from "next/link";
 import Image from "next/image";
+import { FiMenu } from "react-icons/fi";
+// import { IoIosArrowDown } from "react-icons/io";
+
+// import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { IoIosArrowDown, IoIosArrowDropright } from "react-icons/io";
@@ -64,10 +70,9 @@ import math from "../../assets/images/math.svg";
 import mech from "../../assets/images/mech.svg";
 import physics from "../../assets/images/physics.svg";
 import useNavigationEvent from "./useNavigationEvent";
-import { FiMenu } from "react-icons/fi";
-import { AiOutlineClose ,AiOutlineMenu,AiOutlineOpen} from "react-icons/ai";
+
+import { AiOutlineClose, AiOutlineMenu, AiOutlineOpen } from "react-icons/ai";
 import Script from "next/script";
-//List of all nav items
 
 const navItems = [
   {
@@ -471,7 +476,7 @@ const navItems = [
   {
     label: "Faculty & Staff",
     // link: "/Academic/Faculty&Staff",
-    link:"#",
+    link: "#",
     children: [
       {
         label: " Faculty Directory",
@@ -517,7 +522,7 @@ const navItems = [
       {
         label: "Holidays/Restricted Holidays ",
         // link: "https://drive.google.com/file/d/1qL_eR9y5y4uTz0dR0_woqFSv3sQNUhwD/view?usp=sharing",
-        link:"/Academic/Holidays",
+        link: "/Academic/Holidays",
         iconImage: International,
       },
     ],
@@ -526,7 +531,7 @@ const navItems = [
   {
     label: "Students",
     // link: "/Student",
-    link:"#",
+    link: "#",
     children: [
       // {
       //   label: "Dean Student Welfare",
@@ -633,7 +638,7 @@ const navItems = [
   {
     label: "Facilities",
     // link: "/Facilities",
-    link:"#",
+    link: "#",
     children: [
       // {
       //   label: "Centers",
@@ -711,39 +716,45 @@ const navItems = [
 export default function Navbar() {
   const [isSideMenuOpen, setSideMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
+  
+  // 1. Correct placement: Define state at the top level
+  const [isCursive, setIsCursive] = useState(false);
+
   useNavigationEvent(() => setSideMenuOpen(false));
 
+  // 2. Correct placement: Periodic timer for the font effect
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setSticky(true);
-      } else {
-        setSticky(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const interval = setInterval(() => setIsCursive((prev) => !prev), 4000);
+    return () => clearInterval(interval);
   }, []);
 
+  // 3. Scroll logic remains separate
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // 4. Hindi Name Fix remains as is
   useEffect(() => {
     const fixHindiInstituteName = () => {
-      const incorrect = 'राष्ट्रीय संस्थान संस्थान पटना';
-      const correct = 'राष्ट्रीय प्रौद्योगिकी संस्थान पटना';
-      document.querySelectorAll('*').forEach(node => {
-        if (node.childNodes && node.childNodes.length) {
-          node.childNodes.forEach(child => {
-            if (child.nodeType === 3 && child.nodeValue.includes(incorrect)) {
-              child.nodeValue = child.nodeValue.replaceAll(incorrect, correct);
-            }
-          });
-        }
+      const incorrect = "राष्ट्रीय संस्थान संस्थान पटना";
+      const correct = "राष्ट्रीय प्रौद्योगिकी संस्थान पटना";
+      document.querySelectorAll("*").forEach((node) => {
+        node.childNodes.forEach((child) => {
+          if (child.nodeType === 3 && child.nodeValue.includes(incorrect)) {
+            child.nodeValue = child.nodeValue.replaceAll(incorrect, correct);
+          }
+        });
       });
     };
     fixHindiInstituteName();
   }, []);
+
+  // ... rest of your return statement
+
 
   return (
     <>
@@ -831,7 +842,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`navbar-container sticky top-0 z-50 ${isSticky?"stickdiv":""} `}
+        className={`navbar-container sticky top-0 z-50 ${isSticky ? "stickdiv" : ""} `}
       >
         <div className="header-top mx-auto flex w-full max-w-9xl justify-between px-[1px] md:px-4 py-2 bg-white/40 backdrop-blur-lg shadow-lg">
           {/* Mobile Header Layout */}
@@ -848,16 +859,30 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="flex flex-col items-center flex-1 text-center">
-              <div className="text-[0.65rem] font-semibold text-black" id="excludeMe" translate="no">
+              {/* Hindi remains static */}
+              <div
+                className="text-[0.65rem] font-semibold text-black"
+                id="excludeMe"
+                translate="no"
+              >
                 राष्ट्रीय प्रौद्योगिकी संस्थान पटना
               </div>
-              <div className="text-[0.6rem] text-black">
-                NATIONAL INSTITUTE OF TECHNOLOGY PATNA
-              </div>
-              <div className="text-[0.5rem] text-black mt-1 hidden">
-                An Institution of National Importance
+
+              {/* English Slides Vertically */}
+              <div className="h-[18px] overflow-hidden">
+                <div
+                  className={`transition-all duration-700 ease-in-out transform ${isCursive ? "-translate-y-1/2" : "translate-y-0"}`}
+                >
+                  <div className="h-[18px] text-[0.6rem] text-black font-bold uppercase flex items-center justify-center">
+                    NATIONAL INSTITUTE OF TECHNOLOGY PATNA
+                  </div>
+                  <div className="h-[18px] text-[0.7rem] text-blue-800 italic font-serif flex items-center justify-center">
+                    National Institute of Technology Patna
+                  </div>
+                </div>
               </div>
             </div>
+
             <FiMenu
               onClick={() => setSideMenuOpen(true)}
               className="cursor-pointer text-3xl text-black flex-shrink-0"
@@ -866,13 +891,30 @@ export default function Navbar() {
 
           {/* Desktop Header Layout */}
           <div className="right-content hidden md:block">
-            <div className="font-bold textmob text-black" id="excludeMe" translate="no">
+            {/* Hindi remains static */}
+            <div
+              className="font-bold textmob text-black"
+              id="excludeMe"
+              translate="no"
+            >
               राष्ट्रीय प्रौद्योगिकी संस्थान पटना
             </div>
-            <div className="text-sm textmob text-black">
-              NATIONAL INSTITUTE OF TECHNOLOGY PATNA
+
+            {/* English Slides Vertically */}
+            <div className="h-[24px] overflow-hidden">
+              <div
+                className={`transition-all duration-700 ease-in-out transform ${isCursive ? "-translate-y-1/2" : "translate-y-0"}`}
+              >
+                <div className="h-[24px] text-sm textmob text-black font-bold uppercase flex items-center">
+                  NATIONAL INSTITUTE OF TECHNOLOGY PATNA
+                </div>
+                <div className="h-[24px] text-lg text-blue-900 italic font-serif flex items-center">
+                  National Institute of Technology Patna
+                </div>
+              </div>
             </div>
           </div>
+
           <div className="hidden md:flex justify-center items-center">
             <Link href="/">
               <Image src={logo} alt="NIT PATNA" height={70} />
@@ -886,7 +928,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className={`hidden md:flex mx-auto w-full px-4 py-2 text-sm md:py-1 md:bg-[#811919] backdrop-blur-lg justify-center items-center shadow-lg ${isSticky?"max-w-7xl rounded-2xl ":""} transition-all ease-in-out duration-300`}>
+        <div
+          className={`hidden md:flex mx-auto w-full px-4 py-2 text-sm md:py-1 md:bg-[#811919] backdrop-blur-lg justify-center items-center shadow-lg ${isSticky ? "max-w-7xl rounded-2xl " : ""} transition-all ease-in-out duration-300`}
+        >
           <section className="nav-items hidden md:flex">
             {navItems.map((item, index) => (
               <NavItem key={index} item={item} />
@@ -1086,6 +1130,5 @@ function SubSidemenu({ item, closeSideMenu }) {
         src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
       ></Script>
     </div>
-    
   );
 }

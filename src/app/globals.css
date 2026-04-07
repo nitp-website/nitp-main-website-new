@@ -29,7 +29,14 @@
 *::-webkit-scrollbar-track:active {
   background-color: #fff3f3;
 }
-
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 *::-webkit-scrollbar-thumb {
   border-radius: 20px;
   background-color: #e3fdff;
