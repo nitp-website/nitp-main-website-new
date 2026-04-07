@@ -590,11 +590,11 @@ const ServiceUNIT = [
   type: "Assistant Professor",
   designation: "PI – E-Cell; Coordinator – Unnat Bharat"
 },
-{
-  name: "Dr. Gagan Deep Meena",
-  type: "Assistant Professor",
-  designation: "Co PI – EMU; Coordinator - NSS"
-},
+// {
+//   name: "Dr. Gagan Deep Meena",
+//   type: "Assistant Professor",
+//   designation: "Co PI – EMU; Coordinator - NSS"
+// },
 
   {
   name: "Dr.Mukesh Kumar",
