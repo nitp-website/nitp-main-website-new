@@ -45,7 +45,7 @@ const categorizedContent = {
     },
     {
       name: "Bill for Direct Payment By Finance & Account Section.",
-      dlink: "https://drive.google.com/file/d/13LB_4cl49dLuZAmo6RrkR5hpQPqB6KUT/view?usp=sharing"
+      dlink: "https://drive.google.com/file/d/1z_tlRaPVSVDr2i0I_dUkNGdgAjp3e5rA/view?usp=sharing"
     }
   ],
   "Leave Forms": [
