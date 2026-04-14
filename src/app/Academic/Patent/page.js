@@ -2,24 +2,40 @@
 import React, { useState, useEffect } from "react";
 
 function Page() {
-  const [allData, setAllData] = useState([]);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const ITEMS_PER_PAGE = 15;
+  const [totalPages, setTotalPages] = useState(1);
+  const [totalItems, setTotalItems] = useState(0);
+  const [type, setType] = useState("all");
+  const ITEMS_PER_PAGE = 10;
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const typeParam = params.get("type");
+      if (typeParam) {
+        setType(typeParam);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const baseUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
+        const baseUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
         const res = await fetch(
-          `${baseUrl}/api/patent?type=all&page=1&limit=5`
+          `${baseUrl}/api/patent?type=${type}&page=${currentPage}&limit=${ITEMS_PER_PAGE}`
         );
         if (!res.ok) throw new Error("Failed to fetch patents");
         const json = await res.json();
-        setAllData(json);
+        // Backend returns: { page, limit, offset, total, totalPages, data }
+        setData(json.data || []);
+        setTotalPages(json.totalPages || 1);
+        setTotalItems(json.total || 0);
       } catch (err) {
         console.log("error fetching patent data", err);
         setError(err.message);
@@ -29,7 +45,7 @@ function Page() {
     };
 
     fetchData();
-  }, []);
+  }, [currentPage, ITEMS_PER_PAGE, type]);
 
   const formatDate = (dateStr) => {
     if (!dateStr) return "—";
@@ -42,23 +58,21 @@ function Page() {
   };
 
 
-  const totalPages = Math.ceil(allData.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentData = allData.slice(startIndex, endIndex);
-  const pagesRemaining = totalPages - currentPage;
+  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, totalItems);
+  const currentData = data;
+  const pagesRemaining = Math.max(0, totalPages - currentPage);
 
   const goToPage = (e, page) => {
     if (e) {
       e.preventDefault();
-      // Remove focus from the button so the browser doesn't try to auto-scroll to it when table height changes
       e.currentTarget.blur(); 
     }
-    const scrollY = window.scrollY;
+    const currentScrollY = window.scrollY;
     setCurrentPage(page);
-    // Force scroll position to remain static after React completes rendering
+    // Force scroll position to remain exactly static under the cursor
     setTimeout(() => {
-      window.scrollTo({ top: scrollY, behavior: "instant" });
+      window.scrollTo({ top: currentScrollY, behavior: "instant" });
     }, 0);
   };
 
@@ -93,23 +107,23 @@ function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-white bg-opacity-50">
+    <div className="w-full bg-white bg-opacity-50 pb-[400px]">
       <div className="mx-auto px-4 py-8 max-w-7xl">
         <h1 className="text-2xl md:text-3xl font-bold mb-2 text-red-950 text-center">
           Patents Dashboard
         </h1>
 
-        {!loading && !error && allData.length > 0 && (
+        {!error && data.length > 0 && (
           <p className="text-center text-gray-500 text-sm mb-6">
-            Showing {startIndex + 1}–{Math.min(endIndex, allData.length)} of{" "}
-            {allData.length} patents &nbsp;|&nbsp; Page {currentPage} of{" "}
+            Showing {startIndex + 1}–{endIndex} of{" "}
+            {totalItems} patents &nbsp;|&nbsp; Page {currentPage} of{" "}
             {totalPages} &nbsp;|&nbsp; {pagesRemaining}{" "}
             {pagesRemaining === 1 ? "page" : "pages"} remaining
           </p>
         )}
 
         {/* Loading */}
-        {loading && (
+        {loading && data.length === 0 && (
           <div className="flex justify-center items-center py-20">
             <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-red-900"></div>
             <span className="ml-3 text-red-900 font-medium">
@@ -132,35 +146,35 @@ function Page() {
         )}
 
         {/* Table */}
-        {!loading && !error && currentData.length > 0 && (
-          <>
+        {!error && currentData.length > 0 && (
+          <div className={`transition-opacity duration-200 ${loading ? "opacity-50 pointer-events-none" : "opacity-100"}`}>
             <div className="overflow-hidden rounded-lg shadow-md border border-gray-200 bg-white">
-              <div className="overflow-auto h-[650px]">
-                <table className="w-full border-collapse bg-white text-sm relative">
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse bg-white text-[15px] leading-relaxed relative">
                   <thead className="sticky top-0 z-10 shadow-md">
                     <tr className="bg-[#421010] text-white">
-                      <th className="text-left px-4 py-3 font-semibold whitespace-nowrap">
+                      <th className="text-left px-4 py-4 font-semibold whitespace-nowrap">
                         S.No
                       </th>
-                      <th className="text-left px-4 py-3 font-semibold">
+                      <th className="text-left px-4 py-4 font-semibold">
                         Title
                       </th>
-                      <th className="text-left px-4 py-3 font-semibold">
+                      <th className="text-left px-4 py-4 font-semibold">
                         Inventors
                       </th>
-                      <th className="text-left px-4 py-3 font-semibold">
+                      <th className="text-left px-4 py-4 font-semibold">
                         Applicant
                       </th>
-                      <th className="text-left px-4 py-3 font-semibold whitespace-nowrap">
+                      <th className="text-left px-4 py-4 font-semibold whitespace-nowrap">
                         Registration
                       </th>
-                      <th className="text-left px-4 py-3 font-semibold whitespace-nowrap">
+                      <th className="text-left px-4 py-4 font-semibold whitespace-nowrap">
                         Publication
                       </th>
-                      <th className="text-left px-4 py-3 font-semibold whitespace-nowrap">
+                      <th className="text-left px-4 py-4 font-semibold whitespace-nowrap">
                         Grant Date
                       </th>
-                      <th className="text-left px-4 py-3 font-semibold whitespace-nowrap">
+                      <th className="text-left px-4 py-4 font-semibold whitespace-nowrap">
                         Grant No
                       </th>
                     </tr>
@@ -169,32 +183,32 @@ function Page() {
                     {currentData.map((patent, idx) => (
                       <tr
                         key={patent.id}
-                        className={`border-b border-gray-100 hover:bg-red-50 transition-colors ${
-                          idx % 2 === 0 ? "bg-white" : "bg-gray-50"
+                        className={`h-[120px] border-b border-gray-100 hover:bg-red-50 transition-colors ${
+                          idx % 2 === 0 ? "bg-white" : "bg-gray-100"
                         }`}
                       >
-                        <td className="px-4 py-3 text-gray-600 font-medium">
+                        <td className="px-4 py-4 text-gray-600 font-medium">
                           {startIndex + idx + 1}
                         </td>
-                        <td className="px-4 py-3 text-gray-800 min-w-[280px] leading-snug">
-                          {patent.title}
+                        <td className="px-4 py-4 text-gray-800">
+                          <div className="line-clamp-3">{patent.title}</div>
                         </td>
-                        <td className="px-4 py-3 text-gray-700 min-w-[180px]">
-                          {patent.inventors}
+                        <td className="px-4 py-4 text-gray-700">
+                          <div className="line-clamp-3">{patent.inventors}</div>
                         </td>
-                        <td className="px-4 py-3 text-gray-700 min-w-[180px]">
-                          {patent.applicant_name}
+                        <td className="px-4 py-4 text-gray-700">
+                          <div className="line-clamp-3">{patent.applicant_name}</div>
                         </td>
-                        <td className="px-4 py-3 text-gray-600 whitespace-nowrap">
+                        <td className="px-4 py-4 text-gray-600 whitespace-nowrap">
                           {formatDate(patent.registration_date)}
                         </td>
-                        <td className="px-4 py-3 text-gray-600 whitespace-nowrap">
+                        <td className="px-4 py-4 text-gray-600 whitespace-nowrap">
                           {formatDate(patent.publication_date)}
                         </td>
-                        <td className="px-4 py-3 text-gray-600 whitespace-nowrap">
+                        <td className="px-4 py-4 text-gray-600 whitespace-nowrap">
                           {formatDate(patent.grant_date)}
                         </td>
-                        <td className="px-4 py-3 text-gray-600">
+                        <td className="px-4 py-4 text-gray-600">
                           {patent.grant_no || "—"}
                         </td>
                       </tr>
@@ -272,11 +286,11 @@ function Page() {
                   : "You're on the last page"}
               </p>
             )}
-          </>
+          </div>
         )}
 
         {/* Empty State */}
-        {!loading && !error && allData.length === 0 && (
+        {!loading && !error && data.length === 0 && (
           <div className="text-center py-16 text-gray-400">
             <p className="text-lg">No patents found.</p>
           </div>
