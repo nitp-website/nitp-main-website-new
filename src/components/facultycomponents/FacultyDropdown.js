@@ -1,22 +1,13 @@
-import React, { useState } from "react";
+"use client";
+import React, { useState, useCallback } from "react";
 import {
-  FaBook,
-  FaBriefcase,
-  FaBuilding,
-  FaCertificate,
-  FaChalkboardTeacher,
-  FaGraduationCap,
-  FaIdBadge,
-  FaIndustry,
-  FaLaptopCode,
-  FaProjectDiagram,
-  FaUniversity,
-  FaUserGraduate,
-  FaUserTie,
+  FaBook, FaBriefcase, FaBuilding, FaCertificate,
+  FaChalkboardTeacher, FaGraduationCap, FaIdBadge,
+  FaIndustry, FaLaptopCode, FaProjectDiagram,
+  FaUniversity, FaUserGraduate, FaUserTie,
 } from "react-icons/fa";
 import { TbFileCertificate } from "react-icons/tb";
 
-// import facultyData from "../data/facultyData";
 import PhdCandidates from "./menuItems/PhdCandidates";
 import JournalPapers from "./menuItems/JournalPapers";
 import ConferencePapers from "./menuItems/ConferencePapers";
@@ -37,212 +28,116 @@ import Startups from "./menuItems/Startups";
 import ConsultancyProjects from "./menuItems/ConsultancyProjects";
 import Education from "./menuItems/Education";
 
-const FacultyDropdown = ({ facultyData }) => {
-  //   console.log(facultyData);
+// Maps section key → the data key inside the API response + the component to render
+const SECTION_CONFIG = [
+  { key: "work_experience",      dataKey: "work_experience",      title: "Work Experience",           icon: <FaBriefcase />,         Component: WorkExperience },
+  { key: "education",            dataKey: "education",            title: "Education",                 icon: <FaUserTie />,           Component: Education },
+  { key: "teaching_engagement",  dataKey: "teaching_engagement",  title: "Teaching Engagement",       icon: <FaLaptopCode />,        Component: TeachingEngagement },
+  { key: "memberships",          dataKey: "memberships",          title: "Memberships",               icon: <FaIdBadge />,           Component: Memberships },
+  { key: "journal_papers",       dataKey: "journal_papers",       title: "Journal Papers",            icon: <FaBook />,              Component: JournalPapers },
+  { key: "conference_papers",    dataKey: "conference_papers",    title: "Conference Papers",         icon: <FaBook />,              Component: ConferencePapers },
+  { key: "sponsored_projects",   dataKey: "sponsored_projects",   title: "Sponsored Projects",        icon: <FaIndustry />,          Component: SponsoredProjects },
+  { key: "consultancy_projects", dataKey: "consultancy_projects", title: "Consultancy Projects",      icon: <TbFileCertificate />,   Component: ConsultancyProjects },
+  { key: "ipr",                  dataKey: "ipr",                  title: "Intellectual Property Rights", icon: <FaCertificate />,    Component: IPR },
+  { key: "startups",             dataKey: "startups",             title: "Startups",                  icon: <FaBuilding />,          Component: Startups },
+  { key: "book_chapters",        dataKey: "book_chapters",        title: "Book Chapters",             icon: <FaBook />,              Component: BookChapters },
+  { key: "textbooks",            dataKey: "textbooks",            title: "Textbooks",                 icon: <FaBook />,              Component: Textbooks },
+  { key: "edited_books",         dataKey: "edited_books",         title: "Edited Books",              icon: <FaBook />,              Component: EditedBooks },
+  { key: "workshops_conferences",dataKey: "workshops_conferences",title: "Workshops & Conferences",   icon: <FaChalkboardTeacher />, Component: WorkshopsConferences },
+  { key: "phd_candidates",       dataKey: "phd_candidates",       title: "PhD Candidates",            icon: <FaGraduationCap />,     Component: PhdCandidates },
+  { key: "project_supervision",  dataKey: "project_supervision",  title: "Project Supervision",       icon: <FaProjectDiagram />,    Component: ProjectSupervision },
+  { key: "internships",          dataKey: "internships",          title: "Internships",               icon: <FaUserGraduate />,      Component: Internships },
+  { key: "institute_activities", dataKey: "institute_activities", title: "Institute Activities",      icon: <FaBuilding />,          Component: InstituteActivities },
+  { key: "department_activities",dataKey: "department_activities",title: "Department Activities",     icon: <FaUniversity />,        Component: DepartmentActivities },
+];
 
-  const {
-    phd_candidates,
-    education,
-    journal_papers,
-    conference_papers,
-    textbooks,
-    edited_books,
-    book_chapters,
-    sponsored_projects,
-    consultancy_projects,
-    ipr,
-    startups,
-    teaching_engagement,
-    project_supervision,
-    workshops_conferences,
-    institute_activities,
-    department_activities,
-    memberships,
-    work_experience,
-    internships,
-  } = facultyData || {};
+const FacultyDropdown = ({ counts, email }) => {
+  const [openKey, setOpenKey] = useState(null);
+  // Cache: { [sectionKey]: data[] | 'loading' | 'error' }
+  const [cache, setCache] = useState({});
 
-  const filteredIpr = ipr?.filter((item) => item.grant_date || item.registration_date || item.publication_date) || [];
+  const baseUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 
-  // console.log(filteredIpr);
+  const fetchSection = useCallback(async (key) => {
+    if (cache[key] && cache[key] !== 'error') return; // already loaded or loading
+    setCache(prev => ({ ...prev, [key]: 'loading' }));
+    try {
+      const res = await fetch(`${baseUrl}/api/v2/profile?email=${encodeURIComponent(email)}&section=${key}`);
+      const json = await res.json();
+      if (json.error) throw new Error(json.error);
+      // API returns { [dataKey]: rows[] }
+      const config = SECTION_CONFIG.find(s => s.key === key);
+      setCache(prev => ({ ...prev, [key]: json[config.dataKey] || [] }));
+    } catch {
+      setCache(prev => ({ ...prev, [key]: 'error' }));
+    }
+  }, [cache, email, baseUrl]);
 
-  const [openDropdown, setOpenDropdown] = useState(null);
+  const toggleDropdown = (key) => {
+    const isOpening = openKey !== key;
+    setOpenKey(isOpening ? key : null);
 
-  const toggleDropdown = (id) => {
-    setOpenDropdown((prev) => (prev === id ? null : id));
-
-    setTimeout(() => {
-      const element = document.getElementById(`dropdown-${id}`);
-      if (element) {
-        const yOffset = -100; // Adjust this value to control the offset
-        const y =
-          element.getBoundingClientRect().top + window.scrollY + yOffset;
-
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
-    }, 200);
+    if (isOpening) {
+      fetchSection(key);
+      setTimeout(() => {
+        const el = document.getElementById(`dropdown-${key}`);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }, 200);
+    }
   };
 
-  const menuItems = [
-    {
-      condition: work_experience?.length > 0,
-      title: "Work Experience",
-      icon: <FaBriefcase />,
-      id: 20,
-      component: <WorkExperience data={work_experience} />,
-    },
-    {
-      condition: education?.length > 0,
-      title: "Education",
-      icon: <FaUserTie />,
-      id: 1,
-      component: <Education data={education} />,
-    },
-    {
-      condition: teaching_engagement?.length > 0,
-      title: "Teaching Engagement",
-      icon: <FaLaptopCode />,
-      id: 18,
-      component: <TeachingEngagement data={teaching_engagement} />,
-    },
-    {
-      condition: memberships?.length > 0,
-      title: "Memberships",
-      icon: <FaIdBadge />,
-      id: 21,
-      component: <Memberships data={memberships} />,
-    },
-    {
-      condition: journal_papers?.length > 0,
-      title: "Journal Papers",
-      icon: <FaBook />,
-      id: 6,
-      component: <JournalPapers data={journal_papers} />,
-    },
-    {
-      condition: conference_papers?.length > 0,
-      title: "Conference Papers",
-      icon: <FaBook />,
-      id: 7,
-      component: <ConferencePapers data={conference_papers} />,
-    },
-    {
-      condition: sponsored_projects?.length > 0,
-      title: "Sponsored Projects",
-      icon: <FaIndustry />,
-      id: 13,
-      component: <SponsoredProjects data={sponsored_projects} />,
-    },
-    {
-      condition: consultancy_projects?.length > 0,
-      title: "Consultancy Projects",
-      icon: <TbFileCertificate />,
-      id: 14,
-      component: <ConsultancyProjects data={consultancy_projects} />,
-    },
-    {
-      condition: filteredIpr?.length > 0,
-      title: "Intellectual Property Rights",
-      icon: <FaCertificate />,
-      id: 28,
-      component: <IPR data={filteredIpr} />,
-    },
-    {
-      condition: startups?.length > 0,
-      title: "Startups",
-      icon: <FaBuilding />,
-      id: 29,
-      component: <Startups data={startups} />,
-    },
-    {
-      condition: book_chapters?.length > 0,
-      title: "Book Chapters",
-      icon: <FaBook />,
-      id: 10,
-      component: <BookChapters data={book_chapters} />,
-    },
-    {
-      condition: textbooks?.length > 0,
-      title: "Textbooks",
-      icon: <FaBook />,
-      id: 8,
-      component: <Textbooks data={textbooks} />,
-    },
-    {
-      condition: edited_books?.length > 0,
-      title: "Edited Books",
-      icon: <FaBook />,
-      id: 9,
-      component: <EditedBooks data={edited_books} />,
-    },
-    {
-      condition: workshops_conferences?.length > 0,
-      title: "Workshops & Conferences",
-      icon: <FaChalkboardTeacher />,
-      id: 24,
-      component: <WorkshopsConferences data={workshops_conferences} />,
-    },
-    {
-      condition: phd_candidates?.length > 0,
-      title: "PhD Candidates",
-      icon: <FaGraduationCap />,
-      id: 11,
-      component: <PhdCandidates data={phd_candidates} />,
-    },
-    {
-      condition: project_supervision?.length > 0,
-      title: "Project Supervision",
-      icon: <FaProjectDiagram />,
-      id: 27,
-      component: <ProjectSupervision data={project_supervision} />,
-    },
-    {
-      condition: internships?.length > 0,
-      title: "Internships",
-      icon: <FaUserGraduate />,
-      id: 19,
-      component: <Internships data={internships} />,
-    },
-    {
-      condition: institute_activities?.length > 0,
-      title: "Institute Activities",
-      icon: <FaBuilding />,
-      id: 23,
-      component: <InstituteActivities data={institute_activities} />,
-    },
-    {
-      condition: department_activities?.length > 0,
-      title: "Department Activities",
-      icon: <FaUniversity />,
-      id: 22,
-      component: <DepartmentActivities data={department_activities} />,
-    },
-  ].filter((item) => item.condition);
+  // Only show sections where count > 0 (ipr: filter for granted/published)
+  const visibleSections = SECTION_CONFIG.filter(({ key }) => {
+    const count = Number(counts[key] || 0);
+    return count > 0;
+  });
 
   return (
     <div className="w-full mt-6">
-      {menuItems.map((item) => (
-        <div key={item.id} id={`dropdown-${item.id}`} className="mb-4">
-          <button
-            className={`w-full flex justify-between items-center px-4 py-2 rounded-lg hover:opacity-90 transition-all duration-300 bg-red-600 text-white`}
-            onClick={() => toggleDropdown(item.id)}
-          >
-            <div className="flex items-center">
-              <div className="mr-2">{item.icon}</div>
-              <span className="font-semibold">{item.title}</span>
-            </div>
-            <span className="text-lg">
-              {openDropdown === item.id ? "▲" : "▼"}
-            </span>
-          </button>
+      {visibleSections.map(({ key, title, icon, dataKey, Component }) => {
+        const isOpen = openKey === key;
+        const sectionData = cache[key];
 
-          {openDropdown === item.id && (
-            <div className="mt-2 p-4 border shadow-lg rounded-lg bg-white">
-              {item.component}
-            </div>
-          )}
-        </div>
-      ))}
+        return (
+          <div key={key} id={`dropdown-${key}`} className="mb-4">
+            <button
+              className="w-full flex justify-between items-center px-4 py-2 rounded-lg hover:opacity-90 transition-all duration-300 bg-red-600 text-white"
+              onClick={() => toggleDropdown(key)}
+            >
+              <div className="flex items-center gap-2">
+                {icon}
+                <span className="font-semibold">{title}</span>
+              </div>
+              <span className="text-lg">{isOpen ? "▲" : "▼"}</span>
+            </button>
+
+            {isOpen && (
+              <div className="mt-2 p-4 border shadow-lg rounded-lg bg-white">
+                {sectionData === 'loading' && (
+                  <div className="text-center py-6 text-gray-500 animate-pulse">Loading...</div>
+                )}
+                {sectionData === 'error' && (
+                  <div className="text-center py-4 text-red-500">Failed to load data.</div>
+                )}
+                {Array.isArray(sectionData) && sectionData.length === 0 && (
+                  <div className="text-center py-4 text-gray-400">No records found.</div>
+                )}
+                {Array.isArray(sectionData) && sectionData.length > 0 && (
+                  <Component
+                    data={key === 'ipr'
+                      ? sectionData.filter(i => i.grant_date || i.registration_date || i.publication_date)
+                      : sectionData
+                    }
+                  />
+                )}
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };
