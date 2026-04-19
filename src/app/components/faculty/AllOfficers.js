@@ -20,7 +20,7 @@ const AllOfficers = () => {
                 setloading(true)
                 const { data } = await axios.get(api);
                 const filteredFaculty = data.filter(
-                    (item) => item.role === "OFFICER"
+                    (item) => item.department === "Officers"
                 );
                 // console.log(filteredFaculty)
                 setofficers(filteredFaculty);
