@@ -37,7 +37,7 @@ const AllOfficers = () => {
     const [groupedOfficers, setGroupedOfficers] = useState({});
     const [error, setError] = useState(false);
     const [loading, setloading] = useState(false);
-    const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/staff?type=officers`;
+    const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/v2/faculty?type=officers`;
 
     useEffect(() => {
         const fetchFaculty = async () => {
