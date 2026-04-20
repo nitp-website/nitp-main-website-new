@@ -501,7 +501,7 @@ const navItems = [
       },
       {
         label: "Faculty Academic Portal",
-        link: "http://exam.nitp.ac.in",
+        link: "https://mis.nitp.ac.in/",
         iconImage: Portal,
       },
       // {
@@ -567,7 +567,7 @@ const navItems = [
       },
       {
         label: "Fee Payment",
-        link: "https://mis.nitp.ac.in/Student/UGPG/UGPGRegistrationForm.aspx",
+        link: " https://mis.nitp.ac.in/Miscellaneous.aspx",
         iconImage: Fee,
       },
 
@@ -622,11 +622,6 @@ const navItems = [
         label: "Academic Portal (New)",
         link: "https://mis.nitp.ac.in/",
         iconImage: Portal,
-      },
-      {
-        label: "Academic Portal(Old)",
-        link: "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",
-        iconImage: Chankaya,
       },
     ],
   },
@@ -761,7 +756,7 @@ export default function Navbar() {
             </a>
             <span className="text-[0.5rem] md:text-sm">|</span>
             <a
-              href="https://mis.nitp.ac.in/Student/UGPG/UGPGRegistrationForm.aspx"
+              href=" https://mis.nitp.ac.in/Miscellaneous.aspx"
               className="hover:underline text-[0.6rem] md:text-sm"
             >
               Fee Payment
