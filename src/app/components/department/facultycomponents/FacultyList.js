@@ -16,7 +16,8 @@ const FacultyList = ({url,branch}) => {
       try {
         const response = await fetch(apiEndpoint);
         const data = await response.json();
-        const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
+        const facultyArray = Array.isArray(data) ? data : (data.data || []);
+        const sortedData = facultyArray.sort((a, b) => a.name.localeCompare(b.name));
         setFacultyData(sortedData);
         console.log(sortedData);
         setLoading(false);
