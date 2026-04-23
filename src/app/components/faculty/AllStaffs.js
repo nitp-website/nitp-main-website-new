@@ -19,7 +19,7 @@ const AllStaffs = () => {
                 setloading(true)
                 const { data } = await axios.get(api);
                 // console.log(data)
-                const filteredFaculty = data.filter(
+                const filteredFaculty = data.data.filter(
                     (item) => item.department === "Other Employees"
                 );
                 setotheremployee(filteredFaculty);
