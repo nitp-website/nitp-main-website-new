@@ -162,10 +162,11 @@ export default function Research() {
 
   const fetchStats = async () => {
     try {
-      const [pubRes, projRes, patRes] = await Promise.all([
+      const [pubRes, projRes, patRes, confRes] = await Promise.all([
         axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=all`),
         axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=count`),
-        axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/patent?type=count`)
+        axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/patent?type=count`),
+        axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/conference?type=all`)
       ]);
 
       const publications = extractApiArray(pubRes);
@@ -176,13 +177,14 @@ export default function Research() {
           if (pub.journal_name || pub.doi_url) acc.articles += 1;
           return acc;
         },
-        { books: 0, conferences: 0, articles: 0 }
+        { books: 534, conferences: 0, articles: 0 }
       );
 
       setData({
         ...publicationCounts,
         projectCount: projRes.data.projectCount || 0,
         patentCount: patRes.data.patentCount || 0,
+        conferences : confRes.data.total || 0
       });
     } catch (error) {
       console.error("Error fetching stats:", error);
@@ -197,12 +199,12 @@ export default function Research() {
     const fetchPublications = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=all`
+          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=all&page=1&limit=100`
         );
-        const publications = extractApiArray(response).filter(
+        const publications = extractApiArray(response.data).filter(
           (paper) =>
             paper.journal_quartile === "Q1" &&
-            (paper.publication_year === 2024 || paper.publication_year === 2025)
+            (paper.publication_year === 2026 || paper.publication_year === 2025)
         );
 
         const quartileOrder = { Q1: 1, Q2: 2, Q3: 3, Q4: 4, Q5: 5 };

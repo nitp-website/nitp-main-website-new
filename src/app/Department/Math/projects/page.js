@@ -20,7 +20,7 @@ const MathsProjectsPage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=maths`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=maths&page=1&limit=100`
       );
       const data = extractApiArray(await response.json());
 

@@ -13,7 +13,7 @@ const PhyJournalPage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=phy`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=phy&page=1&limit=100`
       );
       const data = extractApiArray(await response.json());
 

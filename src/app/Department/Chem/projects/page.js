@@ -20,7 +20,7 @@ const ChemProjectsPage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=che`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=che&page=1&limit=100`
       );
       const data = extractApiArray(await response.json());
 

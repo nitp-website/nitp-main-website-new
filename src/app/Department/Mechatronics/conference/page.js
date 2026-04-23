@@ -13,7 +13,7 @@ const MechatronicsConferencePage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://admin.nitp.ac.in/api/conference?type=mae`
+        `https://admin.nitp.ac.in/api/conference?type=mae&page=1&limit=100`
       );
       const data = extractApiArray(await response.json());
 

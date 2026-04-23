@@ -25,7 +25,7 @@ const ChePatentsPage = () => {
     try {
       // API endpoint from the Chemistry file
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/patent?type=che`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/patent?type=che&page=1&limit=100`
       );
       const data = extractApiArray(await response.json());
 

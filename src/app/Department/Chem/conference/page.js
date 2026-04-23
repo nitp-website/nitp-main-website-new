@@ -14,7 +14,7 @@ const CheConferencePage = () => {
     try {
       // API endpoint from the Chemistry file
       const response = await fetch(
-        `https://admin.nitp.ac.in/api/publications?type=all`
+        `https://admin.nitp.ac.in/api/publications?type=che&page=1&limit=100`
       );
       const data = extractApiArray(await response.json());
 

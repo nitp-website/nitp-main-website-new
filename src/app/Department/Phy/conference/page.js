@@ -36,7 +36,7 @@ const PhyConferencePage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://admin.nitp.ac.in/api/conference?type=phy`,
+        `https://admin.nitp.ac.in/api/conference?type=phy&page=1&limit=100`,
         {
           headers: {
             'Accept': 'application/json',
