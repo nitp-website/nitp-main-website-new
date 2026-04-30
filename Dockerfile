@@ -8,7 +8,7 @@ WORKDIR /app
 
 # ✅ Copy lock files & install all dependencies (including dev for build)
 COPY package.json package-lock.json* ./
-RUN npm ci
+RUN npm ci --legacy-peer-deps
 
 # ✅ Copy app source and build it
 FROM base AS builder
