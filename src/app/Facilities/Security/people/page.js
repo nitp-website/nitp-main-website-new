@@ -1,5 +1,5 @@
 import React from "react";
-import Admincard from "../AdminCard";
+import Admincard from "../Admincard";
 import Sidebar from "../components/Sidebar";
 import "../style.css";
 
