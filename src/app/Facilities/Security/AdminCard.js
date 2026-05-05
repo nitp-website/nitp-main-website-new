@@ -1,5 +1,5 @@
 import React from "react";
-import Adcard from "./components/Adcard";
+import Adcard from "./components/Adcard.js";
 
 const Admincard = ({ name, designation, type, url }) => {
   return (
