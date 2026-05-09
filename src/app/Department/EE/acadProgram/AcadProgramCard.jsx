@@ -36,14 +36,22 @@ export const AcadProgramCard = ({ program }) => {
           )
         }
       </div>
-      <div className="mt-4 mx-auto">
-        {program.syllabus && (
-          <a href={`/Department/EE/syllabus/${program.syllabus}`} >
-            <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer">
-              Curriculum / Syllabus
-            </button>
-          </a>
-        )}
+      <div className="mt-4 mx-auto flex flex-wrap gap-2">
+        {program.links && program.links.map((link, index) => (
+          link.url.startsWith('/') ? (
+            <Link key={index} href={link.url}>
+              <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md transition hover:bg-red-800 hover:text-white cursor-pointer">
+                {link.name}
+              </button>
+            </Link>
+          ) : (
+            <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
+              <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md transition hover:bg-red-800 hover:text-white cursor-pointer">
+                {link.name}
+              </button>
+            </a>
+          )
+        ))}
       </div>
     </div>
   );

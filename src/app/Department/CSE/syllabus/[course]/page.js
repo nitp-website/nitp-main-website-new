@@ -14171,16 +14171,27 @@ const syllabusMap = {
   },
 };
 
-export default function SyllabusPage({ params }) {
-  const { course } = params;
+export default async function SyllabusPage({ params }) {
+  const { course } = await params;
   const syllabus = syllabusMap[course];
+
+  if (!syllabus) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 mt-10 text-center">
+        <h1 className="text-3xl font-bold text-red-800 mb-6">
+          Syllabus Not Found
+        </h1>
+        <p>The requested syllabus could not be found.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 mt-10 text-center">
       <h1 className="text-3xl font-bold text-red-800 mb-6">
         {syllabus.title} – Syllabus
       </h1>
-      {syllabus.content && syllabus.content}
+      {syllabus.content}
     </div>
   );
 }
