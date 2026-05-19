@@ -23,10 +23,10 @@ const programs = [
   },
   {
     title: "Dual Degree Programme in B.Tech (Electrical Engineering) and  M.Tech. (Power Systems Engineering)",
-    degree: "Integrated B.Tech and M.Tech",
-    duration: "2 Years",
+    degree: "Dual Degree Programme",
+    duration: "5 Years",
     description:
-      "Admission to the 2-year M.Tech (Power Systems Engineering) is through GATE. The program focuses on advanced topics in power systems, including generation, transmission, distribution, and protection, with research and project work.",
+      "The admission to the 5-year B.Tech and M.Tech Dual Degree (Electrical Engineering) is through IIT-JEE (Main). The program covers core courses in electrical engineering, electives, and practical training in state-of-the-art laboratories.",
     links: [{ name: "Curriculum / Syllabus", url: "/Department/EE/syllabus/mtech-power" }],
   },
   {
