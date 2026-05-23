@@ -276,5 +276,125 @@ html.a11y-readable-font * {
 }
 
 /* ========================================
+   Display Mode – Light Background
+   White backgrounds, dark text, no gradients.
+   Forces text to dark so nothing becomes invisible.
+   ======================================== */
+html.a11y-light-bg *:not(#accessibility-widget):not(#accessibility-widget *) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #111111 !important;
+  border-color: #cccccc !important;
+  box-shadow: none !important;
+}
+
+/* Preserve images, videos, iframes, canvas, svg within light-bg */
+html.a11y-light-bg img:not(#accessibility-widget img),
+html.a11y-light-bg video:not(#accessibility-widget video),
+html.a11y-light-bg iframe:not(#accessibility-widget iframe),
+html.a11y-light-bg canvas:not(#accessibility-widget canvas),
+html.a11y-light-bg .a11y-overlay:not(#accessibility-widget .a11y-overlay) {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+html.a11y-light-bg .a11y-overlay {
+  display: none !important;
+}
+html.a11y-light-bg img,
+html.a11y-light-bg video,
+html.a11y-light-bg iframe,
+html.a11y-light-bg canvas,
+html.a11y-light-bg svg {
+  color: inherit !important;
+}
+html.a11y-light-bg svg *:not(#accessibility-widget svg *) {
+  color: inherit !important;
+}
+
+/* Links stay visible as blue in light-bg mode */
+html.a11y-light-bg a:not(#accessibility-widget a) {
+  color: #0044cc !important;
+}
+html.a11y-light-bg a:not(#accessibility-widget a):hover {
+  color: #002299 !important;
+}
+
+/* ========================================
+   Display Mode – High Contrast
+   Black bg, bright yellow/white text, strong borders.
+   ======================================== */
+html.a11y-high-contrast *:not(#accessibility-widget):not(#accessibility-widget *) {
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Links in high-contrast: bright cyan */
+html.a11y-high-contrast a:not(#accessibility-widget a) {
+  color: #00ffff !important;
+  text-decoration: underline !important;
+}
+html.a11y-high-contrast a:not(#accessibility-widget a):hover {
+  color: #ffffff !important;
+}
+
+/* Headings in high-contrast: white for hierarchy visibility */
+html.a11y-high-contrast h1:not(#accessibility-widget h1),
+html.a11y-high-contrast h2:not(#accessibility-widget h2),
+html.a11y-high-contrast h3:not(#accessibility-widget h3),
+html.a11y-high-contrast h4:not(#accessibility-widget h4),
+html.a11y-high-contrast h5:not(#accessibility-widget h5),
+html.a11y-high-contrast h6:not(#accessibility-widget h6) {
+  color: #ffffff !important;
+}
+
+/* Buttons in high-contrast: visible yellow borders */
+html.a11y-high-contrast button:not(#accessibility-widget button),
+html.a11y-high-contrast input:not(#accessibility-widget input),
+html.a11y-high-contrast select:not(#accessibility-widget select),
+html.a11y-high-contrast textarea:not(#accessibility-widget textarea) {
+  border: 2px solid #ffff00 !important;
+  color: #ffff00 !important;
+  background-color: #000000 !important;
+}
+
+/* Preserve images and decorative overlays in high-contrast */
+html.a11y-high-contrast img:not(#accessibility-widget):not(#accessibility-widget *),
+html.a11y-high-contrast video:not(#accessibility-widget):not(#accessibility-widget *),
+html.a11y-high-contrast iframe:not(#accessibility-widget):not(#accessibility-widget *),
+html.a11y-high-contrast canvas:not(#accessibility-widget):not(#accessibility-widget *),
+html.a11y-high-contrast .a11y-overlay:not(#accessibility-widget):not(#accessibility-widget *) {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* ========================================
+   Display Mode – Negative Contrast
+   Uses CSS filter invert to flip all colors.
+   Images/videos are re-inverted to look normal.
+   ======================================== */
+html.a11y-negative-contrast {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Re-invert media so images/videos look normal */
+html.a11y-negative-contrast img,
+html.a11y-negative-contrast video,
+html.a11y-negative-contrast iframe,
+html.a11y-negative-contrast canvas,
+html.a11y-negative-contrast svg image {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Re-invert the accessibility widget so it stays usable */
+html.a11y-negative-contrast #accessibility-widget {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* ========================================
    End Accessibility Widget Styles
    ======================================== */
+

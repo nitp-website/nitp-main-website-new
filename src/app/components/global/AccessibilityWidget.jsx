@@ -8,10 +8,18 @@ const DEFAULT_SCALE = 1;
 const STORAGE_KEY = 'nitp-accessibility-font-scale';
 const READABLE_FONT_KEY = 'nitp-accessibility-readable-font';
 const READABLE_FONT_CLASS = 'a11y-readable-font';
+const DISPLAY_MODE_KEY = 'nitp-accessibility-display-mode';
+const DISPLAY_MODES = ['light-bg', 'high-contrast', 'negative-contrast'];
+const DISPLAY_MODE_CLASSES = {
+  'light-bg': 'a11y-light-bg',
+  'high-contrast': 'a11y-high-contrast',
+  'negative-contrast': 'a11y-negative-contrast',
+};
 
 export default function AccessibilityWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [readableFont, setReadableFont] = useState(false);
+  const [displayMode, setDisplayMode] = useState('none'); // 'none' | 'light-bg' | 'high-contrast' | 'negative-contrast'
   const [fontScale, setFontScale] = useState(DEFAULT_SCALE);
   const panelRef = useRef(null);
   const buttonRef = useRef(null);
@@ -31,6 +39,11 @@ export default function AccessibilityWidget() {
       if (savedFont === 'true') {
         setReadableFont(true);
         document.documentElement.classList.add(READABLE_FONT_CLASS);
+      }
+      const savedMode = localStorage.getItem(DISPLAY_MODE_KEY);
+      if (savedMode && DISPLAY_MODES.includes(savedMode)) {
+        setDisplayMode(savedMode);
+        document.documentElement.classList.add(DISPLAY_MODE_CLASSES[savedMode]);
       }
     } catch {
       // localStorage unavailable
@@ -70,6 +83,28 @@ export default function AccessibilityWidget() {
     });
   }, []);
 
+  // Apply display mode (radio-style: only one active at a time)
+  const applyDisplayMode = useCallback((mode) => {
+    setDisplayMode((prev) => {
+      // If clicking the already-active mode, turn it off
+      const next = prev === mode ? 'none' : mode;
+      // Remove all display mode classes
+      Object.values(DISPLAY_MODE_CLASSES).forEach((cls) => {
+        document.documentElement.classList.remove(cls);
+      });
+      // Add the new one if not 'none'
+      if (next !== 'none') {
+        document.documentElement.classList.add(DISPLAY_MODE_CLASSES[next]);
+      }
+      try {
+        localStorage.setItem(DISPLAY_MODE_KEY, next);
+      } catch {
+        // localStorage unavailable
+      }
+      return next;
+    });
+  }, []);
+
   // Close panel when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -96,10 +131,34 @@ export default function AccessibilityWidget() {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isOpen]);
 
+  // Reset all accessibility settings to defaults
+  const resetAll = useCallback(() => {
+    // Reset font scale
+    setFontScale(DEFAULT_SCALE);
+    document.documentElement.style.setProperty('--a11y-font-scale', DEFAULT_SCALE);
+    // Reset readable font
+    setReadableFont(false);
+    document.documentElement.classList.remove(READABLE_FONT_CLASS);
+    // Reset display mode
+    setDisplayMode('none');
+    Object.values(DISPLAY_MODE_CLASSES).forEach((cls) => {
+      document.documentElement.classList.remove(cls);
+    });
+    // Clear localStorage
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(READABLE_FONT_KEY);
+      localStorage.removeItem(DISPLAY_MODE_KEY);
+    } catch {
+      // localStorage unavailable
+    }
+  }, []);
+
   const scalePercent = Math.round(fontScale * 100);
   const isMin = fontScale <= MIN_SCALE;
   const isMax = fontScale >= MAX_SCALE;
   const isDefault = fontScale === DEFAULT_SCALE;
+  const isAllDefault = isDefault && !readableFont && displayMode === 'none';
 
   return (
     <div
@@ -142,7 +201,7 @@ export default function AccessibilityWidget() {
           ref={panelRef}
           id="accessibility-panel"
           role="region"
-          aria-label="Font Size Controls"
+          aria-label="Accessibility Controls"
           className="a11y-panel absolute top-[46px] right-0 w-[200px] bg-white rounded-xl border overflow-hidden"
         >
           {/* Header */}
@@ -202,15 +261,15 @@ export default function AccessibilityWidget() {
                 </svg>
               </button>
 
-              {/* Reset */}
+              {/* Reset All */}
               <button
-                id="accessibility-reset-font"
-                onClick={() => applyScale(DEFAULT_SCALE)}
-                disabled={isDefault}
-                aria-label="Reset font size"
-                title="Reset font size"
+                id="accessibility-reset-all"
+                onClick={resetAll}
+                disabled={isAllDefault}
+                aria-label="Reset all accessibility settings"
+                title="Reset all accessibility settings"
                 className={`a11y-ctrl-btn flex-1 h-[34px] rounded-lg text-[11px] font-semibold flex items-center justify-center gap-0.5 transition-all duration-150 ease-in-out ${
-                  isDefault
+                  isAllDefault
                     ? 'bg-gray-100 text-gray-300 cursor-not-allowed'
                     : 'bg-white text-gray-700 cursor-pointer'
                 }`}
@@ -269,6 +328,85 @@ export default function AccessibilityWidget() {
               </svg>
               {readableFont ? 'On' : 'Off'}
             </button>
+          </div>
+
+          {/* Display Mode Section (radio-style) */}
+          <div className="px-3.5 py-3 border-t border-gray-100">
+            <div className="text-[11px] font-semibold text-gray-500 mb-2 uppercase tracking-wider">
+              Display
+            </div>
+            <div className="flex flex-col gap-1.5">
+              {/* Light Background */}
+              <button
+                id="accessibility-light-bg"
+                onClick={() => applyDisplayMode('light-bg')}
+                aria-pressed={displayMode === 'light-bg'}
+                aria-label="Light background"
+                title="Light background – white backgrounds, dark text"
+                className={`a11y-ctrl-btn w-full h-[34px] rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-all duration-150 ease-in-out ${
+                  displayMode === 'light-bg'
+                    ? 'bg-[#c0392b] text-white cursor-pointer'
+                    : 'bg-white text-gray-700 cursor-pointer'
+                }`}
+              >
+                {/* Sun icon */}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="5" />
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                Light BG
+              </button>
+
+              {/* High Contrast */}
+              <button
+                id="accessibility-high-contrast"
+                onClick={() => applyDisplayMode('high-contrast')}
+                aria-pressed={displayMode === 'high-contrast'}
+                aria-label="High contrast"
+                title="High contrast – black backgrounds, bright text"
+                className={`a11y-ctrl-btn w-full h-[34px] rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-all duration-150 ease-in-out ${
+                  displayMode === 'high-contrast'
+                    ? 'bg-[#c0392b] text-white cursor-pointer'
+                    : 'bg-white text-gray-700 cursor-pointer'
+                }`}
+              >
+                {/* Contrast icon */}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor" />
+                </svg>
+                High Contrast
+              </button>
+
+              {/* Negative Contrast */}
+              <button
+                id="accessibility-negative-contrast"
+                onClick={() => applyDisplayMode('negative-contrast')}
+                aria-pressed={displayMode === 'negative-contrast'}
+                aria-label="Negative contrast"
+                title="Negative contrast – inverted colors"
+                className={`a11y-ctrl-btn w-full h-[34px] rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-all duration-150 ease-in-out ${
+                  displayMode === 'negative-contrast'
+                    ? 'bg-[#c0392b] text-white cursor-pointer'
+                    : 'bg-white text-gray-700 cursor-pointer'
+                }`}
+              >
+                {/* Invert icon */}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2v20" />
+                  <path d="M12 2a10 10 0 0 0 0 20" fill="currentColor" opacity="0.3" />
+                </svg>
+                Negative Contrast
+              </button>
+            </div>
           </div>
         </div>
       )}
