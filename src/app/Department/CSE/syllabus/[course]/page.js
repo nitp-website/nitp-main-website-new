@@ -4658,7 +4658,7 @@ const DualCSyllabusold = () => {
           dep={"CSE"}
           sem={"9"}
           code={"CS94141"}
-          title={"Research Project (to be continued in 10th Sem)/Internship"}
+          title={"Research Project"}
           L={"0"}
           T={"0"}
           P={"40"}
@@ -4669,7 +4669,7 @@ const DualCSyllabusold = () => {
           dep={"CSE"}
           sem={"10"}
           code={"CS104142"}
-          title={"Research Project/Internship"}
+          title={"Internship"}
           L={"0"}
           T={"0"}
           P={"40"}
@@ -5923,7 +5923,7 @@ const DualCSyllabus = () => {
           dep={"CSE"}
           sem={"9"}
           code={"CS090701"}
-          title={"Research Project (to be continued in 10th Sem)/Internship"}
+          title={"Research Project"}
           L={"0"}
           T={"0"}
           P={"40"}
@@ -5934,7 +5934,7 @@ const DualCSyllabus = () => {
           dep={"CSE"}
           sem={"10"}
           code={"CS100701"}
-          title={"Research Project/ Internship"}
+          title={"Internship"}
           L={"0"}
           T={"0"}
           P={"40"}
@@ -7330,7 +7330,7 @@ const DualDSyllabusold = () => {
           dep={"CSE"}
           sem={"9"}
           code={"CS94133"}
-          title={"Research Project (to be continued in 10th Sem)/Internship "}
+          title={"Research Project"}
           L={"0"}
           T={"0"}
           P={"40"}
@@ -7341,7 +7341,7 @@ const DualDSyllabusold = () => {
           dep={"CSE"}
           sem={"10"}
           code={"CS104134"}
-          title={"Research Project /Internship"}
+          title={"Internship"}
           L={"0"}
           T={"0"}
           P={"40"}
@@ -8586,7 +8586,7 @@ const   DualDSyllabus = () => {
           dep={"CSE"}
           sem={"9"}
           code={"CS090801"}
-          title={"Research Project (to be continued in 10th Sem)/Internship"}
+          title={"Research Project"}
           L={"0"}
           T={"0"}
           P={"40"}
@@ -8597,7 +8597,7 @@ const   DualDSyllabus = () => {
           dep={"CSE"}
           sem={"10"}
           code={"CS100801"}
-          title={"Research Project/ Internship"}
+          title={"Internship"}
           L={"0"}
           T={"0"}
           P={"40"}
