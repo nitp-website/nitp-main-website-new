@@ -269,6 +269,12 @@ html {
   background-color: #fef2f2;
 }
 
+/* --- Readable font override --- */
+html.a11y-readable-font,
+html.a11y-readable-font * {
+  font-family: Verdana, Arial, Helvetica, sans-serif !important;
+}
+
 /* ========================================
    End Accessibility Widget Styles
    ======================================== */

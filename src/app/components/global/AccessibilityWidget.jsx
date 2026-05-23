@@ -6,14 +6,17 @@ const MAX_SCALE = 1.7;
 const STEP = 0.1;
 const DEFAULT_SCALE = 1;
 const STORAGE_KEY = 'nitp-accessibility-font-scale';
+const READABLE_FONT_KEY = 'nitp-accessibility-readable-font';
+const READABLE_FONT_CLASS = 'a11y-readable-font';
 
 export default function AccessibilityWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [readableFont, setReadableFont] = useState(false);
   const [fontScale, setFontScale] = useState(DEFAULT_SCALE);
   const panelRef = useRef(null);
   const buttonRef = useRef(null);
 
-  // Load saved font scale on mount and apply it
+  // Load saved font scale and readable font on mount and apply them
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -23,6 +26,11 @@ export default function AccessibilityWidget() {
           setFontScale(parsed);
           document.documentElement.style.setProperty('--a11y-font-scale', parsed);
         }
+      }
+      const savedFont = localStorage.getItem(READABLE_FONT_KEY);
+      if (savedFont === 'true') {
+        setReadableFont(true);
+        document.documentElement.classList.add(READABLE_FONT_CLASS);
       }
     } catch {
       // localStorage unavailable
@@ -41,6 +49,24 @@ export default function AccessibilityWidget() {
         // localStorage unavailable
       }
       return clamped;
+    });
+  }, []);
+
+  // Toggle readable font
+  const toggleReadableFont = useCallback(() => {
+    setReadableFont((prev) => {
+      const next = !prev;
+      if (next) {
+        document.documentElement.classList.add(READABLE_FONT_CLASS);
+      } else {
+        document.documentElement.classList.remove(READABLE_FONT_CLASS);
+      }
+      try {
+        localStorage.setItem(READABLE_FONT_KEY, next.toString());
+      } catch {
+        // localStorage unavailable
+      }
+      return next;
     });
   }, []);
 
@@ -216,6 +242,33 @@ export default function AccessibilityWidget() {
                 </svg>
               </button>
             </div>
+          </div>
+
+          {/* Readable Font Section */}
+          <div className="px-3.5 py-3 border-t border-gray-100">
+            <div className="text-[11px] font-semibold text-gray-500 mb-2 uppercase tracking-wider">
+              Readable Font
+            </div>
+            <button
+              id="accessibility-readable-font-toggle"
+              onClick={toggleReadableFont}
+              aria-pressed={readableFont}
+              aria-label="Toggle readable font"
+              title="Toggle readable font (Verdana)"
+              className={`a11y-ctrl-btn w-full h-[34px] rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-all duration-150 ease-in-out ${
+                readableFont
+                  ? 'bg-[#c0392b] text-white cursor-pointer'
+                  : 'bg-white text-gray-700 cursor-pointer'
+              }`}
+            >
+              {/* Font icon */}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="4 7 4 4 20 4 20 7" />
+                <line x1="9.5" y1="20" x2="14.5" y2="20" />
+                <line x1="12" y1="4" x2="12" y2="20" />
+              </svg>
+              {readableFont ? 'On' : 'Off'}
+            </button>
           </div>
         </div>
       )}
