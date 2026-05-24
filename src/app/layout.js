@@ -4,6 +4,7 @@ import Navbar from "./components/global/Navbar";
 import Footer from "./components/global/Footer";
 import Imagefooter from "./components/global/Imagefooter";
 import HiddenBacklinks from "./components/SEO/HiddenBacklinks";
+import AccessibilityWidget from "./components/global/AccessibilityWidget";
 import { Suspense } from "react";
 import Loading from "./Loading";
 import ErrorBoundary from './components/ErrorBoundary';
@@ -16,8 +17,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="font-sans">
+      <body className="font-sans" suppressHydrationWarning>
         <Navbar />
+        <AccessibilityWidget />
         <ErrorBoundary>
           <Suspense fallback={<Loading />}>
             <ProgressBar

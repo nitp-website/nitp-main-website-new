@@ -1,6 +1,6 @@
 import React from "react";
-import Admincard from "../AdminCard";
-import Sidebar from "../components/Sidebar";
+import Admincard from "../AdminCard.js" ;
+import Sidebar from "../components/Sidebar.js";
 import "../style.css";
 
 const Page = () => {

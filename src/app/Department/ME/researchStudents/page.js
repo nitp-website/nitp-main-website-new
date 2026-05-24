@@ -19,10 +19,11 @@ const MEReserchStudentspage = () => {
       setError(null);
 
       const api = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=me`;
-      const { data } = await axios.get(api);
+      const response = await axios.get(api);
+      const facultyArray = Array.isArray(response.data) ? response.data : (response.data.data || []);
 
       const phdCandidates = await Promise.all(
-        data.map(async (faculty) => {
+        facultyArray.map(async (faculty) => {
           const email = faculty.email;
           const facultyApi = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=${email}`;
           const facultyData = await axios.get(facultyApi);

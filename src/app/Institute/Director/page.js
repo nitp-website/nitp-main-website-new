@@ -19,14 +19,14 @@ const page = () => {
               {/* Profile Image with better styling */}
               <div className="relative">
                 <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-red-100 shadow-lg relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-red-800/20 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-red-800/20 z-0 pointer-events-none a11y-overlay"></div>
                   {/* https://i.postimg.cc/6pWBW8Dg/PKJ-Desk-Photo-1.jpg */}
                   <img 
                     src="https://i.postimg.cc/6pWBW8Dg/PKJ-Desk-Photo-1.jpg" 
                     width={224} 
                     height={224} 
                     alt="Prof. Pradip K. Jain" 
-                    className="object-cover w-full h-full" 
+                    className="relative z-10 object-cover w-full h-full" 
                   />
                 </div>
                 <div className="absolute bottom-0 right-0 bg-gradient-to-r from-red-700 to-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
