@@ -13,7 +13,7 @@ const CEConferencePage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://admin.nitp.ac.in/api/conference?type=ce`
+        `https://admin.nitp.ac.in/api/conference?type=ce&page=1&limit=100`
       );
       const data = extractApiArray(await response.json());
 

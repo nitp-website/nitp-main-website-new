@@ -13,7 +13,7 @@ const EEConferencePage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://admin.nitp.ac.in/api/conference?type=ee`
+        `https://admin.nitp.ac.in/api/conference?type=ee&page=1&limit=100`
       );
       const data = extractApiArray(await response.json());
 
