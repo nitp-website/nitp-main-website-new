@@ -11,7 +11,26 @@ const dept = "Humanities";
 
 const about = `With an interdisciplinary perspective at the heart of its approach, the Department of Humanities and Social Sciences at NIT Patna provides intellectual and cultural foundations for the study of human relations with society interaction and teaching towards problem solving of the nation in contemporary contexts. The Department, with its diverse expertise offers students to various courses like communicative english with language lab, social and professional ethics, professional ethics, universal human value, sociology and building economics, industrial economics and financial management, business environment and Indian economy, intellectual property right etc. in the UG programme that aimed at developing essential skills in critical thinking and writing along with the knowledge of literature, society, economic value, and philosophies of the mind and body. The Department offers Doctoral programmes in Economics, English`;
 
-const picture = ["https://i.postimg.cc/fyY06783/nit-patna-005.jpg"];
+const picture = [
+  "https://i.postimg.cc/fLn5y3kt/Convo-2024.jpg",
+  "https://i.postimg.cc/fLn5y3kt/Convo-2024.jpg",
+  "https://i.postimg.cc/v8XLF278/Course-Pics.jpg",
+  "https://i.postimg.cc/Hxz5mjyQ/Dr-A-R-Sinha.jpg",
+  "https://i.postimg.cc/MT9c44CL/Dr-Amjad-Ali.jpg",
+  "https://i.postimg.cc/d0BDkpVY/Dr-Manish-Tiwari.jpg",
+  "https://i.postimg.cc/vBZTWh1s/Dr-Zeeshan-Ali.jpg",
+  "https://i.postimg.cc/5NLz9PL6/Faculty-Development-Programme.jpg",
+  "https://i.postimg.cc/kgytKBjD/FDP.jpg",
+  "https://i.postimg.cc/W4WFYxcb/Ho-D-HSS-Dr-DK-Behera.jpg",
+  "https://i.postimg.cc/50DHbvtT/HSS-Department.jpg",
+  "https://i.postimg.cc/kMt6wj1r/HSS-Faculty-and-Students.jpg",
+  "https://i.postimg.cc/0jgNLstn/HSS-Faculty-Members.jpg",
+  "https://i.postimg.cc/1XpzSj2N/Lab-Pic.jpg",
+  "https://i.postimg.cc/X7kvDt98/Participants-RM-Course.jpg",
+  "https://i.postimg.cc/jSqjVvXJ/Reserach-Scolars-HSS.jpg",
+  "https://i.postimg.cc/90jWLB0Q/Teachers-Day.jpg",
+  "https://i.postimg.cc/jdtxNvBh/Whats-App-Image-2025-02-14-at-12-42-21-dcef1c7b.jpg",
+];
 
 export default function Humanities() {
   const router = useRouter();
