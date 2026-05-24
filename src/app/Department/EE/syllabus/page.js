@@ -13,31 +13,59 @@ const tabs = [
 const syllabusData = {
     ug: [
         {
-            course: "B.Tech Course Structure (2021)",
-            link: "https://drive.google.com/file/d/1A0l-C3vXUjL3qrV6dZutObFlQKiVhOuJ/view",
+            course: "B.Tech Syllabus (2025-26) onwards",
+            link: "https://drive.google.com/file/d/1iFYu-J-MLP9EmCDdgN_gm8fsxAAtBtAP/view?usp=sharing",
+        },     
+         {
+            course: "B.Tech Syllabus (2023-24) onwards",
+            link: "https://drive.google.com/file/d/131yWvyK8E7ZIju7abxcT76D3NfYXHvqR/view",
         },
-        {
-            course: "B.Tech Syllabus (2021)",
-            link: "https://drive.google.com/file/d/1F6i7jfE9LzhGJM7M1SqbDhtDXd8dq9Dj/view?usp=drive_link",
-        },
-        {
-            course: "B.Tech Course Structure (2022)",
-            link: "https://drive.google.com/file/d/198DYWz6y1TK1lEeNX_V9eP01aNamRJtW/view",
-        },
-        {
-            course: "B.Tech Syllabus (2022)",
-            link: "https://drive.google.com/file/d/1FVrOsNGJdN09TRtKnvb9_rALJy8E5Dwz/view",
-        },
-        {
-            course: "B.Tech Course Structure (2023) onwards",
+         {
+            course: "B.Tech Course Structure (2023-24) onwards",
             link: "https://drive.google.com/file/d/1gDzCfUQfjaUqFNP61z3YG-R6H_8K6y89/view",
         },
         {
-            course: "B.Tech Syllabus (2023) onwards",
-            link: "https://drive.google.com/file/d/131yWvyK8E7ZIju7abxcT76D3NfYXHvqR/view",
+            course: "B.Tech Syllabus (2022-23)",
+            link: "https://drive.google.com/file/d/1FVrOsNGJdN09TRtKnvb9_rALJy8E5Dwz/view",
         },
+        {
+            course: "B.Tech Course Structure (2022-23)",
+            link: "https://drive.google.com/file/d/198DYWz6y1TK1lEeNX_V9eP01aNamRJtW/view",
+        },
+        {
+            course: "B.Tech Course Structure (2021-22)",
+            link: "https://drive.google.com/file/d/1A0l-C3vXUjL3qrV6dZutObFlQKiVhOuJ/view",
+        },
+        {
+            course: "B.Tech Syllabus (2021-22)",
+            link: "https://drive.google.com/file/d/1F6i7jfE9LzhGJM7M1SqbDhtDXd8dq9Dj/view?usp=drive_link",
+        },
+        
+        
+       
+       
     ],
     dual: [
+       {
+            course: "Dual Degree (B.Tech + M.Tech (PSE)) Course Structure (2025-26) onwards",
+            link: "https://drive.google.com/file/d/1uKIBYn0OoFAB6GZx__jT5rxDoFbGAR8Y/view?usp=sharing",
+        },
+
+            {
+            course: "Dual Degree (B.Tech + M.Tech (PSE)) Course Structure (2024-25) onwards",
+            link: "https://drive.google.com/file/d/16mlYmjGzGof9NBCbQN4C1fCEcd-_1tjB/view?usp=sharing",
+        },
+        
+        
+            {
+            course: "Dual Degree (B.Tech + M.Tech (PSE)) Course Structure (2023) onwards",
+            link: "https://drive.google.com/file/d/1D-JX5uoJ3Vf7tENlyq0Z3AEQKAAinfBo/view",
+        },
+        {
+            course: "Dual Degree (B.Tech + M.Tech (PSE)) Syllabus (2023) onwards",
+            link: "https://drive.google.com/file/d/1LJHJqsRSC8-V_P3zkAxu6wn5mdyWfu7m/view",
+        },
+        
         {
             course: "Dual Degree (B.Tech + M.Tech (PSE)) Course Structure (2022)",
             link: "https://drive.google.com/file/d/1R24uKKW9fxbtv6TlWzCfgIuqTydIN5ND/view",
@@ -46,14 +74,7 @@ const syllabusData = {
             course: "Dual Degree (B.Tech + M.Tech (PSE)) Syllabus (2022)",
             link: "https://drive.google.com/file/d/1PlIaW0QziCXjOoMyy425vZocUJn9geuO/view",
         },
-        {
-            course: "Dual Degree (B.Tech + M.Tech (PSE)) Course Structure (2023) onwards",
-            link: "https://drive.google.com/file/d/1D-JX5uoJ3Vf7tENlyq0Z3AEQKAAinfBo/view",
-        },
-        {
-            course: "Dual Degree (B.Tech + M.Tech (PSE)) Syllabus (2023) onwards",
-            link: "https://drive.google.com/file/d/1LJHJqsRSC8-V_P3zkAxu6wn5mdyWfu7m/view",
-        },
+    
     ],
     pg: [
         {

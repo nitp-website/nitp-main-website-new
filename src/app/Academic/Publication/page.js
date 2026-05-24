@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import { extractApiArray } from "@/lib/apiHelpers";
 
 const ArticlesList = () => {
   const [publications, setPublications] = useState([]);
@@ -35,7 +36,7 @@ const ArticlesList = () => {
         `https://admin.nitp.ac.in/api/publications?type=all`
       );
       const data = await response.json();
-      setPublications(data);
+      setPublications(extractApiArray(data));
       setError(null);
     } catch (error) {
       setError("Failed to fetch publication data");

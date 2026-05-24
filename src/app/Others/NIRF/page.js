@@ -9,6 +9,11 @@ const Page = () => {
   useEffect(() => {
     setData([
       {
+        para: "NIRF Data 2025-26",
+        engineering: "https://drive.google.com/file/d/1T0IjqDDl-IL15wTFgccgo52I8u9Gl2Lj/view?usp=sharing",
+        overall: "https://drive.google.com/file/d/14yZekWUTF-4-ZPmZKxfVT2jL4Uf2U9hV/view?usp=sharing",
+      },
+      {
         para: "NIRF Data 2024-25",
         engineering: "https://drive.google.com/file/d/1I6IGOqoRD_mch8UiSrSJ6rCTR15Ep39a/view",
         overall: "https://drive.google.com/file/d/1VcIgfFQYdH6iomXdtkjbx1374FaT5OCk/view",

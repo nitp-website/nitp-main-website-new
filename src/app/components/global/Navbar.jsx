@@ -501,7 +501,7 @@ const navItems = [
       },
       {
         label: "Faculty Academic Portal",
-        link: "http://exam.nitp.ac.in",
+        link: "https://mis.nitp.ac.in/",
         iconImage: Portal,
       },
       // {
@@ -567,7 +567,7 @@ const navItems = [
       },
       {
         label: "Fee Payment",
-        link: "https://mis.nitp.ac.in/Student/UGPG/UGPGRegistrationForm.aspx",
+        link: " https://mis.nitp.ac.in/Miscellaneous.aspx",
         iconImage: Fee,
       },
 
@@ -622,11 +622,6 @@ const navItems = [
         label: "Academic Portal (New)",
         link: "https://mis.nitp.ac.in/",
         iconImage: Portal,
-      },
-      {
-        label: "Academic Portal(Old)",
-        link: "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",
-        iconImage: Chankaya,
       },
     ],
   },
@@ -761,7 +756,7 @@ export default function Navbar() {
             </a>
             <span className="text-[0.5rem] md:text-sm">|</span>
             <a
-              href="https://mis.nitp.ac.in/Student/UGPG/UGPGRegistrationForm.aspx"
+              href=" https://mis.nitp.ac.in/Miscellaneous.aspx"
               className="hover:underline text-[0.6rem] md:text-sm"
             >
               Fee Payment
@@ -873,9 +868,9 @@ export default function Navbar() {
               NATIONAL INSTITUTE OF TECHNOLOGY PATNA
             </div>
           </div>
-          <div className="hidden md:flex justify-center items-center">
+          <div className="hidden md:flex justify-center items-center transition-all duration-300 ease-in-out">
             <Link href="/">
-              <Image src={logo} alt="NIT PATNA" height={70} />
+              <Image src={logo} alt="NIT PATNA" height={70}  className="transition-all duration-500 ease-in-out"/>
             </Link>
           </div>
           <div className="institute-info pt-4 hidden text-center items-center justify-center md:block text-black">
@@ -886,8 +881,8 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className={`hidden md:flex mx-auto w-full px-4 py-2 text-sm md:py-1 md:bg-[#811919] backdrop-blur-lg justify-center items-center shadow-lg ${isSticky?"max-w-7xl rounded-2xl ":""} transition-all ease-in-out duration-300`}>
-          <section className="nav-items hidden md:flex">
+        <div className={`hidden md:flex mx-auto w-full px-4 py-2 text-sm transition-all duration-500 ease-in-out md:py-1 md:bg-[#811919] backdrop-blur-lg justify-center items-center shadow-lg transform-gpu ${isSticky ? "max-w-7xl rounded-2xl scale-[0.98]" : "max-w-full rounded-none scale-100"}`}>
+          <section className="nav-items hidden md:flex transition-all duration-500 ease-in-out">
             {navItems.map((item, index) => (
               <NavItem key={index} item={item} />
             ))}

@@ -105,12 +105,14 @@ const AllFaculty = () => {
   });
 
   useEffect(() => {
-    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=all`;
+    // v2 endpoint: returns only card-required fields + 5 count subqueries (much lighter than v1)
+    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/v2/faculty?type=all`;
 
     const fetchData = async () => {
       try {
         const response = await fetch(apiEndpoint);
         const data = await response.json();
+        // v2 already excludes Officers/Other Employees server-side, but keep filter as safety net
         const filteredFaculty = data.filter(
           (item) => !excludedDepartments.includes(item.department)
         );
@@ -118,8 +120,7 @@ const AllFaculty = () => {
           a.name.localeCompare(b.name)
         );
         setFacultyData(sortedData);
-
-  setLoading(false);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching faculty data:", error);
         setLoading(false);

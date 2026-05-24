@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { Megaphone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Info } from 'lucide-react';
+import { extractApiArray } from "@/lib/apiHelpers";
 
 const Movingbar = () => {
   const [importantNotices, setImportantNotices] = useState([]);
@@ -15,8 +16,8 @@ const Movingbar = () => {
       try {
         const noticesUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=active`;
         const noticesResponse = await axios.get(noticesUrl);
-        
-        const allNotices = noticesResponse.data.filter(notice => notice.isVisible === 1 && notice.important);
+        const noticesData = extractApiArray(noticesResponse);
+        const allNotices = noticesData.filter(notice => notice.isVisible === 1 && notice.important);
         setImportantNotices(allNotices);
         console.info("Fetched important notices:", allNotices);
       } catch (e) {

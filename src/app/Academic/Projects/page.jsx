@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Search, Filter, Calendar, User, Building2, DollarSign, Clock, ChevronLeft, ChevronRight, ExternalLink, BookOpen, Loader2, X } from 'lucide-react';
 import axios from 'axios';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { extractApiArray } from '@/lib/apiHelpers';
 
 const ProjectsPage = () => {
   const [projects, setProjects] = useState([]);
@@ -24,8 +25,9 @@ const ProjectsPage = () => {
       try {
         setLoading(true);
         const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=all`);
-        setProjects(response.data);
-        setFilteredProjects(response.data);
+        const projectsData = extractApiArray(response);
+        setProjects(projectsData);
+        setFilteredProjects(projectsData);
       } catch (err) {
         setError(err.message);
         console.error('Error fetching projects:', err);

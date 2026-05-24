@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { extractApiArray } from "@/lib/apiHelpers";
 
 const ECEJournalPage = () => {
   const [publications, setPublications] = useState({});
@@ -12,9 +13,9 @@ const ECEJournalPage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=ece`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/publications?type=ece&page=1&limit=100`
       );
-      const data = await response.json();
+      const data = extractApiArray(await response.json());
 
       const groupedByYear = data.reduce((acc, publication) => {
         if (!publication.publication_year) return acc;

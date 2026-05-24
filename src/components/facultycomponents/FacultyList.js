@@ -16,7 +16,8 @@ const FacultyList = ({ url, branch }) => {
   const [selectedPosition, setSelectedPosition] = useState(""); // ADDED: State for the dropdown
 
   useEffect(() => {
-    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=${branch}`;
+    // v2: returns only card-required fields + 5 count subqueries (much lighter than v1)
+    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/v2/faculty?type=${branch}`;
 
     const fetchData = async () => {
       try {

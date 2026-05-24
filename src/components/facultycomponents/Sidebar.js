@@ -7,86 +7,42 @@ import { IoMdCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 
 import Link from "next/link";
-const Sidebar = ({ Data }) => {
-  const [facultyData, setFacultyData] = useState(Data);
+const Sidebar = ({ summary, Data }) => {
+  // support both new summary prop and legacy Data prop
+  const facultyData = summary || Data || {};
+
+  const counts = facultyData.counts || {};
+
+  // For stat boxes use counts from summary (numbers), fallback to array length for legacy
+  const getCount = (key, arr) => counts[key] !== undefined ? Number(counts[key]) : (arr?.length || 0);
 
   const {
-    phd_candidates,
-    journal_papers,
-    conference_papers,
-    sponsored_projects,
-    consultancy_projects,
-    startups,
-    patents,
     ipr,
     book_chapters,
-  } = facultyData || {};
+  } = facultyData;
   const [qrCode, setQrCode] = useState("");
 
-  // Filter the ipr array
-  const filteredIpr = ipr?.filter((item) => item.grant_date || item.registration_date || item.publication_date) || [];
-
-  // console.log(filteredIpr);
-
-
-  // const ongoingStatuses = [
-  //   "Admission",
-  //   "Comprehension",
-  //   "Presubmission",
-  //   "Thesis Submitted",
-  //   "Ongoing",
-  // ];
-
-  // const ongoingPhdCandidates =
-  //   phd_candidates?.filter((candidate) =>
-  //     ongoingStatuses.includes(candidate.current_status)
-  //   ) || [];
-
-  // console.log(phd_candidates);
-  // console.log(ongoingPhdCandidates);
+  // ipr filter — only available in full data (legacy), use count for summary mode
+  const filteredIprCount = counts.ipr !== undefined
+    ? Number(counts.ipr)
+    : (ipr?.filter(item => item.grant_date || item.registration_date || item.publication_date)?.length || 0);
 
   const dataSections = [
-    {
-      label: "Journal Papers",
-      count: journal_papers?.length,
-      bgColor: "bg-red-500",
-    },
-    {
-      label: "Conference Papers",
-      count: conference_papers?.length,
-      bgColor: "bg-blue-500",
-    },
-    {
-      label: "PhD Candidates",
-      count: phd_candidates?.length,
-      bgColor: "bg-green-500",
-    },
-    {
-      label: "Sponsored Projects",
-      count: sponsored_projects?.length,
-      bgColor: "bg-yellow-500",
-    },
-    {
-      label: "Consultancy Projects",
-      count: consultancy_projects?.length,
-      bgColor: "bg-purple-500",
-    },
-    { label: "Startups", count: startups?.length, bgColor: "bg-pink-500" },
-    {
-      label: "Intellectual Property Rights",
-      count: filteredIpr?.length,
-      bgColor: "bg-orange-500",
-    },
-    {
-      label: "Book Chapters",
-      count: book_chapters?.length,
-      bgColor: "bg-teal-500",
-    },
+    { label: "Journal Papers",       count: getCount('journal_papers'),       bgColor: "bg-red-500" },
+    { label: "Conference Papers",     count: getCount('conference_papers'),     bgColor: "bg-blue-500" },
+    { label: "PhD Candidates",        count: getCount('phd_candidates'),        bgColor: "bg-green-500" },
+    { label: "Sponsored Projects",    count: getCount('sponsored_projects'),    bgColor: "bg-yellow-500" },
+    { label: "Consultancy Projects",  count: getCount('consultancy_projects'),  bgColor: "bg-purple-500" },
+    { label: "Startups",              count: getCount('startups'),              bgColor: "bg-pink-500" },
+    { label: "Intellectual Property Rights", count: filteredIprCount,           bgColor: "bg-orange-500" },
+    { label: "Book Chapters",         count: getCount('book_chapters'),         bgColor: "bg-teal-500" },
   ]
-    .filter((section) => section.count > 0)
+    .filter(s => s.count > 0)
     .slice(0, 4);
 
   const [profile, setProfile] = useState(facultyData.profile);
+  const [aboutMeData, setAboutMeData] = useState(facultyData.about_me);
+  const [error, setError] = useState(null);
 
   const {
     name,
@@ -105,18 +61,11 @@ const Sidebar = ({ Data }) => {
     academic_responsibility,
   } = profile || {};
 
-  const [aboutMeData, setAboutMeData] = useState(Data.about_me);
-  const [error, setError] = useState(null);
-
   useEffect(() => {
     if (cv) {
       QRCode.toDataURL(cv).then(setQrCode).catch(setError);
     }
   }, [cv]);
-  // console.log(profile);
-
-  // console.log(aboutMeData[0]);
-  const [loading, setLoading] = useState(true);
 
   return (
     <div className="h-fit w-full flex-col shadow-lg text-black rounded-md">

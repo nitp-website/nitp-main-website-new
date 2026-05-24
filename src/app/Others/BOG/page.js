@@ -2,6 +2,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../components/Home/styles/Details.css";
+import { extractApiArray } from "@/lib/apiHelpers";
 
 const Noticecard = ({ detail, time, attachments, imp, link }) => (
   <div className={`notice ${imp ? "important" : ""}`}>
@@ -39,7 +40,7 @@ const Page = () => {
       try {
         const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=bogminutes`;
         const response = await axios.get(academicsUrl);
-        setAcademics(response.data.filter((notice) => notice.isVisible === 1));
+        setAcademics(extractApiArray(response).filter((notice) => notice.isVisible === 1));
         setIsLoading(false);
       } catch (e) {
         console.error("Error fetching notices:", e);

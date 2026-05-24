@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../components/Home/styles/Details.css";
 import { Calendar, MapPin, Download, ExternalLink } from 'lucide-react';
+import { extractApiArray } from "@/lib/apiHelpers";
 
 const Eventcard = ({
   detail,
@@ -101,9 +102,10 @@ const Page = () => {
       try {
         const eventsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/events?type=active`;
         const response = await axios.get(eventsUrl);
+        const eventsData = extractApiArray(response);
         
         // Sort events by updatedAt timestamp in descending order (most recent first)
-        const sortedEvents = response.data.sort((a, b) => {
+        const sortedEvents = eventsData.sort((a, b) => {
           const dateA = new Date(parseInt(a.updatedAt));
           const dateB = new Date(parseInt(b.updatedAt));
           

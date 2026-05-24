@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FiDownload } from 'react-icons/fi';
 import { Calendar, MapPin, Download, ExternalLink, Star } from 'lucide-react';
+import { extractApiArray } from "@/lib/apiHelpers";
 
 
 // FormatDate component
@@ -226,11 +227,11 @@ const Details = () => {
         const eventsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/events?type=active`;
         // console.log(eventsUrl);
         const response = await axios.get(eventsUrl);
+        const eventsData = extractApiArray(response);
         // Filter the events to include only those with type "general"
-        const filteredEvents = response.data.filter(
+        const filteredEvents = eventsData.filter(
           (event) => event.type === "general"
         );
-        // console.log(filteredEvents);
         setEvents(filteredEvents);
       } catch (e) {
         console.error("Error fetching events:", e);
@@ -241,7 +242,8 @@ const Details = () => {
       try {
         const noticesUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=active`;
         const response = await axios.get(noticesUrl);
-        const sortedNotices = response.data
+        const noticesData = extractApiArray(response);
+        const sortedNotices = noticesData
           .filter((notice) => notice.isVisible === 1)
           .sort((a, b) => b.important - a.important);
         let data = sortedNotices.slice(0, 21);
@@ -257,7 +259,8 @@ const Details = () => {
       try {
         const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=academics`;
         const response = await axios.get(academicsUrl);
-        const sortedAcademics = response.data
+        const academicsData = extractApiArray(response);
+        const sortedAcademics = academicsData
           .filter((notice) => notice.isVisible === 1)
           .sort((a, b) => b.important - a.important);
         let data = sortedAcademics.slice(0, 21);

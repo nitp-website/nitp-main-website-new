@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { extractApiArray } from "@/lib/apiHelpers";
 
 
 
@@ -18,8 +19,9 @@ export default function Humanities() {
   useEffect(()=>{
     const getData = async()=>{
       const response =await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=mse`);
-      console.log(response.data);
-      setNotices(response.data);
+      const noticesData = extractApiArray(response);
+      console.log(noticesData);
+      setNotices(noticesData);
     }
     getData();
   },[])

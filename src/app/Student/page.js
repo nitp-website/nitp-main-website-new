@@ -17,7 +17,7 @@ const studentResources = [
     {
         "title": "Fee Payment",
         "image": "https://i.postimg.cc/YGtgz1cd/payment64.png", 
-        "link": "https://mis.nitp.ac.in/Student/UGPG/UGPGRegistrationForm.aspx",
+        "link": " https://mis.nitp.ac.in/Miscellaneous.aspx",
     },
     {
         "title": "Clubs/Socities",

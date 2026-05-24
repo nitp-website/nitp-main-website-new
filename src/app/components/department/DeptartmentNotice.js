@@ -2,6 +2,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import DepartmentNotify1 from "./DepartmentNotify1.js";
+import { extractApiArray } from "@/lib/apiHelpers";
 // import { Button } from "@/components/ui/button";
 
 const DepartmentNotice = ({ dept }) => {
@@ -12,7 +13,7 @@ const DepartmentNotice = ({ dept }) => {
       const response = await axios.get(
         `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=${dept.toLowerCase()}`
       );
-      setNotices(response.data);
+      setNotices(extractApiArray(response));
     };
     getData();
   }, [dept]);

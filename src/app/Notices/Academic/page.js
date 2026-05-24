@@ -2,6 +2,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FiDownload, FiStar } from 'react-icons/fi';
+import { extractApiArray } from "@/lib/apiHelpers";
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -103,7 +104,7 @@ const Page = () => {
       try {
         const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=academics`;
         const response = await axios.get(academicsUrl);
-        setAcademics(response.data.filter((notice) => notice.isVisible === 1));
+        setAcademics(extractApiArray(response).filter((notice) => notice.isVisible === 1));
         setIsLoading(false);
       } catch (e) {
         console.error("Error fetching academic notices:", e);

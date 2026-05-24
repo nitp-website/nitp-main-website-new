@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { extractApiArray } from "@/lib/apiHelpers";
 import "../../components/Home/styles/Details.css";
 import { FileText, Download, Calendar } from 'lucide-react';
 
@@ -73,9 +74,9 @@ const Page = () => {
       try {
         const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=tender`;
         const response = await axios.get(academicsUrl);
-        // setTender(response.data.filter((notice) => notice.isVisible === 1));
+        const tenderData = extractApiArray(response);
         setTender(
-          response.data.filter((notice) => notice.notice_type === "tender")
+          tenderData.filter((notice) => notice.notice_type === "tender")
         );
         setIsLoading(false);
       } catch (e) {
