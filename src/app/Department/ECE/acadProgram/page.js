@@ -53,11 +53,12 @@ const programs = [
         {
           time: "2022 Onwards",
           courseStructure:
-            "https://drive.google.com/file/d/1r-xF8iLcWuJ-OY3XdKTLabMRe3MOpdrP/view?usp=sharing",
+            "https://drive.google.com/file/d/1dRXVrtFZF0DDqiWKQKMWrL6rpGaSK5H7/view?usp=sharing",
         },
         {
           time: "2025 Onwards",
-          courseStructure: "https://drive.google.com/file/d/1BB4reF5B838gSH0SiWugTmRo7XvbyijI/view?usp=sharing"
+          courseStructure: 
+            "https://drive.google.com/file/d/1YR9LVVXEwXMKfk47YJOMIx5xvqxhco95/view?usp=sharing"
         }
       ]
   },
