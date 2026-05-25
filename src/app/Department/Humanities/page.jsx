@@ -28,8 +28,8 @@ const picture = [
   "https://i.postimg.cc/1XpzSj2N/Lab-Pic.jpg",
   "https://i.postimg.cc/X7kvDt98/Participants-RM-Course.jpg",
   "https://i.postimg.cc/jSqjVvXJ/Reserach-Scolars-HSS.jpg",
-  "https://i.postimg.cc/90jWLB0Q/Teachers-Day.jpg",
   "https://i.postimg.cc/jdtxNvBh/Whats-App-Image-2025-02-14-at-12-42-21-dcef1c7b.jpg",
+  "https://i.postimg.cc/90jWLB0Q/Teachers-Day.jpg"
 ];
 
 export default function Humanities() {
