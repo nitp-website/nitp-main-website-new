@@ -550,7 +550,7 @@ const ServiceUNIT = [
 {
   name: "Dr. J. P. Singh",
   type: "Associate Professor",
-  designation: "Coordinator Bihta Campus; PI-MIS"
+  designation: "PI-MIS"
 },
 {
   name: "Dr. Gayadhar Pradhan",
