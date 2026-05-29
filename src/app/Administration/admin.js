@@ -553,11 +553,6 @@ const ServiceUNIT = [
   designation: "PI-MIS"
 },
 {
-  name: "Dr. Gayadhar Pradhan",
-  type: "Associate Professor",
-  designation: "Co-Coordinator-Bihta Campus"
-},
-{
   name: "Dr. Vimlesh Verma",
   type: "Associate Professor",
   designation: " PI – Electrical Maintenance Unit (EMU)"
