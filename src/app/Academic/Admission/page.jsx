@@ -128,56 +128,12 @@ const admissionData = {
       //   href:"https://drive.google.com/file/d/1VpDmpYqowP6kqoP1ZVyGd0gBwSqiJ9PO/view?usp=sharing"
       // },
 
+      
       {
-        title: "Physical Verification of Documents for PhD Admissions (January–June 2026 Semester)",
-        date: "2026-01-09",
+        title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2026-27 (Odd Semester: July–Dec 2026). Last date: 20th July 2026",
+        date: "2026-06-03",
         content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1sWvgbFCfJVRuqjrUovKGMcP_kXRlm_j1/view?usp=sharing"
-      },
-      {
-        title: "Annexure for PhD Admission",
-        date: "2026-01-09",
-        content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1v6MjrIq0Io0pDHDyuBHHcVp1tk8raWTp/view?usp=sharing"
-      },
-
-
-      {
-        title: "Provisionally Selected for PhD Programme (January–June 2026)",
-        date: "2026-01-07",
-        content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1tJ_UyxVt01n-rZFWnQDaFFUz3LjWGRah/view?usp=sharing"
-      },
-      {
-        title: "Interview Notice for eligible candidates after written test for PhD admission(Jan-June'2026)",
-        date: "2026-01-05",
-        content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1WMsfIVytaz1RbSi8QSwmI_3ax64GvaSX/view?usp=sharing"
-      },
-      {
-        title: "Notice with the List of Eligible candidates for Written Test for PhD Admission Test for Jan-June'2026",
-        date: "2025-12-31",
-        content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1tYn2c5qeRFkMc0q-lKApWaXFZoFvQ42i/view?usp=sharing"
-      },
-
-      {
-        title: "Corrigendum for Ph.D. Admission – December 2025",
-        date: "2025-12-08",
-        content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1mfqkQHcFoqQ7YxUceCsWt2ToSFeKszJ6/view?usp=sharing"
-      },
-      {
-        title: "Google Form link for refund as per the above corrigendum dated 8th Dec 2025. ",
-        date: "2025-12-08",
-        content: "PhD Admission",
-        href: "https://forms.gle/RNPJ1sgieMcaVRag6"
-      },
-      {
-        title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2025-26 (Even Semester: Jan–June 2026). Last date: 30th December 2025",
-        date: "2025-11-21",
-        content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1LF_8jQygx-Xp4xFP51m0KCYDfHmNlMW8/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1YX-EYmuH241Nae5Rx2hOPEMactJJsxzQ/view?usp=sharing"
       }
       //     {
       //   title: "SOP for PhD admission Academic Year 2025-26.",
