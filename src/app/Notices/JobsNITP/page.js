@@ -2,14 +2,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../components/Home/styles/Details.css";
-import {
-  Briefcase,
-  Calendar,
-  Download,
-  ExternalLink,
-  Star,
-} from "lucide-react";
-import { extractApiArray } from "@/lib/apiHelpers";
+import { Briefcase, Calendar, Download, ExternalLink, Star } from 'lucide-react';
 
 const Noticecard = ({ detail, time, attachments, imp, link }) => (
   <div className="notice bg-white rounded-lg p-4 mb-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
@@ -25,17 +18,13 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
 
         <div className="flex items-center gap-2 my-3 text-gray-500 text-sm">
           <Calendar className="w-4 h-4" />
-          <span>
-            {(() => {
-              if (!time) return "Invalid Date";
-              const timestamp = typeof time === "string" ? parseInt(time) : time;
-              if (isNaN(timestamp)) return "Invalid Date";
-              const date = new Date(timestamp);
-              return isNaN(date.getTime())
-                ? "Invalid Date"
-                : date.toLocaleDateString();
-            })()}
-          </span>
+          <span>{(() => {
+            if (!time) return "Invalid Date";
+            const timestamp = typeof time === 'string' ? parseInt(time) : time;
+            if (isNaN(timestamp)) return "Invalid Date";
+            const date = new Date(timestamp);
+            return isNaN(date.getTime()) ? "Invalid Date" : date.toLocaleDateString();
+          })()}</span>
         </div>
 
         <div className="space-y-2">
@@ -74,38 +63,31 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
 );
 
 const Page = () => {
-  const [jobs, setJobs] = useState([]);
+  const [jobsDict, setJobsDict] = useState({});
+  const [subTypes, setSubTypes] = useState([]);
+  const [activeFilter, setActiveFilter] = useState("All");
   const [isLoading, setIsLoading] = useState(true);
   const [fetchError, setFetchError] = useState(false);
-
-  // ✅ Pagination states
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const limit = 10;
 
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        setIsLoading(true);
-
-        const jobsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=facultystaffjob&page=${currentPage}&limit=${limit}`;
-
+        const jobsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=all`;
         const response = await axios.get(jobsUrl);
-        const jobsData = extractApiArray(response);
+        const visibleJobs = response.data.filter((notice) => notice.isVisible === 1);
 
-        const filtered = jobsData.filter(
-          (notice) => notice.isVisible === 1
-        );
+        // Build dictionary grouped by notice_sub_type
+        const dict = {};
+        visibleJobs.forEach((job) => {
+          const key = job.notice_sub_type || "Others";
+          if (!dict[key]) {
+            dict[key] = [];
+          }
+          dict[key].push(job);
+        });
 
-        setJobs(filtered);
-
-        // ⚠️ If backend gives total count, use it
-        if (response.data?.total) {
-          setTotalPages(Math.ceil(response.data.total / limit));
-        } else {
-          setTotalPages(10); // fallback (adjust if needed)
-        }
-
+        setJobsDict(dict);
+        setSubTypes(Object.keys(dict).sort());
         setIsLoading(false);
       } catch (e) {
         console.error("Error fetching Jobs notices:", e);
@@ -115,12 +97,71 @@ const Page = () => {
     };
 
     fetchJobs();
-  }, [currentPage]);
+  }, []);
 
-  // ✅ scroll to top on page change
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [currentPage]);
+  // Get the jobs to display based on active filter
+  const displayedJobs =
+    activeFilter === "All"
+      ? Object.values(jobsDict).flat()
+      : jobsDict[activeFilter] || [];
+
+  // Format sub_type label for display (e.g. "rEGULARTEACHING" → "Regular Teaching")
+  const formatLabel = (key) => {
+    return key
+      .toLowerCase()
+      .replace(/_/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+  };
+
+  const LoadingSpinner = () => (
+    <div className="flex justify-center items-center">
+      <svg version="1.1" id="L1" height="150px" width="150px" x="0px" y="0px" viewBox="0 0 100 100" enableBackground="new 0 0 100 100">
+        <circle fill="none" stroke="#f87171" strokeWidth="6" strokeMiterlimit="15" strokeDasharray="14.2472,14.2472" cx="50" cy="50" r="47">
+          <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="5s" from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+        </circle>
+        <circle fill="none" stroke="#f87171" strokeWidth="1" strokeMiterlimit="10" strokeDasharray="10,10" cx="50" cy="50" r="39">
+          <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="5s" from="0 50 50" to="-360 50 50" repeatCount="indefinite" />
+        </circle>
+        <g fill="#f87171">
+          <rect x="30" y="35" width="5" height="30"><animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.1" /></rect>
+          <rect x="40" y="35" width="5" height="30"><animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.2" /></rect>
+          <rect x="50" y="35" width="5" height="30"><animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.3" /></rect>
+          <rect x="60" y="35" width="5" height="30"><animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.4" /></rect>
+          <rect x="70" y="35" width="5" height="30"><animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.5" /></rect>
+        </g>
+      </svg>
+    </div>
+  );
+
+  const ErrorIcon = () => (
+    <div className="flex justify-center items-center">
+      <div className="text-center">
+        <svg width="120px" className="mx-auto" height="120px" viewBox="0 0 16.00 16.00" fill="#e85e5e" stroke="#e85e5e" strokeWidth="0.00016">
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.128"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path d="m 3 0 c -1.660156 0 -3 1.339844 -3 3 v 7 c 0 1.660156 1.339844 3 3 3 h 10 c 1.660156 0 3 -1.339844 3 -3 v -7 c 0 -1.660156 -1.339844 -3 -3 -3 z m 0 2 h 10 c 0.554688 0 1 0.445312 1 1 v 7 c 0 0.554688 -0.445312 1 -1 1 h -10 c -0.554688 0 -1 -0.445312 -1 -1 v -7 c 0 -0.554688 0.445312 -1 1 -1 z m 3 2 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m 4 0 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -2 3 c -1.429688 0 -2.75 0.761719 -3.464844 2 c -0.136718 0.238281 -0.054687 0.546875 0.183594 0.683594 c 0.238281 0.136718 0.546875 0.054687 0.683594 -0.183594 c 0.535156 -0.929688 1.523437 -1.5 2.597656 -1.5 s 2.0625 0.570312 2.597656 1.5 c 0.136719 0.238281 0.445313 0.320312 0.683594 0.183594 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.714844 -1.238281 -2.035156 -2 -3.464844 -2 z m -3 7 c -1.105469 0 -2 0.894531 -2 2 h 10 c 0 -1.105469 -0.894531 -2 -2 -2 z m 0 0" fill="#e85e5e"></path>
+          </g>
+        </svg>
+        <p className="text-red-500 mt-4">Sorry, failed to fetch the latest job notices.</p>
+      </div>
+    </div>
+  );
+
+  const EmptyIcon = ({ message }) => (
+    <div className="flex justify-center items-center">
+      <div className="text-center">
+        <svg width="120px" className="mx-auto" height="120px" viewBox="0 0 16.00 16.00" fill="#e85e5e" stroke="#e85e5e" strokeWidth="0.00016">
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.128"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path d="m 3 0 c -1.660156 0 -3 1.339844 -3 3 v 7 c 0 1.660156 1.339844 3 3 3 h 10 c 1.660156 0 3 -1.339844 3 -3 v -7 c 0 -1.660156 -1.339844 -3 -3 -3 z m 0 2 h 10 c 0.554688 0 1 0.445312 1 1 v 7 c 0 0.554688 -0.445312 1 -1 1 h -10 c -0.554688 0 -1 -0.445312 -1 -1 v -7 c 0 -0.554688 0.445312 -1 1 -1 z m 3 2 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m 4 0 c -0.550781 0 -1 0.449219 -1 1 s 0.449219 1 1 1 s 1 -0.449219 1 -1 s -0.449219 -1 -1 -1 z m -2 3 c -1.429688 0 -2.75 0.761719 -3.464844 2 c -0.136718 0.238281 -0.054687 0.546875 0.183594 0.683594 c 0.238281 0.136718 0.546875 0.054687 0.683594 -0.183594 c 0.535156 -0.929688 1.523437 -1.5 2.597656 -1.5 s 2.0625 0.570312 2.597656 1.5 c 0.136719 0.238281 0.445313 0.320312 0.683594 0.183594 c 0.238281 -0.136719 0.320312 -0.445313 0.183594 -0.683594 c -0.714844 -1.238281 -2.035156 -2 -3.464844 -2 z m -3 7 c -1.105469 0 -2 0.894531 -2 2 h 10 c 0 -1.105469 -0.894531 -2 -2 -2 z m 0 0" fill="#e85e5e"></path>
+          </g>
+        </svg>
+        <p className="text-red-500 mt-4">{message}</p>
+      </div>
+    </div>
+  );
 
   return (
     <div className="bg-white bg-opacity-50">
@@ -130,29 +171,61 @@ const Page = () => {
         </div>
 
         {isLoading ? (
-          <div className="flex justify-center items-center">Loading...</div>
+          <LoadingSpinner />
         ) : fetchError ? (
-          <div className="text-center text-red-500">
-            Failed to fetch job notices.
-          </div>
+          <ErrorIcon />
         ) : (
-          <>
-            <div className="section-content">
-              {jobs.length === 0 ? (
-                <div className="text-center text-red-500">
-                  No job notices available.
-                </div>
+          <div className="flex flex-col md:flex-row gap-6">
+
+            {/* Sidebar */}
+            <div className="md:w-56 flex-shrink-0">
+              <h3 className="text-red-800 font-semibold text-sm mb-3 uppercase tracking-wide">
+                Filter by Type
+              </h3>
+              <div className="flex flex-col gap-1">
+                {/* All button */}
+                <button
+                  onClick={() => setActiveFilter("All")}
+                  className={`text-left px-4 py-2 rounded text-sm font-medium transition-colors ${
+                    activeFilter === "All"
+                      ? "bg-red-800 text-white"
+                      : "text-gray-700 hover:bg-red-50 hover:text-red-800"
+                  }`}
+                >
+                  All
+                </button>
+
+                {/* Dynamic sub-type buttons */}
+                {subTypes.map((type) => (
+                  <button
+                    key={type}
+                    onClick={() => setActiveFilter(type)}
+                    className={`text-left px-4 py-2 rounded text-sm font-medium transition-colors ${
+                      activeFilter === type
+                        ? "bg-red-800 text-white"
+                        : "text-gray-700 hover:bg-red-50 hover:text-red-800"
+                    }`}
+                  >
+                    {formatLabel(type)}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Job Notices */}
+            <div className="flex-1 section-content">
+              {displayedJobs.length === 0 ? (
+                <EmptyIcon message="No job notices available at this time." />
               ) : (
-                jobs.map((notice) => (
+                displayedJobs.map((notice) => (
                   <Noticecard
-                    key={notice.id}
                     detail={notice.title}
                     time={notice.timestamp}
+                    key={notice.id}
                     attachments={notice.attachments}
                     imp={notice.important}
                     link={
-                      notice.notice_link &&
-                      JSON.parse(notice.notice_link).url
+                      notice.notice_link && JSON.parse(notice.notice_link).url
                         ? JSON.parse(notice.notice_link).url
                         : ""
                     }
@@ -161,46 +234,7 @@ const Page = () => {
               )}
             </div>
 
-            {/* ✅ Pagination UI */}
-            <div className="flex justify-center items-center gap-2 mt-6 flex-wrap">
-              <button
-                onClick={() =>
-                  setCurrentPage((prev) => Math.max(prev - 1, 1))
-                }
-                disabled={currentPage === 1}
-                className="px-3 py-1 border rounded disabled:opacity-50"
-              >
-                Prev
-              </button>
-
-              {[...Array(totalPages)].map((_, index) => {
-                const page = index + 1;
-                return (
-                  <button
-                    key={page}
-                    onClick={() => setCurrentPage(page)}
-                    className={`px-3 py-1 border rounded ${
-                      currentPage === page ? "bg-red-800 text-white" : ""
-                    }`}
-                  >
-                    {page}
-                  </button>
-                );
-              })}
-
-              <button
-                onClick={() =>
-                  setCurrentPage((prev) =>
-                    Math.min(prev + 1, totalPages)
-                  )
-                }
-                disabled={currentPage === totalPages}
-                className="px-3 py-1 border rounded disabled:opacity-50"
-              >
-                Next
-              </button>
-            </div>
-          </>
+          </div>
         )}
       </div>
     </div>
