@@ -129,12 +129,13 @@ const admissionData = {
       // },
 
       
-      {
-        title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2026-27 (Odd Semester: July–Dec 2026). Last date: 20th July 2026",
-        date: "2026-06-03",
-        content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1YX-EYmuH241Nae5Rx2hOPEMactJJsxzQ/view?usp=sharing"
-      }
+      // {
+      //   title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2026-27 (Odd Semester: July–Dec 2026). Last date: 20th July 2026",
+      //   date: "2026-06-03",
+      //   content: "PhD Admission",
+      //   href: "https://drive.google.com/file/d/1YX-EYmuH241Nae5Rx2hOPEMactJJsxzQ/view?usp=sharing"
+      // }
+      
       //     {
       //   title: "SOP for PhD admission Academic Year 2025-26.",
       //   date: "2025-06-10",
