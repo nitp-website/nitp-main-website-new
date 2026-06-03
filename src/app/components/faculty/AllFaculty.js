@@ -190,6 +190,8 @@ const AllFaculty = () => {
               projects={faculty.sponsored_projects_count}
               research_students={faculty.phd_candidates_count}
               profileLink={`/profile/${faculty.email}`}
+              is_retired={faculty.is_retired}
+              gender={faculty.gender}
             />
           ))}
         </div>
