@@ -74,7 +74,8 @@ const Page = () => {
       try {
         const jobsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=all`;
         const response = await axios.get(jobsUrl);
-        const visibleJobs = response.data.filter((notice) => notice.isVisible === 1);
+        const visibleJobs = (Array.isArray(response.data) ? response.data : response.data.data || [])
+  .filter((notice) => notice.isVisible === 1);
 
         // Build dictionary grouped by notice_sub_type
         const dict = {};
