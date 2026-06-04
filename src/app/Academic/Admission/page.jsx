@@ -127,14 +127,13 @@ const admissionData = {
          date: "2026-06-04",
        content: "PhD Admission",
         href: "https://drive.google.com/file/d/1YX-EYmuH241Nae5Rx2hOPEMactJJsxzQ/view?usp=sharing"
-       }
-      
-           {
+       },
+      {
        title: "SOP for PhD admission Academic Year 2026-27(July-Dec).",
        date: "2026-06-04",
        content: "PhD Admission",
        href:"https://drive.google.com/file/d/1_6KDnWDRffj5Ywf04hETmtc5OG9_CAM2/view?usp=sharing"
-       }
+      }
     ]
   },
 
