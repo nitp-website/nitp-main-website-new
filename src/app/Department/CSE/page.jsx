@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
+import { getBackendApiUrl } from "@/lib/apiHelpers";
 
 const dept = "CSE";
 
@@ -22,7 +23,7 @@ export default function CSE() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=cse`);
+        const countsResponse = await axios.get(getBackendApiUrl("/api/count?type=cse"));
         // console.log("Counts Response:", countsResponse.data);
         setData(countsResponse.data);
       } catch (error) {
