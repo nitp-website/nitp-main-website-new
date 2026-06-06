@@ -9,7 +9,7 @@ import {
   getBackendApiUrl,
 } from "@/lib/apiHelpers";
 
-const PAGE_LIMIT = 10;
+const PAGE_LIMIT = 50;
 
 const getDate = (dateStr, useUtc = false) => {
   if (!dateStr) return "";
