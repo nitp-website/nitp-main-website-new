@@ -82,6 +82,7 @@ const DesktopClubSidebar = ({ navLinks, club }) => {
           <img
             src={ club?.logo || Clubs?.src}
             alt={club?.name || "Club Logo"}
+            loading="lazy"
             className="h-20 w-20 rounded-full object-cover"
           />
 
