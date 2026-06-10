@@ -190,29 +190,29 @@ const admissionData = {
       },
     ],
     notices: [
+      // {
+      //   title: "Admission link is live (18/08/2025; 3 PM to 23/08/2025) for those who have confirmed their seat during JoSAA-2025 counselling and have not participated in CSAB special Round. Same Admission link will be used for those who have participated in CSAB special round and confirmed their seat during CSAB special round from live from 20/08/2025 to 23/08/2025.",
+      //   date: "2025-08-18",
+      //   content: " UG Admission",
+      //   href: ""
+      // },
+      // {
+      //   title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students.",
+      //   date: "2025-08-02",
+      //   content: " UG Admission",
+      //   href: "https://drive.google.com/file/d/1wUoxMAfqSBmz1-E7j8QvFK_Ywgcb-JoC/view?usp=sharing"
+      // },
+      // {
+      //   title: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2025-26 at NIT Patna.",
+      //   date: "2025-06-30",
+      //   content: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2025-26 at NIT Patna.",
+      //   href: "https://drive.google.com/file/d/1cPyNk71PmxjLQ1qkgHCuLDv1EvyhYWi5/view?usp=sharing"
+      // },
       {
-        title: "Admission link is live (18/08/2025; 3 PM to 23/08/2025) for those who have confirmed their seat during JoSAA-2025 counselling and have not participated in CSAB special Round. Same Admission link will be used for those who have participated in CSAB special round and confirmed their seat during CSAB special round from live from 20/08/2025 to 23/08/2025.",
-        date: "2025-08-18",
-        content: " UG Admission",
-        href: ""
-      },
-      {
-        title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students.",
-        date: "2025-08-02",
-        content: " UG Admission",
-        href: "https://drive.google.com/file/d/1wUoxMAfqSBmz1-E7j8QvFK_Ywgcb-JoC/view?usp=sharing"
-      },
-      {
-        title: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2025-26 at NIT Patna.",
-        date: "2025-06-30",
-        content: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2025-26 at NIT Patna.",
-        href: "https://drive.google.com/file/d/1cPyNk71PmxjLQ1qkgHCuLDv1EvyhYWi5/view?usp=sharing"
-      },
-      {
-        title: "Schedule for the Admission through Study in India(SII) at NIT Patna for the Academic Year 2025-26",
-        date: "2025-05-08",
-        content: "Schedule for the Admission of the Academic Year 2025-26",
-        href: "https://drive.google.com/file/d/12zbdMzfMwcjLybK3PNZV6R8Zyi6tfAJb/view"
+        title: "Schedule for the Admission through Study in India (SII) at NIT Patna for the Academic Year 2026-27",
+        date: "2026-06-10",
+        content: "Schedule for the Admission of the Academic Year 2026-27",
+        href: "https://drive.google.com/file/d/1OoYi_YjQFKxP7Fw7AgZ3LsVwIC2FbIJh/view?usp=drive_link"
       }
     ]
   },
