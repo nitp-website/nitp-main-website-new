@@ -176,18 +176,18 @@ const admissionData = {
 
   study_in_india: {
     portals: [
-      {
-        name: "SOP and Admission Form link for the Academic Year 2025 admissions",
-        image: "https://mis.nitp.ac.in/admission/images/Header.jpg",
-        link: "https://mis.nitp.ac.in/admission/Default.aspx",
-        sopLink: "https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
-      },
-      {
-        name: "Study in India",
-        image: "https://studyinindia.gov.in/Content/images/logo_SII_new_2023_darkGlobe1.webp",
-        link: "https://studyinindia.gov.in/",
-        // description: "Study in India"
-      },
+      // {
+      //   name: "SOP and Admission Form link for the Academic Year 2025 admissions",
+      //   image: "https://mis.nitp.ac.in/admission/images/Header.jpg",
+      //   link: "https://mis.nitp.ac.in/admission/Default.aspx",
+      //   sopLink: "https://drive.google.com/file/d/1pmD3CpyFUdmyhIEmr3YtdSqgakAUl6jA/view"
+      // },
+      // {
+      //   name: "Study in India",
+      //   image: "https://studyinindia.gov.in/Content/images/logo_SII_new_2023_darkGlobe1.webp",
+      //   link: "https://studyinindia.gov.in/",
+      //   // description: "Study in India"
+      // },
     ],
     notices: [
       // {
