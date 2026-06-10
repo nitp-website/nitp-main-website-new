@@ -22,7 +22,7 @@ const ECEReserchStudentspage = () => {
       const { data } = await axios.get(api);
 
       const phdCandidates = await Promise.all(
-        data.map(async (faculty) => {
+        data.data.map(async (faculty) => {
           const email = faculty.email;
           const facultyApi = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=${email}`;
           const facultyData = await axios.get(facultyApi);
