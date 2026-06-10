@@ -27,13 +27,13 @@ const admissionData = {
         name: "JoSAA",
         image: "https://cdnbbsr.s3waas.gov.in/s313111c20aee51aeb480ecbd988cd8cc9/uploads/2022/09/2022091261.png",
         link: "https://josaa.nic.in",
-        description: "Joint Seat Allocation Authority for IITs, NITs, IIITs, and Other GFTIs"
+        description: "Visit the portal for the Information Brochure, Schedule, Opening and Closing Ranks, Seat Matrix, and other relevant details."
       },
       {
         name: "DASA",
         image: "https://dasanit.org/dasa2025/images/dasa_new.png",
         link: "https://www.dasanit.org",
-        description: "Direct Admission of Students Abroad for NRIs and International Students"
+        description: "Visit the portal for the Information Brochure, Schedule, Opening and Closing Ranks, Seat Matrix, and other relevant details."
       },
     ],
     notices: [
@@ -80,7 +80,7 @@ const admissionData = {
         name: "CCMT",
         image: "https://cdnbbsr.s3waas.gov.in/s301894d6f048493d2cacde3c579c315a3/uploads/2022/02/2022022590.png",
         link: "https://ccmt.admissions.nic.in",
-        description: "Centralized Counselling for M.Tech/M.Arch/M.Plan Admissions"
+        description: "Visit the portal for the Information Brochure, Schedule, Opening and Closing Ranks, Seat Matrix, and other relevant details."
       },
     ],
     notices: [
@@ -110,8 +110,8 @@ const admissionData = {
       {
         name: "PhD Admissions NITP Portal",
         image: "https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
-        link: "https://mis.nitp.ac.in/Admission/Default.aspx ",
-        //   sopLink:"https://drive.google.com/file/d/1n3zmrKoDoDEcxAAKWA0kZIONNJmdoxtU/view?usp=sharing"
+        link: "https://mis.nitp.ac.in/AdmissionPHD/Default.aspx ",
+         sopLink:"https://drive.google.com/file/d/1_6KDnWDRffj5Ywf04hETmtc5OG9_CAM2/view?usp=sharing"
       },
       // {
       //   name: "PhD Admissions NITP Portal",
@@ -121,27 +121,19 @@ const admissionData = {
       // },
     ],
     notices: [
-      //  {
-      //   title: "Physical reporting notice for admission to PhD ( July_Dec'2025)",
-      //   date: "2025-07-24",
-      //   content: "PhD Admission",
-      //   href:"https://drive.google.com/file/d/1VpDmpYqowP6kqoP1ZVyGd0gBwSqiJ9PO/view?usp=sharing"
-      // },
-
       
-      // {
-      //   title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2026-27 (Odd Semester: July–Dec 2026). Last date: 20th July 2026",
-      //   date: "2026-06-03",
-      //   content: "PhD Admission",
-      //   href: "https://drive.google.com/file/d/1YX-EYmuH241Nae5Rx2hOPEMactJJsxzQ/view?usp=sharing"
-      // }
-      
-      //     {
-      //   title: "SOP for PhD admission Academic Year 2025-26.",
-      //   date: "2025-06-10",
-      //   content: "PhD Admission",
-      //   href:"https://drive.google.com/file/d/1FGeVnEinF1Fp5pTHTPNcZUbskSfyyj5S/view?usp=sharing"
-      // }
+       {
+        title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2026-27 (Odd Semester: July–Dec 2026). Last date: 20th July 2026",
+         date: "2026-06-04",
+       content: "PhD Admission",
+        href: "https://drive.google.com/file/d/1YX-EYmuH241Nae5Rx2hOPEMactJJsxzQ/view?usp=sharing"
+       },
+      {
+       title: "SOP for PhD admission Academic Year 2026-27(July-Dec).",
+       date: "2026-06-04",
+       content: "PhD Admission",
+       href:"https://drive.google.com/file/d/1_6KDnWDRffj5Ywf04hETmtc5OG9_CAM2/view?usp=sharing"
+      }
     ]
   },
 
@@ -157,7 +149,7 @@ const admissionData = {
         name: "NIMCET",
         image: "https://cdnbbsr.s3waas.gov.in/s33e6260b81898beacda3d16db379ed329/uploads/2025/03/2025031961.png",
         link: "https://nimcet.admissions.nic.in/",
-        description: "Centralized Counselling for MCA Admissions"
+        description: "Visit the portal for the Information Brochure, Schedule, Opening and Closing Ranks, Seat Matrix, and other relevant details."
       },
     ],
     notices: [
