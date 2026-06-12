@@ -30,13 +30,13 @@ const RecruitmentProcess = () => {
           <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
                 <td className="text-left px-6 py-4 text-gray-800">
                   <p className="leading-relaxed">
-                 List of Candidates Shortlisted for Stage-II Presentation – Assistant Professor (Grade-II), Pay Level-10/AGP 6000, Department of Computer Science & Engineering
+                 List of candidates Shortlisted for Stage-ll assessment (Presentation) for the post of Assistant Professor (Grade-ll) Pay Leve!-10/AGP: Rs. 6000 in various Departments 
                   </p>
                 </td>
                 <td className="text-center px-6 py-4">
                   <div className="flex flex-col items-center gap-2">
                     <a
-                      href="https://drive.google.com/file/d/1zWg5XUD5BlUbdfD5vnEfBDczNhHMJITY/view?usp=sharing"
+                      href="https://drive.google.com/file/d/1xoxWRtaMgWvx3fZ7j-vgfG5FdRNz2zhV/view?usp=drive_link"
                       download
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
                     >
