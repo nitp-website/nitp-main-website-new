@@ -41,7 +41,7 @@ const Popbuttons = () => {
       <p className="headingp ">Study In India</p>
       </a>
 
-      <Link href="/Notices/JobsNITP" className="card">
+      <Link href="/Others/faculty-recruitment" className="card">
         <FontAwesomeIcon icon={faBolt} size="4x" className="mobileicondiv" color='#BA210E' />
         <p className="headingp">RECRUITMENT</p>
       </Link>
