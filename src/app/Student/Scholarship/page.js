@@ -4,12 +4,12 @@ import { Download } from 'lucide-react';
 const ScholarshipTable = () => {
   const dataOdd = [
     {
-      link: "https://drive.google.com/file/d/1vzJl5Kr8-2noX-7Ojng3hiisZB-7y6Uk/view",
-      para: "Notification for the National Scholarship – Academic Year 2025–2026",
+      link: "https://drive.google.com/file/d/1n3CjfqoPnRtAysKZnMI2GhrJczo41Nvm/view?usp=drive_link",
+      para: "Opening of National Scholarship Portal (NSP) for Renewal Applications under Top Class Education Scheme for SC Students (AY 2026–27)",
     },
     {
-      link: "https://drive.google.com/file/d/1MsTrBzJAMgw3NuU152P75Kr8kis68DVE/view",
-      para: "Notification for National Fellowship and Scholarship for Higher Education of ST Students for the Academic Year 2025–2026",
+      link: "https://drive.google.com/file/d/1vGmCilfXi9WTszLxmake5OQ0hm6oniND/view?usp=drive_link",
+      para: "National Scholarship Portal (NSP) Open for Top Class Education Scholarship Applications 2026–27 for OBC, EBC and DNT Students",
     }
   ];
 
