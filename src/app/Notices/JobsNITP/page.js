@@ -123,7 +123,31 @@ const Page = () => {
         }
 
         const filtered = (combined || []).filter((notice) => notice.isVisible === 1);
-        setJobs(filtered);
+
+        // Sort by event/date/timestamp — newest first
+        const getTimeValue = (n) => {
+          if (!n) return 0;
+          if (n.event_date) {
+            const t = Date.parse(n.event_date);
+            if (!isNaN(t)) return t;
+          }
+          if (n.timestamp !== undefined && n.timestamp !== null) {
+            const t = Number(n.timestamp);
+            if (!isNaN(t)) return t;
+          }
+          if (n.date) {
+            const t = Date.parse(n.date);
+            if (!isNaN(t)) return t;
+          }
+          if (n.published_on) {
+            const t = Date.parse(n.published_on);
+            if (!isNaN(t)) return t;
+          }
+          return 0;
+        };
+
+        const sorted = [...filtered].sort((a, b) => getTimeValue(b) - getTimeValue(a));
+        setJobs(sorted);
 
         // Compute total pages
         const computedTotal = typeof totalCount === "number" ? Math.max(1, Math.ceil(totalCount / usedLimit)) : Math.max(1, Math.ceil(filtered.length / usedLimit));
