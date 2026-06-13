@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
+import { getBackendApiUrl } from "@/lib/apiHelpers";
 
 const dept = "Chem";
 
@@ -40,7 +41,7 @@ export default function Che() {
     const getData = async () => {
       try {
         const countsResponse = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=che`,
+          getBackendApiUrl("/api/count?type=che"),
         );
         // console.log("Counts Response:", countsResponse.data);
         setData(countsResponse.data);

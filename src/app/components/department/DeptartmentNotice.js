@@ -2,7 +2,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import DepartmentNotify1 from "./DepartmentNotify1.js";
-import { extractApiArray } from "@/lib/apiHelpers";
+import { extractApiArray, getBackendApiUrl } from "@/lib/apiHelpers";
 // import { Button } from "@/components/ui/button";
 
 const DepartmentNotice = ({ dept }) => {
@@ -10,10 +10,14 @@ const DepartmentNotice = ({ dept }) => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=${dept.toLowerCase()}`
-      );
-      setNotices(extractApiArray(response));
+      try {
+        const response = await axios.get(
+          getBackendApiUrl(`/api/notice?type=${dept.toLowerCase()}`)
+        );
+        setNotices(extractApiArray(response));
+      } catch (error) {
+        setNotices([]);
+      }
     };
     getData();
   }, [dept]);
