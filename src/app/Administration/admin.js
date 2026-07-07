@@ -513,11 +513,6 @@ const ServiceUNIT = [
   designation: " E&ICT Academy Phase II",
  },
 
- {
-  name: "Prof. Samrat Mukherjee",
-  type: "Prof. In-charge",
-  designation: "Training and Placement",
- },
 
 {
   name: "Prof. Bharat Gupta",
@@ -535,39 +530,52 @@ const ServiceUNIT = [
   type: "Nodal Officer – IPR,Nodal Officer – IoE,Nodal Officer – BIS",
   name: "Prof. Amit Kumar",
  },
-  {
-  name: "Dr. Ajay Kumar",
-  type: "Associate Professor",
-  designation: " Asst. PI (T&P)"
-},
 
- 
 {
   name: "Dr. Shailendra K. Mandal",
   type: "Associate Professor",
   designation: " PI - Library"
 },
-{
-  name: "Dr. J. P. Singh",
-  type: "Associate Professor",
-  designation: "PI-MIS"
-},
+
 {
   name: "Dr. Vimlesh Verma",
   type: "Associate Professor",
-  designation: " PI – Electrical Maintenance Unit (EMU)"
+  designation: " PI – EMU"
 },
 {
   name: "Dr. Amit Kumar Singh",
   type: "Associate Professor",
-  designation: "PI – International Affairs; Chief Vigilance Officer, NIT Patna"
+  designation: "PI – International Affairs; Chief Vigilance Officer, ERP"
 },
+  {
+  name: "Dr. Suddhasil De",
+  type: "Assistant Professor",
+  designation: "Co-PI(ERP)"
+},
+  
+{
+  name: "Dr. B. Balaji Naik",
+  type: "Assistant Professor",
+  designation: "Co-PI(ERP)"
+},
+  
+ {
+  name: "Prof. Samrat Mukherjee",
+  type: "Prof. In-charge",
+  designation: "Training and Placement",
+ }, 
   
 {
   name: "Dr. Chetan Kumar Hirwani",
   type: "Assistant Professor",
   designation: " T & P Officer"
 },
+    {
+  name: "Dr. Ajay Kumar",
+  type: "Associate Professor",
+  designation: " Asst. PI (T&P)"
+},
+  
 {
   name: "Dr. S K Tripathy",
   type: "Assistant Professor",
@@ -576,20 +584,10 @@ const ServiceUNIT = [
 
 
 {
-  name: "Dr. B. Balaji Naik",
-  type: "Assistant Professor",
-  designation: "PI – Webservice"
-},
-{
   name: "Dr. Om Ji Shukla",
   type: "Assistant Professor",
   designation: "PI – E-Cell; Coordinator – Unnat Bharat"
 },
-// {
-//   name: "Dr. Gagan Deep Meena",
-//   type: "Assistant Professor",
-//   designation: "Co PI – EMU; Coordinator - NSS"
-// },
 
   {
   name: "Dr.Mukesh Kumar",
