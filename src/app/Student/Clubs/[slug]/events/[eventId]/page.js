@@ -7,7 +7,9 @@ import { getEvent } from "../../../services/clubService";
 import Loading from "@/app/Loading";
 
 export default function EventPage() {
-  const { eventId } = useParams();
+  const params = useParams();
+  console.log("[DEBUG] EventPage params:", params);
+  const { eventId } = params || {};
 
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);

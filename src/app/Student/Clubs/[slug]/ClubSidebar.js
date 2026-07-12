@@ -12,8 +12,8 @@ import Clubs from "@/app/assets/images/clubs.svg";
 const linkClass = (active) =>
   `flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-all duration-300 transform group relative tracking-wide ${
     active
-      ? "bg-[rgb(129,25,25)] text-white shadow-lg shadow-[rgba(129,25,25,0.25)] scale-[1.02] before:absolute before:left-0 before:top-1/4 before:h-1/2 before:w-1 before:bg-white/60 before:rounded-r"
-      : "text-slate-600 hover:text-[rgb(129,25,25)] hover:bg-[rgba(129,25,25,0.08)] border border-transparent hover:border-[rgba(129,25,25,0.15)] hover:translate-x-1"
+      ? "bg-gradient-to-r from-red-800 to-red-600 text-white shadow-md shadow-red-900/10 scale-[1.02] before:absolute before:left-0 before:top-1/4 before:h-1/2 before:w-1 before:bg-white/60 before:rounded-r"
+      : "text-red-950/80 hover:text-red-900 hover:bg-red-50/80 border border-transparent hover:border-red-100/50 hover:translate-x-1"
   }`;
   
 // Renders the club logo, name, and category (supports both mobile and desktop layouts)
@@ -25,7 +25,7 @@ function ClubHeader({ club, mobile = false }) {
   if (mobile) {
     return (
       <div className="flex items-center gap-3 min-w-0 text-left">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-100 bg-white p-1 shadow-sm overflow-hidden bg-slate-50">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-100 bg-white p-1 shadow-sm overflow-hidden bg-slate-50">
           <img
             src={logoSrc}
             alt={`${name} logo`}
@@ -34,10 +34,10 @@ function ClubHeader({ club, mobile = false }) {
         </div>
 
         <div className="min-w-0">
-          <h3 className="text-sm font-black text-slate-800 tracking-tight leading-tight truncate">
+          <h3 className="text-sm font-extrabold text-red-950 tracking-tight leading-tight truncate">
             {name}
           </h3>
-          <p className="text-[11px] font-bold text-[rgb(129,25,25)] uppercase tracking-wider mt-0.5 truncate">
+          <p className="text-[11px] font-bold text-red-700 uppercase tracking-wider mt-0.5 truncate">
             {category}
           </p>
         </div>
@@ -46,9 +46,9 @@ function ClubHeader({ club, mobile = false }) {
   }
 
   return (
-    <div className="p-6 border-b border-slate-100 bg-gradient-to-b from-slate-50/50 to-transparent">
+    <div className="p-5 border-b border-red-100 bg-gradient-to-b from-red-50/30 to-transparent">
       <div className="flex flex-col items-center text-center">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full border border-slate-200/80 bg-white p-1 shadow-sm mb-4 transition-transform duration-300 hover:scale-[1.03] overflow-hidden bg-slate-50">
+        <div className="relative flex h-20 w-20 items-center justify-center rounded-full border-2 border-red-200 bg-white p-1 shadow-sm mb-3 transition-transform duration-300 hover:scale-[1.03] overflow-hidden bg-slate-50">
           <img
             src={logoSrc}
             alt={`${name} logo`}
@@ -56,13 +56,13 @@ function ClubHeader({ club, mobile = false }) {
           />
         </div>
         
-        <h2 className="text-base font-black text-slate-800 tracking-tight max-w-[200px] line-clamp-2">
+        <h2 className="text-md font-extrabold text-red-950 tracking-tight max-w-[200px] line-clamp-2">
           {name}
         </h2>
 
-        <p className="mt-1 text-[11px] font-bold text-[rgb(129,25,25)] uppercase tracking-wider">
+        <span className="mt-1.5 inline-flex items-center rounded-full bg-red-50 px-2.5 py-0.5 text-[10px] font-bold text-red-800 uppercase tracking-wider">
           {category}
-        </p>
+        </span>
       </div>
     </div>
   );
@@ -88,7 +88,7 @@ function NavLinks({ links, onClick }) {
                 <Icon 
                   size={18} 
                   className={`transition-transform duration-300 shrink-0 ${
-                    active ? "scale-100 text-white" : "text-slate-400 group-hover:text-[rgb(129,25,25)] group-hover:scale-105"
+                    active ? "scale-100 text-white" : "text-red-700/60 group-hover:text-red-800 group-hover:scale-105"
                   }`} 
                 />
               )}
@@ -109,15 +109,15 @@ function MobileClubSidebar({ club, links }) {
     <div className="min-[767px]:hidden w-full mb-6">
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="w-full flex items-center justify-between p-3.5 bg-white border border-slate-200 rounded-2xl shadow-sm transition-all duration-200 active:scale-[0.99]"
+        className="w-full flex items-center justify-between p-3.5 bg-white border-2 border-red-200 rounded-xl shadow-sm transition-all duration-200 active:scale-[0.99]"
       >
         <ClubHeader club={club} mobile />
 
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 border border-slate-100 text-slate-400 ml-2">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-red-50 border border-red-100 text-red-800 ml-2">
           <ChevronDown
             size={16}
             className={`transition-transform duration-300 ${
-              open ? "rotate-180 text-[rgb(129,25,25)]" : ""
+              open ? "rotate-180 text-red-900" : ""
             }`}
           />
         </div>
@@ -130,7 +130,7 @@ function MobileClubSidebar({ club, links }) {
             : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
-        <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-2.5">
+        <div className="bg-white rounded-xl shadow-md border border-red-100 p-2.5">
           <NavLinks
             links={links}
             onClick={() => setOpen(false)}
@@ -144,7 +144,7 @@ function MobileClubSidebar({ club, links }) {
 // Fixed, sticky sidebar layout for desktop screens (>= 768px)
 function DesktopClubSidebar({ club, links }) {
   return (
-    <aside className="hidden min-[767px]:flex min-[767px]:w-56 lg:w-64 h-[calc(100vh-2rem)] sticky top-4 border border-slate-200/60 bg-white shadow-sm rounded-lg flex-col overflow-hidden">
+    <aside className="hidden min-[767px]:flex min-[767px]:w-56 lg:w-64 border border-red-100 bg-white shadow-md rounded-xl flex-col overflow-hidden w-full">
       <ClubHeader club={club} />
 
       <nav className="flex-1 p-4 overflow-y-auto">

@@ -44,23 +44,20 @@ const ClubEvents = ({ clubEvents, club }) => {
   }, [selectedIndex]);
 
   return (
-    <section className="w-full px-4 py-4 sm:px-6">
-      <div className="overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-4 sm:p-6 md:p-8">
+    <section className="w-full">
+      <div className="overflow-hidden rounded-2xl border border-red-100 bg-white p-5 sm:p-6 md:p-8 shadow-sm">
         
         {/* Header Section */}
-        <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
-          <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-            <div className="space-y-1">
-              <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-                {club?.name || "Club"} Events
-              </h1>
-
-              <p className="text-sm text-slate-500">
-                Explore the club's events, workshops, competitions, and
-                community initiatives.
-              </p>
-            </div>
+        <div className="flex flex-col gap-2 pb-4 border-b border-red-100/60 w-full text-center sm:text-left">
+          <div className="flex items-center gap-2 justify-center sm:justify-start">
+            <span className="inline-block w-1.5 h-5 bg-red-700 rounded-full"></span>
+            <h1 className="text-xl font-extrabold text-red-950">
+              {club?.name || "Club"} Events
+            </h1>
           </div>
+          <p className="text-xs text-gray-500">
+            Explore the club's events, workshops, competitions, and community initiatives.
+          </p>
         </div>
 
         {/* Events Grid / Empty State conditional wrapper */}
@@ -72,10 +69,10 @@ const ClubEvents = ({ clubEvents, club }) => {
                 onClick={() =>
                   router.push(`/Student/Clubs/${clubId}/events/${event.id}`)
                 }
-                className="group cursor-pointer flex flex-col overflow-hidden rounded-xl border border-slate-200/60 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300"
+                className="group cursor-pointer flex flex-col overflow-hidden rounded-2xl border border-red-100/80 bg-white transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-md"
               >
                 {/* Event Poster Area */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50 border-b border-slate-100">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50 border-b border-red-100/40">
                   <img
                     src={event.poster}
                     alt={event.title}
@@ -89,14 +86,14 @@ const ClubEvents = ({ clubEvents, club }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-60 transition-opacity duration-200" />
 
                   <div className="absolute top-3 left-3">
-                    <span className="rounded-md bg-slate-900/80 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-sm border border-white/10">
+                    <span className="rounded-md bg-red-900/80 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-sm border border-white/10">
                       {event.category || "Event"}
                     </span>
                   </div>
 
                   <button
                     onClick={(e) => openPoster(e, index)}
-                    className="absolute bottom-3 right-3 flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-500 shadow-sm backdrop-blur-sm transition-colors duration-200 hover:bg-slate-900 hover:text-white hover:border-slate-900"
+                    className="absolute bottom-3 right-3 flex h-7 w-7 items-center justify-center rounded-lg bg-white border border-red-100 text-red-800 shadow-sm backdrop-blur-sm transition-colors duration-200 hover:bg-red-900 hover:text-white hover:border-red-900"
                     title="Fullscreen Poster View"
                   >
                     <Maximize2 size={12} className="stroke-[2.5]" />
@@ -106,25 +103,25 @@ const ClubEvents = ({ clubEvents, club }) => {
                 {/* Event Meta Details Card */}
                 <div className="flex flex-col justify-between flex-1 p-5 space-y-4">
                   <div className="space-y-2">
-                    <h3 className="line-clamp-1 text-sm font-bold text-slate-800 transition-colors duration-200 tracking-tight">
+                    <h3 className="line-clamp-1 text-sm font-bold text-red-950 transition-colors duration-200 tracking-tight">
                       {event.title}
                     </h3>
-                    <p className="line-clamp-2 text-xs text-slate-700 leading-relaxed font-normal">
+                    <p className="line-clamp-2 text-xs text-gray-700 leading-relaxed font-normal">
                       {event.description}
                     </p>
                     
                     {/* Event Metadata (Duration & Venue) */}
                     {(event.duration || event.venue) && (
-                      <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-slate-500 font-medium pt-1">
+                      <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-gray-500 font-medium pt-1">
                         {event.duration && (
                           <div className="flex items-center gap-1">
-                            <Clock className="h-3.5 w-3.5 text-slate-400" />
+                            <Clock className="h-3.5 w-3.5 text-red-700/60" />
                             <span>{event.duration}</span>
                           </div>
                         )}
                         {event.venue && (
                           <div className="flex items-center gap-1">
-                            <MapPin className="h-3.5 w-3.5 text-slate-400" />
+                            <MapPin className="h-3.5 w-3.5 text-red-700/60" />
                             <span className="line-clamp-1">{event.venue}</span>
                           </div>
                         )}
@@ -132,7 +129,7 @@ const ClubEvents = ({ clubEvents, club }) => {
                     )}
                   </div>
 
-                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-red-600">
+                  <div className="pt-3 border-t border-red-100/40 flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-red-800">
                     <span>View Details</span>
                     <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </div>
@@ -142,15 +139,15 @@ const ClubEvents = ({ clubEvents, club }) => {
           </div>
         ) : (
           /* Empty State fallback view when no events exist */
-          <div className="mt-8 flex flex-col items-center justify-center rounded-xl p-8 text-center">
-            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-400">
+          <div className="mt-8 flex flex-col items-center justify-center rounded-xl p-8 text-center bg-[#f7f5ec]/50 border border-dashed border-red-200">
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-red-50 text-red-800">
               <CalendarDays className="h-4 w-4" />
             </div>
-            <h2 className="text-sm font-bold tracking-tight text-slate-900">
+            <h2 className="text-sm font-bold tracking-tight text-red-950">
               Data Unavailable
             </h2>
 
-            <p className="mt-2 max-w-xs text-xs font-medium leading-relaxed text-slate-400">
+            <p className="mt-2 max-w-xs text-xs font-medium leading-relaxed text-gray-500">
               Event details will be available soon.
             </p>
           </div>

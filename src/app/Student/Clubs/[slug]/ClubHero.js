@@ -56,13 +56,13 @@ const ClubHero = ({ club }) => {
   };
 
   return (
-    <div className="w-full space-y-8 py-6 px-4 sm:px-6 md:py-8 max-w-7xl mx-auto antialiased">
+    <div className="w-full space-y-8 antialiased">
       
       {/* OVERVIEW HERO SECTION */}
-      <section id="overview" className="relative overflow-hidden rounded-3xl border border-slate-200/60 bg-white p-6 sm:p-10 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02)] scroll-mt-24" >
-        <div className="relative z-10 flex flex-col lg:flex-row lg:items-start justify-between gap-6 lg:gap-8 max-w-6xl mx-auto">
-          <div className="flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left gap-5 sm:gap-6 flex-1 min-w-0">
-            <div className="relative rounded-full border border-slate-100 bg-white p-1 shadow-sm overflow-hidden bg-slate-50 h-20 w-20 sm:h-24 sm:w-24 shrink-0">
+      <section id="overview" className="relative overflow-hidden rounded-2xl border border-red-100 bg-white p-6 sm:p-8 shadow-sm scroll-mt-24" >
+        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8 max-w-6xl mx-auto">
+          <div className="flex flex-col items-center text-center lg:flex-row lg:items-center lg:text-left gap-5 sm:gap-6 flex-1 min-w-0">
+            <div className="relative rounded-full border-2 border-red-200 bg-white p-1 shadow-sm overflow-hidden h-20 w-20 sm:h-24 sm:w-24 shrink-0">
               <img
                 src={club?.logo || Clubs.src}
                 alt={`${name} logo`}
@@ -72,8 +72,8 @@ const ClubHero = ({ club }) => {
               />
             </div>
 
-            <div className="space-y-2 min-w-0">
-              <h1 className="text-2xl font-black tracking-tight text-slate-900 sm:text-3xl md:text-4xl leading-tight">
+            <div className="space-y-1.5 min-w-0">
+              <h1 className="text-2xl font-extrabold tracking-tight text-red-950 sm:text-3xl leading-tight">
                 {name}
               </h1>
               <p className="text-xs sm:text-sm font-bold tracking-widest text-red-700 uppercase">
@@ -82,11 +82,11 @@ const ClubHero = ({ club }) => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto shrink-0 justify-center lg:pt-2">
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto shrink-0 justify-center">
             <Link
               href={clubId ? `/Student/Clubs/${clubId}/events` : "#"}
               aria-disabled={!clubId}
-              className={`group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[rgb(129,25,25)] px-5 py-3 text-xs font-bold text-white transition-all duration-200 hover:bg-[rgb(100,18,18)] whitespace-nowrap ${
+              className={`group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-red-800 px-5 py-3 text-xs font-bold text-white transition-all duration-200 hover:bg-red-900 shadow-md hover:shadow-lg whitespace-nowrap ${
                 !clubId ? "pointer-events-none opacity-50" : ""
               }`}
             >
@@ -98,28 +98,28 @@ const ClubHero = ({ club }) => {
             <Link
               href={clubId ? `/Student/Clubs/${clubId}/team` : "#"}
               aria-disabled={!clubId}
-              className={`group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-xs font-bold text-slate-700 transition-all duration-200 hover:border-red-200 hover:bg-red-50/50 hover:text-red-700 whitespace-nowrap ${
+              className={`group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-red-200 bg-white px-5 py-3 text-xs font-bold text-red-900 transition-all duration-200 hover:border-red-300 hover:bg-red-50 hover:text-red-950 shadow-sm whitespace-nowrap ${
                 !clubId ? "pointer-events-none opacity-50" : ""
               }`}
             >
-              <Users className="h-4 w-4 text-slate-400 group-hover:text-red-600 transition-colors duration-200" />
+              <Users className="h-4 w-4 text-red-700/80 group-hover:text-red-900 transition-colors duration-200" />
               Meet Team
-              <ArrowRight className="h-3.5 w-3.5 text-slate-400 transition-transform duration-200 group-hover:translate-x-0.5" />
+              <ArrowRight className="h-3.5 w-3.5 text-red-700/80 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </div>
         </div>
 
         {/* Stats Summary Grid Footer */}
-        <div className="mt-10 pt-6 border-t border-slate-100 grid grid-cols-2 gap-3 min-[640px]:grid-cols-4">
+        <div className="mt-8 pt-6 border-t border-red-100 grid grid-cols-2 gap-3 min-[640px]:grid-cols-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="bg-red-50/40 rounded-xl p-3 text-center border border-red-100/50"
+              className="bg-[#f7f5ec]/70 rounded-xl p-3 text-center border border-red-100/60 shadow-sm"
             >
-              <span className="block text-lg font-black text-red-900">
+              <span className="block text-lg font-extrabold text-red-900">
                 {stat.val}
               </span>
-              <span className="text-[10px] font-bold text-slate-500 tracking-wider uppercase mt-0.5 block">
+              <span className="text-[10px] font-bold text-red-950/60 tracking-wider uppercase mt-0.5 block">
                 {stat.label}
               </span>
             </div>
@@ -129,16 +129,16 @@ const ClubHero = ({ club }) => {
 
       {/* ABOUT CLUB BRIEF SECTION */}
       {club?.about?.trim() && (
-        <section id="about" className="space-y-3 scroll-mt-24">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-red-700">
+        <section id="about" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center gap-2 pb-2 border-b border-red-100">
+            <span className="inline-block w-1.5 h-5 bg-red-700 rounded-full"></span>
+            <h2 className="text-base font-extrabold text-red-950 uppercase tracking-wider">
               About
-            </span>
-            <div className="h-px flex-1 bg-slate-200" />
+            </h2>
           </div>
 
-          <div className="rounded-2xl border border-slate-200/60 bg-white p-5 shadow-sm sm:p-7">
-            <p className="whitespace-pre-line text-sm leading-7 text-slate-600 md:text-base">
+          <div className="rounded-2xl border border-red-100/80 bg-white p-5 shadow-sm sm:p-6">
+            <p className="whitespace-pre-line text-sm leading-relaxed text-gray-800 md:text-base">
               {club.about.length > 240
                 ? `${club.about.slice(0, 240)}...`
                 : club.about}
@@ -148,7 +148,7 @@ const ClubHero = ({ club }) => {
               <Link
                 href={clubId ? `/Student/Clubs/${clubId}/about` : "#"}
                 aria-disabled={!clubId}
-                className={`inline-flex items-center gap-2 rounded-lg border border-red-100 bg-red-50 px-4 py-2 text-xs font-semibold text-red-700 transition-all duration-200 hover:border-red-200 hover:bg-red-100 hover:text-red-800 ${
+                className={`inline-flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-xs font-bold text-red-800 transition-all duration-200 hover:border-red-300 hover:bg-red-100 hover:text-red-950 ${
                   !clubId ? "pointer-events-none opacity-50" : ""
                 }`}
               >
@@ -162,25 +162,25 @@ const ClubHero = ({ club }) => {
 
       {/* PI DESK LEADERSHIP MESSAGE */}
       {piMessage && (
-        <section id="leadership" className="space-y-3 scroll-mt-24">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-red-700">
+        <section id="leadership" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center gap-2 pb-2 border-b border-red-100">
+            <span className="inline-block w-1.5 h-5 bg-red-700 rounded-full"></span>
+            <h2 className="text-base font-extrabold text-red-950 uppercase tracking-wider">
               PI Desk
-            </span>
-            <div className="h-px flex-1 bg-slate-100" />
+            </h2>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl border border-slate-200/60 bg-white p-5 sm:p-7 shadow-sm">
+          <div className="relative overflow-hidden rounded-2xl border border-red-100/80 bg-white p-5 sm:p-6 shadow-sm">
             <Quote
               className="absolute right-6 top-6 h-12 w-12 text-red-50"
               strokeWidth={1}
               aria-hidden="true"
             />
 
-            <div className="relative z-10 grid gap-5 md:grid-cols-[180px_1fr] items-start">
+            <div className="relative z-10 grid gap-5 md:grid-cols-[180px_1fr] items-center">
               {PI && (
-                <div className="flex flex-col items-center p-4 bg-red-50/40 rounded-xl border border-red-100/50 text-center w-full">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white border border-red-200 shadow-sm overflow-hidden">
+                <div className="flex flex-col items-center p-4 bg-[#f7f5ec]/70 rounded-2xl border border-red-100/50 text-center w-full shadow-sm">
+                  <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white border-2 border-red-200 shadow-sm overflow-hidden">
                     <img
                       src={PI.avatar || "/faculty.jpeg"}
                       alt={PI.name}
@@ -190,20 +190,20 @@ const ClubHero = ({ club }) => {
                     />
                   </div>
 
-                  <h3 className="mt-3 text-xs font-bold text-slate-800">
+                  <h3 className="mt-3 text-sm font-bold text-red-950">
                     {PI.name}
                   </h3>
-                  <p className="text-[10px] text-red-500 font-bold mt-0.5">
+                  <p className="text-xs font-semibold text-red-800 mt-0.5">
                     {PI.department || ""}
                   </p>
                 </div>
               )}
-              <div className="space-y-3">
-                <span className="inline-flex items-center rounded-full bg-red-50 px-2.5 py-0.5 text-[10px] font-bold text-red-800">
+              <div className="space-y-3 flex-1">
+                <span className="inline-flex items-center rounded-full bg-red-50 px-2.5 py-0.5 text-[10px] font-bold text-red-800 uppercase tracking-wider">
                   Message from PI
                 </span>
-                <blockquote className="border-l-2 border-red-200 pl-4">
-                  <p className="text-sm leading-relaxed text-slate-600 italic font-medium">
+                <blockquote className="border-l-4 border-red-700 pl-4 bg-red-50/10 py-3 pr-3 rounded-r-xl">
+                  <p className="text-sm leading-relaxed text-gray-800 italic font-medium">
                     {piMessage || ""}
                   </p>
                 </blockquote>
@@ -215,15 +215,15 @@ const ClubHero = ({ club }) => {
 
       {/* FULL-WIDTH RESPONSIVE IMAGES CAROUSEL */}
       {carouselImages.length > 0 && (
-        <section id="gallery" className="space-y-3 scroll-mt-24">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-red-700">
+        <section id="gallery" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center gap-2 pb-2 border-b border-red-100">
+            <span className="inline-block w-1.5 h-5 bg-red-700 rounded-full"></span>
+            <h2 className="text-base font-extrabold text-red-950 uppercase tracking-wider">
               Club Gallery
-            </span>
-            <div className="h-px flex-1 bg-slate-100" />
+            </h2>
           </div>
 
-          <div className="relative group/carousel w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200/60 bg-slate-50 aspect-[16/9] md:aspect-[21/9]">
+          <div className="relative group/carousel w-full rounded-2xl overflow-hidden shadow-sm border border-red-100 bg-slate-50 aspect-[16/9] md:aspect-[21/9]">
             <div
               ref={scrollRef}
               onScroll={handleScroll}
@@ -248,7 +248,7 @@ const ClubHero = ({ club }) => {
                 <button
                   onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
                   disabled={activeIndex === 0}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/90 backdrop-blur-sm text-slate-700 hover:bg-white shadow transition-all duration-200 disabled:opacity-0 pointer-events-auto opacity-0 group-hover/carousel:opacity-100"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/90 backdrop-blur-sm text-red-800 hover:bg-white shadow transition-all duration-200 disabled:opacity-0 pointer-events-auto opacity-0 group-hover/carousel:opacity-100"
                   aria-label="Previous image"
                 >
                   <ChevronLeft className="h-5 w-5" />
@@ -256,7 +256,7 @@ const ClubHero = ({ club }) => {
                 <button
                   onClick={() => scrollToIndex(Math.min(carouselImages.length - 1, activeIndex + 1))}
                   disabled={activeIndex === carouselImages.length - 1}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/90 backdrop-blur-sm text-slate-700 hover:bg-white shadow transition-all duration-200 disabled:opacity-0 pointer-events-auto opacity-0 group-hover/carousel:opacity-100"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/90 backdrop-blur-sm text-red-800 hover:bg-white shadow transition-all duration-200 disabled:opacity-0 pointer-events-auto opacity-0 group-hover/carousel:opacity-100"
                   aria-label="Next image"
                 >
                   <ChevronRight className="h-5 w-5" />
