@@ -13,7 +13,7 @@ const RecruitmentProcess = () => {
     <div className="bg-white bg-opacity-50">
       <div className="mx-auto px-4 py-8 max-w-7xl">
         <h1 className="text-2xl md:text-3xl font-bold mb-4 text-red-950 text-center">
-          Advertisement For Faculty Positions March 2025
+          Faculty Positions
         </h1>
 
         <div className="overflow-x-auto rounded-lg shadow-md border border-gray-100 mb-8">
@@ -26,7 +26,71 @@ const RecruitmentProcess = () => {
             </thead>
             <tbody>
 
+           <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
+                <td className="text-left px-6 py-4 text-gray-800">
+                  <p className="leading-relaxed">
+                   Interview Schedule for Candidates Eligible for Interview for the Post of Assistant Professor (Grade II), Pay Level 11 (AGP: ₹7,000) (Only for Internal Faculty), in Various Departments
+                  </p>
+                </td>
+                <td className="text-center px-6 py-4">
+                  <div className="flex flex-col items-center gap-2">
+                    <a
+                      href="https://drive.google.com/file/d/1C1iMdtlvqCDxh9Qdwusc5U9-1pG-yyeU/view?usp=sharing"
+                      download
+                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Download
+                    </a>
+                  </div>
+                </td>
+              </tr>
 
+                        
+            <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
+                <td className="text-left px-6 py-4 text-gray-800">
+                  <p className="leading-relaxed">
+                 Interview Schedule for Candidates Eligible for Interview for the Posts of Professor of Practice and Associate Professor of Practice in Various Departments at NIT Patna.
+                  </p>
+                </td>
+                <td className="text-center px-6 py-4">
+                  <div className="flex flex-col items-center gap-2">
+                    <a
+                      href="https://drive.google.com/file/d/15C1vMxTGIMgAi-zJZOaldHW2u6VlL4vG/view?usp=sharing"
+                      download
+                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Download
+                    </a>
+                  </div>
+                </td>
+              </tr>
+
+
+
+    
+           <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
+                <td className="text-left px-6 py-4 text-gray-800">
+                  <p className="leading-relaxed">
+                 Revised Interview Schedule for Candidates Who Became Eligible for Stage III in Various Departments
+                  </p>
+                </td>
+                <td className="text-center px-6 py-4">
+                  <div className="flex flex-col items-center gap-2">
+                    <a
+                      href="https://drive.google.com/file/d/1gdOZk0Zk2r19k2QKyHwqk549shInOGsf/view?usp=sharing"
+                      download
+                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Download
+                    </a>
+                  </div>
+                </td>
+              </tr>
+
+                        
        <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
                 <td className="text-left px-6 py-4 text-gray-800">
                   <p className="leading-relaxed">
@@ -195,7 +259,29 @@ export=download&id=1kBRuNhxo8gm-Zz-balhXd4ByJjjJETV4"
                   </div>
                 </td>
               </tr>
-              
+
+                           <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
+                <td className="text-left px-6 py-4 text-gray-800">
+                  <p className="leading-relaxed">
+                     Advertisement for recruitment of Professor/Associate Professor of Practice at NIT Patna
+                  </p>
+                </td>
+                <td className="text-center px-6 py-4">
+                  <div className="flex flex-col items-center gap-2">
+                    <a
+                      href="https://drive.google.com/file/d/1KLw2t70rzWy0M4_11i8YszUR4uVOxBmI/view?usp=drive_link"
+                      download
+                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Download
+                    </a>
+                  </div>
+                </td>
+              </tr>
+
+                        
+                        
             </tbody>
           </table>
         </div>

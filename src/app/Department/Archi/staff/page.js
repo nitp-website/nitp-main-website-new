@@ -1,28 +1,69 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import StaffcardDept from "../../../components/faculty/StaffcardDept";
-import staffData from "../../staffArch.js";
+import axios from "axios";
+import NewStaffcardDept from "../../../components/faculty/NewStaffcardDept";
+import {sortByDesignation } from "../../../../lib/designationOrder";
 
-const ArchiStaffpage = () => {
-  const [staff, setStaff] = useState("staff");
-  const hasStaff =
-    staffData.find((dept) => dept.department === "Architecture and Planning")?.staff.length > 0;
+const ArchitectureStaffpage = () => {
+  const [staffList, setStaffList] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    const fetchArchitectureStaff = async () => {
+      try {
+        setLoading(true);
+        setError(false);
+
+        let allStaff = [];
+        let page = 1;
+        let totalPages = 1;
+
+        do {
+          const { data } = await axios.get(
+            `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/staff2?type=all&department=arch&page=${page}&limit=50`,
+          );
+
+          allStaff.push(...data.data);
+          totalPages = data.totalPages;
+          page++;
+        } while (page <= totalPages);
+
+        setStaffList(sortByDesignation(allStaff));
+        console.log("Fetched Architecture staff:", allStaff);
+      } catch (err) {
+        console.log(err);
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArchitectureStaff();
+  }, []);
 
   return (
     <div>
       <div className="mt-5">
-        {staff && hasStaff && (
-          <div className="flex flex-col">
-            <p className="text-red-900 text-xl lg:text-3xl font-bold text-center">
-              STAFFS
-            </p>
-            <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
-              {staffData
-                .find((dept) => dept.department === "Architecture and Planning")
-                ?.staff.map((staffMember, index) => (
-                  <StaffcardDept key={index} {...staffMember} />
-                ))}
-            </div>
+        <p className="text-red-900 text-xl lg:text-3xl font-bold text-center">
+          STAFFS
+        </p>
+
+        {loading ? (
+          <p className="text-center text-gray-500 mt-6">Loading...</p>
+        ) : error ? (
+          <p className="text-center text-red-500 mt-6">
+            Sorry, failed to fetch the Architecture staff data.
+          </p>
+        ) : staffList.length === 0 ? (
+          <p className="text-center text-gray-400 italic mt-6">
+            No staff found.
+          </p>
+        ) : (
+          <div className="flex flex-wrap justify-center gap-10 p-5 my-2 text-black">
+            {staffList.map((staff) => (
+              <NewStaffcardDept key={staff.id ?? staff.user_id} staff={staff} />
+            ))}
           </div>
         )}
       </div>
@@ -30,4 +71,4 @@ const ArchiStaffpage = () => {
   );
 };
 
-export default ArchiStaffpage;
+export default ArchitectureStaffpage;

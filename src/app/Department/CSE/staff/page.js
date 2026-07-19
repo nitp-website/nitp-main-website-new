@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import NewStaffcardDept from "../../../components/faculty/NewStaffcardDept";
+import {sortByDesignation } from "../../../../lib/designationOrder";
 
 const CSEStaffpage = () => {
   const [staffList, setStaffList] = useState([]);
@@ -28,7 +29,7 @@ const CSEStaffpage = () => {
           page++;
         } while (page <= totalPages);
 
-        setStaffList(allStaff);
+        setStaffList(sortByDesignation(allStaff));
         console.log("Fetched CSE staff:", allStaff);
       } catch (err) {
         console.log(err);

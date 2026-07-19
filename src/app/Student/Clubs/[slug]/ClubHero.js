@@ -3,20 +3,27 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, Quote, Users, ChevronLeft, ChevronRight } from "lucide-react";
-import Clubs from "@/app/assets/images/clubs.svg";
+import NITPLogo from "@/app/assets/images/logo.png";
 
 const ClubHero = ({ club }) => {
   // Safe extraction of club data parameters and fallbacks
   const name = club?.name || "Club";
+  const isInactive = club?.status && club.status.toLowerCase() === "inactive";
   const clubId = club?.id;
   const memberSessions = club?.members && typeof club.members === "object" ? club.members : {};
-  const latestSessionKey = Object.keys(memberSessions)[0];
+  const sessionKeys = Object.keys(memberSessions).sort((a, b) => b.localeCompare(a));
+  const latestSessionKey = sessionKeys[0] || null;
   const currentMembers =
     (latestSessionKey && memberSessions[latestSessionKey]) ||
     Object.values(memberSessions).find((session) => session && typeof session === "object") ||
     {};
 
-  const PI = currentMembers.patna_campus_pi || currentMembers.bihta_campus_pi;
+  const patnaPI = currentMembers.patna?.pi;
+  const bihtaPI = currentMembers.bihta?.pi;
+  const showPatnaPI = patnaPI && patnaPI.name;
+  const showBihtaPI = bihtaPI && bihtaPI.name;
+  const hasPI = showPatnaPI || showBihtaPI;
+
   const activeMembers = club?.active_members || "0";
   const eventsOrganized = club?.events_organized || "0";
   const establishedYear = club?.established_year || "1999";
@@ -57,14 +64,24 @@ const ClubHero = ({ club }) => {
 
   return (
     <div className="w-full space-y-8 antialiased">
+      {isInactive && (
+        <div className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center gap-3 text-slate-700 shadow-sm animate-fadeIn">
+          <span className="font-bold uppercase tracking-wider text-[10px] bg-slate-200/60 border border-slate-300 rounded px-2.5 py-1 text-slate-500">
+            Inactive
+          </span>
+          <p className="text-xs sm:text-sm font-medium">
+            This student club is currently inactive. Past archives, legacy members, and details are shown for reference.
+          </p>
+        </div>
+      )}
       
       {/* OVERVIEW HERO SECTION */}
-      <section id="overview" className="relative overflow-hidden rounded-2xl border border-red-100 bg-white p-6 sm:p-8 shadow-sm scroll-mt-24" >
+      <section id="overview" className={`relative overflow-hidden rounded-2xl border bg-white p-6 sm:p-8 shadow-sm scroll-mt-24 ${isInactive ? "border-gray-200" : "border-red-100"}`} >
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-8 max-w-6xl mx-auto">
           <div className="flex flex-col items-center text-center lg:flex-row lg:items-center lg:text-left gap-5 sm:gap-6 flex-1 min-w-0">
-            <div className="relative rounded-full border-2 border-red-200 bg-white p-1 shadow-sm overflow-hidden h-20 w-20 sm:h-24 sm:w-24 shrink-0">
+            <div className={`relative rounded-full border bg-white p-1 shadow-sm overflow-hidden h-20 w-20 sm:h-24 sm:w-24 shrink-0 ${isInactive ? "border-gray-300 filter grayscale opacity-75" : "border-red-200"}`}>
               <img
-                src={club?.logo || Clubs.src}
+                src={club?.logo || NITPLogo.src}
                 alt={`${name} logo`}
                 className="h-full w-full object-cover rounded-full aspect-square"
                 loading="eager"
@@ -73,9 +90,16 @@ const ClubHero = ({ club }) => {
             </div>
 
             <div className="space-y-1.5 min-w-0">
-              <h1 className="text-2xl font-extrabold tracking-tight text-red-950 sm:text-3xl leading-tight">
-                {name}
-              </h1>
+              <div className="flex flex-wrap items-center gap-2 justify-center lg:justify-start">
+                <h1 className="text-2xl font-extrabold tracking-tight text-red-950 sm:text-3xl leading-tight">
+                  {name}
+                </h1>
+                {isInactive && (
+                  <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-semibold text-gray-500 border border-gray-300">
+                    Inactive
+                  </span>
+                )}
+              </div>
               <p className="text-xs sm:text-sm font-bold tracking-widest text-red-700 uppercase">
                 {club?.tagline}
               </p>
@@ -177,25 +201,53 @@ const ClubHero = ({ club }) => {
               aria-hidden="true"
             />
 
-            <div className="relative z-10 grid gap-5 md:grid-cols-[180px_1fr] items-center">
-              {PI && (
-                <div className="flex flex-col items-center p-4 bg-[#f7f5ec]/70 rounded-2xl border border-red-100/50 text-center w-full shadow-sm">
-                  <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white border-2 border-red-200 shadow-sm overflow-hidden">
-                    <img
-                      src={PI.avatar || "/faculty.jpeg"}
-                      alt={PI.name}
-                      className="h-full w-full object-cover rounded-full aspect-square"
-                      loading="lazy"
-                      onError={(e) => {e.currentTarget.src = "/faculty.jpeg"}}
-                    />
-                  </div>
-
-                  <h3 className="mt-3 text-sm font-bold text-red-950">
-                    {PI.name}
-                  </h3>
-                  <p className="text-xs font-semibold text-red-800 mt-0.5">
-                    {PI.department || ""}
-                  </p>
+            <div className={`relative z-10 grid gap-6 ${showPatnaPI && showBihtaPI ? "lg:grid-cols-[380px_1fr]" : "md:grid-cols-[180px_1fr]"} items-center`}>
+              {hasPI && (
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch w-full">
+                  {showBihtaPI && (
+                    <div className="flex flex-col items-center p-4 bg-[#f7f5ec]/70 rounded-2xl border border-red-100/50 text-center flex-1 shadow-sm min-w-[160px] max-w-[190px]">
+                      <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white border-2 border-red-200 shadow-sm overflow-hidden">
+                        <img
+                          src={bihtaPI.avatar || "/faculty.jpeg"}
+                          alt={bihtaPI.name}
+                          className="h-full w-full object-cover rounded-full aspect-square"
+                          loading="lazy"
+                          onError={(e) => {e.currentTarget.src = "/faculty.jpeg"}}
+                        />
+                      </div>
+                      <span className="mt-2 text-[9px] font-bold text-red-700/80 uppercase tracking-wide">
+                        Bihta Campus PI
+                      </span>
+                      <h3 className="mt-1 text-sm font-bold text-red-950 line-clamp-1">
+                        {bihtaPI.name}
+                      </h3>
+                      <p className="text-xs font-semibold text-red-800 mt-0.5 line-clamp-1">
+                        {bihtaPI.department || ""}
+                      </p>
+                    </div>
+                  )}
+                  {showPatnaPI && (
+                    <div className="flex flex-col items-center p-4 bg-[#f7f5ec]/70 rounded-2xl border border-red-100/50 text-center flex-1 shadow-sm min-w-[160px] max-w-[190px]">
+                      <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white border-2 border-red-200 shadow-sm overflow-hidden">
+                        <img
+                          src={patnaPI.avatar || "/faculty.jpeg"}
+                          alt={patnaPI.name}
+                          className="h-full w-full object-cover rounded-full aspect-square"
+                          loading="lazy"
+                          onError={(e) => {e.currentTarget.src = "/faculty.jpeg"}}
+                        />
+                      </div>
+                      <span className="mt-2 text-[9px] font-bold text-red-700/80 uppercase tracking-wide">
+                        Patna Campus PI
+                      </span>
+                      <h3 className="mt-1 text-sm font-bold text-red-950 line-clamp-1">
+                        {patnaPI.name}
+                      </h3>
+                      <p className="text-xs font-semibold text-red-800 mt-0.5 line-clamp-1">
+                        {patnaPI.department || ""}
+                      </p>
+                    </div>
+                  )}
                 </div>
               )}
               <div className="space-y-3 flex-1">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { getClubs } from "./services/clubService";
+import NITPLogo from "@/app/assets/images/logo.png";
 
 export default async function ClubsPage({ searchParams }) {
   const params = await searchParams;
@@ -63,26 +64,38 @@ export default async function ClubsPage({ searchParams }) {
         aria-label="Club list"
       >
         {displayedClubs.length > 0 ? (
-          displayedClubs.map((club) => (
-            <Link
-              key={club.id}
-              href={`/Student/Clubs/${club.id}`}
-              className="mx-auto flex min-h-[180px] w-full max-w-[300px] flex-col items-center justify-center gap-4 rounded-lg border border-red-900/15 bg-white/85 px-[14px] py-[2px] text-center no-underline shadow-[0_14px_34px_rgba(127,29,29,0.08)] transition hover:-translate-y-1 hover:border-red-900/35 hover:shadow-[0_20px_42px_rgba(127,29,29,0.14)] md:mx-0 md:min-h-[158px] md:max-w-none md:px-3 md:py-[18px]"
-            >
-              <span className="grid h-[86px] w-[86px] place-items-center rounded-lg bg-[linear-gradient(145deg,#ffffff,#fff1f1)] shadow-[inset_0_0_0_6px_rgba(255,255,255,0.75)]">
-                <img
-                  src={club.logo || "/images/default-club.png"}
-                  alt={`${club.name} logo`}
-                  loading="lazy"
-                  className="h-[70px] w-[70px] rounded-[7px] object-cover"
-                />
-              </span>
+          displayedClubs.map((club) => {
+            const isInactive = club.status && club.status.toLowerCase() === "inactive";
+            return (
+              <Link
+                key={club.id}
+                href={`/Student/Clubs/${club.id}`}
+                className={`mx-auto flex min-h-[180px] w-full max-w-[300px] flex-col items-center justify-center gap-4 rounded-lg border px-[14px] py-[2px] text-center no-underline transition md:mx-0 md:min-h-[158px] md:max-w-none md:px-3 md:py-[18px] relative overflow-hidden ${
+                  isInactive
+                    ? "border-gray-200 bg-gray-50/80 opacity-70 filter grayscale shadow-sm hover:opacity-90 hover:border-gray-300"
+                    : "border-red-900/15 bg-white/85 shadow-[0_14px_34px_rgba(127,29,29,0.08)] hover:-translate-y-1 hover:border-red-900/35 hover:shadow-[0_20px_42px_rgba(127,29,29,0.14)]"
+                }`}
+              >
+                {isInactive && (
+                  <div className="absolute top-2 right-2 rounded bg-gray-500/10 px-1.5 py-0.5 text-[9px] font-bold text-gray-500 uppercase tracking-wider border border-gray-500/20">
+                    Inactive
+                  </div>
+                )}
+                <span className="grid h-[86px] w-[86px] place-items-center rounded-lg bg-[linear-gradient(145deg,#ffffff,#fff1f1)] shadow-[inset_0_0_0_6px_rgba(255,255,255,0.75)]">
+                  <img
+                    src={club.logo || NITPLogo.src}
+                    alt={`${club.name} logo`}
+                    loading="lazy"
+                    className="h-[70px] w-[70px] rounded-[7px] object-cover"
+                  />
+                </span>
 
-              <span className="text-base font-black leading-[1.35] text-gray-900">
-                {club.name}
-              </span>
-            </Link>
-          ))
+                <span className="text-base font-black leading-[1.35] text-gray-900">
+                  {club.name}
+                </span>
+              </Link>
+            );
+          })
         ) : (
           <div className="col-span-full py-10 text-center text-red-600 font-semibold text-xl">
             No clubs found in this category.

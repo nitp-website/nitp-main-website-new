@@ -111,7 +111,7 @@ const BTechSyllabusold = () => {
           T={"0"}
           P={"2"}
           cred={"3"}
-          url=""
+          url="https://drive.google.com/file/d/18zAsX6pJRPOHZcjz36g1DuhuoRrBNfuJ/view?usp=sharing"
         />
         <SyllabusComp
           dep={"CSUG"}
@@ -265,7 +265,7 @@ const BTechSyllabusold = () => {
           T={"0"}
           P={"0"}
           cred={"3"}
-          url=""
+          url="https://docs.google.com/document/d/1mfPUyVcrbbtWuYUCC38UnaJXY7E6ycKQ/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
         />
         <SyllabusComp
           dep={"CSUG"}
@@ -512,7 +512,7 @@ const BTechSyllabusold = () => {
         <SyllabusComp
           dep={"CSUG"}
           sem={"7"}
-          code={"CS74124"}
+          code={"CS74125"}
           title={"Industrial Training"}
           L={"X"}
           T={"X"}
@@ -545,7 +545,7 @@ const BTechSyllabusold = () => {
         <SyllabusComp
           dep={"CSUG"}
           sem={"8"}
-          code={"CS84126"}
+          code={"CS84127"}
           title={"Comprehensive Viva-Voce"}
           L={"X"}
           T={"X"}
@@ -864,15 +864,7 @@ const BTechSyllabusold = () => {
           T={"0"}
           P={"0"}
           cred={"3"}
-          url={
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://docs.google.com/document/d/1eRVDb2Xk-9xKQ-d-jrhG-RoS2ncqLNHy/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
-            >
-              Digital Signal Processing{" "}
-            </a>
-          }
+        url="https://docs.google.com/document/d/1AGZ1a174PjlQvrnJ64O2455-xcvVpC7E/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
         />
         <SyllabusComp
           dep={"CSUG"}
@@ -883,15 +875,7 @@ const BTechSyllabusold = () => {
           T={"0"}
           P={"2"}
           cred={"3"}
-          url={
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://docs.google.com/document/d/1FeXhUNTuhy00xR6O7Lb4lT8HujEZ1Xf9/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
-            >
-              IOT Systems{" "}
-            </a>
-          }
+          url="https://docs.google.com/document/d/177DMC2ql2Te5J-EgNl7rNRlj74LEUwgA/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
         />
         <SyllabusComp
           dep={"CSUG"}
@@ -902,15 +886,7 @@ const BTechSyllabusold = () => {
           T={"0"}
           P={"0"}
           cred={"3"}
-          url={
-            <a
-              href="https://docs.google.com/document/d/1hh0DxVx7nsPHUENa4KuZtmnv3d6z1l6z/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Nature Inspired Computing
-            </a>
-          }
+          url="https://docs.google.com/document/d/16AdclteyOVrZCr_FyO24bV-Hq684i5JE/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
         />
         <SyllabusComp
           dep={"CSUG"}
@@ -921,15 +897,7 @@ const BTechSyllabusold = () => {
           T={"0"}
           P={"0"}
           cred={"3"}
-          url={
-            <a
-              href="https://docs.google.com/document/d/16YSqGw-vLtKtIx_1rNURE1AcqDo5sgoL/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Image Processing Techniques
-            </a>
-          }
+          url="https://docs.google.com/document/d/1sCKoXCHlypu7z9S4DMiWZJix9q9r8JFJ/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
         />
         <SyllabusComp
           dep={"CSUG"}
@@ -940,15 +908,7 @@ const BTechSyllabusold = () => {
           T={"0"}
           P={"2"}
           cred={"3"}
-          url={
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://docs.google.com/document/d/1xlv-BqAUYBPlIRaFZa62SDlgQrSTOuGY/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
-            >
-              Bioinformatics
-            </a>
-          }
+          url="https://docs.google.com/document/d/1auIlPDJd9a2qzWthqYuIBLse2jZOIWsj/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
         />
         <SyllabusComp
           dep={"CSUG"}
@@ -1560,7 +1520,7 @@ const BTechSyllabus = () => {
           T={"0"}
           P={"2"}
           cred={"3"}
-          url=""
+          url="https://drive.google.com/file/d/1mlKCQtPTJiUZZDro626fQOYjRTh1emqJ/view?usp=sharing"
         />
         <SyllabusComp
           dep={"CSUG"}
@@ -1600,8 +1560,8 @@ const BTechSyllabus = () => {
           sem={"2"}
           code={"HS020601"}
           title={"Professional Communication and Technical Writing"}
-          L={"3"}
-          T={"0"}
+          L={"2"}
+          T={"1"}
           P={"2"}
           cred={"4"}
           url="https://docs.google.com/document/d/1WFanmrrgwFgtGvrGdGSMskPE-LHwhaSD/edit?usp=drive_link&ouid=107956080350583320778&rtpof=true&sd=true"
@@ -1714,7 +1674,7 @@ const BTechSyllabus = () => {
           T={"0"}
           P={"0"}
           cred={"3"}
-          url=""
+          url="https://docs.google.com/document/d/1_AOaB9NUcBYG9yOssTkyKjaq62_drtgQ/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
         />
 
         <SyllabusComp
@@ -2304,7 +2264,7 @@ const BTechSyllabus = () => {
           P={"0"}
           cred={"3"}
           url={
-            "https://docs.google.com/document/d/1fvWBfhadpvQYblqKpgl9byemBDg4p63a/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1H64-UTDkCpzkg_a_mKUpGGfSKRx9Mh_K/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -4103,7 +4063,7 @@ const DualCSyllabusold = () => {
           T={"1"}
           P={"0"}
           cred={"4"}
-          url={""}
+          url={"https://drive.google.com/file/d/1vqv7bi5wbPk80c3eIBpxRJBtrIt_IZAs/view?usp=drivesdk"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -4115,7 +4075,7 @@ const DualCSyllabusold = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1RbLIyCp71KOuDtNYisYeCgXFssOhlGBB/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://drive.google.com/file/d/1_849FlFORiBMwbo2vQA_gzetoJDDP-iH/view?usp=drivesdk"
           }
         />
         <SyllabusComp
@@ -4127,7 +4087,7 @@ const DualCSyllabusold = () => {
           T={"0"}
           P={"2"}
           cred={"3"}
-          url={""}
+          url={"https://drive.google.com/file/d/1E5FFH3FqZZMjmQNtAZ1pLooyKMbkgqBp/view?usp=sharing"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -4138,7 +4098,7 @@ const DualCSyllabusold = () => {
           T={"0"}
           P={"2"}
           cred={"4"}
-          url={""}
+          url={"https://docs.google.com/document/d/1ojZ3t_rDHdECjIm1Na_aslGvAlAptpTU/edit?usp=drive_link&ouid=111684243091520260943&rtpof=true&sd=true"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -4174,7 +4134,7 @@ const DualCSyllabusold = () => {
           T={"0"}
           P={"2"}
           cred={"4"}
-          url={""}
+          url={"https://docs.google.com/document/d/1j_Nbng2Th95csKOydw4pndfpQ1uNlywh/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -4185,7 +4145,7 @@ const DualCSyllabusold = () => {
           T={"0"}
           P={"2"}
           cred={"4"}
-          url={""}
+          url={"https://drive.google.com/file/d/1hL-bynZFDZFWZ5QpUPNjKfemB62lV3W_/view?usp=drivesdk"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -4272,7 +4232,7 @@ const DualCSyllabusold = () => {
           P={"0"}
           cred={"3"}
           url={
-            "https://docs.google.com/document/d/1U_DwW-h4XksotWQ75cmewDfidKk_VHWB/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1y0m-jwIsJQWDEcXoB7sab9-HJY922lm7/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
           }
         />
         <SyllabusComp
@@ -4285,7 +4245,7 @@ const DualCSyllabusold = () => {
           P={"2"}
           cred={"4"}
           url={
-            "https://docs.google.com/document/d/1y0m-jwIsJQWDEcXoB7sab9-HJY922lm7/edit?usp=sharing&ouid=111684243091520260943&rtpof=true&sd=true"
+            ""
           }
         />
         <SyllabusComp
@@ -4297,7 +4257,7 @@ const DualCSyllabusold = () => {
           T={"0"}
           P={"0"}
           cred={"3"}
-          url={""}
+          url={"https://docs.google.com/document/d/1mfPUyVcrbbtWuYUCC38UnaJXY7E6ycKQ/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
         />
 
         <SyllabusComp
@@ -5390,7 +5350,7 @@ const DualCSyllabus = () => {
           T={"0"}
           P={"2"}
           cred={"3"}
-          url={""}
+          url={"https://drive.google.com/file/d/1XqCaz5K9MotOJH9KK0bsG6yHqxPi603E/view?usp=sharing"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -5563,7 +5523,7 @@ const DualCSyllabus = () => {
           T={"0"}
           P={"0"}
           cred={"3"}
-          url={""}
+          url={"https://docs.google.com/document/d/1kGVpKX3-mefvuw4aALthu6N7hpJv7mQf/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
         />
 
         <SyllabusComp
@@ -6782,7 +6742,7 @@ const DualDSyllabusold = () => {
           T={"1"}
           P={"0"}
           cred={"4"}
-          url={" "}
+          url={"https://drive.google.com/file/d/1vqv7bi5wbPk80c3eIBpxRJBtrIt_IZAs/view?usp=drivesdk"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -6793,7 +6753,7 @@ const DualDSyllabusold = () => {
           T={"0"}
           P={"2"}
           cred={"4"}
-          url={" "}
+          url={"https://drive.google.com/file/d/1_849FlFORiBMwbo2vQA_gzetoJDDP-iH/view?usp=drivesdk"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -6804,7 +6764,7 @@ const DualDSyllabusold = () => {
           T={"0"}
           P={"2"}
           cred={"3"}
-          url={" "}
+          url={"https://drive.google.com/file/d/1l-5n9RFpaKGYyGJBt6QnXsKTS7DDVaKQ/view?usp=sharing"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -6852,7 +6812,7 @@ const DualDSyllabusold = () => {
           T={"0"}
           P={"2"}
           cred={"4"}
-          url={" "}
+          url={"https://docs.google.com/document/d/1j_Nbng2Th95csKOydw4pndfpQ1uNlywh/edit?usp=drivesdk&ouid=104039714947486577983&rtpof=true&sd=true"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -6863,7 +6823,7 @@ const DualDSyllabusold = () => {
           T={"0"}
           P={"2"}
           cred={"4"}
-          url={" "}
+          url={"https://drive.google.com/file/d/1hL-bynZFDZFWZ5QpUPNjKfemB62lV3W_/view?usp=drivesdk"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -6974,7 +6934,7 @@ const DualDSyllabusold = () => {
           T={"0"}
           P={"0"}
           cred={"3"}
-          url={""}
+          url={"https://docs.google.com/document/d/1mfPUyVcrbbtWuYUCC38UnaJXY7E6ycKQ/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -8059,7 +8019,7 @@ const   DualDSyllabus = () => {
           T={"0"}
           P={"2"}
           cred={"3"}
-          url={" "}
+          url={"https://drive.google.com/file/d/1Kvtaoou64PEqQ0WuzJdX8VtZW-u6Ipk1/view?usp=sharing"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -8103,8 +8063,8 @@ const   DualDSyllabus = () => {
           sem={"2"}
           code={"HS020801"}
           title={"Professional Communication and Technical Writing"}
-          L={"3"}
-          T={"0"}
+          L={"2"}
+          T={"1"}
           P={"2"}
           cred={"4"}
           url={"https://docs.google.com/document/d/14oZxmoldG81-cTQgAsQM0rs3TaAry9kW/edit?usp=drive_link&ouid=107956080350583320778&rtpof=true&sd=true"}
@@ -8229,7 +8189,7 @@ const   DualDSyllabus = () => {
           T={"0"}
           P={"0"}
           cred={"3"}
-          url={""}
+          url={"https://docs.google.com/document/d/1XCPXBXtQ1KbX0nIM-oHeMTIkbpXCU-uV/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"}
         />
         <SyllabusComp
           dep={"CSE"}
@@ -8908,7 +8868,7 @@ const   DualDSyllabus = () => {
           P={"2"}
           cred={"3"}
           url={
-            "https://docs.google.com/document/d/19SaBD8lN8Uj24eZS7GGPvdGeh9kUq5oX/edit?usp=drive_link&ouid=107956080350583320778&rtpof=true&sd=true"
+            "https://docs.google.com/document/d/1vpHxRS8XrE1u6XbgNBgigHSrh1U2ebK5/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
           }
         />
 

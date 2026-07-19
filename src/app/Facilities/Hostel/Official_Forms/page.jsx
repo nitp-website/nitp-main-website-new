@@ -4,12 +4,12 @@ import { Download } from 'lucide-react';
 const page = () => {
   const dataOdd = [
     {
-      link: "https://drive.google.com/file/d/1e8ndY-2UYIiDQzcCslR9iz7ynolcyz8e/view",
-      para: "Bihta Campus Hostel Allotment Form 2025-26",
+      link: "https://drive.google.com/file/d/1nvMXTSAeeI-ub6aA0PNQe5V0gMxz5rYE/view?usp=sharing",
+      para: "Bihta Campus Hostel Allotment Form 2026-27",
     },
     {
-      link: "https://drive.google.com/file/d/12t-n1ZMOtxCNTer-WfOyz2_66pb-Jwv9/view",
-      para: " Patna Campus Hostel Allotment Form 2025-26",
+      link: "https://drive.google.com/file/d/1MtdH3YUvCLuTNNZZtABeBpe2n7sdxKj1/view?usp=sharing",
+      para: " Patna Campus Hostel Allotment Form 2026-27",
     }
   ];
 

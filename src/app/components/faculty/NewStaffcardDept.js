@@ -17,9 +17,9 @@ import {
   faChevronDown,
   faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";
+import { getDepartmentName } from "../../../lib/Staffdeptlist"; 
 
-const formatDate = (value) =>
-  value ? value.toString().split("T")[0] : "Not provided";
+const formatDate = (value) => (value ? value.toString().split("T")[0] : null);
 
 const parseBatchYear = (batchStr) => {
   const [start] = (batchStr || "").split("-").map((v) => v?.trim());
@@ -51,7 +51,10 @@ const groupLabsByLevelAndYear = (labs) => {
 
 const LEVEL_ORDER = ["UG", "PG", "PHD"];
 
+// Renders nothing if value is missing, so the field simply doesn't appear
 function StatTile({ icon, label, value }) {
+  if (!value) return null;
+
   return (
     <div className="flex items-start gap-3">
       <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-red-50 text-red-700 shrink-0">
@@ -62,7 +65,7 @@ function StatTile({ icon, label, value }) {
           {label}
         </span>
         <span className="block text-sm text-gray-800 font-medium break-words">
-          {value || "Not provided"}
+          {value}
         </span>
       </div>
     </div>
@@ -120,7 +123,7 @@ function DetailModal({ staff, onClose }) {
   }, [onClose]);
 
   const getExperienceYears = (dateOfJoining) => {
-    if (!dateOfJoining) return "Not provided";
+    if (!dateOfJoining) return null;
 
     const joiningDate = new Date(dateOfJoining);
     const today = new Date();
@@ -143,6 +146,14 @@ function DetailModal({ staff, onClose }) {
 
     return years === 0 ? "Less than a year" : `${years} ${years === 1 ? "Year" : "Years"}`;
   };
+
+  const formattedJoiningDate = formatDate(date_of_joining);
+  const experience = getExperienceYears(date_of_joining);
+  const departmentName = getDepartmentName(department);
+
+  const hasLabs = labs.length > 0;
+  const hasEducation = education.length > 0;
+  const hasWorkExperience = work_experience.length > 0;
 
   return (
     <div
@@ -171,10 +182,12 @@ function DetailModal({ staff, onClose }) {
             />
           </div>
           <h2 className="text-2xl font-bold text-gray-800">{name}</h2>
-          <div className="flex items-center gap-2 mt-2 py-1.5 px-4 bg-white rounded-full border border-red-200">
-            <FontAwesomeIcon icon={faIdCard} className="w-3.5 h-3.5 text-red-700" />
-            <span className="text-sm font-medium text-gray-700">{designation}</span>
-          </div>
+          {designation && (
+            <div className="flex items-center gap-2 mt-2 py-1.5 px-4 bg-white rounded-full border border-red-200">
+              <FontAwesomeIcon icon={faIdCard} className="w-3.5 h-3.5 text-red-700" />
+              <span className="text-sm font-medium text-gray-700">{designation}</span>
+            </div>
+          )}
           {email && (
             <a
               href={"mailto:" + email}
@@ -187,31 +200,20 @@ function DetailModal({ staff, onClose }) {
         </div>
 
         <div className="px-8 py-6 space-y-5">
-          {/* Stat grid */}
+          {/* Stat grid - each tile hides itself automatically if its value is empty */}
           <div className="grid grid-cols-2 gap-x-6 gap-y-5 pb-2">
-            <StatTile icon={faBuilding} label="Department" value={department} />
+            <StatTile icon={faBuilding} label="Department" value={departmentName} />
             <StatTile icon={faPhone} label="Mobile Number" value={mobile_number} />
-            <StatTile
-              icon={faCalendarDays}
-              label="Date of Joining"
-              value={formatDate(date_of_joining)}
-            />
-            <StatTile
-              icon={faBriefcase}
-              label="Experience"
-              value={getExperienceYears(date_of_joining)}
-            />
+            <StatTile icon={faCalendarDays} label="Date of Joining" value={formattedJoiningDate} />
+            <StatTile icon={faBriefcase} label="Experience" value={experience} />
             <StatTile icon={faLightbulb} label="Expertise" value={research_interest} />
           </div>
 
-          {/* Laboratory Handled - collapsible */}
-          <CollapsibleSection icon={faFlask} title="Laboratory Handled">
-            <div className="bg-blue-50 p-5">
-              {/* <h3 className="text-blue-700 font-bold text-base pb-2 mb-4 border-b border-blue-200">
-                  Laboratory Handled
-              </h3> */}
-              {labs.length > 0 ? (
-                (() => {
+          {/* Laboratory Handled - collapsible, only rendered if there's data */}
+          {hasLabs && (
+            <CollapsibleSection icon={faFlask} title="Laboratory Handled">
+              <div className="bg-blue-50 p-5">
+                {(() => {
                   const grouped = groupLabsByLevelAndYear(labs);
                   const levels = Object.keys(grouped).sort(
                     (a, b) => LEVEL_ORDER.indexOf(a) - LEVEL_ORDER.indexOf(b)
@@ -231,7 +233,9 @@ function DetailModal({ staff, onClose }) {
                                   {lab.course_code && (
                                     <span className="font-semibold">{lab.course_code} - </span>
                                   )}
-                                  <span className="font-bold">{lab.lab_name}</span>
+                                  {lab.lab_name && (
+                                    <span className="font-bold">{lab.lab_name}</span>
+                                  )}
                                   {lab.semester && <span>, Semester {lab.semester}</span>}
                                 </p>
                               );
@@ -241,67 +245,65 @@ function DetailModal({ staff, onClose }) {
                       ))}
                     </div>
                   ));
-                })()
-              ) : (
-                <p className="text-sm text-gray-400 italic">Not provided</p>
-              )}
-            </div>
-          </CollapsibleSection>
+                })()}
+              </div>
+            </CollapsibleSection>
+          )}
 
-          {/* Education - collapsible */}
-          <CollapsibleSection icon={faGraduationCap} title="Education">
-            <div className="bg-purple-50 p-5">
-              {/* <h3 className="text-purple-700 font-bold text-base pb-2 mb-3 border-b border-purple-200">
-                Education
-              </h3> */}
-              {education.length > 0 ? (
+          {/* Education - collapsible, only rendered if there's data */}
+          {hasEducation && (
+            <CollapsibleSection icon={faGraduationCap} title="Education">
+              <div className="bg-purple-50 p-5">
                 <div className="space-y-3">
                   {education.map(function (edu, i) {
                     return (
                       <p key={edu.id || i} className="text-sm text-gray-800">
-                        <span className="font-bold">{edu.certification}</span>
+                        {edu.certification && (
+                          <span className="font-bold">{edu.certification}</span>
+                        )}
                         {edu.specialization && <span> ({edu.specialization})</span>}
-                        <span> from </span>
-                        <span className="text-blue-700 font-semibold">{edu.institution}</span>
+                        {edu.institution && (
+                          <>
+                            <span> from </span>
+                            <span className="text-blue-700 font-semibold">{edu.institution}</span>
+                          </>
+                        )}
                         {edu.passing_year && <span className="font-bold"> ({edu.passing_year})</span>}
                       </p>
                     );
                   })}
                 </div>
-              ) : (
-                <p className="text-sm text-gray-400 italic">Not provided</p>
-              )}
-            </div>
-          </CollapsibleSection>
+              </div>
+            </CollapsibleSection>
+          )}
 
-          {/* Experience - collapsible */}
-          <CollapsibleSection icon={faBriefcase} title="Experience">
-            <div className="bg-indigo-50 p-5">
-              {/* <h3 className="text-indigo-700 font-bold text-base pb-2 mb-3 border-b border-indigo-200">
-                Experience
-              </h3> */}
-              {work_experience.length > 0 ? (
+          {/* Experience - collapsible, only rendered if there's data */}
+          {hasWorkExperience && (
+            <CollapsibleSection icon={faBriefcase} title="Experience">
+              <div className="bg-indigo-50 p-5">
                 <div className="space-y-3">
                   {work_experience.map(function (we, i) {
+                    const start = formatDate(we.start_date);
+                    const end = formatDate(we.end_date);
                     return (
                       <p key={we.id || i} className="text-sm text-gray-800">
-                        <span className="font-bold">{we.work_experiences}</span>
+                        {we.work_experiences && (
+                          <span className="font-bold">{we.work_experiences}</span>
+                        )}
                         {we.institute && <span> - {we.institute}</span>}
-                        {(we.start_date || we.end_date) && (
+                        {(start || end) && (
                           <span>
                             {" "}
-                            ({formatDate(we.start_date)} to {formatDate(we.end_date)})
+                            ({start || "?"} to {end || "?"})
                           </span>
                         )}
                       </p>
                     );
                   })}
                 </div>
-              ) : (
-                <p className="text-sm text-gray-400 italic">Not provided</p>
-              )}
-            </div>
-          </CollapsibleSection>
+              </div>
+            </CollapsibleSection>
+          )}
         </div>
       </div>
     </div>
@@ -340,10 +342,12 @@ function Staffcard({ staff }) {
         <div className="text-black px-6 py-5 text-center">
           <h3 className="text-xl font-bold text-gray-800 mb-2">{name}</h3>
 
-          <div className="flex items-center justify-center py-2 px-4 bg-gray-50 rounded-lg mb-4 border-l-4 border-red-700">
-            <FontAwesomeIcon icon={faIdCard} className="w-4 h-4 text-red-700 mr-2" />
-            <h4 className="text-md font-medium text-gray-700">{designation}</h4>
-          </div>
+          {designation && (
+            <div className="flex items-center justify-center py-2 px-4 bg-gray-50 rounded-lg mb-4 border-l-4 border-red-700">
+              <FontAwesomeIcon icon={faIdCard} className="w-4 h-4 text-red-700 mr-2" />
+              <h4 className="text-md font-medium text-gray-700">{designation}</h4>
+            </div>
+          )}
 
           {email && (
             <a

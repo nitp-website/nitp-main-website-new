@@ -21,44 +21,66 @@ const ClubTeam = ({ club }) => {
     if (!club?.members || !sessionKey || !club.members[sessionKey]) return [];
     const targetSession = club.members[sessionKey];
 
-    return [
-      {
-        role: "Patna Campus PI",
-        name: targetSession.patna_campus_pi?.name,
-        email: targetSession.patna_campus_pi?.email,
-        department: targetSession.patna_campus_pi?.department,
-        image: targetSession.patna_campus_pi?.avatar,
-        contact: targetSession.patna_campus_pi?.contact,
-      },
-      {
-        role: "Bihta Campus PI",
-        name: targetSession.bihta_campus_pi?.name,
-        email: targetSession.bihta_campus_pi?.email,
-        department: targetSession.bihta_campus_pi?.department,
-        image: targetSession.bihta_campus_pi?.avatar,
-        contact: targetSession.bihta_campus_pi?.contact,
-      },
-      {
-        role: "President",
-        name: targetSession.president?.name,
-        email: targetSession.president?.email,
-        department: targetSession.president?.department,
-        image: targetSession.president?.avatar,
-        contact: targetSession.president?.contact,
-      },
-      {
-        role: "Secretary",
-        name: targetSession.secretary?.name,
-        email: targetSession.secretary?.email,
-        department: targetSession.secretary?.department,
-        image: targetSession.secretary?.avatar,
-        contact: targetSession.secretary?.contact,
-      },
-    ].filter((m) => m.name);
+    const ROLE_MAP = {
+      pi: "Program Officer (PI)",
+      president: "President",
+      vice_president: "Vice President",
+      secretary: "Secretary",
+      joint_secretary_1: "Joint Secretary 1",
+      joint_secretary_2: "Joint Secretary 2",
+      coordinator_1: "Coordinator 1",
+      coordinator_2: "Coordinator 2"
+    };
+
+    const membersList = [];
+
+    const getCampusMembers = (campusKey, campusLabel) => {
+      const campusData = targetSession[campusKey];
+      if (campusData && typeof campusData === "object") {
+        Object.keys(ROLE_MAP).forEach((roleKey) => {
+          const m = campusData[roleKey];
+          if (m && m.name && m.name.trim() !== "") {
+            membersList.push({
+              role: ROLE_MAP[roleKey],
+              name: m.name,
+              email: m.email,
+              department: m.department,
+              image: m.avatar,
+              contact: m.contact,
+              campus: campusLabel,
+            });
+          }
+        });
+      }
+    };
+
+    getCampusMembers("bihta", "Bihta Campus");
+    getCampusMembers("patna", "Patna Campus");
+
+    return membersList;
   };
 
   const currentMembers = extractMembersFromSession(currentSessionKey);
   const legacyMembers = extractMembersFromSession(selectedLegacyYear);
+
+  const patnaCurrent = currentMembers.filter(m => m.campus === "Patna Campus");
+  const bihtaCurrent = currentMembers.filter(m => m.campus === "Bihta Campus");
+  const patnaLegacy = legacyMembers.filter(m => m.campus === "Patna Campus");
+  const bihtaLegacy = legacyMembers.filter(m => m.campus === "Bihta Campus");
+
+  const renderCampusSection = (campusLabel, membersList) => {
+    if (membersList.length === 0) return null;
+    return (
+      <div className="space-y-4">
+        <h3 className="text-sm font-extrabold uppercase tracking-widest text-red-800 border-b border-red-100 pb-2">
+          {campusLabel}
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center w-full">
+          {membersList.map((member, index) => MemberCard(member, index))}
+        </div>
+      </div>
+    );
+  };
 
   const MemberCard = (member, index) => {
     return (
@@ -159,7 +181,7 @@ const ClubTeam = ({ club }) => {
             Faculty mentors and student leaders driving our club forward.
           </p>
         </div>
-        <div className="mt-8 space-y-4">
+        <div className="mt-8 space-y-8">
           {currentMembers.length === 0 ? (
             <div className="flex min-h-[140px] flex-col items-center justify-center rounded-xl border border-dashed border-red-200 p-6 text-center">
               <h3 className="text-xs font-bold text-red-950">
@@ -170,9 +192,10 @@ const ClubTeam = ({ club }) => {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center w-full">
-              {currentMembers.map((member, index) => MemberCard(member, index))}
-            </div>
+            <>
+              {renderCampusSection("Bihta Campus", bihtaCurrent)}
+              {renderCampusSection("Patna Campus", patnaCurrent)}
+            </>
           )}
         </div>
         {legacySessionKeys.length > 0 && (
@@ -229,10 +252,9 @@ const ClubTeam = ({ club }) => {
                 </div>
 
                 {legacyMembers.length > 0 ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center w-full">
-                    {legacyMembers.map((member, index) =>
-                      MemberCard(member, index),
-                    )}
+                  <div className="space-y-8">
+                    {renderCampusSection("Bihta Campus", bihtaLegacy)}
+                    {renderCampusSection("Patna Campus", patnaLegacy)}
                   </div>
                 ) : (
                   <div className="flex min-h-[140px] flex-col items-center justify-center rounded-xl border border-dashed border-red-200 p-6 text-center">

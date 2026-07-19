@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useClub } from "./ClubProvider";
 import { ChevronDown, LayoutDashboard, Users2, Calendar, Contact2 } from "lucide-react";
 
-import Clubs from "@/app/assets/images/clubs.svg";
+import NITPLogo from "@/app/assets/images/logo.png";
 
 // Dynamic active/inactive Tailwind styles for sidebar links
 const linkClass = (active) =>
@@ -18,14 +18,15 @@ const linkClass = (active) =>
   
 // Renders the club logo, name, and category (supports both mobile and desktop layouts)
 function ClubHeader({ club, mobile = false }) {
-  const logoSrc = club?.logo || Clubs.src;
+  const logoSrc = club?.logo || NITPLogo.src;
   const name = club?.name || "Club";
   const category = club?.category || "Student Club";
+  const isInactive = club?.status && club.status.toLowerCase() === "inactive";
 
   if (mobile) {
     return (
       <div className="flex items-center gap-3 min-w-0 text-left">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-red-100 bg-white p-1 shadow-sm overflow-hidden bg-slate-50">
+        <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border bg-white p-1 shadow-sm overflow-hidden ${isInactive ? "border-gray-300 filter grayscale opacity-75" : "border-red-100"}`}>
           <img
             src={logoSrc}
             alt={`${name} logo`}
@@ -48,7 +49,7 @@ function ClubHeader({ club, mobile = false }) {
   return (
     <div className="p-5 border-b border-red-100 bg-gradient-to-b from-red-50/30 to-transparent">
       <div className="flex flex-col items-center text-center">
-        <div className="relative flex h-20 w-20 items-center justify-center rounded-full border-2 border-red-200 bg-white p-1 shadow-sm mb-3 transition-transform duration-300 hover:scale-[1.03] overflow-hidden bg-slate-50">
+        <div className={`relative flex h-20 w-20 items-center justify-center rounded-full border-2 bg-white p-1 shadow-sm mb-3 transition-transform duration-300 hover:scale-[1.03] overflow-hidden ${isInactive ? "border-gray-300 filter grayscale opacity-75" : "border-red-200"}`}>
           <img
             src={logoSrc}
             alt={`${name} logo`}

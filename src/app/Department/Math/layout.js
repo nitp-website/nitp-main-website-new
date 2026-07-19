@@ -18,7 +18,11 @@ const dept = "Math"; // Replace with the actual department name or variable
 
 const navItems = [
   { name: "Mathematics and Computing Technology" },
-  { name: "Overview", url: `/Department/${dept}`, icon: <BookOpen size={20} /> },
+  {
+    name: "Overview",
+    url: `/Department/${dept}`,
+    icon: <BookOpen size={20} />,
+  },
   {
     name: "About",
     icon: <BookOpen size={18} />,
@@ -51,11 +55,11 @@ const navItems = [
         url: `/Department/${dept}/faculty`,
         icon: <Scroll size={18} />,
       },
-      // {
-      //   name: "Staff",
-      //   url: `/Department/${dept}/staff`,
-      //   icon: <FileText size={18} />,
-      // },
+      {
+        name: "Staff",
+        url: `/Department/${dept}/staff`,
+        icon: <FileText size={18} />,
+      },
       {
         name: "Research Students",
         url: `/Department/${dept}/researchStudents`,
