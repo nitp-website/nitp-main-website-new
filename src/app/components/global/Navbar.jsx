@@ -1124,7 +1124,7 @@ function SubSidemenu({ item, closeSideMenu }) {
               {subChild.iconImage && (
                 typeof subChild.iconImage === "string" && subChild.iconImage.startsWith("http")
                   ? <img src={subChild.iconImage} alt="item-icon" width={20} height={20} className="object-contain" />
-                  : <Image src={subChild.iconImage} alt="item-icon" />
+                  : <Image src={subChild.iconImage} alt="item-icon" width={20} height={20} />
               )}
               <Link
                 href={subChild.link ?? "#"}
