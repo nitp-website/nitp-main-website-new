@@ -224,6 +224,14 @@ const ClubHero = ({ club }) => {
                       <p className="text-xs font-semibold text-red-800 mt-0.5 line-clamp-1">
                         {bihtaPI.department || ""}
                       </p>
+                      {bihtaPI.email && (
+                        <Link
+                          href={`/profile/${bihtaPI.email}`}
+                          className="mt-2.5 inline-flex items-center gap-1 rounded-lg bg-red-800 px-3 py-1 text-[11px] font-bold text-white transition-all duration-200 hover:bg-red-900 shadow-xs"
+                        >
+                          View Profile
+                        </Link>
+                      )}
                     </div>
                   )}
                   {showPatnaPI && (
@@ -246,6 +254,14 @@ const ClubHero = ({ club }) => {
                       <p className="text-xs font-semibold text-red-800 mt-0.5 line-clamp-1">
                         {patnaPI.department || ""}
                       </p>
+                      {patnaPI.email && (
+                        <Link
+                          href={`/profile/${patnaPI.email}`}
+                          className="mt-2.5 inline-flex items-center gap-1 rounded-lg bg-red-800 px-3 py-1 text-[11px] font-bold text-white transition-all duration-200 hover:bg-red-900 shadow-xs"
+                        >
+                          View Profile
+                        </Link>
+                      )}
                     </div>
                   )}
                 </div>

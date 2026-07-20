@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { History, Inbox, ChevronDown } from "lucide-react";
+import Link from "next/link";
+import { History, Inbox, ChevronDown, User } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
@@ -22,7 +23,7 @@ const ClubTeam = ({ club }) => {
     const targetSession = club.members[sessionKey];
 
     const ROLE_MAP = {
-      pi: "Program Officer (PI)",
+      pi: "Professor-In-Charge",
       president: "President",
       vice_president: "Vice President",
       secretary: "Secretary",
@@ -83,10 +84,15 @@ const ClubTeam = ({ club }) => {
   };
 
   const MemberCard = (member, index) => {
+    const isPI =
+      member.role?.toLowerCase().includes("pi") ||
+      member.role?.toLowerCase().includes("program officer") ||
+      member.role?.toLowerCase().includes("professor");
+
     return (
       <div
         key={`${member.role}-${index}-${member.name}`}
-        className="w-full max-w-[280px] h-[340px] bg-[#f7f5ec] rounded-2xl shadow-md hover:shadow-lg overflow-hidden transition-all duration-300 border border-red-100/40 flex flex-col justify-between relative p-5 items-center group"
+        className="w-full max-w-[280px] min-h-[340px] bg-[#f7f5ec] rounded-2xl shadow-md hover:shadow-lg overflow-hidden transition-all duration-300 border border-red-100/40 flex flex-col justify-between relative p-5 items-center group"
       >
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-2/3 h-6 bg-red-800 rounded-b-lg flex items-center justify-center z-10 px-2 shadow-sm">
           <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white truncate">
@@ -161,6 +167,15 @@ const ClubTeam = ({ club }) => {
                 </span>
               </a>
             )}
+            {member.email && isPI && (
+              <Link
+                href={`/profile/${member.email}`}
+                className="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-red-800 hover:text-white bg-red-50 hover:bg-red-800 border border-red-200 rounded-lg py-1.5 px-3 w-full transition-all duration-200 mt-1 shadow-xs"
+              >
+                <User className="w-3.5 h-3.5" />
+                View Profile
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -219,9 +234,8 @@ const ClubTeam = ({ club }) => {
               <button
                 type="button"
                 onClick={() => setIsLegacyOpen((prev) => !prev)}
-                className={`flex h-7 w-7 items-center justify-center rounded-lg border border-red-200 bg-white text-red-800 hover:bg-red-50 hover:text-red-900 transition-transform duration-300 ${
-                  isLegacyOpen ? "rotate-180" : ""
-                }`}
+                className={`flex h-7 w-7 items-center justify-center rounded-lg border border-red-200 bg-white text-red-800 hover:bg-red-50 hover:text-red-900 transition-transform duration-300 ${isLegacyOpen ? "rotate-180" : ""
+                  }`}
               >
                 <ChevronDown size={14} />
               </button>

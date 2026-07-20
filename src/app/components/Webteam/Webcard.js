@@ -40,6 +40,19 @@ const Webcard = ({ name, email, desg, image, url, interests }) => {
   const SocialButtons = ({ insideHover = false }) => (
     <div className={`flex items-center gap-4 ${insideHover ? "mt-4 pt-3 border-t border-gray-200 w-full justify-center" : "mt-auto mb-6 absolute bottom-0 group-hover:opacity-0 transition-opacity duration-300"}`}>
       
+      {/* Personal Faculty Profile Link */}
+      {(url || desg?.toLowerCase().includes("professor") || desg?.toLowerCase().includes("in charge")) && (
+        <a
+          href={url || `/profile/${email}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`flex items-center justify-center rounded-full transition-all ${insideHover ? "w-10 h-10 bg-red-600 text-white hover:scale-110 shadow-md" : "w-9 h-9 bg-red-600 text-white shadow-lg shadow-red-200"}`}
+          title="View Personal Profile"
+        >
+          <i className="ri-user-3-line text-lg"></i>
+        </a>
+      )}
+
       {/* Portfolio or Email */}
       {isAshish ? (
         <a
