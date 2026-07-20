@@ -3054,7 +3054,7 @@ const BTechAIDSSyllabus = () => {
           dep={"MCT"}
           sem={"2"}
           code={"MC020201"}
-          title={"Probability and Statistics for AI"}
+          title={"Engineering Mathematics-II"}
           L={"3"}
           T={"1"}
           P={"0"}

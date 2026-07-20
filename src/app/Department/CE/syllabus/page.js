@@ -30,10 +30,25 @@ export default function page() {
             UG PROGRAM :-
           </div>
           <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
-            <li>
-              <a href="https://drive.google.com/file/d/1TTblz48XLiUYs5JRHlqa37VWqpyWXb_w/view?usp=drivesdk">
-                B.Tech Civil Engineering (Effective from 2022-2023 onward)
-              </a>
+            <li className="mb-4">
+              B.Tech Civil Engineering
+              <ul className="list-disc list-inside ml-5 mt-2 space-y-2 text-[16px] max-md:text-[14px] max-sm:text-xs">
+                <li>
+                  <a href="https://drive.google.com/file/d/1zRdX14UvcKVhHE-hI8Xpk4e1oXRAwEZK/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2022-2024 admitted students
+                  </a>
+                </li>
+                <li>
+                  <a href="https://drive.google.com/file/d/1tvqpo-tNTyiej9KaahrENmY9dK9poFOn/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2025 admitted students
+                  </a>
+                </li>
+                <li>
+                  <a href="https://drive.google.com/file/d/10zGLobhgGZymsx7sKZN0BkyOag9qyDPH/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2026-2027 onward
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -43,34 +58,80 @@ export default function page() {
             PG PROGRAM :-
           </div>
           <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
-            <li>
-              <a href="https://drive.google.com/file/d/16XTey9OYvtOJFERcuBfNXlzZU_NskNEg/view?usp=drivesdk">
-                M.Tech Water Resources Engineering (Effective from 2021-2022
-                onward)
-              </a>
+            <li className="mb-4">
+              M.Tech Water Resources Engineering
+              <ul className="list-disc list-inside ml-5 mt-2 space-y-2 text-[16px] max-md:text-[14px] max-sm:text-xs">
+                <li>
+                  <a href="https://drive.google.com/file/d/1Iuiz77Rg0dSqca51gDGWG6SVOq_-2-J8/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2025 admitted students
+                  </a>
+                </li>
+                <li>
+                  <a href="https://drive.google.com/file/d/1b0sepurY3chcBg0wRjsjY2c5YaDtZwvm/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2026-2027 onward
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li>
-              <a href="https://drive.google.com/file/d/1fXR4RROFC2UQo461jiNn7--ZQJoN384i/view?usp=drivesdk">
-                M.Tech Transportation Engineering (Effective from 2021-2022
-                onward)
-              </a>
+            <li className="mb-4">
+              M.Tech Transportation Engineering
+              <ul className="list-disc list-inside ml-5 mt-2 space-y-2 text-[16px] max-md:text-[14px] max-sm:text-xs">
+                <li>
+                  <a href="https://drive.google.com/file/d/19f5Y0LacTy1a70y-sqvXXiISJpAaJIPj/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2025 admitted students
+                  </a>
+                </li>
+                <li>
+                  <a href="https://drive.google.com/file/d/1x2SeebDjSpjvCQGzSR8HJ1bLOCVpJHgR/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2026-2027 onward
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li>
-              <a href="https://drive.google.com/file/d/1q8Wndh5pM4EcILaTqfafpnag20XqOtS6/view?usp=drivesdk">
-                M.Tech Structural Engineering (Effective from 2021-2022 onward)
-              </a>
+            <li className="mb-4">
+              M.Tech Structural Engineering
+              <ul className="list-disc list-inside ml-5 mt-2 space-y-2 text-[16px] max-md:text-[14px] max-sm:text-xs">
+                <li>
+                  <a href="https://drive.google.com/file/d/1TEkbF3hnugFPINiLaM0LBOt6NU9B9FYE/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2025 admitted students
+                  </a>
+                </li>
+                <li>
+                  <a href="https://drive.google.com/file/d/1S6DoQ_Ye6znYCFdR7KtPqLDeD5gTTuOi/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2026-2027 onward
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li>
-              <a href="https://drive.google.com/file/d/1-r7SS3hmSbMl52e2VIqJnti8yPlLWiLa/view?usp=drivesdk">
-                M.Tech Geotechnical Engineering (Effective from 2021-2022
-                onward)
-              </a>
+            <li className="mb-4">
+              M.Tech Geotechnical Engineering
+              <ul className="list-disc list-inside ml-5 mt-2 space-y-2 text-[16px] max-md:text-[14px] max-sm:text-xs">
+                <li>
+                  <a href="https://drive.google.com/file/d/1TD5ZfeHPUjE20u1fUhEnion5Ngq0pNkp/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2025 admitted students
+                  </a>
+                </li>
+                <li>
+                  <a href="https://drive.google.com/file/d/1MM0eK3fnLXEoanYBN70jMCE0kyS5jeHb/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2026-2027 onward
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li>
-              <a href="https://drive.google.com/file/d/1X57Lq9nCBjK7Db8m990hYBuj_81tRfkE/view?usp=drivesdk">
-                M.Tech Environmental Engineering (Effective from 2021-2022
-                onward)
-              </a>
+            <li className="mb-4">
+              M.Tech Environmental Engineering
+              <ul className="list-disc list-inside ml-5 mt-2 space-y-2 text-[16px] max-md:text-[14px] max-sm:text-xs">
+                <li>
+                  <a href="https://drive.google.com/file/d/11-0-Li2A4MRNxnT1QGjGmSfEyy9wBOAk/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2025 admitted students
+                  </a>
+                </li>
+                <li>
+                  <a href="https://drive.google.com/file/d/1XDD1pIO7yrWXKRYLfKjvHwFVfiaJMy7D/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2026-2027 onward
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -80,11 +141,20 @@ export default function page() {
             PHD PROGRAM :-
           </div>
           <ul className="list-disc list-inside ml-5 space-y-4 text-lg max-md:text-[15px] max-sm:text-sm">
-            <li>
-              <a href="https://drive.google.com/file/d/1jsKFA6qu4OGyIJSAf8Bp6Ow8Wz2houq0/view?usp=drivesdk">
-                Dual Degree (B.Tech (Civil Engineering) + M.Tech (Construction
-                Technology Management)) Effective from 2022-2023 onward
-              </a>
+            <li className="mb-4">
+              Dual Degree (B.Tech + M.Tech)
+              <ul className="list-disc list-inside ml-5 mt-2 space-y-2 text-[16px] max-md:text-[14px] max-sm:text-xs">
+                <li>
+                  <a href="https://drive.google.com/file/d/1eP4CLl1dtNLGSA37SoFKdGDc6z54PkJ0/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2025 admitted students
+                  </a>
+                </li>
+                <li>
+                  <a href="https://drive.google.com/file/d/1MBNPmDiW9kOPmQsFsZ79r4AQ_VRjscVQ/view?usp=drivesdk" target="_blank" className="hover:text-blue-800 text-blue-600">
+                    Effective from 2026-2027 onward
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
