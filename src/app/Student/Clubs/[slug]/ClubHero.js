@@ -32,6 +32,7 @@ const ClubHero = ({ club }) => {
 
   // Carousel layout and tracking state
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMessageExpanded, setIsMessageExpanded] = useState(false);
   const scrollRef = useRef(null);
 
   const stats = [
@@ -201,7 +202,7 @@ const ClubHero = ({ club }) => {
               aria-hidden="true"
             />
 
-            <div className={`relative z-10 grid gap-6 ${showPatnaPI && showBihtaPI ? "lg:grid-cols-[380px_1fr]" : "md:grid-cols-[180px_1fr]"} items-center`}>
+            <div className="relative z-10 flex flex-col gap-6 items-center w-full">
               {hasPI && (
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch w-full">
                   {showBihtaPI && (
@@ -224,6 +225,14 @@ const ClubHero = ({ club }) => {
                       <p className="text-xs font-semibold text-red-800 mt-0.5 line-clamp-1">
                         {bihtaPI.department || ""}
                       </p>
+                      {bihtaPI.email && (
+                        <Link
+                          href={`/profile/${bihtaPI.email}`}
+                          className="mt-2.5 inline-flex items-center gap-1 rounded-lg bg-red-800 px-3 py-1 text-[11px] font-bold text-white transition-all duration-200 hover:bg-red-900 shadow-xs"
+                        >
+                          View Profile
+                        </Link>
+                      )}
                     </div>
                   )}
                   {showPatnaPI && (
@@ -246,18 +255,36 @@ const ClubHero = ({ club }) => {
                       <p className="text-xs font-semibold text-red-800 mt-0.5 line-clamp-1">
                         {patnaPI.department || ""}
                       </p>
+                      {patnaPI.email && (
+                        <Link
+                          href={`/profile/${patnaPI.email}`}
+                          className="mt-2.5 inline-flex items-center gap-1 rounded-lg bg-red-800 px-3 py-1 text-[11px] font-bold text-white transition-all duration-200 hover:bg-red-900 shadow-xs"
+                        >
+                          View Profile
+                        </Link>
+                      )}
                     </div>
                   )}
                 </div>
               )}
-              <div className="space-y-3 flex-1">
+              <div className="space-y-3 w-full">
                 <span className="inline-flex items-center rounded-full bg-red-50 px-2.5 py-0.5 text-[10px] font-bold text-red-800 uppercase tracking-wider">
                   Message from PI
                 </span>
-                <blockquote className="border-l-4 border-red-700 pl-4 bg-red-50/10 py-3 pr-3 rounded-r-xl">
-                  <p className="text-sm leading-relaxed text-gray-800 italic font-medium">
-                    {piMessage || ""}
+                <blockquote className="border-l-4 border-red-700 pl-4 bg-red-50/10 py-3 pr-3 rounded-r-xl w-full">
+                  <p className="text-sm leading-relaxed text-gray-800 italic font-medium text-justify">
+                    {piMessage.length > 280 && !isMessageExpanded
+                      ? `${piMessage.slice(0, 280)}...`
+                      : piMessage}
                   </p>
+                  {piMessage.length > 280 && (
+                    <button
+                      onClick={() => setIsMessageExpanded(!isMessageExpanded)}
+                      className="mt-2 text-xs font-bold text-red-800 hover:text-red-950 transition-colors duration-200 cursor-pointer focus:outline-none"
+                    >
+                      {isMessageExpanded ? "Read Less" : "Read More"}
+                    </button>
+                  )}
                 </blockquote>
               </div>
             </div>

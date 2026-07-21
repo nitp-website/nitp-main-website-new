@@ -527,6 +527,7 @@ const BASE_NAV_ITEMS = [
 
   {
     label: "Students",
+    mlabel: "Students",
     // link: "/Student",
     link: "#",
     children: [
@@ -771,34 +772,34 @@ export default function Navbar() {
     fixHindiInstituteName();
   }, []);
 
-    useEffect(() => {  //getting all clubs data to be dynamically updated
-      let mounted = false;
-  
-      async function fetchAndInjectClubs() {
-        try {
-          const clubs = await getClubs();
-          if (mounted || !Array.isArray(clubs) || clubs.length === 0) return;
-  
-          const clubChildren = clubs.map(club => {
-            const isInactive = club.status && club.status.toLowerCase() === "inactive";
-            return {
-              label: isInactive ? `${club.name} (Inactive)` : club.name,
-              link:  `/Student/Clubs/${club.id}`,
-              iconImage: club.logo || logo,
-            };
-          });
-  
-          setNavItems(buildNavItems(clubChildren));
-        } catch (err) {
-          if (process.env.NODE_ENV === "development") {
-            console.warn("[Navbar] Could not load clubs:", err.message);
-          }
+  useEffect(() => {  //getting all clubs data to be dynamically updated
+    let mounted = false;
+
+    async function fetchAndInjectClubs() {
+      try {
+        const clubs = await getClubs();
+        if (mounted || !Array.isArray(clubs) || clubs.length === 0) return;
+
+        const clubChildren = clubs.map(club => {
+          const isInactive = club.status && club.status.toLowerCase() === "inactive";
+          return {
+            label: isInactive ? `${club.name} (Inactive)` : club.name,
+            link: `/Student/Clubs/${club.id}`,
+            iconImage: club.logo || logo,
+          };
+        });
+
+        setNavItems(buildNavItems(clubChildren));
+      } catch (err) {
+        if (process.env.NODE_ENV === "development") {
+          console.warn("[Navbar] Could not load clubs:", err.message);
         }
       }
-  
-      fetchAndInjectClubs();
-      return () => { mounted = true; };
-    }, []);
+    }
+
+    fetchAndInjectClubs();
+    return () => { mounted = true; };
+  }, []);
 
   return (
     <>
@@ -1022,10 +1023,10 @@ function DropdownItem({ item, parentLabel }) {
 
       {item.children && (
         <div
-          className={`absolute left-full top-0  w-auto flex-col gap-1 rounded-lg shadow-md transition-all  bg-neutral-200 md:bg-neutral-100 ${isSOpen ? "flex" : "hidden"
+          className={`absolute left-full top-0 ${parentLabel?.toLowerCase() === "students" ? "w-60" : "w-auto"} flex-col gap-1 rounded-lg shadow-md transition-all  bg-neutral-200 md:bg-neutral-100 ${isSOpen ? "flex" : "hidden"
             }`}
         >
-          <div className="border-solid border-2 border-red-800 m-4 p-2 rounded-lg	">
+          <div className="border-solid border-2  max-h-[50vh] overflow-y-auto  border-red-800 m-4 p-2 rounded-lg">
             {item.children.map((subChild, subIndex) => (
               <Link
                 key={subIndex}
@@ -1037,7 +1038,7 @@ function DropdownItem({ item, parentLabel }) {
                     ? <img src={subChild.iconImage} alt="item-icon" width={20} height={20} className="object-contain" />
                     : <Image src={subChild.iconImage} alt="item-icon" width={20} height={20} />
                 )}
-                <span className="whitespace-nowrap pl-3">{subChild.label}</span>
+                <span title={subChild.label} className={`${parentLabel.toLowerCase() === 'students' ? 'block  truncate' : 'whitespace-nowrap'} pl-3`}>{subChild.label}</span>
               </Link>
             ))}
           </div>
@@ -1124,7 +1125,7 @@ function SubSidemenu({ item, closeSideMenu }) {
               {subChild.iconImage && (
                 typeof subChild.iconImage === "string" && subChild.iconImage.startsWith("http")
                   ? <img src={subChild.iconImage} alt="item-icon" width={20} height={20} className="object-contain" />
-                  : <Image src={subChild.iconImage} alt="item-icon" />
+                  : <Image src={subChild.iconImage} alt="item-icon" className="w-5 h-5" />
               )}
               <Link
                 href={subChild.link ?? "#"}
