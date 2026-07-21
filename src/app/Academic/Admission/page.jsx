@@ -137,7 +137,12 @@ const admissionData = {
       // },
     ],
     notices: [
-      
+       {
+        title: "Written Test Notice for PhD Programme (July-December 2026) Admissions, Ay- 2026-27",
+         date: "2026-06-21",
+       content: "PhD Admission",
+        href: "https://drive.google.com/file/d/1T4fY5H-PXQO4A4Jeg-4byebd7vrXVBLG/view?usp=sharing"
+       },
        {
         title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2026-27 (Odd Semester: July–Dec 2026). Last date: 20th July 2026",
          date: "2026-06-04",
