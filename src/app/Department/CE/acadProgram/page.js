@@ -21,8 +21,8 @@ const programs = [
       "The admission to the 4-year B. Tech. (Civil Engineering) is through prestigious IIT-JEE (Main). The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
     links: [
       { name: "2022-2024", url: "https://drive.google.com/file/d/1zRdX14UvcKVhHE-hI8Xpk4e1oXRAwEZK/view" },
-      { name: "2025 onwards", url: "https://drive.google.com/file/d/1tvqpo-tNTyiej9KaahrENmY9dK9poFOn/view" },
-      { name: "2026 onwards", url: "https://drive.google.com/file/d/10zGLobhgGZymsx7sKZN0BkyOag9qyDPH/view" }
+      { name: "2025", url: "https://drive.google.com/file/d/1tvqpo-tNTyiej9KaahrENmY9dK9poFOn/view" },
+      { name: "2026-onwards", url: "https://drive.google.com/file/d/10zGLobhgGZymsx7sKZN0BkyOag9qyDPH/view" }
     ],
   },
   {
@@ -32,8 +32,8 @@ const programs = [
     description:
       "The admission to the 2-year M. Tech. in Water Resources Engineering is through GATE examination. Although the research/dissertation is the main component of the programme, due emphasis is also given to the course works. Following are the course structure and syllabus.",
     links: [
-      { name: "2025 onwards", url: "https://drive.google.com/file/d/1Iuiz77Rg0dSqca51gDGWG6SVOq_-2-J8/view" },
-      { name: "2026 onwards", url: "https://drive.google.com/file/d/1b0sepurY3chcBg0wRjsjY2c5YaDtZwvm/view" }
+      { name: "2025", url: "https://drive.google.com/file/d/1Iuiz77Rg0dSqca51gDGWG6SVOq_-2-J8/view" },
+      { name: "2026-onwards", url: "https://drive.google.com/file/d/1b0sepurY3chcBg0wRjsjY2c5YaDtZwvm/view" }
     ],
   },
   {
@@ -44,8 +44,8 @@ const programs = [
     description:
       "The admission to the 2-year M. Tech. in Transportation Engineering is through GATE examination. Although the research/dissertation is the main component of the programme, due emphasis is also given to the course works. Following are the course structure and syllabus.",
     links: [
-      { name: "2025 onwards", url: "https://drive.google.com/file/d/19f5Y0LacTy1a70y-sqvXXiISJpAaJIPj/view" },
-      { name: "2026 onwards", url: "https://drive.google.com/file/d/1x2SeebDjSpjvCQGzSR8HJ1bLOCVpJHgR/view" }
+      { name: "2025", url: "https://drive.google.com/file/d/19f5Y0LacTy1a70y-sqvXXiISJpAaJIPj/view" },
+      { name: "2026-onwards", url: "https://drive.google.com/file/d/1x2SeebDjSpjvCQGzSR8HJ1bLOCVpJHgR/view" }
     ],
   },
   {
@@ -56,8 +56,8 @@ const programs = [
     description:
       "The admission to the 2-year M. Tech. in Structural Engineering is through GATE examination. Although the research/dissertation is the main component of the programme, due emphasis is also given to the course works. Following are the course structure and syllabus.",
     links: [
-      { name: "2025 onwards", url: "https://drive.google.com/file/d/1TEkbF3hnugFPINiLaM0LBOt6NU9B9FYE/view" },
-      { name: "2026 onwards", url: "https://drive.google.com/file/d/1S6DoQ_Ye6znYCFdR7KtPqLDeD5gTTuOi/view" }
+      { name: "2025", url: "https://drive.google.com/file/d/1TEkbF3hnugFPINiLaM0LBOt6NU9B9FYE/view" },
+      { name: "2026-onwards", url: "https://drive.google.com/file/d/1S6DoQ_Ye6znYCFdR7KtPqLDeD5gTTuOi/view" }
     ],
   },
   {
@@ -68,8 +68,8 @@ const programs = [
     description:
       "The admission to the 2-year M. Tech. in Geotechnical Engineering is through GATE examination. Although the research/dissertation is the main component of the programme, due emphasis is also given to the course works. Following are the course structure and syllabus.",
     links: [
-      { name: "2025 onwards", url: "https://drive.google.com/file/d/1TD5ZfeHPUjE20u1fUhEnion5Ngq0pNkp/view" },
-      { name: "2026 onwards", url: "https://drive.google.com/file/d/1MM0eK3fnLXEoanYBN70jMCE0kyS5jeHb/view" }
+      { name: "2025", url: "https://drive.google.com/file/d/1TD5ZfeHPUjE20u1fUhEnion5Ngq0pNkp/view" },
+      { name: "2026-onwards", url: "https://drive.google.com/file/d/1MM0eK3fnLXEoanYBN70jMCE0kyS5jeHb/view" }
     ],
   },
   {
@@ -79,8 +79,8 @@ const programs = [
     description:
       "The admission to the 2-year M. Tech. in Environmental Engineering is through GATE examination. Although the research/dissertation is the main component of the programme, due emphasis is also given to the course works. Following are the course structure and syllabus.",
     links: [
-      { name: "2025 onwards", url: "https://drive.google.com/file/d/11-0-Li2A4MRNxnT1QGjGmSfEyy9wBOAk/view" },
-      { name: "2026 onwards", url: "https://drive.google.com/file/d/1XDD1pIO7yrWXKRYLfKjvHwFVfiaJMy7D/view" }
+      { name: "2025", url: "https://drive.google.com/file/d/11-0-Li2A4MRNxnT1QGjGmSfEyy9wBOAk/view" },
+      { name: "2026-onwards", url: "https://drive.google.com/file/d/1XDD1pIO7yrWXKRYLfKjvHwFVfiaJMy7D/view" }
     ],
   },
   {
@@ -90,8 +90,9 @@ const programs = [
     description:
       "The admission to the 5-year Dual Degree (B.Tech + M.Tech) in Civil Engineering is through prestigious IIT-JEE (Main). The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
     links: [
-      { name: "2025 onwards", url: "https://drive.google.com/file/d/1eP4CLl1dtNLGSA37SoFKdGDc6z54PkJ0/view" },
-      { name: "2026 onwards", url: "https://drive.google.com/file/d/1MBNPmDiW9kOPmQsFsZ79r4AQ_VRjscVQ/view" }
+      { name: "2022-2024", url: "https://drive.google.com/file/d/1nmD0YsJreG5ZjPpCuRqKAimL2gcdsV-A/view" },
+      { name: "2025", url: "https://drive.google.com/file/d/1eP4CLl1dtNLGSA37SoFKdGDc6z54PkJ0/view" },
+      { name: "2026-onwards", url: "https://drive.google.com/file/d/1MBNPmDiW9kOPmQsFsZ79r4AQ_VRjscVQ/view" }
     ],
   },
 ];
