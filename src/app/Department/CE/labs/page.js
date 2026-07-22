@@ -42,7 +42,6 @@ const mainLabSections = [
         ],
         images: [
             { src: "/department/civil/labs/Surveying Laboratory/image1.png", alt: "Surveying Laboratory 1" },
-            { src: "/department/civil/labs/Surveying Laboratory/image2.jpeg", alt: "Surveying Laboratory 2" }
         ],
         align: "left",
     },
@@ -256,7 +255,7 @@ export default function CivilLabsPage() {
         <div className="relative overflow-hidden bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.92),rgba(243,244,246,0.92))] px-4 pb-10 pt-6 sm:px-8 lg:px-6">
             <div className="mx-auto w-full max-w-7xl">
                 <div className="mb-8 text-center">
-                    <h1 className="mt-3 text-3xl font-black tracking-tight text-red-900 sm:text-5xl">Civil Engineering Labs</h1>
+                    <h1 className="mt-3 text-3xl font-black tracking-tight text-red-900 sm:text-5xl">Labs</h1>
                 </div>
 
                 <div className="mb-10 overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_24px_70px_rgba(127,29,29,0.14)]">
