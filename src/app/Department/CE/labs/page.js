@@ -15,7 +15,7 @@ const carouselSlides = [
 const mainLabSections = [
     {
         title: "Transportation Engineering Lab",
-        pi: "Prof. Sanjeev Sinha",
+        pi: "Dr. S.K. Suman",
         description:
             "The Transportation Engineering Laboratory is equipped to cater to the academic and research needs of undergraduate and postgraduate students, as well as research scholars, working in the areas of highway materials, pavement evaluation, and traffic systems. It bridges theoretical background and practical fieldwork to ensure the design of safe, durable, and cost-effective transportation infrastructure. This lab provides hands-on instruction in assessing material quality utilising the physical, chemical, and mechanical properties of aggregates and binders, including rheological properties, in accordance with regulatory engineering standards such as IS/IRC/MoRTH/ASTM/EN, among others. This facility also offers non-destructive in-situ testing to evaluate the quality of the pavement structure. This lab is well equipped with instruments for undergraduates, postgraduates, and research scholars. This section also offers research and consulting services to the industries.",
         attachments: [
@@ -30,7 +30,7 @@ const mainLabSections = [
         align: "right",
     },
     {
-        title: "Surveying Laboratory",
+        title: "Surveying Lab",
         pi: "Dr. Gopikrishnan T",
         description:
             "Surveying is the first step of any engineering project, as it provides the essential spatial and topographical information required for planning, design, construction, and monitoring. Accurate surveying ensures that engineering structures are properly aligned, located, and executed according to design specifications. To impart strong practical knowledge and hands-on experience, the department has a well-equipped Surveying Laboratory with a comprehensive range of modern and conventional surveying instruments. The laboratory effectively supports undergraduate courses in surveying and enables students to understand both the theoretical concepts and practical applications of surveying techniques.",
@@ -112,7 +112,7 @@ const mainLabSections = [
         align: "left",
     },
     {
-        title: "Heavy Structure Laboratory",
+        title: "Heavy Structure Lab",
         pi: "Dr. Govind Mohan",
         description:
             "Heavy Structure Laboratory is a specialized facility established to support teaching, research, and consultancy in structural engineering with a focus on the evaluation, monitoring, and performance assessment of civil engineering structures. The laboratory provides excellent facilities for undergraduate and postgraduate teaching, advanced research in earthquake engineering, structural health monitoring, durability assessment, non-destructive testing, rehabilitation of existing structures, and performance-based structural engineering. It is equipped with advanced testing and diagnostic instruments such as a 500 kN Servo Hydraulic Universal Testing Machine, an advanced Servo Hydraulic Shake Table, and an Ultrasonic Pulse Velocity (UPV) Testing Machine.",
@@ -144,7 +144,7 @@ const mainLabSections = [
         align: "left",
     },
     {
-        title: "Geotechnical Engineering Laboratory",
+        title: "Geotechnical Engineering Lab",
         pi: "Prof. (Dr.) Sunita Kumari",
         description:
             "The Geotechnical Engineering Laboratory is equipped with modern facilities to perform a wide range of basic characterization tests and advanced geotechnical investigations on soils, rocks, and other geomaterials. The laboratory provides comprehensive testing capabilities to determine the physical, chemical, engineering properties of geomaterials, as well as industrial by-products such as fly ash, bottom ash, slag, and recycled construction materials. These properties are essential for understanding the engineering behavior of geomaterials under different loading and environmental conditions.",
@@ -175,7 +175,7 @@ function LabSection({ title, pi, description, image, imageAlt, attachments, alig
                     {pi && (
                         <div className="inline-flex items-center rounded-full border border-red-200 bg-red-50 px-3 py-1.5 text-sm font-semibold text-red-800 shadow-sm">
                             <UserCircle2 className="mr-2 h-5 w-5 text-red-600" />
-                            Principal Investigator: {pi}
+                            PI: {pi}
                         </div>
                     )}
                     
