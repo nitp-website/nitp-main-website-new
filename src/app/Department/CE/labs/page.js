@@ -151,7 +151,7 @@ const mainLabSections = [
         attachments: [
             {
                 label: "Details of equipment",
-                href: "https://drive.google.com/file/d/1L8XVcvuho4mqGQjMgwm8eL_WGGdXYP5b/view?usp=sharing",
+                href: "https://drive.google.com/file/d/1W4JEXcHKMsUNzu4jP78mf38CUVxfa58x/view?usp=sharing",
             }
         ],
         images: [
