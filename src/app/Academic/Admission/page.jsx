@@ -1,20 +1,17 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import AdmissionsSidebar from "./Sidebar"
 import {
-  GraduationCap,
-  Settings,
-  Frown,
   BookOpen,
   AlertCircle,
-  ExternalLink
+  ExternalLink,
+  Bell,
+  Globe,
+  FileText,
+  Sparkles
 } from 'lucide-react';
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-const admissionData = {
+import { useSearchParams } from "next/navigation";const admissionData = {
   btech: {
     portals: [
       {
@@ -273,307 +270,271 @@ const degreeMap = {
   qip: "Quality Improvement Programme"
 };
 
+const degreeShortMap = {
+  btech: "B.Tech",
+  mtech: "M.Tech",
+  mca: "MCA",
+  phd: "PhD",
+  study_in_india: "Study in India",
+  qip: "QIP"
+};
+
+function formatNoticeDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+}
+
+function EmptyState({ icon: Icon, title, description }) {
+  return (
+    <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-red-200 bg-gradient-to-b from-red-50/80 to-white px-6 py-12 text-center">
+      <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-100 text-red-500">
+        <Icon className="h-7 w-7" />
+      </div>
+      <h3 className="text-lg font-semibold text-slate-800">{title}</h3>
+      <p className="mt-2 max-w-sm text-sm text-slate-500">{description}</p>
+    </div>
+  );
+}
+
 function AdmissionsPage() {
-  const [selected, setSelected] = useState("btech");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [expandedNotices, setExpandedNotices] = useState({});
   const searchParams = useSearchParams();
-  const initialSelected = searchParams.get("type") || "btech";
-  const router = useRouter();
-  const pathname = usePathname();
-  useEffect(() => {
-    setSelected(initialSelected);
-  }, [initialSelected]);
+  const selected = searchParams.get("type") || "btech"; 
+   const currentData = admissionData[selected];
+  const noticeCount = currentData?.notices?.length || 0;
+  const portalCount = currentData?.portals?.length || 0;
 
-  const toggleNotice = (index) => {
-    setExpandedNotices(prev => ({
-      ...prev,
-      [index]: !prev[index]
-    }));
-  };
-
-  function handleClick(type) {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set('type', type);
-
-    router.push(`${pathname}?${params.toString()}`);
-  }
+  const latestNoticeDate = useMemo(() => {
+    if (!currentData?.notices?.length) return null;
+    const sorted = [...currentData.notices].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+    return formatNoticeDate(sorted[0].date);
+  }, [currentData]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-red-50 to-white text-red-900 relative">
-      {/* Mobile menu button */}
-      <div className="xl:hidden fixed top-5 left-4 z-[1001000]">
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="p-2 rounded-lg bg-red-600 text-white shadow-md hover:bg-red-700 transition-colors"
-          aria-label="Toggle menu"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-            />
-          </svg>
-        </button>
+    <div className="min-h-screen bg-[#faf8f8] text-slate-800">
+      {/* Subtle background */}
+      <div className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-red-200/30 blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 h-64 w-64 rounded-full bg-amber-100/40 blur-3xl" />
       </div>
 
-      {/* Mobile sidebar */}
-      <aside
-        className={`xl:hidden fixed inset-0 z-[1001000] backdrop-blur-sm transition-all duration-300 ease-in-out ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
-      >
-        <div className="w-80 h-full bg-gradient-to-b from-red-800 to-red-700 shadow-2xl px-6 py-8 text-white overflow-y-auto">
-          <h2 className="text-2xl font-bold mb-8 pb-4 border-b border-red-400">Admissions Portal</h2>
-          <ul className="space-y-4">
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md ${selected === "btech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => {
-                setSelected("btech");
-                setMobileMenuOpen(false);
-                handleClick("btech");
-              }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                B.Tech Admissions
-              </span>
-            </li>
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md ${selected === "mtech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => {
-                setSelected("mtech");
-                setMobileMenuOpen(false);
-                handleClick("mtech");
-              }}
-            >
-              <span className="flex items-center">
-                <Settings className="w-5 h-5 mr-3" />
-                M.Tech Admissions
-              </span>
-            </li>
-
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${selected === "mca" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => { setSelected("mca"); setMobileMenuOpen(false); handleClick("mca"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                MCA Admissions
-              </span>
-            </li>
-
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => { setSelected("study_in_india"); setMobileMenuOpen(false); handleClick("study_in_india"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                Study in india
-              </span>
-            </li>
-
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md  hover:text-white ${selected === "qip" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => { setSelected("qip"); setMobileMenuOpen(false); handleClick("qip"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                QIP Admissions
-              </span>
-            </li>
-
-
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md  hover:text-white ${selected === "phd" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => { setSelected("phd"); setMobileMenuOpen(false); handleClick("phd"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                PhD Admissions
-              </span>
-            </li>
-
-          </ul>
-        </div>
-      </aside>
-
-      <div className="flex flex-col xl:flex-row">
+      <div className="relative mx-auto flex max-w-[1600px] flex-col gap-5 px-3 py-5 sm:px-5 md:px-6 md:py-8 xl:flex-row xl:items-start xl:gap-8">
         <AdmissionsSidebar />
 
-        {/* Main content */}
-        <main className="flex-1 p-4 md:p-8 xl:ml-6">
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-center text-red-800 relative pb-4">
-              {degreeMap[selected] || ""} Admissions
-              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-red-400 to-red-600 rounded-full"></span>
-            </h1>
+        <main className="min-w-0 flex-1 w-full">
+          {/* Hero */}
+          <section className="relative mb-6 overflow-hidden rounded-3xl bg-gradient-to-br from-[#811919] via-[#9b1f1f] to-[#5c1010] px-5 py-7 text-white shadow-xl shadow-red-900/20 sm:px-8 sm:py-9">
+            <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
+            <div className="pointer-events-none absolute -bottom-8 left-1/3 h-32 w-32 rounded-full bg-amber-400/10 blur-2xl" />
 
-            <div className="flex flex-col lg:flex-row gap-8">
-              {/* Notices Section */}
-              <div className="lg:w-1/2">
-                <div className="bg-white rounded-xl shadow-md p-6 border border-red-100">
-                  <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-semibold text-red-800 flex items-center">
-                      <AlertCircle className="w-6 h-6 mr-2 text-red-600" />
-                      Important Notices
-                    </h2>
-                    <span className="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-1 rounded-full flex items-center">
-                      <span className="animate-pulse h-2 w-2 bg-red-600 rounded-full mr-2"></span>
-                      Latest Updates
+            <div className="relative">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-red-100 backdrop-blur-sm">
+                <Sparkles className="h-3.5 w-3.5" />
+                Academic Year 2026–27
+              </div>
+
+              <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
+                {degreeMap[selected] || ""}
+                <span className="block text-lg font-medium text-red-100 sm:text-xl md:mt-1">
+                  Admissions at NIT Patna
+                </span>
+              </h1>
+
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-red-100/90 sm:text-base">
+                Official notices, admission portals, and important documents for {degreeShortMap[selected] || "this programme's"} candidates.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <div className="flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2.5 backdrop-blur-sm">
+                  <Bell className="h-4 w-4 text-amber-200" />
+                  <div>
+                    <p className="text-[10px] font-medium uppercase tracking-wide text-red-200">Notices</p>
+                    <p className="text-sm font-bold">{noticeCount} active</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2.5 backdrop-blur-sm">
+                  <Globe className="h-4 w-4 text-sky-200" />
+                  <div>
+                    <p className="text-[10px] font-medium uppercase tracking-wide text-red-200">Portals</p>
+                    <p className="text-sm font-bold">{portalCount} linked</p>
+                  </div>
+                </div>
+                {latestNoticeDate && (
+                  <div className="flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2.5 backdrop-blur-sm">
+                    <FileText className="h-4 w-4 text-emerald-200" />
+                    <div>
+                      <p className="text-[10px] font-medium uppercase tracking-wide text-red-200">Latest update</p>
+                      <p className="text-sm font-bold">{latestNoticeDate}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+
+          <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
+            {/* Notices */}
+            <section className="rounded-2xl border border-red-100/80 bg-white p-5 shadow-sm sm:p-6">
+              <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-[#811919]">
+                    <AlertCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-bold text-slate-900 sm:text-xl">Important Notices</h2>
+                    <p className="text-xs text-slate-500">Official announcements & updates</p>
+                  </div>
+                </div>
+                {noticeCount > 0 && (
+                  <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-100">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                     </span>
-                  </div>
-                  <div className="space-y-6">
-                    {admissionData[selected].notices.length > 0 ? (
-                      admissionData[selected].notices.map((notice, index) => (
-                        <div
-                          key={index}
-                          className="bg-white rounded-lg shadow-md overflow-hidden border-l-4 border-red-600 hover:shadow-lg transition-all duration-300"
-                        >
-                          <div className="relative">
-                            {/* Date badge */}
-                            <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-semibold py-1 px-3 rounded-bl-lg">
-                              {new Date(notice.date).toLocaleDateString('en-US', {
-                                year: 'numeric',
-                                month: 'short',
-                                day: 'numeric'
-                              })}
-                            </div>
+                    Live updates
+                  </span>
+                )}
+              </div>
 
-                            {/* Notice icon */}
-                            <div className="absolute top-4 left-4 bg-red-50 p-2 rounded-full">
-                              <AlertCircle className="w-5 h-5 text-red-600" />
-                            </div>
-
-                            {/* Notice content */}
-                            <div
-                              className="pl-16 pr-4 pt-4 pb-4 cursor-pointer"
-                              onClick={() => toggleNotice(index)}
-                            >
-                              <Link
-                                className="font-bold text-gray-800 hover:text-red-700 block text-sm md:text-base leading-tight mb-2 transition-colors pt-2"
-                                href={notice.href ? notice.href : "#"}
-                                target="_blank"
-                              >
-                                {notice.title}
-                              </Link>
-
-                              <div className="flex justify-between items-center">
-                                <p className="text-xs text-gray-600">
-                                  {notice.content}
-                                </p>
-                                <Link
-                                  href={notice.href ? notice.href : "#"}
-                                  target="_blank"
-                                  className="flex items-center gap-1 text-xs font-medium text-red-600 hover:text-red-800 transition-colors bg-red-50 hover:bg-red-100 py-1 px-3 rounded-full"
-                                >
-                                  <ExternalLink className="w-3 h-3" />
-                                  View
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))
-                    ) : (
-                      <div className="text-center p-6 bg-red-50 rounded-xl">
-                        <Frown className="w-12 h-12 mx-auto text-red-400 mb-4" />
-                        <p className="text-red-600">No notices available at this time.</p>
+              <div className="space-y-3">
+                {noticeCount > 0 ? (
+                  currentData.notices.map((notice, index) => (
+                    <article
+                      key={index}
+                      className="group relative overflow-hidden rounded-xl border border-slate-100 bg-slate-50/50 p-4 transition-all duration-200 hover:border-red-200 hover:bg-white hover:shadow-md"
+                    >
+                      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                        <span className="inline-flex items-center rounded-lg bg-[#811919] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
+                          {notice.content?.trim() || "Notice"}
+                        </span>
+                        <time className="text-xs font-medium text-slate-500">
+                          {formatNoticeDate(notice.date)}
+                        </time>
                       </div>
-                    )}
-                  </div>
+
+                      <Link
+                        href={notice.href || "#"}
+                        target="_blank"
+                        className="block text-sm font-semibold leading-snug text-slate-800 transition-colors group-hover:text-[#811919] sm:text-base"
+                      >
+                        {notice.title}
+                      </Link>
+
+                      <div className="mt-3 flex items-center justify-between gap-3 border-t border-slate-100 pt-3">
+                        <p className="line-clamp-2 text-xs text-slate-500 sm:text-sm">
+                          {notice.content}
+                        </p>
+                        <Link
+                          href={notice.href}
+                          target="_blank"
+                          className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-[#811919] shadow-sm ring-1 ring-red-100 transition-all hover:bg-[#811919] hover:text-white hover:ring-[#811919]"
+                        >
+                          <ExternalLink className="h-3.5 w-3.5" />
+                          Open
+                        </Link>
+                      </div>
+                    </article>
+                  ))
+                ) : (
+                  <EmptyState
+                    icon={Bell}
+                    title="No notices right now"
+                    description="Check back soon for the latest admission announcements and schedules."
+                  />
+                )}
+              </div>
+            </section>
+
+            {/* Portals */}
+            <section className="rounded-2xl border border-red-100/80 bg-white p-5 shadow-sm sm:p-6">
+              <div className="mb-5 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-[#811919]">
+                  <BookOpen className="h-5 w-5" />
+                </div>
+                <div>
+                  <h2 className="text-lg font-bold text-slate-900 sm:text-xl">Admission Portals</h2>
+                  <p className="text-xs text-slate-500">Apply & access official counselling links</p>
                 </div>
               </div>
 
-              {/* Portals Section */}
-              <div className="lg:w-1/2">
-                <div className="bg-white rounded-xl shadow-md p-6 border border-red-100">
-                  <h2 className="text-2xl font-semibold mb-6 text-red-800 flex items-center">
-                    <BookOpen className="w-6 h-6 mr-2 text-red-600" />
-                    Admission Portals
-                  </h2>
-                  {admissionData[selected]?.portals?.length > 0 ? (
-                    <div className="grid grid-cols-1 gap-6">
-                      {admissionData[selected].portals.map((item, i) => (
-                        <div
-                          key={i}
-                          className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-red-100 group"
-                        >
-                          <div className="h-40 flex items-center justify-center bg-red-50 rounded-lg mb-4 p-4">
-                            <img
-                              src={item.image}
-                              alt={item.name}
-                              className="max-h-full max-w-full object-contain"
-                              loading="lazy"
-                              onError={(e) => {
-                                e.target.onerror = null;
-                                e.target.src = "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_189b8a7a1f6%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_189b8a7a1f6%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2274.421875%22%20y%3D%22104.5%22%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-                              }}
-                            />
-                          </div>
-                          <h3 className="text-xl font-bold text-center text-red-800 mb-2">{item.name}</h3>
-                          <p className="text-gray-600 text-center mb-4 text-sm">{item.description}</p>
+              {portalCount > 0 ? (
+                <div className="space-y-4">
+                  {currentData.portals.map((item, i) => (
+                    <article
+                      key={i}
+                      className="group overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-white to-red-50/30 transition-all duration-200 hover:border-red-200 hover:shadow-lg"
+                    >
+                      <div className="flex flex-col sm:flex-row">
+                        <div className="flex h-36 items-center justify-center bg-white p-5 sm:h-auto sm:w-40 sm:shrink-0 sm:border-r sm:border-slate-100">
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="max-h-24 max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                            onError={(e) => {
+                              e.target.onerror = null;
+                              e.target.src = "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_189b8a7a1f6%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_189b8a7a1f6%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2274.421875%22%20y%3D%22104.5%22%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E";
+                            }}
+                          />
+                        </div>
 
-                          {item.sopLink && (
-                            <div className="text-center">
+                        <div className="flex flex-1 flex-col justify-between p-5">
+                          <div>
+                            <h3 className="text-base font-bold leading-snug text-slate-900 group-hover:text-[#811919] sm:text-lg">
+                              {item.name}
+                            </h3>
+                            {item.description && (
+                              <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                                {item.description}
+                              </p>
+                            )}
+                          </div>
+
+                          <div className="mt-4 flex flex-wrap gap-2">
+                            {item.sopLink && (
                               <a
                                 href={item.sopLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white font-medium rounded-lg hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-sm hover:shadow-md mb-4"
+                                className="inline-flex items-center gap-2 rounded-xl border border-red-200 bg-white px-4 py-2 text-sm font-semibold text-[#811919] transition-all hover:bg-red-50"
                               >
-                                <ExternalLink className="w-4 h-4 mr-2" />
+                                <FileText className="h-4 w-4" />
                                 View SOP
                               </a>
-                            </div>
-                          )}
-
-                          <div className="text-center">
+                            )}
                             <a
                               href={item.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white font-medium rounded-lg hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-sm hover:shadow-md"
+                              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#811919] to-[#a32222] px-4 py-2 text-sm font-semibold text-white shadow-md shadow-red-900/20 transition-all hover:shadow-lg hover:brightness-110"
                             >
-                              <ExternalLink className="w-4 h-4 mr-2" />
+                              <ExternalLink className="h-4 w-4" />
                               Visit Portal
                             </a>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center p-6 bg-red-50 rounded-xl">
-                      <Frown className="w-12 h-12 mx-auto text-red-400 mb-4" />
-                      <h3 className="text-xl font-semibold text-red-700 mb-2">No Admission Portals Available</h3>
-                      <p className="text-red-600">
-                        Currently there are no active admission portals for this category.
-                      </p>
-                    </div>
-                  )}
+                      </div>
+                    </article>
+                  ))}
                 </div>
-              </div>
-            </div>
+              ) : (
+                <EmptyState
+                  icon={Globe}
+                  title="No portals available"
+                  description="Admission portals for this programme will be listed here when they go live."
+                />
+              )}
+            </section>
           </div>
         </main>
       </div>
     </div>
   );
 }
-
 
 
 
