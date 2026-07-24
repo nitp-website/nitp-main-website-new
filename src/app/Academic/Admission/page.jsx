@@ -103,7 +103,7 @@ const admissionData = {
         title: "Notice for Start of Classes for M.Tech/MURP through CCMT 2026",
         date: "2026-07-24",
         content: "PG Admission",
-        href: "https://drive.google.com/file/d/18Lc9u6HkJeD7tp3ROjmF_hBGorxKN4OY/view?usp=sharing"
+        href: "https://drive.google.com/file/d/1KuCYKLAID5yWWeo7RLba-U7Kd16mK5mq/view?usp=drive_link"
       },
       {
         title: "Physical Verification notice for admission to M.Tech/MURP through CCMT 2026",
