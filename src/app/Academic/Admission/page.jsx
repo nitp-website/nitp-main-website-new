@@ -161,6 +161,12 @@ const admissionData = {
   mca: {
     portals: [
       {
+        title: "Notice for Physical Reporting and Start of Classes for MCA through NIMCET 2026",
+        date: "2026-07-24",
+        content: "PG Admission",
+        href: "https://drive.google.com/file/d/176aLUtrEOw0bAAbqmbFaTe2orE7zlApP/view?usp=sharing"
+      },
+      {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "https://mis.nitp.ac.in/admission/images/Header.jpg",
         link: "https://mis.nitp.ac.in/admission/Default.aspx",
@@ -191,12 +197,6 @@ const admissionData = {
         date: "2026-07-16",
         content: "Fee Structure for Self Finance",
         href: "https://drive.google.com/file/d/1_fT2Wb_ouSIeke-jx-BK5wcarjgsbWxH/view?usp=sharing"
-      },
-      {
-        title: "Notice for Physical Reporting and Start of Classes for MCA through NIMCET 2026",
-        date: "2026-07-24",
-        content: "PG Admission",
-        href: "https://drive.google.com/file/d/176aLUtrEOw0bAAbqmbFaTe2orE7zlApP/view?usp=sharing"
       }
     ]
   },
