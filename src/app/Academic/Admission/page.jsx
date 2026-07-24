@@ -99,12 +99,12 @@ const admissionData = {
     ],
     notices: [
   
-      // {
-      //   title: "Physical reporting notice for admission to M.Tech/M.Arch/MURP through CCMT 2026 and DRDO Sponsored candidates",
-      //   date: "2026-07-14",
-      //   content: "PG Admission",
-      //   href: "https://drive.google.com/file/d/18Lc9u6HkJeD7tp3ROjmF_hBGorxKN4OY/view?usp=sharing"
-      // },
+      {
+        title: "Notice for Start of Classes for M.Tech/MURP through CCMT 2026",
+        date: "2026-07-24",
+        content: "PG Admission",
+        href: "https://drive.google.com/file/d/18Lc9u6HkJeD7tp3ROjmF_hBGorxKN4OY/view?usp=sharing"
+      },
       {
         title: "Physical Verification notice for admission to M.Tech/MURP through CCMT 2026",
         date: "2026-07-14",
@@ -191,13 +191,13 @@ const admissionData = {
         date: "2026-07-16",
         content: "Fee Structure for Self Finance",
         href: "https://drive.google.com/file/d/1_fT2Wb_ouSIeke-jx-BK5wcarjgsbWxH/view?usp=sharing"
+      },
+      {
+        title: "Notice for Physical Reporting and Start of Classes for MCA through NIMCET 2026",
+        date: "2026-07-24",
+        content: "PG Admission",
+        href: "https://drive.google.com/file/d/176aLUtrEOw0bAAbqmbFaTe2orE7zlApP/view?usp=sharing"
       }
-      // {
-      //   title: "Physical reporting schedule for admission to PG Programme through CCMT and NIMCET for the Academic year 2025-26",
-      //   date: "2025-07-10",
-      //   content: "PG Admission",
-      //   href: "https://drive.google.com/file/d/1xUpA4rWNtrHlTEzRxI_AEwHPjkyIzN5z/view"
-      // }
     ]
   },
 
