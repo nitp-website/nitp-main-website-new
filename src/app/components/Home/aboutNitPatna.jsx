@@ -247,15 +247,14 @@ export default function Aboutus() {
               <div className="relative rounded-xl overflow-hidden shadow-lg bg-gray-900">
                 <video 
                   ref={videoRef}
-                  className="w-full h-auto" 
+                  className="w-full aspect-video object-cover" 
                   controls 
                   muted
                   loop
                   poster="/homepage/campus-preview.jpg"
                   preload="metadata"
-                  style={{ maxHeight: '400px' }}
                 >
-                  <source src="https://files.catbox.moe/s2hv8f.mp4" type="video/mp4" />
+                  <source src="/nitp_video.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
