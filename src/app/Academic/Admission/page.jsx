@@ -19,7 +19,7 @@ const admissionData = {
     portals: [
       {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
-        image: "https://mis.nitp.ac.in/admission/images/Header.jpg",
+        image: "/logo.png",
         link: "https://mis.nitp.ac.in/admission/Default.aspx",
         sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
@@ -32,18 +32,12 @@ const admissionData = {
       
       {
         name: "DASA",
-        image: "https://dasanit.org/dasa2025/images/dasa_new.png",
+        image: "https://dasanit.org/assets/images/dasa_new.png",
         link: "https://dasanit.org",
         description: "Visit the portal for the Information Brochure, Schedule, Opening and Closing Ranks, Seat Matrix, and other relevant details."
       },
     ],
     notices: [
-      {
-        title: "Admissions AY 2026–27 | CSAB Special Rounds & DASA (UG) Admissions",
-        date: "2026-07-20",
-        content: " UG Admission",
-        href: "https://drive.google.com/file/d/1Jod0hJqfxAX4wYT3wWxU67T1iQw9UhO4/view?usp=sharing"
-      },
       {
         title: "Fee Structre",
         date: "2026-07-20",
@@ -86,7 +80,7 @@ const admissionData = {
     portals: [
       {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
-        image: "https://mis.nitp.ac.in/admission/images/Header.jpg",
+        image: "/logo.png",
         link: "https://mis.nitp.ac.in/admission/Default.aspx",
         sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
@@ -125,7 +119,7 @@ const admissionData = {
     portals: [
       {
         name: "PhD Admissions NITP Portal",
-        image: "https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
+        image: "/logo.png",
         link: "https://mis.nitp.ac.in/AdmissionPHD/Default.aspx ",
          sopLink:"https://drive.google.com/file/d/1_6KDnWDRffj5Ywf04hETmtc5OG9_CAM2/view?usp=sharing"
       },
@@ -162,7 +156,7 @@ const admissionData = {
     portals: [
           {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
-        image: "https://mis.nitp.ac.in/admission/images/Header.jpg",
+        image: "/logo.png",
         link: "https://mis.nitp.ac.in/admission/Default.aspx",
         sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
@@ -201,11 +195,30 @@ const admissionData = {
     ]
   },
 
+  CSAB: {
+    portals: [
+      {
+        name: "CSAB Admissions Portal",
+        image: "https://CSAB.aicte.gov.in/assets/images/logoLogin.png",
+        link: "https://CSAB.aicte.gov.in/",
+        // description: "Study in India"
+      },
+    ],
+    notices: [
+      {
+        title: "Admissions AY 2026–27 | CSAB Special Rounds & DASA (UG) Admissions",
+        date: "2026-07-20",
+        content: " UG Admission",
+        href: "https://drive.google.com/file/d/1Jod0hJqfxAX4wYT3wWxU67T1iQw9UhO4/view?usp=sharing"
+      },
+    ]
+  },
+
   study_in_india: {
     portals: [
       {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
-        image: "https://mis.nitp.ac.in/admission/images/Header.jpg",
+        image: "/logo.png",
         link: "https://mis.nitp.ac.in/admission/Default.aspx",
         sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
@@ -261,6 +274,25 @@ const admissionData = {
         "href": "https://drive.google.com/file/d/17OkvWximJ5fkKRqM3rWIMyz6gc22u_VY/view"
       }
     ]
+  },
+
+  csab: {
+    portals: [
+      {
+        name: "CSAB Special Rounds Portal",
+        image: "https://cdnbbsr.s3waas.gov.in/s305a70454516ecd9194c293b0e415777f/uploads/2022/08/2022081238.png",
+        link: "https://csab.nic.in/",
+        description: "Visit the Central Seat Allocation Board portal for Special Rounds, Schedule, Information Brochure, Seat Matrix, and Counseling updates."
+      },
+    ],
+    notices: [
+      {
+        title: "Admissions AY 2026–27 | CSAB Special Rounds & DASA (UG) Admissions",
+        date: "2026-07-20",
+        content: "UG Admission through CSAB",
+        href: "https://drive.google.com/file/d/1Jod0hJqfxAX4wYT3wWxU67T1iQw9UhO4/view?usp=sharing"
+      },
+    ]
   }
 };
 
@@ -270,7 +302,8 @@ const degreeMap = {
   mca: "Master of Computer Application",
   phd: "PhD",
   study_in_india: "Study in India",
-  qip: "Quality Improvement Programme"
+  qip: "Quality Improvement Programme",
+  csab: "CSAB Special Rounds"
 };
 
 function AdmissionsPage() {
@@ -301,37 +334,36 @@ function AdmissionsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-white text-red-900 relative">
-      {/* Mobile menu button */}
-      <div className="xl:hidden fixed top-5 left-4 z-[1001000]">
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="p-2 rounded-lg bg-red-600 text-white shadow-md hover:bg-red-700 transition-colors"
-          aria-label="Toggle menu"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-            />
-          </svg>
-        </button>
-      </div>
+      {/* Mobile drawer overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="xl:hidden fixed inset-0 bg-black/60 z-[1000999] backdrop-blur-xs transition-opacity duration-300"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
 
-      {/* Mobile sidebar */}
+      {/* Mobile sidebar drawer */}
       <aside
-        className={`xl:hidden fixed inset-0 z-[1001000] backdrop-blur-sm transition-all duration-300 ease-in-out ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+        className={`xl:hidden fixed top-0 left-0 bottom-0 z-[1001000] w-80 max-w-[85vw] bg-gradient-to-b from-red-800 to-red-700 shadow-2xl text-white overflow-y-auto transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
-        <div className="w-80 h-full bg-gradient-to-b from-red-800 to-red-700 shadow-2xl px-6 py-8 text-white overflow-y-auto">
-          <h2 className="text-2xl font-bold mb-8 pb-4 border-b border-red-400">Admissions Portal</h2>
+        <div className="p-6">
+          <div className="flex items-center justify-between pb-4 mb-6 border-b border-red-400/60">
+            <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2">
+              <GraduationCap className="w-6 h-6 text-white" />
+              Admissions Portal
+            </h2>
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="p-1.5 rounded-lg bg-red-900/60 hover:bg-red-900 text-white transition-colors"
+              aria-label="Close menu"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
           <ul className="space-y-4">
             <li
               className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md ${selected === "btech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
@@ -363,6 +395,18 @@ function AdmissionsPage() {
             </li>
 
             <li
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md  hover:text-white ${selected === "phd" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+                }`}
+              onClick={() => { setSelected("phd"); setMobileMenuOpen(false); handleClick("phd"); }}
+            >
+              <span className="flex items-center">
+                <GraduationCap className="w-5 h-5 mr-3" />
+                PhD Admissions
+              </span>
+            </li>
+
+
+            <li
               className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${selected === "mca" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
                 }`}
               onClick={() => { setSelected("mca"); setMobileMenuOpen(false); handleClick("mca"); }}
@@ -370,6 +414,16 @@ function AdmissionsPage() {
               <span className="flex items-center">
                 <GraduationCap className="w-5 h-5 mr-3" />
                 MCA Admissions
+              </span>
+            </li>
+            <li
+              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${selected === "csab" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
+                }`}
+              onClick={() => { setSelected("csab"); setMobileMenuOpen(false); handleClick("csab"); }}
+            >
+              <span className="flex items-center">
+                <GraduationCap className="w-5 h-5 mr-3" />
+                CSAB 
               </span>
             </li>
 
@@ -396,28 +450,42 @@ function AdmissionsPage() {
             </li>
 
 
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md  hover:text-white ${selected === "phd" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => { setSelected("phd"); setMobileMenuOpen(false); handleClick("phd"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                PhD Admissions
-              </span>
-            </li>
-
+            
           </ul>
         </div>
       </aside>
 
       <div className="flex flex-col xl:flex-row">
-        <AdmissionsSidebar />
+        <div className="hidden xl:block">
+          <AdmissionsSidebar />
+        </div>
 
         {/* Main content */}
-        <main className="flex-1 p-4 md:p-8 xl:ml-6">
+        <main className="flex-1 p-3.5 sm:p-6 md:p-8 xl:ml-6 w-full max-w-full overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-center text-red-800 relative pb-4">
+            {/* Mobile Program Selector Bar */}
+            <div className="xl:hidden flex items-center justify-between bg-gradient-to-r from-red-800 to-red-700 text-white p-4 rounded-xl shadow-md mb-6 border border-red-600/50">
+              <div className="flex items-center space-x-3 truncate pr-2">
+                <div className="p-2 bg-white/10 rounded-lg shrink-0">
+                  <GraduationCap className="w-5 h-5 text-white" />
+                </div>
+                <div className="truncate">
+                  <div className="text-xs text-red-200 font-medium uppercase tracking-wide">Selected Program</div>
+                  <div className="font-bold text-base sm:text-lg truncate">{degreeMap[selected] || ""} Admissions</div>
+                </div>
+              </div>
+              <button
+                onClick={() => setMobileMenuOpen(true)}
+                className="px-3.5 py-2 bg-white text-red-800 font-bold text-xs sm:text-sm rounded-lg shadow hover:bg-red-50 transition-all shrink-0 flex items-center gap-1"
+              >
+                <span>Change</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            </div>
+
+            <h1 className="hidden md:block text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-center text-red-800 relative pb-4">
               {degreeMap[selected] || ""} Admissions
               <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-red-400 to-red-600 rounded-full"></span>
             </h1>
@@ -437,8 +505,8 @@ function AdmissionsPage() {
                     </span>
                   </div>
                   <div className="space-y-6">
-                    {admissionData[selected].notices.length > 0 ? (
-                      admissionData[selected].notices.map((notice, index) => (
+                    {admissionData[selected]?.notices?.length > 0 ? (
+                      admissionData[selected]?.notices?.map((notice, index) => (
                         <div
                           key={index}
                           className="bg-white rounded-lg shadow-md overflow-hidden border-l-4 border-red-600 hover:shadow-lg transition-all duration-300"
