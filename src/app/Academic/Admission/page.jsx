@@ -33,7 +33,7 @@ const admissionData = {
       {
         name: "DASA",
         image: "https://dasanit.org/dasa2025/images/dasa_new.png",
-        link: "https://www.dasanit.org",
+        link: "https://dasanit.org",
         description: "Visit the portal for the Information Brochure, Schedule, Opening and Closing Ranks, Seat Matrix, and other relevant details."
       },
     ],
