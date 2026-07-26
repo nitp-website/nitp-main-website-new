@@ -63,12 +63,12 @@ export default function Aboutus() {
           <h2 className="text-xl font-bold text-center mb-4 text-red-800">CAMPUS LIFE</h2>
           <div className="relative">
             <video 
-              className="w-full h-auto rounded-lg shadow-md" 
+              className="w-full aspect-video object-cover rounded-lg shadow-md" 
               controls 
               poster="/homepage/campus-preview.jpg"
               preload="metadata"
             >
-              <source src="https://files.catbox.moe/s2hv8f.mp4" type="video/mp4" />
+              <source src="/nitp_video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
