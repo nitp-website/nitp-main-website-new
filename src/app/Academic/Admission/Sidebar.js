@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { FaUserGraduate, FaLaptopCode, FaBook, FaGlobeAsia, FaFlask } from "react-icons/fa";
+import { FaUserGraduate, FaLaptopCode, FaBook,FaBookReader, FaGlobeAsia, FaFlask } from "react-icons/fa";
 import { PiStudentBold } from "react-icons/pi";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
@@ -37,10 +37,22 @@ const Sidebar = () => {
       type: "mtech",
     },
     {
+      title: "PhD Admissions",
+      link: "/Academic/Admission?type=phd",
+      icon: <FaFlask size={20} className="text-red-700" />,
+      type: "phd",
+    },
+    {
       title: "MCA Admissions",
       link: "/Academic/Admission?type=mca",
       icon: <FaBook size={20} className="text-purple-700" />,
       type: "mca",
+    },
+    {
+      title: "CSAB",
+      link: "/Academic/Admission?type=csab",
+      icon: <FaBookReader size={20} className="text-purple-700" />,
+      type: "csab",
     },
     {
       title: "Study in India",
@@ -54,12 +66,6 @@ const Sidebar = () => {
       icon: <PiStudentBold size={20} className="text-purple-700" />,
       type: "qip",
     },
-    {
-      title: "PhD Admissions",
-      link: "/Academic/Admission?type=phd",
-      icon: <FaFlask size={20} className="text-red-700" />,
-      type: "phd",
-    },
   ];
 
   const currentType = searchParams.get("type"); // ✅ read query param
@@ -69,7 +75,7 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="sticky top-4 w-64 bg-white shadow-xl rounded-xl p-6 border border-gray-200 transition-all">
+    <aside className="hidden xl:block sticky top-24 w-64 h-fit bg-white shadow-xl rounded-xl p-6 border border-gray-200 transition-all shrink-0">
       <h2 className="text-xl font-extrabold mb-8 tracking-tight text-red-800 flex items-center gap-2">
         <span className="inline-block w-2 h-6 bg-red-700 rounded-full mr-2"></span>
         Admissions
