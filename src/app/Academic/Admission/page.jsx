@@ -36,8 +36,20 @@ const admissionData = {
         link: "https://dasanit.org",
         description: "Visit the portal for the Information Brochure, Schedule, Opening and Closing Ranks, Seat Matrix, and other relevant details."
       },
+        {
+        name: "CSAB Admissions Portal",
+        image: "https://CSAB.aicte.gov.in/assets/images/logoLogin.png",
+        link: "https://CSAB.aicte.gov.in/",
+        // description: "Study in India"
+      },
     ],
     notices: [
+        {
+        title: "Admissions AY 2026–27 | CSAB Special Rounds & DASA (UG) Admissions",
+        date: "2026-07-20",
+        content: " UG Admission",
+        href: "https://drive.google.com/file/d/1Jod0hJqfxAX4wYT3wWxU67T1iQw9UhO4/view?usp=sharing"
+      },
       {
         title: "Fee Structre",
         date: "2026-07-20",
@@ -200,7 +212,7 @@ const admissionData = {
       }
     ]
   },
-
+  
   CSAB: {
     portals: [
       {
@@ -219,6 +231,7 @@ const admissionData = {
       },
     ]
   },
+
 
   study_in_india: {
     portals: [
