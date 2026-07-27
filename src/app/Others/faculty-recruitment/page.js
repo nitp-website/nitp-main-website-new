@@ -50,7 +50,7 @@ const RecruitmentProcess = () => {
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
                     >
                       <FileText className="w-4 h-4" />
-                      PDF Format
+                     Application Form [PDF]
                     </Link>
                         
                       <Link
@@ -58,7 +58,7 @@ const RecruitmentProcess = () => {
                       className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
                     >
                       <FileText className="w-4 h-4" />
-                     Doc Format
+                     Application Form [DOC]
                     </Link> 
                   </div>
                 </td>
