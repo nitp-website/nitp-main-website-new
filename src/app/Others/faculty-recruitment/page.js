@@ -26,6 +26,48 @@ const RecruitmentProcess = () => {
             </thead>
             <tbody>
 
+
+    
+ <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
+                <td className="text-left px-6 py-4 text-gray-800">
+                  <p className="leading-relaxed">
+                     Notification for the post of Deputy Director
+                  </p>
+                </td>
+                <td className="text-center px-6 py-4">
+                  <div className="flex flex-col items-center gap-2">
+                    <a
+                      href="https://drive.google.com/file/d/1HHOAelelCgY7DWZvrutXcEqwJGKlFKA-/view?usp=sharing"
+                      download
+                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Download
+                    </a>
+                        
+                    <Link
+                      href="https://drive.google.com/file/d/1LNP6-w11bLwaiTAGcbhW61ImK9bi01NF/view?usp=sharing"
+                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
+                    >
+                      <FileText className="w-4 h-4" />
+                      PDF Format
+                    </Link>
+                        
+                      <Link
+                      href="https://docs.google.com/document/d/1vnTuzacjwajARjr075DMqlaZ-TktkvyS/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
+                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
+                    >
+                      <FileText className="w-4 h-4" />
+                     Doc Format
+                    </Link> 
+                  </div>
+                </td>
+              </tr>
+
+
+                        
+    
+
            <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
                 <td className="text-left px-6 py-4 text-gray-800">
                   <p className="leading-relaxed">
