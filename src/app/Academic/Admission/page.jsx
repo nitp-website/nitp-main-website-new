@@ -20,7 +20,7 @@ const admissionData = {
       {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
-        link: "https://mis.nitp.ac.in/admission/Default.aspx",
+       // link: "https://mis.nitp.ac.in/admission/Default.aspx",
         sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
       {
@@ -81,7 +81,7 @@ const admissionData = {
       {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
-        link: "https://mis.nitp.ac.in/admission/Default.aspx",
+       // link: "https://mis.nitp.ac.in/admission/Default.aspx",
         sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
        {
@@ -120,8 +120,8 @@ const admissionData = {
       {
         name: "PhD Admissions NITP Portal",
         image: "/logo.png",
-        link: "https://mis.nitp.ac.in/AdmissionPHD/Default.aspx ",
-         sopLink:"https://drive.google.com/file/d/1_6KDnWDRffj5Ywf04hETmtc5OG9_CAM2/view?usp=sharing"
+      //  link: "https://mis.nitp.ac.in/AdmissionPHD/Default.aspx ",
+         sopLink:"https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
       // {
       //   name: "PhD Admissions NITP Portal",
@@ -157,7 +157,7 @@ const admissionData = {
           {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
-        link: "https://mis.nitp.ac.in/admission/Default.aspx",
+      //  link: "https://mis.nitp.ac.in/admission/Default.aspx",
         sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
       {
@@ -219,7 +219,7 @@ const admissionData = {
       {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
-        link: "https://mis.nitp.ac.in/admission/Default.aspx",
+       // link: "https://mis.nitp.ac.in/admission/Default.aspx",
         sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
       // {
