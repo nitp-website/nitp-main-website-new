@@ -131,6 +131,12 @@ const admissionData = {
       // },
     ],
     notices: [
+         {
+        title: "Provisionally eligible list of candidates for PhD Interview July - Dec 2026",
+         date: "2026-07-27",
+       content: "PhD Admission",
+        href: "https://drive.google.com/file/d/1QBzJcDd-6H-ScRAbEJ619ao8nW-ATYuC/view?usp=sharing"
+       },
        {
         title: "Written Test Notice for PhD Programme (July-December 2026) Admissions, Ay- 2026-27",
          date: "2026-06-21",
