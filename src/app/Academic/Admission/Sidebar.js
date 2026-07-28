@@ -49,12 +49,6 @@ const Sidebar = () => {
       type: "mca",
     },
     {
-      title: "CSAB",
-      link: "/Academic/Admission?type=csab",
-      icon: <FaBookReader size={20} className="text-purple-700" />,
-      type: "csab",
-    },
-    {
       title: "Study in India",
       link: "/Academic/Admission?type=study_in_india",
       icon: <FaGlobeAsia size={20} className="text-orange-700" />,
