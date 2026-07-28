@@ -38,7 +38,7 @@ const admissionData = {
       },
         {
         name: "CSAB Admissions Portal",
-        image: "https://CSAB.aicte.gov.in/assets/images/logoLogin.png",
+        image: "https://cdnbbsr.s3waas.gov.in/s305a70454516ecd9194c293b0e415777f/uploads/2022/08/2022081238.png",
         link: "https://CSAB.aicte.gov.in/",
         // description: "Study in India"
       },
@@ -213,24 +213,6 @@ const admissionData = {
     ]
   },
   
-  CSAB: {
-    portals: [
-      {
-        name: "CSAB Admissions Portal",
-        image: "https://CSAB.aicte.gov.in/assets/images/logoLogin.png",
-        link: "https://CSAB.aicte.gov.in/",
-        // description: "Study in India"
-      },
-    ],
-    notices: [
-      {
-        title: "Admissions AY 2026–27 | CSAB Special Rounds & DASA (UG) Admissions",
-        date: "2026-07-20",
-        content: " UG Admission",
-        href: "https://drive.google.com/file/d/1Jod0hJqfxAX4wYT3wWxU67T1iQw9UhO4/view?usp=sharing"
-      },
-    ]
-  },
 
 
   study_in_india: {
@@ -295,24 +277,6 @@ const admissionData = {
     ]
   },
 
-  csab: {
-    portals: [
-      {
-        name: "CSAB Special Rounds Portal",
-        image: "https://cdnbbsr.s3waas.gov.in/s305a70454516ecd9194c293b0e415777f/uploads/2022/08/2022081238.png",
-        link: "https://csab.nic.in/",
-        description: "Visit the Central Seat Allocation Board portal for Special Rounds, Schedule, Information Brochure, Seat Matrix, and Counseling updates."
-      },
-    ],
-    notices: [
-      {
-        title: "Admissions AY 2026–27 | CSAB Special Rounds & DASA (UG) Admissions",
-        date: "2026-07-20",
-        content: "UG Admission through CSAB",
-        href: "https://drive.google.com/file/d/1Jod0hJqfxAX4wYT3wWxU67T1iQw9UhO4/view?usp=sharing"
-      },
-    ]
-  }
 };
 
 const degreeMap = {
@@ -322,7 +286,6 @@ const degreeMap = {
   phd: "PhD",
   study_in_india: "Study in India",
   qip: "Quality Improvement Programme",
-  csab: "CSAB Special Rounds"
 };
 
 function AdmissionsPage() {
@@ -435,16 +398,7 @@ function AdmissionsPage() {
                 MCA Admissions
               </span>
             </li>
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${selected === "csab" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => { setSelected("csab"); setMobileMenuOpen(false); handleClick("csab"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                CSAB 
-              </span>
-            </li>
+            
 
             <li
               className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
