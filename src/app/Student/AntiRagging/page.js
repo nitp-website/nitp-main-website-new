@@ -2,7 +2,8 @@ import React from 'react';
 import { Download } from 'lucide-react';
 
 const scholarships = [
-   {name: "Anti Ragging Squad 2025-26", link: "https://drive.google.com/file/d/1vVsNnWyL002icRKfSoicDpNUr3Z8pbM1/view?usp=sharing"},
+   {name: "Anti Ragging Squad 2026-27", link: "https://drive.google.com/file/d/1_orVdc48VOWW6pt0LjCQvMpNHDj_gEvQ/view?usp=sharing"},
+   {name: "Anti Ragging Squad for Hostel 2026-27", link: "https://drive.google.com/file/d/1d8Qs9lo-ZjQBThVFhOn6i6QMDtC3WfzQ/view?usp=sharing"},
    {name: "National Anti-Ragging Programme", link: "https://www.antiragging.in/"},
   {name: "Public Notice: Curbing the Menace of Ragging in Higher Educational Institutions (English) ", link: "https://drive.google.com/file/d/15hIrlpnyj7laKukM8Hnq917b7B-kRNIm/view?usp=sharing"},
   {name: "Public Notice: Curbing the Menace of Ragging in Higher Educational Institutions (Hindi)", link: "https://drive.google.com/file/d/1zVqgl3nAgiyFbY1BKOsH9HmFQus4XqCf/view?usp=sharing"},
