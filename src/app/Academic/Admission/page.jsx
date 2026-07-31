@@ -132,6 +132,13 @@ const admissionData = {
        content: "PhD Admission",
         href: "https://drive.google.com/file/d/1oL1g_MjZ7sX-D3J2Hl0hSAfsy0dhKdsb/view?usp=sharing"
        },
+        {
+        title: "Physical Verification Notice with Enclosures for Ph.D. Admission (July–December 2026)",
+         date: "2026-07-31",
+       content: "PhD Admission",
+        href: "https://drive.google.com/file/d/1FCymcp8Lx5GEa4s3-urd4yth0ukXrkTy/view?usp=sharing"
+       },
+      
           {
         title: "Ph.D. Fee Structure for the Academic Year 2026–27 Onwards",
          date: "2026-07-31",
