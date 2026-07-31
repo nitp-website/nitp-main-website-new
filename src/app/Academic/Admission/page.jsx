@@ -63,12 +63,12 @@ const admissionData = {
       //   content: " UG Admission",
       //   href: ""
       // },
-      // {
-      //   title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students.",
-      //   date: "2025-08-02",
-      //   content: " UG Admission",
-      //   href: "https://drive.google.com/file/d/1wUoxMAfqSBmz1-E7j8QvFK_Ywgcb-JoC/view?usp=sharing"
-      // },
+      {
+        title: "Notice for the Commencement of Classes for Newly Admitted UG Students (Academic Year 2026–27)",
+        date: "2026-07-31",
+        content: " UG Admission",
+        href: "https://drive.google.com/file/d/1Z523SWGkvZ-jdotsNWLTjPPylSeGlKmt/view?usp=sharing"
+      },
       // {
       //   title: "Physical reporting notice for Admission to B.Tech./B.Arch./Dual Degree (B.Tech+M.Tech) Programmes through JoSAA/CSAB/DASA/Study in India (SII)-2025",
       //   date: "2025-07-25",
