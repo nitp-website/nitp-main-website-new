@@ -44,6 +44,13 @@ const admissionData = {
       },
     ],
     notices: [
+        {
+        title: "Orientation Programme for First-Year Students (AY 2026–27) is Scheduled from August 18 to 23, 2026",
+        date: "2026-07-31",
+        content: " UG Admission",
+        href: ""
+      },
+      
          {
         title: "Notice for the Commencement of Classes for Newly Admitted UG Students (Academic Year 2026–27)",
         date: "2026-07-31",
