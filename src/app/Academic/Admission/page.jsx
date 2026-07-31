@@ -140,7 +140,7 @@ const admissionData = {
        },
       
           {
-        title: "Ph.D. Fee Structure for the Academic Year 2026–27 Onwards",
+        title: "Ph.D. Fee Structure ",
          date: "2026-07-31",
        content: "PhD Admission",
         href: "https://drive.google.com/file/d/1n6AkZ0K_TXuSkzbCbvzUb8ucXV3omR5Y/view?usp=sharing"
