@@ -5,6 +5,8 @@ const FeeStructureTable = () => {
   const PhD = [
     { name: 'Fee Structure 2023-24 Onwords', 
       link: 'https://drive.google.com/file/d/1b6bsHkVHfPa0gsG3Z9vhUKrsrGb3Sw4h/view' },
+    { name: 'Fee Structure 2026-27 Onwords',
+      link: 'https://drive.google.com/file/d/1n6AkZ0K_TXuSkzbCbvzUb8ucXV3omR5Y/view?usp=sharing' },
      ];
    const MCA = [
      { name: 'Fee Structure for MCA  Regular 2023-24 onwards.',
