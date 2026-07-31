@@ -44,6 +44,13 @@ const admissionData = {
       },
     ],
     notices: [
+         {
+        title: "Notice for the Commencement of Classes for Newly Admitted UG Students (Academic Year 2026–27)",
+        date: "2026-07-31",
+        content: " UG Admission",
+        href: "https://drive.google.com/file/d/1Z523SWGkvZ-jdotsNWLTjPPylSeGlKmt/view?usp=sharing"
+      },
+      
         {
         title: "Admissions AY 2026–27 | CSAB Special Rounds & DASA (UG) Admissions",
         date: "2026-07-20",
@@ -56,36 +63,12 @@ const admissionData = {
         content: "UG Admission",
         href: "https://drive.google.com/file/d/1krBrlVqdOMlvzz5t7mMmW5mqmecGbLQH/view?usp=sharing"
       },
-      
-      //     {
-      //   title: "Admission link is live (18/08/2025; 3 PM to 23/08/2025) for those who have confirmed their seat during JoSAA-2025 counselling and have not participated in CSAB special Round. Same Admission link will be used for those who have participated in CSAB special round and confirmed their seat during CSAB special round from live from 20/08/2025 to 23/08/2025.",
-      //   date: "2025-08-18",
-      //   content: " UG Admission",
-      //   href: ""
-      // },
-      {
-        title: "Notice for the Commencement of Classes for Newly Admitted UG Students (Academic Year 2026–27)",
-        date: "2026-07-31",
-        content: " UG Admission",
-        href: "https://drive.google.com/file/d/1Z523SWGkvZ-jdotsNWLTjPPylSeGlKmt/view?usp=sharing"
-      },
-      // {
-      //   title: "Physical reporting notice for Admission to B.Tech./B.Arch./Dual Degree (B.Tech+M.Tech) Programmes through JoSAA/CSAB/DASA/Study in India (SII)-2025",
-      //   date: "2025-07-25",
-      //   content: "UG Admission",
-      //   href: "https://drive.google.com/file/d/1Nd4LmG-jk-L-H4SoV9lH2uTzww_pHM21/view?usp=sharing"
-      // },
       {
         title: "Physical reporting schedule for admission to UG Programme through JoSAA/CSAB/DASA/SII for the Academic year 2026-27",
         date: "2026-07-20",
         content: "UG Admission",
         href: "https://drive.google.com/file/d/1i8x0a5taSUYaSsnlgus7wlc_Tqsa1jG1/view?usp=sharing"
-      }
-      // {
-      //   title: "DASA 2023 Important Dates",
-      //   date: "2023-05-20",
-      //   content: "DASA application deadline extended to June 10th for international candidates."
-      // }
+      },
     ]
   },
   mtech: {
