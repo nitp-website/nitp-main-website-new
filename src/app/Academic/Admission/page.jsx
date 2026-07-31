@@ -126,6 +126,19 @@ const admissionData = {
       // },
     ],
     notices: [
+          {
+        title: "List of Candidates Selected for Admission to the Ph.D. Programme Odd Semester (July–December 2026), Academic Year 2026–27",
+         date: "2026-07-31",
+       content: "PhD Admission",
+        href: "https://drive.google.com/file/d/1oL1g_MjZ7sX-D3J2Hl0hSAfsy0dhKdsb/view?usp=sharing"
+       },
+          {
+        title: "Ph.D. Fee Structure for the Academic Year 2026–27 Onwards",
+         date: "2026-07-31",
+       content: "PhD Admission",
+        href: "https://drive.google.com/file/d/1n6AkZ0K_TXuSkzbCbvzUb8ucXV3omR5Y/view?usp=sharing"
+       },
+      
          {
         title: "Provisionally eligible list of candidates for PhD Interview July - Dec 2026",
          date: "2026-07-27",
