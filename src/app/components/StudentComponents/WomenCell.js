@@ -52,7 +52,7 @@ const WomenCell = () => {
     { 
       name: "Dr. Kamini Sinha", 
       position: "Associate Professor",
-      department: "Architecture", 
+      department: "Architecture and Planning", 
       memberType: "Chairperson",
       email: "kamini@nitp.ac.in",
       profileUrl: "https://www.nitp.ac.in/profile/kamini@nitp.ac.in"

@@ -5,7 +5,7 @@ import timeTableData from '../../TimeTable.json';
 
 function Page() {
     const archiTimeTable = timeTableData.find(
-        (item) => item.name === 'Architecture & Planning'
+        (item) => item.name === 'Architecture and Planning'
     );
     const timeTableLink = archiTimeTable ? archiTimeTable.url : '#';
 

@@ -17,7 +17,7 @@ import {
 const dept = "Archi";
 
 const navItems = [
-    { name: "Architecture & Planning" },
+    { name: "Architecture and Planning" },
     { name: "Overview", url: `/Department/${dept}`, icon: <BookOpen size={20} /> },
     {
         name: "About",
@@ -25,7 +25,7 @@ const navItems = [
         url: "#",
         dropdown: [
             {
-                name: "About Your Department",
+                name: "About the department",
                 url: `/Department/${dept}/about`,
                 icon: <BookOpen size={18} />,
             },
@@ -131,7 +131,7 @@ export default function Layout({ children }) {
                 {/* Department Name */}
                 <div className="px-5 pt-10 max-sm:pt-6 max-sm:px-0 text-black w-full">
                     <div className="text-3xl max-sm:text-2xl max-sm:ml-2 font-bold text-red-900 text-center bg-transparent">
-                        ARCHITECTURE & PLANNING
+                        Architecture and Planning
                     </div>
                 </div>
 

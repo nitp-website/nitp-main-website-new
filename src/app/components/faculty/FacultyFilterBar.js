@@ -79,9 +79,15 @@ const FacultyFilterBar = ({
                    shadow-sm transition duration-200 ease-in-out bg-white text-gray-700"
       >
         <option value="">🏫 All Departments</option>
-        {departmentOptions.map(dep => (
-          <option key={dep} value={dep}>{dep}</option>
-        ))}
+        {departmentOptions
+          .filter(
+            dep => dep !== "Student Clubs" && dep !== "Administration"
+          )
+          .map(dep => (
+            <option key={dep} value={dep}>
+              {dep === "Architecture" ? "Architecture and Planning" : dep}
+            </option>
+          ))}
       </select>
 
       {/* Position Dropdown */}
@@ -93,7 +99,20 @@ const FacultyFilterBar = ({
                    shadow-sm transition duration-200 ease-in-out bg-white text-gray-700"
       >
         <option value="">👨‍🏫 All Positions</option>
-        {positionOptions.map(pos => (
+        {positionOptions
+        .filter(
+            pos => pos !== "Academic Administrator" &&
+             pos !== "Club Admin - Cultural & Social" && 
+             pos !== "Club Admin - Technical" && 
+             pos !== "Department Administrator" && 
+             pos != "Faculty Administrator" &&  
+             pos != "Office Administrator" &&  
+             pos != "Club Admin - Sports" &&  
+             pos != "Tender Notice Administrator" &&  
+             pos != "Super Administrator" && 
+             pos != "Staff Administrator"
+          )
+        .map(pos => (
           <option key={pos} value={pos}>{pos}</option>
         ))}
       </select>

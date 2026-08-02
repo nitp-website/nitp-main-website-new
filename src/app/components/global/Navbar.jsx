@@ -297,7 +297,7 @@ const BASE_NAV_ITEMS = [
             iconImage: physics,
           },
           {
-            label: "Architecture & Planning",
+            label: "Architecture and Planning",
             link: "/Department/Archi",
             iconImage: archi,
           },
