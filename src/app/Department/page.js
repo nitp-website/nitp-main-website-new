@@ -18,7 +18,7 @@ export default function Page() {
                 <div className="font-bold text-3xl text-red-900 flex justify-center">DEPARTMENTS</div>
                 <div className="mt-2 md:mt-10 mx-0 max-sm:mx-2 grid grid-cols-5 max-md:grid-cols-3  max-sm:grid-cols-2 gap-3">
                     <DepartmentNavigateButton onClick={() => { router.push("/Department/Phy"); }} department={"Applied Physics and Materials Engineering"} icon={"/physics_icon.png"} />
-                    <DepartmentNavigateButton onClick={() => { router.push("/Department/Archi"); }} department={"Architecture & Planning"} icon={"/architecture_icon.png"} />
+                    <DepartmentNavigateButton onClick={() => { router.push("/Department/Archi"); }} department={"Architecture and Planning"} icon={"/Architecture_icon.png"} />
                     <DepartmentNavigateButton onClick={() => { router.push("/Department/Chem"); }} department={"Chemical Science and Technology"} icon={"/chemistry_icon.png"} />
                     {/* <DepartmentNavigateButton onClick={()=>{router.push("/Department/Chemical");}}department={"Chemical Engineering and Technology"} icon={"/chemical_icon.png"}/> */}
                     <DepartmentNavigateButton onClick={() => { router.push("/Department/CE"); }} department={"Civil Engineering"} icon={"/civil_icon.png"} />

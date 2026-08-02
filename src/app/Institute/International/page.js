@@ -299,7 +299,7 @@ export default function InternationalAffairsPage() {
                       src="/architecture-dep.jpg"
 
                     ></img></a>
-                  <strong>Architecture Department</strong>
+                  <strong>Architecture and Planning Department</strong>
                 </div>
 
               </div>

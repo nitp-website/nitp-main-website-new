@@ -24,7 +24,7 @@ const navItems = [
         url: "#",
         dropdown: [
             {
-                name: "About Your Department",
+                name: "About the department",
                 url: `/Department/${dept}/about`,
                 icon: <BookOpen size={18} />,
             },

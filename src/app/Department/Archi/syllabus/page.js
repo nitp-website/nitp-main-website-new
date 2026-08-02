@@ -49,7 +49,7 @@ function Page() {
                 </div>
                 <div className="mt-2">
                     <p className="text-gray-500 text-sm lg:text-base font-semibold">
-                        Architecture
+                        Architecture and Planning
                     </p>
                 </div>
                 <div>

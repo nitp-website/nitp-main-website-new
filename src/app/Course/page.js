@@ -13,7 +13,7 @@ export default function Page() {
       icon: "Atom"
     },
     { 
-      name: "Architecture & Planning", 
+      name: "Architecture and Planning", 
       path: "/Department/Archi", 
       icon: "Building2"
     },

@@ -261,12 +261,12 @@ const Senate = [
   },
   {
     name: "Prof. Manoj Kumar",
-    designation: "Professor, Architecture & Planning Dept.",
+    designation: "Professor, Architecture and Planning Dept.",
     type: "Member"
   },
   {
     name: "Prof. Fulena Rajak",
-    designation: "Professor, Architecture & Planning Dept.",
+    designation: "Professor, Architecture and Planning Dept.",
     type: "Member"
   },
   {
@@ -403,7 +403,7 @@ const Senate = [
   },
   {
     name: "Dr. Shailendra K. Mandal",
-    designation: "Associate Professor & HoD, Architecture Dept.",
+    designation: "Associate Professor & HoD, Architecture and Planning Dept.",
     type: "Member"
   },
   {
