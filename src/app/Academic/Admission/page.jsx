@@ -21,7 +21,7 @@ const admissionData = {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
        // link: "https://mis.nitp.ac.in/admission/Default.aspx",
-        sopLink: ""
+        sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
       {
         name: "JoSAA",
