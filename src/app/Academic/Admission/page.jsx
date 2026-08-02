@@ -21,7 +21,7 @@ const admissionData = {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
        // link: "https://mis.nitp.ac.in/admission/Default.aspx",
-        sopLink: "https://drive.google.com/file/d/1eL1GvquHslgbrpOiMTU9upGqdo6lkzHa/view?usp=sharing"
+        sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
       {
         name: "JoSAA",
@@ -186,7 +186,7 @@ const admissionData = {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
       //  link: "https://mis.nitp.ac.in/admission/Default.aspx",
-        sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
+        sopLink: "https://drive.google.com/file/d/1eL1GvquHslgbrpOiMTU9upGqdo6lkzHa/view?usp=sharing"
       },
       {
         name: "NIMCET",
