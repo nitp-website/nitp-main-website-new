@@ -1,335 +1,247 @@
-// src/app/Others/faculty-recruitment/page.js
+"use client";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
-'use client';
-import React from 'react';
-import Link from 'next/link';
-import { FileText } from 'lucide-react';
+import { Briefcase, Calendar, Download, ExternalLink, Star } from "lucide-react";
+import { extractApiArray } from "@/lib/apiHelpers";
 
-const RecruitmentProcess = () => {
+const Noticecard = ({ detail, time, attachments, imp, link }) => (
+  <div className="notice bg-white rounded-lg p-4 mb-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
+    <div className="flex items-start gap-3">
+      <Briefcase className="w-5 h-5 text-red-800 mt-1 flex-shrink-0" />
+      <div className="flex-1">
+        <div className="flex items-start gap-2">
+          {imp && <Star className="h-4 w-4 mt-1 flex-shrink-0 text-yellow-500 fill-yellow-500" />}
+          <h3 className="text-gray-800 text-base font-medium flex-1">{detail}</h3>
+        </div>
 
-  const advertisementLink = "https://drive.google.com/file/d/16v2OsI19FGdFGJa02mUAg6HTo_Zbk3-Q/view";
-  const sopLink="https://drive.google.com/file/d/13eb1I3HKKwwD5WhvfuswAQVx3yNEgqOB/view"
+        <div className="flex items-center gap-2 my-3 text-gray-500 text-sm">
+          <Calendar className="w-4 h-4" />
+          <span>
+            {(() => {
+              if (!time) return "Invalid Date";
+              const timestamp = typeof time === "string" ? parseInt(time) : time;
+              if (isNaN(timestamp)) return "Invalid Date";
+              const date = new Date(timestamp);
+              return isNaN(date.getTime()) ? "Invalid Date" : date.toLocaleDateString();
+            })()}
+          </span>
+        </div>
+
+        <div className="space-y-2">
+          {Array.isArray(attachments) && attachments.length > 0 && (
+            <div className="space-y-2">
+              {attachments.map((attachment, index) => (
+                <a
+                  key={index}
+                  href={attachment.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-red-800 hover:text-red-900 transition-colors"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>{attachment.caption || "Download Attachment"}</span>
+                </a>
+              ))}
+            </div>
+          )}
+
+          {link && (
+            <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-red-800 hover:text-red-900 transition-colors">
+              <ExternalLink className="w-4 h-4" />
+              <span>View Details</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const Page = () => {
+  const [jobs, setJobs] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(false);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [subType, setSubType] = useState("ALL");
+
+  const subtypeConfig = {
+    ALL: { label: "All", limit: 100 },
+    'REGULAR TEACHING': { label: "Regular Teaching", limit: 100 },
+    'NON-REGULAR TEACHING': { label: "Non-Regular Teaching", limit: 100 },
+    'REGULAR NON-TEACHING': { label: "Regular Non-Teaching", limit: 100 },
+    'NON-REGULAR NON-TEACHING': { label: "Non-Regular Non-Teaching", limit: 100 },
+    'JDRF/SRF': { label: "JDRF/SRF", limit: 100 },
+  };
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        setIsLoading(true);
+
+        const cfg = subtypeConfig[subType] || subtypeConfig.ALL;
+        const usedLimit = cfg.limit || 10;
+        const base = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+
+        let combined = [];
+        let totalCount = null;
+
+        if (subType === "ALL") { 
+          const url = `${base}/api/notice?type=job&page=${currentPage}&limit=${usedLimit}`;
+          const res = await axios.get(url);
+          const arr = extractApiArray(res) || [];
+          combined = arr;
+          totalCount = res.data?.total ?? arr.length;
+        } else {
+          const url = `${base}/api/notice?type=job&notice_sub_type=${encodeURIComponent(subType)}&page=${currentPage}&limit=${usedLimit}`;
+          const res = await axios.get(url);
+          const arr = extractApiArray(res) || [];
+          combined = arr;
+          totalCount = res.data?.total ?? arr.length;
+        }
+
+        const filtered = (combined || []).filter((notice) => {
+          if (notice.isVisible !== 1) return false;
+          if (subType !== "ALL") {
+            const noticeSubType = (notice.notice_sub_type || notice.noticeSubType || "").trim().toUpperCase();
+            const normalizedSubType = subType.trim().toUpperCase();
+            return noticeSubType === normalizedSubType;
+          }
+          return true;
+        });
+
+        const getTimeValue = (n) => {
+          if (!n) return 0;
+          if (n.event_date) {
+            const t = Date.parse(n.event_date);
+            if (!isNaN(t)) return t;
+          }
+          if (n.timestamp !== undefined && n.timestamp !== null) {
+            const t = Number(n.timestamp);
+            if (!isNaN(t)) return t;
+          }
+          if (n.date) {
+            const t = Date.parse(n.date);
+            if (!isNaN(t)) return t;
+          }
+          if (n.published_on) {
+            const t = Date.parse(n.published_on);
+            if (!isNaN(t)) return t;
+          }
+          return 0;
+        };
+
+        const sorted = [...filtered].sort((a, b) => getTimeValue(b) - getTimeValue(a));
+        setJobs(sorted);
+
+        const computedTotal = typeof totalCount === "number" ? Math.max(1, Math.ceil(totalCount / usedLimit)) : Math.max(1, Math.ceil(filtered.length / usedLimit));
+        setTotalPages(computedTotal);
+        if (currentPage > computedTotal) setCurrentPage(computedTotal);
+
+        setIsLoading(false);
+      } catch (e) {
+        console.error("Error fetching Faculty notices:", e);
+        setIsLoading(false);
+        setFetchError(true);
+      }
+    };
+
+    fetchJobs();
+  }, [currentPage, subType]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
+
   return (
     <div className="bg-white bg-opacity-50">
-      <div className="mx-auto px-4 py-8 max-w-7xl">
-        <h1 className="text-2xl md:text-3xl font-bold mb-4 text-red-950 text-center">
-          Faculty Positions
-        </h1>
-
-        <div className="overflow-x-auto rounded-lg shadow-md border border-gray-100 mb-8">
-          <table className="w-full border-collapse bg-white">
-            <thead>
-              <tr className="bg-[#421010] text-white">
-                <th className="text-left px-6 py-4 font-semibold">Name of Posts</th>
-                <th className="text-center px-6 py-4 font-semibold w-1/4">Documents</th>
-              </tr>
-            </thead>
-            <tbody>
-
-
-    
- <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                     Notification for the post of Deputy Director
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1HHOAelelCgY7DWZvrutXcEqwJGKlFKA-/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                        
-                    <Link
-                      href="https://drive.google.com/file/d/1LNP6-w11bLwaiTAGcbhW61ImK9bi01NF/view?usp=sharing"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                     Application Form [PDF]
-                    </Link>
-                        
-                      <Link
-                      href="https://docs.google.com/document/d/1vnTuzacjwajARjr075DMqlaZ-TktkvyS/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                     Application Form [DOC]
-                    </Link> 
-                  </div>
-                </td>
-              </tr>
-
-
-                        
-    
-
-           <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                   Interview Schedule for Candidates Eligible for Interview for the Post of Assistant Professor (Grade II), Pay Level 11 (AGP: ₹7,000) (Only for Internal Faculty), in Various Departments
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1C1iMdtlvqCDxh9Qdwusc5U9-1pG-yyeU/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-                        
-            <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                 Interview Schedule for Candidates Eligible for Interview for the Posts of Professor of Practice and Associate Professor of Practice in Various Departments at NIT Patna.
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/15C1vMxTGIMgAi-zJZOaldHW2u6VlL4vG/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-
-
-    
-           <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                 Revised Interview Schedule for Candidates Who Became Eligible for Stage III in Various Departments
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1gdOZk0Zk2r19k2QKyHwqk549shInOGsf/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-                        
-       <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                 Advertisement for Faculty Recruitment to the Post of Assistant Professor (Grade II), Pay Level 11 (AGP: ₹7,000) (Only for Internal Faculty)
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1xE7gejub95S_fzdYn3tTaLy1DF_4Nlrv/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                        
-                    <Link
-                      href="https://drive.google.com/file/d/1eqqMU4ctlceBvaED1mFNBu3HfIOZqczL/view?usp=sharing"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      SOP
-                    </Link>
-                        
-                      <Link
-                      href="https://forms.gle/JUFniPtJBgM3ypyQ8"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Apply Here
-                    </Link>
-                        
-                     <Link
-                      href="/Others/faculty-recruitment/annexures1"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Annexures
-                    </Link>    
-                        
-                  </div>
-                </td>
-              </tr>
-
-                        
-
-       <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                  Schedule for Presentation of the candidates Shortlisted for Stage-II assessment for the post of Assistant Professor (Grade-II) Pay Level-10/AGP: Rs. 6000 in various Departments 
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1u1f37XApCTQ9X7Y55V3H4yNyJ2XRCLhD/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-                        
-    
-          <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                 List of candidates Shortlisted for Stage-ll assessment (Presentation) for the post of Assistant Professor (Grade-ll) Pay Leve!-10/AGP: Rs. 6000 in various Departments 
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1xoxWRtaMgWvx3fZ7j-vgfG5FdRNz2zhV/view?usp=drive_link"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-    
-              <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                    Professor, Associate Professor, Assistant Professor Grade-I, Assistant Professor Grade-II (on Contract Basis)
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href={advertisementLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Advertisement
-                    </a>
-                    <Link
-                      href="/Others/faculty-recruitment/annexures"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Annexures
-                    </Link>
-                  </div>
-                </td>
-              </tr>
-
-              {/* <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                 SOP Faculty Recruitment (Online Application form and Related Annexures)
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href={sopLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      SOP
-                    </a>
-                    <Link
-                      href="/Others/faculty-recruitment/SOP/annexures"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Annexures
-                    </Link>
-                  </div>
-                </td>
-              </tr> */}
-
-              <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                    Corrigendum to Advertisement for Faculty Positions 
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/uc?
-
-
-
-export=download&id=1kBRuNhxo8gm-Zz-balhXd4ByJjjJETV4"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-                           <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                     Advertisement for recruitment of Professor/Associate Professor of Practice at NIT Patna
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1KLw2t70rzWy0M4_11i8YszUR4uVOxBmI/view?usp=drive_link"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-                        
-                        
-            </tbody>
-          </table>
+      <div className="p-5 md:p-10 md:pl-28 md:pr-28">
+        <div className="text-2xl text-center pb-7 md:pb-10 text-red-950 font-bold">
+          <h2>Faculty Positions</h2>
         </div>
+
+        {isLoading ? (
+          <div className="flex justify-center items-center">Loading...</div>
+        ) : fetchError ? (
+          <div className="text-center text-red-500">Failed to fetch faculty notices.</div>
+        ) : (
+          <div className="md:flex md:items-start md:gap-6">
+            <aside className="w-full md:w-60 mb-4 md:mb-0">
+              <div className="bg-white p-4 rounded-md shadow-sm sticky top-24">
+                <h4 className="font-semibold mb-3">Positions Types</h4>
+                <div className="flex flex-col gap-2">
+                  {Object.entries(subtypeConfig).map(([key, cfg]) => (
+                    <button
+                      key={key}
+                      onClick={() => {
+                        setSubType(key);
+                        setCurrentPage(1);
+                      }}
+                      className={`text-left px-3 py-2 rounded-md border transition-colors ${
+                        subType === key ? "bg-red-800 text-white border-red-800" : "bg-white text-gray-800 border-gray-200 hover:bg-gray-50"
+                      }`}
+                    >
+                      {cfg.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </aside>
+
+            <main className="flex-1">
+              <div className="section-content">
+                {jobs.length === 0 ? (
+                  <div className="text-center text-red-500">No notices available.</div>
+                ) : (
+                  jobs.map((notice) => (
+                    <Noticecard
+                      key={notice.id}
+                      detail={notice.title}
+                      time={notice.timestamp}
+                      attachments={(() => {
+                        if (Array.isArray(notice.attachments)) return notice.attachments;
+                        if (typeof notice.attachments === 'string') {
+                          try {
+                            const parsed = JSON.parse(notice.attachments);
+                            return Array.isArray(parsed) ? parsed : [];
+                          } catch (e) {
+                            return [];
+                          }
+                        }
+                        return [];
+                      })()}
+                      imp={notice.important}
+                      link={
+                        notice.notice_link && (() => {
+                          try {
+                            const parsed = typeof notice.notice_link === 'string' ? JSON.parse(notice.notice_link) : notice.notice_link;
+                            return parsed?.url || "";
+                          } catch (e) {
+                            return notice.notice_link || "";
+                          }
+                        })()
+                      }
+                    />
+                  ))
+                )}
+              </div>
+
+              {/* Pagination */}
+              <div className="flex flex-col items-center gap-3 mt-6 text-center sm:flex-row sm:justify-center sm:gap-4">
+                <button onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))} disabled={currentPage === 1} className="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">Prev</button>
+
+                <div className="px-4 py-2 rounded-md bg-gray-100 text-gray-800 font-medium">Page {currentPage} of {totalPages}</div>
+
+                <button onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))} disabled={currentPage === totalPages} className="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">Next</button>
+              </div>
+            </main>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default RecruitmentProcess;
+export default Page;
