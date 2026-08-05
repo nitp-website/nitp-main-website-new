@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, UserSquare } from "lucide-react";
 import DepartmentCounter from "../../components/department/DepartmentCounter.js";
 import DepartmentNotice from "./../../components/department/DeptartmentNotice.js";
+import { getBackendApiUrl } from "@/lib/apiHelpers";
 
 const about = `The Department of Architecture was established at the Bihar College of Engineering (BCE) Patna in 1979 under Patna University. It was the first time that architectural education had commenced in Bihar. When BCE Patna was rechristened as the National Institute of Technology Patna on 28th January 2004, it came under the control of the Ministry of Human Resource Development (MHRD), Government of India. The Department of Architecture and Planning offers programmes in Bachelor of Architecture (B.Arch.), Master of Urban and Regional Planning (MURP), and Ph.D. in Architecture and Planning.
 
@@ -25,7 +26,7 @@ export default function Archi() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=arch`);
+        const countsResponse = await axios.get(getBackendApiUrl("/api/count?type=arch"));
         // console.log("Counts Response:", countsResponse.data);
         setData(countsResponse.data);
       } catch (error) {
