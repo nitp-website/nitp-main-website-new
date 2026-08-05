@@ -9,9 +9,9 @@ const carouselSlides = [
     { src: "/department/archi/labs/Building Services Lab.JPG", alt: "Building Services Lab" },
     { src: "/department/archi/labs/Computer Lab.JPG", alt: "Computer Lab" },
     { src: "/department/archi/labs/Landscape Lab.jpg", alt: "Landscape Lab" },
-    { src: "/department/archi/labs/Building Construction Lab.png", alt: "Building Construction Lab" },
+    // { src: "/department/archi/labs/Building Construction Lab.png", alt: "Building Construction Lab" },
 ];
- 
+  
 const mainLabSections = [
     {
         title: "Construction Yard / Building Construction Lab",
@@ -106,9 +106,9 @@ const mainLabSections = [
         title: "Resource Centre",
         pi: "",
         description:
-            "An essential academic support facility providing access to professional drafting and measurement equipment. The centre offers measuring wheels, T-scales, parallel bars, levellers, and more, assisting students with technical drafting, model preparation, and field measurements to enhance precision in their studio work.",
+            "The Resource Centre at the Department of Architecture and Planning, National Institute of Technology Patna serves as an essential academic support facility for architecture students. The centre provides a range of basic drafting and measurement equipment including measuring tapes, scales, set squares, roller scales, measuring wheel, T-scales, parallel bars, and levellers. These instruments assist students in their regular studio work, technical drafting, model preparation, and site visit measurements. By ensuring easy access to professional tools and equipment, the Resource Centre helps students enhance precision, efficiency, and practical understanding in architectural education and field-based learning.",
         attachments: [
-            { label: "Details of equipment", href: "#" }
+            { label: "Details of equipment", href: "https://drive.google.com/file/d/1Ee2AHIzn1Z8nuofOAccnS46TUtd-hgLF/view?usp=sharing" }
         ],
         images: [],
         align: "right",
