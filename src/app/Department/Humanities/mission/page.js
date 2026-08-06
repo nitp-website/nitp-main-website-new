@@ -9,14 +9,14 @@ const HumanitiesMissionPage = () => {
             <h2 className="text-center text-4xl text-red-700 mt-2">Mission</h2>
           </div>
           <ul className="list-disc pl-5 space-y-2 mt-2 text-justify">
-            <li>The Department aspires to be a national exemplar in undergraduate teaching and research in the humanities and social sciences. Upon completion of the program, the students will be prepared to compete, sustain and advance their communities and the world.</li>
+            <li>The Department aspires to be a national exemplar in undergraduate teaching and research in the humanities and social sciences. Upon completion of the program, the students will be prepared to compete, sustain and advance their communities in the society and the world.</li>
           </ul>
 
           <div className="w-full mt-5">
             <h2 className="text-center text-4xl text-red-700 mt-2">Vision</h2>
           </div>
           <ul className="list-disc pl-5 space-y-2 mt-2 text-justify">
-            <li>To provide quality teaching, learning, and research in the field of Humanities and Social Sciences by creating, preserving, transmitting and utilizing knowledge especially to engineering students so that intellectually capable and imaginatively gifted leaders can emerge in the technical education and industry.</li>
+            <li>To provide quality teaching, learning, and research in the field of Humanities and Social Sciences by creating, preserving, transmitting and utilizing knowledge to the engineering students in particular and students of multidisciplinary fields at large so that intellectually capable and imaginatively gifted leaders can emerge in the technical education and industry.</li>
           </ul>
         </div>
       </div>
