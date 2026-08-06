@@ -368,11 +368,11 @@ const BASE_NAV_ITEMS = [
         link: "/Course",
         iconImage: Programs,
       },
-      {
-        label: "Academic Calendar",
-        link: "/Academic/Calender",
-        iconImage: Calendar,
-      },
+      // {
+      //   label: "Academic Calendar",
+      //   link: "/Academic/Calender",
+      //   iconImage: Calendar,
+      // },
       {
         label: "Rules and Regulation",
         link: "/Academic/Curriculam",
