@@ -1,10 +1,10 @@
-// src/app/Others/faculty-recruitment/annexures/page.js
+// src/app/Others/recruitment/annexures/page.js
 
 'use client';
 import React from 'react';
 import { FileText } from 'lucide-react';
 
-const Annexures = () => {
+const Annexures1 = () => {
   const annexures = [
     { 
       id: 1, 
@@ -41,13 +41,8 @@ const Annexures = () => {
       name: "Annexure VII (Gazette Notification dated 07th March 2019 of CEI (Reservation in Annexure VII Teachers’ Cadre) Ordinance, 2019)", 
       link: "https://drive.google.com/file/d/1owLv1vykSBoZktMjI74v0Ju1ZF2I-1dq/view?usp=drivesdk" 
     },
-    { 
-      id: 8, 
-      name: "Annexure VIII (Prescribed format for Category Certificate (SC/ST/OBC-NCL/EWS/PwD))", 
-      link: "https://drive.google.com/file/d/1YhRsQCALYpJJX2MLAOxMQTf_kVv8JzyF/view?usp=drivesdk" 
-    },
     {
-      id: 9,
+      id: 8,
       name: "Annexure IX (NIT (Amendment) Statutes 2023)",
       link: "https://drive.google.com/file/d/1XWBLB-dGWhC8FMzGmrmEppscdwC0EXex/view?usp=drive_link"
     }
@@ -102,5 +97,5 @@ const Annexures = () => {
 
 
 
-export default Annexures;
+export default Annexures1;
 

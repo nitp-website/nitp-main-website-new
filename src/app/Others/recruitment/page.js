@@ -9,14 +9,14 @@ const Page = () => {
     'REGULAR NON-TEACHING': { label: "Regular Non-Teaching", icon: faUserTie },
     'NON-REGULAR TEACHING': { label: "Non-Regular Teaching", icon: faPersonChalkboard },
     'NON-REGULAR NON-TEACHING': { label: "Non-Regular Non-Teaching", icon: faUsersCog },
-    'JDRF/SRF': { label: "JDRF/SRF", icon: faUserGraduate },
+    'JDRF/SRF': { label: "JRF/SRF", icon: faUserGraduate },
   };
 
   return (
     <div className="bg-[#f0f0f0] min-h-screen py-20">
       <div className="max-w-6xl mx-auto px-5 md:px-10">
         <div className="text-3xl text-center pb-12 text-[#4d1418] font-bold">
-          <h2>Faculty Positions</h2>
+          <h2>Job Opportunities</h2>
         </div>
 
         {/* Category Boxes */}
@@ -24,7 +24,7 @@ const Page = () => {
           {Object.entries(subtypeConfig).map(([key, cfg]) => {
             return (
               <Link
-                href={`/Others/faculty-recruitment/positions?category=${encodeURIComponent(key)}`}
+                href={`/Others/recruitment/positions?category=${encodeURIComponent(key)}`}
                 key={key}
                 className={`relative w-32 h-32 md:w-36 md:h-36 flex flex-col items-center justify-center p-3 gap-3 rounded-2xl cursor-pointer transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden group border border-[#e6b3b3] bg-[#f0caca] text-[#ba210e] hover:bg-[#ba210e] hover:text-[#ffe5e5] hover:border-transparent`}
               >

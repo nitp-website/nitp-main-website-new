@@ -1,4 +1,4 @@
-// src/app/Others/faculty-recruitment/page.js
+// src/app/Others/recruitment/page.js
 
 'use client';
 import React from 'react';

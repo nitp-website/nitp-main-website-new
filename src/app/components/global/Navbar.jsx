@@ -810,7 +810,7 @@ export default function Navbar() {
           </div>
           <div className="hidden md:flex space-x-2 text-xs md:text-sm">
             <a
-              href="/Notices/JobsNITP"
+              href="/Others/recruitment"
               className="hover:underline text-[0.6rem] md:text-sm"
             >
               Jobs@NITP
