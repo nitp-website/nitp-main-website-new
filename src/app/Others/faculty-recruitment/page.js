@@ -1,244 +1,42 @@
-"use client";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-
-import { Briefcase, Calendar, Download, ExternalLink, Star } from "lucide-react";
-import { extractApiArray } from "@/lib/apiHelpers";
-
-const Noticecard = ({ detail, time, attachments, imp, link }) => (
-  <div className="notice bg-white rounded-lg p-4 mb-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
-    <div className="flex items-start gap-3">
-      <Briefcase className="w-5 h-5 text-red-800 mt-1 flex-shrink-0" />
-      <div className="flex-1">
-        <div className="flex items-start gap-2">
-          {imp && <Star className="h-4 w-4 mt-1 flex-shrink-0 text-yellow-500 fill-yellow-500" />}
-          <h3 className="text-gray-800 text-base font-medium flex-1">{detail}</h3>
-        </div>
-
-        <div className="flex items-center gap-2 my-3 text-gray-500 text-sm">
-          <Calendar className="w-4 h-4" />
-          <span>
-            {(() => {
-              if (!time) return "Invalid Date";
-              const timestamp = typeof time === "string" ? parseInt(time) : time;
-              if (isNaN(timestamp)) return "Invalid Date";
-              const date = new Date(timestamp);
-              return isNaN(date.getTime()) ? "Invalid Date" : date.toLocaleDateString();
-            })()}
-          </span>
-        </div>
-
-        <div className="space-y-2">
-          {Array.isArray(attachments) && attachments.length > 0 && (
-            <div className="space-y-2">
-              {attachments.map((attachment, index) => (
-                <a
-                  key={index}
-                  href={attachment.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-red-800 hover:text-red-900 transition-colors"
-                >
-                  <Download className="w-4 h-4" />
-                  <span>{attachment.caption || "Download Attachment"}</span>
-                </a>
-              ))}
-            </div>
-          )}
-
-          {link && (
-            <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-red-800 hover:text-red-900 transition-colors">
-              <ExternalLink className="w-4 h-4" />
-              <span>View Details</span>
-            </a>
-          )}
-        </div>
-      </div>
-    </div>
-  </div>
-);
+import React from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChalkboardTeacher, faPersonChalkboard, faUserTie, faUsersCog, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 
 const Page = () => {
-  const [jobs, setJobs] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [fetchError, setFetchError] = useState(false);
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [subType, setSubType] = useState("ALL");
-
   const subtypeConfig = {
-    ALL: { label: "All", limit: 100 },
-    'REGULAR TEACHING': { label: "Regular Teaching", limit: 100 },
-    'NON-REGULAR TEACHING': { label: "Non-Regular Teaching", limit: 100 },
-    'REGULAR NON-TEACHING': { label: "Regular Non-Teaching", limit: 100 },
-    'NON-REGULAR NON-TEACHING': { label: "Non-Regular Non-Teaching", limit: 100 },
-    'JDRF/SRF': { label: "JDRF/SRF", limit: 100 },
+    'REGULAR TEACHING': { label: "Regular Teaching", icon: faChalkboardTeacher },
+    'REGULAR NON-TEACHING': { label: "Regular Non-Teaching", icon: faUserTie },
+    'NON-REGULAR TEACHING': { label: "Non-Regular Teaching", icon: faPersonChalkboard },
+    'NON-REGULAR NON-TEACHING': { label: "Non-Regular Non-Teaching", icon: faUsersCog },
+    'JDRF/SRF': { label: "JDRF/SRF", icon: faUserGraduate },
   };
 
-  useEffect(() => {
-    const fetchJobs = async () => {
-      try {
-        setIsLoading(true);
-
-        const cfg = subtypeConfig[subType] || subtypeConfig.ALL;
-        const usedLimit = cfg.limit || 10;
-        const base = process.env.NEXT_PUBLIC_BACKEND_API_URL;
-
-        let combined = [];
-        let totalCount = null;
-
-        if (subType === "ALL") { 
-          const url = `${base}/api/notice?type=job&page=${currentPage}&limit=${usedLimit}`;
-          const res = await axios.get(url);
-          const arr = extractApiArray(res) || [];
-          combined = arr;
-          totalCount = res.data?.total ?? arr.length;
-        } else {
-          const url = `${base}/api/notice?type=job&notice_sub_type=${encodeURIComponent(subType)}&page=${currentPage}&limit=${usedLimit}`;
-          const res = await axios.get(url);
-          const arr = extractApiArray(res) || [];
-          combined = arr;
-          totalCount = res.data?.total ?? arr.length;
-        }
-
-        const filtered = (combined || []).filter((notice) => {
-          if (notice.isVisible !== 1) return false;
-          if (subType !== "ALL") {
-            const noticeSubType = (notice.notice_sub_type || notice.noticeSubType || "").trim().toUpperCase();
-            const normalizedSubType = subType.trim().toUpperCase();
-            return noticeSubType === normalizedSubType;
-          }
-          return true;
-        });
-
-        const getTimeValue = (n) => {
-          if (!n) return 0;
-          if (n.event_date) {
-            const t = Date.parse(n.event_date);
-            if (!isNaN(t)) return t;
-          }
-          if (n.timestamp !== undefined && n.timestamp !== null) {
-            const t = Number(n.timestamp);
-            if (!isNaN(t)) return t;
-          }
-          if (n.date) {
-            const t = Date.parse(n.date);
-            if (!isNaN(t)) return t;
-          }
-          if (n.published_on) {
-            const t = Date.parse(n.published_on);
-            if (!isNaN(t)) return t;
-          }
-          return 0;
-        };
-
-        const sorted = [...filtered].sort((a, b) => getTimeValue(b) - getTimeValue(a));
-        setJobs(sorted);
-
-        const computedTotal = typeof totalCount === "number" ? Math.max(1, Math.ceil(totalCount / usedLimit)) : Math.max(1, Math.ceil(filtered.length / usedLimit));
-        setTotalPages(computedTotal);
-        if (currentPage > computedTotal) setCurrentPage(computedTotal);
-
-        setIsLoading(false);
-      } catch (e) {
-        console.error("Error fetching Faculty notices:", e);
-        setIsLoading(false);
-        setFetchError(true);
-      }
-    };
-
-    fetchJobs();
-  }, [currentPage, subType]);
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [currentPage]);
-
   return (
-    <div className="bg-white bg-opacity-50">
-      <div className="p-5 md:p-10 md:pl-28 md:pr-28">
-        <div className="text-2xl text-center pb-7 md:pb-10 text-red-950 font-bold">
+    <div className="bg-[#f0f0f0] min-h-screen py-20">
+      <div className="max-w-6xl mx-auto px-5 md:px-10">
+        <div className="text-3xl text-center pb-12 text-[#4d1418] font-bold">
           <h2>Faculty Positions</h2>
         </div>
 
-        {isLoading ? (
-          <div className="flex justify-center items-center">Loading...</div>
-        ) : fetchError ? (
-          <div className="text-center text-red-500">Failed to fetch faculty notices.</div>
-        ) : (
-          <div className="md:flex md:items-start md:gap-6">
-            <aside className="w-full md:w-60 mb-4 md:mb-0">
-              <div className="bg-white p-4 rounded-md shadow-sm sticky top-24">
-                <h4 className="font-semibold mb-3">Positions Types</h4>
-                <div className="flex flex-col gap-2">
-                  {Object.entries(subtypeConfig).map(([key, cfg]) => (
-                    <button
-                      key={key}
-                      onClick={() => {
-                        setSubType(key);
-                        setCurrentPage(1);
-                      }}
-                      className={`text-left px-3 py-2 rounded-md border transition-colors ${
-                        subType === key ? "bg-red-800 text-white border-red-800" : "bg-white text-gray-800 border-gray-200 hover:bg-gray-50"
-                      }`}
-                    >
-                      {cfg.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </aside>
-
-            <main className="flex-1">
-              <div className="section-content">
-                {jobs.length === 0 ? (
-                  <div className="text-center text-red-500">No notices available.</div>
-                ) : (
-                  jobs.map((notice) => (
-                    <Noticecard
-                      key={notice.id}
-                      detail={notice.title}
-                      time={notice.timestamp}
-                      attachments={(() => {
-                        if (Array.isArray(notice.attachments)) return notice.attachments;
-                        if (typeof notice.attachments === 'string') {
-                          try {
-                            const parsed = JSON.parse(notice.attachments);
-                            return Array.isArray(parsed) ? parsed : [];
-                          } catch (e) {
-                            return [];
-                          }
-                        }
-                        return [];
-                      })()}
-                      imp={notice.important}
-                      link={
-                        notice.notice_link && (() => {
-                          try {
-                            const parsed = typeof notice.notice_link === 'string' ? JSON.parse(notice.notice_link) : notice.notice_link;
-                            return parsed?.url || "";
-                          } catch (e) {
-                            return notice.notice_link || "";
-                          }
-                        })()
-                      }
-                    />
-                  ))
-                )}
-              </div>
-
-              {/* Pagination */}
-              <div className="flex flex-col items-center gap-3 mt-6 text-center sm:flex-row sm:justify-center sm:gap-4">
-                <button onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))} disabled={currentPage === 1} className="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">Prev</button>
-
-                <div className="px-4 py-2 rounded-md bg-gray-100 text-gray-800 font-medium">Page {currentPage} of {totalPages}</div>
-
-                <button onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))} disabled={currentPage === totalPages} className="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">Next</button>
-              </div>
-            </main>
-          </div>
-        )}
+        {/* Category Boxes */}
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-12">
+          {Object.entries(subtypeConfig).map(([key, cfg]) => {
+            return (
+              <Link
+                href={`/Others/faculty-recruitment/positions?category=${encodeURIComponent(key)}`}
+                key={key}
+                className={`relative w-32 h-32 md:w-36 md:h-36 flex flex-col items-center justify-center p-3 gap-3 rounded-2xl cursor-pointer transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden group border border-[#e6b3b3] bg-[#f0caca] text-[#ba210e] hover:bg-[#ba210e] hover:text-[#ffe5e5] hover:border-transparent`}
+              >
+                {/* Optional background effect similar to Home page */}
+                <div className={`absolute inset-0 bg-gradient-to-br from-[#ba210e] to-[#911a0b] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10`}></div>
+                
+                <FontAwesomeIcon icon={cfg.icon} className={`text-4xl md:text-5xl text-[#ba210e] group-hover:text-[#f7cece] transition-colors z-10 mb-1`} />
+                <p className="text-[11px] md:text-xs font-black text-center uppercase z-10 leading-snug tracking-wider">{cfg.label}</p>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
