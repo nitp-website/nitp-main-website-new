@@ -11,7 +11,12 @@ const dept = "Humanities";
 
 const about = `With an interdisciplinary perspective at the heart of its approach, the Department of Humanities and Social Sciences at NIT Patna provides intellectual and cultural foundations for the study of human relations with society interaction and teaching towards problem solving of the nation in contemporary contexts. The Department, with its diverse expertise offers students to various courses like communicative english with language lab, social and professional ethics, professional ethics, universal human value, sociology and building economics, industrial economics and financial management, business environment and Indian economy, intellectual property right etc. in the UG programme that aimed at developing essential skills in critical thinking and writing along with the knowledge of literature, society, economic value, and philosophies of the mind and body. The Department offers Doctoral programmes in Economics, English`;
 
-const picture = ["https://i.postimg.cc/fyY06783/nit-patna-005.jpg"];
+const picture = [
+  "/department/hss/overview/Overview-1.jpg",
+  "/department/hss/overview/Overview-3.jpg",
+  "/department/hss/overview/Overview-6.jpg",
+  "/department/hss/overview/Overview-8.jpg"
+];
 
 export default function Humanities() {
   const router = useRouter();

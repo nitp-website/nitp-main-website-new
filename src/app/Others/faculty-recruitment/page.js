@@ -1,335 +1,45 @@
-// src/app/Others/faculty-recruitment/page.js
+import React from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChalkboardTeacher, faPersonChalkboard, faUserTie, faUsersCog, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 
-'use client';
-import React from 'react';
-import Link from 'next/link';
-import { FileText } from 'lucide-react';
+const Page = () => {
+  const subtypeConfig = {
+    'REGULAR TEACHING': { label: "Regular Teaching", icon: faChalkboardTeacher },
+    'REGULAR NON-TEACHING': { label: "Regular Non-Teaching", icon: faUserTie },
+    'NON-REGULAR TEACHING': { label: "Non-Regular Teaching", icon: faPersonChalkboard },
+    'NON-REGULAR NON-TEACHING': { label: "Non-Regular Non-Teaching", icon: faUsersCog },
+    'JDRF/SRF': { label: "JDRF/SRF", icon: faUserGraduate },
+  };
 
-const RecruitmentProcess = () => {
-
-  const advertisementLink = "https://drive.google.com/file/d/16v2OsI19FGdFGJa02mUAg6HTo_Zbk3-Q/view";
-  const sopLink="https://drive.google.com/file/d/13eb1I3HKKwwD5WhvfuswAQVx3yNEgqOB/view"
   return (
-    <div className="bg-white bg-opacity-50">
-      <div className="mx-auto px-4 py-8 max-w-7xl">
-        <h1 className="text-2xl md:text-3xl font-bold mb-4 text-red-950 text-center">
-          Faculty Positions
-        </h1>
+    <div className="bg-[#f0f0f0] min-h-screen py-20">
+      <div className="max-w-6xl mx-auto px-5 md:px-10">
+        <div className="text-3xl text-center pb-12 text-[#4d1418] font-bold">
+          <h2>Faculty Positions</h2>
+        </div>
 
-        <div className="overflow-x-auto rounded-lg shadow-md border border-gray-100 mb-8">
-          <table className="w-full border-collapse bg-white">
-            <thead>
-              <tr className="bg-[#421010] text-white">
-                <th className="text-left px-6 py-4 font-semibold">Name of Posts</th>
-                <th className="text-center px-6 py-4 font-semibold w-1/4">Documents</th>
-              </tr>
-            </thead>
-            <tbody>
-
-
-    
- <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                     Notification for the post of Deputy Director
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1HHOAelelCgY7DWZvrutXcEqwJGKlFKA-/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                        
-                    <Link
-                      href="https://drive.google.com/file/d/1LNP6-w11bLwaiTAGcbhW61ImK9bi01NF/view?usp=sharing"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                     Application Form [PDF]
-                    </Link>
-                        
-                      <Link
-                      href="https://docs.google.com/document/d/1vnTuzacjwajARjr075DMqlaZ-TktkvyS/edit?usp=sharing&ouid=105912413414551043045&rtpof=true&sd=true"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                     Application Form [DOC]
-                    </Link> 
-                  </div>
-                </td>
-              </tr>
-
-
-                        
-    
-
-           <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                   Interview Schedule for Candidates Eligible for Interview for the Post of Assistant Professor (Grade II), Pay Level 11 (AGP: ₹7,000) (Only for Internal Faculty), in Various Departments
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1C1iMdtlvqCDxh9Qdwusc5U9-1pG-yyeU/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-                        
-            <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                 Interview Schedule for Candidates Eligible for Interview for the Posts of Professor of Practice and Associate Professor of Practice in Various Departments at NIT Patna.
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/15C1vMxTGIMgAi-zJZOaldHW2u6VlL4vG/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-
-
-    
-           <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                 Revised Interview Schedule for Candidates Who Became Eligible for Stage III in Various Departments
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1gdOZk0Zk2r19k2QKyHwqk549shInOGsf/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-                        
-       <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                 Advertisement for Faculty Recruitment to the Post of Assistant Professor (Grade II), Pay Level 11 (AGP: ₹7,000) (Only for Internal Faculty)
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1xE7gejub95S_fzdYn3tTaLy1DF_4Nlrv/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                        
-                    <Link
-                      href="https://drive.google.com/file/d/1eqqMU4ctlceBvaED1mFNBu3HfIOZqczL/view?usp=sharing"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      SOP
-                    </Link>
-                        
-                      <Link
-                      href="https://forms.gle/JUFniPtJBgM3ypyQ8"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Apply Here
-                    </Link>
-                        
-                     <Link
-                      href="/Others/faculty-recruitment/annexures1"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Annexures
-                    </Link>    
-                        
-                  </div>
-                </td>
-              </tr>
-
-                        
-
-       <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                  Schedule for Presentation of the candidates Shortlisted for Stage-II assessment for the post of Assistant Professor (Grade-II) Pay Level-10/AGP: Rs. 6000 in various Departments 
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1u1f37XApCTQ9X7Y55V3H4yNyJ2XRCLhD/view?usp=sharing"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-                        
-    
-          <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                 List of candidates Shortlisted for Stage-ll assessment (Presentation) for the post of Assistant Professor (Grade-ll) Pay Leve!-10/AGP: Rs. 6000 in various Departments 
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1xoxWRtaMgWvx3fZ7j-vgfG5FdRNz2zhV/view?usp=drive_link"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-    
-              <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                    Professor, Associate Professor, Assistant Professor Grade-I, Assistant Professor Grade-II (on Contract Basis)
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href={advertisementLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Advertisement
-                    </a>
-                    <Link
-                      href="/Others/faculty-recruitment/annexures"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Annexures
-                    </Link>
-                  </div>
-                </td>
-              </tr>
-
-              {/* <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                 SOP Faculty Recruitment (Online Application form and Related Annexures)
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href={sopLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      SOP
-                    </a>
-                    <Link
-                      href="/Others/faculty-recruitment/SOP/annexures"
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Annexures
-                    </Link>
-                  </div>
-                </td>
-              </tr> */}
-
-              <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                    Corrigendum to Advertisement for Faculty Positions 
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/uc?
-
-
-
-export=download&id=1kBRuNhxo8gm-Zz-balhXd4ByJjjJETV4"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-                           <tr className="border-b border-gray-100 hover:bg-red-50 transition-colors">
-                <td className="text-left px-6 py-4 text-gray-800">
-                  <p className="leading-relaxed">
-                     Advertisement for recruitment of Professor/Associate Professor of Practice at NIT Patna
-                  </p>
-                </td>
-                <td className="text-center px-6 py-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <a
-                      href="https://drive.google.com/file/d/1KLw2t70rzWy0M4_11i8YszUR4uVOxBmI/view?usp=drive_link"
-                      download
-                      className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-800 transition-colors text-sm font-medium w-40"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
-                </td>
-              </tr>
-
-                        
-                        
-            </tbody>
-          </table>
+        {/* Category Boxes */}
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-12">
+          {Object.entries(subtypeConfig).map(([key, cfg]) => {
+            return (
+              <Link
+                href={`/Others/faculty-recruitment/positions?category=${encodeURIComponent(key)}`}
+                key={key}
+                className={`relative w-32 h-32 md:w-36 md:h-36 flex flex-col items-center justify-center p-3 gap-3 rounded-2xl cursor-pointer transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden group border border-[#e6b3b3] bg-[#f0caca] text-[#ba210e] hover:bg-[#ba210e] hover:text-[#ffe5e5] hover:border-transparent`}
+              >
+                {/* Optional background effect similar to Home page */}
+                <div className={`absolute inset-0 bg-gradient-to-br from-[#ba210e] to-[#911a0b] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10`}></div>
+                
+                <FontAwesomeIcon icon={cfg.icon} className={`text-4xl md:text-5xl text-[#ba210e] group-hover:text-[#f7cece] transition-colors z-10 mb-1`} />
+                <p className="text-[11px] md:text-xs font-black text-center uppercase z-10 leading-snug tracking-wider">{cfg.label}</p>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
   );
 };
 
-export default RecruitmentProcess;
+export default Page;

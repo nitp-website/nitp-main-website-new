@@ -105,11 +105,11 @@ const navItems = [
         icon: <Award size={18} />,
         url: `/Department/${dept}/acadProgram`,
     },
-    // {
-    //   name: "Labs",
-    //   icon: <Labs size={18} />,
-    //   url: `/Department/${dept}/labs`,
-    // },
+    {
+        name: "Labs",
+        icon: <Labs size={18} />,
+        url: `/Department/${dept}/labs`,
+    },
 ];
 
 export default function Layout({ children }) {

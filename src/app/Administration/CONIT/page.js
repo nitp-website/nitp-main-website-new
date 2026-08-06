@@ -11,13 +11,13 @@ const President = () => {
         <div className="relative flex flex-col items-center text-center">
           <img
             className="w-36 h-36 object-cover rounded-full border-4 border-gray-300 shadow-md"
-            src="https://i.postimg.cc/wBxrhY30/Dharmendra-Pradhan.webp"
+            src="https://i.postimg.cc/zBpSHSfY/Pralhad-Joshi.jpg"
             alt="Education Minister"
           />
 
           <p className="mt-4 text-gray-500 italic">Hon'ble Education Minister</p>
           <h2 className="mt-2 text-xl font-semibold text-gray-800">
-            Shri Dharmendra Pradhan
+            Shri Pralhad Joshi
           </h2>
           <p className="mt-1 text-sm text-gray-600">
             Hon'ble Union Cabinet Minister, MoE, GoI

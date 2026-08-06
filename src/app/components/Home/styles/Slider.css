@@ -64,19 +64,35 @@ body {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
+  width: 50px !important;
+  height: 50px !important;
+  cursor: pointer;
 }
 
 .swiper-button-next::after {
-  display: none;
+  display: none !important;
 }
+
+.swiper-button-next svg {
+  display: none !important;
+}
+
 .swiper-button-prev {
   background-image: url(../../../assets/images/prev.svg);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
+  width: 50px !important;
+  height: 50px !important;
+  cursor: pointer;
 }
+
 .swiper-button-prev::after {
-  display: none;
+  display: none !important;
+}
+
+.swiper-button-prev svg {
+  display: none !important;
 }
 
 .swiper-pagination .swiper-pagination-bullet {
