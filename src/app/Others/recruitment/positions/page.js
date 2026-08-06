@@ -96,7 +96,7 @@ const PositionsContent = () => {
       <div className="max-w-6xl mx-auto px-5 md:px-10">
         
         <div className="mb-6">
-          <Link href="/Others/faculty-recruitment" className="inline-flex items-center gap-2 text-sm font-medium text-[#8c1c1c] hover:text-[#5b1e22] transition-colors bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-50">
+          <Link href="/Others/recruitment" className="inline-flex items-center gap-2 text-sm font-medium text-[#8c1c1c] hover:text-[#5b1e22] transition-colors bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-50">
             <ArrowLeft className="w-4 h-4" />
             Back to Categories
           </Link>
@@ -152,14 +152,14 @@ const PositionsContent = () => {
 
                       return (
                         <tr key={notice.id} className={`border-b border-gray-200 hover:bg-gray-100 transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-[#fafafa]'}`}>
-                          <td className="py-5 px-6 align-top">
-                            <div className="flex items-start gap-3">
-                              {notice.important === 1 && <Star className="h-4 w-4 mt-1 flex-shrink-0 text-yellow-500 fill-yellow-500" />}
+                          <td className="py-5 px-6 align-middle">
+                            <div className="flex items-center gap-3">
+                              {notice.important === 1 && <Star className="h-4 w-4 flex-shrink-0 text-yellow-500 fill-yellow-500" />}
                               <h3 className="text-gray-800 text-sm font-medium leading-relaxed">{notice.title}</h3>
                             </div>
                           </td>
-                          <td className="py-5 px-6 align-top border-l border-gray-200">
-                            <div className="flex flex-col gap-3 items-start">
+                          <td className="py-5 px-6 align-middle border-l border-gray-200">
+                            <div className="flex flex-col gap-3 items-center sm:items-start">
                               {parsedAttachments.map((attachment, index) => (
                                 <a
                                   key={index}

@@ -59,9 +59,6 @@ jobs:
           set -e
           echo "Connected to server"
           
-          echo "🧹 Pruning unused Docker resources (images/volumes/networks/containers not in use) to free up space before pull..."
-          docker system prune -a --volumes -f
-          
           # Existing deploy script (pulls and restarts container)
           if [ -x ./run-nitp-main.sh ]; then
             ./run-nitp-main.sh
