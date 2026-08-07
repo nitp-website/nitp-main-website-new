@@ -122,15 +122,9 @@ const admissionData = {
       {
         name: "PhD Admissions NITP Portal",
         image: "/logo.png",
-      //  link: "https://mis.nitp.ac.in/AdmissionPHD/Default.aspx ",
-         sopLink:"https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
+        link: "https://erp.nitp.ac.in/",
+         sopLink:"https://drive.google.com/file/d/1zGO9OefmbdyK_k4KLqfK4YdrtmUNMZVw/view?usp=sharing"
       },
-      // {
-      //   name: "PhD Admissions NITP Portal",
-      //   image: "https://mis.nitp.ac.in/AdmissionPHD/images/Header.jpg",
-      //   link: "https://mis.nitp.ac.in/admissionphd/",
-      //   // description: "Centralized Counselling for M.Tech/M.Arch/M.Plan Admissions"
-      // },
     ],
     notices: [
           {
