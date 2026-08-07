@@ -83,8 +83,8 @@ const admissionData = {
       {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
-       // link: "https://mis.nitp.ac.in/admission/Default.aspx",
-        sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
+        link: "https://erp.nitp.ac.in/",
+        sopLink: "https://drive.google.com/file/d/1_aSWr7OwjLrpekiNUzVZVxUuYo-dNiJF/view?usp=sharing"
       },
        {
         name: "CCMT",
@@ -185,7 +185,7 @@ const admissionData = {
           {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
-      //  link: "https://mis.nitp.ac.in/admission/Default.aspx",
+        link: "https://erp.nitp.ac.in/",
         sopLink: "https://drive.google.com/file/d/1eL1GvquHslgbrpOiMTU9upGqdo6lkzHa/view?usp=sharing"
       },
       {
