@@ -290,7 +290,7 @@ function ResearchContent() {
             if (pub?.journal_name || pub?.type === "journal") acc.articles += 1;
             return acc;
           },
-          { books: 0, conferences: 0, articles: 0 }
+          { books: 605, conferences: 2622, articles: 5188 }
         );
 
         setStats({
