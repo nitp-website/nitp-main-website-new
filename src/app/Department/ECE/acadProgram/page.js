@@ -27,8 +27,13 @@ const programs = [
             "https://drive.google.com/file/d/1rfCcCrPd9mlA8rXhDOWpxhsItBcgIC-G/view",
         },
         {
+          time: "2024 Admitted",
+          courseStructure:
+            "https://drive.google.com/file/d/1u_cwi0J_VEst8gKFEScSWkAEvb3ReK_m/view?usp=drive_link",
+        },
+        {
           time: "2025 Onwards",
-          courseStructure: "https://drive.google.com/file/d/1A6ler7Z8ant1fD4mRBGUes0L3ajYmvy6/view"
+          courseStructure: "https://drive.google.com/file/d/1zkaB-1USaHeaIco0Yl1wirYaaBT09Kk9/view?usp=drive_link"
         }
       ]
   },
@@ -39,7 +44,7 @@ const programs = [
     description:
       "The admission to the 4-year Electronics Engineering (VLSI Design and Technology) is through prestigious IIT-JEE (Main). The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
     syllabus:
-      "https://drive.google.com/file/d/1UnG1AgDC2E9JSyAFw1v91BHCYOhJcSrO/view",
+      "https://drive.google.com/file/d/11N0GC9s753eE-v0Nh7GNP8rG_AWSny-h/view?usp=drive_link",
   },
   {
     title:
@@ -55,10 +60,16 @@ const programs = [
           courseStructure:
             "https://drive.google.com/file/d/1dRXVrtFZF0DDqiWKQKMWrL6rpGaSK5H7/view?usp=sharing",
         },
+        // 
+        {
+          time: "2024 Admitted",
+          courseStructure:
+            "https://drive.google.com/file/d/1OIOYPJOIwUnJpDPyGBnhPz3eCnFg_eJa/view?usp=drive_link",
+        },
         {
           time: "2025 Onwards",
-          courseStructure: 
-            "https://drive.google.com/file/d/1YR9LVVXEwXMKfk47YJOMIx5xvqxhco95/view?usp=sharing"
+          courseStructure:
+            "https://drive.google.com/file/d/1n4jqyGS4HhyfiDdLraZXApY-8Z5yVicx/view?usp=drive_link"
         }
       ]
   },
