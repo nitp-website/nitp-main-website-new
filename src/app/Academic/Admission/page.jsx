@@ -44,6 +44,12 @@ const admissionData = {
       },
     ],
     notices: [
+           {
+        title: "Student Induction Programme 2026–27 for Newly Admitted Students of B.Tech., B.Arch. & Dual Degree Programmes – Tentative Schedule (18–23 August 2026)",
+        date: "2026-08-11",
+        content: " UG Admission",
+        href: "https://drive.google.com/file/d/1ycmbSeSFxGEWEGsUWRSpp7eHrAnZYCes/view?usp=drive_link"
+      },
             {
         title: "The link will be active from 8:00 PM on 12th August 2026, as the declaration of the CSAB 2026 Special Round 2 result has been extended until 5:00 PM on 12th August 2026. ",
         date: "2026-08-11",
