@@ -21,7 +21,7 @@ const admissionData = {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
        // link: "https://mis.nitp.ac.in/admission/Default.aspx",
-        sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
+        sopLink: "https://drive.google.com/file/d/1AEJbQeqAhS0LCnU7ggD-1hlBhCTjUjn9/view?usp=drive_link"
       },
       {
         name: "JoSAA",
@@ -44,6 +44,13 @@ const admissionData = {
       },
     ],
     notices: [
+            {
+        title: "The link will be active from 8:00 PM on 12th August 2026, as the declaration of the CSAB 2026 Special Round 2 result has been extended until 5:00 PM on 12th August 2026. ",
+        date: "2026-08-11",
+        content: " UG Admission",
+        href: ""
+      },
+      
         {
         title: "Orientation Programme for First-Year Students (AY 2026–27) is Scheduled from August 18 to 23, 2026",
         date: "2026-07-31",
