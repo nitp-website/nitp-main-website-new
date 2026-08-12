@@ -45,26 +45,19 @@ const admissionData = {
     ],
     notices: [
            {
+        title: "IMPORTANT: Due to the delay in the declaration of the CSAB 2026 Special Round 2 results, the link will be active from 13 August 2026 at 9:30 AM.",
+        date: "2026-08-12",
+        content: " UG Admission",
+        href: ""
+      },
+           {
         title: "Student Induction Programme 2026–27 for Newly Admitted Students of B.Tech., B.Arch. & Dual Degree Programmes – Tentative Schedule (18–23 August 2026)",
         date: "2026-08-11",
         content: " UG Admission",
         href: "https://drive.google.com/file/d/1ycmbSeSFxGEWEGsUWRSpp7eHrAnZYCes/view?usp=drive_link"
       },
-            {
-        title: "The link will be active from 8:00 PM on 12th August 2026, as the declaration of the CSAB 2026 Special Round 2 result has been extended until 5:00 PM on 12th August 2026. ",
-        date: "2026-08-11",
-        content: " UG Admission",
-        href: ""
-      },
-      
-        {
-        title: "Orientation Programme for First-Year Students (AY 2026–27) is Scheduled from August 18 to 23, 2026",
-        date: "2026-07-31",
-        content: " UG Admission",
-        href: ""
-      },
-      
-         {
+            
+                 {
         title: "Notice for the Commencement of Classes for Newly Admitted UG Students (Academic Year 2026–27)",
         date: "2026-07-31",
         content: " UG Admission",
