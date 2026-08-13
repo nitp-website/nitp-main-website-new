@@ -5,8 +5,10 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const CAROUSEL_INTERVAL_MS = 5000;
+
 const SECTION_CARD_CLASS =
   "mb-12 rounded-3xl border border-red-100 bg-white/90 shadow-[0_18px_50px_rgba(127,29,29,0.08)] backdrop-blur-sm";
+
 const IMAGE_CARD_CLASS =
   "relative w-full overflow-hidden rounded-2xl border border-red-100 bg-rose-50 shadow-lg";
 
@@ -18,6 +20,7 @@ function LabSection({ title, description, images }) {
           <h3 className="text-2xl font-bold text-red-900 sm:text-3xl">
             {title}
           </h3>
+
           <p className="whitespace-pre-line text-justify text-sm leading-7 text-slate-700 sm:text-base">
             {description}
           </p>
@@ -25,8 +28,11 @@ function LabSection({ title, description, images }) {
 
         <div className="flex items-center justify-center">
           <div className="flex w-full flex-col gap-4">
-            {images.map((item) => (
-              <div key={item.src} className={IMAGE_CARD_CLASS}>
+            {images.map((item, index) => (
+              <div
+                key={`${item.src}-${index}`}
+                className={IMAGE_CARD_CLASS}
+              >
                 <Image
                   src={item.src}
                   alt={item.alt}
@@ -50,7 +56,10 @@ function LabCarousel({
   onNext,
   onSelectSlide,
 }) {
-  const currentSlide = slides[activeSlide] || { src: "", alt: "" };
+  const currentSlide = slides[activeSlide] || {
+    src: "",
+    alt: "",
+  };
 
   return (
     <div className="mb-10 overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_24px_70px_rgba(127,29,29,0.14)]">
@@ -65,6 +74,7 @@ function LabCarousel({
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 1200px"
             />
+
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
           </>
         )}
@@ -77,6 +87,7 @@ function LabCarousel({
         >
           <ChevronLeft size={28} />
         </button>
+
         <button
           type="button"
           onClick={onNext}
@@ -95,11 +106,15 @@ function LabCarousel({
             <div className="flex gap-2">
               {slides.map((slide, index) => (
                 <button
-                  key={slide.src}
+                  key={`${slide.src}-${index}`}
                   type="button"
                   onClick={() => onSelectSlide(index)}
                   aria-label={`Go to slide ${index + 1}`}
-                  className={`h-2.5 rounded-full transition-all ${index === activeSlide ? "w-8 bg-white" : "w-2.5 bg-white/60"}`}
+                  className={`h-2.5 rounded-full transition-all ${
+                    index === activeSlide
+                      ? "w-8 bg-white"
+                      : "w-2.5 bg-white/60"
+                  }`}
                 />
               ))}
             </div>
@@ -114,6 +129,8 @@ export default function LabsClient({ slides, labSections }) {
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
+    if (slides.length <= 1) return;
+
     const interval = setInterval(() => {
       setActiveSlide((current) => (current + 1) % slides.length);
     }, CAROUSEL_INTERVAL_MS);
@@ -122,12 +139,16 @@ export default function LabsClient({ slides, labSections }) {
   }, [slides.length]);
 
   const previousSlide = () => {
+    if (slides.length === 0) return;
+
     setActiveSlide((current) =>
       current === 0 ? slides.length - 1 : current - 1,
     );
   };
 
   const nextSlide = () => {
+    if (slides.length === 0) return;
+
     setActiveSlide((current) => (current + 1) % slides.length);
   };
 
@@ -140,13 +161,15 @@ export default function LabsClient({ slides, labSections }) {
           </h1>
         </div>
 
-        <LabCarousel
-          slides={slides}
-          activeSlide={activeSlide}
-          onPrevious={previousSlide}
-          onNext={nextSlide}
-          onSelectSlide={setActiveSlide}
-        />
+        {slides.length > 0 && (
+          <LabCarousel
+            slides={slides}
+            activeSlide={activeSlide}
+            onPrevious={previousSlide}
+            onNext={nextSlide}
+            onSelectSlide={setActiveSlide}
+          />
+        )}
 
         <div className="mx-auto max-w-7xl">
           {labSections.map((section) => (
