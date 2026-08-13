@@ -22,11 +22,11 @@ const Memberships = ({ data }) => {
       </h2>
       <ul className="space-y-4">
         {sortedMemberships.map((membership, index) => {
-          const startDate = new Date(membership.start).toLocaleDateString();
+          const startDate = membership.start;
           const endDate =
             membership.end.toLowerCase() === "continue"
               ? "Ongoing"
-              : new Date(membership.end).toLocaleDateString();
+              : membership.end;
 
           return (
             <li

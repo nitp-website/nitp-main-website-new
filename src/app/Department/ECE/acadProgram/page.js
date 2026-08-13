@@ -82,11 +82,6 @@ const programs = [
     from:
       [
         {
-          time: "2021 Onwards",
-          courseStructure:
-            "https://drive.google.com/file/d/1pw8oCC_Z9IGOTFcrrwTdRG46O38Sl1xz/view",
-        },
-        {
           time: "2025 Onwards",
           courseStructure: "https://drive.google.com/file/d/1sZkS6Z-eXXdk46z6mhwxf4ArKsnKJonB/view"
         }
@@ -100,11 +95,6 @@ const programs = [
       "The admission to the 2-year M. Tech. in Next Generation Wireless Technologies is through GATE examination. Although the research/dissertation is the main component of the programme, due emphasis is also given to the course works. Following are the course structure and syllabus.",
     from:
       [
-        {
-          time: "2024 Onwards",
-          courseStructure:
-            "https://drive.google.com/file/d/1D_oZS86O6iwv73BI9qDXMDWvlqVWTbF0/view",
-        },
         {
           time: "2025 Onwards",
           courseStructure: "https://drive.google.com/file/d/1WZDYcoZFNMKwW-94o0ideWsXZBS3ZTt4/view"
