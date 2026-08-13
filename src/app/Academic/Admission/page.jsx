@@ -1,19 +1,32 @@
 "use client"
 import React, { useState } from "react";
 import Link from "next/link";
-import AdmissionsSidebar from "./Sidebar"
 import {
+  ArrowLeft,
   GraduationCap,
   Settings,
   Frown,
   BookOpen,
   AlertCircle,
-  ExternalLink
+  ExternalLink,
+  Laptop,
+  Award,
+  Globe,
+  Library
 } from 'lucide-react';
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+
+const admissionOptions = {
+  btech: { label: "B.Tech Admissions", icon: GraduationCap },
+  mtech: { label: "M.Tech Admissions", icon: Settings },
+  phd: { label: "PhD Admissions", icon: Award },
+  mca: { label: "MCA Admissions", icon: Laptop },
+  study_in_india: { label: "Study in India", icon: Globe },
+  qip: { label: "QIP Admissions", icon: Library },
+};
 const admissionData = {
   btech: {
     portals: [
@@ -300,15 +313,18 @@ const degreeMap = {
 
 function AdmissionsPage() {
   const [selected, setSelected] = useState("btech");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedNotices, setExpandedNotices] = useState({});
   const searchParams = useSearchParams();
-  const initialSelected = searchParams.get("type") || "btech";
+  const typeParam = searchParams.get("type");
+  const initialSelected = typeParam || "btech";
   const router = useRouter();
   const pathname = usePathname();
+  
   useEffect(() => {
-    setSelected(initialSelected);
-  }, [initialSelected]);
+    if (typeParam) {
+      setSelected(typeParam);
+    }
+  }, [typeParam]);
 
   const toggleNotice = (index) => {
     setExpandedNotices(prev => ({
@@ -324,148 +340,51 @@ function AdmissionsPage() {
     router.push(`${pathname}?${params.toString()}`);
   }
 
+  // If no type parameter is in URL, show the grid layout (like Job Opportunities)
+  if (!typeParam) {
+    return (
+      <div className="bg-[#f0f0f0] min-h-screen py-20">
+        <div className="max-w-6xl mx-auto px-5 md:px-10">
+          <div className="text-3xl text-center pb-12 text-[#4d1418] font-bold">
+            <h2>Admissions</h2>
+          </div>
+
+          {/* Category Boxes */}
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-12">
+            {Object.entries(admissionOptions).map(([key, cfg]) => {
+              const Icon = cfg.icon;
+              return (
+                <Link
+                  href={`/Academic/Admission?type=${encodeURIComponent(key)}`}
+                  key={key}
+                  className={`relative w-32 h-32 md:w-36 md:h-36 flex flex-col items-center justify-center p-3 gap-3 rounded-2xl cursor-pointer transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden group border border-[#e6b3b3] bg-[#f0caca] text-[#ba210e] hover:bg-[#ba210e] hover:text-[#ffe5e5] hover:border-transparent`}
+                >
+                  {/* Background effect */}
+                  <div className={`absolute inset-0 bg-gradient-to-br from-[#ba210e] to-[#911a0b] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10`}></div>
+                  
+                  <Icon className={`w-10 h-10 md:w-12 md:h-12 text-[#ba210e] group-hover:text-[#f7cece] transition-colors z-10 mb-1`} strokeWidth={2} />
+                  <p className="text-[11px] md:text-xs font-black text-center uppercase z-10 leading-snug tracking-wider">{cfg.label}</p>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-white text-red-900 relative">
-      {/* Mobile drawer overlay */}
-      {mobileMenuOpen && (
-        <div
-          className="xl:hidden fixed inset-0 bg-black/60 z-[1000999] backdrop-blur-xs transition-opacity duration-300"
-          onClick={() => setMobileMenuOpen(false)}
-        />
-      )}
-
-      {/* Mobile sidebar drawer */}
-      <aside
-        className={`xl:hidden fixed top-0 left-0 bottom-0 z-[1001000] w-80 max-w-[85vw] bg-gradient-to-b from-red-800 to-red-700 shadow-2xl text-white overflow-y-auto transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="p-6">
-          <div className="flex items-center justify-between pb-4 mb-6 border-b border-red-400/60">
-            <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2">
-              <GraduationCap className="w-6 h-6 text-white" />
-              Admissions Portal
-            </h2>
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              className="p-1.5 rounded-lg bg-red-900/60 hover:bg-red-900 text-white transition-colors"
-              aria-label="Close menu"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <ul className="space-y-4">
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md ${selected === "btech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => {
-                setSelected("btech");
-                setMobileMenuOpen(false);
-                handleClick("btech");
-              }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                B.Tech Admissions
-              </span>
-            </li>
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md ${selected === "mtech" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => {
-                setSelected("mtech");
-                setMobileMenuOpen(false);
-                handleClick("mtech");
-              }}
-            >
-              <span className="flex items-center">
-                <Settings className="w-5 h-5 mr-3" />
-                M.Tech Admissions
-              </span>
-            </li>
-
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md  hover:text-white ${selected === "phd" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => { setSelected("phd"); setMobileMenuOpen(false); handleClick("phd"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                PhD Admissions
-              </span>
-            </li>
-
-
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${selected === "mca" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => { setSelected("mca"); setMobileMenuOpen(false); handleClick("mca"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                MCA Admissions
-              </span>
-            </li>
-            
-
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md hover:text-white ${selected === "study_in_india" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => { setSelected("study_in_india"); setMobileMenuOpen(false); handleClick("study_in_india"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                Study in india
-              </span>
-            </li>
-
-            <li
-              className={`cursor-pointer p-3 rounded-lg transition-all duration-300 hover:bg-red-600 hover:shadow-md  hover:text-white ${selected === "qip" ? "bg-white text-red-800 font-bold shadow-lg" : "hover:text-white"
-                }`}
-              onClick={() => { setSelected("qip"); setMobileMenuOpen(false); handleClick("qip"); }}
-            >
-              <span className="flex items-center">
-                <GraduationCap className="w-5 h-5 mr-3" />
-                QIP Admissions
-              </span>
-            </li>
-
-
-            
-          </ul>
-        </div>
-      </aside>
-
       <div className="flex flex-col xl:flex-row">
-        <div className="hidden xl:block">
-          <AdmissionsSidebar />
-        </div>
-
         {/* Main content */}
         <main className="flex-1 p-3.5 sm:p-6 md:p-8 xl:ml-6 w-full max-w-full overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            {/* Mobile Program Selector Bar */}
-            <div className="xl:hidden flex items-center justify-between bg-gradient-to-r from-red-800 to-red-700 text-white p-4 rounded-xl shadow-md mb-6 border border-red-600/50">
-              <div className="flex items-center space-x-3 truncate pr-2">
-                <div className="p-2 bg-white/10 rounded-lg shrink-0">
-                  <GraduationCap className="w-5 h-5 text-white" />
-                </div>
-                <div className="truncate">
-                  <div className="text-xs text-red-200 font-medium uppercase tracking-wide">Selected Program</div>
-                  <div className="font-bold text-base sm:text-lg truncate">{degreeMap[selected] || ""} Admissions</div>
-                </div>
-              </div>
-              <button
-                onClick={() => setMobileMenuOpen(true)}
-                className="px-3.5 py-2 bg-white text-red-800 font-bold text-xs sm:text-sm rounded-lg shadow hover:bg-red-50 transition-all shrink-0 flex items-center gap-1"
-              >
-                <span>Change</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+
+            <div className="mb-6">
+              <Link href="/Academic/Admission" className="inline-flex items-center gap-2 text-sm font-medium text-[#8c1c1c] hover:text-[#5b1e22] transition-colors bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-50">
+                <ArrowLeft className="w-4 h-4" />
+                Back to Categories
+              </Link>
             </div>
 
             <h1 className="hidden md:block text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-center text-red-800 relative pb-4">

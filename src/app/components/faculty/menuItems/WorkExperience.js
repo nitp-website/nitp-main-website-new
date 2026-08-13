@@ -15,10 +15,8 @@ const WorkExperience = ({ data }) => {
       </h2>
       <ul className="space-y-4">
         {sortedData.map((experience, index) => {
-          const startDate = new Date(experience.start_date).toLocaleDateString();
-          const endDate = experience.end_date
-            ? new Date(experience.end_date).toLocaleDateString()
-            : "Ongoing"; // Handle ongoing cases
+          const startDate = experience.start_date;
+          const endDate = experience.end_date || "Ongoing"; // Handle ongoing cases
 
           return (
             <li
