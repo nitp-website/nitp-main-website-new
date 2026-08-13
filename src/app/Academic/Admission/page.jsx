@@ -20,7 +20,7 @@ const admissionData = {
       {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
-       // link: "https://mis.nitp.ac.in/admission/Default.aspx",
+        link: "https://erp.nitp.ac.in/",
         sopLink: "https://drive.google.com/file/d/1AEJbQeqAhS0LCnU7ggD-1hlBhCTjUjn9/view?usp=drive_link"
       },
       {
@@ -45,8 +45,8 @@ const admissionData = {
     ],
     notices: [
            {
-        title: "IMPORTANT: Due to the delay in the declaration of the CSAB 2026 Special Round 2 results, the link will be active from 13 August 2026 at 9:30 AM.",
-        date: "2026-08-12",
+        title: "IMPORTANT: The Admission Portal link is now active.",
+        date: "2026-08-13",
         content: " UG Admission",
         href: ""
       },
