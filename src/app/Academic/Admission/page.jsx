@@ -20,7 +20,7 @@ const admissionData = {
       {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
-       // link: "https://erp.nitp.ac.in/",
+        link: "https://erp.nitp.ac.in/",
         sopLink: "https://drive.google.com/file/d/1AEJbQeqAhS0LCnU7ggD-1hlBhCTjUjn9/view?usp=drive_link"
       },
       {
@@ -45,7 +45,7 @@ const admissionData = {
     ],
     notices: [
            {
-        title: "IMPORTANT: Server under maintenance. The link will be activated after 6:00 AM on August 14, 2026.",
+        title: "Admission Portal is Live Now",
         date: "2026-08-13",
         content: " UG Admission",
         href: ""
