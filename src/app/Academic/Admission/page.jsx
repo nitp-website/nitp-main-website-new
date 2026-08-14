@@ -58,7 +58,7 @@ const admissionData = {
     ],
     notices: [
            {
-        title: "The admission portal link is currently down. It will be resumed shortly.",
+        title: "The admission portal link is currently live.",
         date: "2026-08-13",
         content: " UG Admission",
         href: ""
