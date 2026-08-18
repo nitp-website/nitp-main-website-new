@@ -20,8 +20,8 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const admissionOptions = {
-  btech: { label: "B.Tech Admissions", icon: GraduationCap },
-  mtech: { label: "M.Tech Admissions", icon: Settings },
+  btech: { label: "B.Tech/B. Arch Admissions", icon: GraduationCap },
+  mtech: { label: "M.Tech/PGPAP Admissions", icon: Settings },
   phd: { label: "PhD Admissions", icon: Award },
   mca: { label: "MCA Admissions", icon: Laptop },
   study_in_india: { label: "Study in India", icon: Globe },
