@@ -25,13 +25,13 @@ const Sidebar = () => {
 
   const admissionItems = [
     {
-      title: "B.Tech Admissions",
+      title: "B.Tech/B.Arch Admissions",
       link: "/Academic/Admission?type=btech",
       icon: <FaUserGraduate size={20} className="text-blue-700" />,
       type: "btech",
     },
     {
-      title: "M.Tech Admissions",
+      title: "M.Tech/PGPAP Admissions",
       link: "/Academic/Admission?type=mtech",
       icon: <FaLaptopCode size={20} className="text-green-700" />,
       type: "mtech",
