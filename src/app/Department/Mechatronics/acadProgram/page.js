@@ -19,10 +19,11 @@ const programs = [
     duration: "4 Years",
     description:
       "The B.Tech in Mechatronics and Automation Engineering program integrates mechanical, electronics, computer science, and control engineering to prepare students for careers in designing and managing automated systems.",
-    syllabus:
-      "https://drive.google.com/file/d/1IQFqpo9jTHIBNgS8o2zeyv5xIZYWcQ7p/view",
-    courseStructure: "https://drive.google.com/file/d/107lkKUTm9Yoilr_RiP2BpnkAy_VU1soJ/view",
-  },
+    syllabus1:
+      "https://drive.google.com/file/d/1NM5J0mH-lqxBMl60yFJcFZLMat279uu1/view?usp=drive_link",
+    syllabus2:
+      "https://drive.google.com/file/d/1LeB0PWb5-TjbO5yCO5X2dbNt-nEljbBC/view?usp=drive_link"
+    },
   {
     title: "Ph.D. in Mechatronics and Automation Engineering",
     degree: "Ph.D.",

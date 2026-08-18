@@ -37,18 +37,18 @@ export const AcadProgramCard = ({ program }) => {
         }
       </div>
       <div className="mt-4 mx-auto w-full justify-between flex gap-4">
-        {program.syllabus && (
-          <a target="_blank" href={`${program.syllabus}`} >
+        {program.syllabus1 && (
+          <a target="_blank" href={`${program.syllabus1}`} >
             <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer">
-              Curriculum / Syllabus
+              Curriculum and Syllabus 2024 Admitted
             </button>
           </a>
         )}
 
-        {program.courseStructure && (
-          <a target="_blank" href={`${program.courseStructure}`} >
+        {program.syllabus2 && (
+          <a target="_blank" href={`${program.syllabus2}`} >
             <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer">
-              Course Structure
+              Curriculum and Syllabus 2025 Onwards
             </button>
           </a>
         )}
