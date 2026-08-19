@@ -76,12 +76,12 @@ const Footer = () => {
                 <p className="font-medium text-center">National Institute of Technology Patna</p>
                 <p className="text-sm text-gray-300 text-center">Ashok Rajpath, Mahendru, Patna, Bihar 800005</p>
                 <div className="space-y-1 mt-4 pl-[75px]">
-                  <p className="flex items-center gap-2 text-sm">
+                  {/* <p className="flex items-center gap-2 text-sm">
                     <PhoneIcon className="w-4 h-4" /> 0612-2371715
                   </p>
                   <p className="flex items-center gap-2 text-sm">
                     <MailIcon className="w-4 h-4" /> info@nitp.ac.in
-                  </p>
+                  </p> */}
                   <p className="flex items-center gap-2 text-sm">
                     <GlobeIcon className="w-4 h-4" /> www.nitp.ac.in
                   </p>

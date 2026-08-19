@@ -121,34 +121,420 @@ function DetailModal({ staff, onClose }) {
       document.body.style.overflow = "";
     };
   }, [onClose]);
+  
+const DAY_MS = 24 * 60 * 60 * 1000;
 
-  const getExperienceYears = (dateOfJoining) => {
-    if (!dateOfJoining) return null;
+/**
+ * Parse YYYY-MM-DD safely without timezone shifting.
+ */
+const parseDate = (value) => {
+  if (!value) return null;
 
-    const joiningDate = new Date(dateOfJoining);
-    const today = new Date();
+  const dateString = value.toString().split("T")[0];
+  const [year, month, day] = dateString.split("-").map(Number);
 
-    // date_of_joining is in the future - not yet joined, so there's no experience to show
-    if (joiningDate > today) return "Not yet joined";
+  if (!year || !month || !day) return null;
 
-    let years = today.getFullYear() - joiningDate.getFullYear();
+  const date = new Date(year, month - 1, day);
 
-    const hasNotCompletedYear =
-      today.getMonth() < joiningDate.getMonth() ||
-      (today.getMonth() === joiningDate.getMonth() &&
-        today.getDate() < joiningDate.getDate());
+  // Make sure the date was actually valid
+  if (
+    date.getFullYear() !== year ||
+    date.getMonth() !== month - 1 ||
+    date.getDate() !== day
+  ) {
+    return null;
+  }
 
-    if (hasNotCompletedYear) {
-      years--;
+  return date;
+};
+
+/**
+ * Format duration.
+ */
+const formatDuration = (years, months, days) => {
+  const result = [];
+
+  if (years > 0) {
+    result.push(`${years} ${years === 1 ? "Year" : "Years"}`);
+  }
+
+  if (months > 0) {
+    result.push(`${months} ${months === 1 ? "Month" : "Months"}`);
+  }
+
+  if (days > 0) {
+    result.push(`${days} ${days === 1 ? "Day" : "Days"}`);
+  }
+
+  return result.length > 0 ? result.join(" ") : "Less than a day";
+};
+
+/**
+ * Calculate experience from date_of_joining.
+ *
+ * Used ONLY when the user has no work-experience records.
+ */
+const getJoiningExperience = (dateOfJoining) => {
+  const joiningDate = parseDate(dateOfJoining);
+
+  if (!joiningDate) {
+    return "No experience";
+  }
+
+  const today = new Date();
+
+  // Remove time component
+  const currentDate = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate()
+  );
+
+  if (joiningDate > currentDate) {
+    return "Not yet joined";
+  }
+
+  let years = currentDate.getFullYear() - joiningDate.getFullYear();
+  let months = currentDate.getMonth() - joiningDate.getMonth();
+  let days = currentDate.getDate() - joiningDate.getDate();
+
+  if (days < 0) {
+    months--;
+
+    const previousMonth = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      0
+    );
+
+    days += previousMonth.getDate();
+  }
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  years = Math.max(years, 0);
+  months = Math.max(months, 0);
+  days = Math.max(days, 0);
+
+  return formatDuration(years, months, days);
+};
+
+/**
+ * Check whether a work experience object actually contains data.
+ */
+const hasWorkExperienceData = (experience) => {
+  if (!experience) return false;
+
+  return Boolean(
+    experience.work_experiences?.trim() ||
+      experience.institute?.trim() ||
+      experience.start_date ||
+      experience.end_date
+  );
+};
+
+/**
+ * Validate work experience records.
+ *
+ * Returns:
+ * {
+ *   valid: true/false,
+ *   message: "...",
+ *   experiences: [...]
+ * }
+ */
+const validateWorkExperience = (workExperience = []) => {
+  if (!Array.isArray(workExperience)) {
+    return {
+      valid: false,
+      message: "Work experience data is invalid.",
+      experiences: [],
+    };
+  }
+
+  // Completely blank rows are ignored.
+  const experiences = workExperience.filter(hasWorkExperienceData);
+
+  // No experience entered.
+  if (experiences.length === 0) {
+    return {
+      valid: true,
+      message: "",
+      experiences: [],
+    };
+  }
+
+  // Only one Current Job is allowed.
+  const currentJobs = experiences.filter(
+    (exp) => exp.end_date === "Present"
+  );
+
+  if (currentJobs.length > 1) {
+    return {
+      valid: false,
+      message: "Only one work experience can be marked as Current Job.",
+      experiences,
+    };
+  }
+
+  const today = new Date();
+
+  const todayDate = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate()
+  );
+
+  for (let i = 0; i < experiences.length; i++) {
+    const exp = experiences[i];
+
+    const startDate = parseDate(exp.start_date);
+
+    // Every entered experience must have a start date.
+    if (!startDate) {
+      return {
+        valid: false,
+        message: `Start Date is required for work experience ${i + 1}.`,
+        experiences,
+      };
     }
 
-    years = Math.max(years, 0);
+    // Future start dates are not allowed.
+    if (startDate > todayDate) {
+      return {
+        valid: false,
+        message: `Start Date for work experience ${
+          i + 1
+        } cannot be in the future.`,
+        experiences,
+      };
+    }
 
-    return years === 0 ? "Less than a year" : `${years} ${years === 1 ? "Year" : "Years"}`;
+    // Current job doesn't need an actual end date.
+    if (exp.end_date === "Present") {
+      continue;
+    }
+
+    // Previous/completed job MUST have an end date.
+    if (!exp.end_date) {
+      return {
+        valid: false,
+        message: `End Date is required for work experience ${
+          i + 1
+        }. Mark it as "Current Job" if the user is still working there.`,
+        experiences,
+      };
+    }
+
+    const endDate = parseDate(exp.end_date);
+
+    if (!endDate) {
+      return {
+        valid: false,
+        message: `Invalid End Date for work experience ${i + 1}.`,
+        experiences,
+      };
+    }
+
+    // End date cannot be before start date.
+    if (endDate < startDate) {
+      return {
+        valid: false,
+        message: `End Date cannot be before Start Date for work experience ${
+          i + 1
+        }.`,
+        experiences,
+      };
+    }
+
+    // End date cannot be in the future.
+    if (endDate > todayDate) {
+      return {
+        valid: false,
+        message: `End Date for work experience ${
+          i + 1
+        } cannot be in the future.`,
+        experiences,
+      };
+    }
+  }
+
+  return {
+    valid: true,
+    message: "",
+    experiences,
   };
+};
 
+/**
+ * Merge overlapping/continuous work periods.
+ *
+ * Example:
+ *
+ * Job A: 2020 -> 2023
+ * Job B: 2022 -> Present
+ *
+ * They become one period:
+ *
+ * 2020 -> Present
+ *
+ * This prevents double-counting experience.
+ */
+const mergeWorkPeriods = (periods) => {
+  if (periods.length === 0) return [];
+
+  const sorted = [...periods].sort(
+    (a, b) => a.start.getTime() - b.start.getTime()
+  );
+
+  const merged = [
+    {
+      start: sorted[0].start,
+      end: sorted[0].end,
+    },
+  ];
+
+  for (let i = 1; i < sorted.length; i++) {
+    const current = sorted[i];
+    const last = merged[merged.length - 1];
+
+    // Overlapping or directly continuous periods.
+    if (current.start <= new Date(last.end.getTime() + DAY_MS)) {
+      if (current.end > last.end) {
+        last.end = current.end;
+      }
+    } else {
+      merged.push({
+        start: current.start,
+        end: current.end,
+      });
+    }
+  }
+
+  return merged;
+};
+
+/**
+ * Calculate total experience from work experience records.
+ *
+ * "Present" automatically means TODAY.
+ */
+const getWorkExperienceDuration = (workExperience = []) => {
+  const validation = validateWorkExperience(workExperience);
+
+  if (!validation.valid) {
+    return validation.message;
+  }
+
+  const experiences = validation.experiences;
+
+  // No work experience -> caller will use date_of_joining.
+  if (experiences.length === 0) {
+    return null;
+  }
+
+  const today = new Date();
+
+  const todayDate = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate()
+  );
+
+  const periods = experiences.map((exp) => {
+    const start = parseDate(exp.start_date);
+
+    const end =
+      exp.end_date === "Present"
+        ? todayDate
+        : parseDate(exp.end_date);
+
+    return {
+      start,
+      end,
+    };
+  });
+
+  // Prevent overlapping experience from being counted twice.
+  const mergedPeriods = mergeWorkPeriods(periods);
+
+  let totalMonths = 0;
+  let totalDays = 0;
+
+  mergedPeriods.forEach(({ start, end }) => {
+    let years = end.getFullYear() - start.getFullYear();
+    let months = end.getMonth() - start.getMonth();
+    let days = end.getDate() - start.getDate();
+
+    if (days < 0) {
+      months--;
+
+      const previousMonth = new Date(
+        end.getFullYear(),
+        end.getMonth(),
+        0
+      );
+
+      days += previousMonth.getDate();
+    }
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    totalMonths += years * 12 + months;
+    totalDays += days;
+  });
+
+  /*
+   * Normalize accumulated days.
+   *
+   * Since months have different lengths, this is only
+   * used after calculating each individual period accurately.
+   */
+  while (totalDays >= 30) {
+    totalMonths++;
+    totalDays -= 30;
+  }
+
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+
+  return formatDuration(years, months, totalDays);
+};
+
+/**
+ * MAIN FUNCTION
+ *
+ * Priority:
+ *
+ * 1. Work experience exists -> calculate from work experience.
+ * 2. No work experience -> calculate from date_of_joining.
+ */
+const getExperience = (dateOfJoining, workExperience = []) => {
+  const validation = validateWorkExperience(workExperience);
+
+  // No work experience entered
+  if (validation.experiences.length === 0) {
+    return getJoiningExperience(dateOfJoining);
+  }
+
+  // Work experience exists but contains invalid data.
+  // Fall back to date_of_joining.
+  if (!validation.valid) {
+    return getJoiningExperience(dateOfJoining);
+  }
+
+  // Valid work experience -> calculate from work experience.
+  return getWorkExperienceDuration(workExperience);
+};
   const formattedJoiningDate = formatDate(date_of_joining);
-  const experience = getExperienceYears(date_of_joining);
+  const experience = getExperience(date_of_joining,work_experience);
   const departmentName = getDepartmentName(department);
 
   const hasLabs = labs.length > 0;
@@ -277,33 +663,50 @@ function DetailModal({ staff, onClose }) {
             </CollapsibleSection>
           )}
 
-          {/* Experience - collapsible, only rendered if there's data */}
-          {hasWorkExperience && (
-            <CollapsibleSection icon={faBriefcase} title="Experience">
-              <div className="bg-indigo-50 p-5">
-                <div className="space-y-3">
-                  {work_experience.map(function (we, i) {
-                    const start = formatDate(we.start_date);
-                    const end = formatDate(we.end_date);
-                    return (
-                      <p key={we.id || i} className="text-sm text-gray-800">
-                        {we.work_experiences && (
-                          <span className="font-bold">{we.work_experiences}</span>
-                        )}
-                        {we.institute && <span> - {we.institute}</span>}
-                        {(start || end) && (
-                          <span>
-                            {" "}
-                            ({start || "?"} to {end || "?"})
-                          </span>
-                        )}
-                      </p>
-                    );
-                  })}
-                </div>
-              </div>
-            </CollapsibleSection>
-          )}
+        
+{/* Experience - collapsible, only rendered if there's data */}
+{hasWorkExperience && (
+  <CollapsibleSection icon={faBriefcase} title="Experience">
+    <div className="bg-indigo-50 p-5">
+      <div className="space-y-3">
+        {work_experience.map(function (we, i) {
+          const start = formatDate(we.start_date);
+          const end =
+            we.end_date === "Present"
+              ? "Present"
+              : formatDate(we.end_date);
+
+          return (
+            <p
+              key={we.id || i}
+              className="text-sm text-gray-800"
+            >
+              {we.work_experiences && (
+                <span className="font-bold text-gray-900">
+                  {we.work_experiences}
+                </span>
+              )}
+
+              {we.institute && (
+                <span className="text-indigo-600 font-medium">
+                  {" "}from {we.institute}
+                </span>
+              )}
+
+              {(start || end) && (
+                <span className="text-gray-500">
+                  {" "}
+                  ({start || "?"} to {end || "?"})
+                </span>
+              )}
+            </p>
+          );
+        })}
+      </div>
+    </div>
+  </CollapsibleSection>
+)}
+
         </div>
       </div>
     </div>
