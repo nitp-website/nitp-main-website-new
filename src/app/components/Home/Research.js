@@ -270,7 +270,7 @@ function ResearchContent() {
       setError(null);
       try {
         const [pubRes, projCountRes, patCountRes, projAllRes] = await Promise.all([
-          axios.get(`${API_BASE}/api/publications?type=all`),
+          axios.get(`${API_BASE}/api/publications?type=all&page=1&limit=50`),
           axios.get(`${API_BASE}/api/project?type=count`),
           axios.get(`${API_BASE}/api/patent?type=count`),
           axios.get(`${API_BASE}/api/project?type=all`)
