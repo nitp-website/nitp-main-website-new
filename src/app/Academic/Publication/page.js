@@ -3,8 +3,8 @@ import React, { useEffect, useState, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { extractApiArray } from "@/lib/apiHelpers";
 
-const PUBLICATIONS_API = "http://localhost:3000/api/publications";
-const CONFERENCE_API = "http://localhost:3000/api/conference";
+const PUBLICATIONS_API = "https://admin.nitp.ac.in/api/publications";
+const CONFERENCE_API = "https://admin.nitp.ac.in/api/conference";
 
 const ArticlesList = () => {
   const [publications, setPublications] = useState([]);
