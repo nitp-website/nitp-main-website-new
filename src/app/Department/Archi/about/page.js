@@ -6,6 +6,7 @@ import { Users, BookOpen, FileText, Award, Briefcase, BarChart2, ShieldCheck, Us
 const dept = "Archi";
 
 import axios from "axios";
+import { getBackendApiUrl } from "@/lib/apiHelpers";
 
 const aboutContent = (
     <div className="space-y-4 text-justify text-black">
@@ -27,7 +28,7 @@ const Aboutpage = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const countsResponse = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/count?type=arch`);
+                const countsResponse = await axios.get(getBackendApiUrl("/api/count?type=arch"));
                 // console.log("Counts Response:", countsResponse.data);
                 setData(countsResponse.data);
             } catch (error) {

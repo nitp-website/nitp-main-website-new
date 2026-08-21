@@ -8,14 +8,18 @@ const ECEConferencePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [openYears, setOpenYears] = useState({}); // dropdown open/close tracking
+  const [page, setPage] = useState(1);
+const [totalPages, setTotalPages] = useState(1);
 
-  const fetchPublications = async () => {
+  const fetchPublications = async (pageNumber) => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://admin.nitp.ac.in/api/conference?type=ece&page=1&limit=100`
+        `https://admin.nitp.ac.in/api/conference?type=ece&limit=50&page=${pageNumber}`
       );
-      const data = extractApiArray(await response.json());
+      const result=await response.json();
+      const data = extractApiArray(result);
+      setTotalPages(result.totalPages || 1);
 
       // Group publications by year
       const groupedByYear = data.reduce((acc, publication) => {
@@ -38,12 +42,20 @@ const ECEConferencePage = () => {
   };
 
   useEffect(() => {
-    fetchPublications();
-  }, []);
+    fetchPublications(page);
+  }, [page]);
 
   const toggleYear = (year) => {
     setOpenYears((prev) => ({ ...prev, [year]: !prev[year] }));
   };
+
+  const goPrev = () => {
+  if (page > 1) setPage((p) => p - 1);
+};
+
+const goNext = () => {
+  if (page < totalPages) setPage((p) => p + 1);
+};
 
   return (
     <div className="min-h-screen bg-white bg-opacity-50">
@@ -172,6 +184,35 @@ const ECEConferencePage = () => {
               </div>
             ))
         )}
+        <div className="flex justify-center items-center gap-4 mt-8">
+  <button
+    onClick={goPrev}
+    disabled={page === 1}
+    className={`px-4 py-2 rounded-md text-white ${
+      page === 1
+        ? "bg-gray-400 cursor-not-allowed"
+        : "bg-red-600 hover:bg-red-700"
+    }`}
+  >
+    Prev
+  </button>
+
+  <span className="font-semibold text-gray-700">
+    {page} / {totalPages}
+  </span>
+
+  <button
+    onClick={goNext}
+    disabled={page === totalPages}
+    className={`px-4 py-2 rounded-md text-white ${
+      page === totalPages
+        ? "bg-gray-400 cursor-not-allowed"
+        : "bg-red-600 hover:bg-red-700"
+    }`}
+  >
+    Next
+  </button>
+</div>
       </div>
     </div>
   );

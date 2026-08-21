@@ -8,6 +8,8 @@ const MEProjectsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState({});
+  const [page, setPage] = useState(1);
+const [totalPages, setTotalPages] = useState(1);
 
   // format date from YYYY-MM-DD to DD-MM-YYYY
   function formatDate(dateStr) {
@@ -18,15 +20,18 @@ const MEProjectsPage = () => {
     return `${day}-${month}-${year}`;
   }
 
-  const fetchPublications = async () => {
+  const fetchPublications = async (pageNumber) => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=me&page=1&limit=100`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project?type=me&limit=50&page=${pageNumber}`
       );
-      const data = extractApiArray(await response.json());
+      const result = await response.json();
 
-      setData(data);
+setTotalPages(result.totalPages || 1);
+
+const data = extractApiArray(result);
+setData(data);
       setError(null);
     } catch (error) {
       setError("Failed to fetch publication data");
@@ -36,8 +41,8 @@ const MEProjectsPage = () => {
   };
 
   useEffect(() => {
-    fetchPublications();
-  }, []);
+    fetchPublications(page);
+  }, [page]);
 
   return (
     <div className="min-h-screen bg-white bg-opacity-50">
@@ -59,6 +64,35 @@ const MEProjectsPage = () => {
         ) : (
           <DepartmentProjects data={data} />
         )}
+        <div className="flex justify-center items-center gap-4 mt-8">
+  <button
+    onClick={() => setPage((p) => p - 1)}
+    disabled={page === 1}
+    className={`px-4 py-2 rounded-md text-white ${
+      page === 1
+        ? "bg-gray-400 cursor-not-allowed"
+        : "bg-red-600 hover:bg-red-700"
+    }`}
+  >
+    Prev
+  </button>
+
+  <span className="font-semibold text-gray-700">
+    {page} / {totalPages}
+  </span>
+
+  <button
+    onClick={() => setPage((p) => p + 1)}
+    disabled={page === totalPages}
+    className={`px-4 py-2 rounded-md text-white ${
+      page === totalPages
+        ? "bg-gray-400 cursor-not-allowed"
+        : "bg-red-600 hover:bg-red-700"
+    }`}
+  >
+    Next
+  </button>
+</div>
       </div>
     </div>
   );
