@@ -166,7 +166,7 @@ const Footer = () => {
             {pollutionData && pollutionData.list && pollutionData.list.length > 0 && (
               <div className="mt-4 p-3 bg-[#4d1616] rounded-lg">
                 <p className="text-sm flex items-center gap-2">
-                  Air Quality (PM2.5): 
+                  Air Quality (PM2.5):
                   <span className="text-green-400">{pollutionData.list[0].components.pm2_5}</span>
                   <HeartIcon className="w-4 h-4 text-green-400" />
                 </p>
@@ -187,8 +187,78 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Map + National Portals White Strip */}
+        <div className="mt-8 -mx-6" style={{ backgroundColor: '#f5f0f0' }}>
+          <div className="flex flex-col lg:flex-row items-center" style={{ minHeight: '340px' }}>
+
+            {/* LEFT — Google Maps (1/3 width), rectangle with margin */}
+            <div className="w-full lg:w-1/3 flex items-center justify-center px-6 py-6">
+              <div className="w-full shadow-md rounded-md overflow-hidden">
+                <iframe
+                  title="NIT Patna Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.0535!2d85.14542!3d25.61748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sNational%20Institute%20of%20Technology%20Patna!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0, display: 'block' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
+
+            {/* RIGHT — National Portals (2/3 width), 3×2 grid */}
+            <div className="w-full lg:w-2/3 flex flex-col justify-center px-6 py-6">
+              <h4 className="text-[#421010] font-bold text-xl tracking-wide mb-6 text-center lg:text-left">National Portals</h4>
+              <div className="grid grid-cols-3 gap-6 w-full place-items-center">
+
+                {/* Row 1 */}
+                <a href="https://www.education.gov.in" target="_blank" rel="noopener noreferrer" title="Ministry of Education"
+                  className="flex items-center justify-center hover:opacity-75 transition-opacity duration-200 hover:scale-105 transform">
+                  <img src="/footer/Ministry_of_Education_India.svg.png"
+                    alt="Ministry of Education" className="h-14 w-auto object-contain max-w-full" />
+                </a>
+
+                <a href="https://www.digitalindia.gov.in" target="_blank" rel="noopener noreferrer" title="Digital India"
+                  className="flex items-center justify-center hover:opacity-75 transition-opacity duration-200 hover:scale-105 transform">
+                  <img src="/footer/DigitalIndia.png"
+                    alt="Digital India" className="h-16 w-auto object-contain max-w-full" />
+                </a>
+
+                <a href="https://www.makeinindia.com" target="_blank" rel="noopener noreferrer" title="Make in India"
+                  className="flex items-center justify-center hover:opacity-75 transition-opacity duration-200 hover:scale-105 transform">
+                  <img src="/footer/MakeInIndia.png"
+                    alt="Make in India" className="h-24 w-auto object-contain" />
+                </a>
+
+                {/* Row 2 */}
+                <a href="https://swachhbharat.mygov.in" target="_blank" rel="noopener noreferrer" title="Swachh Bharat"
+                  className="flex items-center justify-center hover:opacity-75 transition-opacity duration-200 hover:scale-105 transform">
+                  <img src="/footer/SwatchBharat.png"
+                    alt="Swachh Bharat" className="h-16 w-auto object-contain max-w-full" />
+                </a>
+
+                <a href="https://fitindia.gov.in" target="_blank" rel="noopener noreferrer" title="FIT India"
+                  className="flex items-center justify-center hover:opacity-75 transition-opacity duration-200 hover:scale-105 transform">
+                  <img src="/footer/FitIndia.png"
+                    alt="FIT India" className="h-14 w-auto object-contain max-w-full" />
+                </a>
+
+                <a href="https://www.digilocker.gov.in" target="_blank" rel="noopener noreferrer" title="DigiLocker NAD"
+                  className="flex items-center justify-center hover:opacity-75 transition-opacity duration-200 hover:scale-105 transform">
+                  <img src="/footer/NAD_Logo_indi%20(1).png"
+                    alt="DigiLocker NAD" className="h-9 w-auto object-contain max-w-full" />
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         {/* Footer Bottom */}
-        <div className="mt-12 pt-4 border-t border-[#a51818]">
+
+        <div className="mt-6 pt-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-300">Copyright © 2024 National Institute of Technology Patna. All Rights Reserved.</p>
             <Link href="/Webteam" className="text-sm text-gray-300 hover:text-white underline">
