@@ -560,7 +560,7 @@ const ServiceUNIT = [
 },
   
  {
-  name: "Prof. Samrat Mukherjee",
+  name: "Prof. Bharat Gupta",
   type: "Prof. In-charge",
   designation: "Training and Placement",
  }, 
@@ -573,7 +573,7 @@ const ServiceUNIT = [
     {
   name: "Dr. Ajay Kumar",
   type: "Associate Professor",
-  designation: " Asst. PI (T&P)"
+  designation: " Chairman (HMC  Ashok Rajpath Campus), Asst. PI (T&P)"
 },
   
 {
@@ -599,7 +599,7 @@ const ServiceUNIT = [
  {
   name: "Dr. Bambam Kumar",
   type: "Assistant Professor",
-  designation: " Chairman, Hostel Management Committee; Asst. EE (ESU)"
+  designation: " Chairman (HMC Bihta Campus), Asst. EE (ESU)"
 },
 
 
