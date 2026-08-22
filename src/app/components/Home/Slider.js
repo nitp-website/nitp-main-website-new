@@ -46,8 +46,8 @@ const Slider = () => {
           <img src="https://i.postimg.cc/0N1Yfkhc/NIRF.png" />
         </SwiperSlide>
         <SwiperSlide>
-          {/* <img src="/homepage/MainEntrance.jpg" /> */}
-          <img src="/independeceDayCelbHomePoster.webp" />
+          {/* INDEPENDENCE DAY */}
+          <img src="/home-page-carosel/INDEPENDENCE DAY-1_page-0001.jpg" />
         </SwiperSlide>
         {/* Main Entrance */}
         <SwiperSlide>

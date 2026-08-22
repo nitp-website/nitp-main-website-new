@@ -78,8 +78,8 @@ const Footer = () => {
                 <div className="space-y-1 mt-4 pl-[75px]">
                   {/* <p className="flex items-center gap-2 text-sm">
                     <PhoneIcon className="w-4 h-4" /> 0612-2371715
-                  </p>
-                  <p className="flex items-center gap-2 text-sm">
+                  </p> */}
+                  {/* <p className="flex items-center gap-2 text-sm">
                     <MailIcon className="w-4 h-4" /> info@nitp.ac.in
                   </p> */}
                   <p className="flex items-center gap-2 text-sm">
@@ -190,7 +190,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="mt-12 pt-4 border-t border-[#a51818]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-300">Copyright © 2024 National Institute of Technology Patna. All Rights Reserved.</p>
+            <p className="text-sm text-gray-300">Copyright © 2026 National Institute of Technology Patna. All Rights Reserved.</p>
             <Link href="/Webteam" className="text-sm text-gray-300 hover:text-white underline">
               Developed & Maintained by WDC NIT Patna
             </Link>
