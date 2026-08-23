@@ -100,7 +100,7 @@ const positions = [
 
 const Piapi = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=vimlesh.verma@nitp.ac.in`;
 const CoPiapi1 = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=amitesh.ee@nitp.ac.in`;
-const CoPiapi2 = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=gagandeep.ee@nitp.ac.in`;
+// const CoPiapi2 = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/faculty?type=gagandeep.ee@nitp.ac.in`;
 
 
 
@@ -125,13 +125,13 @@ export default function EmuAdministrationPage() {
         const coPiResponse1 = await fetch(CoPiapi1);
         const coPiResult1 = await coPiResponse1.json();
 
-        const coPiResponse2 = await fetch(CoPiapi2);
-        const coPiResult2 = await coPiResponse2.json();
+        // const coPiResponse2 = await fetch(CoPiapi2);
+        // const coPiResult2 = await coPiResponse2.json();
 
         setPiData([normalizeData(piResult)[0]]); // Ensures it's always an array with one element
         setCoPiData([
           normalizeData(coPiResult1)[0],
-          normalizeData(coPiResult2)[0],
+          // normalizeData(coPiResult2)[0],
         ]);
 
         selectedCategory || setSelectedCategory({ title: "PI" });
