@@ -5,10 +5,10 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, Download, UserCircle2 } from "lucide-react";
 
 const carouselSlides = [
-    { src: "/ecelab2.jpg", alt: "ECE Labs" },
-    { src: "/ecelab3.jpg", alt: "ECE Labs" },
-    // { src: "/ecelab5.jpg", alt: "ECE Labs" },
-    { src: "/ecelab7.jpg", alt: "ECE Labs" },
+    { src: "/department/ece/labs/image-1.jpg", alt: "ECE labs" },
+    { src: "/department/ece/labs/image-2.jpg", alt: "ECE labs" },
+    { src: "/department/ece/labs/image-3.jpg", alt: "ECE labs" },
+    { src: "/department/ece/labs/image-4.jpg", alt: "ECE labs" },
 ];
   
 const mainLabSections = [
