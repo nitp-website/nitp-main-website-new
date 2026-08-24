@@ -364,9 +364,15 @@ const Allhostels = [
 ];
 
 const HMCOfficeContacts = [
+   {
+    name: "Dr. Ajay Kumar",
+    designation: "Chairman, HMC Ashok Rajpath Campus",
+    mobile: "9709381530",
+    email: "arajay@nitp.ac.in"
+  },
   {
     name: "Dr. Bambam Kumar",
-    designation: "Chairman, HMC",
+    designation: "Chairman, HMC Bihta Campus ",
     mobile: "7895717492",
     email: "bambam.ec@nitp.ac.in"
   },
