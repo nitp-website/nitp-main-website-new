@@ -501,11 +501,11 @@ const BASE_NAV_ITEMS = [
         link: "https://admin.nitp.ac.in/",
         iconImage: Admin,
       },
-      {
-        label: "Faculty Academic Portal",
-        link: "https://mis.nitp.ac.in/",
-        iconImage: Portal,
-      },
+      // {
+      //   label: "Faculty Academic Portal",
+      //   link: "https://mis.nitp.ac.in/",
+      //   iconImage: Portal,
+      // },
       // {
       //   label: "Purchase and Store Section",
       //   link: "#",
@@ -623,11 +623,11 @@ const BASE_NAV_ITEMS = [
         link: "/Student/UnnatBharat",
         iconImage: Bharat,
       },
-      {
-        label: "Academic Portal (New)",
-        link: "https://mis.nitp.ac.in/",
-        iconImage: Portal,
-      },
+      // {
+      //   label: "Academic Portal",
+      //   link: "https://mis.nitp.ac.in/",
+      //   iconImage: Portal,
+      // },
     ],
   },
   {
@@ -824,17 +824,24 @@ export default function Navbar() {
             </a>
             <span className="text-[0.5rem] md:text-sm">|</span>
             <a
-              href="/Academic/Intranet"
+              href="https://erp.nitp.ac.in/"
               className="hover:underline text-[0.6rem] md:text-sm"
             >
-              Intranet
+              Admission Portal
             </a>
             <span className="text-[0.5rem] md:text-sm">|</span>
             <a
               href="https://mis.nitp.ac.in/"
               className="hover:underline text-[0.6rem] md:text-sm"
             >
-              Academic Portal (New)
+              Academic Portal
+            </a>
+            <span className="text-[0.5rem] md:text-sm">|</span>
+            <a
+              href="/Academic/Intranet"
+              className="hover:underline text-[0.6rem] md:text-sm"
+            >
+              Intranet
             </a>
           </div>
           <div className="flex space-x-2">
