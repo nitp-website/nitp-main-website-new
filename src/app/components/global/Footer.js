@@ -110,9 +110,9 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link href="/Department" className="hover:text-gray-300">Departments</Link></li>
               <li><Link href="/Others/NIRF" className="hover:text-gray-300">NIRF</Link></li>
-              <li><Link href="/Others/NewCampus" className="hover:text-gray-300">New Campus</Link></li>
+              {/* <li><Link href="/Others/NewCampus" className="hover:text-gray-300">New Campus</Link></li> */}
               <li><Link href="/Others/RTI" className="hover:text-gray-300">RTI</Link></li>
-              <li><Link href="/Institute/Magazine" className="hover:text-gray-300">Magazine(Vol.4)</Link></li>
+              {/* <li><Link href="/Institute/Magazine" className="hover:text-gray-300">Magazine(Vol.4)</Link></li> */}
               <li><Link href="/Academic/Admission?type=study_in_india" className="hover:text-gray-300">Study In India</Link></li>
             </ul>
           </div>
@@ -122,11 +122,14 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 border-b border-[#a51818] pb-2">Explore</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/Institute?tab=campus" className="hover:text-gray-300">Campus</Link></li>
-              <li><Link href="/Others/BOG" className="hover:text-gray-300">BOG/FC/BWC Minutes</Link></li>
-              <li><Link href="/Others/Convocation/" className="hover:text-gray-300">Convocation 2023</Link></li>
-              <li><Link href="/Others/Senate" className="hover:text-gray-300">Senate Minutes</Link></li>
+              {/* <li><Link href="/Others/BOG" className="hover:text-gray-300">BOG/FC/BWC Minutes</Link></li> */}
+              {/* <li><Link href="/Others/Convocation/" className="hover:text-gray-300">Convocation 2023</Link></li> */}
+              {/* <li><Link href="/Others/Senate" className="hover:text-gray-300">Senate Minutes</Link></li> */}
               <li><Link href="/Facilities/SCST" className="hover:text-gray-300">SC/ST Grievance Cell</Link></li>
-              <li><Link href="#" className="hover:text-gray-300">Climate Action Plan</Link></li>
+              {/* <li><Link href="#" className="hover:text-gray-300">Climate Action Plan</Link></li> */}
+
+              <li><Link href="/Institute/Magazine" className="hover:text-gray-300">Magazine(Vol.4)</Link></li>
+
             </ul>
           </div>
 
@@ -135,10 +138,10 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 border-b border-[#a51818] pb-2">Useful Links</h3>
             <ul className="space-y-2 text-sm">
               <li><a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">How to Reach</a></li>
-              <li><Link href="/Others/Report" className="hover:text-gray-300">Annual Reports</Link></li>
+              {/* <li><Link href="/Others/Report" className="hover:text-gray-300">Annual Reports</Link></li> */}
               <li><Link href="/Student/NSS" className="hover:text-gray-300">National Service Scheme</Link></li>
               <li><Link href="/Others/Tenders" className="hover:text-gray-300">Tenders</Link></li>
-              <li><a href="https://drive.google.com/file/d/1tVgQSygS8GRTZIglbVWVClasegdd6BCi/view" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">Academic Calendar</a></li>
+              {/* <li><a href="https://drive.google.com/file/d/1tVgQSygS8GRTZIglbVWVClasegdd6BCi/view" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">Academic Calendar</a></li> */}
               <li><Link href="/Others/Terms" className="hover:text-gray-300">Terms of Use</Link></li>
             </ul>
           </div>
