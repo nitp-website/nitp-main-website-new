@@ -445,14 +445,16 @@ function AdmissionsPage() {
                                 <p className="text-xs text-gray-600">
                                   {notice.content}
                                 </p>
-                                <Link
-                                  href={notice.href ? notice.href : "#"}
-                                  target="_blank"
-                                  className="flex items-center gap-1 text-xs font-medium text-red-600 hover:text-red-800 transition-colors bg-red-50 hover:bg-red-100 py-1 px-3 rounded-full"
-                                >
-                                  <ExternalLink className="w-3 h-3" />
-                                  View
-                                </Link>
+                                {notice.href && notice.href !== "#" && (
+                                  <Link
+                                    href={notice.href}
+                                    target="_blank"
+                                    className="flex items-center gap-1 text-xs font-medium text-red-600 hover:text-red-800 transition-colors bg-red-50 hover:bg-red-100 py-1 px-3 rounded-full"
+                                  >
+                                    <ExternalLink className="w-3 h-3" />
+                                    View
+                                  </Link>
+                                )}
                               </div>
                             </div>
                           </div>
@@ -511,17 +513,19 @@ function AdmissionsPage() {
                             </div>
                           )}
 
-                          <div className="text-center">
-                            <a
-                              href={item.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white font-medium rounded-lg hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-sm hover:shadow-md"
-                            >
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              Visit Portal
-                            </a>
-                          </div>
+                          {item.link && (
+                            <div className="text-center">
+                              <a
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white font-medium rounded-lg hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-sm hover:shadow-md"
+                              >
+                                <ExternalLink className="w-4 h-4 mr-2" />
+                                Visit Portal
+                              </a>
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
