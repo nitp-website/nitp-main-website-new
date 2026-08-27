@@ -20,10 +20,6 @@
 
 }
 .bottonconatiner {
-  position: relative;
-  top: 45%;
-  /* background-image: url("../assets/images/maindiv.png"); */
-
   width: 100%;
 }
 .cardacad::before {
@@ -97,18 +93,19 @@
 /* Media query for tablet and phone view */
 @media (max-width: 768px) {
   .bottonconatiner {
-    position: absolute;
-    top: 5%;
-    width: 95%;
+    width: 100%;
+    margin-top: 10px;
   }
   .containeripi {
-    width: 50%; /* Adjusted width to fit four cardacads per row */
+    width: 100%; /* Adjusted width to fit four cardacads per row */
     gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .cardacad {
     position: relative;
-    width: 60px; /* Adjusted width */
-    height: 60px; /* Adjusted height */
+    width: 65px; /* Adjusted width */
+    height: 65px; /* Adjusted height */
 
     display: flex;
     flex-direction: column;
@@ -128,11 +125,10 @@
 /* Media query for tablet and phone view */
 @media (max-width: 550px) {
   .bottonconatiner {
-    position: absolute;
-    top: 5%;
+    width: 100%;
   }
   .containeripi {
-    width: 90%; /* Adjusted width to fit four cardacads per row */
+    width: 100%; /* Adjusted width to fit four cardacads per row */
   }
   .cardacad {
     position: relative;
@@ -156,8 +152,7 @@
 }
 @media (min-width: 320px) and (max-width: 420px) {
   .bottonconatiner {
-    position: absolute;
-    top: 4%;
+    width: 100%;
   }
   .containeripi {
     width: 85%; /* Adjusted width to fit four cardacads per row */
@@ -184,8 +179,7 @@
 }
 @media (min-width: 420px) and (max-width: 480px) {
   .bottonconatiner {
-    position: absolute;
-    top: 3%;
+    width: 100%;
   }
   .containeripi {
     width: 80%; /* Adjusted width to fit four cardacads per row */
@@ -211,14 +205,13 @@
   }
 }
 .detailcontainer {
-  position:relative;
-  margin-top: 70px;
-  
+  position: relative;
+  margin-top: 20px;
 }
 @media (max-width: 768px) {
-.detailcontainer {
-  margin-top: 120px;
-}
+  .detailcontainer {
+    margin-top: 20px;
+  }
 }
 /* -----------------SII-------------- */
 .admission-info {

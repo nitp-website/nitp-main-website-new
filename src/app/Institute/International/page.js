@@ -47,7 +47,7 @@ export default function InternationalAffairsPage() {
   };
   return (
     <div className="flex flex-col bg-white bg-opacity-70 maincont1">
-      <header className="bg-primary text-primary-foreground px-4 lg:px-5 h-14 flex items-center justify-between">
+      <div className="w-full pt-8 pb-4">
         <div className="bottonconatiner">
           <div className="containeripi ">
             {[
@@ -72,14 +72,14 @@ export default function InternationalAffairsPage() {
             ))}
           </div>
         </div>
-      </header>
+      </div>
       <div className='detailcontainer mx-5 md:mx-20'>
         <div className="flex-1 flex justify-center items-center">
           {activeSection === 'Home' && (
             <section className="text-black items-center  mx-auto">
               <h1 className="section-title-heading text-red-800">Welcome to International Affairs</h1>
               <img src="https://i.postimg.cc/zX1hTMfT/nit-patna-003.jpg" className='mx-auto w-4/5 h-[40vh]'></img>
-              <p className='text-justify mt-10 mx-5 md:mx-28'>National Institute of Technology Patna (Institution of National Importance) is the 18th National Institute of Technology created by the Ministry of Education, Government of India after rechristening the erstwhile Bihar College of Engineering Patna on 28. 01. 2004. The institute is well recognised in the field of engineering education and research. NIT Patna has been ranked 56 by National Institutional Ranking Framework (NIRF), Government of India, Ranking 2023 in engineering category. It currently has about 6000 students and 500 teaching and non-teaching staff. NIT Patna will soon set up its additional campus almost 30 km from the state capital, Patna at Bihta. The master plan has been prepared for 6,600 students. The approved detailed project report (DPR) envisages a campus to cater to 2,415 students (B. Tech, M. Tech, MSc, and Ph.D.), 250 faculty members, and 350 non-teaching staff members in the first phase. Research and academic programmes (bachelor's, master's and doctoral) at NIT Patna are driven by a well-known faculty, many of whom are reputed for their research contributions internationally. Members of the faculty of the institute have won many prestigious awards and recognitions, including the word ranking of top 2% scientist given by Stanford University, USA, Royal Society fellowships and awards, AD Scientific Index etc. At present the Institute has nine disciplines viz. Computer Science & Engg., Electronics & Communication Engg., Electrical Engg., Civil Engg., Mechanical Engg., Mechatronics & Automation Engg., Chemical Engg. and Technology, Materials Science & Engg., Architecture and planning, and well established departments of Humanities and Social Science, Physics, Chemistry and Mathematics. The Institute alumni have distinguished themselves through their achievements in and contributions to leading researchers, industry, academics, business, government and social domains. Located at on the south bank of holy river Ganges behind Gandhi Ghat, one of the most important and reverential place of Patna. The Gandhi Ghat is associated with the immersion of ashes of father of the Nation Mahatma Gandhi in the river Ganges. The campus has a picturesque river view with historic building presenting a spectacle of architectural delight and natural beauty.<br></br>
+              <p className='text-justify mt-10 mx-5 md:mx-28'>National Institute of Technology Patna (Institution of National Importance) is the 18th National Institute of Technology created by the Ministry of Education, Government of India after rechristening the erstwhile Bihar College of Engineering Patna on 28. 01. 2004. The institute is well recognised in the field of engineering education and research. NIT Patna has been ranked 53 by National Institutional Ranking Framework (NIRF), Government of India, Ranking 2025 in engineering category. It currently has about 6000 students and 500 teaching and non-teaching staff. Additionally, NIT Patna running its additional campus almost 40 km away from Patna at Bihta. It is proposed that our new campus at Bihta will be developed to accommodate more than 6000 students with all facilities. Currently, three departments (CSE, ECE, and EE) are fully sifted at Bihta campus except first year students. Research and academic programmes (bachelor's, master's and doctoral) at NIT Patna are driven by a well-known faculty, many of whom are reputed for their research contributions internationally. Members of the faculty of the institute have won many prestigious awards and recognitions, including the word ranking of top 2% scientist given by Stanford University, USA, Royal Society fellowships and awards, AD Scientific Index etc. At present the Institute has eleven disciplines viz. Computer Science & Engg., Electronics & Communication Engg., Electrical Engg., Civil Engg., Mechanical Engg., Mechatronics & Automation Engg., Chemical Science and Technology, Applied Physics and Materials Engineering,  Mathematics and Computing Technology, Architecture and Planning, and well established departments of Humanities and Social Science. The Institute alumni have distinguished themselves through their achievements in and contributions to leading researchers, industry, academics, business, government and social domains. Located on the south bank of holy river Ganges behind Gandhi Ghat, one of the most important and reverential places of Patna. The Gandhi Ghat is associated with the immersion of ashes of father of the Nation Mahatma Gandhi in the river Ganges. The campus has a picturesque river view with historic buildings presenting a spectacle of architectural delight and natural beauty.<br></br>
                 Refer the link for more detail: <a href='https://www.nitp.ac.in/' target='_blank' className='text-blue-700'>https://www.nitp.ac.in/</a></p>
             </section>
           )}
@@ -261,29 +261,28 @@ export default function InternationalAffairsPage() {
                     src="/mech-dep.JPG"
 
                   ></img></a>
-                  <strong>Mechanical Department</strong>
+                  <strong>Mechanical Engineering</strong>
                 </div>
                 <div className="">
                   <a href="https://www.nitp.ac.in/Department/CSE"><img
-                    src="/cse-dep.jpg"
+                    src="/department/cse/cse-dept.jpg"
 
                   ></img></a>
-                  <strong>Computer Science Department</strong>
+                  <strong>Computer Science Engineering</strong>
                 </div>
-
                 <div className="">
                   <a href="https://www.nitp.ac.in/Department/ECE"><img
-                    src="/ece-dep.JPG"
+                    src="/department/ece/ece-dept.jpg"
 
                   ></img></a>
-                  <strong>Electronics and Communication Department</strong>
+                  <strong>Electronics and Communication Engineering</strong>
                 </div>
                 <div className="">
                   <a href="https://www.nitp.ac.in/Department/EE"><img
-                    src="/electrical-dep.JPG"
+                    src="/department/ee/ee-dept.jpg"
 
                   ></img></a>
-                  <strong>Electrical Department</strong>
+                  <strong>Electrical Engineering</strong>
                 </div>
                 <div className="">
                   <a href="https://www.nitp.ac.in/Department/Chem">
@@ -291,7 +290,7 @@ export default function InternationalAffairsPage() {
                       src="/chem-dep.jpg"
 
                     ></img></a>
-                  <strong>Chemistry Department</strong>
+                  <strong>Chemical Science and Technology</strong>
                 </div>
                 <div className="">
                   <a href="https://www.nitp.ac.in/Department/Archi">
@@ -302,8 +301,47 @@ export default function InternationalAffairsPage() {
                   <strong>Architecture and Planning Department</strong>
                 </div>
 
+                <div className="">
+                  <a href="https://nitp.ac.in/Department/Humanities"><img
+                    src="/department/hss/overview/Overview-1.jpg"
+
+                  ></img></a>
+                  <strong>Humanities and Social Science</strong>
+                </div>
+                <div className="grid-cols-1">
+                  <a href="https://nitp.ac.in/Department/Phy"> <img
+                    src="/apme-labs/carousel-4.jpg"
+
+                  ></img></a>
+                  <strong>Applied Physics and Materials Engineering</strong>
+                </div>
+                <div className="">
+                  <a href="https://nitp.ac.in/Department/CE"><img
+                    src="https://i.postimg.cc/zX1hTMfT/nit-patna-003.jpg"
+
+                  ></img></a>
+                  <strong>Civil Engineering</strong>
+                </div>
+
+                <div className="">
+                  <a href="https://nitp.ac.in/Department/Math"><img
+                    src="https://i.postimg.cc/zX1hTMfT/nit-patna-003.jpg"
+
+                  ></img></a>
+                  <strong>Mathematics and Computing Technology</strong>
+                </div>
+                <div className="">
+                  <a href="https://nitp.ac.in/Department/Mechatronics">
+                    <img
+                      src="/department/mechatronics/labs/carousel/image3.jpeg"
+
+                    ></img></a>
+                  <strong>Mechatronics and Automation Engineering</strong>
+                </div>
+
               </div>
-              <h3 className=" text-2xl text-center pb-5 text-neutral-700">Labs</h3>
+              
+              {/* <h3 className=" text-2xl text-center pb-5 text-neutral-700">Labs</h3>
               <div className='grid gird-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-10'>
                 <div className="">
                   <img
@@ -332,7 +370,8 @@ export default function InternationalAffairsPage() {
 
                   ></img>
                   <strong>Library</strong>
-                </div></div>
+                </div>
+              </div> */}
 
             </section>
           )}
