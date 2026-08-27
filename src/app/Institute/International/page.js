@@ -57,7 +57,7 @@ export default function InternationalAffairsPage() {
               { id: 'StudentExchange', icon: faGraduationCap, label: 'Student Exchange' },
               { id: 'FacultyExchange', icon: faUserTie, label: 'Faculty Exchange' },
               { id: 'ContactDetails', icon: faPhone, label: 'Contact Details' },
-              { id: 'Gallery', icon: faImage, label: 'Gallery' },
+              { id: 'Departments', icon: faImage, label: 'Departments' },
               { id: 'Events', icon: faCalendarAlt, label: 'Events' }
             ].map((tab) => (
               <div
@@ -250,128 +250,34 @@ export default function InternationalAffairsPage() {
               </div>
             </section>
           )}
-          {activeSection === 'Gallery' && (
+          {activeSection === 'Departments' && (
             <section className="text-black">
-              <h1 className="section-title-heading text-red-800">Gallery</h1>
-              <h3 className=" text-2xl text-center pb-5 text-neutral-700">Departments</h3>
-              <div className='grid gird-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-10'>
-
-                <div className="grid-cols-1">
-                  <a href="https://www.nitp.ac.in/Department/ME"> <img
-                    src="/mech-dep.JPG"
-
-                  ></img></a>
-                  <strong>Mechanical Engineering</strong>
-                </div>
-                <div className="">
-                  <a href="https://www.nitp.ac.in/Department/CSE"><img
-                    src="/department/cse/cse-dept.jpg"
-
-                  ></img></a>
-                  <strong>Computer Science Engineering</strong>
-                </div>
-                <div className="">
-                  <a href="https://www.nitp.ac.in/Department/ECE"><img
-                    src="/department/ece/ece-dept.jpg"
-
-                  ></img></a>
-                  <strong>Electronics and Communication Engineering</strong>
-                </div>
-                <div className="">
-                  <a href="https://www.nitp.ac.in/Department/EE"><img
-                    src="/department/ee/ee-dept.jpg"
-
-                  ></img></a>
-                  <strong>Electrical Engineering</strong>
-                </div>
-                <div className="">
-                  <a href="https://www.nitp.ac.in/Department/Chem">
-                    <img
-                      src="/chem-dep.jpg"
-
-                    ></img></a>
-                  <strong>Chemical Science and Technology</strong>
-                </div>
-                <div className="">
-                  <a href="https://www.nitp.ac.in/Department/Archi">
-                    <img
-                      src="/architecture-dep.jpg"
-
-                    ></img></a>
-                  <strong>Architecture and Planning Department</strong>
-                </div>
-
-                <div className="">
-                  <a href="https://nitp.ac.in/Department/Humanities"><img
-                    src="/department/hss/overview/Overview-1.jpg"
-
-                  ></img></a>
-                  <strong>Humanities and Social Science</strong>
-                </div>
-                <div className="grid-cols-1">
-                  <a href="https://nitp.ac.in/Department/Phy"> <img
-                    src="/apme-labs/carousel-4.jpg"
-
-                  ></img></a>
-                  <strong>Applied Physics and Materials Engineering</strong>
-                </div>
-                <div className="">
-                  <a href="https://nitp.ac.in/Department/CE"><img
-                    src="https://i.postimg.cc/zX1hTMfT/nit-patna-003.jpg"
-
-                  ></img></a>
-                  <strong>Civil Engineering</strong>
-                </div>
-
-                <div className="">
-                  <a href="https://nitp.ac.in/Department/Math"><img
-                    src="https://i.postimg.cc/zX1hTMfT/nit-patna-003.jpg"
-
-                  ></img></a>
-                  <strong>Mathematics and Computing Technology</strong>
-                </div>
-                <div className="">
-                  <a href="https://nitp.ac.in/Department/Mechatronics">
-                    <img
-                      src="/department/mechatronics/labs/carousel/image3.jpeg"
-
-                    ></img></a>
-                  <strong>Mechatronics and Automation Engineering</strong>
-                </div>
-
-              </div>
-              
-              {/* <h3 className=" text-2xl text-center pb-5 text-neutral-700">Labs</h3>
-              <div className='grid gird-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-10'>
-                <div className="">
-                  <img
-                    src="/ece-lab.jpg"
-
-                  ></img>
-                  <strong>Microwave Lab</strong>
-                </div>
-                <div className="">
-                  <img
-                    src="/cse-lab.jpg"
-
-                  ></img>
-                  <strong>Computer Lab</strong>
-                </div>
-                <div className="">
-                  <img
-                    src="/ee-lab.jpg"
-
-                  ></img>
-                  <strong>Electrical Lab</strong>
-                </div>
-                <div className="">
-                  <img
-                    src="/lib.jpg"
-
-                  ></img>
-                  <strong>Library</strong>
-                </div>
-              </div> */}
+              {/* <h1 className="section-title-heading text-red-800">Departments</h1> */}
+              <div className="flex justify-center  px-0 text-black" style={{
+                // background: '#ffd6d6',
+                // background: 'linear-gradient(90deg,rgba(255, 191, 191, 1) 0%, rgba(255, 245, 227, 1) 50%, rgba(255, 209, 209, 1) 100%)'
+                }}>
+                      <div className="flex flex-col w-full bg-transparent">
+                          {/* heading */}
+                          <div className="font-bold text-3xl text-red-900 flex justify-center">DEPARTMENTS</div>
+                          <div className="mt-2 md:mt-10 mx-0 max-sm:mx-2 grid grid-cols-5 max-md:grid-cols-3  max-sm:grid-cols-2 gap-3">
+                              <DepartmentNavigateButton onClick={() => { router.push("/Department/Phy"); }} department={"Applied Physics and Materials Engineering"} icon={"/physics_icon.png"} />
+                              <DepartmentNavigateButton onClick={() => { router.push("/Department/Archi"); }} department={"Architecture and Planning"} icon={"/Architecture_icon.png"} />
+                              <DepartmentNavigateButton onClick={() => { router.push("/Department/Chem"); }} department={"Chemical Science and Technology"} icon={"/chemistry_icon.png"} />
+                              {/* <DepartmentNavigateButton onClick={()=>{router.push("/Department/Chemical");}}department={"Chemical Engineering and Technology"} icon={"/chemical_icon.png"}/> */}
+                              <DepartmentNavigateButton onClick={() => { router.push("/Department/CE"); }} department={"Civil Engineering"} icon={"/civil_icon.png"} />
+                              <DepartmentNavigateButton onClick={() => { router.push("/Department/CSE"); }} department={"Computer Science and Engineering"} icon={"/computer_icon.png"} />
+                              <DepartmentNavigateButton onClick={() => { router.push("/Department/EE"); }} department={"Electrical Engineering"} icon={"/electric_icon.png"} />
+                              <DepartmentNavigateButton onClick={() => { router.push("/Department/ECE"); }} department={"Electronics And Comunication Engineering"} icon={"/electronics_icon.png"} />
+                              <DepartmentNavigateButton onClick={() => { router.push("/Department/Humanities"); }} department={"Humanities & Social Sciences"} icon={"/humanities_icon.png"} />
+                              {/* <DepartmentNavigateButton onClick={() => { router.push("/Department/Material"); }} department={"Material Science & Engineering"} icon={"/mse-icon.png"} /> */}
+                              <DepartmentNavigateButton onClick={() => { router.push("/Department/Math"); }} department={"Mathematics and Computing Technology"} icon={"/mathematics-icon.png"} />
+                              {/* <DepartmentNavigateButton onClick={()=>{router.push("/Department/MCA");}}department={"Master of Computer Applications"} icon={"/mathematics-icon.png"}/> */}
+                              <DepartmentNavigateButton onClick={() => { router.push("/Department/ME"); }} department={"Mechanical Engineering"} icon={"/mechanical_icon.png"} />
+                              <DepartmentNavigateButton onClick={() => { router.push("/Department/Mechatronics"); }} department={"Mechatronics & Automation Engineering"} icon={"/mechatronics_icon.png"} />
+                          </div>
+                      </div>
+                  </div>
 
             </section>
           )}
@@ -483,4 +389,24 @@ export default function InternationalAffairsPage() {
       </div>
     </div>
   );
+}
+
+function DepartmentNavigateButton({ department, onClick, icon }) {
+    return (
+        <button onClick={() => onClick()} className="mt-1 md:mt-10">
+            <div className="flex justify-center">
+                <div className="w-[90%] h-[230px] max-sm:w-full py-1 md:py-2 rounded-lg shadow-lg  bg-white border-2 border-re-50 hover:border-red-900 active:text-white text-1xl font-semibold text-red-900 flex flex-col justify-center">
+                    <div className="flex justify-center mb-2">
+                        <img 
+                            className="w-[100px] h-[100px] object-contain" 
+                            loading="lazy"
+                            alt={department} 
+                            src={`${icon}`} 
+                        />
+                    </div>
+                    <div>{department}</div>
+                </div>
+            </div>
+        </button>
+    )
 }
