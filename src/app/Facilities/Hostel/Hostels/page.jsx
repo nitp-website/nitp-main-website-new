@@ -117,13 +117,13 @@ const Allhostels = [
   {
     name: "Dr. Sandeep Kumar",
     designation: "Asstt. Warden",
-    mobile: "",
+    mobile: "9560773498",
     email: "Sandeep.ar@nitp.ac.in",
   },
   {
     name: "Dr. Govind Mohan",
     designation: "Asstt. Warden",
-    mobile: "8788449726",
+    mobile: "8988449726",
     email: "govindmohan.ce@nitp.ac.in",
   },
   {
