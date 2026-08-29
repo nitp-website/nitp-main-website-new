@@ -1,7 +1,7 @@
 /** @format */
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { IoIosArrowDown, IoIosArrowDropright } from "react-icons/io";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
@@ -733,12 +733,36 @@ function buildNavItems(clubChildren) {
 }
 
 
+const QUICK_PORTALS = [
+  { label: "Jobs@NITP", link: "/Others/recruitment", isExternal: false },
+  { label: "Fee Payment", link: "https://mis.nitp.ac.in/Miscellaneous.aspx", isExternal: true },
+  { label: "ERP Portal", link: "https://erp.nitp.ac.in/", isExternal: true },
+  { label: "Academic Portal", link: "https://mis.nitp.ac.in/", isExternal: true },
+  { label: "Intranet", link: "/Academic/Intranet", isExternal: false },
+];
+
 //main nav funtion
 export default function Navbar() {
   const [isSideMenuOpen, setSideMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
+  const [isQuickLinksOpen, setQuickLinksOpen] = useState(false);
+  const quickLinksRef = useRef(null);
   const [navItems, setNavItems] = useState(() => buildNavItems([]));
   useNavigationEvent(() => setSideMenuOpen(false));
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (quickLinksRef.current && !quickLinksRef.current.contains(event.target)) {
+        setQuickLinksOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -804,10 +828,54 @@ export default function Navbar() {
   return (
     <>
       <div className="bg-black h-11 my-auto">
-        <div className="flex justify-between items-center px-4 py-1 text-white text-xs md:text-sm my-auto">
+        <div className="flex justify-between items-center px-4 py-1 text-white text-xs md:text-sm my-auto relative">
           <div className="flex flex-row items-center justify-start text-black z-[1000000]">
             <LanguageSelector />
           </div>
+
+          {/* Mobile Portals Dropdown */}
+          <div className="relative md:hidden z-[1000000]" ref={quickLinksRef}>
+            <button
+              type="button"
+              onClick={() => setQuickLinksOpen((prev) => !prev)}
+              className="flex items-center gap-1.5 px-2 py-1 text-xs md:text-sm font-medium text-white hover:bg-white/10 rounded transition-colors"
+              aria-expanded={isQuickLinksOpen}
+              aria-label="Quick Portals"
+            >
+              <span>Portals</span>
+              <IoIosArrowDown
+                className={`w-3 h-3 transition-transform duration-200 ${
+                  isQuickLinksOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {isQuickLinksOpen && (
+              <div className="absolute left-1/2 -translate-x-1/2 mt-1.5 w-44 bg-white rounded-lg shadow-2xl border border-gray-200 py-1 text-gray-800 animate-in fade-in zoom-in-95 duration-150">
+                <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-400 border-b border-gray-100 mb-1">
+                  Quick Portals
+                </div>
+                {QUICK_PORTALS.map((portal, idx) => (
+                  <a
+                    key={idx}
+                    href={portal.link}
+                    target={portal.isExternal ? "_blank" : undefined}
+                    rel={portal.isExternal ? "noopener noreferrer" : undefined}
+                    onClick={() => setQuickLinksOpen(false)}
+                    className="flex items-center justify-between px-3 py-2 text-xs font-medium text-gray-700 hover:bg-red-50 hover:text-red-900 transition-colors"
+                  >
+                    <span>{portal.label}</span>
+                    {portal.isExternal && (
+                      <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    )}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+
           <div className="hidden md:flex space-x-2 text-xs md:text-sm">
             <a
               href="/Others/recruitment"
@@ -827,7 +895,7 @@ export default function Navbar() {
               href="https://erp.nitp.ac.in/"
               className="hover:underline text-[0.6rem] md:text-sm"
             >
-              Admission Portal
+              ERP Portal
             </a>
             <span className="text-[0.5rem] md:text-sm">|</span>
             <a

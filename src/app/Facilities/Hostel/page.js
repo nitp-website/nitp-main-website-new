@@ -17,7 +17,7 @@ const girlsHostels = [
   "Kadimbini Hostel"
 ];
 
-const HMCOfficeContacts = [
+const HMCOfficeAshokRajpathContacts = [
   {
     name: "Dr. Ajay Kumar",
     designation: "Chairman, HMC",
@@ -34,6 +34,21 @@ const HMCOfficeContacts = [
     name: "Mr. Sunil Kumar",
     designation: "Office Clerk",
     mobile: "9973031233",
+    email: ""
+  },
+];
+
+const HMCOfficeBihtaContacts = [
+  {
+    name: "Dr. Bambam Kumar",
+    designation: "Chairman, HMC",
+    mobile: "7895717492",
+    email: "bambam.ec@nitp.ac.in"
+  },
+  {
+    name: "Mr. Ajit Kumar",
+    designation: "Office Assistant (HMC, Bihta Campus)",
+    mobile: "6207272377",
     email: ""
   },
 ];
@@ -76,7 +91,7 @@ const HomeTab = () => {
       </div>
 
       <h1 className="text-2xl md:text-3xl font-bold mb-2 text-red-950 text-center mt-6">
-        HMC Office Contacts
+        HMC Office Ashok Rajpath Campus
       </h1>
       <div className="overflow-x-auto rounded-lg shadow-md border border-gray-100 mb-6">
         <table className="w-full border-collapse bg-white">
@@ -97,8 +112,8 @@ const HomeTab = () => {
             </tr>
           </thead>
           <tbody>
-            {HMCOfficeContacts.length > 0 ? (
-              HMCOfficeContacts.map((contact, index) => (
+            {HMCOfficeAshokRajpathContacts.length > 0 ? (
+              HMCOfficeAshokRajpathContacts.map((contact, index) => (
                 <tr
                   key={index}
                   className={`border-b border-gray-100 hover:bg-red-50 transition-colors ${index % 2 === 0 ? "bg-white" : "bg-gray-50"
@@ -121,7 +136,64 @@ const HomeTab = () => {
             ) : (
               <tr>
                 <td
-                  colSpan="3"
+                  colSpan="4"
+                  className="text-center px-6 py-4 text-gray-500"
+                >
+                  No data available
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      <h1 className="text-2xl md:text-3xl font-bold mb-2 text-red-950 text-center mt-6">
+        HMC Office Bihta Campus
+      </h1>
+      <div className="overflow-x-auto rounded-lg shadow-md border border-gray-100 mb-6">
+        <table className="w-full border-collapse bg-white">
+          <thead>
+            <tr className="bg-[#421010] text-white">
+              <th className="text-left px-6 py-4 font-semibold">
+                Name
+              </th>
+              <th className="text-center px-6 py-4 font-semibold w-48">
+                Designation
+              </th>
+              <th className="text-center px-6 py-4 font-semibold w-48">
+                Mobile
+              </th>
+              <th className="text-center px-6 py-4 font-semibold w-48">
+                Email
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {HMCOfficeBihtaContacts.length > 0 ? (
+              HMCOfficeBihtaContacts.map((contact, index) => (
+                <tr
+                  key={index}
+                  className={`border-b border-gray-100 hover:bg-red-50 transition-colors ${index % 2 === 0 ? "bg-white" : "bg-gray-50"
+                    }`}
+                >
+                  <td className="text-left px-6 py-4 text-gray-800">
+                    {contact.name}
+                  </td>
+                  <td className="text-center px-6 py-4 text-gray-800">
+                    {contact.designation}
+                  </td>
+                  <td className="text-center px-6 py-4 text-gray-800">
+                    {contact.mobile}
+                  </td>
+                  <td className="text-center px-6 py-4 text-gray-800">
+                    {contact.email}
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td
+                  colSpan="4"
                   className="text-center px-6 py-4 text-gray-500"
                 >
                   No data available
