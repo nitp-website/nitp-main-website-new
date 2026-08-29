@@ -19,27 +19,21 @@ const girlsHostels = [
 
 const HMCOfficeContacts = [
   {
-    name: "Dr. Bambam Kumar",
+    name: "Dr. Ajay Kumar",
     designation: "Chairman, HMC",
-    mobile: "7895717492",
-    email: "bambam.ec@nitp.ac.in"
+    mobile: "9709381530",
+    email: "hmc@nitp.ac.in"
   },
   {
-    name: "Yash Sinha",
-    designation: "Jr. Assistant",
-    mobile: "6200579307",
-    email: "yash.ja@nitp.ac.in"
+    name: "Mr. Prashant Kumar",
+    designation: "Junior Assistant",
+    mobile: "",
+    email: "prashant1603033@nitp.ac.in"
   },
   {
-    name: "Sunil Kumar",
+    name: "Mr. Sunil Kumar",
     designation: "Office Clerk",
     mobile: "9973031233",
-    email: ""
-  },
-  {
-    name: "Ajit Kumar",
-    designation: "Office Assistant",
-    mobile: "6207272377",
     email: ""
   },
 ];
