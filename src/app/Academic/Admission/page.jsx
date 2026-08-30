@@ -1,5 +1,7 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { extractApiArray } from "@/lib/apiHelpers";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -16,7 +18,6 @@ import {
 } from 'lucide-react';
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const admissionOptions = {
@@ -53,49 +54,8 @@ const admissionData = {
         name: "CSAB Admissions Portal",
         image: "https://cdnbbsr.s3waas.gov.in/s305a70454516ecd9194c293b0e415777f/uploads/2022/08/2022081238.png",
         link: "https://CSAB.aicte.gov.in/",
-        // description: "Study in India"
       },
     ],
-    notices: [
-           {
-        title: "The admission portal link is currently live.",
-        date: "2026-08-13",
-        content: " UG Admission",
-        href: ""
-      },
-           {
-        title: "Student Induction Programme 2026–27 for Newly Admitted Students of B.Tech., B.Arch. & Dual Degree Programmes – Tentative Schedule (18–23 August 2026)",
-        date: "2026-08-11",
-        content: " UG Admission",
-        href: "https://drive.google.com/file/d/1ycmbSeSFxGEWEGsUWRSpp7eHrAnZYCes/view?usp=drive_link"
-      },
-            
-                 {
-        title: "Notice for the Commencement of Classes for Newly Admitted UG Students (Academic Year 2026–27)",
-        date: "2026-07-31",
-        content: " UG Admission",
-        href: "https://drive.google.com/file/d/1Z523SWGkvZ-jdotsNWLTjPPylSeGlKmt/view?usp=sharing"
-      },
-      
-        {
-        title: "Admissions AY 2026–27 | CSAB Special Rounds & DASA (UG) Admissions",
-        date: "2026-07-20",
-        content: " UG Admission",
-        href: "https://drive.google.com/file/d/1Jod0hJqfxAX4wYT3wWxU67T1iQw9UhO4/view?usp=sharing"
-      },
-      {
-        title: "Fee Structre",
-        date: "2026-07-20",
-        content: "UG Admission",
-        href: "https://drive.google.com/file/d/1krBrlVqdOMlvzz5t7mMmW5mqmecGbLQH/view?usp=sharing"
-      },
-      {
-        title: "Physical reporting schedule for admission to UG Programme through JoSAA/CSAB/DASA/SII for the Academic year 2026-27",
-        date: "2026-07-20",
-        content: "UG Admission",
-        href: "https://drive.google.com/file/d/1i8x0a5taSUYaSsnlgus7wlc_Tqsa1jG1/view?usp=sharing"
-      },
-    ]
   },
   mtech: {
     portals: [
@@ -112,28 +72,6 @@ const admissionData = {
         description: "Visit the portal for the Information Brochure, Schedule, Opening and Closing Ranks, Seat Matrix, and other relevant details."
       },
     ],
-    notices: [
-  
-      {
-        title: "Notice for Start of Classes for M.Tech/MURP through CCMT 2026",
-        date: "2026-07-24",
-        content: "PG Admission",
-        href: "https://drive.google.com/file/d/1KuCYKLAID5yWWeo7RLba-U7Kd16mK5mq/view?usp=drive_link"
-      },
-      {
-        title: "Physical Verification notice for admission to M.Tech/MURP through CCMT 2026",
-        date: "2026-07-14",
-        content: "PG Admission",
-        href: "https://drive.google.com/file/d/18Lc9u6HkJeD7tp3ROjmF_hBGorxKN4OY/view?usp=sharing"
-      },
-      {
-        title: "Fee Structre",
-        date: "2026-07-15",
-        content: "PG Admission",
-        href: "https://drive.google.com/file/d/1pnEtbYSy_OTSn98MkZivpOYXfwD_sP0S/view?usp=sharing"
-      },
-      
-    ]
   },
 
   phd: {
@@ -145,52 +83,6 @@ const admissionData = {
          sopLink:"https://drive.google.com/file/d/1zGO9OefmbdyK_k4KLqfK4YdrtmUNMZVw/view?usp=sharing"
       },
     ],
-    notices: [
-          {
-        title: "List of Candidates Selected for Admission to the Ph.D. Programme Odd Semester (July–December 2026), Academic Year 2026–27",
-         date: "2026-07-31",
-       content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1oL1g_MjZ7sX-D3J2Hl0hSAfsy0dhKdsb/view?usp=sharing"
-       },
-        {
-        title: "Physical Verification Notice with Enclosures for Ph.D. Admission (July–December 2026)",
-         date: "2026-07-31",
-       content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1FCymcp8Lx5GEa4s3-urd4yth0ukXrkTy/view?usp=sharing"
-       },
-      
-          {
-        title: "Ph.D. Fee Structure ",
-         date: "2026-07-31",
-       content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1n6AkZ0K_TXuSkzbCbvzUb8ucXV3omR5Y/view?usp=sharing"
-       },
-      
-         {
-        title: "Provisionally eligible list of candidates for PhD Interview July - Dec 2026",
-         date: "2026-07-27",
-       content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1QBzJcDd-6H-ScRAbEJ619ao8nW-ATYuC/view?usp=sharing"
-       },
-       {
-        title: "Written Test Notice for PhD Programme (July-December 2026) Admissions, Ay- 2026-27",
-         date: "2026-06-21",
-       content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1T4fY5H-PXQO4A4Jeg-4byebd7vrXVBLG/view?usp=sharing"
-       },
-       {
-        title: "Applications are invited for admission to the Ph.D. programme, Academic Year 2026-27 (Odd Semester: July–Dec 2026). Last date: 20th July 2026",
-         date: "2026-06-04",
-       content: "PhD Admission",
-        href: "https://drive.google.com/file/d/1YX-EYmuH241Nae5Rx2hOPEMactJJsxzQ/view?usp=sharing"
-       },
-      {
-       title: "SOP for PhD admission Academic Year 2026-27(July-Dec).",
-       date: "2026-06-04",
-       content: "PhD Admission",
-       href:"https://drive.google.com/file/d/1_6KDnWDRffj5Ywf04hETmtc5OG9_CAM2/view?usp=sharing"
-      }
-    ]
   },
 
   mca: {
@@ -208,77 +100,16 @@ const admissionData = {
         description: "Visit the portal for the Information Brochure, Schedule, Opening and Closing Ranks, Seat Matrix, and other relevant details."
       },
     ],
-    notices: [
-        {
-        title: "Notice for Physical Reporting and Start of Classes for MCA through NIMCET 2026",
-        date: "2026-07-24",
-        content: "PG Admission",
-        href: "https://drive.google.com/file/d/176aLUtrEOw0bAAbqmbFaTe2orE7zlApP/view?usp=sharing"
-      },
-      {
-        title: "Physical reporting notice for admission to MCA through  NIMCET-2026",
-        date: "2026-07-16",
-        content: "Physical reporting notice for admission to MCA through  NIMCET-2026",
-        href: "https://drive.google.com/file/d/1nBQudzAYVjiuNkL8AGHG3iwAhbPrI_Tn/view?usp=sharing"
-      },
-        {
-        title: "Fee Structure ",
-        date: "2026-07-16",
-        content: "Fee Structure",
-        href: "https://drive.google.com/file/d/1AMDgWbxCCpoY43auIROB7WdtJFm64yIw/view?usp=sharing"
-      },
-        {
-        title: "Fee Structure for Self Finance",
-        date: "2026-07-16",
-        content: "Fee Structure for Self Finance",
-        href: "https://drive.google.com/file/d/1_fT2Wb_ouSIeke-jx-BK5wcarjgsbWxH/view?usp=sharing"
-      }
-    ]
   },
   
-
-
   study_in_india: {
     portals: [
       {
         name: "SOP and Admission Form link for the Academic Year 2026 admissions",
         image: "/logo.png",
-       // link: "https://mis.nitp.ac.in/admission/Default.aspx",
         sopLink: "https://drive.google.com/file/d/1PdsHeOkaeAvIWvQMeZFCTkQzsAf-LuX6/view?usp=sharing"
       },
-      // {
-      //   name: "Study in India",
-      //   image: "https://studyinindia.gov.in/Content/images/logo_SII_new_2023_darkGlobe1.webp",
-      //   link: "https://studyinindia.gov.in/",
-      //   // description: "Study in India"
-      // },
     ],
-    notices: [
-      // {
-      //   title: "Admission link is live (18/08/2025; 3 PM to 23/08/2025) for those who have confirmed their seat during JoSAA-2025 counselling and have not participated in CSAB special Round. Same Admission link will be used for those who have participated in CSAB special round and confirmed their seat during CSAB special round from live from 20/08/2025 to 23/08/2025.",
-      //   date: "2025-08-18",
-      //   content: " UG Admission",
-      //   href: ""
-      // },
-      // {
-      //   title: "Notice regarding the schedule of the Orientation programme and commencement of classes for newly admitted UG students.",
-      //   date: "2025-08-02",
-      //   content: " UG Admission",
-      //   href: "https://drive.google.com/file/d/1wUoxMAfqSBmz1-E7j8QvFK_Ywgcb-JoC/view?usp=sharing"
-      // },
-      {
-        title: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2026-27 at NIT Patna.",
-        date: "2026-07-10",
-        content: "List of provisionally shortlisted Candidates for admission through Study in India (SII) for the session 2026-27 at NIT Patna.",
-        href: "https://drive.google.com/file/d/1AWfyiP_za1HQTqomsDpU11Gg8AFg8JZX/view?usp=sharing"
-      },
-      {
-        title: "Schedule for the Admission through Study in India (SII) at NIT Patna for the Academic Year 2026-27",
-        date: "2026-06-10",
-        content: "Schedule for the Admission of the Academic Year 2026-27",
-        href: "https://drive.google.com/file/d/1OoYi_YjQFKxP7Fw7AgZ3LsVwIC2FbIJh/view?usp=drive_link"
-      }
-    ]
   },
 
   qip: {
@@ -287,19 +118,9 @@ const admissionData = {
         name: "QIP Admissions Portal",
         image: "https://qip.aicte.gov.in/assets/images/logoLogin.png",
         link: "https://qip.aicte.gov.in/",
-        // description: "Study in India"
       },
     ],
-    notices: [
-      {
-        "title": "Quality Improvement Programme (QIP) Admission 2026-27",
-        "date": "2026-03-06",
-        "content": "The Quality Improvement Programme (QIP) offers admission for sponsored, full-time regular faculty from AICTE-approved institutions to pursue Master’s and Ph.D. degrees.",
-        "href": "https://drive.google.com/file/d/17OkvWximJ5fkKRqM3rWIMyz6gc22u_VY/view"
-      }
-    ]
   },
-
 };
 
 const degreeMap = {
@@ -311,6 +132,22 @@ const degreeMap = {
   qip: "Quality Improvement Programme",
 };
 
+const parseApiTimestamp = (value) => {
+  if (value === null || value === undefined || value === "") {
+    return null;
+  }
+
+  const numericValue = Number(value);
+
+  if (!Number.isFinite(numericValue)) {
+    return null;
+  }
+
+  const date = new Date(numericValue);
+
+  return Number.isNaN(date.getTime()) ? null : date;
+};
+
 function AdmissionsPage() {
   const [selected, setSelected] = useState("btech");
   const [expandedNotices, setExpandedNotices] = useState({});
@@ -320,11 +157,59 @@ function AdmissionsPage() {
   const router = useRouter();
   const pathname = usePathname();
   
+  const [notices, setNotices] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [fetchError, setFetchError] = useState(false);
+  
   useEffect(() => {
     if (typeParam) {
       setSelected(typeParam);
     }
   }, [typeParam]);
+
+  useEffect(() => {
+    const fetchNotices = async () => {
+      if (!selected || !admissionData[selected]) return;
+      
+      setIsLoading(true);
+      setFetchError(false);
+      try {
+        const url = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=admissions&notice_sub_type=${selected}&page=1&limit=50`;
+        const response = await axios.get(url);
+        
+        const rawData = extractApiArray(response).filter((notice) => notice.isVisible === 1);
+        const mappedNotices = rawData.map(notice => {
+          let noticeHref = "";
+          if (notice.notice_link) {
+            try {
+              const linkData = JSON.parse(notice.notice_link);
+              noticeHref = linkData.url || "";
+            } catch (e) {
+              noticeHref = notice.notice_link;
+            }
+          } else if (notice.attachments && notice.attachments.length > 0) {
+            noticeHref = notice.attachments[0].url || "";
+          }
+          
+          return {
+            title: notice.title,
+            date: parseApiTimestamp(notice.timestamp) || parseApiTimestamp(notice.updatedAt) || new Date(),
+            content: `${degreeMap[selected] || "Admission"} Update`,
+            href: noticeHref
+          };
+        });
+        
+        setNotices(mappedNotices);
+      } catch (e) {
+        console.error("Error fetching admission notices:", e);
+        setFetchError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchNotices();
+  }, [selected]);
 
   const toggleNotice = (index) => {
     setExpandedNotices(prev => ({
@@ -407,8 +292,47 @@ function AdmissionsPage() {
                     </span>
                   </div>
                   <div className="space-y-6">
-                    {admissionData[selected]?.notices?.length > 0 ? (
-                      admissionData[selected]?.notices?.map((notice, index) => (
+                    {isLoading ? (
+                      <div className="flex justify-center items-center p-8">
+                        <svg
+                          version="1.1"
+                          id="L1"
+                          height="80px"
+                          width="80px"
+                          x="0px"
+                          y="0px"
+                          viewBox="0 0 100 100"
+                          enableBackground="new 0 0 100 100"
+                        >
+                          <circle
+                            fill="none"
+                            stroke="#f87171"
+                            strokeWidth="6"
+                            strokeMiterlimit="15"
+                            strokeDasharray="14.2472,14.2472"
+                            cx="50"
+                            cy="50"
+                            r="47"
+                          >
+                            <animateTransform
+                              attributeName="transform"
+                              attributeType="XML"
+                              type="rotate"
+                              dur="5s"
+                              from="0 50 50"
+                              to="360 50 50"
+                              repeatCount="indefinite"
+                            />
+                          </circle>
+                        </svg>
+                      </div>
+                    ) : fetchError ? (
+                      <div className="text-center p-6 bg-red-50 rounded-xl">
+                        <Frown className="w-12 h-12 mx-auto text-red-400 mb-4" />
+                        <p className="text-red-600">Failed to load notices. Please try again later.</p>
+                      </div>
+                    ) : notices.length > 0 ? (
+                      notices.map((notice, index) => (
                         <div
                           key={index}
                           className="bg-white rounded-lg shadow-md overflow-hidden border-l-4 border-red-600 hover:shadow-lg transition-all duration-300"
