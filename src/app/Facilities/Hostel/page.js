@@ -47,7 +47,7 @@ const HMCOfficeBihtaContacts = [
   },
   {
     name: "Mr. Ajit Kumar",
-    designation: "Office Assistant (HMC, Bihta Campus)",
+    designation: "Office Assistant",
     mobile: "6207272377",
     email: ""
   },
