@@ -22,9 +22,9 @@ const Allhostels = [
     email: "linisubheesh@nitp.ac.in",
   },
   {
-    name: "Dr. Anushree Barman",
+    name: "Dr. Anushri Barman",
     designation: "Asst. Warden",
-    mobile: "79033143125",
+    mobile: "7903143125",
     email: "anushribarman@nitp.ac.in",
   },
   {
@@ -42,19 +42,13 @@ const Allhostels = [
   {
     name: "Shazia Perween",
     designation: "Office Assistant",
-    mobile: "9199804108",
-    email: "",
-  },
-  {
-    name: "Aaisha Vishwakarma",
-    designation: "Office Assistant",
-    mobile: "9517561526",
+    mobile: "6201565956",
     email: "",
   },
   {
     name: "Pramila Devi",
     designation: "Office Attendant",
-    mobile: "6201565956",
+    mobile: "9199804108",
     email: "",
   },
 ],
