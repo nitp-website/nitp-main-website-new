@@ -158,7 +158,7 @@ const Allhostels = [
   {
     name: "Dr. Govind Mohan",
     designation: "Asstt. Warden",
-    mobile: "8788449726",
+    mobile: "8988449726",
     email: "govindmohan.ce@nitp.ac.in",
   },
   {
@@ -348,7 +348,7 @@ const Allhostels = [
   {
     name: "Dr. Govind Mohan",
     designation: "Asstt. Warden",
-    mobile: "8788449726",
+    mobile: "8988449726",
     email: "govindmohan.ce@nitp.ac.in",
   },
   {
