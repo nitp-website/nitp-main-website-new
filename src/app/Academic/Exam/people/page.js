@@ -258,7 +258,7 @@ const ExamPeoplePage = () => {
                     ) : (
                         <div className="flex flex-wrap justify-center md:justify-start gap-6 my-2 text-black">
                             {staffList.map((staff) => (
-                                <NewStaffcardDept key={staff.id ?? staff.user_id ?? staff.email} staff={staff} />
+                                <NewStaffcardDept key={staff.id ?? staff.user_id ?? staff.email} staff={staff} showMoreInfo={false} />
                             ))}
                         </div>
                     )}

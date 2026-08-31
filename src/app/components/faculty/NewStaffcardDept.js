@@ -713,7 +713,7 @@ const getExperience = (dateOfJoining, workExperience = []) => {
   );
 }
 
-function Staffcard({ staff }) {
+function Staffcard({ staff, showMoreInfo = true }) {
   const [open, setOpen] = useState(false);
 
   const { name, designation, image, email } = staff || {};
@@ -762,12 +762,14 @@ function Staffcard({ staff }) {
             </a>
           )}
 
-          <button
-            onClick={() => setOpen(true)}
-            className="mt-4 px-5 py-1.5 text-sm font-medium rounded-lg border border-red-700 text-red-700 hover:bg-red-700 hover:text-white transition-colors"
-          >
-            More Info
-          </button>
+          {showMoreInfo && (
+            <button
+              onClick={() => setOpen(true)}
+              className="mt-4 px-5 py-1.5 text-sm font-medium rounded-lg border border-red-700 text-red-700 hover:bg-red-700 hover:text-white transition-colors"
+            >
+              More Info
+            </button>
+          )}
         </div>
       </div>
 
