@@ -9,12 +9,15 @@ const boysHostels = [
   "Bagmati Hostel",
   "Kosi Hostel",
   "Kosi Extension Hostel",
-  "Sone Hostel"
+  "Sone Hostel",
+  "Nagarjuna Hostel",
+  "Kautilya Hostel"
 ];
 
 const girlsHostels = [
-   "Ganga Hostel",
-  "Kadimbini Hostel"
+  "Ganga Hostel",
+  "Kadambini Hostel",
+  "Sarojini Hostel"
 ];
 
 const HMCOfficeAshokRajpathContacts = [
@@ -65,7 +68,7 @@ const HomeTab = () => {
         <h1 className="text-2xl md:text-3xl font-bold mb-8 text-red-950 text-center">
           Hostel Details
         </h1>
-        <p className="text-red-950 text-justify mb-2">Currently, NIT Patna has Six Boys Hostel and Two Girls' Hostels.</p>
+        <p className="text-red-950 text-justify mb-2">Currently, NIT Patna has Eight Boys Hostels and Three Girls' Hostels.</p>
         <div className="mx-auto bg-gray-500">
           <table className="min-w-full bg-white border border-gray-300 text-center">
             <thead>
