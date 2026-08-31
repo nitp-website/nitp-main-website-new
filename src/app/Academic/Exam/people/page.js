@@ -6,9 +6,25 @@ import NewStaffcardDept from "../../../components/faculty/NewStaffcardDept";
 import FacultyCard from "@/components/facultycomponents/Facultycard";
 import { sortByDesignation } from "../../../../lib/designationOrder";
 
-// Configurable array of faculty emails for the Examination Section
+// Configurable array of faculty members and their designations for the Examination Section
 const EXAM_FACULTY_EMAILS = [
-    "arquaff@nitp.ac.in",
+    {
+        email: "arquaff@nitp.ac.in",
+        designation: "Associate Dean (Exam)",
+    },
+
+];
+
+// Configurable array of staff members and their designations for the Examination Section
+const EXAM_STAFF_EMAILS = [
+    {
+        email: "bobby@nitp.ac.in",
+        designation: "Joint Registrar (Exam)",
+    },
+    {
+        email: "abhay.ar@nitp.ac.in",
+        designation: "Assistant Registrar (Exam)",
+    },
 ];
 
 const ExamPeoplePage = () => {
@@ -20,14 +36,20 @@ const ExamPeoplePage = () => {
     const [facultyError, setFacultyError] = useState(false);
 
     useEffect(() => {
-        // Fetch Faculty details via profile summary API for each email in EXAM_FACULTY_EMAILS
+        // Fetch Faculty details via profile summary API for each entry in EXAM_FACULTY_EMAILS
         const fetchExamFaculty = async () => {
             try {
                 setLoadingFaculty(true);
                 setFacultyError(false);
                 const baseUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
 
-                const promises = EXAM_FACULTY_EMAILS.map(async (email) => {
+                const promises = EXAM_FACULTY_EMAILS.map(async (item) => {
+                    const email = typeof item === "string" ? item : item?.email;
+                    if (!email) return null;
+
+                    const mappedDesignation = typeof item === "object" ? item?.designation : null;
+                    const mappedAcademicResponsibility = typeof item === "object" ? item?.academic_responsibility : null;
+
                     try {
                         const res = await fetch(
                             `${baseUrl}/api/v2/profile?email=${encodeURIComponent(email)}&section=summary`
@@ -40,8 +62,8 @@ const ExamPeoplePage = () => {
                         return {
                             id: profile.id || profile.email || email,
                             name: profile.name || email,
-                            designation: profile.designation || "Faculty Member",
-                            academic_responsibility: profile.academic_responsibility || "",
+                            designation: mappedDesignation || profile.designation || "Faculty Member",
+                            academic_responsibility: mappedAcademicResponsibility || profile.academic_responsibility || "",
                             email: profile.email || email,
                             image: profile.image,
                             department: profile.department,
@@ -75,29 +97,88 @@ const ExamPeoplePage = () => {
             }
         };
 
-        // Fetch Exam Staff list
+        // Fetch Exam Staff list (combines email profile fetch & backend staff API fetch)
         const fetchExamStaff = async () => {
             try {
                 setLoadingStaff(true);
                 setStaffError(false);
+                const baseUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
 
-                let allStaff = [];
-                let page = 1;
-                let totalPages = 1;
+                // 1. Email fetch for EXAM_STAFF_EMAILS
+                let emailStaffList = [];
+                if (Array.isArray(EXAM_STAFF_EMAILS) && EXAM_STAFF_EMAILS.length > 0) {
+                    const promises = EXAM_STAFF_EMAILS.map(async (item) => {
+                        const email = typeof item === "string" ? item : item?.email;
+                        if (!email) return null;
 
-                do {
-                    const { data } = await axios.get(
-                        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/staff2?type=all&department=exam&page=${page}&limit=50`
-                    );
+                        const mappedDesignation = typeof item === "object" ? item?.designation : null;
 
-                    if (data && data.data) {
-                        allStaff.push(...data.data);
-                        totalPages = data.totalPages || 1;
-                    }
-                    page++;
-                } while (page <= totalPages);
+                        try {
+                            const res = await fetch(
+                                `${baseUrl}/api/v2/profile?email=${encodeURIComponent(email)}&section=summary`
+                            );
+                            if (!res.ok) return null;
+                            const data = await res.json();
+                            if (!data || data.error) return null;
 
-                setStaffList(sortByDesignation(allStaff));
+                            const profile = data.profile || {};
+                            return {
+                                id: profile.id || profile.email || email,
+                                user_id: profile.id || profile.email || email,
+                                name: profile.name || email,
+                                designation: mappedDesignation || profile.designation || "Staff Member",
+                                email: profile.email || email,
+                                image: profile.image,
+                                department: profile.department,
+                                mobile_number: profile.ext_no || profile.mobile_number || profile.phone,
+                                research_interest: profile.research_interest,
+                                date_of_joining: profile.date_of_joining,
+                                labs: data.labs || [],
+                                education: data.education || [],
+                                work_experience: data.work_experience || [],
+                            };
+                        } catch (err) {
+                            console.error(`Failed to fetch staff profile for ${email}:`, err);
+                            return null;
+                        }
+                    });
+                    const results = await Promise.all(promises);
+                    emailStaffList = results.filter(Boolean);
+                }
+
+                // 2. API fetch for department=exam
+                let apiStaffList = [];
+                try {
+                    let page = 1;
+                    let totalPages = 1;
+
+                    do {
+                        const { data } = await axios.get(
+                            `${baseUrl}/api/staff2?type=all&department=exam&page=${page}&limit=50`
+                        );
+
+                        if (data && data.data) {
+                            apiStaffList.push(...data.data);
+                            totalPages = data.totalPages || 1;
+                        }
+                        page++;
+                    } while (page <= totalPages);
+                } catch (err) {
+                    console.error("Failed to fetch staff API:", err);
+                }
+
+                // 3. Combine: array emails FIRST (preserving array order), API fetched staff LATER
+                const emailKeysSet = new Set(
+                    emailStaffList.map((staff) => (staff.email || staff.id || staff.user_id || "").toLowerCase())
+                );
+
+                const remainingApiStaff = apiStaffList.filter((staff) => {
+                    const key = (staff.email || staff.id || staff.user_id || "").toLowerCase();
+                    return !key || !emailKeysSet.has(key);
+                });
+
+                const combinedStaff = [...emailStaffList, ...sortByDesignation(remainingApiStaff)];
+                setStaffList(combinedStaff);
             } catch (err) {
                 console.error("Failed to fetch exam staff:", err);
                 setStaffError(true);
@@ -177,7 +258,7 @@ const ExamPeoplePage = () => {
                     ) : (
                         <div className="flex flex-wrap justify-center md:justify-start gap-6 my-2 text-black">
                             {staffList.map((staff) => (
-                                <NewStaffcardDept key={staff.id ?? staff.user_id} staff={staff} />
+                                <NewStaffcardDept key={staff.id ?? staff.user_id ?? staff.email} staff={staff} />
                             ))}
                         </div>
                     )}
