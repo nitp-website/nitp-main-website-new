@@ -255,16 +255,49 @@ export default function ExamPage() {
             </div>
 
             {/* Section Four: Key Contact Banner */}
-            <div className="bg-white border-l-4 border-red-800 p-6 rounded-r-xl shadow-md border">
+            <div className="bg-white border-l-4 border-red-800 p-6 rounded-r-xl shadow-md border space-y-4">
                 <div className="flex items-start gap-4">
                     <ShieldCheck className="text-red-800 shrink-0 mt-1" size={28} />
-                    <div>
-                        <h3 className="text-lg font-bold text-red-950 mb-1">Associate Dean (Examinations)</h3>
-                        <p className="text-gray-800 font-semibold text-sm">Prof. A. R. Quaff</p>
-                        <p className="text-gray-600 text-sm mt-1">
-                            Official Email: <a href="mailto:examoffice@nitp.ac.in" className="text-red-800 font-bold underline">examoffice@nitp.ac.in</a>
-                        </p>
-                        <p className="text-gray-500 text-xs mt-2">
+                    <div className="w-full">
+                        <h3 className="text-lg font-bold text-red-950 mb-3">Important Links to Contact</h3>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Email Contacts</h4>
+                                <ul className="space-y-1.5 text-sm">
+                                    <li className="flex items-center gap-2">
+                                        <span className="font-semibold text-gray-700">a.</span>
+                                        <a href="mailto:Exam.help@nitp.ac.in" className="text-red-800 font-medium hover:underline">
+                                            Exam.help@nitp.ac.in
+                                        </a>
+                                    </li>
+                                    <li className="flex items-center gap-2">
+                                        <span className="font-semibold text-gray-700">b.</span>
+                                        <a href="mailto:examoffice@nitp.ac.in" className="text-red-800 font-medium hover:underline">
+                                            examoffice@nitp.ac.in
+                                        </a>
+                                    </li>
+                                    <li className="flex items-center gap-2">
+                                        <span className="font-semibold text-gray-700">c.</span>
+                                        <a href="mailto:bobby@nitp.ac.in" className="text-red-800 font-medium hover:underline">
+                                            bobby@nitp.ac.in
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Contact Numbers</h4>
+                                <p className="text-sm text-gray-800 font-medium">
+                                    0612- 2371715/2372715
+                                </p>
+                                <p className="text-xs text-gray-600 mt-1">
+                                    <span className="font-semibold">Extension numbers:</span> 170/171/173
+                                </p>
+                            </div>
+                        </div>
+
+                        <p className="text-gray-500 text-xs mt-4 pt-3 border-t border-gray-100">
                             For queries regarding transcripts, grade card corrections, and official verification, please contact the examination office counter.
                         </p>
                     </div>
