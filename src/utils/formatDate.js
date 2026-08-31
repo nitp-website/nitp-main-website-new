@@ -1,25 +1,19 @@
 export default function formatDate(startDate, endDate) {
-
   if (!startDate) return "";
-  
-  const start = new Date(startDate);
-  const startFormatted = start.toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric"
-  });
 
-  let endFormatted;
-  if (!endDate || endDate.toLowerCase() === "ongoing") {
-    endFormatted = "Ongoing";
+  const startFormatted = startDate.toString().split("T")[0];
+
+  let endFormatted = "";
+  if (!endDate) {
+    endFormatted = "";
+  } else if (
+    typeof endDate === "string" &&
+    ["ongoing", "present", "continue"].includes(endDate.toLowerCase())
+  ) {
+    endFormatted = endDate.charAt(0).toUpperCase() + endDate.slice(1);
   } else {
-    const end = new Date(endDate);
-    endFormatted = end.toLocaleDateString("en-US", {
-      day: "numeric",
-      month: "long",
-      year: "numeric"
-    });
+    endFormatted = endDate.toString().split("T")[0];
   }
 
-  return `${startFormatted} – ${endFormatted}`;
+  return endFormatted ? `${startFormatted} – ${endFormatted}` : startFormatted;
 }

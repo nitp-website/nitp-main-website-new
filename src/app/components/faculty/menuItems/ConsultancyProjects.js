@@ -1,4 +1,5 @@
 import React from "react";
+import formatDate from "../../../../utils/formatDate";
 
 const ConsultancyProjects = ({ data }) => {
   // Sort projects by start_date in descending order (latest first)
@@ -36,8 +37,7 @@ const ConsultancyProjects = ({ data }) => {
 
             {/* Duration */}
             <p className="text-gray-700">
-              <strong>Duration:</strong> {project.start_date} -{" "}
-              {project.end_date}
+              <strong>Duration:</strong> {formatDate(project.start_date, project.end_date)}
             </p>
 
             {/* Financial Outlay */}
