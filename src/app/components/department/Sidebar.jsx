@@ -35,6 +35,7 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
                 {item.dropdown ? (
                   <div>
                     <button
+                      suppressHydrationWarning
                       onClick={() => toggleSubmenu(item.name)}
                       className="flex items-center justify-between w-full p-3 rounded-md hover:bg-red-50 text-red-800 font-medium transition-colors"
                     >
@@ -97,6 +98,7 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
       <div className="md:hidden w-full px-4 mb-6">
         {/* Dropdown Button */}
         <button
+          suppressHydrationWarning
           onClick={toggleMobileMenu}
           className="w-[80%] mx-auto flex items-center justify-between p-4 bg-white border-2 border-red-200 rounded-lg shadow-md hover:shadow-lg transition-all"
         >
@@ -127,6 +129,7 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
                   {item.dropdown ? (
                     <div className="border-b border-gray-100 pb-2 mb-2">
                       <button
+                        suppressHydrationWarning
                         onClick={() => toggleSubmenu(item.name)}
                         className="flex items-center justify-between w-full p-3 rounded-lg hover:bg-red-50 text-red-800 font-semibold transition-all"
                       >
