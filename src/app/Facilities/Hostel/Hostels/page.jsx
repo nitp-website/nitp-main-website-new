@@ -251,12 +251,6 @@ const Allhostels = [
     email: "kakali@nitp.ac.in",
   },
   {
-    name: "Dr. Meena Panchore",
-    designation: "Asstt. Warden",
-    mobile: "6265308787",
-    email: "meenap.ec@nitp.ac.in",
-  },
-  {
     name: "Dr. Richa Aggarwal",
     designation: "Asstt. Assistant",
     mobile: "9559090527",
@@ -266,12 +260,6 @@ const Allhostels = [
     name: "Sunita Kumari",
     designation: "Office Attendant",
     mobile: "7783821389",
-    email: "",
-  },
-  {
-    name: "Preety Bharti",
-    designation: "Office Assistant",
-    mobile: "8252321881",
     email: "",
   },
   {
@@ -364,6 +352,90 @@ const Allhostels = [
     email: "",
   },
 ],
+  },
+  {
+    name: "Nagarjuna Hostel",
+    gender: "Male",
+    images: [],
+    description: "",
+    contacts: [
+      {
+        name: "Dr. Trilochan Penthia",
+        designation: "Warden",
+        mobile: "7504812988",
+        email: "trilochan.ee@nitp.ac.in",
+      },
+      {
+        name: "Dr. Ajishek Raj",
+        designation: "Asst. Warden",
+        mobile: "7011885545",
+        email: "ajishek.ee@nitp.ac.in",
+      },
+      {
+        name: "Dr. Girdhar Gopal",
+        designation: "Asst. Warden",
+        mobile: "7404649752",
+        email: "girdhar.ec@nitp.ac.in",
+      },
+    ],
+  },
+  {
+    name: "Sarojini Hostel",
+    gender: "Female",
+    images: [],
+    description: "",
+    contacts: [
+      {
+        name: "Dr. Meena Panchore",
+        designation: "Warden",
+        mobile: "6265308787",
+        email: "meenap.ec@nitp.ac.in",
+      },
+      {
+        name: "Dr. Sangeeta Singh",
+        designation: "Asst. Warden",
+        mobile: "9479646111",
+        email: "sangeeta.singh@nitp.ac.in",
+      },
+      {
+        name: "Aaiysa Viswakarma",
+        designation: "Caretaker",
+        mobile: "9517561526",
+        email: "",
+      },
+    ],
+  },
+  {
+    name: "Kautilya Hostel",
+    gender: "Male",
+    images: [],
+    description: "",
+    contacts: [
+      {
+        name: "Dr. Manpuran Mahto",
+        designation: "Warden",
+        mobile: "7752957828",
+        email: "mmahto@nitp.ac.in",
+      },
+      {
+        name: "Dr. Rajan Agrahari",
+        designation: "Asst. Warden",
+        mobile: "9506096868",
+        email: "rajan.ec@nitp.ac.in",
+      },
+      {
+        name: "Dr. Antriksh Goswami",
+        designation: "Asst. Warden",
+        mobile: "8619529720",
+        email: "antriksh.cs@nitp.ac.in",
+      },
+      {
+        name: "Gopal Viswakarma",
+        designation: "Caretaker",
+        mobile: "9795355541",
+        email: "",
+      },
+    ],
   },
 ];
 
