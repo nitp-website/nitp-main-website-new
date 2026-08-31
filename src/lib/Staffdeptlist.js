@@ -1,5 +1,5 @@
 export const StaffdepList = new Map([
-  ['arch', 'Architecture and Planning'],
+  ['arch', 'Architecture'],
   ['che', 'Chemical Science and Technology'],
   ['ce', 'Civil Engineering'],
   ['cse', 'Computer Science and Engineering'],

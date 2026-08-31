@@ -274,6 +274,63 @@ const BASE_NAV_ITEMS = [
       //   ],
       // },
       {
+        label: "Office Administration",
+        link: "/Administration/OfficeAdministration",
+        iconImage: Admin,
+        children: [
+          {
+            label: "Account Section",
+            link: "/Administration/OfficeAdministration/AccountSection",
+            iconImage: Person,
+          },
+          {
+            label: "CCIS",
+            link: "/Administration/OfficeAdministration/CCIS",
+            iconImage: Person,
+          },
+          {
+            label: "EMU",
+            link: "/Administration/OfficeAdministration/EMU",
+            iconImage: Person,
+          },
+          {
+            label: "ESU",
+            link: "/Administration/OfficeAdministration/ESU",
+            iconImage: Person,
+          },
+          {
+            label: "Computer Center",
+            link: "/Administration/OfficeAdministration/ComputerCenter",
+            iconImage: Person,
+          },
+          {
+            label: "Student Welfare",
+            link: "/Administration/OfficeAdministration/StudentWelfare",
+            iconImage: Person,
+          },
+          {
+            label: "Faculty Welfare",
+            link: "/Administration/OfficeAdministration/FacultyWelfare",
+            iconImage: Person,
+          },
+          {
+            label: "Academic Section",
+            link: "/Administration/OfficeAdministration/AcademicSection",
+            iconImage: Person,
+          },
+          {
+            label: "Director Section",
+            link: "/Administration/OfficeAdministration/DirectorSection",
+            iconImage: Person,
+          },
+          {
+            label: "Training and Placement Section",
+            link: "/Administration/OfficeAdministration/TrainingAndPlacement",
+            iconImage: Person,
+          },
+        ],
+      },
+      {
         label: "Organization Chart",
         link: "https://drive.google.com/file/d/1-rCS5RsPydppIQKOYVM8qNYK8y4tUTMZ/view?usp=sharing",
         iconImage: Notice,
@@ -362,6 +419,11 @@ const BASE_NAV_ITEMS = [
         label: "Intranet Portal",
         link: "/Academic/Intranet",
         iconImage: Admin,
+      },
+      {
+        label: "Exam Section",
+        link: "/Academic/Exam",
+        iconImage: Document,
       },
       {
         label: "Programmes",
@@ -894,7 +956,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`navbar-container sticky top-0 z-50 ${isSticky ? "stickdiv" : ""} `}
+        className={`navbar-container sticky top-0 z-[9999] ${isSticky ? "stickdiv" : ""} `}
       >
         <div className="header-top mx-auto flex w-full max-w-9xl justify-between px-[1px] md:px-4 py-2 bg-white/40 backdrop-blur-lg shadow-lg">
           {/* Mobile Header Layout */}
@@ -1045,7 +1107,7 @@ function DropdownItem({ item, parentLabel }) {
                     ? <img src={subChild.iconImage} alt="item-icon" width={20} height={20} className="object-contain" />
                     : <Image src={subChild.iconImage} alt="item-icon" width={20} height={20} />
                 )}
-                <span title={subChild.label} className={`${parentLabel.toLowerCase() === 'students' ? 'block  truncate' : 'whitespace-nowrap'} pl-3`}>{subChild.label}</span>
+                <span title={subChild.label} className={`${parentLabel?.toLowerCase() === 'students' ? 'block  truncate' : 'whitespace-nowrap'} pl-3`}>{subChild.label}</span>
               </Link>
             ))}
           </div>

@@ -193,7 +193,7 @@
     display: flex;
     justify-content: flex-end;
     background-color: rgba(0, 0, 0, 0.6);
-    z-index: 100;
+    z-index: 99999;
   }
 
   .mobile-nav-content {

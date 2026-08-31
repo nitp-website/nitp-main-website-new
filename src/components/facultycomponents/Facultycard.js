@@ -60,7 +60,7 @@ function FacultyCard({
   const retired = String(is_retired) === "1" || is_retired === 1 || is_retired === true;
 
   return (
-    <div onClick={visitProfile} className="relative cursor-pointer w-[575px] md:h-[325px] text-black rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow bg-white">
+    <div onClick={visitProfile} className="relative cursor-pointer w-full max-w-[575px] md:h-[325px] text-black rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow bg-white">
       <div className="absolute top-3 right-3 z-10">
       {gender?.toLowerCase()==="male"&&<div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-lg font-bold">♂</div>}
       {gender?.toLowerCase()==="female"&&<div className="w-8 h-8 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-lg font-bold">♀</div>}
