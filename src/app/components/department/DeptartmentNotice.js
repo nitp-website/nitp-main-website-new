@@ -32,11 +32,12 @@ const DepartmentNotice = ({ dept }) => {
               return (
                 <DepartmentNotify1
                   key={id}
+                  notice={notice}
                   title={notice.title}
                   attachments={notice.attachments}
                   important={notice.important}
                   link={notice.notice_link ? notice.notice_link : ""}
-                  date={notice.updatedAt}
+                  date={notice.openDate || notice.updatedAt || notice.timestamp}
                 />
               );
             }

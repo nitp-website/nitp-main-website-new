@@ -9,6 +9,7 @@ import "aos/dist/aos.css";
 import { FiDownload } from 'react-icons/fi';
 import { Calendar, MapPin, Download, ExternalLink, Star } from 'lucide-react';
 import { extractApiArray } from "@/lib/apiHelpers";
+import { NoticeBadge, NoticeTitle, parseNoticeLink } from "@/lib/noticeHelpers";
 
 
 // FormatDate component
@@ -43,13 +44,13 @@ const FormatDate = ({ time }) => {
 };
 
 // Noticecard Component
-const Noticecard = ({ detail, time, attachments, imp, link }) => (
+const Noticecard = ({ notice, detail, time, attachments, imp, link }) => (
   <div className="notice flex items-start gap-2 bg-transparent hover:bg-purple-50 rounded-md py-3 px-2 mr-2">
-    {imp && (
-      <Star className="h-3 w-3 mt-[6px] flex-shrink-0 text-yellow-500 fill-yellow-500" />
-    )}
+    <NoticeBadge notice={notice || { timestamp: time, important: imp }} className="mt-1" />
     <div className="flex-1">
-      <h3>{detail}</h3>
+      <h3>
+        <NoticeTitle title={detail} additionalTitle={notice?.additional_title} />
+      </h3>
       <p>
         <span className="text-neutral-400 text-xs">
           <FormatDate time={time} />
@@ -405,15 +406,13 @@ const Details = () => {
           ) : (
             homenotices.map((notice) => (
               <Noticecard
+                notice={notice}
                 detail={notice.title}
                 time={notice.timestamp}
                 key={notice.id}
                 attachments={notice.attachments}
                 imp={notice.important}
-                link={
-                  (notice.notice_link && JSON.parse(notice.notice_link).url) ||
-                  ""
-                }
+                link={parseNoticeLink(notice.notice_link)}
               />
             ))
           )}
@@ -535,15 +534,13 @@ const Details = () => {
           ) : (
             homeacad.map((notice) => (
               <Noticecard
+                notice={notice}
                 detail={notice.title}
                 time={notice.timestamp}
                 key={notice.id}
                 attachments={notice.attachments}
                 imp={notice.important}
-                link={
-                  (notice.notice_link && JSON.parse(notice.notice_link).url) ||
-                  ""
-                }
+                link={parseNoticeLink(notice.notice_link)}
               />
             ))
           )}

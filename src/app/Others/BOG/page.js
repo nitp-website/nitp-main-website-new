@@ -3,10 +3,16 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../components/Home/styles/Details.css";
 import { extractApiArray } from "@/lib/apiHelpers";
+import { NoticeBadge, NoticeTitle } from "@/lib/noticeHelpers";
 
-const Noticecard = ({ detail, time, attachments, imp, link }) => (
+const Noticecard = ({ notice, detail, time, attachments, imp, link }) => (
   <div className={`notice ${imp ? "important" : ""}`}>
-    <h3 className="text-black md:text-xs text-sm">{detail}</h3>
+    <div className="flex items-start gap-2 mb-1">
+      <NoticeBadge notice={notice || { timestamp: time, important: imp }} starType="fi" />
+      <h3 className="text-black md:text-xs text-sm flex-1">
+        <NoticeTitle title={detail} additionalTitle={notice?.additional_title} />
+      </h3>
+    </div>
     <p className="text-neutral-500 text-xs">{new Date(time).toLocaleDateString()}</p>
     {attachments && attachments.length > 0 && (
       <ul className=" text-xs text-red-800">
@@ -189,6 +195,7 @@ const Page = () => {
             ) : (
                 academics.map((notice) => (
                 <Noticecard
+                  notice={notice}
                   detail={notice.title}
                   time={notice.timestamp}
                   key={notice.id}
