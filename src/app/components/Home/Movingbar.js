@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Megaphone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Info } from 'lucide-react';
 import { extractApiArray } from "@/lib/apiHelpers";
+import { NoticeBadge, NoticeTitle } from "@/lib/noticeHelpers";
 
 const Movingbar = () => {
   const [importantNotices, setImportantNotices] = useState([]);
@@ -80,14 +81,15 @@ const Movingbar = () => {
                     {importantNotices.map((notice, index) => (
                       <React.Fragment key={`${repeatIndex}-${index}`}>
                         <a
-                          href={notice.notice_link && JSON.parse(notice.notice_link).url ? JSON.parse(notice.notice_link).url : notice?.attachments[0]?.url}
-                          className="inline-flex items-center mx-6 text-white hover:text-yellow-300 transition-colors group"
+                          href={notice.notice_link && JSON.parse(notice.notice_link).url ? JSON.parse(notice.notice_link).url : notice?.attachments?.[0]?.url}
+                          className="inline-flex items-center mx-6 text-white hover:text-yellow-300 transition-colors group gap-1.5"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Info className="h-4 w-4 text-yellow-300 mr-2 flex-shrink-0" />
+                          <NoticeBadge notice={notice} />
+                          <Info className="h-4 w-4 text-yellow-300 flex-shrink-0" />
                           <span className="font-medium text-sm group-hover:underline decoration-yellow-300">
-                            {notice.title}
+                            <NoticeTitle title={notice.title} additionalTitle={notice.additional_title} />
                           </span>
                         </a>
                         <div className="h-4 w-0.5 bg-white/30 rounded-full"></div>
