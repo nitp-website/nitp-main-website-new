@@ -12,6 +12,7 @@ const Sidebar = dynamic(() => import("./Sidebar"), {
 
 const FacultyInfo = () => {
   const [summary, setSummary] = useState(null);
+  const [workExperience, setWorkExperience] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -20,18 +21,30 @@ const FacultyInfo = () => {
 
   useEffect(() => {
     if (!facultyid) return;
-    fetch(`${baseUrl}/api/v2/faculty/profile?email=${facultyid}&section=summary`)
-      .then(r => r.json())
-      .then(data => {
-        if (data.error) throw new Error(data.error);
-        setSummary(data);
+    setLoading(true);
+
+    const summaryUrl = `${baseUrl}/api/v2/faculty/profile?email=${encodeURIComponent(facultyid)}&section=summary`;
+    const workUrl = `${baseUrl}/api/v2/faculty/profile?email=${encodeURIComponent(facultyid)}&section=work_experience`;
+
+    Promise.all([
+      fetch(summaryUrl).then(r => r.json()),
+      fetch(workUrl).then(r => r.json()).catch(() => ({}))
+    ])
+      .then(([summaryData, workData]) => {
+        if (summaryData.error) throw new Error(summaryData.error);
+        setSummary(summaryData);
+        if (workData && Array.isArray(workData.work_experience)) {
+          setWorkExperience(workData.work_experience);
+        } else if (summaryData.work_experience && Array.isArray(summaryData.work_experience)) {
+          setWorkExperience(summaryData.work_experience);
+        }
         setLoading(false);
       })
       .catch(err => {
         setError(err);
         setLoading(false);
       });
-  }, [facultyid]);
+  }, [facultyid, baseUrl]);
 
   if (loading) return <p className="text-black p-4">Loading...</p>;
   if (error) return <p className="text-black p-4">Error: {error.message}</p>;
@@ -39,10 +52,10 @@ const FacultyInfo = () => {
   return (
     <div className="md:w-[90%] mx-auto flex flex-col md:flex-row gap-2">
       <div className="w-full md:w-[35%]">
-        <Sidebar summary={summary} />
+        <Sidebar summary={summary} workExperience={workExperience} />
       </div>
       <div className="w-full md:w-[65%]">
-        <FacultyHeader summary={summary} email={facultyid} />
+        <FacultyHeader summary={summary} email={facultyid} workExperience={workExperience} />
       </div>
     </div>
   );
