@@ -134,13 +134,21 @@ const AllFaculty = () => {
     return <Loading />;
   }
 
-  // Organize filtered faculty into categories dynamically
-  const deans = filteredFacultyData.filter(faculty =>
+  // Separate active and retired faculty
+  const activeFacultyData = filteredFacultyData.filter(
+    (faculty) => String(faculty.is_retired) !== "1" && faculty.is_retired !== 1 && faculty.is_retired !== true
+  );
+  const retiredFacultyData = filteredFacultyData.filter(
+    (faculty) => String(faculty.is_retired) === "1" || faculty.is_retired === 1 || faculty.is_retired === true
+  );
+
+  // Organize filtered active faculty into categories dynamically
+  const deans = activeFacultyData.filter(faculty =>
     faculty.academic_responsibility &&
     faculty.academic_responsibility.toLowerCase().startsWith("dean")
   );
   const deanIds = new Set(deans.map(faculty => faculty.id));
-  const hods = filteredFacultyData.filter(faculty =>
+  const hods = activeFacultyData.filter(faculty =>
     !deanIds.has(faculty.id) &&
     [
       "Professor & HOD",
@@ -156,13 +164,13 @@ const AllFaculty = () => {
     ...deans.map(faculty => faculty.id),
     ...hods.map(faculty => faculty.id)
   ]);
-  const professors = filteredFacultyData.filter(faculty =>
+  const professors = activeFacultyData.filter(faculty =>
     !renderedIds.has(faculty.id) && faculty.designation === "Professor"
   );
-  const associateProfessors = filteredFacultyData.filter(faculty =>
+  const associateProfessors = activeFacultyData.filter(faculty =>
     !renderedIds.has(faculty.id) && faculty.designation === "Associate Professor"
   );
-  const assistantProfessors = filteredFacultyData.filter(faculty =>
+  const assistantProfessors = activeFacultyData.filter(faculty =>
     !renderedIds.has(faculty.id) && faculty.designation === "Assistant Professor"
   );
 
@@ -175,7 +183,7 @@ const AllFaculty = () => {
         <div className="flex flex-wrap justify-center gap-4 p-4 mt-2">
           {facultyList.map((faculty) => (
             <FacultyCard
-              key={faculty.id}
+              key={faculty.id || faculty.email}
               name={faculty.name}
               image={faculty.image}
               designation={faculty.designation}
@@ -217,6 +225,7 @@ const AllFaculty = () => {
       {renderFacultySection(professors, "Professor")}
       {renderFacultySection(associateProfessors, "Associate Professor")}
       {renderFacultySection(assistantProfessors, "Assistant Professor")}
+      {renderFacultySection(retiredFacultyData, "Retired Faculty")}
     </div>
   );
 };
