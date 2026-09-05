@@ -3,6 +3,10 @@ import { Download } from 'lucide-react';
 
 const ScholarshipTable = () => {
   const dataOdd = [
+     {
+      link: "https://drive.google.com/file/d/1rwVPbS_rOJfVaHpA5d05TVOE1itNAKUe/view?usp=sharing",
+      para: "NSP Scholarship: Extension of Application Dates for AY 2026–27",
+    },
     {
       link: "https://drive.google.com/file/d/1rgB5VXvVgerGbP8n_RwOFaKfAqhYgqX1/view?usp=drive_link",
       para: "National Fellowship and Scholarship for Higher Education of ST Students (AY 2026–27)",
