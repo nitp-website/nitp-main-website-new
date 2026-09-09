@@ -16,19 +16,36 @@ const fetchActiveDeptSet = async () => {
   if (cachedActiveDepts) return cachedActiveDepts;
   if (!fetchDeptsPromise) {
     const baseUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
-    fetchDeptsPromise = axios
-      .get(`${baseUrl}/api/staff2?type=all&limit=50`)
-      .then(({ data }) => {
-        const staffArr = Array.isArray(data?.data) ? data.data : Array.isArray(data) ? data : [];
-        const set = new Set(staffArr.map((s) => s.department?.toLowerCase().trim()).filter(Boolean));
+    fetchDeptsPromise = (async () => {
+      try {
+        let allStaff = [];
+        let page = 1;
+        let totalPages = 1;
+        do {
+          const { data } = await axios.get(
+            `${baseUrl}/api/staff2?type=all&page=${page}&limit=100`
+          );
+          if (data && Array.isArray(data.data)) {
+            allStaff.push(...data.data);
+            totalPages = data.totalPages || 1;
+          } else if (Array.isArray(data)) {
+            allStaff.push(...data);
+            totalPages = 1;
+          } else {
+            totalPages = 1;
+          }
+          page++;
+        } while (page <= totalPages);
+
+        const set = new Set(allStaff.map((s) => s.department?.toLowerCase().trim()).filter(Boolean));
         cachedActiveDepts = set;
         return set;
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error("Failed to fetch staff department codes:", err);
         fetchDeptsPromise = null;
         return new Set();
-      });
+      }
+    })();
   }
   return fetchDeptsPromise;
 };
@@ -63,7 +80,7 @@ export default function OfficeAdminLayout({ currentSection }) {
     };
   }, []);
 
-  // Use currentSection if it is in activeSections; otherwise default to first section with data
+  // Use currentSection if it is in activeSections (has data); otherwise fallback to first section with data
   const isValidCurrent = currentSection && activeSections.some((s) => s.id === currentSection.id);
   const activeSection = isValidCurrent ? currentSection : activeSections[0];
 

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import axios from "axios";
 import { IoIosArrowDown, IoIosArrowDropright } from "react-icons/io";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import "./styles/Navbar.css";
@@ -282,51 +283,61 @@ const BASE_NAV_ITEMS = [
             label: "Account Section",
             link: "/Administration/OfficeAdministration/AccountSection",
             iconImage: Person,
+            deptCode: "acc",
           },
           {
             label: "CCIS",
             link: "/Administration/OfficeAdministration/CCIS",
             iconImage: Person,
+            deptCode: "ccis",
           },
           {
             label: "EMU",
             link: "/Administration/OfficeAdministration/EMU",
             iconImage: Person,
+            deptCode: "emu",
           },
           {
             label: "ESU",
             link: "/Administration/OfficeAdministration/ESU",
             iconImage: Person,
+            deptCode: "esu",
           },
           {
             label: "Computer Center",
             link: "/Administration/OfficeAdministration/ComputerCenter",
             iconImage: Person,
+            deptCode: "cc",
           },
           {
             label: "Student Welfare",
             link: "/Administration/OfficeAdministration/StudentWelfare",
             iconImage: Person,
+            deptCode: "sw",
           },
           {
             label: "Faculty Welfare",
             link: "/Administration/OfficeAdministration/FacultyWelfare",
             iconImage: Person,
+            deptCode: "fac",
           },
           {
             label: "Academic Section",
             link: "/Administration/OfficeAdministration/AcademicSection",
             iconImage: Person,
+            deptCode: "acd",
           },
           {
             label: "Director Section",
             link: "/Administration/OfficeAdministration/DirectorSection",
             iconImage: Person,
+            deptCode: "dir",
           },
           {
             label: "Training and Placement Section",
             link: "/Administration/OfficeAdministration/TrainingAndPlacement",
             iconImage: Person,
+            deptCode: "tnp",
           },
         ],
       },
@@ -776,20 +787,82 @@ const CLUBS_CHILD_INDEX = BASE_NAV_ITEMS[STUDENTS_NAV_INDEX].children.findIndex(
   c => c._dynamicKey === "clubs"
 );
 
+let cachedActiveDepts = null;
+let fetchDeptsPromise = null;
+
+const fetchActiveDeptSet = async () => {
+  if (cachedActiveDepts) return cachedActiveDepts;
+  if (!fetchDeptsPromise) {
+    const baseUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
+    fetchDeptsPromise = (async () => {
+      try {
+        let allStaff = [];
+        let page = 1;
+        let totalPages = 1;
+        do {
+          const { data } = await axios.get(
+            `${baseUrl}/api/staff2?type=all&page=${page}&limit=100`
+          );
+          if (data && Array.isArray(data.data)) {
+            allStaff.push(...data.data);
+            totalPages = data.totalPages || 1;
+          } else if (Array.isArray(data)) {
+            allStaff.push(...data);
+            totalPages = 1;
+          } else {
+            totalPages = 1;
+          }
+          page++;
+        } while (page <= totalPages);
+
+        const set = new Set(allStaff.map((s) => s.department?.toLowerCase().trim()).filter(Boolean));
+        cachedActiveDepts = set;
+        return set;
+      } catch (err) {
+        console.error("Failed to fetch staff department codes:", err);
+        fetchDeptsPromise = null;
+        return new Set();
+      }
+    })();
+  }
+  return fetchDeptsPromise;
+};
+
 /**
  * Returns a deep copy of BASE_NAV_ITEMS with the clubs children injected,
- * and the internal _dynamicKey marker removed before render.
+ * and office administration children filtered by active backend department codes.
  */
-function buildNavItems(clubChildren) {
+function buildNavItems(clubChildren = [], activeOfficeDepts = null) {
   const items = BASE_NAV_ITEMS.map((item, i) => {
-    if (i !== STUDENTS_NAV_INDEX) return item;
+    let newItem = { ...item };
+    if (i === STUDENTS_NAV_INDEX && Array.isArray(item.children)) {
+      const newChildren = item.children.map((child, j) => {
+        if (j !== CLUBS_CHILD_INDEX) return child;
+        const { _dynamicKey, ...rest } = child;
+        return { ...rest, children: clubChildren.length > 0 ? clubChildren : undefined };
+      });
+      newItem.children = newChildren;
+    }
 
-    const newChildren = item.children.map((child, j) => {
-      if (j !== CLUBS_CHILD_INDEX) return child;
-      const { _dynamicKey, ...rest } = child;
-      return { ...rest, children: clubChildren.length > 0 ? clubChildren : undefined };
-    });
-    return { ...item, children: newChildren };
+    if (item.label === "Administration" && Array.isArray(newItem.children)) {
+      newItem.children = newItem.children.map((adminChild) => {
+        if (adminChild.label === "Office Administration" && Array.isArray(adminChild.children)) {
+          let officeChildren = adminChild.children;
+          if (activeOfficeDepts && activeOfficeDepts.size > 0) {
+            const filtered = officeChildren.filter(
+              (sec) => !sec.deptCode || activeOfficeDepts.has(sec.deptCode.toLowerCase())
+            );
+            if (filtered.length > 0) {
+              officeChildren = filtered;
+            }
+          }
+          return { ...adminChild, children: officeChildren };
+        }
+        return adminChild;
+      });
+    }
+
+    return newItem;
   });
   return items;
 }
@@ -858,6 +931,8 @@ export default function Navbar() {
     fixHindiInstituteName();
   }, []);
 
+  const currentClubsRef = useRef([]);
+
   useEffect(() => {  //getting all clubs data to be dynamically updated
     let mounted = false;
 
@@ -875,7 +950,8 @@ export default function Navbar() {
           };
         });
 
-        setNavItems(buildNavItems(clubChildren));
+        currentClubsRef.current = clubChildren;
+        setNavItems(buildNavItems(clubChildren, cachedActiveDepts));
       } catch (err) {
         if (process.env.NODE_ENV === "development") {
           console.warn("[Navbar] Could not load clubs:", err.message);
@@ -885,6 +961,16 @@ export default function Navbar() {
 
     fetchAndInjectClubs();
     return () => { mounted = true; };
+  }, []);
+
+  useEffect(() => {
+    let mounted = true;
+    fetchActiveDeptSet().then((deptsSet) => {
+      if (mounted && deptsSet && deptsSet.size > 0) {
+        setNavItems(buildNavItems(currentClubsRef.current, deptsSet));
+      }
+    });
+    return () => { mounted = false; };
   }, []);
 
   return (
