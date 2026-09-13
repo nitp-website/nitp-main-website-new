@@ -17,7 +17,14 @@ const FacultyList = ({url,branch}) => {
         const response = await fetch(apiEndpoint);
         const data = await response.json();
         const facultyArray = Array.isArray(data) ? data : (data.data || []);
-        const sortedData = facultyArray.sort((a, b) => a.name.localeCompare(b.name));
+        const activeFaculty = facultyArray.filter(
+          (f) =>
+            String(f.is_retired) !== "1" &&
+            f.is_retired !== 1 &&
+            f.is_retired !== true &&
+            String(f.is_retired).toLowerCase() !== "true"
+        );
+        const sortedData = activeFaculty.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
         setFacultyData(sortedData);
         console.log(sortedData);
         setLoading(false);
