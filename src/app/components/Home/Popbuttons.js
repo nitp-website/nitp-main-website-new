@@ -46,9 +46,9 @@ const Popbuttons = () => {
         <p className="headingp">RECRUITMENT</p>
       </Link>
 
-      <a href="https://alumini-nitp.vercel.app/" className="card card1" target="_blank" >
+      <a href="https://convocation.nitp.ac.in" className="card card1" target="_blank" >
           <FontAwesomeIcon icon={faGraduationCap} size="4x" className="mobileicondiv" color='#f7cece' />
-          <p className="headingp12 headingp1">ALUMNI</p>
+          <p className="headingp12 headingp1">Convocation</p>
         </a>
             
       {/* <Link href="/Institute/Magazine" className="card">
