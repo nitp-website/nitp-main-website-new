@@ -149,3 +149,55 @@ export function parseNoticeLink(link) {
   }
   return "";
 }
+
+/**
+ * Safely parse, filter out attachments without valid URLs, and deduplicate by URL.
+ */
+export function getValidAttachments(attachments) {
+  let list = attachments;
+  if (typeof list === "string") {
+    const trimmed = list.trim();
+    if (trimmed.startsWith("[") || trimmed.startsWith("{")) {
+      try {
+        list = JSON.parse(trimmed);
+      } catch (e) {
+        list = [];
+      }
+    } else {
+      list = [];
+    }
+  }
+
+  if (!Array.isArray(list)) {
+    if (list && typeof list === "object" && list.url) {
+      list = [list];
+    } else {
+      return [];
+    }
+  }
+
+  const seenUrls = new Set();
+  const validList = [];
+
+  for (const item of list) {
+    if (!item) continue;
+    const url = typeof item === "string" ? item.trim() : item.url ? String(item.url).trim() : "";
+    if (!url) continue;
+
+    const normalizeUrl = (u) => String(u).trim().replace(/\/+$/, "");
+    const normalized = normalizeUrl(url);
+
+    if (seenUrls.has(normalized)) continue;
+    seenUrls.add(normalized);
+
+    const caption = typeof item === "object" && item.caption ? String(item.caption).trim() : "";
+    validList.push({
+      ...(typeof item === "object" ? item : {}),
+      url,
+      caption,
+    });
+  }
+
+  return validList;
+}
+

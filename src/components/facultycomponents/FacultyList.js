@@ -35,15 +35,17 @@ const FacultyList = ({ url, branch }) => {
           "Temporary Faculty"
         ];
 
-        // Sorting the faculty data based on active status, designations, academic_responsibility, and name
-        const sortedData = data.sort((a, b) => {
-          const aRetired = String(a.is_retired) === "1" || a.is_retired === 1 || a.is_retired === true;
-          const bRetired = String(b.is_retired) === "1" || b.is_retired === 1 || b.is_retired === true;
+        const facultyArray = Array.isArray(data) ? data : [];
+        const activeFaculty = facultyArray.filter(
+          (f) =>
+            String(f.is_retired) !== "1" &&
+            f.is_retired !== 1 &&
+            f.is_retired !== true &&
+            String(f.is_retired).toLowerCase() !== "true"
+        );
 
-          // Retired faculty always comes last
-          if (!aRetired && bRetired) return -1;
-          if (aRetired && !bRetired) return 1;
-
+        // Sorting the active faculty data based on designations, academic_responsibility, and name
+        const sortedData = activeFaculty.sort((a, b) => {
           const aIsHoD = a.designation ? a.designation.includes("HoD") : false;
           const bIsHoD = b.designation ? b.designation.includes("HoD") : false;
 
@@ -89,9 +91,8 @@ const FacultyList = ({ url, branch }) => {
     fetchData();
   }, [branch]);
 
-  // Filter faculties that are not in the specified order
-  const others = facultyData.filter(
-    (faculty) => ![
+  const prioritizedDesignations = useMemo(
+    () => [
       "HoD & Professor",
       "HoD & Associate Professor",
       "HoD and Professor",
@@ -99,24 +100,20 @@ const FacultyList = ({ url, branch }) => {
       "Associate Professor",
       "Assistant Professor",
       "Registrar",
-      "Temporary Faculty"
-    ].includes(faculty.designation)
+      "Temporary Faculty",
+    ],
+    []
   );
 
-    // build ordered list used in original render
-  const prioritizedDesignations = [
-    "HoD & Professor",
-    "HoD & Associate Professor",
-    "HoD and Professor",
-    "Professor",
-    "Associate Professor",
-    "Assistant Professor",
-    "Registrar",
-    "Temporary Faculty",
-  ];
+  // Filter faculties that are in prioritized list vs others
+  const orderedList = useMemo(
+    () => facultyData.filter((faculty) => prioritizedDesignations.includes(faculty.designation)),
+    [facultyData, prioritizedDesignations]
+  );
 
-  const orderedList = facultyData.filter((faculty) =>
-    prioritizedDesignations.includes(faculty.designation)
+  const others = useMemo(
+    () => facultyData.filter((faculty) => !prioritizedDesignations.includes(faculty.designation)),
+    [facultyData, prioritizedDesignations]
   );
 
   // combined list preserves original grouping order: orderedList then others
@@ -124,19 +121,19 @@ const FacultyList = ({ url, branch }) => {
 
   // list of unique positions for the dropdown
   const uniquePositions = useMemo(() => {
-    const positions = new Set(facultyData.map(f => f.designation));
+    const positions = new Set(facultyData.map((f) => f.designation).filter(Boolean));
     return Array.from(positions);
   }, [facultyData]);
 
-  //The filteredList now handles both search and the position dropdown
+  // The filteredList handles search and position dropdown filtering
   const filteredList = useMemo(() => {
     let result = combinedList;
 
     // Apply position filter
     if (selectedPosition) {
-      result = result.filter(f => f.designation === selectedPosition);
+      result = result.filter((f) => f.designation === selectedPosition);
     }
-    
+
     const normalizedSearch = searchTerm.trim().toLowerCase();
     // Apply search term filter
     if (normalizedSearch) {
@@ -149,7 +146,12 @@ const FacultyList = ({ url, branch }) => {
         const nameParts = name.split(/\s+/).filter(Boolean);
 
         return tokens.every((token) => {
-          if (email.includes(token) || designation.includes(token) || academic.includes(token) || name.includes(token)) {
+          if (
+            email.includes(token) ||
+            designation.includes(token) ||
+            academic.includes(token) ||
+            name.includes(token)
+          ) {
             return true;
           }
           if (nameParts.some((p) => p.includes(token))) return true;
@@ -164,7 +166,6 @@ const FacultyList = ({ url, branch }) => {
     return result;
   }, [combinedList, searchTerm, selectedPosition]);
 
-
   if (loading) {
     return (
       <div className="text-center mt-10 text-lg text-gray-600 animate-pulse">
@@ -173,13 +174,9 @@ const FacultyList = ({ url, branch }) => {
     );
   }
 
-  // Sort "others" by name alphabetically
-  const sortedOthers = others.sort((a, b) => a.name.localeCompare(b.name));
-
-
   return (
     <div className="flex flex-col p-2">
-      {/*  Added a wrapper and the position dropdown */}
+      {/* Wrapper and position dropdown */}
       <div className="w-full flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
         <input
           aria-label="Search faculty by name, email or position"
@@ -196,13 +193,15 @@ const FacultyList = ({ url, branch }) => {
           className="w-full max-w-xs px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-red-500"
         >
           <option value="">All Positions</option>
-          {uniquePositions.map(pos => (
-            <option key={pos} value={pos}>{pos}</option>
+          {uniquePositions.map((pos) => (
+            <option key={pos} value={pos}>
+              {pos}
+            </option>
           ))}
         </select>
       </div>
 
-      {/* Simplified rendering logic to show filteredList directly */}
+      {/* Render filtered list directly */}
       <div className="flex flex-wrap justify-center gap-4 p-4">
         {filteredList.length > 0 ? (
           filteredList.map((faculty) => (
@@ -223,32 +222,9 @@ const FacultyList = ({ url, branch }) => {
               research_students={faculty.phd_candidates_count}
               profileLink={`/profile/${faculty.email}`}
             />
-
           ))
-          ) : (
-            <div className="text-center text-gray-600">No results found.</div>
-          )}
-
-        {/* Render other faculties not in the order list */}
-        {sortedOthers.length > 0 && (
-          <div className="flex flex-wrap justify-center gap-4 p-4 mt-8">
-            <h6 className="font-bold">Others</h6>
-            {sortedOthers.map((faculty) => (
-              <FacultyCard
-                key={faculty.id}
-                name={faculty.name}
-                image={faculty.image}
-                designation={faculty.designation}
-                department={faculty.department}
-                researchInterests={faculty.research_interest}
-                academic_responsibility={faculty.academic_responsibility}
-                email={faculty.email}
-                phone={faculty.ext_no}
-                profileLink={`/profile/${faculty.email}`}
-              />
-            ))}
-          </div>
-
+        ) : (
+          <div className="text-center text-gray-600">No results found.</div>
         )}
       </div>
     </div>

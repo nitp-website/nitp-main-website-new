@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { User, ShieldCheck } from "lucide-react";
+import { User, Users } from "lucide-react";
 import NewStaffcardDept from "../../../components/faculty/NewStaffcardDept";
 import FacultyCard from "@/components/facultycomponents/Facultycard";
 import { sortByDesignation } from "../../../../lib/designationOrder";
@@ -195,24 +195,21 @@ const ExamPeoplePage = () => {
         <div className="space-y-10 py-2">
             {/* Header */}
             <div className="border-b border-gray-200 pb-4">
-                <h1 className="text-2xl md:text-3xl font-bold text-red-900">People & Key Contacts</h1>
-                <p className="text-gray-600 text-sm md:text-base mt-1">
-                    Faculty leadership and staff members of the Examination Section.
-                </p>
+                <h1 className="text-3xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                        <Users className="text-red-800" size={22} />
+                        Exam Section Team
+                    </h1>
             </div>
 
-            {/* Faculty Section */}
-            {(loadingFaculty || facultyList.length > 0) && (
+            {/* Combined Team Section */}
+            {(loadingFaculty || loadingStaff || facultyList.length > 0 || staffList.length > 0) && (
                 <div>
-                    <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                        <ShieldCheck className="text-red-800" size={22} />
-                        Faculty Leadership & Members
-                    </h2>
+                    
 
-                    {loadingFaculty ? (
+                    {(loadingFaculty || loadingStaff) ? (
                         <div className="text-center py-10">
                             <div className="w-10 h-10 border-4 border-red-800 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
-                            <p className="text-gray-500 text-sm">Loading faculty directory...</p>
+                            <p className="text-gray-500 text-sm">Loading team directory...</p>
                         </div>
                     ) : (
                         <div className="flex flex-wrap justify-center md:justify-start gap-6 my-2 text-black">
@@ -237,26 +234,6 @@ const ExamPeoplePage = () => {
                                     gender={faculty.gender}
                                 />
                             ))}
-                        </div>
-                    )}
-                </div>
-            )}
-
-            {/* Staff Section */}
-            {(loadingStaff || staffList.length > 0) && (
-                <div>
-                    <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                        <User className="text-red-800" size={22} />
-                        Section Staff Members
-                    </h2>
-
-                    {loadingStaff ? (
-                        <div className="text-center py-10">
-                            <div className="w-10 h-10 border-4 border-red-800 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
-                            <p className="text-gray-500 text-sm">Loading staff directory...</p>
-                        </div>
-                    ) : (
-                        <div className="flex flex-wrap justify-center md:justify-start gap-6 my-2 text-black">
                             {staffList.map((staff) => (
                                 <NewStaffcardDept key={staff.id ?? staff.user_id ?? staff.email} staff={staff} showMoreInfo={false} />
                             ))}

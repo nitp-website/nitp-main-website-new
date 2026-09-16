@@ -9,8 +9,7 @@ import "aos/dist/aos.css";
 import { FiDownload } from 'react-icons/fi';
 import { Calendar, MapPin, Download, ExternalLink, Star } from 'lucide-react';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle, parseNoticeLink } from "@/lib/noticeHelpers";
-
+import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments } from "@/lib/noticeHelpers";
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -44,64 +43,74 @@ const FormatDate = ({ time }) => {
 };
 
 // Noticecard Component
-const Noticecard = ({ notice, detail, time, attachments, imp, link }) => (
-  <div className="notice flex items-start gap-2 bg-transparent hover:bg-purple-50 rounded-md py-3 px-2 mr-2">
-    <NoticeBadge notice={notice || { timestamp: time, important: imp }} className="mt-1" />
-    <div className="flex-1">
-      <h3>
-        <NoticeTitle title={detail} additionalTitle={notice?.additional_title} />
-      </h3>
-      <p>
-        <span className="text-neutral-400 text-xs">
-          <FormatDate time={time} />
-        </span>
-      </p>
-      {Array.isArray(attachments) && attachments.length > 0 && (
-        <ul className="text-xs">
-          {attachments.map((attachment, index) => (
-            <li key={index} className="mb-1">
-              {attachment.typeLink ? (
-                <a
-                  href={attachment.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-red-800 hover:text-red-900"
-                >
-                  <FiDownload className="inline-block text-red-800 hover:text-red-900" />
-                  <span className="text-red-800 hover:text-red-900">
-                    {attachment.caption || "View Notice"}
-                  </span>
-                </a>
-              ) : (
-                <a
-                  href={attachment.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-red-800 hover:text-red-900"
-                >
-                  <FiDownload className="inline-block text-red-800 hover:text-red-900" />
-                  <span className="text-red-800 hover:text-red-900">
-                    {attachment.caption || "View Notice"}
-                  </span>
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
-      )}
-      {link && (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-red-800 hover:text-red-900"
-        >
-          <span className="text-red-800 hover:text-red-900">View Notice</span>
-        </a>
-      )}
+const Noticecard = ({ notice, detail, time, attachments, imp, link }) => {
+  const parsedLink = link || parseNoticeLink(notice?.notice_link);
+  const validAttachments = getValidAttachments(attachments || notice?.attachments);
+  const hasAttachments = validAttachments.length > 0;
+  const normalizeUrl = (u) => (u ? String(u).trim().replace(/\/+$/, "") : "");
+
+  const isLinkInAttachments =
+    hasAttachments &&
+    parsedLink &&
+    validAttachments.some(
+      (att) => att?.url && normalizeUrl(att.url) === normalizeUrl(parsedLink)
+    );
+
+  const showLink = Boolean(parsedLink && !isLinkInAttachments);
+
+  return (
+    <div className="notice flex items-start gap-2 bg-transparent hover:bg-purple-50 rounded-md py-3 px-2 mr-2">
+      <NoticeBadge notice={notice || { timestamp: time, important: imp }} className="mt-1" />
+      <div className="flex-1">
+        <h3>
+          <NoticeTitle title={detail} additionalTitle={notice?.additional_title} />
+        </h3>
+        <p>
+          <span className="text-neutral-400 text-xs">
+            <FormatDate time={time} />
+          </span>
+        </p>
+        {hasAttachments && (
+          <ul className="text-xs">
+            {validAttachments.map((attachment, index) => {
+              const displayCaption =
+                attachment.caption ||
+                attachment.name ||
+                attachment.filename ||
+                (validAttachments.length > 1 ? `View Notice ${index + 1}` : "View Notice");
+
+              return (
+                <li key={index} className="mb-1">
+                  <a
+                    href={attachment.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-red-800 hover:text-red-900"
+                  >
+                    <FiDownload className="inline-block text-red-800 hover:text-red-900" />
+                    <span className="text-red-800 hover:text-red-900">
+                      {displayCaption}
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+        {showLink && (
+          <a
+            href={parsedLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-red-800 hover:text-red-900 inline-block mt-1"
+          >
+            <span className="text-red-800 hover:text-red-900">View Notice</span>
+          </a>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 // Eventcard Component
 const Eventcard = ({
