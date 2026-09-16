@@ -35,10 +35,17 @@ const FacultyList = ({ url, branch }) => {
           "Temporary Faculty"
         ];
 
-        // Sorting the faculty data based on the order of designations, academic_responsibility, and then by name
+        // Sorting the faculty data based on active status, designations, academic_responsibility, and name
         const sortedData = data.sort((a, b) => {
-          const aIsHoD = a.designation.includes("HoD");
-          const bIsHoD = b.designation.includes("HoD");
+          const aRetired = String(a.is_retired) === "1" || a.is_retired === 1 || a.is_retired === true;
+          const bRetired = String(b.is_retired) === "1" || b.is_retired === 1 || b.is_retired === true;
+
+          // Retired faculty always comes last
+          if (!aRetired && bRetired) return -1;
+          if (aRetired && !bRetired) return 1;
+
+          const aIsHoD = a.designation ? a.designation.includes("HoD") : false;
+          const bIsHoD = b.designation ? b.designation.includes("HoD") : false;
 
           // HoD always comes first, regardless of academic responsibility
           if (aIsHoD && !bIsHoD) {
@@ -65,7 +72,7 @@ const FacultyList = ({ url, branch }) => {
           
           // If designations are the same, sort by name alphabetically
           if (designationComparison === 0) {
-            return a.name.localeCompare(b.name);
+            return (a.name || "").localeCompare(b.name || "");
           }
           
           return designationComparison;

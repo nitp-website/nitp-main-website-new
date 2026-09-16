@@ -7,8 +7,8 @@ const Page = () => {
   const subtypeConfig = {
     'REGULAR TEACHING': { label: "Regular Teaching", icon: faChalkboardTeacher },
     'REGULAR NON-TEACHING': { label: "Regular Non-Teaching", icon: faUserTie },
-    'CONTRACTUAL/TEMPORARY FACULTY': { label: "Contractual / Temporary Faculty", icon: faPersonChalkboard },
-    'CONTRACTUAL/TEMPORARY NON-TEACHING': { label: "Contractual / Temporary Non-Teaching", icon: faUsersCog },
+    'CONTRACTUAL / TEMPORARY FACULTY': { label: "Contractual / Temporary Faculty", icon: faPersonChalkboard },
+    'CONTRACTUAL / TEMPORARY NON-TEACHING': { label: "Contractual / Temporary Non-Teaching", icon: faUsersCog },
     'JDRF/SRF': { label: "JRF / SRF", icon: faUserGraduate },
   };
 

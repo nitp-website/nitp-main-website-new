@@ -11,7 +11,7 @@ export default function Layout({ children }) {
     };
 
     return (
-        <div className="flex flex-col md:flex-row px-4 sm:px-8 md:px-12 lg:px-16 mt-6 md:mt-10 w-full mb-8">
+        <div className="flex gap-4 flex-col md:flex-row px-4 sm:px-8 md:px-12 lg:px-16 mt-6 md:mt-10 w-full mb-8">
             <button
                 className="md:hidden p-2 bg-gray-500 rounded-md mb-4 w-fit"
                 onClick={() => setIsOpen(!isOpen)}

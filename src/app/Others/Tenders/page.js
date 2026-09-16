@@ -2,10 +2,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { extractApiArray } from "@/lib/apiHelpers";
+import { NoticeBadge, NoticeTitle } from "@/lib/noticeHelpers";
 import "../../components/Home/styles/Details.css";
 import { FileText, Download, Calendar } from 'lucide-react';
 
-const Noticecard = ({ detail, time, attachments, notice_link }) => {
+const Noticecard = ({ notice, detail, time, attachments, notice_link }) => {
   // Parse notice_link if it exists
   const parsedNoticeLink = notice_link ? JSON.parse(notice_link) : null;
 
@@ -20,7 +21,12 @@ const Noticecard = ({ detail, time, attachments, notice_link }) => {
       <div className="flex items-start gap-3">
         <FileText className="w-5 h-5 text-red-800 mt-1 flex-shrink-0" />
         <div className="flex-1">
-          <h3 className="text-gray-800 text-base mb-2 font-medium">{detail}</h3>
+          <div className="flex items-start gap-2 mb-2">
+            <NoticeBadge notice={notice || { openDate: time }} />
+            <h3 className="text-gray-800 text-base font-medium flex-1">
+              <NoticeTitle title={detail} additionalTitle={notice?.additional_title} />
+            </h3>
+          </div>
 
           <div className="flex items-center gap-2 mb-3 text-gray-500 text-sm">
             <Calendar className="w-4 h-4" />
@@ -276,6 +282,7 @@ const Page = () => {
                 const { title, openDate, id, attachments, notice_link } = notice;
                 return (
                   <Noticecard
+                    notice={notice}
                     detail={title}
                     time={openDate}
                     key={id}

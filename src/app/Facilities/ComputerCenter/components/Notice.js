@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { NoticeBadge, NoticeTitle } from "@/lib/noticeHelpers";
 import "./Details.css";
 
 const dummyNotices = [
@@ -33,7 +34,7 @@ const dummyNotices = [
   },
 ];
 
-const Noticecard = ({ detail, time, attachments, imp, link }) => (
+const Noticecard = ({ notice, detail, time, attachments, imp, link }) => (
   <div
     className={`rounded-xl shadow-md px-6 py-5 mb-5 border-l-4 ${
       imp
@@ -41,7 +42,12 @@ const Noticecard = ({ detail, time, attachments, imp, link }) => (
         : "border-gray-200 bg-white"
     }`}
   >
-    <h3 className="font-semibold text-red-900 text-base mb-1">{detail}</h3>
+    <div className="flex items-start gap-2 mb-1">
+      <NoticeBadge notice={notice || { timestamp: time, important: imp }} />
+      <h3 className="font-semibold text-red-900 text-base flex-1">
+        <NoticeTitle title={detail} additionalTitle={notice?.additional_title} />
+      </h3>
+    </div>
     {time !== 0 && (
       <p className="text-gray-500 text-xs mb-2">
         {new Date(time).toLocaleDateString()}
@@ -244,6 +250,7 @@ const Notice = () => {
           academics.map((notice) => (
             <Noticecard
               key={notice.id}
+              notice={notice}
               detail={notice.title}
               time={notice.timestamp}
               attachments={notice.attachments}

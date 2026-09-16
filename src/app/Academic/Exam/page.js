@@ -267,18 +267,12 @@ export default function ExamPage() {
                                 <ul className="space-y-1.5 text-sm">
                                     <li className="flex items-center gap-2">
                                         <span className="font-semibold text-gray-700">a.</span>
-                                        <a href="mailto:Exam.help@nitp.ac.in" className="text-red-800 font-medium hover:underline">
-                                            Exam.help@nitp.ac.in
-                                        </a>
-                                    </li>
-                                    <li className="flex items-center gap-2">
-                                        <span className="font-semibold text-gray-700">b.</span>
                                         <a href="mailto:examoffice@nitp.ac.in" className="text-red-800 font-medium hover:underline">
                                             examoffice@nitp.ac.in
                                         </a>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <span className="font-semibold text-gray-700">c.</span>
+                                        <span className="font-semibold text-gray-700">b.</span>
                                         <a href="mailto:bobby@nitp.ac.in" className="text-red-800 font-medium hover:underline">
                                             bobby@nitp.ac.in
                                         </a>

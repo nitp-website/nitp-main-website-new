@@ -66,7 +66,6 @@ import { MdEvent } from "react-icons/md";
 import { RxActivityLog } from "react-icons/rx";
 import { IoIosPeople } from "react-icons/io";
 import { IoDocumentText } from "react-icons/io5";
-import { TiContacts } from "react-icons/ti";
 import { SiGoogleforms } from "react-icons/si";
 
 const Sidebar = () => {
@@ -160,18 +159,6 @@ const Sidebar = () => {
             >
               <SiGoogleforms className="text-lg" />
               Official Forms
-            </button>
-          </li>
-          <li>
-            <button
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-base ${baseRoute === '/people'
-                ? 'bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg'
-                : 'hover:bg-red-100 text-red-900'
-                }`}
-              onClick={() => handleNavigation(`${basePath}/Contacts`)}
-            >
-              <TiContacts className="text-lg" />
-              Contacts
             </button>
           </li>
         </ul>

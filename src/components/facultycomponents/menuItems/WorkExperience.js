@@ -1,17 +1,26 @@
 import React from "react";
-import { FaChalkboardTeacher, FaCalendarAlt, FaUniversity } from "react-icons/fa";
+import { FaChalkboardTeacher, FaCalendarAlt, FaUniversity, FaBriefcase } from "react-icons/fa";
+import { getExperience } from "../../../utils/experienceCalculator";
 
 const WorkExperience = ({ data }) => {
   // Sort experiences by start date (latest first)
-  const sortedData = [...data].sort(
-    (a, b) => new Date(b.start_date) - new Date(a.start_date)
-  );
+  const sortedData = Array.isArray(data) ? [...data].sort(
+    (a, b) => new Date(b.start_date || b.start) - new Date(a.start_date || a.start)
+  ) : [];
+
+  const totalExperience = getExperience(null, data);
 
   return (
     <div className="p-6 border border-purple-600 rounded-lg text-black bg-purple-100 shadow-lg">
       <h2 className="text-xl font-bold text-purple-800 border-b-2 border-purple-500 pb-2 mb-4">
         Work Experience
       </h2>
+      {totalExperience && (
+        <div className="mb-4 p-3 bg-purple-200 border border-purple-300 rounded-md text-purple-950 font-semibold text-sm flex items-center gap-2 shadow-sm">
+          <FaBriefcase className="text-purple-800 w-4 h-4 shrink-0" />
+          <span>Total Calculated Experience: {totalExperience}</span>
+        </div>
+      )}
       <ul className="space-y-4">
         {sortedData.map((experience, index) => {
           const startDate = new Date(experience.start_date).toLocaleDateString();

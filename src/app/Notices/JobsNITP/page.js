@@ -4,15 +4,18 @@ import React, { useEffect, useState } from "react";
 import "../../components/Home/styles/Details.css";
 import { Briefcase, Calendar, Download, ExternalLink, Star } from "lucide-react";
 import { extractApiArray } from "@/lib/apiHelpers";
+import { NoticeBadge, NoticeTitle } from "@/lib/noticeHelpers";
 
-const Noticecard = ({ detail, time, attachments, imp, link }) => (
+const Noticecard = ({ notice, detail, time, attachments, imp, link }) => (
   <div className="notice bg-white rounded-lg p-4 mb-4 shadow-sm hover:shadow-md transition-all border border-gray-100">
     <div className="flex items-start gap-3">
       <Briefcase className="w-5 h-5 text-red-800 mt-1 flex-shrink-0" />
       <div className="flex-1">
         <div className="flex items-start gap-2">
-          {imp && <Star className="h-4 w-4 mt-1 flex-shrink-0 text-yellow-500 fill-yellow-500" />}
-          <h3 className="text-gray-800 text-base font-medium flex-1">{detail}</h3>
+          <NoticeBadge notice={notice || { timestamp: time, important: imp }} />
+          <h3 className="text-gray-800 text-base font-medium flex-1">
+            <NoticeTitle title={detail} additionalTitle={notice?.additional_title} />
+          </h3>
         </div>
 
         <div className="flex items-center gap-2 my-3 text-gray-500 text-sm">
@@ -213,6 +216,7 @@ const Page = () => {
                   jobs.map((notice) => (
                     <Noticecard
                       key={notice.id}
+                      notice={notice}
                       detail={notice.title}
                       time={notice.timestamp}
                       attachments={notice.attachments}

@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FiDownload, FiStar } from 'react-icons/fi';
 import { extractApiArray } from "@/lib/apiHelpers";
+import { NoticeBadge, NoticeTitle } from "@/lib/noticeHelpers";
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -35,13 +36,13 @@ const FormatDate = ({ time }) => {
   return <>{formattedDate}</>;
 };
 
-const Noticecard = ({ detail, time, attachments, imp, link }) => (
+const Noticecard = ({ notice, detail, time, attachments, imp, link }) => (
   <div className="notice flex items-start gap-2 p-4 border-b border-gray-100 hover:bg-red-50 transition-colors">
-    {imp && (
-      <FiStar className="h-3 w-3 mt-[6px] flex-shrink-0 text-red-500 fill-red-500" />
-    )}
+    <NoticeBadge notice={notice || { timestamp: time, important: imp }} starType="fi" className="mt-[6px]" />
     <div className="flex-1">
-      <h3 className="text-black md:text-xs text-sm">{detail}</h3>
+      <h3 className="text-black md:text-xs text-sm">
+        <NoticeTitle title={detail} additionalTitle={notice?.additional_title} />
+      </h3>
       <p>
         <span className="text-neutral-400 text-xs">
           <FormatDate time={time} />
@@ -172,6 +173,7 @@ const Page = () => {
             ) : (
               academics.map((notice) => (
                 <Noticecard
+                  notice={notice}
                   detail={notice.title}
                   time={notice.timestamp}
                   key={notice.id}

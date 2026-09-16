@@ -3,13 +3,19 @@ import React, { useState, useEffect } from "react";
 import QRCode from "qrcode";
 import { IoMdCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
+import { FaBriefcase } from "react-icons/fa";
 import FacultyDropdown from "./FacultyDropdown";
+import { getExperience } from "../../../utils/experienceCalculator";
 
-const FacultyHeader = ({ summary, email, Data }) => {
+const FacultyHeader = ({ summary, email, Data, workExperience }) => {
   const facultyData = summary || Data || {};
   const counts = facultyData.counts || {};
   const { profile } = facultyData;
   const { name, designation, cv, department, ext_no, academic_responsibility, email: profileEmail } = profile || {};
+
+  const joiningDate = profile?.joining_date || profile?.date_of_joining || profile?.date_of_joining_nitp || facultyData?.joining_date || facultyData?.date_of_joining;
+  const workExpList = workExperience || facultyData?.work_experience || [];
+  const experience = getExperience(joiningDate, workExpList);
 
   const [qrCode, setQrCode] = useState("");
   const [error, setError] = useState(null);
@@ -62,6 +68,12 @@ const FacultyHeader = ({ summary, email, Data }) => {
               <p className="flex items-center">
                 <IoMdCall className="inline-block mt-2" size={25} />:{" "}
                 <a href={`tel:${ext_no}`}>{ext_no}</a>
+              </p>
+            )}
+            {experience && (
+              <p className="flex items-center gap-2 mt-3 px-3 py-1.5 bg-red-50 text-red-900 border border-red-200 rounded-md w-fit text-sm font-semibold shadow-sm">
+                <FaBriefcase className="text-red-700 shrink-0" size={16} />
+                <span>Experience: {experience}</span>
               </p>
             )}
           </div>

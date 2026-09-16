@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState, Suspense } from "react";
 import { ExternalLink, Star, FileText, ArrowLeft } from "lucide-react";
 import { extractApiArray } from "@/lib/apiHelpers";
+import { NoticeBadge, NoticeTitle } from "@/lib/noticeHelpers";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
@@ -154,8 +155,10 @@ const PositionsContent = () => {
                         <tr key={notice.id} className={`border-b border-gray-200 hover:bg-gray-100 transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-[#fafafa]'}`}>
                           <td className="py-5 px-6 align-middle">
                             <div className="flex items-center gap-3">
-                              {notice.important === 1 && <Star className="h-4 w-4 flex-shrink-0 text-yellow-500 fill-yellow-500" />}
-                              <h3 className="text-gray-800 text-sm font-medium leading-relaxed">{notice.title}</h3>
+                              <NoticeBadge notice={notice} />
+                              <h3 className="text-gray-800 text-sm font-medium leading-relaxed">
+                                <NoticeTitle title={notice.title} additionalTitle={notice.additional_title} />
+                              </h3>
                             </div>
                           </td>
                           <td className="py-5 px-6 align-middle border-l border-gray-200">

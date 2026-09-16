@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { FiClock, FiDownload, FiStar } from 'react-icons/fi';
+import { NoticeBadge, NoticeTitle, parseNoticeLink } from "@/lib/noticeHelpers";
 
 function DepartmentNotify1(props) {
     const timestamp = props.date;
-    const link = props.link ? JSON.parse(props.link).url : props.attachments?.[0]?.url || "";
+    const link = parseNoticeLink(props.link) || props.attachments?.[0]?.url || "";
+    const noticeObj = props.notice || { openDate: props.date, timestamp: props.date, important: props.important };
     const color = ["yellow", "red-600"];
     const [textCol, settextCol] = useState("red-600");
     let flag = 0;
@@ -34,12 +36,10 @@ function DepartmentNotify1(props) {
     const formattedDate = formatDate(props.timestamp);
 
     const NoticeContent = () => (
-        <div className={`flex items-start ${props.important === 1 ? 'relative' : ''}`}>
-            {props.important === 1 && (
-                <div className="absolute -left-6 top-0 flex">
-                    <FiStar className={`text-${textCol} fill-current w-4 h-4`} />
-                </div>
-            )}
+        <div className="flex items-start gap-2 relative">
+            <div className="flex items-center mt-1">
+                <NoticeBadge notice={noticeObj} starType="fi" />
+            </div>
             <div className="flex-1">
                 <span className="text-sm text-gray-500">
                     {new Date(Number(timestamp)).toLocaleDateString("en-GB", {
@@ -50,7 +50,7 @@ function DepartmentNotify1(props) {
                     })}
                 </span>
                 <div className="font-medium text-[15px] mb-1">
-                    {props.title}
+                    <NoticeTitle title={props.title} additionalTitle={props.notice?.additional_title || props.additional_title} />
                 </div>
                 {formattedDate && (
                     <div className="text-xs text-gray-500 mb-1 flex items-center">

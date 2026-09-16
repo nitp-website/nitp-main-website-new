@@ -4,11 +4,66 @@ import {
   ChevronDown,
   ChevronRight,
   Menu,
+  Scroll,
 } from "lucide-react";
+
+const deptToBranch = {
+  CSE: "cse",
+  ECE: "ece",
+  EE: "ee",
+  ME: "me",
+  CE: "ce",
+  Archi: "arch",
+  Chem: "che",
+  Humanities: "hss",
+  Math: "maths",
+  Mechatronics: "mae",
+  Phy: "phy",
+  Material: "mse",
+};
 
 const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hasRetiredFaculty, setHasRetiredFaculty] = useState(false);
+
+  useEffect(() => {
+    if (!dept) return;
+    const branch = deptToBranch[dept] || dept.toLowerCase();
+    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/v2/faculty?type=${branch}`;
+
+    fetch(apiEndpoint)
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          const hasRetired = data.some(
+            (f) => String(f.is_retired) === "1" || f.is_retired === 1 || f.is_retired === true
+          );
+          setHasRetiredFaculty(hasRetired);
+        }
+      })
+      .catch((err) => console.error("Error checking retired faculty:", err));
+  }, [dept]);
+
+  const itemsToRender = (navItems || []).map((item) => {
+    if (item.name === "People" && item.dropdown && hasRetiredFaculty) {
+      const exists = item.dropdown.some((sub) => sub.name === "Retired Faculties" || sub.name === "Retired Faculty");
+      if (!exists) {
+        return {
+          ...item,
+          dropdown: [
+            ...item.dropdown,
+            {
+              name: "Retired Faculties",
+              url: `/Department/${dept}/retiredFaculty`,
+              icon: item.dropdown[0]?.icon || <Scroll size={18} />,
+            },
+          ],
+        };
+      }
+    }
+    return item;
+  });
 
   const toggleSubmenu = (title) => {
     setOpenSubmenu(openSubmenu === title ? null : title);
@@ -30,7 +85,7 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
       <div className="hidden md:block sticky top-20">
         <nav className="bg-white rounded-lg shadow-md p-4">
           <ul className="space-y-1">
-            {navItems.map((item, index) => (
+            {itemsToRender.map((item, index) => (
               <li key={item.name + index}>
                 {item.dropdown ? (
                   <div>
@@ -124,7 +179,7 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
         >
           <nav className="overflow-y-auto max-h-[70vh] p-3">
             <ul className="space-y-1">
-              {navItems.map((item, index) => (
+              {itemsToRender.map((item, index) => (
                 <li key={item.name + index}>
                   {item.dropdown ? (
                     <div className="border-b border-gray-100 pb-2 mb-2">
