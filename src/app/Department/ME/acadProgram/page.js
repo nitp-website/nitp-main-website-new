@@ -19,8 +19,9 @@ const programs = [
     duration: "4 Years",
     description:
       "The admission to the 4-year B. Tech. (Mechanical Engineering) is through prestigious IIT-JEE (Main). The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
-    syllabus:
-      "https://drive.google.com/file/d/1piLoR0pYQAL-VMKdYkTI3X6RrkYhscTS/view?usp=drive_link",
+    syllabusbtn:
+      "/Department/ME/syllabus/btech",
+    courseStructurebtn: "https://drive.google.com/file/d/1piLoR0pYQAL-VMKdYkTI3X6RrkYhscTS/view?usp=drive_link"
   },
   {
     title:
@@ -29,8 +30,9 @@ const programs = [
     duration: "5 Years",
     description:
       "The admission to the 5-year B.Tech and M.Tech Dual Degree (Mechanical Engineering with Specialization in Manufacturing and Industrial Engineering) is through prestigious IIT-JEE (Main). The programme includes a set of core courses together with few electives so that the students can specialize their interests. Following are the course structure and syllabus.",
-    syllabus:
-      "https://drive.google.com/file/d/1izCLj2wujTuezPOiHNJkoozMku_NMFlh/view?usp=drive_link",
+    syllabusbtn:
+      "/Department/ME/syllabus/dual",
+    courseStructurebtn: "https://drive.google.com/file/d/1izCLj2wujTuezPOiHNJkoozMku_NMFlh/view?usp=drive_link"
   },
   {
     title: "M.Tech in Mechanical Engineering with specialization in Design Engineering",
