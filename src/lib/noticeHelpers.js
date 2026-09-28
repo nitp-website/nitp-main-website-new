@@ -43,9 +43,21 @@ export function getNoticeStartDate(noticeOrDate) {
 }
 
 /**
- * Check if a notice is "NEW" (within 15 days starting from its start date).
+ * Check if a notice is "NEW".
+ * If notice has is_new === 1 (or 1 as number/string/boolean), it is marked as NEW.
+ * If is_new is 0 (or null/undefined), display is based on date (within 15 days of start date).
  */
 export function isNoticeNew(noticeOrDate) {
+  if (!noticeOrDate) return false;
+
+  // Check if notice has is_new explicitly set
+  if (typeof noticeOrDate === "object") {
+    const isNewFlag = noticeOrDate.is_new;
+    if (isNewFlag === 1 || isNewFlag === "1" || isNewFlag === true) {
+      return true;
+    }
+  }
+
   const startTs = getNoticeStartDate(noticeOrDate);
   if (!startTs) return false;
 
@@ -74,7 +86,7 @@ export const NoticeTitle = ({ title, additionalTitle, className = "" }) => {
 };
 
 /**
- * Component to render blinking NEW badge if notice is within 15 days,
+ * Component to render blinking NEW badge if notice is marked new or within 15 days,
  * or Star icon if older than 15 days and marked important.
  */
 export const NoticeBadge = ({
@@ -83,13 +95,22 @@ export const NoticeBadge = ({
   timestamp,
   important,
   imp,
+  is_new,
   starType = "lucide",
   className = "",
 }) => {
   const noticeObj =
     typeof notice === "object" && notice !== null
-      ? notice
-      : { openDate, timestamp, important: important ?? (imp ? 1 : 0) };
+      ? {
+          ...notice,
+          ...(is_new !== undefined ? { is_new } : {}),
+        }
+      : {
+          openDate,
+          timestamp,
+          important: important ?? (imp ? 1 : 0),
+          is_new,
+        };
 
   const isNew = isNoticeNew(noticeObj);
   const isImp =

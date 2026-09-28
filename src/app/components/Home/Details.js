@@ -9,7 +9,7 @@ import "aos/dist/aos.css";
 import { FiDownload } from 'react-icons/fi';
 import { Calendar, MapPin, Download, ExternalLink, Star } from 'lucide-react';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments } from "@/lib/noticeHelpers";
+import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments, getNoticeStartDate } from "@/lib/noticeHelpers";
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -250,14 +250,42 @@ const Details = () => {
 
     const fetchNotices = async () => {
       try {
-        const noticesUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=active`;
-        const response = await axios.get(noticesUrl);
-        const noticesData = extractApiArray(response);
-        const sortedNotices = noticesData
-          .filter((notice) => notice.isVisible === 1)
-          .sort((a, b) => b.important - a.important);
+        const base = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+        const urls = [
+          `${base}/api/notice?type=active`,
+          `${base}/api/notice?type=job`,
+          `${base}/api/notice?type=facultystaffjob`,
+        ];
+
+        const responses = await Promise.allSettled(urls.map((url) => axios.get(url)));
+        const combined = [];
+        responses.forEach((res) => {
+          if (res.status === "fulfilled") {
+            const arr = extractApiArray(res.value);
+            if (Array.isArray(arr)) combined.push(...arr);
+          }
+        });
+
+        // Deduplicate notices by id
+        const byId = new Map();
+        combined.forEach((notice) => {
+          if (notice && (notice.id !== undefined && notice.id !== null)) {
+            byId.set(String(notice.id), notice);
+          }
+        });
+
+        const sortedNotices = Array.from(byId.values())
+          .filter((notice) => notice.isVisible === 1 || notice.isVisible === undefined)
+          .sort((a, b) => {
+            const impA = a.important === 1 || a.important === true ? 1 : 0;
+            const impB = b.important === 1 || b.important === true ? 1 : 0;
+            if (impB !== impA) return impB - impA;
+            const timeA = getNoticeStartDate(a) || 0;
+            const timeB = getNoticeStartDate(b) || 0;
+            return timeB - timeA;
+          });
+
         let data = sortedNotices.slice(0, 21);
-        // console.log(data)
         setnoticies(data);
         setNotices(sortedNotices);
       } catch (e) {
@@ -417,7 +445,7 @@ const Details = () => {
               <Noticecard
                 notice={notice}
                 detail={notice.title}
-                time={notice.timestamp}
+                time={notice.timestamp || notice.openDate}
                 key={notice.id}
                 attachments={notice.attachments}
                 imp={notice.important}

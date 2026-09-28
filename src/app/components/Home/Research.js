@@ -282,20 +282,47 @@ function ResearchContent() {
         const publications = rawPubs.map(normalizePublication).filter(Boolean);
         const projects = rawProjects.map(normalizeProject).filter(Boolean);
 
-        // 2. STATS CALCULATION
-        const counts = publications.reduce(
-          (acc, pub) => {
-            if (pub?.conference_name) acc.conferences += 1;
-            if (pub?.publisher || pub?.isbn || pub?.type === "book") acc.books += 1;
-            if (pub?.journal_name || pub?.type === "journal") acc.articles += 1;
-            return acc;
-          },
-          { books: 605, conferences: 2622, articles: 5188 }
-        );
+        // 2. STATS CALCULATION (From backend API stats)
+        const apiStats = pubRes?.data?.stats;
+
+        let booksCount = 0;
+        let conferencesCount = 0;
+        let journalsCount = 0;
+        let projectsCount = 0;
+
+        if (apiStats) {
+          journalsCount = Number(apiStats.journals) || 0;
+          conferencesCount = Number(apiStats.conferences) || 0;
+          const bookChapters = Number(apiStats.book_chapters) || 0;
+          const textBooks = Number(apiStats.textbooks) || 0;
+          booksCount = (bookChapters + textBooks) || Number(apiStats.books) || 0;
+          projectsCount =
+            Number(apiStats.projects) ||
+            (Number(apiStats.sponsored_projects) || 0) + (Number(apiStats.consultancy_projects) || 0) ||
+            Number(projCountRes?.data?.projectCount) ||
+            0;
+        } else {
+          // Fallback calculation if stats object is not provided by backend
+          const counts = publications.reduce(
+            (acc, pub) => {
+              if (pub?.conference_name) acc.conferences += 1;
+              if (pub?.publisher || pub?.isbn || pub?.type === "book") acc.books += 1;
+              if (pub?.journal_name || pub?.type === "journal") acc.articles += 1;
+              return acc;
+            },
+            { books: 605, conferences: 2622, articles: 5188 }
+          );
+          booksCount = counts.books;
+          conferencesCount = counts.conferences;
+          journalsCount = counts.articles;
+          projectsCount = Number(projCountRes?.data?.projectCount) || 0;
+        }
 
         setStats({
-          ...counts,
-          projectCount: Number(projCountRes?.data?.projectCount) || 0,
+          books: booksCount,
+          conferences: conferencesCount,
+          articles: journalsCount,
+          projectCount: projectsCount,
           patentCount: Number(patCountRes?.data?.patentCount) || 0,
         });
 
