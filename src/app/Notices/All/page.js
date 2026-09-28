@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FiDownload, FiStar } from 'react-icons/fi';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle } from "@/lib/noticeHelpers";
+import { NoticeBadge, NoticeTitle, getNoticeStartDate } from "@/lib/noticeHelpers";
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -103,9 +103,41 @@ const Page = () => {
   useEffect(() => {
     const fetchAcademics = async () => {
       try {
-        const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=active`;
-        const response = await axios.get(academicsUrl);
-        setAcademics(extractApiArray(response).filter((notice) => notice.isVisible === 1));
+        const base = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+        const urls = [
+          `${base}/api/notice?type=active`,
+          `${base}/api/notice?type=job`,
+          `${base}/api/notice?type=facultystaffjob`,
+        ];
+
+        const responses = await Promise.allSettled(urls.map((url) => axios.get(url)));
+        const combined = [];
+        responses.forEach((res) => {
+          if (res.status === "fulfilled") {
+            const arr = extractApiArray(res.value);
+            if (Array.isArray(arr)) combined.push(...arr);
+          }
+        });
+
+        const byId = new Map();
+        combined.forEach((notice) => {
+          if (notice && (notice.id !== undefined && notice.id !== null)) {
+            byId.set(String(notice.id), notice);
+          }
+        });
+
+        const sorted = Array.from(byId.values())
+          .filter((notice) => notice.isVisible === 1 || notice.isVisible === undefined)
+          .sort((a, b) => {
+            const impA = a.important === 1 || a.important === true ? 1 : 0;
+            const impB = b.important === 1 || b.important === true ? 1 : 0;
+            if (impB !== impA) return impB - impA;
+            const timeA = getNoticeStartDate(a) || 0;
+            const timeB = getNoticeStartDate(b) || 0;
+            return timeB - timeA;
+          });
+
+        setAcademics(sorted);
         setIsLoading(false);
       } catch (e) {
         console.error("Error fetching notices:", e);
@@ -175,11 +207,11 @@ const Page = () => {
                 <Noticecard
                   notice={notice}
                   detail={notice.title}
-                  time={notice.timestamp}
+                  time={notice.timestamp || notice.openDate}
                   key={notice.id}
                   attachments={notice.attachments}
                   imp={notice.important}
-                  link={notice.notice_link && JSON.parse(notice.notice_link).url}
+                  link={notice.notice_link && (typeof notice.notice_link === "string" && notice.notice_link.startsWith("{") ? JSON.parse(notice.notice_link).url : notice.notice_link)}
                 />
               ))
             )}

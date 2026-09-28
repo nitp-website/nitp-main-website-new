@@ -15,10 +15,34 @@ const Movingbar = () => {
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const noticesUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=active`;
-        const noticesResponse = await axios.get(noticesUrl);
-        const noticesData = extractApiArray(noticesResponse);
-        const allNotices = noticesData.filter(notice => notice.isVisible === 1 && notice.important);
+        const base = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+        const urls = [
+          `${base}/api/notice?type=active`,
+          `${base}/api/notice?type=job`,
+          `${base}/api/notice?type=facultystaffjob`,
+        ];
+
+        const responses = await Promise.allSettled(urls.map((url) => axios.get(url)));
+        const combined = [];
+        responses.forEach((res) => {
+          if (res.status === "fulfilled") {
+            const arr = extractApiArray(res.value);
+            if (Array.isArray(arr)) combined.push(...arr);
+          }
+        });
+
+        const byId = new Map();
+        combined.forEach((notice) => {
+          if (notice && (notice.id !== undefined && notice.id !== null)) {
+            byId.set(String(notice.id), notice);
+          }
+        });
+
+        const allNotices = Array.from(byId.values()).filter(
+          (notice) =>
+            (notice.isVisible === 1 || notice.isVisible === undefined) &&
+            (notice.important === 1 || notice.important === true)
+        );
         setImportantNotices(allNotices);
         console.info("Fetched important notices:", allNotices);
       } catch (e) {
