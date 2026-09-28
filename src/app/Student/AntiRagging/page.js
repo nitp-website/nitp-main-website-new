@@ -2,6 +2,8 @@ import React from 'react';
 import { Download } from 'lucide-react';
 
 const scholarships = [
+   {name: "Anti Ragging Committee for Ashok Rajpath Campus 2026-27", link: "https://drive.google.com/file/d/18ElAE4wRm2J2XJHIqwpaDtJqrhV1zFic/view?usp=sharing"},
+   {name: "Anti Ragging Committee for Bihta Campus 2026-27", link: "https://drive.google.com/file/d/1_5cQtV0vfxkSAQZ9p0haHwKkSQtzh6Zj/view?usp=sharing"},
    {name: "Anti Ragging Squad 2026-27", link: "https://drive.google.com/file/d/17_MJlcAR9tjMZ0Xz4Pk97l8mxx0okpaG/view?usp=sharing"},
    {name: "Anti Ragging Squad for Hostel 2026-27", link: "https://drive.google.com/file/d/1d8Qs9lo-ZjQBThVFhOn6i6QMDtC3WfzQ/view?usp=sharing"},
    {name: "National Anti-Ragging Programme", link: "https://www.antiragging.in/"},
