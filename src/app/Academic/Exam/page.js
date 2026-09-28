@@ -7,8 +7,7 @@ import { FileText, CheckSquare, Users, Info, ShieldCheck, ArrowRight, Bell } fro
 import DepartmentNotify1 from "../../components/department/DepartmentNotify1.js";
 import { extractApiArray, getBackendApiUrl } from "@/lib/apiHelpers";
 
-// API endpoint URL for Exam Notices
-const EXAM_NOTICE_URL = "https://admin.nitp.ac.in/api/notice?type=exam";
+const EXAM_NOTICE_URL = getBackendApiUrl("/api/notice?type=exam");
 
 const picture = [
     "https://dfhe5ze0n4pxu.cloudfront.net/College/Image/Image-1737372407376.JPG",
@@ -133,18 +132,15 @@ export default function ExamPage() {
                                     ) : notices && notices.length > 0 ? (
                                         notices.map((notice, id) => {
                                             if (notice.isVisible === 1 || notice.isVisible === undefined) {
-                                                const linkStr = notice.notice_link
-                                                    ? JSON.stringify({ url: notice.notice_link })
-                                                    : (notice.attachments && notice.attachments.length > 0 ? JSON.stringify({ url: notice.attachments[0].url }) : "");
-
                                                 return (
                                                     <DepartmentNotify1
                                                         key={notice.id || id}
+                                                        notice={notice}
                                                         title={notice.title}
                                                         attachments={notice.attachments}
                                                         important={notice.important}
-                                                        link={linkStr}
-                                                        date={notice.updatedAt || notice.timestamp}
+                                                        link={notice.notice_link || ""}
+                                                        date={notice.openDate || notice.updatedAt || notice.timestamp}
                                                     />
                                                 );
                                             }

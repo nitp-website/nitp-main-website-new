@@ -1,108 +1,127 @@
-import { useEffect, useState } from "react";
-import { FiClock, FiDownload, FiStar } from 'react-icons/fi';
-import { NoticeBadge, NoticeTitle, parseNoticeLink } from "@/lib/noticeHelpers";
+import React, { useEffect, useState } from "react";
+import { FiClock, FiDownload, FiStar } from "react-icons/fi";
+import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments } from "@/lib/noticeHelpers";
 
 function DepartmentNotify1(props) {
-    const timestamp = props.date;
-    const link = parseNoticeLink(props.link) || props.attachments?.[0]?.url || "";
-    const noticeObj = props.notice || { openDate: props.date, timestamp: props.date, important: props.important };
-    const color = ["yellow", "red-600"];
-    const [textCol, settextCol] = useState("red-600");
-    let flag = 0;
+    const notice = props.notice;
+    const timestamp = props.date || notice?.openDate || notice?.updatedAt || notice?.timestamp;
+    const noticeObj = notice || {
+        openDate: timestamp,
+        timestamp,
+        important: props.important,
+        is_new: props.is_new,
+    };
+
+    const validAttachments = getValidAttachments(props.attachments || notice?.attachments);
+    const parsedLink = parseNoticeLink(props.link || notice?.notice_link);
+
+    const hasAttachments = validAttachments.length > 0;
+    const normalizeUrl = (u) => (u ? String(u).trim().replace(/\/+$/, "") : "");
+    const isLinkInAttachments =
+        hasAttachments &&
+        parsedLink &&
+        validAttachments.some(
+            (att) => att?.url && normalizeUrl(att.url) === normalizeUrl(parsedLink)
+        );
+    const showLink = Boolean(parsedLink && !isLinkInAttachments);
+    const hasAnyAction = hasAttachments || showLink;
+
+    const [textCol, setTextCol] = useState("red-600");
+    const isImportant =
+        props.important === 1 ||
+        props.important === true ||
+        notice?.important === 1 ||
+        notice?.important === true;
 
     useEffect(() => {
-        if (props.important === 1) {
+        if (isImportant) {
+            const colors = ["yellow", "red-600"];
+            let flag = 0;
             const interval = setInterval(() => {
                 flag = flag === 0 ? 1 : 0;
-                settextCol(color[flag]);
+                setTextCol(colors[flag]);
             }, 1000);
 
             return () => clearInterval(interval);
         }
-    }, [props.important]);
+    }, [isImportant]);
 
-    // Format date if timestamp exists
-    const formatDate = (timestamp) => {
+    const formattedDate = (() => {
         if (!timestamp) return null;
-        const date = new Date(parseInt(timestamp));
-        if (isNaN(date)) return null;
-        return new Intl.DateTimeFormat("en-GB", {
+        const parsed = typeof timestamp === "string" ? parseInt(timestamp, 10) : timestamp;
+        const d = new Date(parsed);
+        if (isNaN(d.getTime())) return null;
+        return d.toLocaleDateString("en-GB", {
             day: "2-digit",
             month: "short",
             year: "numeric",
-        }).format(date);
-    };
-
-    const formattedDate = formatDate(props.timestamp);
-
-    const NoticeContent = () => (
-        <div className="flex items-start gap-2 relative">
-            <div className="flex items-center mt-1">
-                <NoticeBadge notice={noticeObj} starType="fi" />
-            </div>
-            <div className="flex-1">
-                <span className="text-sm text-gray-500">
-                    {new Date(Number(timestamp)).toLocaleDateString("en-GB", {
-                        weekday: "long",
-                        day: "numeric",
-                        month: "long",
-                        year: "numeric"
-                    })}
-                </span>
-                <div className="font-medium text-[15px] mb-1">
-                    <NoticeTitle title={props.title} additionalTitle={props.notice?.additional_title || props.additional_title} />
-                </div>
-                {formattedDate && (
-                    <div className="text-xs text-gray-500 mb-1 flex items-center">
-                        <FiClock className="inline mr-1 w-3 h-3" />
-                        {formattedDate}
-                    </div>
-                )}
-            </div>
-        </div>
-    );
-
-    if (link && link.length > 5) {
-        return (
-            <div className="mb-3 pl-6 pr-3 py-3 bg-white hover:bg-slate-50 border-l-4 border-red-600 rounded shadow-sm transition-all duration-200">
-                <a href={link} target="_blank" rel="noopener noreferrer" className="block">
-                    <NoticeContent />
-                    <div className="text-xs text-red-600 mt-1 flex items-center">
-                        <FiDownload className="inline mr-1 w-3 h-3" />
-                        View Notice
-                    </div>
-                </a>
-            </div>
-        );
-    }
+        });
+    })();
 
     return (
-        <div className="mb-3 pl-6 pr-3 py-3 bg-white hover:bg-slate-50 border-l-4 border-gray-300 rounded shadow-sm transition-all duration-200">
-            <NoticeContent />
-        </div>
-    );
-}
-
-function AttachmentsCompo(props) {
-    const link = props.link;
-    const [textCol, settextCol] = useState("red-600");
-
-    return (
-        <div className="mb-3 pl-4 pr-3 py-3 bg-white hover:bg-slate-50 border-l-4 border-blue-500 rounded shadow-sm transition-all duration-200">
-            <a
-                href={link}
-                className="block"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <div className="font-medium text-[15px] mb-1">
-                    {props.title}
+        <div
+            className={`mb-3 pl-4 pr-3 py-3 bg-white hover:bg-slate-50 border-l-4 ${
+                hasAnyAction || isImportant ? "border-red-600" : "border-gray-300"
+            } rounded shadow-sm transition-all duration-200`}
+        >
+            <div className="flex items-start gap-2 relative">
+                <div className="flex items-center mt-1 flex-shrink-0">
+                    <NoticeBadge notice={noticeObj} starType="fi" />
                 </div>
-                <div className="text-xs text-blue-500 mt-1 flex items-center">
-                    <FiDownload className="inline mr-1 w-3 h-3" />
-                    Download Attachment
+                <div className="flex-1 min-w-0">
+                    {formattedDate && (
+                        <span className="text-xs text-gray-500 block mb-1">
+                            {formattedDate}
+                        </span>
+                    )}
+                    <div className="font-medium text-[15px] text-gray-900 mb-2 leading-snug">
+                        <NoticeTitle
+                            title={props.title || notice?.title}
+                            additionalTitle={props.notice?.additional_title || props.additional_title}
+                        />
+                    </div>
+
+                    {/* Display All Valid Attachments */}
+                    {hasAttachments && (
+                        <div className="flex flex-wrap gap-2 mt-2">
+                            {validAttachments.map((attachment, index) => {
+                                const caption =
+                                    attachment?.caption?.trim() ||
+                                    (validAttachments.length > 1
+                                        ? `Attachment ${index + 1}`
+                                        : "View Notice");
+                                return (
+                                    <a
+                                        key={index}
+                                        href={attachment.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 text-xs text-red-700 bg-red-50 hover:bg-red-100 hover:text-red-900 px-2.5 py-1 rounded transition-colors font-medium border border-red-200"
+                                    >
+                                        <FiDownload className="w-3.5 h-3.5 flex-shrink-0" />
+                                        <span className="truncate max-w-[220px]">{caption}</span>
+                                    </a>
+                                );
+                            })}
+                        </div>
+                    )}
+
+                    {/* Display Notice Link if not redundant */}
+                    {showLink && (
+                        <div className="mt-2">
+                            <a
+                                href={parsedLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 text-xs text-red-700 bg-red-50 hover:bg-red-100 hover:text-red-900 px-2.5 py-1 rounded transition-colors font-medium border border-red-200"
+                            >
+                                <FiDownload className="w-3.5 h-3.5 flex-shrink-0" />
+                                <span>View Notice</span>
+                            </a>
+                        </div>
+                    )}
                 </div>
-            </a>
+            </div>
         </div>
     );
 }
