@@ -25,13 +25,13 @@ const HMCOfficeAshokRajpathContacts = [
     name: "Dr. Ajay Kumar",
     designation: "Chairman, HMC",
     mobile: "9709381530",
-    email: "hmc@nitp.ac.in"
+    email: "arajay@nitp.ac.in"
   },
   {
     name: "Mr. Prashant Kumar",
-    designation: "Junior Assistant",
-    mobile: "",
-    email: "prashant1603033@nitp.ac.in"
+    designation: "Jr. Assistant",
+    mobile: "7050791819",
+    email: "prashantkr.ja@nitp.ac.in"
   },
   {
     name: "Mr. Sunil Kumar",

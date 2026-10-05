@@ -129,7 +129,7 @@ const Allhostels = [
   {
     name: "Harsh Kumar",
     designation: "Office Assistant",
-    mobile: "8582095531",
+    mobile: "7370886101",
     email: "",
   },
 ],
@@ -152,7 +152,7 @@ const Allhostels = [
   {
     name: "Dr. Sandeep Kumar",
     designation: "Asstt. Warden",
-    mobile: "",
+    mobile: "9560773498",
     email: "Sandeep.ar@nitp.ac.in",
   },
   {
@@ -170,7 +170,7 @@ const Allhostels = [
   {
     name: "Harsh Kumar",
     designation: "Office Assistant",
-    mobile: "8582095531",
+    mobile: "7370886101",
     email: "",
   },
 ],
@@ -206,7 +206,7 @@ const Allhostels = [
     name: "Dr. Shubham Meena",
     designation: "Asstt. Warden",
     mobile: "7587520851",
-    email: "ar.shubham@nitp.ac.in",
+    email: "shubham.ar@nitp.ac.in",
   },
   {
     name: "Dr. Sanjeev Verma",
@@ -330,7 +330,7 @@ const Allhostels = [
   {
     name: "Dr. Sandeep Kumar",
     designation: "Asstt. Warden",
-    mobile: "",
+    mobile: "9560773498",
     email: "Sandeep.ar@nitp.ac.in",
   },
   {
@@ -348,7 +348,7 @@ const Allhostels = [
   {
     name: "Harsh Kumar",
     designation: "Office Assistant",
-    mobile: "8582095531",
+    mobile: "7370886101",
     email: "",
   },
 ],

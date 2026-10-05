@@ -62,13 +62,13 @@ const RegistrarPage = () => {
                 </h1>
                 <ul className="list-disc cursor-pointer p-3 ml-2 md:text-sm text-xs">
                   <BlinkingListItem href="https://pledge.mygov.in/cvc/">
-                    TAKE INTEGRITY ePLEDGE
+                    TAKE INTEGRITY ePLEDGE 2026
                   </BlinkingListItem>
                   <BlinkingListItem href="https://cvc.gov.in/vaw.html">
-                    Vigilance Awareness Week 2025
+                    Vigilance Awareness Week 2026
                   </BlinkingListItem>
                   <BlinkingListItem href="https://drive.google.com/file/d/1LxWcdP-2g5W_U6g1qD960dLyIQsy8Fw1/view?usp=sharing">
-                    Jingles for Vigilance Awareness Week 2025
+                    Jingles for Vigilance Awareness Week 2026
                   </BlinkingListItem>
                 </ul>
               </div>

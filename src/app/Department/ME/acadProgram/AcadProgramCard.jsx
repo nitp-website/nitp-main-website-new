@@ -60,6 +60,14 @@ export const AcadProgramCard = ({ program }) => {
           </a>
         )}
 
+        {program.courseStructurebtn && (
+          <a target="_blank" href={`${program.courseStructurebtn}`} >
+            <button className="text-red-800 border border-red-800 px-4 py-1 text-sm rounded-md  transition hover:bg-red-800 hover:text-white cursor-pointer">
+              Course Structure
+            </button>
+          </a>
+        )}
+
         {
           program.from && program.from.map((item, index) => (
             <a key={index} target="_blank" href={`${item.courseStructure}`} >

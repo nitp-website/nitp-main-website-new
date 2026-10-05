@@ -30,12 +30,12 @@ const Page = () => {
     //   type: "Proctor",
     //   url: "https://www.nitp.ac.in/Department/ME/faculty/smp.me@nitp.ac.in",
     // },
-    {
-      name: "Dr. Gagandeep Meena ",
-      designation: "Assistant Professor, Electrical Engineering Dept.",
-      type: "Proctor",
-      url: "https://www.nitp.ac.in/Department/EE/faculty/gagandeep.ee@nitp.ac.in",
-    },
+    // {
+    //   name: "Dr. Gagandeep Meena ",
+    //   designation: "Assistant Professor, Electrical Engineering Dept.",
+    //   type: "Proctor",
+    //   url: "https://www.nitp.ac.in/Department/EE/faculty/gagandeep.ee@nitp.ac.in",
+    // },
         {
       name: "Dr. Bhawani Shankar Das ",
       designation: "Assistant Professor, Civil Engineering Dept.",
