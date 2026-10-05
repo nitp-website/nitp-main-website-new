@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Megaphone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Info } from 'lucide-react';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle } from "@/lib/noticeHelpers";
+import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments } from "@/lib/noticeHelpers";
 
 const Movingbar = () => {
   const [importantNotices, setImportantNotices] = useState([]);
@@ -15,11 +15,12 @@ const Movingbar = () => {
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const base = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+        const base = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
         const urls = [
           `${base}/api/notice?type=active`,
           `${base}/api/notice?type=job`,
           `${base}/api/notice?type=facultystaffjob`,
+          `${base}/api/notice?type=admissions&limit=50`,
         ];
 
         const responses = await Promise.allSettled(urls.map((url) => axios.get(url)));
@@ -102,23 +103,36 @@ const Movingbar = () => {
               <>
                 {[...Array(3)].map((_, repeatIndex) => (
                   <React.Fragment key={repeatIndex}>
-                    {importantNotices.map((notice, index) => (
-                      <React.Fragment key={`${repeatIndex}-${index}`}>
-                        <a
-                          href={notice.notice_link && JSON.parse(notice.notice_link).url ? JSON.parse(notice.notice_link).url : notice?.attachments?.[0]?.url}
-                          className="inline-flex items-center mx-6 text-white hover:text-yellow-300 transition-colors group gap-1.5"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <NoticeBadge notice={notice} />
-                          <Info className="h-4 w-4 text-yellow-300 flex-shrink-0" />
-                          <span className="font-medium text-sm group-hover:underline decoration-yellow-300">
-                            <NoticeTitle title={notice.title} additionalTitle={notice.additional_title} />
-                          </span>
-                        </a>
-                        <div className="h-4 w-0.5 bg-white/30 rounded-full"></div>
-                      </React.Fragment>
-                    ))}
+                    {importantNotices.map((notice, index) => {
+                      const link =
+                        parseNoticeLink(notice?.notice_link) ||
+                        getValidAttachments(notice?.attachments)?.[0]?.url ||
+                        (notice?.notice_type === "admissions"
+                          ? notice?.notice_sub_type
+                            ? `/Academic/Admission?type=${notice.notice_sub_type}`
+                            : "/Academic/Admission"
+                          : "#");
+
+                      const isExternal = link.startsWith("http");
+
+                      return (
+                        <React.Fragment key={`${repeatIndex}-${index}`}>
+                          <a
+                            href={link}
+                            className="inline-flex items-center mx-6 text-white hover:text-yellow-300 transition-colors group gap-1.5"
+                            target={isExternal ? "_blank" : undefined}
+                            rel={isExternal ? "noopener noreferrer" : undefined}
+                          >
+                            <NoticeBadge notice={notice} />
+                            <Info className="h-4 w-4 text-yellow-300 flex-shrink-0" />
+                            <span className="font-medium text-sm group-hover:underline decoration-yellow-300">
+                              <NoticeTitle title={notice.title} additionalTitle={notice.additional_title} />
+                            </span>
+                          </a>
+                          <div className="h-4 w-0.5 bg-white/30 rounded-full"></div>
+                        </React.Fragment>
+                      );
+                    })}
                   </React.Fragment>
                 ))}
               </>

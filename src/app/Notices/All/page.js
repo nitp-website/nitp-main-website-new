@@ -36,64 +36,89 @@ const FormatDate = ({ time }) => {
   return <>{formattedDate}</>;
 };
 
-const Noticecard = ({ notice, detail, time, attachments, imp, link }) => (
-  <div className="notice flex items-start gap-2 p-4 border-b border-gray-100 hover:bg-red-50 transition-colors">
-    <NoticeBadge notice={notice || { timestamp: time, important: imp }} starType="fi" className="mt-[6px]" />
-    <div className="flex-1">
-      <h3 className="text-black md:text-xs text-sm">
-        <NoticeTitle title={detail} additionalTitle={notice?.additional_title} />
-      </h3>
-      <p>
-        <span className="text-neutral-400 text-xs">
-          <FormatDate time={time} />
-        </span>
-      </p>
-      {Array.isArray(attachments) && attachments.length > 0 && (
-        <ul className="text-xs">
-          {attachments.map((attachment, index) => (
-            <li key={index} className="mb-1">
-              {attachment.typeLink ? (
-                <a 
-                  href={attachment.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-red-800 hover:text-red-900"
-                >
-                  <FiDownload className="inline-block text-red-800 hover:text-red-900" />
-                  <span className="text-red-800 hover:text-red-900">
-                    {attachment.caption || "View Notice"}
-                  </span>
-                </a>
-              ) : (
-                <a 
-                  href={attachment.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-red-800 hover:text-red-900"
-                >
-                  <FiDownload className="inline-block text-red-800 hover:text-red-900" />
-                  <span className="text-red-800 hover:text-red-900">
-                    {attachment.caption || "View Notice"}
-                  </span>
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
-      )}
-      {link && (
-        <a 
-          href={link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-xs text-red-800 hover:text-red-900"
-        >
-          <span className="text-red-800 hover:text-red-900">View Notice</span>
-        </a>
-      )}
+const Noticecard = ({ notice, detail, time, attachments, imp, link }) => {
+  const parsedLink = link || parseNoticeLink(notice?.notice_link);
+  const validAttachments = getValidAttachments(attachments || notice?.attachments);
+  const hasAttachments = validAttachments.length > 0;
+  const normalizeUrl = (u) => (u ? String(u).trim().replace(/\/+$/, "") : "");
+
+  const isLinkInAttachments =
+    hasAttachments &&
+    parsedLink &&
+    validAttachments.some(
+      (att) => att?.url && normalizeUrl(att.url) === normalizeUrl(parsedLink)
+    );
+
+  const showLink = Boolean(parsedLink && !isLinkInAttachments);
+
+  const admissionFallbackLink =
+    !hasAttachments && !showLink && notice?.notice_type === "admissions"
+      ? notice?.notice_sub_type
+        ? `/Academic/Admission?type=${notice.notice_sub_type}`
+        : "/Academic/Admission"
+      : null;
+
+  return (
+    <div className="notice flex items-start gap-2 p-4 border-b border-gray-100 hover:bg-red-50 transition-colors">
+      <NoticeBadge notice={notice || { timestamp: time, important: imp }} starType="fi" className="mt-[6px]" />
+      <div className="flex-1">
+        <h3 className="text-black md:text-xs text-sm">
+          <NoticeTitle title={detail} additionalTitle={notice?.additional_title} />
+        </h3>
+        <p>
+          <span className="text-neutral-400 text-xs">
+            <FormatDate time={time} />
+          </span>
+        </p>
+        {hasAttachments && (
+          <ul className="text-xs">
+            {validAttachments.map((attachment, index) => {
+              const displayCaption =
+                attachment.caption ||
+                attachment.name ||
+                attachment.filename ||
+                (validAttachments.length > 1 ? `View Notice ${index + 1}` : "View Notice");
+
+              return (
+                <li key={index} className="mb-1">
+                  <a 
+                    href={attachment.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-red-800 hover:text-red-900"
+                  >
+                    <FiDownload className="inline-block text-red-800 hover:text-red-900" />
+                    <span className="text-red-800 hover:text-red-900">
+                      {displayCaption}
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+        {showLink && (
+          <a 
+            href={parsedLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-xs text-red-800 hover:text-red-900 inline-block mt-1"
+          >
+            <span className="text-red-800 hover:text-red-900">View Notice</span>
+          </a>
+        )}
+        {admissionFallbackLink && (
+          <a
+            href={admissionFallbackLink}
+            className="text-xs text-red-800 hover:text-red-900 inline-block mt-1"
+          >
+            <span className="text-red-800 hover:text-red-900">View Admission</span>
+          </a>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Page = () => {
   const [academics, setAcademics] = useState([]);
@@ -103,11 +128,12 @@ const Page = () => {
   useEffect(() => {
     const fetchAcademics = async () => {
       try {
-        const base = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+        const base = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
         const urls = [
           `${base}/api/notice?type=active`,
           `${base}/api/notice?type=job`,
           `${base}/api/notice?type=facultystaffjob`,
+          `${base}/api/notice?type=admissions&limit=50`,
         ];
 
         const responses = await Promise.allSettled(urls.map((url) => axios.get(url)));
@@ -211,7 +237,7 @@ const Page = () => {
                   key={notice.id}
                   attachments={notice.attachments}
                   imp={notice.important}
-                  link={notice.notice_link && (typeof notice.notice_link === "string" && notice.notice_link.startsWith("{") ? JSON.parse(notice.notice_link).url : notice.notice_link)}
+                  link={parseNoticeLink(notice.notice_link)}
                 />
               ))
             )}
