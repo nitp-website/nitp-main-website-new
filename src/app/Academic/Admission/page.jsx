@@ -79,8 +79,8 @@ const admissionData = {
       {
         name: "PhD Admissions NITP Portal",
         image: "/logo.png",
-        link: "https://erp.nitp.ac.in/",
-         sopLink:"https://drive.google.com/file/d/1zGO9OefmbdyK_k4KLqfK4YdrtmUNMZVw/view?usp=sharing"
+        link: "https://mis.nitp.ac.in/admissionPHD/",
+         sopLink:"https://drive.google.com/file/d/1DIFV5QNqD40P-SXl7yKNRaFlPnoZe6KI/view?usp=sharing"
       },
     ],
   },
