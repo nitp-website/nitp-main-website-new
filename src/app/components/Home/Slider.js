@@ -30,7 +30,9 @@ const Slider = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper w-full h-[30vh] md:h-[530px] flex justify-center items-center "
       >
-        
+        <SwiperSlide>
+          <img src="/HindiDiwas.png" />
+        </SwiperSlide>
         <SwiperSlide>
           <img src="https://i.postimg.cc/c4tGvYPX/Twitter-header-1.png" />
         </SwiperSlide>
@@ -51,11 +53,11 @@ const Slider = () => {
         </SwiperSlide>
         {/* Main Entrance */}
         <SwiperSlide>
-          <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp" />
+          <img src="/Main-Entrance.jpg" />
         </SwiperSlide>
         {/* Main Building Bihta Campus */}
         <SwiperSlide>
-          <img src="https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainBuilding.webp" />
+          <img src="/MainBuilding.jpg" />
         </SwiperSlide>
         {/* SAC NITP Image */}
         <SwiperSlide>
