@@ -58,6 +58,13 @@ const Noticecard = ({ notice, detail, time, attachments, imp, link }) => {
 
   const showLink = Boolean(parsedLink && !isLinkInAttachments);
 
+  const admissionFallbackLink =
+    !hasAttachments && !showLink && notice?.notice_type === "admissions"
+      ? notice?.notice_sub_type
+        ? `/Academic/Admission?type=${notice.notice_sub_type}`
+        : "/Academic/Admission"
+      : null;
+
   return (
     <div className="notice flex items-start gap-2 bg-transparent hover:bg-purple-50 rounded-md py-3 px-2 mr-2">
       <NoticeBadge notice={notice || { timestamp: time, important: imp }} className="mt-1" />
@@ -106,6 +113,14 @@ const Noticecard = ({ notice, detail, time, attachments, imp, link }) => {
           >
             <span className="text-red-800 hover:text-red-900">View Notice</span>
           </a>
+        )}
+        {admissionFallbackLink && (
+          <Link
+            href={admissionFallbackLink}
+            className="text-xs text-red-800 hover:text-red-900 inline-block mt-1"
+          >
+            <span className="text-red-800 hover:text-red-900">View Admission</span>
+          </Link>
         )}
       </div>
     </div>
@@ -250,11 +265,12 @@ const Details = () => {
 
     const fetchNotices = async () => {
       try {
-        const base = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+        const base = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
         const urls = [
           `${base}/api/notice?type=active`,
           `${base}/api/notice?type=job`,
           `${base}/api/notice?type=facultystaffjob`,
+          `${base}/api/notice?type=admissions&limit=50`,
         ];
 
         const responses = await Promise.allSettled(urls.map((url) => axios.get(url)));
