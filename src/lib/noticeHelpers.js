@@ -43,6 +43,51 @@ export function getNoticeStartDate(noticeOrDate) {
 }
 
 /**
+ * Extract end/closing timestamp (in ms) from notice object or date value.
+ */
+export function getNoticeEndDate(noticeOrDate) {
+  if (!noticeOrDate) return null;
+
+  const parseTimestamp = (val) => {
+    if (val === null || val === undefined || val === "") return null;
+    if (typeof val === "number") return isNaN(val) ? null : val;
+    if (typeof val === "string") {
+      const trimmed = val.trim();
+      if (!trimmed) return null;
+      if (/^\d+$/.test(trimmed)) {
+        const num = parseInt(trimmed, 10);
+        return isNaN(num) ? null : num;
+      }
+      const parsed = Date.parse(trimmed);
+      return isNaN(parsed) ? null : parsed;
+    }
+    return null;
+  };
+
+  if (typeof noticeOrDate === "number" || typeof noticeOrDate === "string") {
+    return parseTimestamp(noticeOrDate);
+  }
+
+  const n = noticeOrDate;
+  return (
+    parseTimestamp(n.closeDate) ??
+    parseTimestamp(n.endDate) ??
+    parseTimestamp(n.end_date) ??
+    parseTimestamp(n.eventEndDate) ??
+    null
+  );
+}
+
+/**
+ * Check if a notice's end date has crossed.
+ */
+export function isNoticeEndCrossed(noticeOrDate) {
+  const endTs = getNoticeEndDate(noticeOrDate);
+  if (!endTs) return false;
+  return endTs < Date.now();
+}
+
+/**
  * Check if a notice is "NEW".
  * If notice has is_new === 1 (or 1 as number/string/boolean), it is marked as NEW.
  * If is_new is 0 (or null/undefined), display is based on date (within 15 days of start date).
@@ -102,15 +147,15 @@ export const NoticeBadge = ({
   const noticeObj =
     typeof notice === "object" && notice !== null
       ? {
-          ...notice,
-          ...(is_new !== undefined ? { is_new } : {}),
-        }
+        ...notice,
+        ...(is_new !== undefined ? { is_new } : {}),
+      }
       : {
-          openDate,
-          timestamp,
-          important: important ?? (imp ? 1 : 0),
-          is_new,
-        };
+        openDate,
+        timestamp,
+        important: important ?? (imp ? 1 : 0),
+        is_new,
+      };
 
   const isNew = isNoticeNew(noticeObj);
   const isImp =
