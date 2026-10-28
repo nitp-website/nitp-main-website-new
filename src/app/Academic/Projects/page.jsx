@@ -1,186 +1,195 @@
-"use client"
-import { useState, useEffect, useMemo, useCallback } from 'react';
-import { Search, Filter, Calendar, User, Building2, DollarSign, Clock, ChevronLeft, ChevronRight, ExternalLink, BookOpen, Loader2, X } from 'lucide-react';
+"use client";
+import { useState, useEffect, useMemo } from 'react';
+import {
+  Search,
+  Filter,
+  Calendar,
+  User,
+  Building2,
+  DollarSign,
+  Clock,
+  ChevronLeft,
+  ChevronRight,
+  ExternalLink,
+  Loader2,
+  X,
+} from 'lucide-react';
 import axios from 'axios';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { extractApiArray } from '@/lib/apiHelpers';
+import { useSearchParams } from 'next/navigation';
+import { extractApiArray, getBackendApiUrl } from '@/lib/apiHelpers';
 
-const PROJECTS_PER_PAGE = 20;
+const PROJECTS_API =
+  process.env.NEXT_PUBLIC_BACKEND_API_URL &&
+  !process.env.NEXT_PUBLIC_BACKEND_API_URL.includes('localhost')
+    ? `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project`
+    : 'https://admin.nitp.ac.in/api/project';
+
+const PROJECTS_PER_PAGE = 50;
+const FIRST_ACADEMIC_YEAR = 2010;
+
+// Academic year runs July 1 -> June 30 (month >= 7 belongs to the year starting that July).
+const getAcademicYear = (dateString) => {
+  if (!dateString) return 'N/A';
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+
+  return month >= 7 ? `${year}-${year + 1}` : `${year - 1}-${year}`;
+};
+
+const getCurrentAcademicYearStart = () => {
+  const now = new Date();
+  return now.getMonth() + 1 >= 7 ? now.getFullYear() : now.getFullYear() - 1;
+};
+
+const formatCurrency = (amount) => {
+  if (!amount) return '₹0';
+  const num = parseFloat(amount);
+  if (isNaN(num)) return amount;
+  return new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    maximumFractionDigits: 0,
+  }).format(num);
+};
+
+// Returns '' (not 'N/A') when there is no date so nothing is rendered.
+const formatDate = (dateString) => {
+  if (!dateString) return '';
+  const d = new Date(dateString);
+  if (isNaN(d.getTime())) return '';
+  return d.toLocaleDateString('en-IN', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+};
+
+// "1 Jan 2024 - 31 Dec 2026", or just start date if no end date.
+const formatDuration = (start, end) =>
+  [formatDate(start), formatDate(end)].filter(Boolean).join(' - ');
 
 const ProjectsPage = () => {
-  // Current page's raw data from the server (already sorted by sort_date DESC).
+  const searchParams = useSearchParams();
+
+  // Current page's data from the server (already sorted by sort_date DESC).
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [retryCount, setRetryCount] = useState(0);
 
-  // Server-driven pagination state.
-  const [currentPage, setCurrentPage] = useState(1);
+  // Server-driven pagination info.
   const [totalPages, setTotalPages] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
 
-  // A separate, one-time larger fetch used only to populate the Academic
-  // Year dropdown with every year that exists, not just whatever happens
-  // to be on the current page.
-  const [academicYears, setAcademicYears] = useState([]);
+  // Filters (initialised once from URL).
+  const [searchTerm, setSearchTerm] = useState(() => searchParams?.get('search') || '');
+  const [debouncedSearch, setDebouncedSearch] = useState(() => searchParams?.get('search') || '');
+  const [yearFilter, setYearFilter] = useState(() => searchParams?.get('academic_year') || 'all');
+  const [statusFilter, setStatusFilter] = useState(() => searchParams?.get('status') || 'all');
 
-  const [searchTerm, setSearchTerm] = useState('');
-  const [yearFilter, setYearFilter] = useState('all');
-  const [statusFilter, setStatusFilter] = useState('all');
+  // The academic year the currently displayed data was fetched for.
+  const [loadedYear, setLoadedYear] = useState('all');
+
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const router = useRouter();
-  const searchParams = useSearchParams();
+  // Full list of academic years for dropdown.
+  const academicYears = useMemo(() => {
+    const years = [];
+    for (let y = getCurrentAcademicYearStart(); y >= FIRST_ACADEMIC_YEAR; y--) {
+      years.push(`${y}-${y + 1}`);
+    }
+    if (yearFilter !== 'all' && !years.includes(yearFilter)) {
+      years.unshift(yearFilter);
+    }
+    return years;
+  }, [yearFilter]);
 
-  const getAcademicYear = (dateString) => {
-    if (!dateString) return 'N/A';
-    const date = new Date(dateString);
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
+  // Debounce the search box to avoid firing request per keystroke.
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedSearch(searchTerm.trim()), 350);
+    return () => clearTimeout(t);
+  }, [searchTerm]);
 
-    if (month >= 7) {
-      return `${year}-${year + 1}`;
-    } else {
-      return `${year - 1}-${year}`;
+  // The chosen page is tied to the filters that were active when it was picked.
+  // If any filter changes, it automatically falls back to page 1.
+  const filtersKey = `${yearFilter}|${statusFilter}|${debouncedSearch}`;
+  const [pageState, setPageState] = useState({ key: '', page: 1 });
+  const currentPage = pageState.key === filtersKey ? pageState.page : 1;
+
+  const goToPage = (page) => {
+    const target = Math.min(Math.max(page, 1), totalPages);
+    setPageState({ key: filtersKey, page: target });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
-  // Fetch one page of projects from the server, with filters applied
-  // server-side. This is what Prev/Next and filter changes call, so
-  // pagination and filtering both reflect the real dataset instead of a
-  // client-side slice of a single fetched batch.
-  const fetchProjects = useCallback(async (page, filters = {}) => {
-    try {
-      setLoading(true);
-      const params = { type: 'all', page, limit: PROJECTS_PER_PAGE };
-      if (filters.academicYear && filters.academicYear !== 'all') {
-        params.academic_year = filters.academicYear;
-      }
-      if (filters.status && filters.status !== 'all') {
-        params.status = filters.status;
-      }
-      if (filters.search) {
-        params.search = filters.search;
-      }
-
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project`,
-        { params }
-      );
-      const data = response.data;
-      const projectsData = extractApiArray(response);
-
-      setProjects(projectsData);
-      setCurrentPage(Number(data?.page) || page);
-      setTotalPages(Number(data?.totalPages) || 1);
-      setTotalItems(Number(data?.total) || projectsData.length);
-      setError(null);
-    } catch (err) {
-      setError(err.message);
-      console.error('Error fetching projects:', err);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  // One-time fetch of a large batch to build a complete academic-year list
-  // for the filter dropdown. Kept separate from the paginated view so the
-  // dropdown doesn't change contents as you page through.
+  // Fetch whenever filters or page change. Filtered on server before pagination.
   useEffect(() => {
-    const fetchYears = async () => {
+    const controller = new AbortController();
+
+    const load = async () => {
       try {
-        const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/project`,
-          { params: { type: 'all', page: 1, limit: 50 } }
-        );
-        const sample = extractApiArray(response);
-        const years = new Set();
-        sample.forEach((project) => {
-          if (project.start_date) {
-            years.add(getAcademicYear(project.start_date));
-          }
+        setLoading(true);
+        const params = { type: 'all', page: currentPage, limit: PROJECTS_PER_PAGE };
+        if (yearFilter !== 'all') {
+          params.academic_year = yearFilter;
+          params.year = yearFilter;
+        }
+        if (statusFilter !== 'all') params.status = statusFilter;
+        if (debouncedSearch) params.search = debouncedSearch;
+
+        const response = await axios.get(PROJECTS_API, {
+          params,
+          signal: controller.signal,
         });
-        const sorted = Array.from(years).sort((a, b) => {
-          const aStart = parseInt(a.split('-')[0], 10);
-          const bStart = parseInt(b.split('-')[0], 10);
-          return bStart - aStart;
-        });
-        setAcademicYears(sorted);
+        const data = response.data;
+        const projectsData = Array.isArray(data?.data)
+          ? data.data
+          : extractApiArray(response);
+
+        setProjects(projectsData);
+        setLoadedYear(yearFilter);
+        setTotalPages(Math.max(1, Number(data?.totalPages) || 1));
+        setTotalItems(Number(data?.total) || 0);
+        setError(null);
       } catch (err) {
-        console.error('Error fetching academic years:', err);
+        if (axios.isCancel(err)) return; // superseded by newer request
+        setError(err.message || 'Error fetching projects');
+        console.error('Error fetching projects:', err);
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
       }
     };
 
-    fetchYears();
-  }, []);
+    load();
+    return () => controller.abort();
+  }, [yearFilter, statusFilter, debouncedSearch, currentPage, retryCount]);
 
+  // Keep URL in sync with filters.
   useEffect(() => {
-    const academicYear = searchParams.get('academic_year');
-    if (academicYear) {
-      setYearFilter(academicYear);
-    }
-  }, [searchParams]);
-
-  // Refetch page 1 from the server whenever a filter changes. Search is
-  // debounced so we're not firing a request on every keystroke.
-  useEffect(() => {
-    const handle = setTimeout(() => {
-      fetchProjects(1, { academicYear: yearFilter, status: statusFilter, search: searchTerm });
-    }, searchTerm ? 350 : 0);
-
-    return () => clearTimeout(handle);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [yearFilter, statusFilter, searchTerm]);
-
-  useEffect(() => {
+    if (typeof window === 'undefined') return;
     const params = new URLSearchParams();
+    if (yearFilter !== 'all') params.set('academic_year', yearFilter);
+    if (debouncedSearch) params.set('search', debouncedSearch);
+    if (statusFilter !== 'all') params.set('status', statusFilter);
 
-    if (yearFilter !== 'all') {
-      params.set('academic_year', yearFilter);
-    }
-    if (searchTerm) {
-      params.set('search', searchTerm);
-    }
-    if (statusFilter !== 'all') {
-      params.set('status', statusFilter);
-    }
+    const qs = params.toString();
+    window.history.replaceState(null, '', `${window.location.pathname}${qs ? `?${qs}` : ''}`);
+  }, [yearFilter, debouncedSearch, statusFilter]);
 
-    const newUrl = params.toString() ? `?${params.toString()}` : '';
-    window.history.replaceState(null, '', newUrl);
-  }, [yearFilter, searchTerm, statusFilter]);
-
-  // Filtering now happens server-side (academic_year/status/search query
-  // params on /api/project), so `projects` is already the filtered page —
-  // no client-side re-filtering needed.
-  const filteredProjects = projects;
-
-  const formatCurrency = (amount) => {
-    if (!amount) return '₹0';
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      maximumFractionDigits: 0
-    }).format(parseFloat(amount));
-  };
-
-  const formatDate = (dateString) => {
-    if (!dateString) return 'N/A';
-    return new Date(dateString).toLocaleDateString('en-IN', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    });
-  };
-
-  // Group headers sorted newest-first. Same fix as the publications page:
-  // Object.entries() on integer-like keys does NOT preserve insertion
-  // order in JS, so this sort is required, not cosmetic.
+  // Group the current page for display.
+  // - Specific academic year selected: one group under that year.
+  // - "All": grouped by the academic year the project started in, newest first.
   const projectsByAcademicYear = useMemo(() => {
+    if (projects.length === 0) return [];
+    if (loadedYear !== 'all') return [[loadedYear, projects]];
+
     const grouped = {};
-    filteredProjects.forEach(project => {
+    projects.forEach((project) => {
       const academicYear = getAcademicYear(project.start_date);
-      if (!grouped[academicYear]) {
-        grouped[academicYear] = [];
-      }
+      if (!grouped[academicYear]) grouped[academicYear] = [];
       grouped[academicYear].push(project);
     });
 
@@ -192,28 +201,21 @@ const ProjectsPage = () => {
       if (isNaN(bStart)) return -1;
       return bStart - aStart;
     });
-  }, [filteredProjects]);
-
-  const handleYearFilterChange = (value) => {
-    setYearFilter(value);
-  };
+  }, [projects, loadedYear]);
 
   const clearFilters = () => {
     setYearFilter('all');
     setSearchTerm('');
+    setDebouncedSearch('');
     setStatusFilter('all');
-  };
-
-  const goToPage = (page) => {
-    const target = Math.min(Math.max(page, 1), totalPages);
-    if (target !== currentPage) {
-      fetchProjects(target, { academicYear: yearFilter, status: statusFilter, search: searchTerm });
-    }
   };
 
   const isFilterActive = yearFilter !== 'all' || searchTerm || statusFilter !== 'all';
 
-  if (loading && projects.length === 0) {
+  const rangeStart = totalItems === 0 ? 0 : (currentPage - 1) * PROJECTS_PER_PAGE + 1;
+  const rangeEnd = rangeStart === 0 ? 0 : rangeStart + projects.length - 1;
+
+  if (loading && projects.length === 0 && !error) {
     return (
       <div className="min-h-screen flex items-center justify-center p-4">
         <div className="text-center">
@@ -234,7 +236,7 @@ const ProjectsPage = () => {
           <h2 className="text-lg font-bold text-gray-800 mb-2">Error Loading Projects</h2>
           <p className="text-gray-600 text-sm mb-4">{error}</p>
           <button
-            onClick={() => fetchProjects(currentPage)}
+            onClick={() => setRetryCount((c) => c + 1)}
             className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors text-sm"
           >
             Try Again
@@ -246,9 +248,8 @@ const ProjectsPage = () => {
 
   return (
     <div className="min-h-screen md:max-w-7xl mx-auto">
-
       {/* Search and Filters */}
-      <div className=" mx-auto px-4 py-6">
+      <div className="mx-auto px-4 py-6">
         <div className="rounded-xl p-4 mb-6">
           {isFilterActive && (
             <div className="mb-4 flex items-center justify-between">
@@ -301,11 +302,11 @@ const ProjectsPage = () => {
                 <Calendar className="absolute left-2 top-1/2 transform -translate-y-1/2 text-red-400 w-4 h-4" />
                 <select
                   value={yearFilter}
-                  onChange={(e) => handleYearFilterChange(e.target.value)}
+                  onChange={(e) => setYearFilter(e.target.value)}
                   className="w-full pl-8 pr-3 py-2 text-sm border border-red-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-transparent appearance-none bg-white text-gray-500"
                 >
                   <option value="all">All Academic Years</option>
-                  {academicYears.map(year => (
+                  {academicYears.map((year) => (
                     <option key={year} value={year}>
                       {year}
                     </option>
@@ -333,7 +334,7 @@ const ProjectsPage = () => {
         </div>
 
         {/* Projects List */}
-        {filteredProjects.length === 0 ? (
+        {projects.length === 0 ? (
           <div className="bg-white rounded-xl shadow-lg p-8 text-center">
             <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Search className="w-8 h-8 text-red-400" />
@@ -345,82 +346,93 @@ const ProjectsPage = () => {
           <>
             <div className="flex justify-between items-center mb-4">
               <p className="text-red-700 text-sm font-medium">
-                Showing {projects.length} on page {currentPage} of {totalPages}
-                {' '}({totalItems} total{isFilterActive ? ' matching filters' : ''})
+                Showing {rangeStart}–{rangeEnd} of {totalItems} projects
+                {isFilterActive ? ' matching filters' : ''} (page {currentPage} of {totalPages})
               </p>
               {isFilterActive && (
                 <p className="text-gray-500 text-sm">
-                  Filtered view • <button onClick={clearFilters} className="text-red-600 hover:text-red-700">Show all</button>
+                  Filtered view •{' '}
+                  <button onClick={clearFilters} className="text-red-600 hover:text-red-700">
+                    Show all
+                  </button>
                 </p>
               )}
             </div>
 
-            {/* Projects by Academic Year */}
-            <div className="space-y-6">
+            {/* Projects by Academic Year (dimmed while loading) */}
+            <div
+              className={`space-y-6 transition-opacity ${
+                loading ? 'opacity-50 pointer-events-none' : ''
+              }`}
+            >
               {projectsByAcademicYear.map(([academicYear, yearProjects]) => (
                 <div key={academicYear} className="bg-white rounded-xl shadow-lg overflow-hidden">
                   <div className="bg-gradient-to-r from-red-500 to-red-600 text-white py-3 px-4">
                     <h2 className="text-xl font-bold">Academic Year {academicYear}</h2>
                   </div>
 
-                  {/* Projects List */}
                   <div className="p-4 space-y-4">
-                    {yearProjects.map((project) => (
-                      <div
-                        key={project.id}
-                        className="border-l-2 border-red-500 pl-4 py-3 hover:bg-red-50 transition-colors cursor-pointer"
-                        onClick={() => setSelectedProject(project)}
-                      >
-                        <h3 className="text-base font-semibold text-gray-800 mb-2 leading-tight">
-                          {project.project_title}
-                        </h3>
+                    {yearProjects.map((project, idx) => {
+                      const duration = formatDuration(project.start_date, project.end_date);
+                      return (
+                        <div
+                          key={`${project.project_type || 'proj'}-${project.id || idx}-${idx}`}
+                          className="border-l-2 border-red-500 pl-4 py-3 hover:bg-red-50 transition-colors cursor-pointer"
+                          onClick={() => setSelectedProject(project)}
+                        >
+                          <h3 className="text-base font-semibold text-gray-800 mb-2 leading-tight">
+                            {project.project_title}
+                          </h3>
 
-                        <div className="space-y-1 text-xs text-gray-600">
-                          <div className="flex items-start">
-                            <User className="w-3 h-3 text-red-500 mt-0.5 mr-2 flex-shrink-0" />
-                            <span className="font-medium text-gray-700">Faculty:</span>
-                            <span className="ml-1">{project.investigators}</span>
+                          <div className="space-y-1 text-xs text-gray-600">
+                            <div className="flex items-start">
+                              <User className="w-3 h-3 text-red-500 mt-0.5 mr-2 flex-shrink-0" />
+                              <span className="font-medium text-gray-700">Faculty:</span>
+                              <span className="ml-1">{project.investigators}</span>
+                            </div>
+
+                            <div className="flex items-start">
+                              <Building2 className="w-3 h-3 text-red-500 mt-0.5 mr-2 flex-shrink-0" />
+                              <span className="font-medium text-gray-700">Sponsor:</span>
+                              <span className="ml-1">{project.funding_agency}</span>
+                            </div>
+
+                            <div className="flex items-start">
+                              <DollarSign className="w-3 h-3 text-red-500 mt-0.5 mr-2 flex-shrink-0" />
+                              <span className="font-medium text-gray-700">Amount:</span>
+                              <span className="ml-1 text-green-600 font-semibold">
+                                {formatCurrency(project.financial_outlay)}
+                              </span>
+                            </div>
+
+                            {duration && (
+                              <div className="flex items-start">
+                                <Clock className="w-3 h-3 text-red-500 mt-0.5 mr-2 flex-shrink-0" />
+                                <span className="font-medium text-gray-700">Duration:</span>
+                                <span className="ml-1">{duration}</span>
+                              </div>
+                            )}
                           </div>
 
-                          <div className="flex items-start">
-                            <Building2 className="w-3 h-3 text-red-500 mt-0.5 mr-2 flex-shrink-0" />
-                            <span className="font-medium text-gray-700">Sponsor:</span>
-                            <span className="ml-1">{project.funding_agency}</span>
-                          </div>
-
-                          <div className="flex items-start">
-                            <DollarSign className="w-3 h-3 text-red-500 mt-0.5 mr-2 flex-shrink-0" />
-                            <span className="font-medium text-gray-700">Amount:</span>
-                            <span className="ml-1 text-green-600 font-semibold">
-                              {formatCurrency(project.financial_outlay)}
+                          <div className="flex items-center justify-between mt-2">
+                            <span
+                              className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                                project.status === 'Ongoing'
+                                  ? 'bg-green-100 text-green-800'
+                                  : 'bg-gray-100 text-gray-800'
+                              }`}
+                            >
+                              {project.status}
                             </span>
-                          </div>
 
-                          <div className="flex items-start">
-                            <Clock className="w-3 h-3 text-red-500 mt-0.5 mr-2 flex-shrink-0" />
-                            <span className="font-medium text-gray-700">Duration:</span>
-                            <span className="ml-1">
-                              {formatDate(project.start_date)} - {formatDate(project.end_date)}
+                            <span className="text-red-600 hover:text-red-700 font-medium text-xs flex items-center">
+                              View Details
+                              <ExternalLink className="w-3 h-3 ml-1" />
                             </span>
                           </div>
                         </div>
-
-                        <div className="flex items-center justify-between mt-2">
-                          <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                            project.status === 'Ongoing'
-                              ? 'bg-green-100 text-green-800'
-                              : 'bg-gray-100 text-gray-800'
-                          }`}>
-                            {project.status}
-                          </span>
-
-                          <span className="text-red-600 hover:text-red-700 font-medium text-xs flex items-center">
-                            View Details
-                            <ExternalLink className="w-3 h-3 ml-1" />
-                          </span>
-                        </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               ))}
@@ -500,21 +512,25 @@ const ProjectsPage = () => {
 
               <div>
                 <h3 className="font-semibold text-gray-700 mb-1">Status</h3>
-                <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                  selectedProject.status === 'Ongoing'
-                    ? 'bg-green-100 text-green-800'
-                    : 'bg-gray-100 text-gray-800'
-                }`}>
+                <span
+                  className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                    selectedProject.status === 'Ongoing'
+                      ? 'bg-green-100 text-green-800'
+                      : 'bg-gray-100 text-gray-800'
+                  }`}
+                >
                   {selectedProject.status}
                 </span>
               </div>
 
-              <div>
-                <h3 className="font-semibold text-gray-700 mb-1">Duration</h3>
-                <p className="text-gray-600">
-                  {formatDate(selectedProject.start_date)} - {formatDate(selectedProject.end_date)}
-                </p>
-              </div>
+              {formatDuration(selectedProject.start_date, selectedProject.end_date) && (
+                <div>
+                  <h3 className="font-semibold text-gray-700 mb-1">Duration</h3>
+                  <p className="text-gray-600">
+                    {formatDuration(selectedProject.start_date, selectedProject.end_date)}
+                  </p>
+                </div>
+              )}
 
               <div>
                 <h3 className="font-semibold text-gray-700 mb-1">PI Institute</h3>
