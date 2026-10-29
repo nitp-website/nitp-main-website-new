@@ -65,9 +65,20 @@ const formatDate = (dateString) => {
   });
 };
 
-// "1 Jan 2024 - 31 Dec 2026", or just start date if no end date.
-const formatDuration = (start, end) =>
-  [formatDate(start), formatDate(end)].filter(Boolean).join(' - ');
+// "1 Jan 2024 - 31 Dec 2026", "1 Jan 2024 - Ongoing", or end date / Ongoing if no start date.
+const formatDuration = (start, end, status) => {
+  const startFormatted = formatDate(start);
+  const endFormatted = formatDate(end);
+  const isOngoing =
+    typeof status === 'string' && status.trim().toLowerCase() === 'ongoing';
+
+  const endPart = endFormatted || (isOngoing ? 'Ongoing' : '');
+
+  if (startFormatted && endPart) {
+    return `${startFormatted} - ${endPart}`;
+  }
+  return startFormatted || endPart || '';
+};
 
 const ProjectsPage = () => {
   const searchParams = useSearchParams();
@@ -373,7 +384,11 @@ const ProjectsPage = () => {
 
                   <div className="p-4 space-y-4">
                     {yearProjects.map((project, idx) => {
-                      const duration = formatDuration(project.start_date, project.end_date);
+                      const duration = formatDuration(
+                        project.start_date,
+                        project.end_date,
+                        project.status
+                      );
                       return (
                         <div
                           key={`${project.project_type || 'proj'}-${project.id || idx}-${idx}`}
@@ -523,11 +538,19 @@ const ProjectsPage = () => {
                 </span>
               </div>
 
-              {formatDuration(selectedProject.start_date, selectedProject.end_date) && (
+              {formatDuration(
+                selectedProject.start_date,
+                selectedProject.end_date,
+                selectedProject.status
+              ) && (
                 <div>
                   <h3 className="font-semibold text-gray-700 mb-1">Duration</h3>
                   <p className="text-gray-600">
-                    {formatDuration(selectedProject.start_date, selectedProject.end_date)}
+                    {formatDuration(
+                      selectedProject.start_date,
+                      selectedProject.end_date,
+                      selectedProject.status
+                    )}
                   </p>
                 </div>
               )}
