@@ -40,6 +40,9 @@ const Slider = () => {
           <img src="/HindiDiwas.png" />
         </SwiperSlide>
         <SwiperSlide>
+          <img src="/home-page-carosel/Hostel.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
           <img src="https://i.postimg.cc/c4tGvYPX/Twitter-header-1.png" />
         </SwiperSlide>
         <SwiperSlide>
