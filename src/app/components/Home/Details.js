@@ -20,14 +20,14 @@ const FormatDate = ({ time }) => {
 
   // Convert to number if it's a string
   const timestamp = typeof time === 'string' ? parseInt(time) : time;
-  
+
   // Check if the timestamp is valid
   if (isNaN(timestamp) || timestamp <= 0) {
     return <>Invalid Date</>;
   }
 
   const date = new Date(timestamp);
-  
+
   // Check if the date is valid
   if (isNaN(date.getTime())) {
     return <>Invalid Date</>;
@@ -221,8 +221,8 @@ const Eventcard = ({
             className="flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700"
           >
             <ExternalLink className="h-4 w-4" />
-            {parsedEventLink.caption && parsedEventLink.caption.trim() !== "" 
-              ? parsedEventLink.caption.trim() 
+            {parsedEventLink.caption && parsedEventLink.caption.trim() !== ""
+              ? parsedEventLink.caption.trim()
               : "Event Link"}
           </a>
         )}
@@ -269,6 +269,7 @@ const Details = () => {
         const urls = [
           `${base}/api/notice?type=active`,
           `${base}/api/notice?type=job`,
+          `${base}/api/notice?type=convocation`,
           `${base}/api/notice?type=facultystaffjob`,
           `${base}/api/notice?type=admissions&limit=50`,
         ];
@@ -510,12 +511,12 @@ const Details = () => {
                   // Sort by updatedAt in descending order (most recent first)
                   const dateA = new Date(parseInt(a.updatedAt));
                   const dateB = new Date(parseInt(b.updatedAt));
-                  
+
                   // Check if dates are valid
                   if (isNaN(dateA.getTime()) && isNaN(dateB.getTime())) return 0;
                   if (isNaN(dateA.getTime())) return 1;
                   if (isNaN(dateB.getTime())) return -1;
-                  
+
                   return dateB - dateA;
                 })
                 .map((event, index) => {

@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FiDownload, FiStar } from 'react-icons/fi';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle, getNoticeStartDate } from "@/lib/noticeHelpers";
+import { NoticeBadge, NoticeTitle, getNoticeStartDate, parseNoticeLink, getValidAttachments } from "@/lib/noticeHelpers";
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -132,6 +132,7 @@ const Page = () => {
         const urls = [
           `${base}/api/notice?type=active`,
           `${base}/api/notice?type=job`,
+          `${base}/api/notice?type=convocation`,
           `${base}/api/notice?type=facultystaffjob`,
           `${base}/api/notice?type=admissions&limit=50`,
         ];
