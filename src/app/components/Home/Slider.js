@@ -37,6 +37,9 @@ const Slider = () => {
           <img src="/home-page-carosel/Vigilance_Awareness.jpg" />
         </SwiperSlide>
         <SwiperSlide>
+          <img src="/home-page-carosel/homepage.png" />
+        </SwiperSlide>
+        <SwiperSlide>
           <img src="/HindiDiwas.png" />
         </SwiperSlide>
         <SwiperSlide>
