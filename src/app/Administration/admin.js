@@ -261,107 +261,107 @@ const Senate = [
   },
   {
     name: "Prof. Manoj Kumar",
-    designation: "Professor, Architecture and Planning Dept.",
-    type: "Member"
-  },
-  {
-    name: "Prof. Fulena Rajak",
-    designation: "Professor, Architecture and Planning Dept.",
+    designation: "Professor, Architecture and Planning",
     type: "Member"
   },
   {
     name: "Prof. L.B. Roy",
-    designation: "Professor, Civil Engineering Dept.",
+    designation: "Professor, Civil Engineering",
     type: "Member"
   },
   {
     name: "Prof. Sanjeev Sinha",
-    designation: "Professor, Civil Engineering Dept.",
+    designation: "Professor, Civil Engineering",
     type: "Member"
   },
   {
     name: "Prof. Ajay Kr Sinha",
-    designation: "Professor, Civil Engineering Dept.",
+    designation: "Professor, Civil Engineering",
     type: "Member"
   },
   {
     name: "Prof. S.S. Mishra",
-    designation: "Professor, Civil Engineering Dept.",
+    designation: "Professor, Civil Engineering",
     type: "Member"
   },
   {
     name: "Prof. Vivekanand Singh",
-    designation: "Professor, Civil Engineering Dept.",
+    designation: "Professor, Civil Engineering",
     type: "Member"
   },
   {
     name: "Prof. Ramakar Jha",
-    designation: "Professor, Civil Engineering Dept.",
+    designation: "Professor, Civil Engineering",
     type: "Member"
   },
   {
     name: "Prof. N.S. Maurya",
-    designation: "Professor, Civil Engineering Dept.",
+    designation: "Professor, Civil Engineering",
     type: "Member"
   },
   {
     name: "Prof. A.R. Quaff",
-    designation: "Professor, Civil Engineering Dept.",
+    designation: "Professor, Civil Engineering",
     type: "Member"
   },
   {
     name: "Prof. Anshuman Singh",
-    designation: "Professor, Civil Engineering Dept.",
+    designation: "Professor, Civil Engineering",
     type: "Member"
   },
   {
     name: "Prof. Baboo Rai",
-    designation: "Professor, Civil Engineering Dept.",
+    designation: "Professor, Civil Engineering",
     type: "Member"
   },
   {
     name: "Prof. Pijush Samui",
-    designation: "Professor, Civil Engineering Dept.",
+    designation: "Professor, Civil Engineering",
     type: "Member"
   },
   {
     name: "Prof. M.P. Singh",
-    designation: "Professor, Computer Science and Engineering Dept.",
+    designation: "Professor, Computer Science and Engineering",
     type: "Member"
   },
   {
     name: "Prof. Prabhat Kumar",
-    designation: "Professor, Computer Science and Engineering Dept.",
+    designation: "Professor, Computer Science and Engineering",
     type: "Member"
   },
   {
     name: "Prof. Ramesh Kumar",
-    designation: "Professor, Electrical Engineering Dept.",
+    designation: "Professor, Electrical Engineering",
     type: "Member"
   },
   {
     name: "Prof. Bharat Gupta",
-    designation: "Professor, Electronics and Communication Engg.",
+    designation: "Professor, Electronics and Communication Engineering",
     type: "Member"
   },
   {
     name: "Prof. Om Prakash",
-    designation: "Professor, Mechanical Engineering Dept.",
+    designation: "Professor, Mechanical Engineering",
     type: "Member"
   },
   {
     name: "Prof. Prakash Chandra",
-    designation: "Professor, Mechanical Engineering Dept.",
+    designation: "Professor, Mechanical Engineering",
     type: "Member"
   },
   {
     name: "Prof. A.N. Sinha",
-    designation: "Professor, Mechanical Engineering Dept.",
+    designation: "Professor, Mechanical Engineering",
     type: "Member"
   },
     {
     name: "Prof. Samrat Mukherjee",
-    designation: "Professor, Applied Physics and Materials Engg. Dept.",
+    designation: "Professor, Applied Physics and Materials Engineering",
+    type: "Member"
+  },
+   {
+    name: "Prof. Gayadhar Pradhan",
+    designation: "Professor,  Electronics and Communication Engineering",
     type: "Member"
   },
   //===============================
@@ -424,11 +424,6 @@ const Senate = [
   //////////////////////////////////
   
   //===============================
-  {
-    name: "Dr. J.P. Singh",
-    designation: "Associate Professor & PI (MIS)",
-    type: "Member"
-  },
   {
     name: "Prof. K.P. Singh",
     designation: "Former Director, IIT BHU",
