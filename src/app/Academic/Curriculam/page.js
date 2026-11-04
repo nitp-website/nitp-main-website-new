@@ -5,12 +5,12 @@ const DocumentsTable = () => {
 
      const dataUG= [
  
-      {
-       link:
-        "https://drive.google.com/file/d/1Jobn8OBYPUf1ekffjTS0ZIzXuzfQ8CNa/view?usp=sharing",
-       para:
-        "UG Regulation 2022(Effective from academic session 2021-22 and onwards)",
-      },
+      // {
+      //  link:
+      //   "https://drive.google.com/file/d/1Jobn8OBYPUf1ekffjTS0ZIzXuzfQ8CNa/view?usp=sharing",
+      //  para:
+      //   "UG Regulation 2022(Effective from academic session 2021-22 and onwards)",
+      // },
       {
        link:
         "https://drive.google.com/file/d/1aW72cez0wwGQ5N29U2mj2zK2RgW682dv/view?usp=sharing",
