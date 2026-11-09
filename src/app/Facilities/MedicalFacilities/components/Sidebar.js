@@ -45,9 +45,8 @@ const Sidebar = () => {
 
         {/* Doctor Contact Dropdown */}
         <li
-          className={`flex items-center px-4 py-3 rounded-lg cursor-pointer transition-all font-medium text-base ${
-            showDoctorContact ? "bg-red-100 text-red-900" : "hover:bg-red-50 text-red-900"
-          }`}
+          className={`flex items-center px-4 py-3 rounded-lg cursor-pointer transition-all font-medium text-base ${showDoctorContact ? "bg-red-100 text-red-900" : "hover:bg-red-50 text-red-900"
+            }`}
           onClick={() => setShowDoctorContact((prev) => !prev)}
         >
           <FaUserFriends className="mr-3" />
@@ -79,9 +78,8 @@ const Sidebar = () => {
 
         {/* Doctor Timing Dropdown */}
         <li
-          className={`flex items-center px-4 py-3 rounded-lg cursor-pointer transition-all font-medium text-base ${
-            showDoctorTiming ? "bg-red-100 text-red-900" : "hover:bg-red-50 text-red-900"
-          }`}
+          className={`flex items-center px-4 py-3 rounded-lg cursor-pointer transition-all font-medium text-base ${showDoctorTiming ? "bg-red-100 text-red-900" : "hover:bg-red-50 text-red-900"
+            }`}
           onClick={() => setShowDoctorTiming((prev) => !prev)}
         >
           <FaUserFriends className="mr-3" />
@@ -117,12 +115,18 @@ const Sidebar = () => {
           isActive={pathname === `${basePath}/medicalForm`}
           onClick={() => handleNavigation(`${basePath}/medicalForm`)}
         />
+        <SidebarItem
+          icon={<FaFileMedical />}
+          text="SOP"
+          isActive={pathname === `${basePath}/sop`}
+          onClick={() => handleNavigation(`${basePath}/sop`)}
+        />
 
         <SidebarItem
           icon={<FaPhotoVideo />}
-          text="Notice"
-          isActive={pathname === `${basePath}/notice`}
-          onClick={() => handleNavigation(`${basePath}/notice`)}
+          text="List of Empanelled Hospitals"
+          isActive={pathname === `${basePath}/Empanelled`}
+          onClick={() => handleNavigation(`${basePath}/Empanelled`)}
         />
       </ul>
     </aside>
@@ -132,11 +136,10 @@ const Sidebar = () => {
 export const SidebarItem = ({ icon, text, isActive, onClick }) => {
   return (
     <li
-      className={`flex items-center px-4 py-3 rounded-lg cursor-pointer transition-all font-medium text-base ${
-        isActive
-          ? "bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg"
-          : "hover:bg-red-100 text-red-900"
-      }`}
+      className={`flex items-center px-4 py-3 rounded-lg cursor-pointer transition-all font-medium text-base ${isActive
+        ? "bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg"
+        : "hover:bg-red-100 text-red-900"
+        }`}
       onClick={onClick}
     >
       <span className="mr-3">{icon}</span>

@@ -64,3 +64,64 @@ export function extractApiPagination(response, currentPage, limit, itemCount) {
     hasNext: totalPages ? currentPage < totalPages : itemCount >= limit,
   };
 }
+
+let memoryActiveDepts = null;
+let activeDeptsPromise = null;
+
+export async function getActiveDeptSet() {
+  if (memoryActiveDepts) return memoryActiveDepts;
+
+  if (typeof window !== "undefined") {
+    try {
+      const stored = sessionStorage.getItem("nitp_active_depts");
+      if (stored) {
+        memoryActiveDepts = new Set(JSON.parse(stored));
+        return memoryActiveDepts;
+      }
+    } catch {}
+  }
+
+  if (!activeDeptsPromise) {
+    activeDeptsPromise = (async () => {
+      try {
+        let allStaff = [];
+        let page = 1;
+        let totalPages = 1;
+        do {
+          const res = await fetch(
+            `${BACKEND_API_BASE_URL}/api/staff2?type=all&page=${page}&limit=100`
+          );
+          if (!res.ok) break;
+          const data = await res.json();
+          if (data && Array.isArray(data.data)) {
+            allStaff.push(...data.data);
+            totalPages = data.totalPages || 1;
+          } else if (Array.isArray(data)) {
+            allStaff.push(...data);
+            totalPages = 1;
+          } else {
+            totalPages = 1;
+          }
+          page++;
+        } while (page <= totalPages);
+
+        const set = new Set(
+          allStaff.map((s) => s.department?.toLowerCase().trim()).filter(Boolean)
+        );
+        memoryActiveDepts = set;
+        if (typeof window !== "undefined") {
+          try {
+            sessionStorage.setItem("nitp_active_depts", JSON.stringify(Array.from(set)));
+          } catch {}
+        }
+        return set;
+      } catch (err) {
+        console.error("Failed to fetch staff department codes:", err);
+        return new Set();
+      } finally {
+        activeDeptsPromise = null;
+      }
+    })();
+  }
+  return activeDeptsPromise;
+}

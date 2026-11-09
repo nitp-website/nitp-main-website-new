@@ -98,7 +98,7 @@ const ExamNoticePage = () => {
 
         if (!data || data.length === 0) {
           try {
-            const resAcademics = await axios.get(`${baseUrl}/api/notice?type=exam`);
+            const resAcademics = await axios.get(`${baseUrl}/api/notice?type=academics`);
             data = extractApiArray(resAcademics).filter((notice) => notice.isVisible === 1 || notice.isVisible === undefined);
           } catch {
             data = [];

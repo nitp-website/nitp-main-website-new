@@ -9,7 +9,7 @@ import "aos/dist/aos.css";
 import { FiDownload } from 'react-icons/fi';
 import { Calendar, MapPin, Download, ExternalLink, Star } from 'lucide-react';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments, getNoticeStartDate } from "@/lib/noticeHelpers";
+import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments, getNoticeStartDate, fetchNoticeUrl } from "@/lib/noticeHelpers";
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -247,10 +247,11 @@ const Details = () => {
   useEffect(() => {
     AOS.init({ duration: 800, once: false, offset: 50 });
 
+    const base = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
+
     const fetchEvents = async () => {
       try {
-        const eventsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/events?type=active`;
-        // console.log(eventsUrl);
+        const eventsUrl = `${base}/api/events?type=active`;
         const response = await axios.get(eventsUrl);
         const eventsData = extractApiArray(response);
         // Filter the events to include only those with type "general"
@@ -274,7 +275,7 @@ const Details = () => {
           `${base}/api/notice?type=admissions&limit=50`,
         ];
 
-        const responses = await Promise.allSettled(urls.map((url) => axios.get(url)));
+        const responses = await Promise.allSettled(urls.map((url) => fetchNoticeUrl(url)));
         const combined = [];
         responses.forEach((res) => {
           if (res.status === "fulfilled") {
@@ -312,7 +313,7 @@ const Details = () => {
 
     const fetchAcademics = async () => {
       try {
-        const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=academics`;
+        const academicsUrl = `${base}/api/notice?type=academics`;
         const response = await axios.get(academicsUrl);
         const academicsData = extractApiArray(response);
         const sortedAcademics = academicsData

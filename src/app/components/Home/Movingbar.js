@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Megaphone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Info } from 'lucide-react';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments } from "@/lib/noticeHelpers";
+import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments, fetchNoticeUrl } from "@/lib/noticeHelpers";
 
 const Movingbar = () => {
   const [importantNotices, setImportantNotices] = useState([]);
@@ -23,7 +23,7 @@ const Movingbar = () => {
           `${base}/api/notice?type=admissions&limit=50`,
         ];
 
-        const responses = await Promise.allSettled(urls.map((url) => axios.get(url)));
+        const responses = await Promise.allSettled(urls.map((url) => fetchNoticeUrl(url)));
         const combined = [];
         responses.forEach((res) => {
           if (res.status === "fulfilled") {

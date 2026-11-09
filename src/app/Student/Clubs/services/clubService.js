@@ -37,9 +37,21 @@ async function handleFetch(config, fallbackValue, errorContext = {}) {
 }
 
 // --- Public API Functions ---
-// Fetches all clubs.
+// Fetches all clubs (cached in-memory to prevent repeated fetches across page loads).
+let clubsCache = null;
+let clubsPromise = null;
+
 export async function getClubs() {
-  return await handleFetch({ url: "/api/club", params: { type: "all" } }, []);
+  if (clubsCache) return clubsCache;
+  if (!clubsPromise) {
+    clubsPromise = handleFetch({ url: "/api/club", params: { type: "all" } }, []).then((data) => {
+      clubsCache = data;
+      return data;
+    }).finally(() => {
+      clubsPromise = null;
+    });
+  }
+  return clubsPromise;
 }
 
 // Fetches a specific club by its ID and explicitly arranges its member data by most recent session.

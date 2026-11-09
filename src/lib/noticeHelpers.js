@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { Star } from "lucide-react";
 import { FiStar } from "react-icons/fi";
 
@@ -265,5 +266,25 @@ export function getValidAttachments(attachments) {
   }
 
   return validList;
+}
+
+// In-flight promise deduplication cache for notice endpoints
+const noticeUrlPromises = new Map();
+
+export async function fetchNoticeUrl(url) {
+  if (noticeUrlPromises.has(url)) {
+    return noticeUrlPromises.get(url);
+  }
+  const p = axios
+    .get(url)
+    .then((res) => res)
+    .finally(() => {
+      // Keep in cache for 30 seconds to prevent burst duplicates across components
+      setTimeout(() => {
+        noticeUrlPromises.delete(url);
+      }, 30000);
+    });
+  noticeUrlPromises.set(url, p);
+  return p;
 }
 

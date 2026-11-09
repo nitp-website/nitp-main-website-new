@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import axios from "axios";
+import { getActiveDeptSet } from "@/lib/apiHelpers";
 import { IoIosArrowDown, IoIosArrowDropright } from "react-icons/io";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import "./styles/Navbar.css";
@@ -569,11 +570,11 @@ const BASE_NAV_ITEMS = [
       //   link: "/Academic/Curriculam",
       //   iconImage: Rules,
       // },
-      {
-        label: "Admin Portal",
-        link: "https://admin.nitp.ac.in/",
-        iconImage: Admin,
-      },
+      // {
+      //   label: "Admin Portal",
+      //   link: "https://admin.nitp.ac.in/",
+      //   iconImage: Admin,
+      // },
       // {
       //   label: "Faculty Academic Portal",
       //   link: "https://mis.nitp.ac.in/",
@@ -788,44 +789,11 @@ const CLUBS_CHILD_INDEX = BASE_NAV_ITEMS[STUDENTS_NAV_INDEX].children.findIndex(
 );
 
 let cachedActiveDepts = null;
-let fetchDeptsPromise = null;
 
 const fetchActiveDeptSet = async () => {
-  if (cachedActiveDepts) return cachedActiveDepts;
-  if (!fetchDeptsPromise) {
-    const baseUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
-    fetchDeptsPromise = (async () => {
-      try {
-        let allStaff = [];
-        let page = 1;
-        let totalPages = 1;
-        do {
-          const { data } = await axios.get(
-            `${baseUrl}/api/staff2?type=all&page=${page}&limit=100`
-          );
-          if (data && Array.isArray(data.data)) {
-            allStaff.push(...data.data);
-            totalPages = data.totalPages || 1;
-          } else if (Array.isArray(data)) {
-            allStaff.push(...data);
-            totalPages = 1;
-          } else {
-            totalPages = 1;
-          }
-          page++;
-        } while (page <= totalPages);
-
-        const set = new Set(allStaff.map((s) => s.department?.toLowerCase().trim()).filter(Boolean));
-        cachedActiveDepts = set;
-        return set;
-      } catch (err) {
-        console.error("Failed to fetch staff department codes:", err);
-        fetchDeptsPromise = null;
-        return new Set();
-      }
-    })();
-  }
-  return fetchDeptsPromise;
+  const depts = await getActiveDeptSet();
+  cachedActiveDepts = depts;
+  return depts;
 };
 
 /**
@@ -874,6 +842,7 @@ const QUICK_PORTALS = [
   { label: "ERP Portal", link: "https://erp.nitp.ac.in/", isExternal: true },
   { label: "Academic Portal", link: "https://mis.nitp.ac.in/", isExternal: true },
   { label: "Intranet", link: "/Academic/Intranet", isExternal: false },
+  { label: "Admin Portal", link: "https://admin.nitp.ac.in", isExternal: true }
 ];
 
 //main nav funtion
@@ -992,9 +961,8 @@ export default function Navbar() {
             >
               <span>Portals</span>
               <IoIosArrowDown
-                className={`w-3 h-3 transition-transform duration-200 ${
-                  isQuickLinksOpen ? "rotate-180" : ""
-                }`}
+                className={`w-3 h-3 transition-transform duration-200 ${isQuickLinksOpen ? "rotate-180" : ""
+                  }`}
               />
             </button>
 
@@ -1058,6 +1026,13 @@ export default function Navbar() {
               className="hover:underline text-[0.6rem] md:text-sm"
             >
               Intranet
+            </a>
+            <span className="text-[0.5rem] md:text-sm">|</span>
+            <a
+              href="https://admin.nitp.ac.in"
+              className="hover:underline text-[0.6rem] md:text-sm"
+            >
+              Admin Portal
             </a>
           </div>
           <div className="flex space-x-2">

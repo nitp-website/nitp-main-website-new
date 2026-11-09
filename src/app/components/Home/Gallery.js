@@ -14,9 +14,7 @@ const images = [
   'https://i.postimg.cc/TwLbcvmJ/nit-patna-007.jpg',
   'https://i.postimg.cc/pTwFGcJb/nit-patna-008.jpg',
   'https://i.postimg.cc/LssLn187/nit-patna-009.jpg',
-  'https://i.postimg.cc/TwLbcvmJ/nit-patna-007.jpg',
-  'https://i.postimg.cc/pTwFGcJb/nit-patna-008.jpg',
-  'https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp'
+  '/MainEntrance.jpg'
 ];
 
 export function Gallery() {

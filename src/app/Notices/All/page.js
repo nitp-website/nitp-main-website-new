@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FiDownload, FiStar } from 'react-icons/fi';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle, getNoticeStartDate, parseNoticeLink, getValidAttachments } from "@/lib/noticeHelpers";
+import { NoticeBadge, NoticeTitle, getNoticeStartDate, parseNoticeLink, getValidAttachments, fetchNoticeUrl } from "@/lib/noticeHelpers";
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -137,7 +137,7 @@ const Page = () => {
           `${base}/api/notice?type=admissions&limit=50`,
         ];
 
-        const responses = await Promise.allSettled(urls.map((url) => axios.get(url)));
+        const responses = await Promise.allSettled(urls.map((url) => fetchNoticeUrl(url)));
         const combined = [];
         responses.forEach((res) => {
           if (res.status === "fulfilled") {

@@ -5,12 +5,12 @@ import Sidebar from "../components/Sidebar";
 
 const downloadsList = [
   {
-    name: "SOP",
-    link: "https://drive.google.com/file/d/1_6KN00R1HR6x9YfgV85XXs3ns9oZqPpY/view?usp=sharing",
+    name: "List 1",
+    link: "https://drive.google.com/file/d/1YC839XCnkbgAfpW9pFLqko6t135i1kD1/view?usp=drivesdk",
   },
   {
-    name: "List of Empanelled Hospitals",
-    link: "https://drive.google.com/file/d/1YC839XCnkbgAfpW9pFLqko6t135i1kD1/view?usp=drivesdk",
+    name: "List 2",
+    link: "https://drive.google.com/file/d/1XZkZ2rl5PYf6UwcaK-Y4Xtwy8PEJuUPB/view?usp=sharing",
   },
 ];
 

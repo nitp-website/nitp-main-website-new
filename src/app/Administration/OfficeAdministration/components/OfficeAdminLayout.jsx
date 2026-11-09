@@ -7,47 +7,10 @@ import { Building2, Users, ChevronRight, ChevronDown, RefreshCw, AlertCircle } f
 import NewStaffcardDept from "@/app/components/faculty/NewStaffcardDept";
 import { sortByDesignation } from "@/lib/designationOrder";
 import { OFFICE_SECTIONS } from "../officeSections";
-
-// In-memory module cache for active department codes fetched dynamically from backend
-let cachedActiveDepts = null;
-let fetchDeptsPromise = null;
+import { getActiveDeptSet } from "@/lib/apiHelpers";
 
 const fetchActiveDeptSet = async () => {
-  if (cachedActiveDepts) return cachedActiveDepts;
-  if (!fetchDeptsPromise) {
-    const baseUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
-    fetchDeptsPromise = (async () => {
-      try {
-        let allStaff = [];
-        let page = 1;
-        let totalPages = 1;
-        do {
-          const { data } = await axios.get(
-            `${baseUrl}/api/staff2?type=all&page=${page}&limit=100`
-          );
-          if (data && Array.isArray(data.data)) {
-            allStaff.push(...data.data);
-            totalPages = data.totalPages || 1;
-          } else if (Array.isArray(data)) {
-            allStaff.push(...data);
-            totalPages = 1;
-          } else {
-            totalPages = 1;
-          }
-          page++;
-        } while (page <= totalPages);
-
-        const set = new Set(allStaff.map((s) => s.department?.toLowerCase().trim()).filter(Boolean));
-        cachedActiveDepts = set;
-        return set;
-      } catch (err) {
-        console.error("Failed to fetch staff department codes:", err);
-        fetchDeptsPromise = null;
-        return new Set();
-      }
-    })();
-  }
-  return fetchDeptsPromise;
+  return await getActiveDeptSet();
 };
 
 export default function OfficeAdminLayout({ currentSection }) {
