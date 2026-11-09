@@ -25,11 +25,11 @@ const categorizedContent = {
       name: "Security Gate Pass",
       dlink: "https://drive.google.com/file/d/167jo8PmiS5lR5bhe9fGDwbadWr-Lvb28/view?usp=drivesdk"
     },
-     {
+    {
       name: "Guest House Booking ",
       dlink: "https://drive.google.com/file/d/1Wu8JtnAgpKUGXHQZ9XXLriiTHqHOZQNm/view?usp=sharing"
     },
-     {
+    {
       name: "No Dues Certificate ",
       dlink: "https://drive.google.com/file/d/1As1rBwuzOsRj5icGpomrZdkYnz09fIHW/view?usp=sharing"
     }
@@ -88,6 +88,10 @@ const categorizedContent = {
       dlink: "https://drive.google.com/file/d/1YC839XCnkbgAfpW9pFLqko6t135i1kD1/view?usp=drivesdk"
     },
     {
+      name: "List of Empaneled Hospitals",
+      dlink: "https://drive.google.com/file/d/1qvxRHrPGMCOiS7Nrt4SRE_0so8BkXd0C/view?usp=sharing",
+    },
+    {
       name: "Medical Claim Form",
       dlink: "https://drive.google.com/file/d/1Rx2FxIqoWBsxqFbmBTvWCl52ZLN_DfMy/view?usp=drivesdk"
     },
@@ -115,7 +119,7 @@ const categorizedContent = {
     },
     {
       name: "Proforma For Re-imbursement of Children Education Allowance/ Hostel Subsidy",
-      dlink: "https://drive.google.com/file/d/1CjL3btTi0IlYLkh3Z7k4WGt5uf7lTKnd/view?usp=sharing" 
+      dlink: "https://drive.google.com/file/d/1CjL3btTi0IlYLkh3Z7k4WGt5uf7lTKnd/view?usp=sharing"
     }
   ],
   "Leave Travel Allowance": [
@@ -158,9 +162,8 @@ const DownloadsPage = () => {
                     {items.map((item, index) => (
                       <tr
                         key={index}
-                        className={`border-b border-gray-100 hover:bg-red-50 transition-colors ${
-                          index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
-                        }`}
+                        className={`border-b border-gray-100 hover:bg-red-50 transition-colors ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                          }`}
                       >
                         <td className="text-left px-6 py-4 text-gray-800">{item.name}</td>
                         <td className="text-center px-6 py-4">
