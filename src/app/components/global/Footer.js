@@ -7,42 +7,34 @@ import { MapPin, CloudIcon, HeartIcon, TwitterIcon, LinkedinIcon, FacebookIcon, 
 const Footer = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [pollutionData, setPollutionData] = useState(null);
+  const [isWeatherLoading, setIsWeatherLoading] = useState(true);
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
-  const fetchWeatherData = async () => {
+  const fetchWeatherAndPollutionData = async () => {
     try {
-      const response = await fetch(
-        `/api/weather_data`
-      );
+      const response = await fetch(`/api/weather_data`);
+      if (!response.ok) {
+        setIsWeatherLoading(false);
+        return;
+      }
       const data = await response.json();
-      setWeatherData(data?.weather);
+      if (data?.weather) setWeatherData(data.weather);
+      if (data?.pollution) setPollutionData(data.pollution);
     } catch (error) {
-      console.error("Error fetching weather data:", error);
-    }
-  };
-
-  const fetchPollutionData = async () => {
-    try {
-      const response = await fetch(
-        `/api/weather_data`
-      );
-      const data = await response.json();
-      setPollutionData(data?.pollution);
-    } catch (error) {
-      console.error("Error fetching air pollution data:", error);
+      console.error("Error fetching weather & pollution data:", error);
+    } finally {
+      setIsWeatherLoading(false);
     }
   };
 
   useEffect(() => {
     // Fetch data initially
-    fetchWeatherData();
-    fetchPollutionData();
+    fetchWeatherAndPollutionData();
 
-    // Fetch data every two minutes
+    // Fetch data every 5 minutes (300,000ms) to reduce client polling overhead
     const interval = setInterval(() => {
-      fetchWeatherData();
-      fetchPollutionData();
-    }, 120000);
+      fetchWeatherAndPollutionData();
+    }, 300000);
 
     // Clean up interval on component unmount
     return () => clearInterval(interval);
@@ -163,7 +155,9 @@ const Footer = () => {
                 <p>Wind: {weatherData.list[0].wind.speed} km/h</p>
               </div>
             ) : (
-              <p className="text-sm">Loading weather data...</p>
+              <p className="text-sm text-gray-300">
+                {isWeatherLoading ? "Loading weather data..." : "Weather info unavailable"}
+              </p>
             )}
 
             {pollutionData && pollutionData.list && pollutionData.list.length > 0 && (

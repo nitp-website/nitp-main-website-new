@@ -11,7 +11,7 @@ const EXAM_NOTICE_URL = getBackendApiUrl("/api/notice?type=exam");
 
 const picture = [
     "https://dfhe5ze0n4pxu.cloudfront.net/College/Image/Image-1737372407376.JPG",
-    "https://nitp-database-s3.s3.ap-south-1.amazonaws.com/MainEntrance.webp"
+    "/MainEntrance.jpg"
 ];
 
 const aboutText = `The Exam Section is an integral and essential section of National Institute of Technology Patna. Since 2004 separate Exam section is functioning under Academic section of NIT Patna to look after the exam related matter. The students are evaluated continuously as per guidelines of National Education Policy (NEP) 2020 from academic session 2021 for 2021 admitted students onwards.

@@ -1,12 +1,17 @@
 import { NextResponse } from 'next/server';
 
+export const revalidate = 1800; // Cache on server for 30 minutes to reduce external API requests
+
 export async function GET() {
   const lat = "25.5941";
   const lon = "85.1376";
   const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API;
 
   if (!API_KEY) {
-    return NextResponse.json({ error: "API key is missing." }, { status: 500 });
+    return NextResponse.json(
+      { weather: null, pollution: null, message: "Weather API key not configured" },
+      { status: 200 }
+    );
   }
 
   const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
@@ -14,8 +19,8 @@ export async function GET() {
 
   try {
     const [weatherRes, pollutionRes] = await Promise.all([
-      fetch(weatherURL),
-      fetch(pollutionURL),
+      fetch(weatherURL, { next: { revalidate: 1800 } }),
+      fetch(pollutionURL, { next: { revalidate: 1800 } }),
     ]);
 
     if (!weatherRes.ok || !pollutionRes.ok) {

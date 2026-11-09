@@ -269,12 +269,15 @@ function ResearchContent() {
       setIsLoading(true);
       setError(null);
       try {
-        const [pubRes, projCountRes, patCountRes, projAllRes] = await Promise.all([
+        const [pubSettled, patSettled, projSettled] = await Promise.allSettled([
           axios.get(`${API_BASE}/api/publications?type=all&page=1&limit=50`),
-          axios.get(`${API_BASE}/api/project?type=count`),
           axios.get(`${API_BASE}/api/patent?type=count`),
           axios.get(`${API_BASE}/api/project?type=all`)
         ]);
+
+        const pubRes = pubSettled.status === "fulfilled" ? pubSettled.value : null;
+        const patCountRes = patSettled.status === "fulfilled" ? patSettled.value : null;
+        const projAllRes = projSettled.status === "fulfilled" ? projSettled.value : null;
 
         // 1. SAFE DATA EXTRACTION (Bypassing extractApiArray)
         const rawPubs = Array.isArray(pubRes?.data?.data) ? pubRes.data.data : [];
@@ -290,6 +293,8 @@ function ResearchContent() {
         let journalsCount = 0;
         let projectsCount = 0;
 
+        const allProjectsTotal = Number(projAllRes?.data?.total || projAllRes?.data?.projectCount || projects.length) || 0;
+
         if (apiStats) {
           journalsCount = Number(apiStats.journals) || 0;
           conferencesCount = Number(apiStats.conferences) || 0;
@@ -299,7 +304,7 @@ function ResearchContent() {
           projectsCount =
             Number(apiStats.projects) ||
             (Number(apiStats.sponsored_projects) || 0) + (Number(apiStats.consultancy_projects) || 0) ||
-            Number(projCountRes?.data?.projectCount) ||
+            allProjectsTotal ||
             0;
         } else {
           // Fallback calculation if stats object is not provided by backend
@@ -315,7 +320,7 @@ function ResearchContent() {
           booksCount = counts.books;
           conferencesCount = counts.conferences;
           journalsCount = counts.articles;
-          projectsCount = Number(projCountRes?.data?.projectCount) || 0;
+          projectsCount = allProjectsTotal;
         }
 
         setStats({

@@ -28,10 +28,10 @@ export default function Home() {
           <div>
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Introduction:</h2>
             <p className="text-justify">
-              The National Institute of Technology Patna (hereinafter referred to as 
-              <span className="font-semibold text-gray-900"> NIT Patna </span> 
-              or Institute) is fully committed to provide all types of basic healthcare facilities 24x7 to its students through Health Centre of NIT Patna (hereinafter referred to as 
-              <span className="font-semibold text-gray-900"> health center</span>). 
+              The National Institute of Technology Patna (hereinafter referred to as
+              <span className="font-semibold text-gray-900"> NIT Patna </span>
+              or Institute) is fully committed to provide all types of basic healthcare facilities 24x7 to its students through Health Centre of NIT Patna (hereinafter referred to as
+              <span className="font-semibold text-gray-900"> health center</span>).
               To serve the students of NIT Patna in a better and organized way, following Standard Operating Procedure (SoP) is hereby proposed to be followed:
             </p>
           </div>

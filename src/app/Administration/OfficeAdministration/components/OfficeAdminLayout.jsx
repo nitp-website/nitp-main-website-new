@@ -7,47 +7,14 @@ import { Building2, Users, ChevronRight, ChevronDown, RefreshCw, AlertCircle } f
 import NewStaffcardDept from "@/app/components/faculty/NewStaffcardDept";
 import { sortByDesignation } from "@/lib/designationOrder";
 import { OFFICE_SECTIONS } from "../officeSections";
+import { getActiveDeptSet } from "@/lib/apiHelpers";
 
-// In-memory module cache for active department codes fetched dynamically from backend
 let cachedActiveDepts = null;
-let fetchDeptsPromise = null;
 
 const fetchActiveDeptSet = async () => {
-  if (cachedActiveDepts) return cachedActiveDepts;
-  if (!fetchDeptsPromise) {
-    const baseUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
-    fetchDeptsPromise = (async () => {
-      try {
-        let allStaff = [];
-        let page = 1;
-        let totalPages = 1;
-        do {
-          const { data } = await axios.get(
-            `${baseUrl}/api/staff2?type=all&page=${page}&limit=100`
-          );
-          if (data && Array.isArray(data.data)) {
-            allStaff.push(...data.data);
-            totalPages = data.totalPages || 1;
-          } else if (Array.isArray(data)) {
-            allStaff.push(...data);
-            totalPages = 1;
-          } else {
-            totalPages = 1;
-          }
-          page++;
-        } while (page <= totalPages);
-
-        const set = new Set(allStaff.map((s) => s.department?.toLowerCase().trim()).filter(Boolean));
-        cachedActiveDepts = set;
-        return set;
-      } catch (err) {
-        console.error("Failed to fetch staff department codes:", err);
-        fetchDeptsPromise = null;
-        return new Set();
-      }
-    })();
-  }
-  return fetchDeptsPromise;
+  const depts = await getActiveDeptSet();
+  cachedActiveDepts = depts;
+  return depts;
 };
 
 export default function OfficeAdminLayout({ currentSection }) {
@@ -55,13 +22,7 @@ export default function OfficeAdminLayout({ currentSection }) {
   const [staffList, setStaffList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [activeSections, setActiveSections] = useState(() => {
-    if (cachedActiveDepts) {
-      const filtered = OFFICE_SECTIONS.filter((sec) => cachedActiveDepts.has(sec.deptCode.toLowerCase()));
-      return filtered.length > 0 ? filtered : OFFICE_SECTIONS;
-    }
-    return OFFICE_SECTIONS;
-  });
+  const [activeSections, setActiveSections] = useState(OFFICE_SECTIONS);
 
   // Dynamically fetch and update active sections from backend
   useEffect(() => {

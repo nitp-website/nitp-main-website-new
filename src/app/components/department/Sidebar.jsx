@@ -5,6 +5,7 @@ import {
   ChevronRight,
   Menu,
   Scroll,
+  GraduationCap,
 } from "lucide-react";
 
 const deptToBranch = {
@@ -22,45 +23,144 @@ const deptToBranch = {
   Material: "mse",
 };
 
+// Module-level caches & in-flight promises to prevent duplicate fetches across
+// simultaneous desktop + mobile Sidebar mounts and repeated tab navigations.
+const retiredFacultyCache = new Map();
+const studentsCheckCache = new Map();
+const retiredFacultyPromises = new Map();
+const studentsCheckPromises = new Map();
+
 const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [hasRetiredFaculty, setHasRetiredFaculty] = useState(false);
+  const [hasRetiredFaculty, setHasRetiredFaculty] = useState(() => {
+    if (!dept) return false;
+    const branch = deptToBranch[dept] || dept.toLowerCase();
+    return retiredFacultyCache.get(branch) ?? false;
+  });
+  const [hasStudents, setHasStudents] = useState(() => {
+    if (!dept) return false;
+    const branch = deptToBranch[dept] || dept.toLowerCase();
+    return studentsCheckCache.get(branch) ?? false;
+  });
 
   useEffect(() => {
     if (!dept) return;
+    let isMounted = true;
     const branch = deptToBranch[dept] || dept.toLowerCase();
-    const apiEndpoint = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/v2/faculty?type=${branch}`;
+    const backendUrl =
+      process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
 
-    fetch(apiEndpoint)
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data)) {
-          const hasRetired = data.some(
-            (f) => String(f.is_retired) === "1" || f.is_retired === 1 || f.is_retired === true
-          );
-          setHasRetiredFaculty(hasRetired);
-        }
-      })
-      .catch((err) => console.error("Error checking retired faculty:", err));
+    // 1. Check retired faculty (deduplicated)
+    if (retiredFacultyCache.has(branch)) {
+      setHasRetiredFaculty(retiredFacultyCache.get(branch));
+    } else {
+      if (!retiredFacultyPromises.has(branch)) {
+        const facultyApiEndpoint = `${backendUrl}/api/v2/faculty?type=${branch}`;
+        const p = fetch(facultyApiEndpoint)
+          .then((res) => res.json())
+          .then((data) => {
+            let hasRetired = false;
+            if (Array.isArray(data)) {
+              hasRetired = data.some(
+                (f) => String(f.is_retired) === "1" || f.is_retired === 1 || f.is_retired === true
+              );
+            }
+            retiredFacultyCache.set(branch, hasRetired);
+            return hasRetired;
+          })
+          .catch((err) => {
+            console.error("Error checking retired faculty:", err);
+            return false;
+          })
+          .finally(() => {
+            retiredFacultyPromises.delete(branch);
+          });
+        retiredFacultyPromises.set(branch, p);
+      }
+
+      retiredFacultyPromises.get(branch)?.then((hasRetired) => {
+        if (isMounted) setHasRetiredFaculty(hasRetired);
+      });
+    }
+
+    // 2. Check if students exist for this department (deduplicated)
+    if (studentsCheckCache.has(branch)) {
+      setHasStudents(studentsCheckCache.get(branch));
+    } else {
+      if (!studentsCheckPromises.has(branch)) {
+        const studentsApiEndpoint = `${backendUrl}/api/v2/students?department=${branch}&limit=1`;
+        const p = fetch(studentsApiEndpoint)
+          .then((res) => res.json())
+          .then((data) => {
+            const exists =
+              (data && data.success && Array.isArray(data.data) && data.data.length > 0) ||
+              (data && data.meta && Number(data.meta.totalStudents) > 0);
+            studentsCheckCache.set(branch, Boolean(exists));
+            return Boolean(exists);
+          })
+          .catch((err) => {
+            console.error("Error checking students:", err);
+            return false;
+          })
+          .finally(() => {
+            studentsCheckPromises.delete(branch);
+          });
+        studentsCheckPromises.set(branch, p);
+      }
+
+      studentsCheckPromises.get(branch)?.then((exists) => {
+        if (isMounted) setHasStudents(exists);
+      });
+    }
+
+    return () => {
+      isMounted = false;
+    };
   }, [dept]);
 
   const itemsToRender = (navItems || []).map((item) => {
-    if (item.name === "People" && item.dropdown && hasRetiredFaculty) {
-      const exists = item.dropdown.some((sub) => sub.name === "Retired Faculties" || sub.name === "Retired Faculty");
-      if (!exists) {
-        return {
-          ...item,
-          dropdown: [
-            ...item.dropdown,
-            {
-              name: "Retired Faculties",
-              url: `/Department/${dept}/retiredFaculty`,
-              icon: item.dropdown[0]?.icon || <Scroll size={18} />,
-            },
-          ],
-        };
+    if (item.name === "People" && item.dropdown) {
+      let updatedDropdown = [...item.dropdown];
+
+      if (hasStudents) {
+        const studentExists = updatedDropdown.some(
+          (sub) => sub.name === "Students" || sub.name === "Student List"
+        );
+        if (!studentExists) {
+          const researchIdx = updatedDropdown.findIndex(
+            (sub) => sub.name === "Research Students"
+          );
+          const studentItem = {
+            name: "Students",
+            url: `/Department/${dept}/students`,
+            icon: <GraduationCap size={18} />,
+          };
+          if (researchIdx !== -1) {
+            updatedDropdown.splice(researchIdx, 0, studentItem);
+          } else {
+            updatedDropdown.push(studentItem);
+          }
+        }
       }
+
+      if (hasRetiredFaculty) {
+        const exists = updatedDropdown.some(
+          (sub) => sub.name === "Retired Faculties" || sub.name === "Retired Faculty"
+        );
+        if (!exists) {
+          updatedDropdown.push({
+            name: "Retired Faculties",
+            url: `/Department/${dept}/retiredFaculty`,
+            icon: item.dropdown[0]?.icon || <Scroll size={18} />,
+          });
+        }
+      }
+
+      return {
+        ...item,
+        dropdown: updatedDropdown,
+      };
     }
     return item;
   });

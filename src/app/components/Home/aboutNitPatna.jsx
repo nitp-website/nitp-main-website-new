@@ -1,5 +1,6 @@
 "use client"
-import { React, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
+import Link from 'next/link';
 import { Button } from "../../../components/ui/button";
 import { 
   Landmark, 
@@ -117,11 +118,11 @@ export default function Aboutus() {
                 </div>
               </div>
 
-              <Button className="w-full bg-red-600 hover:bg-red-700 text-white group">
-                <a href="/Institute" className="flex items-center justify-center">
+              <Button asChild className="w-full bg-red-600 hover:bg-red-700 text-white group">
+                <Link href="/Institute" className="flex items-center justify-center">
                   Read More
                   <BookOpen className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
@@ -154,17 +155,17 @@ export default function Aboutus() {
               </div>
               
               <div className="flex space-x-3 w-full">
-                <Button className="flex-1 bg-transparent text-red-600 border border-red-600 hover:bg-red-50 group">
+                <Button asChild className="flex-1 bg-transparent text-red-600 border border-red-600 hover:bg-red-50 group">
                   <a href="mailto:director@nitp.ac.in" className="flex items-center justify-center">
                     <Mail className="w-4 h-4 mr-2 group-hover:animate-bounce" />
                     Email
                   </a>
                 </Button>
-                <Button className="flex-1 bg-red-600 hover:bg-red-700 text-white group">
-                  <a href="/Institute/Director" className="flex items-center justify-center">
+                <Button asChild className="flex-1 bg-red-600 hover:bg-red-700 text-white group">
+                  <Link href="/Institute/Director" className="flex items-center justify-center">
                     <User className="w-4 h-4 mr-2 group-hover:animate-pulse" />
                     Profile
-                  </a>
+                  </Link>
                 </Button>
               </div>
               
@@ -223,11 +224,11 @@ export default function Aboutus() {
                 </div>
               </div>
               
-              <Button className="w-full bg-red-600 hover:bg-red-700 text-white group">
-                <a href="/Institute" className="flex items-center justify-center">
+              <Button asChild className="w-full bg-red-600 hover:bg-red-700 text-white group">
+                <Link href="/Institute" className="flex items-center justify-center">
                   Explore More
                   <BookOpen className="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
