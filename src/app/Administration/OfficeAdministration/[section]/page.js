@@ -3,11 +3,17 @@ import OfficeAdminLayout from "../components/OfficeAdminLayout";
 import { OFFICE_SECTIONS, getSectionBySlug } from "../officeSections";
 
 export function generateStaticParams() {
-  return OFFICE_SECTIONS.flatMap((sec) => [
-    { section: sec.path },
-    { section: sec.id },
-    { section: sec.deptCode },
-  ]);
+  const seen = new Set();
+  const params = [];
+  for (const sec of OFFICE_SECTIONS) {
+    for (const key of [sec.path, sec.deptCode]) {
+      if (key && !seen.has(key)) {
+        seen.add(key);
+        params.push({ section: key });
+      }
+    }
+  }
+  return params;
 }
 
 export default async function OfficeSectionPage({ params }) {

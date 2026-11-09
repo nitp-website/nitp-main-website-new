@@ -9,8 +9,12 @@ import { sortByDesignation } from "@/lib/designationOrder";
 import { OFFICE_SECTIONS } from "../officeSections";
 import { getActiveDeptSet } from "@/lib/apiHelpers";
 
+let cachedActiveDepts = null;
+
 const fetchActiveDeptSet = async () => {
-  return await getActiveDeptSet();
+  const depts = await getActiveDeptSet();
+  cachedActiveDepts = depts;
+  return depts;
 };
 
 export default function OfficeAdminLayout({ currentSection }) {
@@ -18,13 +22,7 @@ export default function OfficeAdminLayout({ currentSection }) {
   const [staffList, setStaffList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [activeSections, setActiveSections] = useState(() => {
-    if (cachedActiveDepts) {
-      const filtered = OFFICE_SECTIONS.filter((sec) => cachedActiveDepts.has(sec.deptCode.toLowerCase()));
-      return filtered.length > 0 ? filtered : OFFICE_SECTIONS;
-    }
-    return OFFICE_SECTIONS;
-  });
+  const [activeSections, setActiveSections] = useState(OFFICE_SECTIONS);
 
   // Dynamically fetch and update active sections from backend
   useEffect(() => {
