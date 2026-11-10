@@ -121,29 +121,29 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
 
   const itemsToRender = (navItems || []).map((item) => {
     if (item.name === "People" && item.dropdown) {
-      let updatedDropdown = [...item.dropdown];
+      // 1. Rename any "Research Students" to "Research Scholars"
+      let updatedDropdown = item.dropdown.map((sub) => {
+        if (sub.name === "Research Students") {
+          return { ...sub, name: "Research Scholars" };
+        }
+        return sub;
+      });
 
+      // 2. Add "Students" if exists for this department
       if (hasStudents) {
         const studentExists = updatedDropdown.some(
           (sub) => sub.name === "Students" || sub.name === "Student List"
         );
         if (!studentExists) {
-          const researchIdx = updatedDropdown.findIndex(
-            (sub) => sub.name === "Research Students"
-          );
-          const studentItem = {
+          updatedDropdown.push({
             name: "Students",
             url: `/Department/${dept}/students`,
             icon: <GraduationCap size={18} />,
-          };
-          if (researchIdx !== -1) {
-            updatedDropdown.splice(researchIdx, 0, studentItem);
-          } else {
-            updatedDropdown.push(studentItem);
-          }
+          });
         }
       }
 
+      // 3. Add "Retired Faculties" if exists for this department
       if (hasRetiredFaculty) {
         const exists = updatedDropdown.some(
           (sub) => sub.name === "Retired Faculties" || sub.name === "Retired Faculty"
@@ -156,6 +156,18 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
           });
         }
       }
+
+      // 4. Enforce strict ordering: Faculty, Staff, Research Scholars, Students, Retired Faculties
+      const getOrderIndex = (name) => {
+        if (name === "Faculty") return 0;
+        if (name === "Staff") return 1;
+        if (name === "Research Scholars" || name === "Research Students") return 2;
+        if (name === "Students" || name === "Student List") return 3;
+        if (name === "Retired Faculties" || name === "Retired Faculty") return 4;
+        return 99;
+      };
+
+      updatedDropdown.sort((a, b) => getOrderIndex(a.name) - getOrderIndex(b.name));
 
       return {
         ...item,

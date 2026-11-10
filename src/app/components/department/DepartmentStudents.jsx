@@ -48,6 +48,24 @@ const deptFullNames = {
 
 const PAGE_LIMIT = 50;
 
+const isValueless = (val) => {
+  if (!val) return true;
+  const cleaned = String(val).trim().toUpperCase();
+  return (
+    cleaned === "" ||
+    cleaned === "N/A" ||
+    cleaned === "NA" ||
+    cleaned === "N / A" ||
+    cleaned === "NOT APPLICABLE" ||
+    cleaned === "NOT AVAILABLE" ||
+    cleaned === "-" ||
+    cleaned === "--" ||
+    cleaned === "NONE" ||
+    cleaned === "NULL" ||
+    cleaned === "UNDEFINED"
+  );
+};
+
 const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
   const branch = useMemo(() => {
     if (explicitBranch) return explicitBranch.toLowerCase();
@@ -339,11 +357,6 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                         <td className="py-3.5 px-6 font-semibold text-gray-900">
                           <div className="flex flex-col">
                             <span>{student.name || "-"}</span>
-                            {student.enrollment_no && (
-                              <span className="text-[11px] font-normal text-gray-500">
-                                Enroll: {student.enrollment_no}
-                              </span>
-                            )}
                           </div>
                         </td>
 
@@ -381,12 +394,12 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                         {/* Course / Program */}
                         <td className="py-3.5 px-6">
                           <div className="flex flex-col gap-1 items-start">
-                            {student.course && (
+                            {!isValueless(student.course) && (
                               <span className="inline-block px-2.5 py-0.5 bg-red-50 text-red-900 text-xs font-medium rounded-full border border-red-200">
                                 {student.course}
                               </span>
                             )}
-                            {student.specialization && (
+                            {!isValueless(student.specialization) && (
                               <span className="text-[11px] text-gray-500 italic">
                                 {student.specialization}
                               </span>
@@ -422,7 +435,7 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                         {student.roll_no || "-"}
                       </span>
                     </div>
-                    {student.course && (
+                    {!isValueless(student.course) && (
                       <span className="px-2 py-0.5 bg-red-50 text-red-900 text-[11px] font-medium rounded border border-red-200 max-w-[160px] truncate">
                         {student.course}
                       </span>
@@ -433,7 +446,7 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                     {student.name || "-"}
                   </h3>
 
-                  {student.specialization && (
+                  {!isValueless(student.specialization) && (
                     <p className="text-xs text-gray-500 italic mb-2">
                       {student.specialization}
                     </p>
@@ -519,8 +532,8 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                               window.scrollTo({ top: 0, behavior: "smooth" });
                             }}
                             className={`min-w-[32px] h-8 text-xs font-semibold rounded-lg transition-colors ${page === currentPage
-                                ? "bg-red-800 text-white shadow-sm"
-                                : "text-gray-700 hover:bg-gray-100 border border-gray-200"
+                              ? "bg-red-800 text-white shadow-sm"
+                              : "text-gray-700 hover:bg-gray-100 border border-gray-200"
                               }`}
                           >
                             {page}

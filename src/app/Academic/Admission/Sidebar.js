@@ -1,16 +1,15 @@
 "use client";
 import React from "react";
-import { FaUserGraduate, FaLaptopCode, FaBook,FaBookReader, FaGlobeAsia, FaFlask } from "react-icons/fa";
-import { PiStudentBold } from "react-icons/pi";
+import { FaUserGraduate, FaLaptopCode, FaBook, FaBookReader, FaGlobeAsia, FaFlask } from "react-icons/fa";
+import { PiBold } from "react-icons/pi";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export const SidebarItem = ({ icon, text, isActive, onClick }) => (
   <li
-    className={`flex items-center px-4 py-3 rounded-lg cursor-pointer transition-all font-medium text-base ${
-      isActive
+    className={`flex items-center px-4 py-3 rounded-lg cursor-pointer transition-all font-medium text-base ${isActive
         ? "bg-gradient-to-r from-red-600 to-red-400 text-white shadow-lg"
         : "hover:bg-red-100 text-red-900"
-    }`}
+      }`}
     onClick={onClick}
   >
     <span className="mr-3">{icon}</span>
