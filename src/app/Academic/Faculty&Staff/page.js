@@ -4,59 +4,59 @@ import Link from 'next/link';
 import "./style.css"
 
 const StaffResources = [
-    
-    {
-      "title": "Web Mail",
-      link: "http://mail.google.com/a/nitp.ac.in",
-      "image":"https://i.postimg.cc/pVGKk5qD/mail64.png",
-    },
-    {
-      "title": "Academic Portal",
-      link: "http://mis.nitp.ac.in:81/Default.aspx?ReturnUrl=%2fhome.aspx",
-      "image":"https://i.postimg.cc/SKtTmjqC/Chankaya64.png",
-    },
-    {
-      "title": "Recruitments",
-      link: "/Notices/JobsNITP",
-      "image":"https://i.postimg.cc/43Q9cYYH/job64.png",
-    },
-    {
-      "title": "Employee I-Card",
-      link: "https://docs.google.com/forms/d/e/1FAIpQLSedy0aZLXXj709zQjAejWvLQOs4_6ESIciPe0IV199kMr_D1g/viewform?usp=sf_link",
-      "image":"https://i.postimg.cc/0N3fL3dC/id-card64.png",
-    },
-    {
-      "title": "Staff Claim Form",
-      link: "/Academic/Faculty&Staff/forms",
-      "image":"https://i.postimg.cc/76PTnqzs/form64.png",
-    },
-    {
-      "title": "Admin Login",
-      link: "https://admin.nitp.ac.in/",
-      "image":"https://i.postimg.cc/GtxQLHLj/Computer64.png",
-    },
-    {
-      "title": "International Affairs",
-      link: "#",
-      "image":"https://i.postimg.cc/br130Tn9/exchange64.png",
-    },
-    {
-      "title": "All Faculty Profile",
-      link: "/Academic/Faculty&Staff/AllFaculty",
-      "image":"https://i.postimg.cc/5tVzjB2M/faculty64.png",
-    },
-    {
-      "title": "Officers",
-      link: "/Academic/Faculty&Staff/AllOfficers",
-      "image":"https://i.postimg.cc/YCggpnk3/officers64.png",
-    },
-    {
-      "title": "Other Employee",
-      link: "/Academic/Faculty&Staff/Others",
-      "image":"https://i.postimg.cc/7Yj0r8vh/other64.png",
-    },
-    
-  ];
+
+  {
+    "title": "Web Mail",
+    link: "http://mail.google.com/a/nitp.ac.in",
+    "image": "https://i.postimg.cc/pVGKk5qD/mail64.png",
+  },
+  {
+    "title": "Academic Portal",
+    link: "http://mis.nitp.ac.in:81/Default.aspx?ReturnUrl=%2fhome.aspx",
+    "image": "https://i.postimg.cc/SKtTmjqC/Chankaya64.png",
+  },
+  {
+    "title": "Recruitments",
+    link: "/Notices/JobsNITP",
+    "image": "https://i.postimg.cc/43Q9cYYH/job64.png",
+  },
+  {
+    "title": "Employee I-Card",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSedy0aZLXXj709zQjAejWvLQOs4_6ESIciPe0IV199kMr_D1g/viewform?usp=sf_link",
+    "image": "https://i.postimg.cc/0N3fL3dC/id-card64.png",
+  },
+  {
+    "title": "Staff Claim Form",
+    link: "/Academic/Faculty&Staff/forms",
+    "image": "https://i.postimg.cc/76PTnqzs/form64.png",
+  },
+  {
+    "title": "Admin Login",
+    link: "https://admin.nitp.ac.in/",
+    "image": "https://i.postimg.cc/GtxQLHLj/Computer64.png",
+  },
+  {
+    "title": "International Affairs",
+    link: "#",
+    "image": "https://i.postimg.cc/br130Tn9/exchange64.png",
+  },
+  {
+    "title": "All Faculty Profile",
+    link: "/Academic/Faculty&Staff/AllFaculty",
+    "image": "https://i.postimg.cc/5tVzjB2M/faculty64.png",
+  },
+  {
+    "title": "Officers",
+    link: "/Academic/Faculty&Staff/AllOfficers",
+    "image": "https://i.postimg.cc/YCggpnk3/officers64.png",
+  },
+  {
+    "title": "Other Employee",
+    link: "/Academic/Faculty&Staff/Others",
+    "image": "https://i.postimg.cc/7Yj0r8vh/other64.png",
+  },
+
+];
 
 const StudentResourcesPage = () => {
   return (

@@ -57,7 +57,7 @@ const navItems = [
                   icon: <FileText size={18} />,
                 },
             {
-                name: "Research Students",
+                name: "Research Scholars",
                 url: `/Department/${dept}/researchStudents`,
                 icon: <Building size={18} />,
             },

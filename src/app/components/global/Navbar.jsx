@@ -570,11 +570,11 @@ const BASE_NAV_ITEMS = [
       //   link: "/Academic/Curriculam",
       //   iconImage: Rules,
       // },
-      // {
-      //   label: "Admin Portal",
-      //   link: "https://admin.nitp.ac.in/",
-      //   iconImage: Admin,
-      // },
+      {
+        label: "Admin Portal",
+        link: "https://admin.nitp.ac.in/",
+        iconImage: Admin,
+      },
       // {
       //   label: "Faculty Academic Portal",
       //   link: "https://mis.nitp.ac.in/",
