@@ -14,6 +14,8 @@ import {
   RotateCcw,
   AlertCircle,
   Users,
+  Archive,
+  Calendar,
 } from "lucide-react";
 
 const deptToBranch = {
@@ -66,13 +68,15 @@ const isValueless = (val) => {
   );
 };
 
-const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
+const DepartmentStudents = ({ dept, branch: explicitBranch, defaultTab = "active" }) => {
   const branch = useMemo(() => {
     if (explicitBranch) return explicitBranch.toLowerCase();
     if (dept && deptToBranch[dept]) return deptToBranch[dept];
     return (dept || "").toLowerCase();
   }, [dept, explicitBranch]);
 
+  // Section state: "active" (Directory, active=1) vs "archive" (Archives, active=0)
+  const [activeTab, setActiveTab] = useState(defaultTab);
   const [students, setStudents] = useState([]);
   const [meta, setMeta] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -82,6 +86,7 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
   const [searchInput, setSearchInput] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [selectedCourse, setSelectedCourse] = useState("All");
+  const [selectedYear, setSelectedYear] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
 
   // Copy-to-clipboard state (stores copied roll_no)
@@ -107,11 +112,16 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
 
       const params = new URLSearchParams();
       params.set("department", branch);
+      params.set("active", activeTab === "archive" ? "0" : "1");
       params.set("page", String(currentPage));
       params.set("limit", String(PAGE_LIMIT));
 
       if (selectedCourse && selectedCourse !== "All") {
         params.set("course", selectedCourse);
+      }
+
+      if (selectedYear && selectedYear !== "All") {
+        params.set("year", String(selectedYear));
       }
 
       if (debouncedSearch) {
@@ -141,11 +151,22 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
     } finally {
       setLoading(false);
     }
-  }, [branch, currentPage, selectedCourse, debouncedSearch]);
+  }, [branch, activeTab, currentPage, selectedCourse, selectedYear, debouncedSearch]);
 
   useEffect(() => {
     fetchStudents();
   }, [fetchStudents]);
+
+  // Switch between Active Directory and Archives
+  const handleTabChange = (newTab) => {
+    if (newTab === activeTab) return;
+    setActiveTab(newTab);
+    setSelectedYear("All");
+    setSelectedCourse("All");
+    setSearchInput("");
+    setDebouncedSearch("");
+    setCurrentPage(1);
+  };
 
   // Handle email copy
   const handleCopyEmail = (email, rollNo) => {
@@ -162,6 +183,7 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
     setSearchInput("");
     setDebouncedSearch("");
     setSelectedCourse("All");
+    setSelectedYear("All");
     setCurrentPage(1);
   };
 
@@ -171,22 +193,61 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
   const totalPages = meta?.totalPages || 1;
   const totalStudents = meta?.totalStudents ?? students.length;
   const availableCourses = meta?.availableCourses || [];
+  const availableYears = meta?.availableYears || [];
 
   return (
-    <div className="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-black">
+    <div className="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-black" suppressHydrationWarning>
       {/* Header Section */}
-      <div className="mb-8 text-center">
+      <div className="mb-6 text-center">
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-red-900 tracking-tight">
-          STUDENTS
+          {activeTab === "archive" ? "STUDENT ARCHIVES" : "STUDENTS"}
         </h1>
         <p className="mt-2 text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-          Official student directory for the Department of {departmentTitle}.
+          {activeTab === "archive"
+            ? `Archived and graduated student records for the Department of ${departmentTitle}.`
+            : `Official student directory for the Department of ${departmentTitle}.`}
         </p>
       </div>
 
+      {/* Directory vs Archives Tab Navigation */}
+      <div className="flex justify-center mb-6">
+        <div className="inline-flex p-1 bg-gray-100 rounded-xl border border-gray-200 shadow-inner">
+          <button
+            type="button"
+            suppressHydrationWarning
+            onClick={() => handleTabChange("active")}
+            className={`inline-flex items-center gap-2 px-4 sm:px-6 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 ${activeTab === "active"
+                ? "bg-white text-red-900 shadow-sm border border-gray-200"
+                : "text-gray-600 hover:text-gray-900 hover:bg-gray-200/50"
+              }`}
+          >
+            <Users
+              size={16}
+              className={activeTab === "active" ? "text-red-700" : "text-gray-400"}
+            />
+            <span>Current Students</span>
+          </button>
+          <button
+            type="button"
+            suppressHydrationWarning
+            onClick={() => handleTabChange("archive")}
+            className={`inline-flex items-center gap-2 px-4 sm:px-6 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 ${activeTab === "archive"
+                ? "bg-white text-red-900 shadow-sm border border-gray-200"
+                : "text-gray-600 hover:text-gray-900 hover:bg-gray-200/50"
+              }`}
+          >
+            <Archive
+              size={16}
+              className={activeTab === "archive" ? "text-red-700" : "text-gray-400"}
+            />
+            <span>Archives</span>
+          </button>
+        </div>
+      </div>
+
       {/* Controls / Filter Bar */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sm:p-5 mb-6">
-        <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
+      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sm:p-5 mb-6" suppressHydrationWarning>
+        <div className="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between">
           {/* Search Box */}
           <div className="relative flex-1">
             <Search
@@ -195,6 +256,10 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
             />
             <input
               type="text"
+              suppressHydrationWarning
+              autoComplete="off"
+              data-lpignore="true"
+              data-form-type="other"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
               placeholder="Search by Name, Roll No, or Email..."
@@ -202,6 +267,7 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
             />
             {searchInput && (
               <button
+                suppressHydrationWarning
                 onClick={() => setSearchInput("")}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 title="Clear search"
@@ -211,10 +277,12 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
             )}
           </div>
 
-          {/* Course Dropdown */}
+          {/* Filters & Reset */}
           <div className="flex flex-wrap sm:flex-nowrap gap-3 items-center">
-            <div className="w-full sm:w-auto min-w-[200px]">
+            {/* Course Dropdown */}
+            <div className="w-full sm:w-auto min-w-[190px]">
               <select
+                suppressHydrationWarning
                 value={selectedCourse}
                 onChange={(e) => {
                   setSelectedCourse(e.target.value);
@@ -223,17 +291,40 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                 className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm text-gray-800 font-medium focus:outline-none focus:ring-2 focus:ring-red-700 focus:bg-white transition-all cursor-pointer"
               >
                 <option value="All">All Courses</option>
-                {availableCourses.map((course) => (
-                  <option key={course} value={course}>
-                    {course}
+                {availableCourses
+                  .filter((course) => !isValueless(course))
+                  .map((course) => (
+                    <option key={course} value={course}>
+                      {course}
+                    </option>
+                  ))}
+              </select>
+            </div>
+
+            {/* Year Dropdown */}
+            <div className="w-full sm:w-auto min-w-[140px]">
+              <select
+                suppressHydrationWarning
+                value={selectedYear}
+                onChange={(e) => {
+                  setSelectedYear(e.target.value);
+                  setCurrentPage(1);
+                }}
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm text-gray-800 font-medium focus:outline-none focus:ring-2 focus:ring-red-700 focus:bg-white transition-all cursor-pointer"
+              >
+                <option value="All">All Years</option>
+                {availableYears.map((yr) => (
+                  <option key={yr} value={yr}>
+                    {activeTab === "archive" ? `Batch ${yr}` : `Year ${yr}`}
                   </option>
                 ))}
               </select>
             </div>
 
             {/* Reset Button (visible when filters are applied) */}
-            {(debouncedSearch || selectedCourse !== "All") && (
+            {(debouncedSearch || selectedCourse !== "All" || selectedYear !== "All") && (
               <button
+                suppressHydrationWarning
                 onClick={handleResetFilters}
                 className="inline-flex items-center gap-1.5 px-3 py-2.5 text-xs sm:text-sm font-semibold text-red-800 hover:bg-red-50 border border-red-200 rounded-lg transition-colors whitespace-nowrap"
                 title="Reset filters"
@@ -252,11 +343,17 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
               <span>Loading student records...</span>
             ) : (
               <span>
-                Total: <strong className="text-gray-900">{totalStudents}</strong> student
+                Total: <strong className="text-gray-900">{totalStudents}</strong>{" "}
+                {activeTab === "archive" ? "graduated student" : "student"}
                 {totalStudents === 1 ? "" : "s"} found
                 {selectedCourse !== "All" && (
                   <span className="ml-1 text-red-800 font-medium">
                     in &quot;{selectedCourse}&quot;
+                  </span>
+                )}
+                {selectedYear !== "All" && (
+                  <span className="ml-1 text-red-800 font-medium">
+                    ({selectedYear})
                   </span>
                 )}
                 {debouncedSearch && (
@@ -287,6 +384,8 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
           <h3 className="text-lg font-bold text-red-900 mb-1">Failed to load student list</h3>
           <p className="text-sm text-red-700 mb-4">{error}</p>
           <button
+            type="button"
+            suppressHydrationWarning
             onClick={fetchStudents}
             className="inline-flex items-center gap-2 px-4 py-2 bg-red-800 hover:bg-red-900 text-white text-sm font-semibold rounded-lg shadow transition-colors"
           >
@@ -295,18 +394,22 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
           </button>
         </div>
       ) : students.length === 0 ? (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-12 text-center">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-12 text-center" suppressHydrationWarning>
           <Users size={44} className="mx-auto text-gray-300 mb-3" />
           <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-1">
             No students found
           </h3>
           <p className="text-xs sm:text-sm text-gray-500 max-w-md mx-auto mb-4">
-            {debouncedSearch || selectedCourse !== "All"
+            {debouncedSearch || selectedCourse !== "All" || selectedYear !== "All"
               ? "No students match your selected search criteria. Try modifying your search or resetting filters."
-              : "No student records are currently registered for this department."}
+              : activeTab === "archive"
+                ? "No graduated student records currently in archive for this department."
+                : "No student records are currently registered for this department."}
           </p>
-          {(debouncedSearch || selectedCourse !== "All") && (
+          {(debouncedSearch || selectedCourse !== "All" || selectedYear !== "All") && (
             <button
+              type="button"
+              suppressHydrationWarning
               onClick={handleResetFilters}
               className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-red-50 hover:bg-red-100 text-red-800 text-xs sm:text-sm font-semibold rounded-lg border border-red-200 transition-colors"
             >
@@ -373,6 +476,8 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                                 <span>{student.email}</span>
                               </a>
                               <button
+                                type="button"
+                                suppressHydrationWarning
                                 onClick={() =>
                                   handleCopyEmail(student.email, student.roll_no)
                                 }
@@ -402,6 +507,13 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                             {!isValueless(student.specialization) && (
                               <span className="text-[11px] text-gray-500 italic">
                                 {student.specialization}
+                              </span>
+                            )}
+                            {(student.admission_year || student.passing_year) && (
+                              <span className="text-[11px] text-gray-500 font-medium">
+                                {activeTab === "archive" && student.passing_year
+                                  ? `Batch: ${student.admission_year ? `${student.admission_year} – ` : ""}${student.passing_year}`
+                                  : `Joined: ${student.admission_year}`}
                               </span>
                             )}
                           </div>
@@ -447,8 +559,16 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                   </h3>
 
                   {!isValueless(student.specialization) && (
-                    <p className="text-xs text-gray-500 italic mb-2">
+                    <p className="text-xs text-gray-500 italic mb-1">
                       {student.specialization}
+                    </p>
+                  )}
+
+                  {(student.admission_year || student.passing_year) && (
+                    <p className="text-[11px] text-gray-500 font-medium mb-2">
+                      {activeTab === "archive" && student.passing_year
+                        ? `Batch: ${student.admission_year ? `${student.admission_year} – ` : ""}${student.passing_year}`
+                        : `Joined: ${student.admission_year}`}
                     </p>
                   )}
 
@@ -462,6 +582,8 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                         <span className="truncate">{student.email}</span>
                       </a>
                       <button
+                        type="button"
+                        suppressHydrationWarning
                         onClick={() =>
                           handleCopyEmail(student.email, student.roll_no)
                         }
@@ -495,6 +617,8 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
 
               <div className="flex items-center gap-1.5">
                 <button
+                  type="button"
+                  suppressHydrationWarning
                   onClick={() => {
                     setCurrentPage((prev) => Math.max(prev - 1, 1));
                     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -527,6 +651,8 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                             <span className="px-1 text-gray-400 text-xs">...</span>
                           )}
                           <button
+                            type="button"
+                            suppressHydrationWarning
                             onClick={() => {
                               setCurrentPage(page);
                               window.scrollTo({ top: 0, behavior: "smooth" });
@@ -544,6 +670,8 @@ const DepartmentStudents = ({ dept, branch: explicitBranch }) => {
                 </div>
 
                 <button
+                  type="button"
+                  suppressHydrationWarning
                   onClick={() => {
                     setCurrentPage((prev) => Math.min(prev + 1, totalPages));
                     window.scrollTo({ top: 0, behavior: "smooth" });
