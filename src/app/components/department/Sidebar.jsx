@@ -203,12 +203,13 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
       // 5. Enforce strict ordering:
       // Faculty, Adjunct Faculty, Research Scholars, Students, Staff, Retired Faculties
       const getOrderIndex = (name) => {
-        if (name === "Faculty") return 0;
-        if (name === "Adjunct Faculty" || name === "Adjunct faculty") return 1;
-        if (name === "Research Scholars" || name === "Research Students") return 2;
-        if (name === "Students" || name === "Student List") return 3;
-        if (name === "Staff") return 4;
-        if (name === "Retired Faculties" || name === "Retired Faculty") return 5;
+        const n = (name || "").trim().toLowerCase();
+        if (n === "faculty") return 0;
+        if (n === "adjunct faculty" || n.includes("adjunct")) return 1;
+        if (n === "research scholars" || n === "research students" || n.includes("research")) return 2;
+        if (n === "students" || n === "student list") return 3;
+        if (n === "staff") return 4;
+        if (n === "retired faculties" || n === "retired faculty" || n.includes("retired")) return 5;
         return 99;
       };
 
