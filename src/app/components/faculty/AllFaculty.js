@@ -173,6 +173,28 @@ const AllFaculty = () => {
   const assistantProfessors = activeFacultyData.filter(faculty =>
     !renderedIds.has(faculty.id) && faculty.designation === "Assistant Professor"
   );
+  const adjunctFaculty = activeFacultyData
+    .filter((faculty) => {
+      if (renderedIds.has(faculty.id)) return false;
+      const d = (faculty.designation || "").trim().toLowerCase();
+      return (
+        d === "professor of practice" ||
+        d === "associate professor of practice" ||
+        d.includes("professor of practice") ||
+        d.includes("adjunct")
+      );
+    })
+    .sort((a, b) => {
+      const getRank = (f) => {
+        const d = (f.designation || "").trim().toLowerCase();
+        if (d.includes("associate professor of practice")) return 2;
+        if (d.includes("professor of practice")) return 1;
+        return 3;
+      };
+      const rankDiff = getRank(a) - getRank(b);
+      if (rankDiff !== 0) return rankDiff;
+      return (a.name || "").localeCompare(b.name || "");
+    });
 
   // Render a section of faculty
   const renderFacultySection = (facultyList, title) => {
@@ -225,6 +247,7 @@ const AllFaculty = () => {
       {renderFacultySection(professors, "Professor")}
       {renderFacultySection(associateProfessors, "Associate Professor")}
       {renderFacultySection(assistantProfessors, "Assistant Professor")}
+      {renderFacultySection(adjunctFaculty, "Adjunct Faculty")}
       {renderFacultySection(retiredFacultyData, "Retired Faculty")}
     </div>
   );

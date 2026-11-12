@@ -6,6 +6,7 @@ import {
   Menu,
   Scroll,
   GraduationCap,
+  Briefcase,
 } from "lucide-react";
 
 const deptToBranch = {
@@ -26,8 +27,9 @@ const deptToBranch = {
 // Module-level caches & in-flight promises to prevent duplicate fetches across
 // simultaneous desktop + mobile Sidebar mounts and repeated tab navigations.
 const retiredFacultyCache = new Map();
+const adjunctFacultyCache = new Map();
 const studentsCheckCache = new Map();
-const retiredFacultyPromises = new Map();
+const facultyPromises = new Map();
 const studentsCheckPromises = new Map();
 
 const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
@@ -37,6 +39,11 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
     if (!dept) return false;
     const branch = deptToBranch[dept] || dept.toLowerCase();
     return retiredFacultyCache.get(branch) ?? false;
+  });
+  const [hasAdjunctFaculty, setHasAdjunctFaculty] = useState(() => {
+    if (!dept) return false;
+    const branch = deptToBranch[dept] || dept.toLowerCase();
+    return adjunctFacultyCache.get(branch) ?? false;
   });
   const [hasStudents, setHasStudents] = useState(() => {
     if (!dept) return false;
@@ -51,36 +58,54 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
     const backendUrl =
       process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
 
-    // 1. Check retired faculty (deduplicated)
-    if (retiredFacultyCache.has(branch)) {
+    // 1. Check retired & adjunct faculty in a single deduplicated API call
+    if (retiredFacultyCache.has(branch) && adjunctFacultyCache.has(branch)) {
       setHasRetiredFaculty(retiredFacultyCache.get(branch));
+      setHasAdjunctFaculty(adjunctFacultyCache.get(branch));
     } else {
-      if (!retiredFacultyPromises.has(branch)) {
+      if (!facultyPromises.has(branch)) {
         const facultyApiEndpoint = `${backendUrl}/api/v2/faculty?type=${branch}`;
         const p = fetch(facultyApiEndpoint)
           .then((res) => res.json())
           .then((data) => {
             let hasRetired = false;
+            let hasAdjunct = false;
             if (Array.isArray(data)) {
               hasRetired = data.some(
                 (f) => String(f.is_retired) === "1" || f.is_retired === 1 || f.is_retired === true
               );
+              hasAdjunct = data.some((f) => {
+                const isRetired =
+                  String(f.is_retired) === "1" || f.is_retired === 1 || f.is_retired === true;
+                if (isRetired) return false;
+                const d = (f.designation || "").trim().toLowerCase();
+                return (
+                  d === "professor of practice" ||
+                  d === "associate professor of practice" ||
+                  d.includes("professor of practice") ||
+                  d.includes("adjunct")
+                );
+              });
             }
             retiredFacultyCache.set(branch, hasRetired);
-            return hasRetired;
+            adjunctFacultyCache.set(branch, hasAdjunct);
+            return { hasRetired, hasAdjunct };
           })
           .catch((err) => {
-            console.error("Error checking retired faculty:", err);
-            return false;
+            console.error("Error checking faculty data:", err);
+            return { hasRetired: false, hasAdjunct: false };
           })
           .finally(() => {
-            retiredFacultyPromises.delete(branch);
+            facultyPromises.delete(branch);
           });
-        retiredFacultyPromises.set(branch, p);
+        facultyPromises.set(branch, p);
       }
 
-      retiredFacultyPromises.get(branch)?.then((hasRetired) => {
-        if (isMounted) setHasRetiredFaculty(hasRetired);
+      facultyPromises.get(branch)?.then(({ hasRetired, hasAdjunct }) => {
+        if (isMounted) {
+          setHasRetiredFaculty(hasRetired);
+          setHasAdjunctFaculty(hasAdjunct);
+        }
       });
     }
 
@@ -129,7 +154,25 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
         return sub;
       });
 
-      // 2. Add "Students" if exists for this department
+      // 2. Add "Adjunct Faculty" if exists for this department
+      if (hasAdjunctFaculty) {
+        const adjunctExists = updatedDropdown.some(
+          (sub) => sub.name === "Adjunct Faculty" || sub.name === "Adjunct faculty"
+        );
+        if (!adjunctExists) {
+          updatedDropdown.push({
+            name: "Adjunct Faculty",
+            url: `/Department/${dept}/adjunctFaculty`,
+            icon: <Briefcase size={18} />,
+          });
+        }
+      } else {
+        updatedDropdown = updatedDropdown.filter(
+          (sub) => sub.name !== "Adjunct Faculty" && sub.name !== "Adjunct faculty"
+        );
+      }
+
+      // 3. Add "Students" if exists for this department
       if (hasStudents) {
         const studentExists = updatedDropdown.some(
           (sub) => sub.name === "Students" || sub.name === "Student List"
@@ -143,7 +186,7 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
         }
       }
 
-      // 3. Add "Retired Faculties" if exists for this department
+      // 4. Add "Retired Faculties" if exists for this department
       if (hasRetiredFaculty) {
         const exists = updatedDropdown.some(
           (sub) => sub.name === "Retired Faculties" || sub.name === "Retired Faculty"
@@ -157,13 +200,15 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
         }
       }
 
-      // 4. Enforce strict ordering: Faculty, Staff, Research Scholars, Students, Retired Faculties
+      // 5. Enforce strict ordering:
+      // Faculty, Adjunct Faculty, Research Scholars, Students, Staff, Retired Faculties
       const getOrderIndex = (name) => {
         if (name === "Faculty") return 0;
-        if (name === "Staff") return 1;
+        if (name === "Adjunct Faculty" || name === "Adjunct faculty") return 1;
         if (name === "Research Scholars" || name === "Research Students") return 2;
         if (name === "Students" || name === "Student List") return 3;
-        if (name === "Retired Faculties" || name === "Retired Faculty") return 4;
+        if (name === "Staff") return 4;
+        if (name === "Retired Faculties" || name === "Retired Faculty") return 5;
         return 99;
       };
 

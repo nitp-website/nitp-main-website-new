@@ -41,7 +41,9 @@ const FacultyList = ({ url, branch }) => {
             String(f.is_retired) !== "1" &&
             f.is_retired !== 1 &&
             f.is_retired !== true &&
-            String(f.is_retired).toLowerCase() !== "true"
+            String(f.is_retired).toLowerCase() !== "true" &&
+            !f.designation?.toLowerCase().includes("professor of practice") &&
+            !f.designation?.toLowerCase().includes("adjunct")
         );
 
         // Sorting the active faculty data based on designations, academic_responsibility, and name
