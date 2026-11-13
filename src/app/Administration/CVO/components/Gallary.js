@@ -5,7 +5,7 @@ export const Scroll = ({ data, videos }) => {
   return (
     <div className="grid grid-cols-1 p-4">
       {data.map((item, idx) => (
-        <figure key={idx} className="p-2 rounded-lg">
+        <figure key={`${item.src}-${idx}`} className="p-2 rounded-lg">
           <img
             height={600}
             width={600}
@@ -23,7 +23,7 @@ export const Scroll = ({ data, videos }) => {
             Videos
           </h2>
           {videos.map((video, idx) => (
-            <div key={idx} className="hidden md:block mt-3">
+            <div key={video.src || idx} className="hidden md:block mt-3">
               <iframe
                 src={video.src}
                 width="600"
@@ -74,6 +74,17 @@ const GalleryData2024 = {
   ],
 };
 
+const GalleryData2026 = {
+  images: [
+    { src: "https://i.postimg.cc/GmgKGZjW/cvo-2026-1.jpg", alt: "Vigilance Awareness Week 2026 - Image 1" },
+    { src: "https://i.postimg.cc/9QgbZvpw/cvo-2026-6.jpg", alt: "Vigilance Awareness Week 2026 - Image 2" },
+    { src: "https://i.postimg.cc/9QQ14WGX/cvo-2026-4.jpg", alt: "Vigilance Awareness Week 2026 - Image 3" },
+    { src: "https://i.postimg.cc/8zzwF1Lm/cvo-2026-5.jpg", alt: "Vigilance Awareness Week 2026 - Image 4" },
+    { src: "https://i.postimg.cc/YCC84p1r/cvo-2026-3.jpg", alt: "Vigilance Awareness Week 2026 - Image 5" },
+    { src: "https://i.postimg.cc/T33QyRnk/cvo-2026-2.jpg", alt: "Vigilance Awareness Week 2026 - Image 6" },
+  ],
+};
+
 const GalleryData2025 = {
   images: [
     { src: "https://i.postimg.cc/5y0Z0hm7/poster.jpg", alt: "Poster" },
@@ -96,38 +107,36 @@ const GalleryData2025 = {
   ],
 };
 
+const galleryDataMap = {
+  "2026": GalleryData2026,
+  "2025": GalleryData2025,
+  "2024": GalleryData2024,
+};
+
 const Gallery = () => {
-  const [activeYear, setActiveYear] = useState("2025");
-  const currentData = activeYear === "2024" ? GalleryData2024 : GalleryData2025;
+  const [activeYear, setActiveYear] = useState("2026");
+  const currentData = galleryDataMap[activeYear] || GalleryData2026;
 
   return (
     <div className="p-4">
       <div className="flex gap-4 mb-4">
-        <button
-          onClick={() => setActiveYear("2025")}
-          className={`px-4 py-2 rounded-md font-semibold ${
-            activeYear === "2025"
+        {["2026", "2025", "2024"].map((year) => (
+          <button
+            key={year}
+            onClick={() => setActiveYear(year)}
+            className={`px-4 py-2 rounded-md font-semibold transition-colors ${activeYear === year
               ? "bg-red-500 text-white"
-              : "bg-gray-200 text-black"
-          }`}
-        >
-          2025
-        </button>
-        <button
-          onClick={() => setActiveYear("2024")}
-          className={`px-4 py-2 rounded-md font-semibold ${
-            activeYear === "2024"
-              ? "bg-red-500 text-white"
-              : "bg-gray-200 text-black"
-          }`}
-        >
-          2024
-        </button>
+              : "bg-gray-200 text-black hover:bg-gray-300"
+              }`}
+          >
+            {year}
+          </button>
+        ))}
       </div>
       <h2 className="text-1xl sm:text-2xl font-semibold text-black text-left mb-4 underline decoration-red-500">
-        Image Gallery {activeYear}
+        {`Image Gallery ${activeYear}`}
       </h2>
-      <Scroll data={currentData.images} videos={currentData.videos} />
+      <Scroll key={activeYear} data={currentData.images} videos={currentData.videos} />
     </div>
   );
 };
