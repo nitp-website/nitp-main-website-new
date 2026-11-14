@@ -1,7 +1,6 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "../../components/Home/styles/Details.css";
 import { Calendar, MapPin, Download, ExternalLink } from 'lucide-react';
 import { extractApiArray } from "@/lib/apiHelpers";
 
@@ -12,6 +11,7 @@ const Eventcard = ({
   location,
   event_link,
   doclink,
+  banner,
 }) => {
   // Helper function to safely parse JSON
   const safeParseJSON = (data, fallback) => {
@@ -24,71 +24,96 @@ const Eventcard = ({
   };
 
   // Parse attachments from JSON string
-  const parsedAttachments = typeof attachments === "string" 
-    ? safeParseJSON(attachments, [])
-    : [];
+  const parsedAttachments = Array.isArray(attachments)
+    ? attachments
+    : typeof attachments === "string"
+      ? safeParseJSON(attachments, [])
+      : [];
+
+  const imageSource = typeof banner === "string" && banner.trim()
+    ? banner.trim()
+    : "/feature-fallbacks/event.svg";
 
   // Parse event_link if it exists
-  const parsedEventLink = event_link
-    ? safeParseJSON(event_link, null)
-    : null;
+  const parsedEventLink = event_link && typeof event_link === "object"
+    ? event_link
+    : event_link && event_link !== "null"
+      ? safeParseJSON(event_link, null)
+      : null;
 
   return (
-    <div className="group/item rounded-lg p-3 transition-all hover:bg-purple-50 border border-gray-100 mb-4">
-      <p className="mb-3 text-sm text-gray-700">{detail}</p>
-      <div className="mb-2 flex items-center gap-2 text-sm text-gray-500">
-        <Calendar className="h-4 w-4" />
-        <span>{time}</span>
+    <article className="group/item flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+      <div className="aspect-[16/9] w-full overflow-hidden bg-slate-100">
+        <img
+          src={imageSource}
+          alt={`${detail || "Event"} banner`}
+          className="h-full w-full object-cover transition duration-300 group-hover/item:scale-105"
+          onError={(event) => {
+            const fallback = "/feature-fallbacks/event.svg";
+            if (!event.currentTarget.src.endsWith(fallback)) {
+              event.currentTarget.src = fallback;
+            }
+          }}
+        />
       </div>
-      <div className="mb-3 flex items-center gap-2 text-sm text-gray-500">
-        <MapPin className="h-4 w-4" />
-        <span>{location}</span>
-      </div>
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="mb-4 line-clamp-2 min-h-[3.5rem] text-lg font-semibold leading-7 text-slate-900">
+          {detail || "Untitled event"}
+        </h3>
+        <div className="mb-2 flex items-start gap-3 text-sm text-slate-600">
+          <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-red-800" />
+          <span>{time}</span>
+        </div>
+        {location && (
+          <div className="mb-4 flex items-start gap-3 text-sm text-slate-600">
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-red-800" />
+            <span>{location}</span>
+          </div>
+        )}
 
-      {/* Display attachments */}
-      {parsedAttachments && parsedAttachments.length > 0 && (
-        <div className="flex flex-col gap-2 mb-3">
-          {parsedAttachments.map((attachment, index) => (
+        {parsedAttachments && parsedAttachments.length > 0 && (
+          <div className="mb-4 flex flex-col gap-2 border-t border-slate-100 pt-3">
+            {parsedAttachments.map((attachment, index) => (
+              <a
+                key={index}
+                href={attachment.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-red-800 hover:text-red-950"
+              >
+                <Download className="h-4 w-4 shrink-0" />
+                <span className="truncate">{attachment.caption || "Event attachment"}</span>
+              </a>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-auto flex flex-wrap gap-x-5 gap-y-2 border-t border-slate-100 pt-3">
+          {doclink && (
             <a
-              key={index}
-              href={attachment.url}
+              href={doclink.trim()}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700"
+              className="flex items-center gap-2 text-sm font-medium text-red-800 hover:text-red-950"
             >
-              <Download className="h-4 w-4" />
-              {attachment.caption || "Event Attachment"}
+              <ExternalLink className="h-4 w-4" />
+              Registration
             </a>
-          ))}
+          )}
+          {parsedEventLink?.url && (
+            <a
+              href={parsedEventLink.url.trim()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm font-medium text-red-800 hover:text-red-950"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Event link
+            </a>
+          )}
         </div>
-      )}
-
-      {/* Display links in flex-col to ensure vertical layout */}
-      <div className="flex flex-col gap-2">
-        {doclink && (
-          <a
-            href={doclink.trim()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700"
-          >
-            <ExternalLink className="h-4 w-4" />
-            Event Registration
-          </a>
-        )}
-        {parsedEventLink?.url && (
-          <a
-            href={parsedEventLink.url.trim()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700"
-          >
-            <ExternalLink className="h-4 w-4" />
-            Event Link
-          </a>
-        )}
       </div>
-    </div>
+    </article>
   );
 };
 
@@ -130,10 +155,12 @@ const Page = () => {
   }, []);
 
   return (
-    <div>
-      <div className="p-5 md:p-10 md:pl-28 md:pr-28">
-        <div className="text-2xl text-center pb-7 md:pb-10 text-red-950 font-bold">
-          <h2>Events</h2>
+    <main className="events-page min-h-screen bg-slate-50 px-4 py-10 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-8 text-center">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-red-800">NIT Patna</p>
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">Events</h1>
+          <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-red-800" />
         </div>
         {isLoading ? (
           <div className="flex justify-center items-center ">
@@ -145,14 +172,14 @@ const Page = () => {
               x="0px"
               y="0px"
               viewBox="0 0 100 100"
-              enable-background="new 0 0 100 100"
+              enableBackground="new 0 0 100 100"
             >
               <circle
                 fill="none"
                 stroke="#f87171"
-                stroke-width="6"
-                stroke-miterlimit="15"
-                stroke-dasharray="14.2472,14.2472"
+                strokeWidth="6"
+                strokeMiterlimit="15"
+                strokeDasharray="14.2472,14.2472"
                 cx="50"
                 cy="50"
                 r="47"
@@ -170,9 +197,9 @@ const Page = () => {
               <circle
                 fill="none"
                 stroke="#f87171"
-                stroke-width="1"
-                stroke-miterlimit="10"
-                stroke-dasharray="10,10"
+                strokeWidth="1"
+                strokeMiterlimit="10"
+                strokeDasharray="10,10"
                 cx="50"
                 cy="50"
                 r="39"
@@ -251,15 +278,15 @@ const Page = () => {
                 viewBox="0 0 16.00 16.00"
                 fill="#e85e5e"
                 stroke="#e85e5e"
-                stroke-width="0.00016"
+                strokeWidth="0.00016"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   stroke="#CCCCCC"
-                  stroke-width="0.128"
+                  strokeWidth="0.128"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   {" "}
@@ -277,9 +304,9 @@ const Page = () => {
             </div>
           </div>
         ) : (
-          <div className="section-content p-0 m-0">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {events.length === 0 ? (
-              <p>No events available.</p>
+              <p className="col-span-full rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center text-slate-500">No events available.</p>
             ) : (
               events.map((event, index) => {
                 // Safely parse event dates
@@ -308,6 +335,7 @@ const Page = () => {
                     location={event.venue}
                     event_link={event.event_link}
                     doclink={event.doclink}
+                    banner={event.banner_image || event.banner || event.image || event.profile_image}
                   />
                 );
               })
@@ -315,7 +343,7 @@ const Page = () => {
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 };
 

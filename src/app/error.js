@@ -10,7 +10,7 @@ export default function Error({ error, reset }) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setSeconds((prev) => prev - 1);
+      setSeconds((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
 
     const redirect = setTimeout(() => {
