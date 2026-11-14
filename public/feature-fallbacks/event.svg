@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title">
+  <title id="title">Event illustration</title>
+  <rect width="800" height="450" fill="#f8f1ec"/>
+  <circle cx="705" cy="80" r="130" fill="#f1ded7"/>
+  <circle cx="95" cy="410" r="160" fill="#f1ded7"/>
+  <path d="M0 374c149-51 236-15 371-48 148-37 265-9 429 48v76H0z" fill="#ead2c9"/>
+  <rect x="250" y="110" width="300" height="240" rx="25" fill="#fff" stroke="#8b252b" stroke-width="16"/>
+  <path d="M250 190h300" stroke="#8b252b" stroke-width="16"/>
+  <path d="M324 92v38m152-38v38" stroke="#8b252b" stroke-width="22" stroke-linecap="round"/>
+  <path d="m347 267 38 38 74-82" fill="none" stroke="#8b252b" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
