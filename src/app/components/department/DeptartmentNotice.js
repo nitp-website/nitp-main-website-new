@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import DepartmentNotify1 from "./DepartmentNotify1.js";
 import { extractApiArray, getBackendApiUrl } from "@/lib/apiHelpers";
+import { getNoticeStartDate, isNoticeEndCrossed } from "@/lib/noticeHelpers";
 // import { Button } from "@/components/ui/button";
 
 const DepartmentNotice = ({ dept }) => {
@@ -14,7 +15,16 @@ const DepartmentNotice = ({ dept }) => {
         const response = await axios.get(
           getBackendApiUrl(`/api/notice?type=${dept.toLowerCase()}`)
         );
-        setNotices(extractApiArray(response));
+        const raw = extractApiArray(response).filter((notice) => notice.isVisible === 1 || notice.isVisible === undefined);
+        const sorted = raw.sort((a, b) => {
+          const timeA = getNoticeStartDate(a) || 0;
+          const timeB = getNoticeStartDate(b) || 0;
+          return timeB - timeA;
+        });
+        const activeNotices = sorted.filter((n) => !isNoticeEndCrossed(n));
+        const passedNotices = sorted.filter((n) => isNoticeEndCrossed(n));
+        const displayNotices = activeNotices.length > 0 ? activeNotices : passedNotices.slice(0, 5);
+        setNotices(displayNotices);
       } catch (error) {
         setNotices([]);
       }

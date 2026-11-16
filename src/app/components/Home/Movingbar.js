@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Megaphone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Info } from 'lucide-react';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments, fetchNoticeUrl } from "@/lib/noticeHelpers";
+import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments, getNoticeStartDate, isNoticeEndCrossed, fetchNoticeUrl } from "@/lib/noticeHelpers";
 
 const Movingbar = () => {
   const [importantNotices, setImportantNotices] = useState([]);
@@ -39,13 +39,23 @@ const Movingbar = () => {
           }
         });
 
-        const allNotices = Array.from(byId.values()).filter(
-          (notice) =>
-            (notice.isVisible === 1 || notice.isVisible === undefined) &&
-            (notice.important === 1 || notice.important === true)
-        );
-        setImportantNotices(allNotices);
-        console.info("Fetched important notices:", allNotices);
+        const sortedNotices = Array.from(byId.values())
+          .filter((notice) => notice.isVisible === 1 || notice.isVisible === undefined)
+          /*
+          .filter((notice) => notice.important === 1 || notice.important === true)
+          */
+          .sort((a, b) => {
+            const timeA = getNoticeStartDate(a) || 0;
+            const timeB = getNoticeStartDate(b) || 0;
+            return timeB - timeA;
+          });
+
+        const activeNotices = sortedNotices.filter((notice) => !isNoticeEndCrossed(notice));
+        const passedNotices = sortedNotices.filter((notice) => isNoticeEndCrossed(notice));
+
+        const displayNotices = activeNotices.length > 0 ? activeNotices : passedNotices.slice(0, 5);
+        setImportantNotices(displayNotices);
+        console.info("Fetched important notices:", displayNotices);
       } catch (e) {
         console.error("Error fetching notices:", e);
       }
@@ -81,7 +91,7 @@ const Movingbar = () => {
           </span>
         </div>
 
-        <button 
+        <button
           onClick={handleScrollLeft}
           className="p-1 text-yellow-300 hover:text-yellow-100 mr-2 transition-colors"
           aria-label="Scroll left"
@@ -89,13 +99,13 @@ const Movingbar = () => {
           <ChevronLeft className="h-5 w-5" />
         </button>
 
-        <div 
+        <div
           ref={marqueeRef}
           className="flex-1 overflow-x-auto scroll-smooth relative hide-scrollbar"
           onMouseEnter={togglePause}
           onMouseLeave={togglePause}
         >
-          
+
           <div className={`flex whitespace-nowrap items-center ${isPaused ? '' : 'animate-marquee'}`}>
             {importantNotices.length === 0 ? (
               <span className="text-white/90 italic px-4">No important notices at this time</span>
@@ -140,7 +150,7 @@ const Movingbar = () => {
           </div>
         </div>
 
-        <button 
+        <button
           onClick={handleScrollRight}
           className="p-1 text-yellow-300 hover:text-yellow-100 ml-2 transition-colors"
           aria-label="Scroll right"

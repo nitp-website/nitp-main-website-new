@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FiDownload, FiStar } from 'react-icons/fi';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments } from "@/lib/noticeHelpers";
+import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments, getNoticeStartDate, isNoticeEndCrossed } from "@/lib/noticeHelpers";
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -109,13 +109,33 @@ const Page = () => {
   const [academics, setAcademics] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [fetchError, setFetchError] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 10;
 
   useEffect(() => {
     const fetchAcademics = async () => {
       try {
         const academicsUrl = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=academics`;
         const response = await axios.get(academicsUrl);
-        setAcademics(extractApiArray(response).filter((notice) => notice.isVisible === 1));
+        const data = extractApiArray(response).filter((notice) => notice.isVisible === 1 || notice.isVisible === undefined);
+        const sorted = data.sort((a, b) => {
+          /*
+          const impA = a.important === 1 || a.important === true ? 1 : 0;
+          const impB = b.important === 1 || b.important === true ? 1 : 0;
+          if (impB !== impA) return impB - impA;
+          */
+          const timeA = getNoticeStartDate(a) || 0;
+          const timeB = getNoticeStartDate(b) || 0;
+          return timeB - timeA;
+        });
+
+        const activeNotices = sorted.filter((notice) => !isNoticeEndCrossed(notice));
+        const passedNotices = sorted.filter((notice) => isNoticeEndCrossed(notice));
+
+        const displayNotices = activeNotices.length > 0 ? activeNotices : passedNotices.slice(0, 5);
+
+        setAcademics(displayNotices);
+        setCurrentPage(1);
         setIsLoading(false);
       } catch (e) {
         console.error("Error fetching academic notices:", e);
@@ -126,6 +146,12 @@ const Page = () => {
 
     fetchAcademics();
   }, []);
+
+  const totalPages = Math.ceil(academics.length / ITEMS_PER_PAGE);
+  const paginatedNotices = academics.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
 
   return (
     <div>
@@ -177,23 +203,63 @@ const Page = () => {
             </div>
           </div>
         ) : (
-          <div className="bg-white rounded-lg shadow-md">
-            {academics.length === 0 ? (
-              <p className="text-center p-4">No academic notices available.</p>
-            ) : (
-              academics.map((notice) => (
-                <Noticecard
-                  notice={notice}
-                  detail={notice.title}
-                  time={notice.timestamp}
-                  key={notice.id}
-                  attachments={notice.attachments}
-                  imp={notice.important}
-                  link={notice.notice_link && JSON.parse(notice.notice_link).url}
-                />
-              ))
+          <>
+            <div className="bg-white rounded-lg shadow-md">
+              {academics.length === 0 ? (
+                <p className="text-center p-4">No academic notices available.</p>
+              ) : (
+                paginatedNotices.map((notice) => (
+                  <Noticecard
+                    notice={notice}
+                    detail={notice.title}
+                    time={notice.timestamp}
+                    key={notice.id}
+                    attachments={notice.attachments}
+                    imp={notice.important}
+                    link={parseNoticeLink(notice.notice_link)}
+                  />
+                ))
+              )}
+            </div>
+
+            {/* Pagination Controls - only displayed if there are more active notices */}
+            {totalPages > 1 && (
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 px-4 py-3 bg-white rounded-lg shadow-sm border border-gray-100">
+                <div className="text-sm text-gray-600">
+                  Showing <span className="font-semibold text-gray-900">{(currentPage - 1) * ITEMS_PER_PAGE + 1}</span> to{" "}
+                  <span className="font-semibold text-gray-900">{Math.min(currentPage * ITEMS_PER_PAGE, academics.length)}</span> of{" "}
+                  <span className="font-semibold text-gray-900">{academics.length}</span> notices
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => {
+                      setCurrentPage((prev) => Math.max(prev - 1, 1));
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    disabled={currentPage === 1}
+                    className="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                  >
+                    Prev
+                  </button>
+
+                  <div className="px-3 py-1.5 rounded-md bg-red-50 text-red-900 text-sm font-medium border border-red-100">
+                    Page {currentPage} of {totalPages}
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    disabled={currentPage === totalPages}
+                    className="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
             )}
-          </div>
+          </>
         )}
       </div>
     </div>

@@ -9,7 +9,7 @@ import "aos/dist/aos.css";
 import { FiDownload } from 'react-icons/fi';
 import { Calendar, MapPin, Download, ExternalLink, Star } from 'lucide-react';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments, getNoticeStartDate, fetchNoticeUrl } from "@/lib/noticeHelpers";
+import { NoticeBadge, NoticeTitle, parseNoticeLink, getValidAttachments, getNoticeStartDate, isNoticeEndCrossed, fetchNoticeUrl } from "@/lib/noticeHelpers";
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -295,17 +295,25 @@ const Details = () => {
         const sortedNotices = Array.from(byId.values())
           .filter((notice) => notice.isVisible === 1 || notice.isVisible === undefined)
           .sort((a, b) => {
+            /*
             const impA = a.important === 1 || a.important === true ? 1 : 0;
             const impB = b.important === 1 || b.important === true ? 1 : 0;
             if (impB !== impA) return impB - impA;
+            */
             const timeA = getNoticeStartDate(a) || 0;
             const timeB = getNoticeStartDate(b) || 0;
             return timeB - timeA;
           });
 
-        let data = sortedNotices.slice(0, 21);
+        const activeNotices = sortedNotices.filter((notice) => !isNoticeEndCrossed(notice));
+        const passedNotices = sortedNotices.filter((notice) => isNoticeEndCrossed(notice));
+
+        // Display notices whose end date is not passed; if none, display recent 5 notices whose end date has passed
+        const displayNotices = activeNotices.length > 0 ? activeNotices : passedNotices.slice(0, 5);
+
+        let data = displayNotices.slice(0, 21);
         setnoticies(data);
-        setNotices(sortedNotices);
+        setNotices(displayNotices);
       } catch (e) {
         console.error("Error fetching notices:", e);
       }
@@ -317,12 +325,27 @@ const Details = () => {
         const response = await axios.get(academicsUrl);
         const academicsData = extractApiArray(response);
         const sortedAcademics = academicsData
-          .filter((notice) => notice.isVisible === 1)
-          .sort((a, b) => b.important - a.important);
-        let data = sortedAcademics.slice(0, 21);
+          .filter((notice) => notice.isVisible === 1 || notice.isVisible === undefined)
+          .sort((a, b) => {
+            /*
+            const impA = a.important === 1 || a.important === true ? 1 : 0;
+            const impB = b.important === 1 || b.important === true ? 1 : 0;
+            if (impB !== impA) return impB - impA;
+            */
+            const timeA = getNoticeStartDate(a) || 0;
+            const timeB = getNoticeStartDate(b) || 0;
+            return timeB - timeA;
+          });
+
+        const activeAcademics = sortedAcademics.filter((notice) => !isNoticeEndCrossed(notice));
+        const passedAcademics = sortedAcademics.filter((notice) => isNoticeEndCrossed(notice));
+
+        const displayAcademics = activeAcademics.length > 0 ? activeAcademics : passedAcademics.slice(0, 5);
+
+        let data = displayAcademics.slice(0, 21);
         // console.log(data)
         sethomeacad(data);
-        setAcademics(sortedAcademics);
+        setAcademics(displayAcademics);
       } catch (e) {
         console.error("Error fetching academic notices:", e);
       }

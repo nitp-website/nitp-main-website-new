@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { FileText, CheckSquare, Users, Info, ShieldCheck, ArrowRight, Bell } from "lucide-react";
 import DepartmentNotify1 from "../../components/department/DepartmentNotify1.js";
 import { extractApiArray, getBackendApiUrl } from "@/lib/apiHelpers";
+import { getNoticeStartDate, isNoticeEndCrossed } from "@/lib/noticeHelpers";
 
 const EXAM_NOTICE_URL = getBackendApiUrl("/api/notice?type=exam");
 
@@ -68,7 +69,20 @@ export default function ExamPage() {
                     data = extractApiArray(resFallback);
                 }
 
-                setNotices(data);
+                const validNotices = (data || []).filter(
+                    (notice) => notice.isVisible === 1 || notice.isVisible === undefined
+                );
+                const sorted = validNotices.sort((a, b) => {
+                    const timeA = getNoticeStartDate(a) || 0;
+                    const timeB = getNoticeStartDate(b) || 0;
+                    return timeB - timeA;
+                });
+
+                const activeNotices = sorted.filter((notice) => !isNoticeEndCrossed(notice));
+                const passedNotices = sorted.filter((notice) => isNoticeEndCrossed(notice));
+                const displayNotices = activeNotices.length > 0 ? activeNotices : passedNotices.slice(0, 5);
+
+                setNotices(displayNotices);
             } catch (err) {
                 console.error("Failed to fetch exam notices:", err);
                 setNotices([]);
