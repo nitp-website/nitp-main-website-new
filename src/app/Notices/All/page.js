@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FiDownload, FiStar } from 'react-icons/fi';
 import { extractApiArray } from "@/lib/apiHelpers";
-import { NoticeBadge, NoticeTitle, getNoticeStartDate, parseNoticeLink, getValidAttachments, fetchNoticeUrl } from "@/lib/noticeHelpers";
+import { NoticeBadge, NoticeTitle, getNoticeStartDate, parseNoticeLink, getValidAttachments, isNoticeEndCrossed, fetchNoticeUrl } from "@/lib/noticeHelpers";
 
 // FormatDate component
 const FormatDate = ({ time }) => {
@@ -14,14 +14,14 @@ const FormatDate = ({ time }) => {
 
   // Convert to number if it's a string
   const timestamp = typeof time === 'string' ? parseInt(time) : time;
-  
+
   // Check if the timestamp is valid
   if (isNaN(timestamp) || timestamp <= 0) {
     return <>Invalid Date</>;
   }
 
   const date = new Date(timestamp);
-  
+
   // Check if the date is valid
   if (isNaN(date.getTime())) {
     return <>Invalid Date</>;
@@ -81,9 +81,9 @@ const Noticecard = ({ notice, detail, time, attachments, imp, link }) => {
 
               return (
                 <li key={index} className="mb-1">
-                  <a 
-                    href={attachment.url} 
-                    target="_blank" 
+                  <a
+                    href={attachment.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-red-800 hover:text-red-900"
                   >
@@ -98,9 +98,9 @@ const Noticecard = ({ notice, detail, time, attachments, imp, link }) => {
           </ul>
         )}
         {showLink && (
-          <a 
-            href={parsedLink} 
-            target="_blank" 
+          <a
+            href={parsedLink}
+            target="_blank"
             rel="noopener noreferrer"
             className="text-xs text-red-800 hover:text-red-900 inline-block mt-1"
           >
@@ -124,6 +124,8 @@ const Page = () => {
   const [academics, setAcademics] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [fetchError, setFetchError] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 10;
 
   useEffect(() => {
     const fetchAcademics = async () => {
@@ -156,15 +158,23 @@ const Page = () => {
         const sorted = Array.from(byId.values())
           .filter((notice) => notice.isVisible === 1 || notice.isVisible === undefined)
           .sort((a, b) => {
+            /*
             const impA = a.important === 1 || a.important === true ? 1 : 0;
             const impB = b.important === 1 || b.important === true ? 1 : 0;
             if (impB !== impA) return impB - impA;
+            */
             const timeA = getNoticeStartDate(a) || 0;
             const timeB = getNoticeStartDate(b) || 0;
             return timeB - timeA;
           });
 
-        setAcademics(sorted);
+        const activeNotices = sorted.filter((notice) => !isNoticeEndCrossed(notice));
+        const passedNotices = sorted.filter((notice) => isNoticeEndCrossed(notice));
+
+        const displayNotices = activeNotices.length > 0 ? activeNotices : passedNotices.slice(0, 5);
+
+        setAcademics(displayNotices);
+        setCurrentPage(1);
         setIsLoading(false);
       } catch (e) {
         console.error("Error fetching notices:", e);
@@ -175,6 +185,12 @@ const Page = () => {
 
     fetchAcademics();
   }, []);
+
+  const totalPages = Math.ceil(academics.length / ITEMS_PER_PAGE);
+  const paginatedNotices = academics.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
 
   return (
     <div>
@@ -197,8 +213,8 @@ const Page = () => {
               <circle
                 fill="none"
                 stroke="#f87171"
-                stroke-width="6"
-                stroke-miterlimit="15"
+                strokeWidth="6"
+                strokeMiterlimit="15"
                 stroke-dasharray="14.2472,14.2472"
                 cx="50"
                 cy="50"
@@ -226,26 +242,66 @@ const Page = () => {
             </div>
           </div>
         ) : (
-          <div className="bg-white rounded-lg shadow-md">
-            {academics.length === 0 ? (
-              <p className="text-center p-4">No notices available.</p>
-            ) : (
-              academics.map((notice) => (
-                <Noticecard
-                  notice={notice}
-                  detail={notice.title}
-                  time={notice.timestamp || notice.openDate}
-                  key={notice.id}
-                  attachments={notice.attachments}
-                  imp={notice.important}
-                  link={parseNoticeLink(notice.notice_link)}
-                />
-              ))
+              <>
+              <div className="bg-white rounded-lg shadow-md">
+                {academics.length === 0 ? (
+                  <p className="text-center p-4">No notices available.</p>
+                ) : (
+                  paginatedNotices.map((notice) => (
+                    <Noticecard
+                      notice={notice}
+                      detail={notice.title}
+                      time={notice.timestamp || notice.openDate}
+                      key={notice.id}
+                      attachments={notice.attachments}
+                      imp={notice.important}
+                      link={parseNoticeLink(notice.notice_link)}
+                    />
+                  ))
+                )}
+              </div>
+
+            {/* Pagination Controls - only displayed if there are more active notices */}
+            {totalPages > 1 && (
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 px-4 py-3 bg-white rounded-lg shadow-sm border border-gray-100">
+                <div className="text-sm text-gray-600">
+                  Showing <span className="font-semibold text-gray-900">{(currentPage - 1) * ITEMS_PER_PAGE + 1}</span> to{" "}
+                  <span className="font-semibold text-gray-900">{Math.min(currentPage * ITEMS_PER_PAGE, academics.length)}</span> of{" "}
+                  <span className="font-semibold text-gray-900">{academics.length}</span> notices
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => {
+                      setCurrentPage((prev) => Math.max(prev - 1, 1));
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    disabled={currentPage === 1}
+                    className="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                  >
+                    Prev
+                  </button>
+
+                  <div className="px-3 py-1.5 rounded-md bg-red-50 text-red-900 text-sm font-medium border border-red-100">
+                    Page {currentPage} of {totalPages}
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    disabled={currentPage === totalPages}
+                    className="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
             )}
-          </div>
+          </>
         )}
-      </div>
     </div>
+    </div >
   );
 };
 

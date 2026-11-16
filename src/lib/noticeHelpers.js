@@ -43,9 +43,6 @@ export function getNoticeStartDate(noticeOrDate) {
   );
 }
 
-/**
- * Extract end/closing timestamp (in ms) from notice object or date value.
- */
 export function getNoticeEndDate(noticeOrDate) {
   if (!noticeOrDate) return null;
 
@@ -90,29 +87,12 @@ export function isNoticeEndCrossed(noticeOrDate) {
 
 /**
  * Check if a notice is "NEW".
- * If notice has is_new === 1 (or 1 as number/string/boolean), it is marked as NEW.
- * If is_new is 0 (or null/undefined), display is based on date (within 15 days of start date).
+ * Notice displays the NEW tag throughout its duration until its end date has passed.
+ * Does not use is_new field.
  */
 export function isNoticeNew(noticeOrDate) {
   if (!noticeOrDate) return false;
-
-  // Check if notice has is_new explicitly set
-  if (typeof noticeOrDate === "object") {
-    const isNewFlag = noticeOrDate.is_new;
-    if (isNewFlag === 1 || isNewFlag === "1" || isNewFlag === true) {
-      return true;
-    }
-  }
-
-  const startTs = getNoticeStartDate(noticeOrDate);
-  if (!startTs) return false;
-
-  const now = Date.now();
-  const diffMs = now - startTs;
-  const fifteenDaysMs = 15 * 24 * 60 * 60 * 1000; // 15 days in milliseconds
-
-  // Notice is NEW if current time is within 15 days starting from start date
-  return diffMs >= -86400000 && diffMs <= fifteenDaysMs;
+  return !isNoticeEndCrossed(noticeOrDate);
 }
 
 /**
@@ -132,38 +112,36 @@ export const NoticeTitle = ({ title, additionalTitle, className = "" }) => {
 };
 
 /**
- * Component to render blinking NEW badge if notice is marked new or within 15 days,
- * or Star icon if older than 15 days and marked important.
+ * Component to render blinking NEW badge if notice's end date has not passed.
+ * Important/Star icon commented out as per instructions.
  */
 export const NoticeBadge = ({
   notice,
   openDate,
   timestamp,
-  important,
+  /* important,
   imp,
   is_new,
-  starType = "lucide",
+  starType = "lucide", */
   className = "",
 }) => {
   const noticeObj =
     typeof notice === "object" && notice !== null
-      ? {
-        ...notice,
-        ...(is_new !== undefined ? { is_new } : {}),
-      }
+      ? notice
       : {
         openDate,
         timestamp,
-        important: important ?? (imp ? 1 : 0),
-        is_new,
       };
 
   const isNew = isNoticeNew(noticeObj);
+
+  /*
   const isImp =
     noticeObj.important === 1 ||
     noticeObj.important === true ||
     imp === 1 ||
     imp === true;
+  */
 
   if (isNew) {
     return (
@@ -175,6 +153,7 @@ export const NoticeBadge = ({
     );
   }
 
+  /*
   if (isImp) {
     if (starType === "fi") {
       return (
@@ -189,6 +168,7 @@ export const NoticeBadge = ({
       />
     );
   }
+  */
 
   return null;
 };
