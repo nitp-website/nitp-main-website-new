@@ -104,6 +104,8 @@ const DepartmentStudents = ({ dept, branch: explicitBranch, defaultTab = "active
 
   // Fetch students from API
   const fetchStudents = useCallback(async () => {
+    // Disabled: department student pages are disabled
+    return;
     if (!branch) return;
 
     try {

@@ -28,9 +28,9 @@ const deptToBranch = {
 // simultaneous desktop + mobile Sidebar mounts and repeated tab navigations.
 const retiredFacultyCache = new Map();
 const adjunctFacultyCache = new Map();
-const studentsCheckCache = new Map();
+// const studentsCheckCache = new Map();
 const facultyPromises = new Map();
-const studentsCheckPromises = new Map();
+// const studentsCheckPromises = new Map();
 
 const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -45,11 +45,13 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
     const branch = deptToBranch[dept] || dept.toLowerCase();
     return adjunctFacultyCache.get(branch) ?? false;
   });
+  /*
   const [hasStudents, setHasStudents] = useState(() => {
     if (!dept) return false;
     const branch = deptToBranch[dept] || dept.toLowerCase();
     return studentsCheckCache.get(branch) ?? false;
   });
+  */
 
   useEffect(() => {
     if (!dept) return;
@@ -109,6 +111,7 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
       });
     }
 
+    /*
     // 2. Check if students exist for this department (deduplicated)
     if (studentsCheckCache.has(branch)) {
       setHasStudents(studentsCheckCache.get(branch));
@@ -138,6 +141,7 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
         if (isMounted) setHasStudents(exists);
       });
     }
+    */
 
     return () => {
       isMounted = false;
@@ -172,6 +176,7 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
         );
       }
 
+      /*
       // 3. Add "Students" if exists for this department
       if (hasStudents) {
         const studentExists = updatedDropdown.some(
@@ -185,6 +190,12 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
           });
         }
       }
+      */
+
+      // Ensure student pages are not displayed in department navigation
+      updatedDropdown = updatedDropdown.filter(
+        (sub) => sub.name !== "Students" && sub.name !== "Student List"
+      );
 
       // 4. Add "Retired Faculties" if exists for this department
       if (hasRetiredFaculty) {

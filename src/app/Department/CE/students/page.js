@@ -1,4 +1,4 @@
-import DepartmentStudents from "@/app/components/department/DepartmentStudents";
+// import DepartmentStudents from "@/app/components/department/DepartmentStudents";
 
 export const metadata = {
   title: "Students | Civil Engineering | NIT Patna",
@@ -6,6 +6,7 @@ export const metadata = {
 };
 
 export default function CEStudentsPage() {
-  return <DepartmentStudents dept="CE" branch="ce" />;
+  // return <DepartmentStudents dept="CE" branch="ce" />;
+  return null;
 }
 
