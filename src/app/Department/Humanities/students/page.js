@@ -1,4 +1,4 @@
-import DepartmentStudents from "@/app/components/department/DepartmentStudents";
+// import DepartmentStudents from "@/app/components/department/DepartmentStudents";
 
 export const metadata = {
   title: "Students | Humanities and Social Sciences | NIT Patna",
@@ -6,6 +6,7 @@ export const metadata = {
 };
 
 export default function HumanitiesStudentsPage() {
-  return <DepartmentStudents dept="Humanities" branch="hss" />;
+  // return <DepartmentStudents dept="Humanities" branch="hss" />;
+  return null;
 }
 
