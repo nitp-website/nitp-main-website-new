@@ -248,4 +248,71 @@ export const getExperience = (joiningDateStr, workExperience = []) => {
   return getJoiningExperience(joiningDateStr);
 };
 
+//Check if an institute name corresponds to our college (NIT Patna / BCE).
+export const isOurCollege = (institute) => {
+  if (!institute) return false;
+  const s = String(institute).toLowerCase();
+  return (
+    s.includes("patna") ||
+    s.includes("nitp") ||
+    s.includes("bihar college of engineering") ||
+    s.includes("bce")
+  );
+};
+
+
+// Extract joining date at our college from work experience records.
+// Prioritizes records matching our college, then ongoing records.
+
+export const extractCollegeJoiningDate = (workExperience = []) => {
+  if (!Array.isArray(workExperience) || workExperience.length === 0) return null;
+
+  // 1. Prioritize entries explicitly matching our college
+  const collegeExps = workExperience.filter((exp) => isOurCollege(exp.institute));
+  if (collegeExps.length > 0) {
+    const sorted = collegeExps
+      .filter((exp) => exp.start_date || exp.start)
+      .sort((a, b) => new Date(a.start_date || a.start) - new Date(b.start_date || b.start));
+    if (sorted.length > 0) return sorted[0].start_date || sorted[0].start;
+  }
+
+  // 2. Fallback: check for ongoing appointment at current institute
+  const ongoing = workExperience.filter((exp) => {
+    const end = (exp.end_date || exp.end || "").toString().toLowerCase();
+    return (
+      !exp.end_date ||
+      ["null", "ongoing", "present", "current", "till date", "till now"].includes(end)
+    );
+  });
+  if (ongoing.length > 0) {
+    const sorted = ongoing
+      .filter((exp) => exp.start_date || exp.start)
+      .sort((a, b) => new Date(a.start_date || a.start) - new Date(b.start_date || b.start));
+    if (sorted.length > 0) return sorted[0].start_date || sorted[0].start;
+  }
+
+  return null;
+};
+
+
+// Fetch work experience for a faculty member by email and extract their joining date at our college.
+
+export const fetchCollegeJoiningDate = async (email, baseUrl) => {
+  if (!email) return null;
+  const urlBase =
+    baseUrl ||
+    process.env.NEXT_PUBLIC_BACKEND_API_URL ||
+    "https://admin.nitp.ac.in";
+  try {
+    const res = await fetch(
+      `${urlBase}/api/v2/profile?email=${encodeURIComponent(email)}&section=work_experience`
+    );
+    const data = await res.json();
+    return extractCollegeJoiningDate(data?.work_experience);
+  } catch (err) {
+    console.error("Error fetching work experience for joining date:", err);
+    return null;
+  }
+};
+
 export default getExperience;

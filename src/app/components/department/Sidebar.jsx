@@ -29,6 +29,7 @@ const deptToBranch = {
 // simultaneous desktop + mobile Sidebar mounts and repeated tab navigations.
 const retiredFacultyCache = new Map();
 const adjunctFacultyCache = new Map();
+const inMemoriamCache = new Map();
 // const studentsCheckCache = new Map();
 const achievementsCheckCache = new Map();
 const facultyPromises = new Map();
@@ -47,6 +48,11 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
     if (!dept) return false;
     const branch = deptToBranch[dept] || dept.toLowerCase();
     return adjunctFacultyCache.get(branch) ?? false;
+  });
+  const [hasInMemoriam, setHasInMemoriam] = useState(() => {
+    if (!dept) return false;
+    const branch = deptToBranch[dept] || dept.toLowerCase();
+    return inMemoriamCache.get(branch) ?? false;
   });
   const [hasAchievements, setHasAchievements] = useState(() => {
     if (!dept) return false;
@@ -68,10 +74,15 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
     const backendUrl =
       process.env.NEXT_PUBLIC_BACKEND_API_URL || "https://admin.nitp.ac.in";
 
-    // 1. Check retired & adjunct faculty in a single deduplicated API call
-    if (retiredFacultyCache.has(branch) && adjunctFacultyCache.has(branch)) {
+    // 1. Check retired, adjunct & in-memoriam faculty in a single deduplicated API call
+    if (
+      retiredFacultyCache.has(branch) &&
+      adjunctFacultyCache.has(branch) &&
+      inMemoriamCache.has(branch)
+    ) {
       setHasRetiredFaculty(retiredFacultyCache.get(branch));
       setHasAdjunctFaculty(adjunctFacultyCache.get(branch));
+      setHasInMemoriam(inMemoriamCache.get(branch));
     } else {
       if (!facultyPromises.has(branch)) {
         const facultyApiEndpoint = `${backendUrl}/api/v2/faculty?type=${branch}`;
@@ -80,14 +91,27 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
           .then((data) => {
             let hasRetired = false;
             let hasAdjunct = false;
+            let hasInMemoriam = false;
             if (Array.isArray(data)) {
               hasRetired = data.some(
-                (f) => String(f.is_retired) === "1" || f.is_retired === 1 || f.is_retired === true
+                (f) =>
+                  (String(f.is_retired) === "1" ||
+                    f.is_retired === 1 ||
+                    f.is_retired === true) &&
+                  String(f.in_memoriam) !== "1" &&
+                  f.in_memoriam !== 1 &&
+                  f.in_memoriam !== true
               );
               hasAdjunct = data.some((f) => {
                 const isRetired =
-                  String(f.is_retired) === "1" || f.is_retired === 1 || f.is_retired === true;
-                if (isRetired) return false;
+                  String(f.is_retired) === "1" ||
+                  f.is_retired === 1 ||
+                  f.is_retired === true;
+                const isMemoriam =
+                  String(f.in_memoriam) === "1" ||
+                  f.in_memoriam === 1 ||
+                  f.in_memoriam === true;
+                if (isRetired || isMemoriam) return false;
                 const d = (f.designation || "").trim().toLowerCase();
                 return (
                   d === "professor of practice" ||
@@ -96,14 +120,21 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
                   d.includes("adjunct")
                 );
               });
+              hasInMemoriam = data.some(
+                (f) =>
+                  String(f.in_memoriam) === "1" ||
+                  f.in_memoriam === 1 ||
+                  f.in_memoriam === true
+              );
             }
             retiredFacultyCache.set(branch, hasRetired);
             adjunctFacultyCache.set(branch, hasAdjunct);
-            return { hasRetired, hasAdjunct };
+            inMemoriamCache.set(branch, hasInMemoriam);
+            return { hasRetired, hasAdjunct, hasInMemoriam };
           })
           .catch((err) => {
             console.error("Error checking faculty data:", err);
-            return { hasRetired: false, hasAdjunct: false };
+            return { hasRetired: false, hasAdjunct: false, hasInMemoriam: false };
           })
           .finally(() => {
             facultyPromises.delete(branch);
@@ -111,10 +142,11 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
         facultyPromises.set(branch, p);
       }
 
-      facultyPromises.get(branch)?.then(({ hasRetired, hasAdjunct }) => {
+      facultyPromises.get(branch)?.then(({ hasRetired, hasAdjunct, hasInMemoriam }) => {
         if (isMounted) {
           setHasRetiredFaculty(hasRetired);
           setHasAdjunctFaculty(hasAdjunct);
+          setHasInMemoriam(hasInMemoriam);
         }
       });
     }
@@ -254,8 +286,26 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
         }
       }
 
-      // 5. Enforce strict ordering:
-      // Faculty, Adjunct Faculty, Research Scholars, Students, Staff, Retired Faculties
+      // 5. Add "In Memoriam" if exists for this department (strictly after Retired Faculties)
+      if (hasInMemoriam) {
+        const exists = updatedDropdown.some(
+          (sub) => sub.name === "In Memoriam" || sub.name === "In memoriam"
+        );
+        if (!exists) {
+          updatedDropdown.push({
+            name: "In Memoriam",
+            url: `/Department/${dept}/inMemoriam`,
+            icon: <Scroll size={18} />,
+          });
+        }
+      } else {
+        updatedDropdown = updatedDropdown.filter(
+          (sub) => sub.name !== "In Memoriam" && sub.name !== "In memoriam"
+        );
+      }
+
+      // 6. Enforce strict ordering:
+      // Faculty, Adjunct Faculty, Research Scholars, Students, Staff, Retired Faculties, In Memoriam
       const getOrderIndex = (name) => {
         const n = (name || "").trim().toLowerCase();
         if (n === "faculty") return 0;
@@ -264,6 +314,7 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
         if (n === "students" || n === "student list") return 3;
         if (n === "staff") return 4;
         if (n === "retired faculties" || n === "retired faculty" || n.includes("retired")) return 5;
+        if (n === "in memoriam" || n.includes("memoriam")) return 6;
         return 99;
       };
 
