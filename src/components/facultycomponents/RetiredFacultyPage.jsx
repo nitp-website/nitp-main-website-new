@@ -16,7 +16,11 @@ const RetiredFacultyPage = ({ branch }) => {
       .then((data) => {
         if (Array.isArray(data)) {
           const retiredOnly = data.filter(
-            (f) => String(f.is_retired) === "1" || f.is_retired === 1 || f.is_retired === true
+            (f) =>
+              (String(f.is_retired) === "1" || f.is_retired === 1 || f.is_retired === true) &&
+              String(f.in_memoriam) !== "1" &&
+              f.in_memoriam !== 1 &&
+              f.in_memoriam !== true
           );
           const sorted = retiredOnly.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
           setFacultyData(sorted);
@@ -58,6 +62,9 @@ const RetiredFacultyPage = ({ branch }) => {
               research_students={faculty.phd_candidates_count}
               profileLink={`/profile/${faculty.email}`}
               is_retired={faculty.is_retired}
+              in_memoriam={faculty.in_memoriam}
+              service_end_date={faculty.service_end_date}
+              date_of_joining={faculty.date_of_joining}
               gender={faculty.gender}
             />
           ))}

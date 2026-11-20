@@ -42,6 +42,9 @@ const FacultyList = ({ url, branch }) => {
             f.is_retired !== 1 &&
             f.is_retired !== true &&
             String(f.is_retired).toLowerCase() !== "true" &&
+            String(f.in_memoriam) !== "1" &&
+            f.in_memoriam !== 1 &&
+            f.in_memoriam !== true &&
             !f.designation?.toLowerCase().includes("professor of practice") &&
             !f.designation?.toLowerCase().includes("adjunct")
         );

@@ -134,12 +134,30 @@ const AllFaculty = () => {
     return <Loading />;
   }
 
-  // Separate active and retired faculty
+  // Separate active, retired, and in-memoriam faculty
+  const inMemoriamFacultyData = filteredFacultyData.filter(
+    (faculty) =>
+      String(faculty.in_memoriam) === "1" ||
+      faculty.in_memoriam === 1 ||
+      faculty.in_memoriam === true
+  );
   const activeFacultyData = filteredFacultyData.filter(
-    (faculty) => String(faculty.is_retired) !== "1" && faculty.is_retired !== 1 && faculty.is_retired !== true
+    (faculty) =>
+      String(faculty.is_retired) !== "1" &&
+      faculty.is_retired !== 1 &&
+      faculty.is_retired !== true &&
+      String(faculty.in_memoriam) !== "1" &&
+      faculty.in_memoriam !== 1 &&
+      faculty.in_memoriam !== true
   );
   const retiredFacultyData = filteredFacultyData.filter(
-    (faculty) => String(faculty.is_retired) === "1" || faculty.is_retired === 1 || faculty.is_retired === true
+    (faculty) =>
+      (String(faculty.is_retired) === "1" ||
+        faculty.is_retired === 1 ||
+        faculty.is_retired === true) &&
+      String(faculty.in_memoriam) !== "1" &&
+      faculty.in_memoriam !== 1 &&
+      faculty.in_memoriam !== true
   );
 
   // Organize filtered active faculty into categories dynamically
@@ -221,6 +239,9 @@ const AllFaculty = () => {
               research_students={faculty.phd_candidates_count}
               profileLink={`/profile/${faculty.email}`}
               is_retired={faculty.is_retired}
+              in_memoriam={faculty.in_memoriam}
+              service_end_date={faculty.service_end_date}
+              date_of_joining={faculty.date_of_joining}
               gender={faculty.gender}
             />
           ))}
@@ -249,6 +270,7 @@ const AllFaculty = () => {
       {renderFacultySection(assistantProfessors, "Assistant Professor")}
       {renderFacultySection(adjunctFaculty, "Adjunct Faculty")}
       {renderFacultySection(retiredFacultyData, "Retired Faculty")}
+      {renderFacultySection(inMemoriamFacultyData, "In Memoriam")}
     </div>
   );
 };

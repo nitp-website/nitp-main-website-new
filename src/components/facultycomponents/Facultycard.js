@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Mail, Phone, Globe, FileText, BookOpen, Award, Briefcase, ShieldCheck, Users } from "lucide-react";
+import { fetchCollegeJoiningDate } from "@/utils/experienceCalculator";
 
 // Department Faculty Page
 
@@ -22,6 +23,9 @@ function FacultyCard({
   projects,
   research_students, // Assuming you have a link for the full research interests
   is_retired,
+  in_memoriam,
+  service_end_date,
+  date_of_joining,
   gender
 }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -58,6 +62,41 @@ function FacultyCard({
   }
 
   const retired = String(is_retired) === "1" || is_retired === 1 || is_retired === true;
+  const isMemoriam = String(in_memoriam) === "1" || in_memoriam === 1 || in_memoriam === true;
+
+  const [joiningDate, setJoiningDate] = useState(date_of_joining);
+
+  useEffect(() => {
+    setJoiningDate(date_of_joining);
+  }, [date_of_joining]);
+
+  useEffect(() => {
+    if (joiningDate || !email || !isMemoriam) return;
+    let isMounted = true;
+    fetchCollegeJoiningDate(email).then((date) => {
+      if (isMounted && date) {
+        setJoiningDate(date);
+      }
+    });
+    return () => {
+      isMounted = false;
+    };
+  }, [joiningDate, email, isMemoriam]);
+
+  const formatYear = (dateStr) => {
+    if (!dateStr) return "";
+    try {
+      const d = new Date(dateStr);
+      const yr = d.getFullYear();
+      return isNaN(yr) ? "" : yr;
+    } catch {
+      return "";
+    }
+  };
+
+  const startYear = formatYear(joiningDate);
+  const endYear = formatYear(service_end_date);
+  const servicePeriod = startYear || endYear ? `${startYear || "—"} – ${endYear || "—"}` : null;
 
   return (
     <div onClick={visitProfile} className="relative cursor-pointer w-full max-w-[575px] md:h-[325px] text-black rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow bg-white">
@@ -74,10 +113,21 @@ function FacultyCard({
             className="rounded-full w-32 h-32 object-cover border-4 border-white shadow-md"
           />
           <h3 className="font-bold text-[#5D1A14] mt-3 text-center">{name}</h3>
-          <div className="flex items-center justify-center mt-2">
-            <span className={`text-[#5D1A14] text-xs font-semibold px-3 py-1 rounded-full `}>
-              {retired ? 'Retired' : 'Currently Working'}
+          <div className="flex flex-col items-center justify-center mt-2">
+            <span
+              className={`text-xs font-semibold px-3 py-1 rounded-full ${
+                isMemoriam
+                  ? "bg-stone-200 text-stone-800 border border-stone-300"
+                  : "text-[#5D1A14]"
+              }`}
+            >
+              {isMemoriam ? "In Memoriam" : retired ? "Retired" : "Currently Working"}
             </span>
+            {isMemoriam && servicePeriod && (
+              <span className="text-[11px] font-medium text-[#8B3A32] mt-1">
+                {servicePeriod}
+              </span>
+            )}
           </div>
           <p className="text-[#8B3A32] text-sm font-semibold text-center">{academic_responsibility}</p>
           <p className="text-[#8B3A32] text-sm text-center">{designation}</p>
