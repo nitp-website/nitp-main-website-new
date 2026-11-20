@@ -7,6 +7,7 @@ import {
   Scroll,
   GraduationCap,
   Briefcase,
+  Trophy,
 } from "lucide-react";
 
 const deptToBranch = {
@@ -29,8 +30,10 @@ const deptToBranch = {
 const retiredFacultyCache = new Map();
 const adjunctFacultyCache = new Map();
 // const studentsCheckCache = new Map();
+const achievementsCheckCache = new Map();
 const facultyPromises = new Map();
 // const studentsCheckPromises = new Map();
+const achievementsCheckPromises = new Map();
 
 const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -44,6 +47,11 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
     if (!dept) return false;
     const branch = deptToBranch[dept] || dept.toLowerCase();
     return adjunctFacultyCache.get(branch) ?? false;
+  });
+  const [hasAchievements, setHasAchievements] = useState(() => {
+    if (!dept) return false;
+    const branch = deptToBranch[dept] || dept.toLowerCase();
+    return achievementsCheckCache.get(branch) ?? false;
   });
   /*
   const [hasStudents, setHasStudents] = useState(() => {
@@ -108,6 +116,41 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
           setHasRetiredFaculty(hasRetired);
           setHasAdjunctFaculty(hasAdjunct);
         }
+      });
+    }
+
+    // 2. Check if achievements exist for this department (deduplicated)
+    if (achievementsCheckCache.has(branch)) {
+      setHasAchievements(achievementsCheckCache.get(branch));
+    } else {
+      if (!achievementsCheckPromises.has(branch)) {
+        const achievementsApiEndpoint = `${backendUrl}/api/department-achievements?department=${branch}&limit=1`;
+        const p = fetch(achievementsApiEndpoint)
+          .then((res) => res.json())
+          .then((data) => {
+            const count =
+              data?.total ??
+              (Array.isArray(data?.data)
+                ? data.data.length
+                : Array.isArray(data)
+                ? data.length
+                : 0);
+            const exists = count > 0;
+            achievementsCheckCache.set(branch, exists);
+            return exists;
+          })
+          .catch((err) => {
+            console.error("Error checking achievements:", err);
+            return false;
+          })
+          .finally(() => {
+            achievementsCheckPromises.delete(branch);
+          });
+        achievementsCheckPromises.set(branch, p);
+      }
+
+      achievementsCheckPromises.get(branch)?.then((exists) => {
+        if (isMounted) setHasAchievements(exists);
       });
     }
 
@@ -233,6 +276,31 @@ const Sidebar = ({ onLinkClick, isMenuOpen, dept, navItems }) => {
     }
     return item;
   });
+
+  // Display "Achievements" in the department sidebar ONLY if achievements exist
+  if (dept && hasAchievements) {
+    const alreadyExists = itemsToRender.some(
+      (item) => item.name === "Achievements" || item.name === "Achievement"
+    );
+    if (!alreadyExists) {
+      const labsIdx = itemsToRender.findIndex((i) => i.name === "Labs");
+      const acadIdx = itemsToRender.findIndex((i) => i.name === "Academic Programs");
+      const insertIdx = labsIdx !== -1 ? labsIdx + 1 : acadIdx !== -1 ? acadIdx + 1 : itemsToRender.length;
+      itemsToRender.splice(insertIdx, 0, {
+        name: "Achievements",
+        url: `/Department/${dept}/achievements`,
+        icon: <Trophy size={18} />,
+      });
+    }
+  } else {
+    // If there are no achievements (or still checking), do NOT display Achievements in sidebar
+    const idx = itemsToRender.findIndex(
+      (item) => item.name === "Achievements" || item.name === "Achievement"
+    );
+    if (idx !== -1) {
+      itemsToRender.splice(idx, 1);
+    }
+  }
 
   const toggleSubmenu = (title) => {
     setOpenSubmenu(openSubmenu === title ? null : title);

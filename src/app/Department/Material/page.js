@@ -115,6 +115,10 @@ export default function Humanities() {
             onClick={() => router.push('/Department/Material/timeTable')}
             Title={'Time Table'}
           />
+          <DepartmentNavigationButton
+            onClick={() => router.push('/Department/Material/achievements')}
+            Title={'ACHIEVEMENTS'}
+          />
           {/* <DepartmentNavigationButton
             onClick={() => router.push('/Department/Material/activities')}
             Title={'ACTIVITIES'}
