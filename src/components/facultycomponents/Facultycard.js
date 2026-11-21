@@ -101,8 +101,8 @@ function FacultyCard({
   return (
     <div onClick={visitProfile} className="relative cursor-pointer w-full max-w-[575px] md:h-[325px] text-black rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow bg-white">
       <div className="absolute top-3 right-3 z-10">
-      {gender?.toLowerCase()==="male"&&<div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-lg font-bold">♂</div>}
-      {gender?.toLowerCase()==="female"&&<div className="w-8 h-8 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-lg font-bold">♀</div>}
+        {gender?.toLowerCase() === "male" && <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-lg font-bold">♂</div>}
+        {gender?.toLowerCase() === "female" && <div className="w-8 h-8 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-lg font-bold">♀</div>}
       </div>
       <div className="flex flex-col md:flex-row">
         {/* Left Panel */}
@@ -113,22 +113,24 @@ function FacultyCard({
             className="rounded-full w-32 h-32 object-cover border-4 border-white shadow-md"
           />
           <h3 className="font-bold text-[#5D1A14] mt-3 text-center">{name}</h3>
-          <div className="flex flex-col items-center justify-center mt-2">
-            <span
-              className={`text-xs font-semibold px-3 py-1 rounded-full ${
-                isMemoriam
-                  ? "bg-stone-200 text-stone-800 border border-stone-300"
-                  : "text-[#5D1A14]"
-              }`}
-            >
-              {isMemoriam ? "In Memoriam" : retired ? "Retired" : "Currently Working"}
-            </span>
-            {isMemoriam && servicePeriod && (
-              <span className="text-[11px] font-medium text-[#8B3A32] mt-1">
-                {servicePeriod}
+          {(isMemoriam || retired) && (
+            <div className="flex flex-col items-center justify-center mt-2">
+              <span
+                className={`text-xs font-semibold px-3 py-1 rounded-full ${
+                  isMemoriam
+                    ? "bg-stone-200 text-stone-800 border border-stone-300"
+                    : "text-[#5D1A14]"
+                }`}
+              >
+                {isMemoriam ? "In Memoriam" : "Retired"}
               </span>
-            )}
-          </div>
+              {isMemoriam && servicePeriod && (
+                <span className="text-[11px] font-medium text-[#8B3A32] mt-1">
+                  {servicePeriod}
+                </span>
+              )}
+            </div>
+          )}
           <p className="text-[#8B3A32] text-sm font-semibold text-center">{academic_responsibility}</p>
           <p className="text-[#8B3A32] text-sm text-center">{designation}</p>
         </div>
