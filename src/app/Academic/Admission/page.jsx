@@ -303,24 +303,33 @@ function AdmissionsPageContent() {
         <td className="py-5 px-6 align-middle border-l border-gray-200">
           <div className="flex flex-col gap-3 items-center sm:items-start">
             {parsedAttachments.map((attachment, index) => {
+              const url = (attachment.url || "").trim();
+              const caption =
+                (attachment.caption && String(attachment.caption).trim()) ||
+                (attachment.name && String(attachment.name).trim()) ||
+                (attachment.filename && String(attachment.filename).trim()) ||
+                "";
               const isApplyOrLink =
                 attachment.typeLink === true ||
                 attachment.typeLink === "True" ||
-                /apply|portal|form/i.test(attachment.caption || "");
+                /apply|portal|form|link|register|registration/i.test(caption) ||
+                (!url.toLowerCase().endsWith(".pdf") && /^https?:\/\//i.test(url));
               const Icon = isApplyOrLink ? ExternalLink : FileText;
+              const displayLabel =
+                caption || (parsedAttachments.length > 1 ? `View ${index + 1}` : "View");
 
               return (
                 <a
                   key={index}
-                  href={attachment.url}
+                  href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={attachment.caption || "View Document"}
+                  title={caption || "View Document"}
                   className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#8c1c1c] hover:bg-[#6c1414] text-white text-xs font-semibold rounded shadow-sm hover:shadow transition-all w-full sm:w-auto"
                 >
                   <Icon className="w-3.5 h-3.5 flex-shrink-0" />
                   <span className="truncate">
-                    {parsedAttachments.length > 1 ? `View ${index + 1}` : "View"}
+                    {displayLabel}
                   </span>
                 </a>
               );
