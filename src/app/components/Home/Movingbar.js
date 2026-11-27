@@ -19,6 +19,7 @@ const Movingbar = () => {
         const urls = [
           `${base}/api/notice?type=active`,
           `${base}/api/notice?type=job`,
+          `${base}/api/notice?type=convocation`,
           `${base}/api/notice?type=facultystaffjob`,
           `${base}/api/notice?type=admissions&limit=50`,
         ];
@@ -121,7 +122,9 @@ const Movingbar = () => {
                           ? notice?.notice_sub_type
                             ? `/Academic/Admission?type=${notice.notice_sub_type}`
                             : "/Academic/Admission"
-                          : "#");
+                          : notice?.notice_type === "convocation"
+                            ? "https://convocation.nitp.ac.in"
+                            : "#");
 
                       const isExternal = link.startsWith("http");
 
