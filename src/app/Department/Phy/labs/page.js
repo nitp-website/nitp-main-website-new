@@ -70,7 +70,7 @@ const researchAreas = [
   "Dr. Dev Kumar Mahato (Smart materials, Bulk and nano-functional materials Lab)",
   "Dr. Shivendra Kumar Jaiswal (Nano-materials, Structure-Property correlations, Mixed ionic and electronic based ceramic membranes, Fuel cell technology, Multiferroics Lab)",
   "Dr. Anurag Sahay (Gravitation, Black hole Physics, String theory, Thermodynamic Information Geometry, Statistical Mechanics-Computation Lab)",
-  "Dr. Subrata Majumder (Bio-Physics Lab)",
+  "Dr. Subrata Majumder (Bio-Physics Lab): Functional Nanomaterials, Biophysics, Electrochemistry, Spin Filtration in 1D and 2D Nanomaterials, Chiral Molecules, Thin Films, and Nanomaterials",
   "Dr. Ram Narayan Chauhan (Oxide based nanostructures for optoelectronics devices: solar cells, light emitting diodes, photo-detectors Lab)",
   "Dr. Neeraj Shukla (Ion matter interaction and defect analysis using RBS, Channeling, SRIM. Ion beam induced micro and nano-fabrication, Magneto transport and DFT simulations Lab)",
   "Dr. Kanhu Charan Sahoo (High temperature deformation (Creep), Material Testing and Characterization Lab)",
