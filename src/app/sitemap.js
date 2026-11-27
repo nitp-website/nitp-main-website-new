@@ -146,6 +146,12 @@ export default function sitemap() {
             priority: 0.7,
         },
         {
+            url: `${baseUrl}/Administration/ChairpersonBOG`,
+            lastModified: currentDate,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
             url: `${baseUrl}/Administration/Senate`,
             lastModified: currentDate,
             changeFrequency: 'monthly',
