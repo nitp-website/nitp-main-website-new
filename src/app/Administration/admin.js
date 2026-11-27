@@ -82,6 +82,7 @@ const BOG = [
   name: "Shri Ashok Kumar Modi",
   designation: "Chairperson",
   type: "Chief Managing Director, Eden Group, Kolkata",
+  url: "/Administration/ChairpersonBOG",
  },
  {
   name: "Prof. Pradip Kumar Jain",

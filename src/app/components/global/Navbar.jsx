@@ -171,6 +171,11 @@ const BASE_NAV_ITEMS = [
         link: "/Administration/Senate",
         iconImage: Person,
       },
+      {
+        label: "Chairperson",
+        link: "/Administration/ChairpersonBOG",
+        iconImage: Sperson,
+      },
 
       {
         label: "Director",
